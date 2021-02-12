@@ -1,2 +1,3 @@
-# open-manual-of-markdown-style
+# Open Manual of Markdown Style
+
 An open source, open access manual of markdown style for academic publishing

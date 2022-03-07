@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Cross-referencing | The Open Manual of Style</title>
+  <meta name="description" content="An open access, open source manual of style" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Cross-referencing | The Open Manual of Style" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An open access, open source manual of style" />
+  <meta name="github-repo" content="jdutant/dialectica-guide" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Cross-referencing | The Open Manual of Style" />
+  
+  <meta name="twitter:description" content="An open access, open source manual of style" />
+  
+
+<meta name="author" content="Julien Dutant and the dialectica team" />
+
+
+<meta name="date" content="2022-02-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="block-elements.html"/>
+<link rel="next" href="citations.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html">The Open Manual of Style</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#how-to-edit-this-book"><i class="fa fa-check"></i><b>1.2</b> How to edit this book</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#two-methods-for-editing"><i class="fa fa-check"></i><b>1.2.1</b> Two methods for editing</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#tips-for-editing"><i class="fa fa-check"></i><b>1.2.2</b> Tips for editing</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Authoring</b></span></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="preparing-a-ms-word-manuscript.html"><a href="preparing-a-ms-word-manuscript.html"><i class="fa fa-check"></i><b>3</b> Preparing a MS Word manuscript</a></li>
+<li class="part"><span><b>II Copyediting</b></span></li>
+<li class="chapter" data-level="4" data-path="preliminaries.html"><a href="preliminaries.html"><i class="fa fa-check"></i><b>4</b> Preliminaries</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="preliminaries.html"><a href="preliminaries.html#what-you-need"><i class="fa fa-check"></i><b>4.1</b> What you need</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="preliminaries.html"><a href="preliminaries.html#skills"><i class="fa fa-check"></i><b>4.1.1</b> Skills</a></li>
+<li class="chapter" data-level="4.1.2" data-path="preliminaries.html"><a href="preliminaries.html#software"><i class="fa fa-check"></i><b>4.1.2</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="preliminaries.html"><a href="preliminaries.html#working-folder"><i class="fa fa-check"></i><b>4.2</b> Working folder</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="generate-outputs.html"><a href="generate-outputs.html"><i class="fa fa-check"></i><b>5</b> Generate outputs</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="generate-outputs.html"><a href="generate-outputs.html#simple-outputs"><i class="fa fa-check"></i><b>5.1</b> Simple outputs</a></li>
+<li class="chapter" data-level="5.2" data-path="generate-outputs.html"><a href="generate-outputs.html#house-style-outputs"><i class="fa fa-check"></i><b>5.2</b> House style outputs</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="generate-outputs.html"><a href="generate-outputs.html#pre-requistes"><i class="fa fa-check"></i><b>5.2.1</b> Pre-requistes</a></li>
+<li class="chapter" data-level="5.2.2" data-path="generate-outputs.html"><a href="generate-outputs.html#generating-outputs-from-rstudio"><i class="fa fa-check"></i><b>5.2.2</b> Generating outputs from RStudio</a></li>
+<li class="chapter" data-level="5.2.3" data-path="generate-outputs.html"><a href="generate-outputs.html#using-the-terminal-optional-feel-free-to-skip"><i class="fa fa-check"></i><b>5.2.3</b> Using the terminal (optional, feel free to skip)</a></li>
+<li class="chapter" data-level="5.2.4" data-path="generate-outputs.html"><a href="generate-outputs.html#generating-outputs-from-the-terminal-with-make-commands"><i class="fa fa-check"></i><b>5.2.4</b> Generating outputs from the terminal with <code>make</code> commands</a></li>
+<li class="chapter" data-level="5.2.5" data-path="generate-outputs.html"><a href="generate-outputs.html#generating-custom-outputs-from-the-terminal"><i class="fa fa-check"></i><b>5.2.5</b> Generating custom outputs from the terminal</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="generate-outputs.html"><a href="generate-outputs.html#troubleshooting-outputs"><i class="fa fa-check"></i><b>5.3</b> Troubleshooting</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="generate-outputs.html"><a href="generate-outputs.html#error-producing-pdf"><i class="fa fa-check"></i><b>5.3.1</b> Error producing PDF</a></li>
+<li class="chapter" data-level="5.3.2" data-path="generate-outputs.html"><a href="generate-outputs.html#a-brief-guide-on-pandocs-pdf-output-logs"><i class="fa fa-check"></i><b>5.3.2</b> A brief guide on Pandoc’s PDF output logs</a></li>
+<li class="chapter" data-level="5.3.3" data-path="generate-outputs.html"><a href="generate-outputs.html#pandoc-says-errorunknown-option-citeproc"><i class="fa fa-check"></i><b>5.3.3</b> pandoc says “Error”unknown option “citeproc””</a></li>
+<li class="chapter" data-level="5.3.4" data-path="generate-outputs.html"><a href="generate-outputs.html#pandoc-says-pandoc-filename-openbinaryfile-file-not-found"><i class="fa fa-check"></i><b>5.3.4</b> pandoc says <code>pandoc: FILENAME: OpenBinaryFile: file not found</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="about-markdown-copyediting.html"><a href="about-markdown-copyediting.html"><i class="fa fa-check"></i><b>6</b> About Markdown copyediting</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="about-markdown-copyediting.html"><a href="about-markdown-copyediting.html#aims"><i class="fa fa-check"></i><b>6.1</b> Aims</a></li>
+<li class="chapter" data-level="6.2" data-path="about-markdown-copyediting.html"><a href="about-markdown-copyediting.html#style"><i class="fa fa-check"></i><b>6.2</b> Style</a></li>
+<li class="chapter" data-level="6.3" data-path="about-markdown-copyediting.html"><a href="about-markdown-copyediting.html#what-to-encode"><i class="fa fa-check"></i><b>6.3</b> What to encode</a></li>
+<li class="chapter" data-level="6.4" data-path="about-markdown-copyediting.html"><a href="about-markdown-copyediting.html#about-markdown"><i class="fa fa-check"></i><b>6.4</b> About Markdown</a></li>
+<li class="chapter" data-level="6.5" data-path="about-markdown-copyediting.html"><a href="about-markdown-copyediting.html#advance-warnings"><i class="fa fa-check"></i><b>6.5</b> Advance warnings</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="about-markdown-copyediting.html"><a href="about-markdown-copyediting.html#watch-out-for-special-characters"><i class="fa fa-check"></i><b>6.5.1</b> Watch out for special characters</a></li>
+<li class="chapter" data-level="6.5.2" data-path="about-markdown-copyediting.html"><a href="about-markdown-copyediting.html#rstudio-visual-markdown-editor-source-vs-visual-mode"><i class="fa fa-check"></i><b>6.5.2</b> RStudio visual markdown editor: source vs visual mode</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i><b>7</b> Metadata</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="metadata.html"><a href="metadata.html#title-and-other-one-line-fields"><i class="fa fa-check"></i><b>7.1</b> Title (and other one-line fields)</a></li>
+<li class="chapter" data-level="7.2" data-path="metadata.html"><a href="metadata.html#title-with-linebreaks-for-latexpdf-output"><i class="fa fa-check"></i><b>7.2</b> Title with linebreaks for LaTeX/PDF output</a></li>
+<li class="chapter" data-level="7.3" data-path="metadata.html"><a href="metadata.html#subtitle"><i class="fa fa-check"></i><b>7.3</b> Subtitle</a></li>
+<li class="chapter" data-level="7.4" data-path="metadata.html"><a href="metadata.html#short-title"><i class="fa fa-check"></i><b>7.4</b> Short title</a></li>
+<li class="chapter" data-level="7.5" data-path="metadata.html"><a href="metadata.html#authors-information"><i class="fa fa-check"></i><b>7.5</b> Author(s) information</a></li>
+<li class="chapter" data-level="7.6" data-path="metadata.html"><a href="metadata.html#author-in-page-header-and-table-of-contents"><i class="fa fa-check"></i><b>7.6</b> Author in page header and table of contents</a></li>
+<li class="chapter" data-level="7.7" data-path="metadata.html"><a href="metadata.html#abstract-and-thanks"><i class="fa fa-check"></i><b>7.7</b> Abstract and thanks</a></li>
+<li class="chapter" data-level="7.8" data-path="metadata.html"><a href="metadata.html#keywords-and-other-lists"><i class="fa fa-check"></i><b>7.8</b> Keywords (and other lists)</a></li>
+<li class="chapter" data-level="7.9" data-path="metadata.html"><a href="metadata.html#bibliography"><i class="fa fa-check"></i><b>7.9</b> Bibliography</a></li>
+<li class="chapter" data-level="7.10" data-path="metadata.html"><a href="metadata.html#and-more-generally"><i class="fa fa-check"></i><b>7.10</b> And more generally…</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="inline-elements.html"><a href="inline-elements.html"><i class="fa fa-check"></i><b>8</b> Inline elements</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="inline-elements.html"><a href="inline-elements.html#punctuation"><i class="fa fa-check"></i><b>8.1</b> Punctuation</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="inline-elements.html"><a href="inline-elements.html#punctuation-and-brackets"><i class="fa fa-check"></i><b>8.1.1</b> Punctuation and brackets:</a></li>
+<li class="chapter" data-level="8.1.2" data-path="inline-elements.html"><a href="inline-elements.html#punctuation-and-quotation-marks"><i class="fa fa-check"></i><b>8.1.2</b> Punctuation and quotation marks</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="inline-elements.html"><a href="inline-elements.html#emphasis-and-bold"><i class="fa fa-check"></i><b>8.2</b> Emphasis and bold</a></li>
+<li class="chapter" data-level="8.3" data-path="inline-elements.html"><a href="inline-elements.html#subscripts-and-superscripts"><i class="fa fa-check"></i><b>8.3</b> Subscripts and superscripts</a></li>
+<li class="chapter" data-level="8.4" data-path="inline-elements.html"><a href="inline-elements.html#hyphens-and-dashes"><i class="fa fa-check"></i><b>8.4</b> Hyphens and dashes</a></li>
+<li class="chapter" data-level="8.5" data-path="inline-elements.html"><a href="inline-elements.html#quotations"><i class="fa fa-check"></i><b>8.5</b> Quotations</a></li>
+<li class="chapter" data-level="8.6" data-path="inline-elements.html"><a href="inline-elements.html#special-symbols"><i class="fa fa-check"></i><b>8.6</b> Special symbols</a></li>
+<li class="chapter" data-level="8.7" data-path="inline-elements.html"><a href="inline-elements.html#formulas"><i class="fa fa-check"></i><b>8.7</b> Formulas</a></li>
+<li class="chapter" data-level="8.8" data-path="inline-elements.html"><a href="inline-elements.html#schematic-letters-in-the-text"><i class="fa fa-check"></i><b>8.8</b> Schematic letters in the text</a></li>
+<li class="chapter" data-level="8.9" data-path="inline-elements.html"><a href="inline-elements.html#split-fractions"><i class="fa fa-check"></i><b>8.9</b> Split fractions</a></li>
+<li class="chapter" data-level="8.10" data-path="inline-elements.html"><a href="inline-elements.html#acronyms"><i class="fa fa-check"></i><b>8.10</b> Acronyms</a></li>
+<li class="chapter" data-level="8.11" data-path="inline-elements.html"><a href="inline-elements.html#foreign-words"><i class="fa fa-check"></i><b>8.11</b> Foreign words</a></li>
+<li class="chapter" data-level="8.12" data-path="inline-elements.html"><a href="inline-elements.html#cop-inline-elements-linebreak"><i class="fa fa-check"></i><b>8.12</b> Line break</a></li>
+<li class="chapter" data-level="8.13" data-path="inline-elements.html"><a href="inline-elements.html#prevent-line-breaks"><i class="fa fa-check"></i><b>8.13</b> Prevent line breaks</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="block-elements.html"><a href="block-elements.html"><i class="fa fa-check"></i><b>9</b> Block elements</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="block-elements.html"><a href="block-elements.html#paragraphs"><i class="fa fa-check"></i><b>9.1</b> Paragraphs</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="block-elements.html"><a href="block-elements.html#first-line-indentation-after-quotes-lists-etc."><i class="fa fa-check"></i><b>9.1.1</b> First-line indentation after quotes, lists, etc.</a></li>
+<li class="chapter" data-level="9.1.2" data-path="block-elements.html"><a href="block-elements.html#special-first-line-indentation-cases"><i class="fa fa-check"></i><b>9.1.2</b> Special first-line indentation cases</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="block-elements.html"><a href="block-elements.html#headings"><i class="fa fa-check"></i><b>9.2</b> Headings</a></li>
+<li class="chapter" data-level="9.3" data-path="block-elements.html"><a href="block-elements.html#footnotes-and-endnotes"><i class="fa fa-check"></i><b>9.3</b> Footnotes and endnotes</a></li>
+<li class="chapter" data-level="9.4" data-path="block-elements.html"><a href="block-elements.html#quotations-1"><i class="fa fa-check"></i><b>9.4</b> Quotations</a></li>
+<li class="chapter" data-level="9.5" data-path="block-elements.html"><a href="block-elements.html#lists"><i class="fa fa-check"></i><b>9.5</b> Lists</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="block-elements.html"><a href="block-elements.html#simple-lists"><i class="fa fa-check"></i><b>9.5.1</b> Simple lists</a></li>
+<li class="chapter" data-level="9.5.2" data-path="block-elements.html"><a href="block-elements.html#numbered-examples-lists"><i class="fa fa-check"></i><b>9.5.2</b> Numbered examples lists</a></li>
+<li class="chapter" data-level="9.5.3" data-path="block-elements.html"><a href="block-elements.html#custom-labels-lists"><i class="fa fa-check"></i><b>9.5.3</b> Custom labels lists</a></li>
+<li class="chapter" data-level="9.5.4" data-path="block-elements.html"><a href="block-elements.html#what-to-do-if-a-list-has-non-standard-labels"><i class="fa fa-check"></i><b>9.5.4</b> What to do if a list has non-standard labels?</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="block-elements.html"><a href="block-elements.html#crossreferencing-and-captioning-tables-figures-images-equations"><i class="fa fa-check"></i><b>9.6</b> Crossreferencing and captioning tables, figures, images, equations</a></li>
+<li class="chapter" data-level="9.7" data-path="block-elements.html"><a href="block-elements.html#tables"><i class="fa fa-check"></i><b>9.7</b> Tables</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="block-elements.html"><a href="block-elements.html#basic-table-syntax"><i class="fa fa-check"></i><b>9.7.1</b> Basic table syntax</a></li>
+<li class="chapter" data-level="9.7.2" data-path="block-elements.html"><a href="block-elements.html#cells-that-span-several-rows-or-several-columns"><i class="fa fa-check"></i><b>9.7.2</b> Cells that span several rows or several columns</a></li>
+<li class="chapter" data-level="9.7.3" data-path="block-elements.html"><a href="block-elements.html#if-markdown-cant-handle-a-table"><i class="fa fa-check"></i><b>9.7.3</b> If markdown can’t handle a table</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="block-elements.html"><a href="block-elements.html#equations"><i class="fa fa-check"></i><b>9.8</b> Equations</a></li>
+<li class="chapter" data-level="9.9" data-path="block-elements.html"><a href="block-elements.html#images"><i class="fa fa-check"></i><b>9.9</b> Images</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="block-elements.html"><a href="block-elements.html#vector-graphics-files-are-preferred"><i class="fa fa-check"></i><b>9.9.1</b> Vector graphics files are preferred</a></li>
+<li class="chapter" data-level="9.9.2" data-path="block-elements.html"><a href="block-elements.html#resizing-svg-files"><i class="fa fa-check"></i><b>9.9.2</b> Resizing SVG files</a></li>
+<li class="chapter" data-level="9.9.3" data-path="block-elements.html"><a href="block-elements.html#including-svg-image-files-in-markdown"><i class="fa fa-check"></i><b>9.9.3</b> Including SVG image files in markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="9.10" data-path="block-elements.html"><a href="block-elements.html#cop-block-statements"><i class="fa fa-check"></i><b>9.10</b> Statements (propositions, principles, axioms, arguments …) and indented blocks in general</a>
+<ul>
+<li class="chapter" data-level="9.10.1" data-path="block-elements.html"><a href="block-elements.html#statements-in-general"><i class="fa fa-check"></i><b>9.10.1</b> Statements in general</a></li>
+<li class="chapter" data-level="9.10.2" data-path="block-elements.html"><a href="block-elements.html#arguments"><i class="fa fa-check"></i><b>9.10.2</b> Arguments</a></li>
+</ul></li>
+<li class="chapter" data-level="9.11" data-path="block-elements.html"><a href="block-elements.html#multiple-columns"><i class="fa fa-check"></i><b>9.11</b> Multiple columns</a></li>
+<li class="chapter" data-level="9.12" data-path="block-elements.html"><a href="block-elements.html#arguments-and-proofs"><i class="fa fa-check"></i><b>9.12</b> Arguments and proofs</a></li>
+<li class="chapter" data-level="9.13" data-path="block-elements.html"><a href="block-elements.html#raw-code-if-all-else-fails"><i class="fa fa-check"></i><b>9.13</b> Raw code if all else fails</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="cross-referencing.html"><a href="cross-referencing.html"><i class="fa fa-check"></i><b>10</b> Cross-referencing</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="cross-referencing.html"><a href="cross-referencing.html#cross-referencing-sections"><i class="fa fa-check"></i><b>10.1</b> Cross-referencing sections</a></li>
+<li class="chapter" data-level="10.2" data-path="cross-referencing.html"><a href="cross-referencing.html#cross-referencing-footnotes"><i class="fa fa-check"></i><b>10.2</b> Cross-referencing footnotes</a></li>
+<li class="chapter" data-level="10.3" data-path="cross-referencing.html"><a href="cross-referencing.html#cross-referencing-list-items"><i class="fa fa-check"></i><b>10.3</b> Cross-referencing list items</a></li>
+<li class="chapter" data-level="10.4" data-path="cross-referencing.html"><a href="cross-referencing.html#internal-links"><i class="fa fa-check"></i><b>10.4</b> Internal links</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>11</b> Citations</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="citations.html"><a href="citations.html#encoding-citations"><i class="fa fa-check"></i><b>11.1</b> Encoding citations</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="citations.html"><a href="citations.html#ibid.-op.-cit.-sec.-or-and-the-like"><i class="fa fa-check"></i><b>11.1.1</b> Ibid., Op. Cit., sec. or § and the like</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="citations.html"><a href="citations.html#examples-with-preferred-answers"><i class="fa fa-check"></i><b>11.2</b> Examples with preferred answers</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="citations.html"><a href="citations.html#example-doe-2019-2020"><i class="fa fa-check"></i><b>11.2.1</b> Example: Doe (2019, 2020)</a></li>
+<li class="chapter" data-level="11.2.2" data-path="citations.html"><a href="citations.html#example-locating-the-possessive-s"><i class="fa fa-check"></i><b>11.2.2</b> Example: locating the possessive “’s”</a></li>
+<li class="chapter" data-level="11.2.3" data-path="citations.html"><a href="citations.html#example"><i class="fa fa-check"></i><b>11.2.3</b> Example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="bibliography-1.html"><a href="bibliography-1.html"><i class="fa fa-check"></i><b>12</b> Bibliography</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="bibliography-1.html"><a href="bibliography-1.html#get-or-create-a-bibtex-file"><i class="fa fa-check"></i><b>12.1</b> Get or create a BibTeX file</a></li>
+<li class="chapter" data-level="12.2" data-path="bibliography-1.html"><a href="bibliography-1.html#make-sure-any-self-cited-entries-are-included-and-printed"><i class="fa fa-check"></i><b>12.2</b> Make sure any self-cited entries are included and printed</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="bibliography-1.html"><a href="bibliography-1.html#check-that-the-bibtex-file-includes-all-self-cited-entries"><i class="fa fa-check"></i><b>12.2.1</b> Check that the BibTeX file includes all self-cited entries</a></li>
+<li class="chapter" data-level="12.2.2" data-path="bibliography-1.html"><a href="bibliography-1.html#make-sure-all-the-self-cited-entries-are-printed-out"><i class="fa fa-check"></i><b>12.2.2</b> Make sure all the self-cited entries are printed out</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="bibliography-1.html"><a href="bibliography-1.html#adding-non-cited-references-in-the-bibliography"><i class="fa fa-check"></i><b>12.3</b> Adding non-cited references in the bibliography</a></li>
+<li class="chapter" data-level="12.4" data-path="bibliography-1.html"><a href="bibliography-1.html#inserting-citations-in-the-text-in-rstudio"><i class="fa fa-check"></i><b>12.4</b> Inserting Citations in the text in RStudio</a></li>
+<li class="chapter" data-level="12.5" data-path="bibliography-1.html"><a href="bibliography-1.html#formatting-citations-in-the-text"><i class="fa fa-check"></i><b>12.5</b> Formatting citations in the text</a></li>
+<li class="chapter" data-level="12.6" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-file-guidelines"><i class="fa fa-check"></i><b>12.6</b> BibTeX file guidelines</a>
+<ul>
+<li class="chapter" data-level="12.6.1" data-path="bibliography-1.html"><a href="bibliography-1.html#how-to-correct-the-file"><i class="fa fa-check"></i><b>12.6.1</b> How to correct the file</a></li>
+<li class="chapter" data-level="12.6.2" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-field-names-arent-case-sensitive"><i class="fa fa-check"></i><b>12.6.2</b> BibTeX field names aren’t case-sensitive</a></li>
+<li class="chapter" data-level="12.6.3" data-path="bibliography-1.html"><a href="bibliography-1.html#title-capitalization"><i class="fa fa-check"></i><b>12.6.3</b> Title capitalization</a></li>
+<li class="chapter" data-level="12.6.4" data-path="bibliography-1.html"><a href="bibliography-1.html#original-year-of-publication"><i class="fa fa-check"></i><b>12.6.4</b> Original year of publication</a></li>
+<li class="chapter" data-level="12.6.5" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-conventions-and-resources"><i class="fa fa-check"></i><b>12.6.5</b> BibTeX conventions and resources</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-file-special-entry-types"><i class="fa fa-check"></i><b>12.7</b> BibTeX file special entry types</a>
+<ul>
+<li class="chapter" data-level="12.7.1" data-path="bibliography-1.html"><a href="bibliography-1.html#unpublished-manuscript"><i class="fa fa-check"></i><b>12.7.1</b> Unpublished manuscript</a></li>
+</ul></li>
+<li class="chapter" data-level="12.8" data-path="bibliography-1.html"><a href="bibliography-1.html#troubleshooting-and-examples"><i class="fa fa-check"></i><b>12.8</b> Troubleshooting and examples</a>
+<ul>
+<li class="chapter" data-level="12.8.1" data-path="bibliography-1.html"><a href="bibliography-1.html#error-message-citet-unknown-command"><i class="fa fa-check"></i><b>12.8.1</b> Error message: <code>\citet</code> unknown command</a></li>
+<li class="chapter" data-level="12.8.2" data-path="bibliography-1.html"><a href="bibliography-1.html#from-frege-to-gödel"><i class="fa fa-check"></i><b>12.8.2</b> From Frege to gödel</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="comments-and-tracking-changes.html"><a href="comments-and-tracking-changes.html"><i class="fa fa-check"></i><b>13</b> Comments and tracking changes</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="comments-and-tracking-changes.html"><a href="comments-and-tracking-changes.html#comments-to-fellow-copyeditors"><i class="fa fa-check"></i><b>13.1</b> Comments to fellow copyeditors</a></li>
+<li class="chapter" data-level="13.2" data-path="comments-and-tracking-changes.html"><a href="comments-and-tracking-changes.html#revisions-and-comments-for-the-author"><i class="fa fa-check"></i><b>13.2</b> Revisions and comments for the author</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="trouble-and-troubleshooting.html"><a href="trouble-and-troubleshooting.html"><i class="fa fa-check"></i><b>14</b> Trouble and troubleshooting</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="trouble-and-troubleshooting.html"><a href="trouble-and-troubleshooting.html#word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols."><i class="fa fa-check"></i><b>14.1</b> Word manuscript with many symbols (phi, psy, greek letters, logical symbols,).</a></li>
+<li class="chapter" data-level="14.2" data-path="trouble-and-troubleshooting.html"><a href="trouble-and-troubleshooting.html#reverse-conversion-.md---.tex"><i class="fa fa-check"></i><b>14.2</b> Reverse conversion .md -&gt; .tex</a></li>
+<li class="chapter" data-level="14.3" data-path="trouble-and-troubleshooting.html"><a href="trouble-and-troubleshooting.html#if-pdf-generation-doesnt-work"><i class="fa fa-check"></i><b>14.3</b> If PDF generation doesn’t work</a></li>
+<li class="chapter" data-level="14.4" data-path="trouble-and-troubleshooting.html"><a href="trouble-and-troubleshooting.html#missing-character"><i class="fa fa-check"></i><b>14.4</b> Missing character</a></li>
+<li class="chapter" data-level="14.5" data-path="trouble-and-troubleshooting.html"><a href="trouble-and-troubleshooting.html#list-of-things-that-cause-trouble"><i class="fa fa-check"></i><b>14.5</b> List of things that cause trouble</a>
+<ul>
+<li class="chapter" data-level="14.5.1" data-path="trouble-and-troubleshooting.html"><a href="trouble-and-troubleshooting.html#visual-editor-rstudio"><i class="fa fa-check"></i><b>14.5.1</b> Visual editor RStudio</a></li>
+<li class="chapter" data-level="14.5.2" data-path="trouble-and-troubleshooting.html"><a href="trouble-and-troubleshooting.html#pandoc"><i class="fa fa-check"></i><b>14.5.2</b> Pandoc</a></li>
+<li class="chapter" data-level="14.5.3" data-path="trouble-and-troubleshooting.html"><a href="trouble-and-troubleshooting.html#latex"><i class="fa fa-check"></i><b>14.5.3</b> LaTeX</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="markdown-cheatsheet.html"><a href="markdown-cheatsheet.html"><i class="fa fa-check"></i><b>15</b> Markdown Cheatsheet</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="markdown-cheatsheet.html"><a href="markdown-cheatsheet.html#inline-elements-1"><i class="fa fa-check"></i><b>15.1</b> Inline elements</a></li>
+<li class="chapter" data-level="15.2" data-path="markdown-cheatsheet.html"><a href="markdown-cheatsheet.html#block-elements-1"><i class="fa fa-check"></i><b>15.2</b> Block elements</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="markdown-cheatsheet.html"><a href="markdown-cheatsheet.html#citations-1"><i class="fa fa-check"></i><b>15.2.1</b> Citations</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Publishing I</b></span></li>
+<li class="chapter" data-level="16" data-path="why-publish-a-journal-in-markdown.html"><a href="why-publish-a-journal-in-markdown.html"><i class="fa fa-check"></i><b>16</b> Why publish a journal in markdown</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="why-publish-a-journal-in-markdown.html"><a href="why-publish-a-journal-in-markdown.html#why-use-a-markdown-workflow"><i class="fa fa-check"></i><b>16.1</b> Why use a markdown workflow</a></li>
+<li class="chapter" data-level="16.2" data-path="why-publish-a-journal-in-markdown.html"><a href="why-publish-a-journal-in-markdown.html#ms-word---google-docs-workflow"><i class="fa fa-check"></i><b>16.2</b> MS Word - Google docs workflow</a></li>
+<li class="chapter" data-level="16.3" data-path="why-publish-a-journal-in-markdown.html"><a href="why-publish-a-journal-in-markdown.html#markdown-workflow"><i class="fa fa-check"></i><b>16.3</b> Markdown workflow</a></li>
+<li class="chapter" data-level="16.4" data-path="why-publish-a-journal-in-markdown.html"><a href="why-publish-a-journal-in-markdown.html#interaction-with-authors"><i class="fa fa-check"></i><b>16.4</b> Interaction with authors</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="the-structure-of-a-book-and-a-journal.html"><a href="the-structure-of-a-book-and-a-journal.html"><i class="fa fa-check"></i><b>17</b> The structure of a book and a journal</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="the-structure-of-a-book-and-a-journal.html"><a href="the-structure-of-a-book-and-a-journal.html#the-structure-of-a-book"><i class="fa fa-check"></i><b>17.1</b> The structure of a book</a></li>
+<li class="chapter" data-level="17.2" data-path="the-structure-of-a-book-and-a-journal.html"><a href="the-structure-of-a-book-and-a-journal.html#the-structure-of-a-journal"><i class="fa fa-check"></i><b>17.2</b> The structure of a journal</a></li>
+<li class="chapter" data-level="17.3" data-path="the-structure-of-a-book-and-a-journal.html"><a href="the-structure-of-a-book-and-a-journal.html#non-english-conventions"><i class="fa fa-check"></i><b>17.3</b> Non-English conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>18</b> Resources</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="resources.html"><a href="resources.html#style-and-copyediting-manuals"><i class="fa fa-check"></i><b>18.1</b> Style and copyediting manuals</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="resources.html"><a href="resources.html#in-english"><i class="fa fa-check"></i><b>18.1.1</b> In English</a></li>
+<li class="chapter" data-level="18.1.2" data-path="resources.html"><a href="resources.html#in-french"><i class="fa fa-check"></i><b>18.1.2</b> In French</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="resources.html"><a href="resources.html#interface-with-dialecticas-main-bibliography"><i class="fa fa-check"></i><b>18.2</b> Interface with dialectica’s main bibliography</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="interface-with-dialecticas-main-bibliography-1.html"><a href="interface-with-dialecticas-main-bibliography-1.html"><i class="fa fa-check"></i><b>19</b> Interface with <em>dialectica</em>’s main bibliography</a></li>
+<li class="chapter" data-level="20" data-path="removed-parts-of-the-guide.html"><a href="removed-parts-of-the-guide.html"><i class="fa fa-check"></i><b>20</b> Removed parts of the guide</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="removed-parts-of-the-guide.html"><a href="removed-parts-of-the-guide.html#old-style-guidelines"><i class="fa fa-check"></i><b>20.1</b> Old “style guidelines”</a></li>
+<li class="chapter" data-level="20.2" data-path="removed-parts-of-the-guide.html"><a href="removed-parts-of-the-guide.html#get-or-create-a-bibtex-file-for-the-references-in-your-article"><i class="fa fa-check"></i><b>20.2</b> Get or create a BibTeX file for the references in your article</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="21" data-path="copyeditors-checklist.html"><a href="copyeditors-checklist.html"><i class="fa fa-check"></i><b>21</b> Copyeditors Checklist</a></li>
+<li class="chapter" data-level="22" data-path="steps-copyediting-step-by-step.html"><a href="steps-copyediting-step-by-step.html"><i class="fa fa-check"></i><b>22</b> Steps: copyediting step-by-step</a></li>
+<li class="chapter" data-level="23" data-path="what-to-ask-authors.html"><a href="what-to-ask-authors.html"><i class="fa fa-check"></i><b>23</b> What to ask authors</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Open Manual of Style</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cross-referencing" class="section level1" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Cross-referencing</h1>
+<p>When an article cross-references its own sections, figures, tables, images,
+numbered examples, equations and footnotes, we encode these in markdown. This
+ensures that they are linked (and, in some case, standardly labelled and
+properly numbered) in the outputs.</p>
+<p>Cross-references to sections, figure, tables, images are handled by the
+<a href="https://github.com/lierdakil/pandoc-crossref"><code>pandoc-crossref</code></a> extension of
+pandoc. We describe its basic usage described below (<a href="http://lierdakil.github.io/pandoc-crossref/">full documentation
+here</a>).</p>
+<p>Cross-references to numbered examples is handled by <code>pandoc</code> itself, usage
+described below.</p>
+<p>At the moment we cannot handle neatly cross-references to footnotes. A
+workaround is given below.</p>
+<div id="cross-referencing-sections" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Cross-referencing sections</h2>
+<p>To cross-reference a section you first need to know its identifier. <code>pandoc</code> accepts
+manually specified identifiers but also automatically generates identifiers. A manually specified identifiers is given by adding <code>{#sec:mysecid}</code> after the heading. An automatically generated identifier is obtained by putting the section heading in
+lowercase, removing all formatting, links, footnotes, removing all characters
+other than letters, numbers, underscore, periods and hyphens, and replacing
+spaces by hyphens. Some examples:</p>
+<table>
+<colgroup>
+<col width="55%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown heading</th>
+<th>Resulting section identifier(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code># The Last Stand</code></td>
+<td><code>the-last-stand</code></td>
+</tr>
+<tr class="even">
+<td><code>## Cause *célèbre*^[Sic.]</code></td>
+<td><code>cause-célèbre</code></td>
+</tr>
+<tr class="odd">
+<td><code>## The no.1 'Foolish' Claim that $E=mc^2$</code></td>
+<td><code>the-no.1-foolish-claim-that-emc2</code></td>
+</tr>
+<tr class="even">
+<td><code># The First Word {#sec:first}</code></td>
+<td><code>first</code></td>
+</tr>
+</tbody>
+</table>
+<p>Special cases. If a heading starts with something else than a
+letter, everything before that letter is removed (to ensure that all identifiers
+start with a letter). If a heading is empty, its identifier is <code>section</code>. If there are
+several headings of the same name (say, <code>section</code>), the second one is suffixed with
+<code>-1</code> (<code>section-1</code>) then <code>-2</code>, etc.</p>
+<table>
+<colgroup>
+<col width="55%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown headings</th>
+<th>Resulting section identifier(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code># 3 Little Pigs</code></td>
+<td><code>little-pigs</code></td>
+</tr>
+<tr class="even">
+<td><pre><code># Surprise Party
+
+## Surprise Party
+</code></pre></td>
+<td><pre><code>surprise-party
+
+surprise-party-1</code></pre></td>
+</tr>
+<tr class="odd">
+<td><pre><code>#
+
+#
+</code></pre></td>
+<td><pre><code>section
+
+section-1
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p><em>Warning</em>: of course, if you change a section heading title, the automatically
+generated identifier changes. So if your headings might change, either use
+manual identifiers or wait before entering cross-references.</p>
+<p>When editing in RStudio visual mode, you can use Insert &gt; Cross-reference to
+find heading identifiers. A menu with the list of headings is displayed; pick
+the one you want and the editor will insert the code <code><a href="#the-first-word"><strong>??</strong></a></code>.
+Remove <code>@ref(…)</code>, and enter <code>@sec:</code> right in front of the <code>the-first-word</code>. The
+code <code>@sec:the-first-word</code> should become blue as you type <code>@</code> and the following
+letters; if not it’s not interpreted as a reference, try again or edit in code
+mode instead.</p>
+<p>Now to cross-reference sections with identifiers <code>the-first-word</code>,
+<code>the-second-word</code>, use the following code:</p>
+<table>
+<colgroup>
+<col width="31%" />
+<col width="68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>I want</th>
+<th>I type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>In sec. 1, we
+review…</td>
+<td><p><code class="sourceCode markdown">In @sec:the-first-word, we review</code></p>
+<p>or</p>
+<p><code class="sourceCode markdown">In <span class="co">[</span><span class="ot">@sec:the-first-word</span><span class="co">]</span>, we review</code></p></td>
+</tr>
+<tr class="even">
+<td>Sec. 1 discusses</td>
+<td><p><code class="sourceCode markdown">@Sec:title-of-section discusses</code></p>
+<p>or</p>
+<p><code class="sourceCode markdown"><span class="co">[</span><span class="ot">@Sec:title-of-section</span><span class="co">]</span> discusses</code></p></td>
+</tr>
+<tr class="odd">
+<td>In secs. 1, 2 we</td>
+<td><div class="sourceCode" id="cb142"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb142-1"><a href="cross-referencing.html#cb142-1" aria-hidden="true" tabindex="-1"></a>In <span class="co">[</span><span class="ot">@sec:the-first-word; @sec:the-second-word</span><span class="co">]</span></span>
+<span id="cb142-2"><a href="cross-referencing.html#cb142-2" aria-hidden="true" tabindex="-1"></a> we review</span></code></pre></div></td>
+</tr>
+<tr class="even">
+<td>… elsewhere (sec.
+1).</td>
+<td><p><code>...elsewhere (@sec:the-first-word).</code></p>
+<p>or</p>
+<p><code>...elsewhere ([@sec:the-first-word]).</code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that <code>@Sec:…</code> instead of <code>@sec:…</code> capitalizes the label. Note that the
+quare-bracketed version doesn’t add parentheses (unlike in citations): the
+square brackets are only necessary if you have several references or a manually
+specified prefix (below).</p>
+<p>The prefix (“sec.” here) is specified by the template. It can be suppressed or
+manually specified:</p>
+<table>
+<thead>
+<tr class="header">
+<th>I want</th>
+<th>I type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>as said above (1).</td>
+<td><code>as said above [-@sec:the-first-word]</code></td>
+</tr>
+<tr class="even">
+<td>In unit 1, we…</td>
+<td><code>In [unit @sec:the-first-word]</code></td>
+</tr>
+<tr class="odd">
+<td>In § 1, we…</td>
+<td><code>In [§ @sec:the-first-word]</code></td>
+</tr>
+<tr class="even">
+<td>In appendix 5, …</td>
+<td><code>In [appendix @sec:appendix-proof-of-theorems], ...</code></td>
+</tr>
+<tr class="odd">
+<td>In appendices 5, 6, …</td>
+<td><code>In [appendices @sec:app1; appendices @sec:app2]</code></td>
+</tr>
+</tbody>
+</table>
+<p>As the last line illustrates, you need to repeat the custom prefix to each
+entries that it applies to, even though in the output they will be grouped.</p>
+<p><strong>Style recommendations</strong>.</p>
+<p><em>Call subsections “sections” when referencing to them</em>. If you’re referencing a subsection, you should still call it “section” in the readable text: ``<code>cf. section [@sec:asubsectionid]</code>. A subsection is a section, and the terminology of “subsection” is clunky and technical.</p>
+<p><em>Avoid specifying a manual prefix</em> just to follow the author’s style. The
+default prefix is specified in the journal’s style template and should be
+preferred wherever possible. A manual prefix is only recommended for appendices
+(or any other section that is not a regular section of the paper).</p>
+<p><em>“In the last section”, “In the next section”, …</em>. What if the author
+references sections verbally, e.g.: “In the last section, we will summarize…”,
+or “The next section reviews …”? Two options, decide what fits best:</p>
+<ul>
+<li>make non-verbose: <code>In @sec:the-last-one, we...</code>,
+<code>@Sec:the-next-one reviews ...</code></li>
+<li>add cross-references in brackets:
+<code>In the last section ([@sec:the-last-one])</code>,
+<code>In the next section ([@sec:the-next-one]), ...</code>.</li>
+</ul>
+<p><strong>The following does not work with PDF output, so we do not use it</strong>. It is also
+possible to specify a custom label to replace the number. This can be combined
+with a custom identifier:</p>
+<table>
+<colgroup>
+<col width="37%" />
+<col width="62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>I want</th>
+<th>I type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>See appendix A…</p>
+<p><strong>12. Appendix A: Proofs</strong></p></td>
+<td><p><code>See [appendix @sec:appendix-a-proofs]...</code></p>
+<p><code># Appendix A: Proofs {label="A"}</code></p></td>
+</tr>
+<tr class="even">
+<td><p>See appendix A…</p>
+<p><strong>12. Appendix A: Proofs</strong></p></td>
+<td><p><code>See [appendix @sec:app1]...</code></p>
+<p><code># Appendix A: Proofs {label="A" #sec:app1}</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="cross-referencing-footnotes" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Cross-referencing footnotes</h2>
+<p>Cross-reference to footnotes has to be done manually. Don’t enter them before
+you know that the footnote numbers are final.</p>
+<p>The syntax is as follows:</p>
+<pre><code>This is the main text.[^footnote]
+
+[^footnote]: []{#my-best-footnote} On this difficult point I would like to add irrelevant remarks... .
+
+...
+As mentioned above in [footnote 1](#my-best-footnote), ...</code></pre>
+<ul>
+<li><p><code>[](#my-best-footnote)</code> creates a ‘target’ that can be linked to using the
+identifier <code>#my-best-footnote</code> . Plate that target at the beginning of the
+footnote.</p></li>
+<li><p>Later in the text we refer to it by turning the text “footnote 1” into a
+link to that identifier: <code>[footnote 1](#my-best-footnote)</code> .</p></li>
+</ul>
+<p>The link works in both html and LaTeX. But the “footnote 1” has to be entered
+manually, so you need to know the correct number for the footnote.</p>
+</div>
+<div id="cross-referencing-list-items" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> Cross-referencing list items</h2>
+<p>You have a numbered list and you want to cross-reference one of its items:</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>first item</li>
+<li><span id="cross-referenced-item"></span>section item</li>
+<li>third item.</li>
+</ol>
+<p>My favour item is (<a href="#cross-reference-item">2</a>), what’s yours?</p>
+</blockquote>
+<p>The solution is as with footnotes: you have to put an invisible link target
+in the item and you have to create a link to it. The number is manually
+entered in the link, not automatic, so you have to make sure you know
+which number it is.</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb144-1"><a href="cross-referencing.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>first item</span>
+<span id="cb144-2"><a href="cross-referencing.html#cb144-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>[]{#myidentifier} section item</span>
+<span id="cb144-3"><a href="cross-referencing.html#cb144-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>third item.</span>
+<span id="cb144-4"><a href="cross-referencing.html#cb144-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb144-5"><a href="cross-referencing.html#cb144-5" aria-hidden="true" tabindex="-1"></a>My favour item is (<span class="co">[</span><span class="ot">2</span><span class="co">](#myidentifier)</span>), what&#39;s yours?</span></code></pre></div>
+<p>Note the difference between the target, where the identifier is in curly braces,
+and the link, where the identifier is in parentheses:</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb145-1"><a href="cross-referencing.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="an">target:</span><span class="co"> []{#myidentifier}</span></span>
+<span id="cb145-2"><a href="cross-referencing.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="an">link:</span><span class="co"> [2](#myidentifier)</span></span></code></pre></div>
+</div>
+<div id="internal-links" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Internal links</h2>
+<p>If you want a part of the text to link to another, say have a statement labelled
+“C1” and later parts referring to it as “(C1)”, use internal link syntax. The
+general syntax is:</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb146-1"><a href="cross-referencing.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">text to be linked to</span><span class="co">]</span>{#unique-identifier}</span>
+<span id="cb146-2"><a href="cross-referencing.html#cb146-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb146-3"><a href="cross-referencing.html#cb146-3" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb146-4"><a href="cross-referencing.html#cb146-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb146-5"><a href="cross-referencing.html#cb146-5" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">text that will become a link</span><span class="co">](#unique-identifier)</span></span></code></pre></div>
+<p><strong>Common error</strong>: leaving spaces between <code>text</code> and <code>{\#identifier}</code>:</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>BAD</th>
+<th>GOOD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><code>[text linked to] {#identifier}</code></p>
+<p><code>[linking text] (#identifier)</code></p></td>
+<td><p><code>[text linked to]{#identifier}</code></p>
+<p><code>[linking text](#identifier)</code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb147-1"><a href="cross-referencing.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Claim 1</span><span class="co">]</span>{#my-claim}. Death is nothing to us.</span>
+<span id="cb147-2"><a href="cross-referencing.html#cb147-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-3"><a href="cross-referencing.html#cb147-3" aria-hidden="true" tabindex="-1"></a>(... article goes on ...)</span>
+<span id="cb147-4"><a href="cross-referencing.html#cb147-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-5"><a href="cross-referencing.html#cb147-5" aria-hidden="true" tabindex="-1"></a>As <span class="co">[</span><span class="ot">my earlier claim</span><span class="co">](#my-claim)</span> established, ... .</span></code></pre></div>
+<p>This outputs, in both HTML and LaTeX :</p>
+<blockquote>
+<p><span id="my-claim">Claim 1</span>. Death is nothing to us</p>
+<p>…</p>
+<p>As <a href="cross-referencing.html#my-claim">my earlier claim</a> established, …</p>
+</blockquote>
+<p>Don’t worry about whether the link is coloured and/or underlined: that is to be
+decided by the journal style.</p>
+<p>Note that <code>[text that will be linked]</code> to and <code>[text that will become a link]</code>
+are printed as is. If you wanted to change all labels to “Claim 2”, for
+instance, you need to change both the text linked to and the text that becomes a
+link.</p>
+<p>Targets (also known as “anchors”) and links to them typically need some
+formatting. For instance, we may want our claim label in bold and the link to it
+to be the label itself in parentheses:</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb148-1"><a href="cross-referencing.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**C1**</span><span class="co">]</span>{#my-new-claim}. Death is nothing to us.</span>
+<span id="cb148-2"><a href="cross-referencing.html#cb148-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-3"><a href="cross-referencing.html#cb148-3" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb148-4"><a href="cross-referencing.html#cb148-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-5"><a href="cross-referencing.html#cb148-5" aria-hidden="true" tabindex="-1"></a>As (<span class="co">[</span><span class="ot">C1</span><span class="co">](#my-new-claim)</span>) established, ... .</span></code></pre></div>
+<p>This outputs:</p>
+<p><span id="my-new-claim"><strong>C1</strong></span>. Death is nothing to us.</p>
+<p>…</p>
+<p>As (<a href="cross-referencing.html#my-new-claim">C1</a>) established, … .</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="block-elements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="citations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

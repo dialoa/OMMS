@@ -649,18 +649,23 @@ for <code>make off2</code>, <code>make off3</code> etc.</li>
 <li><code>make bare</code> empty issue (cover, backmatter) (for design purposes).
 Also <code>make baretex</code> for the LaTeX version.</li>
 </ul>
-<p>By default offprint outputs are named <code>offprint1.pdf</code>, <code>offprint2.pdf</code>
+<p>By default the issue output is name <code>issue.pdf</code>
+and offprint outputs are named <code>offprint1.pdf</code>, <code>offprint2.pdf</code>
 etc (and similarly for LaTeX outputs). If you want them to
-be named after the source files names instead, generate a custom
-Makefile (see below).</p>
+be named after the doi and source files names instead,
+generate a custom Makefile (see below).</p>
 <p><strong>Generate a custom Makefile (optional)</strong>. Open a terminal and
 navigate to the issue folder. Enter the following command
-(where <code>VVV</code> is replaced by the template’s latest version
-number, e.g. <code>1.1</code>):</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="generate-outputs.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-L</span> ../../template/VVV/filters/makemakefile.lua master.md <span class="at">-t</span> plain <span class="at">-o</span> Makefile</span></code></pre></div>
+(where <code>1.1</code> is replaced by the template’s latest version
+number):</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="generate-outputs.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-L</span> ../../template/1.1/filters/makemakefile.lua master.md <span class="at">-t</span> plain <span class="at">-o</span> Makefile</span></code></pre></div>
 <p>This will generate a <code>Makefile</code> with the same commands (<code>off1</code>,
 <code>off1tex</code>) but whose offprint outputs will take the name of the
-respective sources (<code>djordjevic.pdf</code>, etc).</p>
+respective sources (<code>djordjevic.pdf</code>, etc). The issue output
+will be named after the doi if one is specified, e.g.
+<code>dial.v74.i1.pdf</code>.</p>
+<p><em>Warning</em>. The custom <code>Makefile</code> must be regenerated each time a
+source’s path or filename is changed or the issue doi modified.</p>
 </div>
 </div>
 <div id="troubleshooting-outputs" class="section level2" number="5.2">

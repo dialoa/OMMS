@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Preliminaries | The Open Manual of Markdown Style</title>
+  <title>Chapter 22 Title and subtitle | The Open Manual of Markdown Style</title>
   <meta name="description" content="An open access, open source manual of style" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Preliminaries | The Open Manual of Markdown Style" />
+  <meta property="og:title" content="Chapter 22 Title and subtitle | The Open Manual of Markdown Style" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="jdutant/dialectica-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Preliminaries | The Open Manual of Markdown Style" />
+  <meta name="twitter:title" content="Chapter 22 Title and subtitle | The Open Manual of Markdown Style" />
   
   <meta name="twitter:description" content="An open access, open source manual of style" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="what-to-ask-authors.html"/>
-<link rel="next" href="generate-outputs.html"/>
+<link rel="prev" href="further-resources.html"/>
+<link rel="next" href="interface-with-dialecticas-main-bibliography-1.html"/>
 <script src="libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -416,117 +416,54 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="preliminaries" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Preliminaries<a href="preliminaries.html#preliminaries" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter explains what you need to set up a markdown
-production chain.</p>
-<div id="what-you-need" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> What you need<a href="preliminaries.html#what-you-need" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="skills" class="section level3 hasAnchor" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Skills<a href="preliminaries.html#skills" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>Use a text editor (RStudio will do).</p></li>
-<li><p>Optionally, how to use the command line interface.<a href="references.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> The very basics
-are enough: navigate to a directory, run a command.</p></li>
-</ul>
-</div>
-<div id="software" class="section level3 hasAnchor" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Software<a href="preliminaries.html#software" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>All the software needed is free.</p>
-<ul>
-<li>Pandoc (converts tex files to Markdown files).
-<a href="https://pandoc.org/installing.html">Installations instructions here</a>.
-<ul>
-<li>MacOS users: optionally, install using <a href="https://brew.sh/">homebrew</a>, a
-command-line tool that can be used to install almost anything, esp. open-source
-tools (e.g. LaTeX), and more importantly to keep them all updated.</li>
-</ul></li>
-<li>RStudio (visual Markdown editor where the papers will be edited).<br />
-<a href="https://rstudio.github.io/visual-markdown-editing/#/">Download RStudio 1.4 beta’s latest version</a>.</li>
-<li>a LaTeX installation. RStudio installs one if needed, or you may already have
-one installed if you use LaTeX already. To check whether you have it installed,
-after you’ve installed <code>pandoc</code> you can run <code>pandoc \--version</code> on the command
-line and it will tell you whether TeX is installed.</li>
-</ul>
-</div>
-</div>
-<div id="working-folder" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Working folder<a href="preliminaries.html#working-folder" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Create a working folder for your journal. This may be shared between copyeditors if you’re a team.</p>
-<p>Suggested folder structure:</p>
-<ul>
-<li><code>archive/</code>
-<ul>
-<li><code>vol-12/</code>
-<ul>
-<li><code>issue-01/</code>
-<ul>
-<li><code>smith-et-al/</code></li>
-<li><code>singh/</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><code>originals</code>
-<ul>
-<li><code>vol-13/</code>
-<ul>
-<li><code>issue-02/</code>
-<ul>
-<li><code>doe/</code></li>
-<li><code>fernandez/</code></li>
-</ul></li>
-<li><code>issue-03</code>
-<ul>
-<li><code>wang-li/</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><code>processing</code>
-<ul>
-<li><code>vol-13/</code>
-<ul>
-<li><code>issue-02/</code>
-<ul>
-<li><code>doe/</code></li>
-<li><code>fernandez/</code></li>
-</ul></li>
-<li><code>issue-03</code>
-<ul>
-<li><code>wang-li/</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><code>finished</code>
-<ul>
-<li><code>vol-12/</code>
-<ul>
-<li><code>issue-01/</code>
-<ul>
-<li><code>smith-et-al/</code></li>
-<li><code>singh/</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><code>resources</code></li>
-</ul>
-<p>Each article has its own folder, e.g. <code>vol-13/issue-02/doe</code>. These structures folders are moved or copied across different top folders:</p>
-<ul>
-<li><code>originals</code> contains the author’s submitted files.</li>
-<li><code>processing</code> the files you’re currently copyediting. If collaborating, treat each article folder here as the workspace of that article’s copyeditor: they can use it as they see fit, creating multiple versions, running tests and so on.</li>
-<li><code>finished</code> contains the copyeditor’s finished products.</li>
-<li><code>archive</code> can be used to archive the processing files, if needed.</li>
-<li><code>resources</code> stores templates, configuration files, fonts, etc.</li>
-</ul>
+<div id="title-and-subtitle" class="section level1 hasAnchor" number="22">
+<h1><span class="header-section-number">Chapter 22</span> Title and subtitle<a href="title-and-subtitle.html#title-and-subtitle" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Here are the fields used to format titles and subtitles:</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb176-1"><a href="title-and-subtitle.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Plain title here</span></span>
+<span id="cb176-2"><a href="title-and-subtitle.html#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> Plain subtitle here</span></span>
+<span id="cb176-3"><a href="title-and-subtitle.html#cb176-3" aria-hidden="true" tabindex="-1"></a><span class="fu">shorttitle</span><span class="kw">:</span><span class="at"> Shorter subtitle for page headers</span></span>
+<span id="cb176-4"><a href="title-and-subtitle.html#cb176-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title-latex</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb176-5"><a href="title-and-subtitle.html#cb176-5" aria-hidden="true" tabindex="-1"></a>  Title for the first page title \</span>
+<span id="cb176-6"><a href="title-and-subtitle.html#cb176-6" aria-hidden="true" tabindex="-1"></a>  with possibly some linebreaks</span>
+<span id="cb176-7"><a href="title-and-subtitle.html#cb176-7" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle-latex</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb176-8"><a href="title-and-subtitle.html#cb176-8" aria-hidden="true" tabindex="-1"></a>  Title for the first page title \</span>
+<span id="cb176-9"><a href="title-and-subtitle.html#cb176-9" aria-hidden="true" tabindex="-1"></a>  with possibly some linebreaks</span>
+<span id="cb176-10"><a href="title-and-subtitle.html#cb176-10" aria-hidden="true" tabindex="-1"></a><span class="fu">title-cover</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb176-11"><a href="title-and-subtitle.html#cb176-11" aria-hidden="true" tabindex="-1"></a>  Title for the offprint cover \</span>
+<span id="cb176-12"><a href="title-and-subtitle.html#cb176-12" aria-hidden="true" tabindex="-1"></a>  with possibly some \</span>
+<span id="cb176-13"><a href="title-and-subtitle.html#cb176-13" aria-hidden="true" tabindex="-1"></a>  linebreaks</span>
+<span id="cb176-14"><a href="title-and-subtitle.html#cb176-14" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle-cover</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb176-15"><a href="title-and-subtitle.html#cb176-15" aria-hidden="true" tabindex="-1"></a>  Subtitle for the cover</span>
+<span id="cb176-16"><a href="title-and-subtitle.html#cb176-16" aria-hidden="true" tabindex="-1"></a><span class="fu">title-cover-size</span><span class="kw">:</span><span class="at"> \huge</span></span>
+<span id="cb176-17"><a href="title-and-subtitle.html#cb176-17" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle-cover-size</span><span class="kw">:</span><span class="at"> \Large</span></span></code></pre></div>
+<p>All fields except <code>title</code> are optional. <code>shorttitle</code> is used for page headers
+and the table of contents. <code>title-latex</code> and <code>subtitle-latex</code> are used for
+the title on the first page and <code>title-cover</code> and <code>subtitle-cover</code> are used
+for the offprint cover; they may include linebreaks as shown above.
+If <code>title-latex</code> is provided but <code>title-cover</code> is not, the former is used for
+the cover too.</p>
+<p>The offprint cover sizes are controlled by<code>title-cover-size</code>and
+<code>subtitle-cover-size</code>. Defaults is <code>\Huge</code> for titles of 30 chars or less, <code>\huge</code>
+for longer titles, and <code>\LARGE</code> for subtitles.</p>
+<p>There is no control of the first page title and subtitle font sizes.</p>
+<p><em>Technical note</em>. These fields can be placed in the source file (preferred) or
+in the <code>imports</code> list of the masterfile. If placed in the source file,
+the <code>master.md</code> must gather these from the source:</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb177-1"><a href="title-and-subtitle.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">offprints</span><span class="kw">:</span></span>
+<span id="cb177-2"><a href="title-and-subtitle.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="at">  ...</span></span>
+<span id="cb177-3"><a href="title-and-subtitle.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">gather</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">header-includes</span><span class="kw">,</span><span class="at"> title</span><span class="kw">,</span><span class="at"> subtitle</span><span class="kw">,</span><span class="at"> author</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;title-latex&#39;</span><span class="kw">,</span></span>
+<span id="cb177-4"><a href="title-and-subtitle.html#cb177-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="st">&#39;subtitle-latex&#39;</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;title-cover&#39;</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;subtitle-cover&#39;</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;title-cover-size&#39;</span><span class="kw">,</span></span>
+<span id="cb177-5"><a href="title-and-subtitle.html#cb177-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="st">&#39;subtitle-cover-size&#39;</span><span class="kw">]</span></span>
+<span id="cb177-6"><a href="title-and-subtitle.html#cb177-6" aria-hidden="true" tabindex="-1"></a><span class="at">  ...</span></span></code></pre></div>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="what-to-ask-authors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="generate-outputs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="further-resources.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="interface-with-dialecticas-main-bibliography-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

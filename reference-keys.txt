@@ -10,6 +10,7 @@ structure
 new-files-filenames
 introduction
 preparing-a-ms-word-manuscript
+what-to-ask-authors
 preliminaries
 what-you-need
 skills
@@ -42,9 +43,10 @@ watch-out-for-special-characters
 rstudio-visual-markdown-editor-source-vs-visual-mode
 metadata
 title-and-other-one-line-fields
-title-with-linebreaks-for-latexpdf-output
-subtitle
+additional-title-fields
 short-title
+linebreaks-in-a-title
+subtitle
 authors-information
 author-in-page-header-and-table-of-contents
 abstract-and-thanks
@@ -137,6 +139,7 @@ word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols.
 reverse-conversion-.md---.tex
 if-pdf-generation-doesnt-work
 missing-character
+yaml-parse-exepction
 list-of-things-that-cause-trouble
 visual-editor-rstudio
 pandoc
@@ -145,6 +148,8 @@ markdown-cheatsheet
 inline-elements-1
 block-elements-1
 citations-1
+copyeditors-checklist
+steps-copyediting-step-by-step
 why-publish-a-journal-in-markdown
 why-use-a-markdown-workflow
 ms-word---google-docs-workflow
@@ -155,15 +160,13 @@ the-structure-of-a-book
 the-structure-of-a-journal
 non-english-conventions
 français
-resources
+further-resources
 style-and-copyediting-manuals
 in-english
 in-french
 interface-with-dialecticas-main-bibliography
+title-and-subtitle
 interface-with-dialecticas-main-bibliography-1
 removed-parts-of-the-guide
 old-style-guidelines
 get-or-create-a-bibtex-file-for-the-references-in-your-article
-copyeditors-checklist
-steps-copyediting-step-by-step
-what-to-ask-authors

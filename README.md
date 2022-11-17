@@ -4,7 +4,7 @@ An open access manual of markdown style for academic publishing. Developed by th
 team](https://dialectica.philosophie.ch), and
 [philosophie.ch](https://www.philosophie.ch/ueberuns/das-team). 
 
-See the [manual webpages here](https://jdutant.github.io/open-manual-of-markdown-style/). 
+See the [manual webpages here](https://dialoa.github.io/open-manual-of-markdown-style/). 
 The manual's source (in markdown and using [bookdown](https://bookdown.org)) will be made 
 open in the future.
 

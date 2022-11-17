@@ -1,7 +1,6 @@
 # Open Manual of Markdown Style
 
-An open access manual of markdown style for academic publishing. Developed by the Julien Dutant, the [Dialectica Open Access Publishing 
-team](https://dialectica.philosophie.ch), and
+An open access manual of markdown style for academic publishing. Developed by the [Dialoa](https://github.com/dialo) team and
 [philosophie.ch](https://www.philosophie.ch/ueberuns/das-team). 
 
 See the [manual webpages here](https://dialoa.github.io/open-manual-of-markdown-style/). 

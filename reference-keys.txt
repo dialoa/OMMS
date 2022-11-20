@@ -151,13 +151,14 @@ comments-and-tracking-changes
 comments-to-fellow-copyeditors
 revisions-and-comments-for-the-author
 trouble-and-troubleshooting
+if-pdf-generation-doesnt-work
 word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols.
 reverse-conversion-.md---.tex
 file-not-found-in-resource-path
-if-pdf-generation-doesnt-work
 missing-character
 yaml-parse-exepction
-list-of-things-that-cause-trouble
+attempt-to-compare-nil-with-number
+a-list-of-things-that-cause-trouble
 visual-editor-rstudio
 pandoc
 latex

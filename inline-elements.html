@@ -12,7 +12,7 @@
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An open access, open source manual of style" />
-  <meta name="github-repo" content="jdutant/dialectica-guide" />
+  <meta name="github-repo" content="dialoa/dialectica-guide" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 9 Inline elements | The Open Manual of Markdown Style" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Julien Dutant and the dialectica team" />
 
 
-<meta name="date" content="2022-11-20" />
+<meta name="date" content="2023-02-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -233,6 +233,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="inline-elements.html"><a href="inline-elements.html#punctuation-and-brackets"><i class="fa fa-check"></i><b>9.1.1</b> Punctuation and brackets:</a></li>
 <li class="chapter" data-level="9.1.2" data-path="inline-elements.html"><a href="inline-elements.html#punctuation-and-quotation-marks"><i class="fa fa-check"></i><b>9.1.2</b> Punctuation and quotation marks</a></li>
+<li class="chapter" data-level="9.1.3" data-path="inline-elements.html"><a href="inline-elements.html#quotes-with-quotes"><i class="fa fa-check"></i><b>9.1.3</b> Quotes with quotes</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="inline-elements.html"><a href="inline-elements.html#emphasis-and-bold"><i class="fa fa-check"></i><b>9.2</b> Emphasis and bold</a></li>
 <li class="chapter" data-level="9.3" data-path="inline-elements.html"><a href="inline-elements.html#subscripts-and-superscripts"><i class="fa fa-check"></i><b>9.3</b> Subscripts and superscripts</a></li>
@@ -240,7 +241,11 @@ div.csl-indent {
 <li class="chapter" data-level="9.5" data-path="inline-elements.html"><a href="inline-elements.html#quotations"><i class="fa fa-check"></i><b>9.5</b> Quotations</a></li>
 <li class="chapter" data-level="9.6" data-path="inline-elements.html"><a href="inline-elements.html#cop-inlines-elements-symbols"><i class="fa fa-check"></i><b>9.6</b> Special symbols</a></li>
 <li class="chapter" data-level="9.7" data-path="inline-elements.html"><a href="inline-elements.html#math-and-logic-conventions"><i class="fa fa-check"></i><b>9.7</b> Math and logic conventions</a></li>
-<li class="chapter" data-level="9.8" data-path="inline-elements.html"><a href="inline-elements.html#formulas"><i class="fa fa-check"></i><b>9.8</b> Formulas</a></li>
+<li class="chapter" data-level="9.8" data-path="inline-elements.html"><a href="inline-elements.html#formulas"><i class="fa fa-check"></i><b>9.8</b> Formulas</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="inline-elements.html"><a href="inline-elements.html#basics"><i class="fa fa-check"></i><b>9.8.1</b> Basics</a></li>
+<li class="chapter" data-level="9.8.2" data-path="inline-elements.html"><a href="inline-elements.html#good-practices"><i class="fa fa-check"></i><b>9.8.2</b> Good practices</a></li>
+</ul></li>
 <li class="chapter" data-level="9.9" data-path="inline-elements.html"><a href="inline-elements.html#schematic-letters-in-the-text"><i class="fa fa-check"></i><b>9.9</b> Schematic letters in the text</a></li>
 <li class="chapter" data-level="9.10" data-path="inline-elements.html"><a href="inline-elements.html#split-fractions"><i class="fa fa-check"></i><b>9.10</b> Split fractions</a></li>
 <li class="chapter" data-level="9.11" data-path="inline-elements.html"><a href="inline-elements.html#acronyms"><i class="fa fa-check"></i><b>9.11</b> Acronyms</a></li>
@@ -274,29 +279,40 @@ div.csl-indent {
 <li class="chapter" data-level="10.7.3" data-path="block-elements.html"><a href="block-elements.html#if-markdown-cant-handle-a-table"><i class="fa fa-check"></i><b>10.7.3</b> If markdown can’t handle a table</a></li>
 <li class="chapter" data-level="10.7.4" data-path="block-elements.html"><a href="block-elements.html#table-aptions"><i class="fa fa-check"></i><b>10.7.4</b> Table aptions</a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path="block-elements.html"><a href="block-elements.html#equations"><i class="fa fa-check"></i><b>10.8</b> Equations</a></li>
-<li class="chapter" data-level="10.9" data-path="block-elements.html"><a href="block-elements.html#figures-images-diagrams-graphs"><i class="fa fa-check"></i><b>10.9</b> Figures (images, diagrams, graphs)</a>
+<li class="chapter" data-level="10.8" data-path="block-elements.html"><a href="block-elements.html#figures-images-diagrams-graphs"><i class="fa fa-check"></i><b>10.8</b> Figures (images, diagrams, graphs)</a>
 <ul>
-<li class="chapter" data-level="10.9.1" data-path="block-elements.html"><a href="block-elements.html#prefer-vector-formats-for-figures"><i class="fa fa-check"></i><b>10.9.1</b> Prefer vector formats for figures</a></li>
-<li class="chapter" data-level="10.9.2" data-path="block-elements.html"><a href="block-elements.html#background-on-vector-vs-bitmap-formats"><i class="fa fa-check"></i><b>10.9.2</b> Background on vector vs bitmap formats</a></li>
-<li class="chapter" data-level="10.9.3" data-path="block-elements.html"><a href="block-elements.html#how-to-create-a-vector-image"><i class="fa fa-check"></i><b>10.9.3</b> How to create a vector image?</a></li>
-<li class="chapter" data-level="10.9.4" data-path="block-elements.html"><a href="block-elements.html#figures-with-letters-or-text"><i class="fa fa-check"></i><b>10.9.4</b> Figures with letters or text</a></li>
-<li class="chapter" data-level="10.9.5" data-path="block-elements.html"><a href="block-elements.html#resizing-svg-files"><i class="fa fa-check"></i><b>10.9.5</b> Resizing SVG files</a></li>
-<li class="chapter" data-level="10.9.6" data-path="block-elements.html"><a href="block-elements.html#including-svg-image-files-in-markdown"><i class="fa fa-check"></i><b>10.9.6</b> Including SVG image files in markdown</a></li>
+<li class="chapter" data-level="10.8.1" data-path="block-elements.html"><a href="block-elements.html#prefer-vector-formats-for-figures"><i class="fa fa-check"></i><b>10.8.1</b> Prefer vector formats for figures</a></li>
+<li class="chapter" data-level="10.8.2" data-path="block-elements.html"><a href="block-elements.html#background-on-vector-vs-bitmap-formats"><i class="fa fa-check"></i><b>10.8.2</b> Background on vector vs bitmap formats</a></li>
+<li class="chapter" data-level="10.8.3" data-path="block-elements.html"><a href="block-elements.html#how-to-create-a-vector-image"><i class="fa fa-check"></i><b>10.8.3</b> How to create a vector image?</a></li>
+<li class="chapter" data-level="10.8.4" data-path="block-elements.html"><a href="block-elements.html#figures-with-letters-or-text"><i class="fa fa-check"></i><b>10.8.4</b> Figures with letters or text</a></li>
+<li class="chapter" data-level="10.8.5" data-path="block-elements.html"><a href="block-elements.html#resizing-svg-files"><i class="fa fa-check"></i><b>10.8.5</b> Resizing SVG files</a></li>
+<li class="chapter" data-level="10.8.6" data-path="block-elements.html"><a href="block-elements.html#including-svg-image-files-in-markdown"><i class="fa fa-check"></i><b>10.8.6</b> Including SVG image files in markdown</a></li>
 </ul></li>
-<li class="chapter" data-level="10.10" data-path="block-elements.html"><a href="block-elements.html#theorems-and-proofs"><i class="fa fa-check"></i><b>10.10</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="10.11" data-path="block-elements.html"><a href="block-elements.html#statements-and-indented-blocks"><i class="fa fa-check"></i><b>10.11</b> Statements and indented blocks</a>
+<li class="chapter" data-level="10.9" data-path="block-elements.html"><a href="block-elements.html#equations"><i class="fa fa-check"></i><b>10.9</b> Equations</a>
 <ul>
-<li class="chapter" data-level="10.11.1" data-path="block-elements.html"><a href="block-elements.html#statement-titles"><i class="fa fa-check"></i><b>10.11.1</b> Statement titles</a></li>
-<li class="chapter" data-level="10.11.2" data-path="block-elements.html"><a href="block-elements.html#statement-acronyms"><i class="fa fa-check"></i><b>10.11.2</b> Statement acronyms</a></li>
-<li class="chapter" data-level="10.11.3" data-path="block-elements.html"><a href="block-elements.html#statement-info"><i class="fa fa-check"></i><b>10.11.3</b> Statement info</a></li>
-<li class="chapter" data-level="10.11.4" data-path="block-elements.html"><a href="block-elements.html#statement-custom-ids"><i class="fa fa-check"></i><b>10.11.4</b> Statement custom IDs</a></li>
-<li class="chapter" data-level="10.11.5" data-path="block-elements.html"><a href="block-elements.html#statement-within-a-numbered-example-list"><i class="fa fa-check"></i><b>10.11.5</b> Statement within a numbered example list</a></li>
-<li class="chapter" data-level="10.11.6" data-path="block-elements.html"><a href="block-elements.html#crossreferencing-statements"><i class="fa fa-check"></i><b>10.11.6</b> Crossreferencing statements</a></li>
+<li class="chapter" data-level="10.9.1" data-path="block-elements.html"><a href="block-elements.html#numbered-equations"><i class="fa fa-check"></i><b>10.9.1</b> Numbered equations</a></li>
 </ul></li>
-<li class="chapter" data-level="10.12" data-path="block-elements.html"><a href="block-elements.html#arguments"><i class="fa fa-check"></i><b>10.12</b> Arguments</a></li>
-<li class="chapter" data-level="10.13" data-path="block-elements.html"><a href="block-elements.html#multiple-columns"><i class="fa fa-check"></i><b>10.13</b> Multiple columns</a></li>
-<li class="chapter" data-level="10.14" data-path="block-elements.html"><a href="block-elements.html#raw-code-if-all-else-fails"><i class="fa fa-check"></i><b>10.14</b> Raw code if all else fails</a></li>
+<li class="chapter" data-level="10.10" data-path="block-elements.html"><a href="block-elements.html#theorems-and-proofs"><i class="fa fa-check"></i><b>10.10</b> Theorems and proofs</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="block-elements.html"><a href="block-elements.html#statements-in-footnotes"><i class="fa fa-check"></i><b>10.10.1</b> Statements in footnotes</a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="block-elements.html"><a href="block-elements.html#natural-deduction-proofs-with-bussproofs"><i class="fa fa-check"></i><b>10.11</b> Natural deduction proofs with <code>bussproofs</code></a>
+<ul>
+<li class="chapter" data-level="10.11.1" data-path="block-elements.html"><a href="block-elements.html#inline-bussproofs"><i class="fa fa-check"></i><b>10.11.1</b> Inline bussproofs</a></li>
+<li class="chapter" data-level="10.11.2" data-path="block-elements.html"><a href="block-elements.html#prooftree-environments"><i class="fa fa-check"></i><b>10.11.2</b> Prooftree environments</a></li>
+</ul></li>
+<li class="chapter" data-level="10.12" data-path="block-elements.html"><a href="block-elements.html#statements-and-indented-blocks"><i class="fa fa-check"></i><b>10.12</b> Statements and indented blocks</a>
+<ul>
+<li class="chapter" data-level="10.12.1" data-path="block-elements.html"><a href="block-elements.html#statement-titles"><i class="fa fa-check"></i><b>10.12.1</b> Statement titles</a></li>
+<li class="chapter" data-level="10.12.2" data-path="block-elements.html"><a href="block-elements.html#statement-acronyms"><i class="fa fa-check"></i><b>10.12.2</b> Statement acronyms</a></li>
+<li class="chapter" data-level="10.12.3" data-path="block-elements.html"><a href="block-elements.html#statement-info"><i class="fa fa-check"></i><b>10.12.3</b> Statement info</a></li>
+<li class="chapter" data-level="10.12.4" data-path="block-elements.html"><a href="block-elements.html#statement-custom-ids"><i class="fa fa-check"></i><b>10.12.4</b> Statement custom IDs</a></li>
+<li class="chapter" data-level="10.12.5" data-path="block-elements.html"><a href="block-elements.html#statement-within-a-numbered-example-list"><i class="fa fa-check"></i><b>10.12.5</b> Statement within a numbered example list</a></li>
+<li class="chapter" data-level="10.12.6" data-path="block-elements.html"><a href="block-elements.html#crossreferencing-statements"><i class="fa fa-check"></i><b>10.12.6</b> Crossreferencing statements</a></li>
+</ul></li>
+<li class="chapter" data-level="10.13" data-path="block-elements.html"><a href="block-elements.html#arguments"><i class="fa fa-check"></i><b>10.13</b> Arguments</a></li>
+<li class="chapter" data-level="10.14" data-path="block-elements.html"><a href="block-elements.html#multiple-columns"><i class="fa fa-check"></i><b>10.14</b> Multiple columns</a></li>
+<li class="chapter" data-level="10.15" data-path="block-elements.html"><a href="block-elements.html#raw-code-if-all-else-fails"><i class="fa fa-check"></i><b>10.15</b> Raw code if all else fails</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="cross-referencing.html"><a href="cross-referencing.html"><i class="fa fa-check"></i><b>11</b> Cross-referencing</a>
 <ul>
@@ -310,6 +326,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.1" data-path="citations.html"><a href="citations.html#encoding-citations"><i class="fa fa-check"></i><b>12.1</b> Encoding citations</a>
 <ul>
 <li class="chapter" data-level="12.1.1" data-path="citations.html"><a href="citations.html#ibid.-op.-cit.-sec.-or-and-the-like"><i class="fa fa-check"></i><b>12.1.1</b> Ibid., Op. Cit., sec. or § and the like</a></li>
+<li class="chapter" data-level="12.1.2" data-path="citations.html"><a href="citations.html#putting-a-citation-link-on-a-page-number-or-a-word"><i class="fa fa-check"></i><b>12.1.2</b> Putting a citation link on a page number, or a word</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="citations.html"><a href="citations.html#examples-with-preferred-answers"><i class="fa fa-check"></i><b>12.2</b> Examples with preferred answers</a>
 <ul>
@@ -331,11 +348,12 @@ div.csl-indent {
 <li class="chapter" data-level="13.5" data-path="bibliography-1.html"><a href="bibliography-1.html#formatting-citations-in-the-text"><i class="fa fa-check"></i><b>13.5</b> Formatting citations in the text</a></li>
 <li class="chapter" data-level="13.6" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-file-guidelines"><i class="fa fa-check"></i><b>13.6</b> BibTeX file guidelines</a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="bibliography-1.html"><a href="bibliography-1.html#how-to-correct-the-file"><i class="fa fa-check"></i><b>13.6.1</b> How to correct the file</a></li>
-<li class="chapter" data-level="13.6.2" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-field-names-arent-case-sensitive"><i class="fa fa-check"></i><b>13.6.2</b> BibTeX field names aren’t case-sensitive</a></li>
-<li class="chapter" data-level="13.6.3" data-path="bibliography-1.html"><a href="bibliography-1.html#title-capitalization"><i class="fa fa-check"></i><b>13.6.3</b> Title capitalization</a></li>
-<li class="chapter" data-level="13.6.4" data-path="bibliography-1.html"><a href="bibliography-1.html#original-year-of-publication"><i class="fa fa-check"></i><b>13.6.4</b> Original year of publication</a></li>
-<li class="chapter" data-level="13.6.5" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-conventions-and-resources"><i class="fa fa-check"></i><b>13.6.5</b> BibTeX conventions and resources</a></li>
+<li class="chapter" data-level="13.6.1" data-path="bibliography-1.html"><a href="bibliography-1.html#edit-bibtex-files"><i class="fa fa-check"></i><b>13.6.1</b> Edit BibTeX files</a></li>
+<li class="chapter" data-level="13.6.2" data-path="bibliography-1.html"><a href="bibliography-1.html#check-bibtex-file-formatting"><i class="fa fa-check"></i><b>13.6.2</b> Check BibTeX file formatting</a></li>
+<li class="chapter" data-level="13.6.3" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-field-names-arent-case-sensitive"><i class="fa fa-check"></i><b>13.6.3</b> BibTeX field names aren’t case-sensitive</a></li>
+<li class="chapter" data-level="13.6.4" data-path="bibliography-1.html"><a href="bibliography-1.html#title-capitalization"><i class="fa fa-check"></i><b>13.6.4</b> Title capitalization</a></li>
+<li class="chapter" data-level="13.6.5" data-path="bibliography-1.html"><a href="bibliography-1.html#original-year-of-publication"><i class="fa fa-check"></i><b>13.6.5</b> Original year of publication</a></li>
+<li class="chapter" data-level="13.6.6" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-conventions-and-resources"><i class="fa fa-check"></i><b>13.6.6</b> BibTeX conventions and resources</a></li>
 </ul></li>
 <li class="chapter" data-level="13.7" data-path="bibliography-1.html"><a href="bibliography-1.html#bibtex-file-special-entry-types"><i class="fa fa-check"></i><b>13.7</b> BibTeX file special entry types</a>
 <ul>
@@ -343,8 +361,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="13.8" data-path="bibliography-1.html"><a href="bibliography-1.html#troubleshooting-and-examples"><i class="fa fa-check"></i><b>13.8</b> Troubleshooting and examples</a>
 <ul>
-<li class="chapter" data-level="13.8.1" data-path="bibliography-1.html"><a href="bibliography-1.html#error-message-citet-unknown-command"><i class="fa fa-check"></i><b>13.8.1</b> Error message: <code>\citet</code> unknown command</a></li>
-<li class="chapter" data-level="13.8.2" data-path="bibliography-1.html"><a href="bibliography-1.html#from-frege-to-gödel"><i class="fa fa-check"></i><b>13.8.2</b> From Frege to gödel</a></li>
+<li class="chapter" data-level="13.8.1" data-path="bibliography-1.html"><a href="bibliography-1.html#error-message-unexpected-end-of-file"><i class="fa fa-check"></i><b>13.8.1</b> Error message: Unexpected end of file</a></li>
+<li class="chapter" data-level="13.8.2" data-path="bibliography-1.html"><a href="bibliography-1.html#percent-signs-in-doi-field"><i class="fa fa-check"></i><b>13.8.2</b> Percent signs in DOI field</a></li>
+<li class="chapter" data-level="13.8.3" data-path="bibliography-1.html"><a href="bibliography-1.html#error-message-citet-unknown-command"><i class="fa fa-check"></i><b>13.8.3</b> Error message: <code>\citet</code> unknown command</a></li>
+<li class="chapter" data-level="13.8.4" data-path="bibliography-1.html"><a href="bibliography-1.html#from-frege-to-gödel"><i class="fa fa-check"></i><b>13.8.4</b> From Frege to gödel</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="comments-and-tracking-changes.html"><a href="comments-and-tracking-changes.html"><i class="fa fa-check"></i><b>14</b> Comments and tracking changes</a>
@@ -467,13 +487,13 @@ put together into <em>blocks</em>.</p>
 <h3><span class="header-section-number">9.1.2</span> Punctuation and quotation marks<a href="inline-elements.html#punctuation-and-quotation-marks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are two traditions, the traditional British and the US/modern British. (TO BE DETAILED)</p>
 <p><em>Note</em>. Pandoc’s Citeproc filter will apply the US convention, even in the main text. For instance it will convert the following markdown:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb66-1"><a href="inline-elements.html#cb66-1" aria-hidden="true" tabindex="-1"></a>She never said the word &#39;traitor&#39;.</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb66-1"><a href="inline-elements.html#cb66-1" tabindex="-1"></a>She never said the word &#39;traitor&#39;.</span></code></pre></div>
 <p>to</p>
 <blockquote>
 <p>She never said the word ‘traitor.’</p>
 </blockquote>
 <p>This can be avoided globally by setting the document’s language to <code>en-GB</code>. It can be avoided on a case-by-case basis by using a “zero-width joiner” characters, markdown code <code>&amp;zmj;</code>:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb67-1"><a href="inline-elements.html#cb67-1" aria-hidden="true" tabindex="-1"></a>She never said the word &#39;traitor&#39;<span class="dv">&amp;zmj;</span>.</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb67-1"><a href="inline-elements.html#cb67-1" tabindex="-1"></a>She never said the word &#39;traitor&#39;<span class="dv">&amp;zmj;</span>.</span></code></pre></div>
 <blockquote>
 <p>She never said the word ‘traitor’&amp;zmj;.</p>
 </blockquote>
@@ -482,15 +502,36 @@ put together into <em>blocks</em>.</p>
 <p><em>Dialectica</em> adopts the US/Chicago convention, unless authors insist otherwise or the results are particularly problematic.</p>
 </div>
 </div>
+<div id="quotes-with-quotes" class="section level3 hasAnchor" number="9.1.3">
+<h3><span class="header-section-number">9.1.3</span> Quotes with quotes<a href="inline-elements.html#quotes-with-quotes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Good typographic practice requires using different quotation marks when
+embedding quotes within quotes. Examples:</p>
+<ul>
+<li>GOOD “This ‘word’ is quoted”.</li>
+<li>GOOD ‘This “word” is quoted’.</li>
+</ul>
+<p>If you try to put double quotes with double quotes, Pandoc doesn’t
+output them correctly.</p>
+<ul>
+<li>BAD <code>Consider "This "word" is quoted"...</code>: Consider “This”principle” is quoted”…</li>
+</ul>
+<p>It is best to impose the rule unless authors really need the same quotes.</p>
+<p>If they are really needed, you can use HTML entites name of the
+opening and closing quotes:</p>
+<ul>
+<li>GOOD: <code>"This &amp;ldquo;word&amp;rdquo; is quoted"</code>. “This “word” is quoted”</li>
+<li>GOOD: <code>'This &amp;lsquo;word&amp;rsquo; is quoted'</code>. ‘This ‘word’ is quoted’</li>
+</ul>
+</div>
 </div>
 <div id="emphasis-and-bold" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> Emphasis and bold<a href="inline-elements.html#emphasis-and-bold" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Emphasized text is marked with surrounding <em>asterisks</em> or <em>underscores</em>. Bold is marked with double asterisks or underscores, emphasized bold with three:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb68-1"><a href="inline-elements.html#cb68-1" aria-hidden="true" tabindex="-1"></a>This *word* and _that word_ are emphasized. </span>
-<span id="cb68-2"><a href="inline-elements.html#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-3"><a href="inline-elements.html#cb68-3" aria-hidden="true" tabindex="-1"></a>This **word** and __that word__ are strongly emphasized.</span>
-<span id="cb68-4"><a href="inline-elements.html#cb68-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-5"><a href="inline-elements.html#cb68-5" aria-hidden="true" tabindex="-1"></a>***This sentence is extra strongly emphasized.*** </span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb68-1"><a href="inline-elements.html#cb68-1" tabindex="-1"></a>This *word* and _that word_ are emphasized. </span>
+<span id="cb68-2"><a href="inline-elements.html#cb68-2" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="inline-elements.html#cb68-3" tabindex="-1"></a>This **word** and __that word__ are strongly emphasized.</span>
+<span id="cb68-4"><a href="inline-elements.html#cb68-4" tabindex="-1"></a></span>
+<span id="cb68-5"><a href="inline-elements.html#cb68-5" tabindex="-1"></a>***This sentence is extra strongly emphasized.*** </span></code></pre></div>
 <p>Emphasis is printed in <em>italics</em> when surrounded with normal text. <em>But when the surrounding text is itself in italics, this is the </em>opposite<em>.</em></p>
 <div class="house">
 <p><strong>Dialectica guidelines</strong></p>
@@ -561,13 +602,13 @@ code is then entered as follows.</p>
 <td>With <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p^2\)</span> the
 sub(/super)scripts are in
 formulas.</td>
-<td><div class="sourceCode" id="cb69"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb69-1"><a href="inline-elements.html#cb69-1" aria-hidden="true" tabindex="-1"></a>With $p_1$ and $p^2$ the...</span></code></pre></div></td>
+<td><div class="sourceCode" id="cb69"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb69-1"><a href="inline-elements.html#cb69-1" tabindex="-1"></a>With $p_1$ and $p^2$ the...</span></code></pre></div></td>
 </tr>
 <tr class="even">
 <td>With <span class="math inline">\(p_{12}\)</span> and <span class="math inline">\(p^{**}\)</span> the
 sub(/super)scripts are several
 characters long.</td>
-<td><div class="sourceCode" id="cb70"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb70-1"><a href="inline-elements.html#cb70-1" aria-hidden="true" tabindex="-1"></a>With $p_{12}$ and $p^{xy}$ the...</span></code></pre></div></td>
+<td><div class="sourceCode" id="cb70"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb70-1"><a href="inline-elements.html#cb70-1" tabindex="-1"></a>With $p_{12}$ and $p^{xy}$ the...</span></code></pre></div></td>
 </tr>
 </tbody>
 </table>
@@ -599,6 +640,10 @@ should <em>not</em> be surrounded by spaces.</p>
 <p>Note that end of lines in markdown are treated as spaces by
 Pandoc, so to avoid surrounding spaces the <code>---</code> dash should
 not be at the beginning or end of a line.</p>
+<p>For a non-breaking hyphen, use the HTML code <code>&amp;#8209;</code>:</p>
+<ul>
+<li><code>... $\supset$&amp;#8209;analysis...</code> prints out as ‘<span class="math inline">\(\supset\)</span>‑analysis’ and the hyphen cannot be at a linebreak.</li>
+</ul>
 <div class="house">
 <p><strong>Dialectica guidelines</strong></p>
 <p>Em-dashes are not surrounded by spaces.</p>
@@ -671,6 +716,8 @@ with math operator spacing.)</li>
 </div>
 <div id="formulas" class="section level2 hasAnchor" number="9.8">
 <h2><span class="header-section-number">9.8</span> Formulas<a href="inline-elements.html#formulas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="basics" class="section level3 hasAnchor" number="9.8.1">
+<h3><span class="header-section-number">9.8.1</span> Basics<a href="inline-elements.html#basics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If the author’s manuscript includes formulas, make sure they are in MS Word /
 Google Docs <strong>Equation mode</strong> before converting to markdown. <code>pandoc</code> will then
 convert them in LaTeX formulas, which will greatly simplify your work.</p>
@@ -681,8 +728,8 @@ by <code>$</code> signs. For instance, this:</p>
 Leibniz’s…</p>
 </blockquote>
 <p>is coded:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb71-1"><a href="inline-elements.html#cb71-1" aria-hidden="true" tabindex="-1"></a>The principle of non-contradition, $\lnot (\phi \land \lnot \phi)$ is</span>
-<span id="cb71-2"><a href="inline-elements.html#cb71-2" aria-hidden="true" tabindex="-1"></a>Leibniz&#39;s...</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb71-1"><a href="inline-elements.html#cb71-1" tabindex="-1"></a>The principle of non-contradition, $\lnot (\phi \land \lnot \phi)$ is</span>
+<span id="cb71-2"><a href="inline-elements.html#cb71-2" tabindex="-1"></a>Leibniz&#39;s...</span></code></pre></div>
 <p>A “display” formula, one that occupies more than one line, is delimited by <code>$$</code>
 signs. For instance, this:</p>
 <blockquote>
@@ -690,39 +737,75 @@ signs. For instance, this:</p>
 (Xx \leftrightarrow Xy))\]</span> is …</p>
 </blockquote>
 <p>is coded:</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb72-1"><a href="inline-elements.html#cb72-1" aria-hidden="true" tabindex="-1"></a>Leibniz&#39;s law, $$\forall x \forall y (x=y \rightarrow \forall X </span>
-<span id="cb72-2"><a href="inline-elements.html#cb72-2" aria-hidden="true" tabindex="-1"></a>(Xx \leftrightarrow Xy))$$ is ... </span></code></pre></div>
-<p>Do not leave a space after the first <code>$</code> or before, otherwise markdown thinks
-its an ordinary dollar sign.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb72-1"><a href="inline-elements.html#cb72-1" tabindex="-1"></a>Leibniz&#39;s law, $$\forall x \forall y (x=y \rightarrow \forall X </span>
+<span id="cb72-2"><a href="inline-elements.html#cb72-2" tabindex="-1"></a>(Xx \leftrightarrow Xy))$$ is ... </span></code></pre></div>
+<p>Display formulas are ‘block’ elements. For more or them, in
+particular, numbering them, see the <a href="block-elements.html#equations">Equations</a>.</p>
+<p>Do not leave a space after the opening <code>$</code> or before the
+closing one, otherwise markdown thinks
+they are ordinary dollar signs.</p>
 <ul>
 <li>GOOD: <code>$\forall x (Fx \rightarrow Gx)$</code></li>
 <li>BAD: <code>$ \forall x (Fx \rightarrow Gx) $</code></li>
 </ul>
-<p>Format <em>each single formula as one formula in markdown</em>. For instance, this:</p>
+<p><strong>Can <code>pandoc</code> confuse ordinary dollar signs and formula delimiters</strong>? Normally not. In the following:</p>
+<ul>
+<li><code>Amounts of $20,000 and $30,000 are...</code></li>
+</ul>
+<p>Pandoc will not think that <code>$20,000 and $</code> is a formula,
+because the last <code>$</code> is preceded by a space. If, however,
+for some reason you need to typeset something like:</p>
+<ul>
+<li><code>Amounts of $20,000 and 0.00$ are...</code></li>
+</ul>
+<p>where Pandoc will turn into a formula, “escape” the
+dollar signs:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb73-1"><a href="inline-elements.html#cb73-1" tabindex="-1"></a>Amounts of \$20,000 and 0.00\$ are...</span></code></pre></div>
+<blockquote>
+<p>Amounts of $20,000 and 0.00$ are…</p>
+</blockquote>
+</div>
+<div id="good-practices" class="section level3 hasAnchor" number="9.8.2">
+<h3><span class="header-section-number">9.8.2</span> Good practices<a href="inline-elements.html#good-practices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Do not break up a formula apart into its individual symbols</strong>. For instance, this:</p>
 <blockquote>
 <p>The formulas <span class="math inline">\(\exists x(Fx \rightarrow Gx)\)</span>, <span class="math inline">\(\forall x\neg\text{Gx}\)</span> are
 quantified formulas.</p>
 </blockquote>
 <p>Should be entered in markdown as:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb73-1"><a href="inline-elements.html#cb73-1" aria-hidden="true" tabindex="-1"></a>The formulas $\exists x(Fx \rightarrow Gx)$, $\forall x\neg\text{Gx}$</span>
-<span id="cb73-2"><a href="inline-elements.html#cb73-2" aria-hidden="true" tabindex="-1"></a>are quantified formulas.</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb74-1"><a href="inline-elements.html#cb74-1" tabindex="-1"></a>The formulas $\exists x(Fx \rightarrow Gx)$, $\forall x\neg\text{Gx}$</span>
+<span id="cb74-2"><a href="inline-elements.html#cb74-2" tabindex="-1"></a>are quantified formulas.</span></code></pre></div>
 <p>Not as:</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb74-1"><a href="inline-elements.html#cb74-1" aria-hidden="true" tabindex="-1"></a>The formulas $\exists$ x (Fx $\rightarrow$ Gx), $\forall$ x$\neg$Gx</span>
-<span id="cb74-2"><a href="inline-elements.html#cb74-2" aria-hidden="true" tabindex="-1"></a>are quantified formulas.</span></code></pre></div>
-<p><em>Do not merge the two formulas into one</em>. This will prevent them to be put in
-different lines in the output:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb75-1"><a href="inline-elements.html#cb75-1" tabindex="-1"></a>The formulas $\exists$ x (Fx $\rightarrow$ Gx), $\forall$ x$\neg$Gx</span>
+<span id="cb75-2"><a href="inline-elements.html#cb75-2" tabindex="-1"></a>are quantified formulas.</span></code></pre></div>
+<p><strong>Do not enter a list of formulas as a single formula (with exceptions)</strong>.
+Merging two formulas into one prevents
+linbreaks between them in the output:</p>
 <ul>
 <li>GOOD: <code class="sourceCode markdown">$\exists x (Fx \rightarrow Gx)$, $\forall x \lnot Gx$.</code></li>
 <li>BAD: <code class="sourceCode markdown">$\exists x (Fx \rightarrow Gx), \forall x \lnot Gx$.</code></li>
 </ul>
-<p>Exception: if you have lists of numbers as in <span class="math inline">\(1, 2, \ldots ,n\)</span>, no need to
+<p>Exception: if you have lists of small items as in <span class="math inline">\(p_1, p_2, \ldots , p_n\)</span>, no need to
 split those into many equations:</p>
 <ul>
-<li>GOOD: <code class="sourceCode markdown">$1, 2, \ldots, n$</code><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></li>
-<li>ALSO GOOD: <code class="sourceCode markdown">$1$, $2$, ..., $n$</code>.</li>
+<li>GOOD: <code class="sourceCode markdown">$p_1, p_2, \ldots, p_n$</code><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></li>
+<li>ALSO GOOD: <code class="sourceCode markdown">$p_1$, $p_2$, ..., $p_n$</code>.</li>
 </ul>
-<p><strong>Elements of formulas repeated in the text are entered as formulas too</strong>. For
-instance this:</p>
+<p>Another exception, list of premises in a formula stating that
+they entail a conclusion:</p>
+<blockquote>
+<p><span class="math inline">\(A, B, \vDash C\)</span></p>
+</blockquote>
+<ul>
+<li>GOOD: <code>$A, B, \vDash C$</code></li>
+<li>BAD: <code>$A$, $B$, $vDash C$</code></li>
+</ul>
+<p>The latter might look right but it is not accurate in e.g. a
+machine-readable JATS XML export, as the whole line here
+should be treated as a single claim
+(that <span class="math inline">\(A\)</span>,<span class="math inline">\(B\)</span> entail <span class="math inline">\(C\)</span>), not three claims (<span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(\vDash C\)</span>).</p>
+<p><strong>Elements of formulas repeated in the text are entered as formulas too</strong>.
+For instance this:</p>
 <blockquote>
 <p>In the formula <span class="math inline">\(\exists xFx\)</span> the variable <span class="math inline">\(x\)</span> is bound.</p>
 </blockquote>
@@ -756,25 +839,7 @@ formulas:</p>
 </ul>
 <p>This makes more sense (the first is one formula, the second is
 two mixed with the text) and the spacing will be better.</p>
-<p><strong>Can <code>pandoc</code> confuse ordinary dollar signs and formula delimiters</strong>? In
-general, <code>pandoc</code> does pretty well at telling apart the two uses. And if in
-doubt, when you intend an ordinary dollar sign you can “escape” it to indicate
-that it’s meant literally as a dollar sign:</p>
-<blockquote>
-<p>Amounts of $20,000 and $30,000 are…</p>
-</blockquote>
-<p>Can be coded as either of:</p>
-<ul>
-<li><code>Amounts of $20,000 and $30,000 are...</code></li>
-<li><code>Amounts of \$20,000 and \$30,000 are...</code></li>
-</ul>
-<p>Even in the first case, pandoc will not print out “20,000 and” as a formula. It
-tells them apart using the following rule: for the formula delimiter use, the
-opening $ must have a non-space character immediately to its right, while the
-closing $ must have a non-space character immediately to its left, and must not
-be followed immediately by a digit. But if for some reason you need to enclose
-text in literal $ characters, backslash-escape them and they won’t be treated
-as math delimiters.</p>
+</div>
 </div>
 <div id="schematic-letters-in-the-text" class="section level2 hasAnchor" number="9.9">
 <h2><span class="header-section-number">9.9</span> Schematic letters in the text<a href="inline-elements.html#schematic-letters-in-the-text" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -805,6 +870,8 @@ as math delimiters.</p>
 </tr>
 </tbody>
 </table>
+<p>This does not apply to <em>acronyms</em>, e.g. “PP” for the
+Precautionary Principle.</p>
 <p><em>Remark</em>. If there are few, e.g <span class="math inline">\(S\)</span>, <span class="math inline">\(p\)</span>, and they don’t appear
 in formulas proper such as <span class="math inline">\(K_Sp\)</span>, then it can be
 <em>tolerated</em> to enter them as is (<code>S</code>) or
@@ -856,10 +923,10 @@ are in dollar signs too:</p>
 <p>Fractions like 2/3, 1/2, can (and are often better) be printed out as
 split fractions, with the first number slightly up and left and the lower slightly down and right. This is best achieved with the LaTeX <code>xfrac</code> package. Add the following to the <code>header-includes</code> metadata
 field:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb75-1"><a href="inline-elements.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">header-includes</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb75-2"><a href="inline-elements.html#cb75-2" aria-hidden="true" tabindex="-1"></a>  \usepackage{xfrac}</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb76-1"><a href="inline-elements.html#cb76-1" tabindex="-1"></a><span class="fu">header-includes</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb76-2"><a href="inline-elements.html#cb76-2" tabindex="-1"></a>  \usepackage{xfrac}</span></code></pre></div>
 <p>and enter the fractions in formulas like so:</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb76-1"><a href="inline-elements.html#cb76-1" aria-hidden="true" tabindex="-1"></a>$\sfrac{2}{3}$</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb77-1"><a href="inline-elements.html#cb77-1" tabindex="-1"></a>$\sfrac{2}{3}$</span></code></pre></div>
 <p>Downside: these are not handled by <code>mathjax</code> in HTML output, so they
 will have to be converted to images by your template.</p>
 </div>
@@ -895,8 +962,8 @@ This is encoded by finishing a line with a backlash. Thus the following:</p>
 and a new one starts.</p>
 </blockquote>
 <p>is encoded as follows:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb77-1"><a href="inline-elements.html#cb77-1" aria-hidden="true" tabindex="-1"></a>This line ends here \</span>
-<span id="cb77-2"><a href="inline-elements.html#cb77-2" aria-hidden="true" tabindex="-1"></a>and a new one starts.</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb78-1"><a href="inline-elements.html#cb78-1" tabindex="-1"></a>This line ends here \</span>
+<span id="cb78-2"><a href="inline-elements.html#cb78-2" tabindex="-1"></a>and a new one starts.</span></code></pre></div>
 </div>
 <div id="prevent-line-breaks" class="section level2 hasAnchor" number="9.14">
 <h2><span class="header-section-number">9.14</span> Prevent line breaks<a href="inline-elements.html#prevent-line-breaks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -907,13 +974,13 @@ references, they are awkard at the beginning of lines as in:</p>
 (1972). On the other …</p>
 </blockquote>
 <p>The code for this would be:</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb78-1"><a href="inline-elements.html#cb78-1" aria-hidden="true" tabindex="-1"></a>... Smith&#39;s great theory <span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb79-1"><a href="inline-elements.html#cb79-1" tabindex="-1"></a>... Smith&#39;s great theory <span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span></code></pre></div>
 <p>To prevent this use <em>non-breakable spaces</em>, which can be
 introduced with a backclashed-escaped space <code>\</code> or with the
 HTML code <code>&amp;nbsp;</code>, as follows:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb79-1"><a href="inline-elements.html#cb79-1" aria-hidden="true" tabindex="-1"></a>... Smith&#39;s great theory\ <span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span>
-<span id="cb79-2"><a href="inline-elements.html#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-3"><a href="inline-elements.html#cb79-3" aria-hidden="true" tabindex="-1"></a>... Smith&#39;s great theory<span class="dv">&amp;nbsp;</span><span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb80-1"><a href="inline-elements.html#cb80-1" tabindex="-1"></a>... Smith&#39;s great theory\ <span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span>
+<span id="cb80-2"><a href="inline-elements.html#cb80-2" tabindex="-1"></a></span>
+<span id="cb80-3"><a href="inline-elements.html#cb80-3" tabindex="-1"></a>... Smith&#39;s great theory<span class="dv">&amp;nbsp;</span><span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span></code></pre></div>
 <p>Don’t use this to fine-tune how the long the lines are or the like; only when it makes sense in terms of the content: when it’s a matter of sticking say a citation year to what’s going with it, “i.e.” to what follows, and the like.</p>
 
 </div>

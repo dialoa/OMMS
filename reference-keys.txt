@@ -57,6 +57,7 @@ inline-elements
 punctuation
 punctuation-and-brackets
 punctuation-and-quotation-marks
+quotes-with-quotes
 emphasis-and-bold
 subscripts-and-superscripts
 hyphens-and-dashes
@@ -64,6 +65,8 @@ quotations
 cop-inlines-elements-symbols
 math-and-logic-conventions
 formulas
+basics
+good-practices
 schematic-letters-in-the-text
 split-fractions
 acronyms
@@ -93,7 +96,6 @@ basic-table-syntax
 cells-that-span-several-rows-or-several-columns
 if-markdown-cant-handle-a-table
 table-aptions
-equations
 figures-images-diagrams-graphs
 inserting-figures-as-files
 prefer-vector-formats-for-figures
@@ -103,7 +105,13 @@ how-to-modify-a-bitmap-image
 figures-with-letters-or-text
 resizing-svg-files
 including-svg-image-files-in-markdown
+equations
+numbered-equations
 theorems-and-proofs
+statements-in-footnotes
+natural-deduction-proofs-with-bussproofs
+inline-bussproofs
+prooftree-environments
 statements-and-indented-blocks
 statement-titles
 statement-acronyms
@@ -124,6 +132,7 @@ internal-links
 citations
 encoding-citations
 ibid.-op.-cit.-sec.-or-and-the-like
+putting-a-citation-link-on-a-page-number-or-a-word
 examples-with-preferred-answers
 example-doe-2019-2020
 example-locating-the-possessive-s
@@ -137,7 +146,8 @@ adding-non-cited-references-in-the-bibliography
 inserting-citations-in-the-text-in-rstudio
 formatting-citations-in-the-text
 bibtex-file-guidelines
-how-to-correct-the-file
+edit-bibtex-files
+check-bibtex-file-formatting
 bibtex-field-names-arent-case-sensitive
 title-capitalization
 original-year-of-publication
@@ -145,6 +155,8 @@ bibtex-conventions-and-resources
 bibtex-file-special-entry-types
 unpublished-manuscript
 troubleshooting-and-examples
+error-message-unexpected-end-of-file
+percent-signs-in-doi-field
 error-message-citet-unknown-command
 from-frege-to-gödel
 comments-and-tracking-changes

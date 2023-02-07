@@ -118,7 +118,7 @@ theorems-and-proofs
 statements-in-footnotes
 natural-deduction-proofs-with-bussproofs
 inline-bussproofs
-prooftree-environments
+block-bussproofs
 statements-and-indented-blocks
 statement-titles
 statement-acronyms
@@ -168,6 +168,15 @@ error-message-unexpected-end-of-file
 percent-signs-in-doi-field
 error-message-citet-unknown-command
 from-frege-to-gödel
+imagify
+basic-usage
+advanced-usage
+see-the-latex-document-used-to-generate-an-image
+tikz
+additional-packages
+imagify-classes
+brief-notes
+mdframed
 comments-and-tracking-changes
 comments-to-fellow-copyeditors
 revisions-and-comments-for-the-author

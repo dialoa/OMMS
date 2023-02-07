@@ -283,7 +283,8 @@ div.csl-indent {
 <li class="chapter" data-level="10.7.1" data-path="block-elements.html"><a href="block-elements.html#basic-table-syntax"><i class="fa fa-check"></i><b>10.7.1</b> Basic table syntax</a></li>
 <li class="chapter" data-level="10.7.2" data-path="block-elements.html"><a href="block-elements.html#cells-that-span-several-rows-or-several-columns"><i class="fa fa-check"></i><b>10.7.2</b> Cells that span several rows or several columns</a></li>
 <li class="chapter" data-level="10.7.3" data-path="block-elements.html"><a href="block-elements.html#if-markdown-cant-handle-a-table"><i class="fa fa-check"></i><b>10.7.3</b> If markdown can’t handle a table</a></li>
-<li class="chapter" data-level="10.7.4" data-path="block-elements.html"><a href="block-elements.html#table-aptions"><i class="fa fa-check"></i><b>10.7.4</b> Table aptions</a></li>
+<li class="chapter" data-level="10.7.4" data-path="block-elements.html"><a href="block-elements.html#table-captions"><i class="fa fa-check"></i><b>10.7.4</b> Table captions</a></li>
+<li class="chapter" data-level="10.7.5" data-path="block-elements.html"><a href="block-elements.html#latex-tables-tips"><i class="fa fa-check"></i><b>10.7.5</b> LaTeX tables tips</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="block-elements.html"><a href="block-elements.html#figures-images-diagrams-graphs"><i class="fa fa-check"></i><b>10.8</b> Figures (images, diagrams, graphs)</a>
 <ul>
@@ -318,7 +319,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="10.13" data-path="block-elements.html"><a href="block-elements.html#arguments"><i class="fa fa-check"></i><b>10.13</b> Arguments</a></li>
 <li class="chapter" data-level="10.14" data-path="block-elements.html"><a href="block-elements.html#multiple-columns"><i class="fa fa-check"></i><b>10.14</b> Multiple columns</a></li>
-<li class="chapter" data-level="10.15" data-path="block-elements.html"><a href="block-elements.html#raw-code-if-all-else-fails"><i class="fa fa-check"></i><b>10.15</b> Raw code if all else fails</a></li>
+<li class="chapter" data-level="10.15" data-path="block-elements.html"><a href="block-elements.html#raw-code-if-all-else-fails"><i class="fa fa-check"></i><b>10.15</b> Raw code if all else fails</a>
+<ul>
+<li class="chapter" data-level="10.15.1" data-path="block-elements.html"><a href="block-elements.html#adding-raw-latex-commands-within-markdown"><i class="fa fa-check"></i><b>10.15.1</b> Adding Raw LaTeX commands within markdown</a></li>
+<li class="chapter" data-level="10.15.2" data-path="block-elements.html"><a href="block-elements.html#providing-a-raw-latex-alternative"><i class="fa fa-check"></i><b>10.15.2</b> Providing a Raw LaTeX alternative</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="cross-referencing.html"><a href="cross-referencing.html"><i class="fa fa-check"></i><b>11</b> Cross-referencing</a>
 <ul>
@@ -456,23 +461,23 @@ div.csl-indent {
 <div id="title-and-subtitle" class="section level1 hasAnchor" number="22">
 <h1><span class="header-section-number">Chapter 22</span> Title and subtitle<a href="title-and-subtitle.html#title-and-subtitle" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Here are the fields used to format titles and subtitles:</p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb232-1"><a href="title-and-subtitle.html#cb232-1" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Plain title here</span></span>
-<span id="cb232-2"><a href="title-and-subtitle.html#cb232-2" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> Plain subtitle here</span></span>
-<span id="cb232-3"><a href="title-and-subtitle.html#cb232-3" tabindex="-1"></a><span class="fu">shorttitle</span><span class="kw">:</span><span class="at"> Shorter subtitle for page headers</span></span>
-<span id="cb232-4"><a href="title-and-subtitle.html#cb232-4" tabindex="-1"></a><span class="fu">title-latex</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb232-5"><a href="title-and-subtitle.html#cb232-5" tabindex="-1"></a>  Title for the first page title \</span>
-<span id="cb232-6"><a href="title-and-subtitle.html#cb232-6" tabindex="-1"></a>  with possibly some linebreaks</span>
-<span id="cb232-7"><a href="title-and-subtitle.html#cb232-7" tabindex="-1"></a><span class="fu">subtitle-latex</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb232-8"><a href="title-and-subtitle.html#cb232-8" tabindex="-1"></a>  Title for the first page title \</span>
-<span id="cb232-9"><a href="title-and-subtitle.html#cb232-9" tabindex="-1"></a>  with possibly some linebreaks</span>
-<span id="cb232-10"><a href="title-and-subtitle.html#cb232-10" tabindex="-1"></a><span class="fu">title-cover</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb232-11"><a href="title-and-subtitle.html#cb232-11" tabindex="-1"></a>  Title for the offprint cover \</span>
-<span id="cb232-12"><a href="title-and-subtitle.html#cb232-12" tabindex="-1"></a>  with possibly some \</span>
-<span id="cb232-13"><a href="title-and-subtitle.html#cb232-13" tabindex="-1"></a>  linebreaks</span>
-<span id="cb232-14"><a href="title-and-subtitle.html#cb232-14" tabindex="-1"></a><span class="fu">subtitle-cover</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb232-15"><a href="title-and-subtitle.html#cb232-15" tabindex="-1"></a>  Subtitle for the cover</span>
-<span id="cb232-16"><a href="title-and-subtitle.html#cb232-16" tabindex="-1"></a><span class="fu">title-cover-size</span><span class="kw">:</span><span class="at"> \huge</span></span>
-<span id="cb232-17"><a href="title-and-subtitle.html#cb232-17" tabindex="-1"></a><span class="fu">subtitle-cover-size</span><span class="kw">:</span><span class="at"> \Large</span></span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb240-1"><a href="title-and-subtitle.html#cb240-1" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Plain title here</span></span>
+<span id="cb240-2"><a href="title-and-subtitle.html#cb240-2" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> Plain subtitle here</span></span>
+<span id="cb240-3"><a href="title-and-subtitle.html#cb240-3" tabindex="-1"></a><span class="fu">shorttitle</span><span class="kw">:</span><span class="at"> Shorter subtitle for page headers</span></span>
+<span id="cb240-4"><a href="title-and-subtitle.html#cb240-4" tabindex="-1"></a><span class="fu">title-latex</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb240-5"><a href="title-and-subtitle.html#cb240-5" tabindex="-1"></a>  Title for the first page title \</span>
+<span id="cb240-6"><a href="title-and-subtitle.html#cb240-6" tabindex="-1"></a>  with possibly some linebreaks</span>
+<span id="cb240-7"><a href="title-and-subtitle.html#cb240-7" tabindex="-1"></a><span class="fu">subtitle-latex</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb240-8"><a href="title-and-subtitle.html#cb240-8" tabindex="-1"></a>  Title for the first page title \</span>
+<span id="cb240-9"><a href="title-and-subtitle.html#cb240-9" tabindex="-1"></a>  with possibly some linebreaks</span>
+<span id="cb240-10"><a href="title-and-subtitle.html#cb240-10" tabindex="-1"></a><span class="fu">title-cover</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb240-11"><a href="title-and-subtitle.html#cb240-11" tabindex="-1"></a>  Title for the offprint cover \</span>
+<span id="cb240-12"><a href="title-and-subtitle.html#cb240-12" tabindex="-1"></a>  with possibly some \</span>
+<span id="cb240-13"><a href="title-and-subtitle.html#cb240-13" tabindex="-1"></a>  linebreaks</span>
+<span id="cb240-14"><a href="title-and-subtitle.html#cb240-14" tabindex="-1"></a><span class="fu">subtitle-cover</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb240-15"><a href="title-and-subtitle.html#cb240-15" tabindex="-1"></a>  Subtitle for the cover</span>
+<span id="cb240-16"><a href="title-and-subtitle.html#cb240-16" tabindex="-1"></a><span class="fu">title-cover-size</span><span class="kw">:</span><span class="at"> \huge</span></span>
+<span id="cb240-17"><a href="title-and-subtitle.html#cb240-17" tabindex="-1"></a><span class="fu">subtitle-cover-size</span><span class="kw">:</span><span class="at"> \Large</span></span></code></pre></div>
 <p>All fields except <code>title</code> are optional. <code>shorttitle</code> is used for page headers
 and the table of contents. <code>title-latex</code> and <code>subtitle-latex</code> are used for
 the title on the first page and <code>title-cover</code> and <code>subtitle-cover</code> are used
@@ -486,12 +491,12 @@ for longer titles, and <code>\LARGE</code> for subtitles.</p>
 <p><em>Technical note</em>. These fields can be placed in the source file (preferred) or
 in the <code>imports</code> list of the masterfile. If placed in the source file,
 the <code>master.md</code> must gather these from the source:</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb233-1"><a href="title-and-subtitle.html#cb233-1" tabindex="-1"></a><span class="fu">offprints</span><span class="kw">:</span></span>
-<span id="cb233-2"><a href="title-and-subtitle.html#cb233-2" tabindex="-1"></a><span class="at">  ...</span></span>
-<span id="cb233-3"><a href="title-and-subtitle.html#cb233-3" tabindex="-1"></a><span class="at">  </span><span class="fu">gather</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">header-includes</span><span class="kw">,</span><span class="at"> title</span><span class="kw">,</span><span class="at"> subtitle</span><span class="kw">,</span><span class="at"> author</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;title-latex&#39;</span><span class="kw">,</span></span>
-<span id="cb233-4"><a href="title-and-subtitle.html#cb233-4" tabindex="-1"></a><span class="at">    </span><span class="st">&#39;subtitle-latex&#39;</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;title-cover&#39;</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;subtitle-cover&#39;</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;title-cover-size&#39;</span><span class="kw">,</span></span>
-<span id="cb233-5"><a href="title-and-subtitle.html#cb233-5" tabindex="-1"></a><span class="at">    </span><span class="st">&#39;subtitle-cover-size&#39;</span><span class="kw">]</span></span>
-<span id="cb233-6"><a href="title-and-subtitle.html#cb233-6" tabindex="-1"></a><span class="at">  ...</span></span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb241-1"><a href="title-and-subtitle.html#cb241-1" tabindex="-1"></a><span class="fu">offprints</span><span class="kw">:</span></span>
+<span id="cb241-2"><a href="title-and-subtitle.html#cb241-2" tabindex="-1"></a><span class="at">  ...</span></span>
+<span id="cb241-3"><a href="title-and-subtitle.html#cb241-3" tabindex="-1"></a><span class="at">  </span><span class="fu">gather</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">header-includes</span><span class="kw">,</span><span class="at"> title</span><span class="kw">,</span><span class="at"> subtitle</span><span class="kw">,</span><span class="at"> author</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;title-latex&#39;</span><span class="kw">,</span></span>
+<span id="cb241-4"><a href="title-and-subtitle.html#cb241-4" tabindex="-1"></a><span class="at">    </span><span class="st">&#39;subtitle-latex&#39;</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;title-cover&#39;</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;subtitle-cover&#39;</span><span class="kw">,</span><span class="at"> </span><span class="st">&#39;title-cover-size&#39;</span><span class="kw">,</span></span>
+<span id="cb241-5"><a href="title-and-subtitle.html#cb241-5" tabindex="-1"></a><span class="at">    </span><span class="st">&#39;subtitle-cover-size&#39;</span><span class="kw">]</span></span>
+<span id="cb241-6"><a href="title-and-subtitle.html#cb241-6" tabindex="-1"></a><span class="at">  ...</span></span></code></pre></div>
 
 </div>
             </section>

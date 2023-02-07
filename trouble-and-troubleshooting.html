@@ -283,7 +283,8 @@ div.csl-indent {
 <li class="chapter" data-level="10.7.1" data-path="block-elements.html"><a href="block-elements.html#basic-table-syntax"><i class="fa fa-check"></i><b>10.7.1</b> Basic table syntax</a></li>
 <li class="chapter" data-level="10.7.2" data-path="block-elements.html"><a href="block-elements.html#cells-that-span-several-rows-or-several-columns"><i class="fa fa-check"></i><b>10.7.2</b> Cells that span several rows or several columns</a></li>
 <li class="chapter" data-level="10.7.3" data-path="block-elements.html"><a href="block-elements.html#if-markdown-cant-handle-a-table"><i class="fa fa-check"></i><b>10.7.3</b> If markdown can’t handle a table</a></li>
-<li class="chapter" data-level="10.7.4" data-path="block-elements.html"><a href="block-elements.html#table-aptions"><i class="fa fa-check"></i><b>10.7.4</b> Table aptions</a></li>
+<li class="chapter" data-level="10.7.4" data-path="block-elements.html"><a href="block-elements.html#table-captions"><i class="fa fa-check"></i><b>10.7.4</b> Table captions</a></li>
+<li class="chapter" data-level="10.7.5" data-path="block-elements.html"><a href="block-elements.html#latex-tables-tips"><i class="fa fa-check"></i><b>10.7.5</b> LaTeX tables tips</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="block-elements.html"><a href="block-elements.html#figures-images-diagrams-graphs"><i class="fa fa-check"></i><b>10.8</b> Figures (images, diagrams, graphs)</a>
 <ul>
@@ -318,7 +319,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="10.13" data-path="block-elements.html"><a href="block-elements.html#arguments"><i class="fa fa-check"></i><b>10.13</b> Arguments</a></li>
 <li class="chapter" data-level="10.14" data-path="block-elements.html"><a href="block-elements.html#multiple-columns"><i class="fa fa-check"></i><b>10.14</b> Multiple columns</a></li>
-<li class="chapter" data-level="10.15" data-path="block-elements.html"><a href="block-elements.html#raw-code-if-all-else-fails"><i class="fa fa-check"></i><b>10.15</b> Raw code if all else fails</a></li>
+<li class="chapter" data-level="10.15" data-path="block-elements.html"><a href="block-elements.html#raw-code-if-all-else-fails"><i class="fa fa-check"></i><b>10.15</b> Raw code if all else fails</a>
+<ul>
+<li class="chapter" data-level="10.15.1" data-path="block-elements.html"><a href="block-elements.html#adding-raw-latex-commands-within-markdown"><i class="fa fa-check"></i><b>10.15.1</b> Adding Raw LaTeX commands within markdown</a></li>
+<li class="chapter" data-level="10.15.2" data-path="block-elements.html"><a href="block-elements.html#providing-a-raw-latex-alternative"><i class="fa fa-check"></i><b>10.15.2</b> Providing a Raw LaTeX alternative</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="cross-referencing.html"><a href="cross-referencing.html"><i class="fa fa-check"></i><b>11</b> Cross-referencing</a>
 <ul>
@@ -491,7 +496,7 @@ There’s an error in the house template.</li>
 <p>LaTeX stage errors are due to a multitude of causes.
 You can learn more about the error by running your pdf
 engine on the LaTeX output:</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb220-1"><a href="trouble-and-troubleshooting.html#cb220-1" tabindex="-1"></a><span class="ex">lualatex</span> article.tex</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb228-1"><a href="trouble-and-troubleshooting.html#cb228-1" tabindex="-1"></a><span class="ex">lualatex</span> article.tex</span></code></pre></div>
 <p>For <code>lualatex</code>; replace with <code>pdflatex</code> or <code>xelatex</code> depending
 on your setup.</p>
 <p>Once you run LaTeX a detailed log of its
@@ -511,7 +516,7 @@ not later.) You can go to that location in your
 LaTeX file and investigate.</p>
 <p>You can place the LaTeX run log in a file if you
 want to examine it in a text editor rather than the terminal:</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb222-1"><a href="trouble-and-troubleshooting.html#cb222-1" tabindex="-1"></a><span class="ex">lualatex</span> article.tex <span class="op">&gt;</span> latex_log.txt</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb230-1"><a href="trouble-and-troubleshooting.html#cb230-1" tabindex="-1"></a><span class="ex">lualatex</span> article.tex <span class="op">&gt;</span> latex_log.txt</span></code></pre></div>
 </div>
 <div id="word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols." class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Word manuscript with many symbols (phi, psy, greek letters, logical symbols,).<a href="trouble-and-troubleshooting.html#word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols." class="anchor-section" aria-label="Anchor link to header"></a></h2>

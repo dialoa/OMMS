@@ -283,7 +283,8 @@ div.csl-indent {
 <li class="chapter" data-level="10.7.1" data-path="block-elements.html"><a href="block-elements.html#basic-table-syntax"><i class="fa fa-check"></i><b>10.7.1</b> Basic table syntax</a></li>
 <li class="chapter" data-level="10.7.2" data-path="block-elements.html"><a href="block-elements.html#cells-that-span-several-rows-or-several-columns"><i class="fa fa-check"></i><b>10.7.2</b> Cells that span several rows or several columns</a></li>
 <li class="chapter" data-level="10.7.3" data-path="block-elements.html"><a href="block-elements.html#if-markdown-cant-handle-a-table"><i class="fa fa-check"></i><b>10.7.3</b> If markdown can’t handle a table</a></li>
-<li class="chapter" data-level="10.7.4" data-path="block-elements.html"><a href="block-elements.html#table-aptions"><i class="fa fa-check"></i><b>10.7.4</b> Table aptions</a></li>
+<li class="chapter" data-level="10.7.4" data-path="block-elements.html"><a href="block-elements.html#table-captions"><i class="fa fa-check"></i><b>10.7.4</b> Table captions</a></li>
+<li class="chapter" data-level="10.7.5" data-path="block-elements.html"><a href="block-elements.html#latex-tables-tips"><i class="fa fa-check"></i><b>10.7.5</b> LaTeX tables tips</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="block-elements.html"><a href="block-elements.html#figures-images-diagrams-graphs"><i class="fa fa-check"></i><b>10.8</b> Figures (images, diagrams, graphs)</a>
 <ul>
@@ -318,7 +319,11 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="10.13" data-path="block-elements.html"><a href="block-elements.html#arguments"><i class="fa fa-check"></i><b>10.13</b> Arguments</a></li>
 <li class="chapter" data-level="10.14" data-path="block-elements.html"><a href="block-elements.html#multiple-columns"><i class="fa fa-check"></i><b>10.14</b> Multiple columns</a></li>
-<li class="chapter" data-level="10.15" data-path="block-elements.html"><a href="block-elements.html#raw-code-if-all-else-fails"><i class="fa fa-check"></i><b>10.15</b> Raw code if all else fails</a></li>
+<li class="chapter" data-level="10.15" data-path="block-elements.html"><a href="block-elements.html#raw-code-if-all-else-fails"><i class="fa fa-check"></i><b>10.15</b> Raw code if all else fails</a>
+<ul>
+<li class="chapter" data-level="10.15.1" data-path="block-elements.html"><a href="block-elements.html#adding-raw-latex-commands-within-markdown"><i class="fa fa-check"></i><b>10.15.1</b> Adding Raw LaTeX commands within markdown</a></li>
+<li class="chapter" data-level="10.15.2" data-path="block-elements.html"><a href="block-elements.html#providing-a-raw-latex-alternative"><i class="fa fa-check"></i><b>10.15.2</b> Providing a Raw LaTeX alternative</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="cross-referencing.html"><a href="cross-referencing.html"><i class="fa fa-check"></i><b>11</b> Cross-referencing</a>
 <ul>
@@ -663,8 +668,9 @@ this command again.</p>
 <h3><span class="header-section-number">6.2.3</span> MacOS-specific<a href="generate-house-style-outputs.html#macos-specific" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>To install Apple’s Command Line Tools</strong>. This is necessary even if you’re not going to use the command line your self: it installs the software needed to run the <code>Makefile</code> file. Open the Terminal (in Applications &gt; Utilities). Type the following and hit Enter:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="generate-house-style-outputs.html#cb10-1" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code></pre></div>
-<p>This will download and install the software from Apple (~100Mb, a few minutes). When that is done close the Terminal window.</p>
-<p>If you get an error “command line tools already installed”, the software is already installed. You can close the window and proceed.</p>
+<p>This will download and install for some time. When it’s finished, close the
+terminal If you get the error message “command line tools already installed”,
+it’s already installed, you can close the terminal.</p>
 </div>
 </div>
 <div id="single-article-with-rstudio" class="section level2 hasAnchor" number="6.3">

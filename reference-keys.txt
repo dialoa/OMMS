@@ -101,7 +101,8 @@ tables
 basic-table-syntax
 cells-that-span-several-rows-or-several-columns
 if-markdown-cant-handle-a-table
-table-aptions
+table-captions
+latex-tables-tips
 figures-images-diagrams-graphs
 inserting-figures-as-files
 prefer-vector-formats-for-figures
@@ -130,6 +131,8 @@ link-syntax
 arguments
 multiple-columns
 raw-code-if-all-else-fails
+adding-raw-latex-commands-within-markdown
+providing-a-raw-latex-alternative
 cross-referencing
 cross-referencing-sections
 cross-referencing-footnotes

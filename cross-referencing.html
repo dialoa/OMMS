@@ -585,8 +585,8 @@ review…</td>
 </tr>
 <tr class="odd">
 <td>In secs. 1, 2 we</td>
-<td><div class="sourceCode" id="cb177"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb177-1"><a href="cross-referencing.html#cb177-1" tabindex="-1"></a>In <span class="co">[</span><span class="ot">@sec:the-first-word; @sec:the-second-word</span><span class="co">]</span></span>
-<span id="cb177-2"><a href="cross-referencing.html#cb177-2" tabindex="-1"></a> we review</span></code></pre></div></td>
+<td><div class="sourceCode" id="cb178"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb178-1"><a href="cross-referencing.html#cb178-1" tabindex="-1"></a>In <span class="co">[</span><span class="ot">@sec:the-first-word; @sec:the-second-word</span><span class="co">]</span></span>
+<span id="cb178-2"><a href="cross-referencing.html#cb178-2" tabindex="-1"></a> we review</span></code></pre></div></td>
 </tr>
 <tr class="even">
 <td>… elsewhere (sec.
@@ -693,12 +693,12 @@ them before publishing.</p>
 <p>We do not reference the page numbers where the footnote
 appears. This is meaningless in HTML and ePub output.</p>
 <p>The syntax is as follows:</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb178-1"><a href="cross-referencing.html#cb178-1" tabindex="-1"></a>This is the main text.<span class="ot">[^myfn]</span></span>
-<span id="cb178-2"><a href="cross-referencing.html#cb178-2" tabindex="-1"></a></span>
-<span id="cb178-3"><a href="cross-referencing.html#cb178-3" tabindex="-1"></a><span class="ot">[^mfn]: </span><span class="co">[</span><span class="ot">On this</span><span class="co">]</span>{#my-best-footnote} difficult point I would like to add irrelevant remarks... .</span>
-<span id="cb178-4"><a href="cross-referencing.html#cb178-4" tabindex="-1"></a></span>
-<span id="cb178-5"><a href="cross-referencing.html#cb178-5" tabindex="-1"></a>...</span>
-<span id="cb178-6"><a href="cross-referencing.html#cb178-6" tabindex="-1"></a>As mentioned above in <span class="co">[</span><span class="ot">footnote 7</span><span class="co">](#my-best-footnote)</span>, ...</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb179-1"><a href="cross-referencing.html#cb179-1" tabindex="-1"></a>This is the main text.<span class="ot">[^myfn]</span></span>
+<span id="cb179-2"><a href="cross-referencing.html#cb179-2" tabindex="-1"></a></span>
+<span id="cb179-3"><a href="cross-referencing.html#cb179-3" tabindex="-1"></a><span class="ot">[^mfn]: </span><span class="co">[</span><span class="ot">On this</span><span class="co">]</span>{#my-best-footnote} difficult point I would like to add irrelevant remarks... .</span>
+<span id="cb179-4"><a href="cross-referencing.html#cb179-4" tabindex="-1"></a></span>
+<span id="cb179-5"><a href="cross-referencing.html#cb179-5" tabindex="-1"></a>...</span>
+<span id="cb179-6"><a href="cross-referencing.html#cb179-6" tabindex="-1"></a>As mentioned above in <span class="co">[</span><span class="ot">footnote 7</span><span class="co">](#my-best-footnote)</span>, ...</span></code></pre></div>
 <ul>
 <li><p><code>[^myfn]</code> and <code>[myfn]:</code> create a footnote. We could have the
 alternative syntax, <code>^[... content ...]</code> placed directly in the
@@ -726,20 +726,20 @@ the footnote number manually.</p></li>
 ensure referencing links take the reader to that line.</p></li>
 <li><p>But **do not* place an empty Span right at the beginning of the
 foonote: in this position the Span leaves an unwanted blank space:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb180-1"><a href="cross-referencing.html#cb180-1" tabindex="-1"></a>BAD</span>
-<span id="cb180-2"><a href="cross-referencing.html#cb180-2" tabindex="-1"></a><span class="ot">[^footnote]: </span>[]{#fn-point} On this difficult point </span>
-<span id="cb180-3"><a href="cross-referencing.html#cb180-3" tabindex="-1"></a></span>
-<span id="cb180-4"><a href="cross-referencing.html#cb180-4" tabindex="-1"></a>GOOD</span>
-<span id="cb180-5"><a href="cross-referencing.html#cb180-5" tabindex="-1"></a><span class="ot">[^footnote]: </span><span class="co">[</span><span class="ot">On</span><span class="co">]</span>{#fn-point} this difficult point </span>
-<span id="cb180-6"><a href="cross-referencing.html#cb180-6" tabindex="-1"></a></span>
-<span id="cb180-7"><a href="cross-referencing.html#cb180-7" tabindex="-1"></a>GOOD</span>
-<span id="cb180-8"><a href="cross-referencing.html#cb180-8" tabindex="-1"></a><span class="ot">[^footnote]: </span>See @doe_j:2020.[]{#fn-doe}</span></code></pre></div></li>
+<div class="sourceCode" id="cb181"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb181-1"><a href="cross-referencing.html#cb181-1" tabindex="-1"></a>BAD</span>
+<span id="cb181-2"><a href="cross-referencing.html#cb181-2" tabindex="-1"></a><span class="ot">[^footnote]: </span>[]{#fn-point} On this difficult point </span>
+<span id="cb181-3"><a href="cross-referencing.html#cb181-3" tabindex="-1"></a></span>
+<span id="cb181-4"><a href="cross-referencing.html#cb181-4" tabindex="-1"></a>GOOD</span>
+<span id="cb181-5"><a href="cross-referencing.html#cb181-5" tabindex="-1"></a><span class="ot">[^footnote]: </span><span class="co">[</span><span class="ot">On</span><span class="co">]</span>{#fn-point} this difficult point </span>
+<span id="cb181-6"><a href="cross-referencing.html#cb181-6" tabindex="-1"></a></span>
+<span id="cb181-7"><a href="cross-referencing.html#cb181-7" tabindex="-1"></a>GOOD</span>
+<span id="cb181-8"><a href="cross-referencing.html#cb181-8" tabindex="-1"></a><span class="ot">[^footnote]: </span>See @doe_j:2020.[]{#fn-doe}</span></code></pre></div></li>
 </ul>
 <p>Non-final manuscripts. If footnote numbers are not final,
 you will need to update crossreferences to footnotes.
 A good practice is to use very visible text to ensure
 that you don’t miss them in proofing:</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb181-1"><a href="cross-referencing.html#cb181-1" tabindex="-1"></a>See above <span class="co">[</span><span class="ot">footnote NUMBER</span><span class="co">](#fn-doe)</span>.</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb182-1"><a href="cross-referencing.html#cb182-1" tabindex="-1"></a>See above <span class="co">[</span><span class="ot">footnote NUMBER</span><span class="co">](#fn-doe)</span>.</span></code></pre></div>
 </div>
 <div id="cross-referencing-list-items" class="section level2 hasAnchor" number="11.3">
 <h2><span class="header-section-number">11.3</span> Cross-referencing list items<a href="cross-referencing.html#cross-referencing-list-items" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -756,26 +756,26 @@ that you don’t miss them in proofing:</p>
 in the item and you have to create a link to it. The number is manually
 entered in the link, not automatic, so you have to make sure you know
 which number it is.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb182-1"><a href="cross-referencing.html#cb182-1" tabindex="-1"></a><span class="ss">1. </span>first item</span>
-<span id="cb182-2"><a href="cross-referencing.html#cb182-2" tabindex="-1"></a><span class="ss">2. </span>[]{#myidentifier} section item</span>
-<span id="cb182-3"><a href="cross-referencing.html#cb182-3" tabindex="-1"></a><span class="ss">3. </span>third item.</span>
-<span id="cb182-4"><a href="cross-referencing.html#cb182-4" tabindex="-1"></a> </span>
-<span id="cb182-5"><a href="cross-referencing.html#cb182-5" tabindex="-1"></a>My favour item is (<span class="co">[</span><span class="ot">2</span><span class="co">](#myidentifier)</span>), what&#39;s yours?</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb183-1"><a href="cross-referencing.html#cb183-1" tabindex="-1"></a><span class="ss">1. </span>first item</span>
+<span id="cb183-2"><a href="cross-referencing.html#cb183-2" tabindex="-1"></a><span class="ss">2. </span>[]{#myidentifier} section item</span>
+<span id="cb183-3"><a href="cross-referencing.html#cb183-3" tabindex="-1"></a><span class="ss">3. </span>third item.</span>
+<span id="cb183-4"><a href="cross-referencing.html#cb183-4" tabindex="-1"></a> </span>
+<span id="cb183-5"><a href="cross-referencing.html#cb183-5" tabindex="-1"></a>My favour item is (<span class="co">[</span><span class="ot">2</span><span class="co">](#myidentifier)</span>), what&#39;s yours?</span></code></pre></div>
 <p>Note the difference between the target, where the identifier is in curly braces,
 and the link, where the identifier is in parentheses:</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb183-1"><a href="cross-referencing.html#cb183-1" tabindex="-1"></a><span class="an">target:</span><span class="co"> []{#myidentifier}</span></span>
-<span id="cb183-2"><a href="cross-referencing.html#cb183-2" tabindex="-1"></a><span class="an">link:</span><span class="co"> [2](#myidentifier)</span></span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb184-1"><a href="cross-referencing.html#cb184-1" tabindex="-1"></a><span class="an">target:</span><span class="co"> []{#myidentifier}</span></span>
+<span id="cb184-2"><a href="cross-referencing.html#cb184-2" tabindex="-1"></a><span class="an">link:</span><span class="co"> [2](#myidentifier)</span></span></code></pre></div>
 </div>
 <div id="internal-links" class="section level2 hasAnchor" number="11.4">
 <h2><span class="header-section-number">11.4</span> Internal links<a href="cross-referencing.html#internal-links" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you want a part of the text to link to another, say have a statement labelled
 “C1” and later parts referring to it as “(C1)”, use internal link syntax. The
 general syntax is:</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb184-1"><a href="cross-referencing.html#cb184-1" tabindex="-1"></a><span class="co">[</span><span class="ot">text to be linked to</span><span class="co">]</span>{#unique-identifier}</span>
-<span id="cb184-2"><a href="cross-referencing.html#cb184-2" tabindex="-1"></a></span>
-<span id="cb184-3"><a href="cross-referencing.html#cb184-3" tabindex="-1"></a>...</span>
-<span id="cb184-4"><a href="cross-referencing.html#cb184-4" tabindex="-1"></a></span>
-<span id="cb184-5"><a href="cross-referencing.html#cb184-5" tabindex="-1"></a><span class="co">[</span><span class="ot">text that will become a link</span><span class="co">](#unique-identifier)</span></span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb185-1"><a href="cross-referencing.html#cb185-1" tabindex="-1"></a><span class="co">[</span><span class="ot">text to be linked to</span><span class="co">]</span>{#unique-identifier}</span>
+<span id="cb185-2"><a href="cross-referencing.html#cb185-2" tabindex="-1"></a></span>
+<span id="cb185-3"><a href="cross-referencing.html#cb185-3" tabindex="-1"></a>...</span>
+<span id="cb185-4"><a href="cross-referencing.html#cb185-4" tabindex="-1"></a></span>
+<span id="cb185-5"><a href="cross-referencing.html#cb185-5" tabindex="-1"></a><span class="co">[</span><span class="ot">text that will become a link</span><span class="co">](#unique-identifier)</span></span></code></pre></div>
 <p><strong>Common error</strong>: leaving spaces between <code>text</code> and <code>{\#identifier}</code>:</p>
 <table>
 <colgroup>
@@ -798,11 +798,11 @@ general syntax is:</p>
 </tbody>
 </table>
 <p>Example:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb185-1"><a href="cross-referencing.html#cb185-1" tabindex="-1"></a><span class="co">[</span><span class="ot">Claim 1</span><span class="co">]</span>{#my-claim}. Death is nothing to us.</span>
-<span id="cb185-2"><a href="cross-referencing.html#cb185-2" tabindex="-1"></a></span>
-<span id="cb185-3"><a href="cross-referencing.html#cb185-3" tabindex="-1"></a>(... article goes on ...)</span>
-<span id="cb185-4"><a href="cross-referencing.html#cb185-4" tabindex="-1"></a></span>
-<span id="cb185-5"><a href="cross-referencing.html#cb185-5" tabindex="-1"></a>As <span class="co">[</span><span class="ot">my earlier claim</span><span class="co">](#my-claim)</span> established, ... .</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb186-1"><a href="cross-referencing.html#cb186-1" tabindex="-1"></a><span class="co">[</span><span class="ot">Claim 1</span><span class="co">]</span>{#my-claim}. Death is nothing to us.</span>
+<span id="cb186-2"><a href="cross-referencing.html#cb186-2" tabindex="-1"></a></span>
+<span id="cb186-3"><a href="cross-referencing.html#cb186-3" tabindex="-1"></a>(... article goes on ...)</span>
+<span id="cb186-4"><a href="cross-referencing.html#cb186-4" tabindex="-1"></a></span>
+<span id="cb186-5"><a href="cross-referencing.html#cb186-5" tabindex="-1"></a>As <span class="co">[</span><span class="ot">my earlier claim</span><span class="co">](#my-claim)</span> established, ... .</span></code></pre></div>
 <p>This outputs, in both HTML and LaTeX :</p>
 <blockquote>
 <p><span id="my-claim">Claim 1</span>. Death is nothing to us</p>
@@ -818,11 +818,11 @@ link.</p>
 <p>Targets (also known as “anchors”) and links to them typically need some
 formatting. For instance, we may want our claim label in bold and the link to it
 to be the label itself in parentheses:</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb186-1"><a href="cross-referencing.html#cb186-1" tabindex="-1"></a><span class="co">[</span><span class="ot">**C1**</span><span class="co">]</span>{#my-new-claim}. Death is nothing to us.</span>
-<span id="cb186-2"><a href="cross-referencing.html#cb186-2" tabindex="-1"></a></span>
-<span id="cb186-3"><a href="cross-referencing.html#cb186-3" tabindex="-1"></a>...</span>
-<span id="cb186-4"><a href="cross-referencing.html#cb186-4" tabindex="-1"></a></span>
-<span id="cb186-5"><a href="cross-referencing.html#cb186-5" tabindex="-1"></a>As (<span class="co">[</span><span class="ot">C1</span><span class="co">](#my-new-claim)</span>) established, ... .</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb187-1"><a href="cross-referencing.html#cb187-1" tabindex="-1"></a><span class="co">[</span><span class="ot">**C1**</span><span class="co">]</span>{#my-new-claim}. Death is nothing to us.</span>
+<span id="cb187-2"><a href="cross-referencing.html#cb187-2" tabindex="-1"></a></span>
+<span id="cb187-3"><a href="cross-referencing.html#cb187-3" tabindex="-1"></a>...</span>
+<span id="cb187-4"><a href="cross-referencing.html#cb187-4" tabindex="-1"></a></span>
+<span id="cb187-5"><a href="cross-referencing.html#cb187-5" tabindex="-1"></a>As (<span class="co">[</span><span class="ot">C1</span><span class="co">](#my-new-claim)</span>) established, ... .</span></code></pre></div>
 <p>This outputs:</p>
 <p><span id="my-new-claim"><strong>C1</strong></span>. Death is nothing to us.</p>
 <p>…</p>

@@ -493,9 +493,9 @@ an entry for these keys, you will get “Missing reference” warnings and your
 bibliography will be incomplete. You need to ensure that there’s an entry for
 any self-cited key.</p>
 <p><em>Solution</em>. Run the selfcites.py script on your bibliography file. Suppose your article’s bibliography file is named <code>myreferences.bib</code>. Open a terminal, navigate to the article folder and run:</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb203-1"><a href="bibliography-1.html#cb203-1" tabindex="-1"></a><span class="ex">python3</span> ../../../resources/scripts/selfcites.py myreferences.bib</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb204-1"><a href="bibliography-1.html#cb204-1" tabindex="-1"></a><span class="ex">python3</span> ../../../resources/scripts/selfcites.py myreferences.bib</span></code></pre></div>
 <p>More generally, you can run that script from anywhere on a bib file that is anywhere:</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb204-1"><a href="bibliography-1.html#cb204-1" tabindex="-1"></a><span class="ex">python3</span> path/to//selfcites.py path/to/myreferences.bib</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb205-1"><a href="bibliography-1.html#cb205-1" tabindex="-1"></a><span class="ex">python3</span> path/to//selfcites.py path/to/myreferences.bib</span></code></pre></div>
 <p>The script will check the <code>.bib</code> file for self-citations and output a report in the terminal such as:</p>
 <pre><code>Dialectica open access initative self-citing bibliography file check, (c) Thomas Hodgson 2021
 I found these self cited keys:
@@ -531,15 +531,15 @@ printed out (no extra entries), then you can use the simple option 1.</li>
 no results, then your <code>.bib</code> file doesn’t include self-citations and you
 are good to go. If you do find results, you will have bibliography entries
 in the file that look like this, for instance:</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb206-1"><a href="bibliography-1.html#cb206-1" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">geach_pt:1962</span>,</span>
-<span id="cb206-2"><a href="bibliography-1.html#cb206-2" tabindex="-1"></a>  <span class="dt">address</span> =       {Ithaca, New York},</span>
-<span id="cb206-3"><a href="bibliography-1.html#cb206-3" tabindex="-1"></a>  <span class="dt">author</span> =        {Geach, Peter Thomas},</span>
-<span id="cb206-4"><a href="bibliography-1.html#cb206-4" tabindex="-1"></a>  <span class="dt">note</span> =          {third edition: <span class="ch">\citet</span>{geach_pt:1980}},</span>
-<span id="cb206-5"><a href="bibliography-1.html#cb206-5" tabindex="-1"></a>  <span class="dt">publisher</span> =     {Cornell University Press},</span>
-<span id="cb206-6"><a href="bibliography-1.html#cb206-6" tabindex="-1"></a>  <span class="dt">title</span> =         {Reference and Generality, an examination of some</span>
-<span id="cb206-7"><a href="bibliography-1.html#cb206-7" tabindex="-1"></a>                   medieval and modern theories},</span>
-<span id="cb206-8"><a href="bibliography-1.html#cb206-8" tabindex="-1"></a>  <span class="dt">year</span> =          {1962},</span>
-<span id="cb206-9"><a href="bibliography-1.html#cb206-9" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb207-1"><a href="bibliography-1.html#cb207-1" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">geach_pt:1962</span>,</span>
+<span id="cb207-2"><a href="bibliography-1.html#cb207-2" tabindex="-1"></a>  <span class="dt">address</span> =       {Ithaca, New York},</span>
+<span id="cb207-3"><a href="bibliography-1.html#cb207-3" tabindex="-1"></a>  <span class="dt">author</span> =        {Geach, Peter Thomas},</span>
+<span id="cb207-4"><a href="bibliography-1.html#cb207-4" tabindex="-1"></a>  <span class="dt">note</span> =          {third edition: <span class="ch">\citet</span>{geach_pt:1980}},</span>
+<span id="cb207-5"><a href="bibliography-1.html#cb207-5" tabindex="-1"></a>  <span class="dt">publisher</span> =     {Cornell University Press},</span>
+<span id="cb207-6"><a href="bibliography-1.html#cb207-6" tabindex="-1"></a>  <span class="dt">title</span> =         {Reference and Generality, an examination of some</span>
+<span id="cb207-7"><a href="bibliography-1.html#cb207-7" tabindex="-1"></a>                   medieval and modern theories},</span>
+<span id="cb207-8"><a href="bibliography-1.html#cb207-8" tabindex="-1"></a>  <span class="dt">year</span> =          {1962},</span>
+<span id="cb207-9"><a href="bibliography-1.html#cb207-9" tabindex="-1"></a>}</span></code></pre></div>
 <p>In the <code>note =</code> line here, you see the code <code>\citet{geach_pt:1980}</code>. This is
 a LaTeX command that cites <em>another bibliography entry in the same file</em>, namely
 the one with the key <code>geach_pt:1980</code>. Ultimately this will be printed out in
@@ -552,19 +552,19 @@ the bibliography as:</p>
 <p>The LaTeX <code>\cite</code> commands can start with <code>\cite</code>, <code>\citet</code>, <code>\citep</code>; you will
 find all of these by searching <code>\cite</code> in the file. Sometimes the command cites
 pages numbers and looks like this instead:</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb207-1"><a href="bibliography-1.html#cb207-1" tabindex="-1"></a><span class="co">  note =          {reprinted in \citet[232--258]{mccall_s:1967}, with</span></span>
-<span id="cb207-2"><a href="bibliography-1.html#cb207-2" tabindex="-1"></a><span class="co">                   considerable change in notation},</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb208-1"><a href="bibliography-1.html#cb208-1" tabindex="-1"></a><span class="co">  note =          {reprinted in \citet[232--258]{mccall_s:1967}, with</span></span>
+<span id="cb208-2"><a href="bibliography-1.html#cb208-2" tabindex="-1"></a><span class="co">                   considerable change in notation},</span></span></code></pre></div>
 <p>In that case the cited entry’s key is still the thing between curly brackets,
 here <code>mccall_s:1967</code>.</p>
 <p>Now you need to make sure that the self-cited entries appear in the bibliography.
 The problem is that if it is only cited in the bibligraphy and not the paper
 itself, it will not automatically be included. To ensure that it is included,
 you need to add the key in your document metadata, in a <code>nocite</code> field:</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb208-1"><a href="bibliography-1.html#cb208-1" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A Neat Paper</span></span>
-<span id="cb208-2"><a href="bibliography-1.html#cb208-2" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Smith, John</span></span>
-<span id="cb208-3"><a href="bibliography-1.html#cb208-3" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> smith.bib</span></span>
-<span id="cb208-4"><a href="bibliography-1.html#cb208-4" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb208-5"><a href="bibliography-1.html#cb208-5" tabindex="-1"></a>  geach_pt:1980, mccall_s:1967</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb209-1"><a href="bibliography-1.html#cb209-1" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A Neat Paper</span></span>
+<span id="cb209-2"><a href="bibliography-1.html#cb209-2" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Smith, John</span></span>
+<span id="cb209-3"><a href="bibliography-1.html#cb209-3" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> smith.bib</span></span>
+<span id="cb209-4"><a href="bibliography-1.html#cb209-4" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb209-5"><a href="bibliography-1.html#cb209-5" tabindex="-1"></a>  geach_pt:1980, mccall_s:1967</span></code></pre></div>
 <p>The <code>nocite: |</code> should appear on one line, the entries on one or several lines
 below but each of those lines must start with at least two spaces, and the
 entries should be separated by commas.</p>
@@ -577,8 +577,8 @@ the keys are entered in your document’s <code>nocite</code> metadata section.<
 <div id="adding-non-cited-references-in-the-bibliography" class="section level2 hasAnchor" number="13.3">
 <h2><span class="header-section-number">13.3</span> Adding non-cited references in the bibliography<a href="bibliography-1.html#adding-non-cited-references-in-the-bibliography" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the metadata block, add a line:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb209-1"><a href="bibliography-1.html#cb209-1" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb209-2"><a href="bibliography-1.html#cb209-2" tabindex="-1"></a>  @bibtexentry1, @bibtexentry2, @bibtexentry3</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb210-1"><a href="bibliography-1.html#cb210-1" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb210-2"><a href="bibliography-1.html#cb210-2" tabindex="-1"></a>  @bibtexentry1, @bibtexentry2, @bibtexentry3</span></code></pre></div>
 <p>If you have lots of those, best use a tool to extract the keys
 automatically from a bibtex file.</p>
 </div>
@@ -645,15 +645,15 @@ creates a cleaned-up version of the file, as
 <h3><span class="header-section-number">13.6.3</span> BibTeX field names aren’t case-sensitive<a href="bibliography-1.html#bibtex-field-names-arent-case-sensitive" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>BibTeX field names are not case-sensitive: they can be named “author”,
 or “Author”, or “AUTHOR”.</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb211-1"><a href="bibliography-1.html#cb211-1" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
-<span id="cb211-2"><a href="bibliography-1.html#cb211-2" tabindex="-1"></a>  <span class="dt">Author</span> = {Jakobson, Roman},</span>
-<span id="cb211-3"><a href="bibliography-1.html#cb211-3" tabindex="-1"></a>  <span class="dt">Title</span> = {Metalanguage as a Linguistic Problem}</span>
-<span id="cb211-4"><a href="bibliography-1.html#cb211-4" tabindex="-1"></a>}</span></code></pre></div>
-<p>Is the same as:</p>
 <div class="sourceCode" id="cb212"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb212-1"><a href="bibliography-1.html#cb212-1" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
-<span id="cb212-2"><a href="bibliography-1.html#cb212-2" tabindex="-1"></a>  <span class="dt">author</span> = {Jakobson, Roman},</span>
-<span id="cb212-3"><a href="bibliography-1.html#cb212-3" tabindex="-1"></a>  <span class="dt">TITLE</span> = {Metalanguage as a Linguistic Problem}</span>
+<span id="cb212-2"><a href="bibliography-1.html#cb212-2" tabindex="-1"></a>  <span class="dt">Author</span> = {Jakobson, Roman},</span>
+<span id="cb212-3"><a href="bibliography-1.html#cb212-3" tabindex="-1"></a>  <span class="dt">Title</span> = {Metalanguage as a Linguistic Problem}</span>
 <span id="cb212-4"><a href="bibliography-1.html#cb212-4" tabindex="-1"></a>}</span></code></pre></div>
+<p>Is the same as:</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb213-1"><a href="bibliography-1.html#cb213-1" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
+<span id="cb213-2"><a href="bibliography-1.html#cb213-2" tabindex="-1"></a>  <span class="dt">author</span> = {Jakobson, Roman},</span>
+<span id="cb213-3"><a href="bibliography-1.html#cb213-3" tabindex="-1"></a>  <span class="dt">TITLE</span> = {Metalanguage as a Linguistic Problem}</span>
+<span id="cb213-4"><a href="bibliography-1.html#cb213-4" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="title-capitalization" class="section level3 hasAnchor" number="13.6.4">
 <h3><span class="header-section-number">13.6.4</span> Title capitalization<a href="bibliography-1.html#title-capitalization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -684,25 +684,25 @@ is in English and you’re sure it won’t adopt the APA sentence case conventio
 then it’s harmless to use title case in the BibTeX file itself. But when in
 doubt sentence case + <code>langid</code> field is the safe option.</p>
 <p>For an illustration:</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb213-1"><a href="bibliography-1.html#cb213-1" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">Tarski1936</span>,</span>
-<span id="cb213-2"><a href="bibliography-1.html#cb213-2" tabindex="-1"></a>    <span class="dt">author</span> = {Alfred Tarski},</span>
-<span id="cb213-3"><a href="bibliography-1.html#cb213-3" tabindex="-1"></a>    <span class="dt">title</span> = {Der Wahrheitsbegriff in den formalisierten Sprachen},</span>
-<span id="cb213-4"><a href="bibliography-1.html#cb213-4" tabindex="-1"></a>    <span class="dt">journal</span> = {Studia Philosophica},</span>
-<span id="cb213-5"><a href="bibliography-1.html#cb213-5" tabindex="-1"></a>    <span class="dt">volume</span> = {1},</span>
-<span id="cb213-6"><a href="bibliography-1.html#cb213-6" tabindex="-1"></a>    <span class="dt">pages</span> = {261--405},</span>
-<span id="cb213-7"><a href="bibliography-1.html#cb213-7" tabindex="-1"></a>    <span class="dt">year</span> = {1936},</span>
-<span id="cb213-8"><a href="bibliography-1.html#cb213-8" tabindex="-1"></a>    <span class="dt">langid</span> = {de},</span>
-<span id="cb213-9"><a href="bibliography-1.html#cb213-9" tabindex="-1"></a>}</span>
-<span id="cb213-10"><a href="bibliography-1.html#cb213-10" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">Russell1905</span>,</span>
-<span id="cb213-11"><a href="bibliography-1.html#cb213-11" tabindex="-1"></a>    <span class="dt">author</span> = {Bertrand Russell},</span>
-<span id="cb213-12"><a href="bibliography-1.html#cb213-12" tabindex="-1"></a>    <span class="dt">title</span> = {On denoting},</span>
-<span id="cb213-13"><a href="bibliography-1.html#cb213-13" tabindex="-1"></a>    <span class="dt">journal</span> = {Mind},</span>
-<span id="cb213-14"><a href="bibliography-1.html#cb213-14" tabindex="-1"></a>    <span class="dt">volume</span> = {14},</span>
-<span id="cb213-15"><a href="bibliography-1.html#cb213-15" tabindex="-1"></a>    <span class="dt">number</span> = {56},</span>
-<span id="cb213-16"><a href="bibliography-1.html#cb213-16" tabindex="-1"></a>    <span class="dt">pages</span> = {479--493},</span>
-<span id="cb213-17"><a href="bibliography-1.html#cb213-17" tabindex="-1"></a>    <span class="dt">year</span> = {1905},</span>
-<span id="cb213-18"><a href="bibliography-1.html#cb213-18" tabindex="-1"></a>  <span class="dt">langid</span> = {en},</span>
-<span id="cb213-19"><a href="bibliography-1.html#cb213-19" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb214-1"><a href="bibliography-1.html#cb214-1" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">Tarski1936</span>,</span>
+<span id="cb214-2"><a href="bibliography-1.html#cb214-2" tabindex="-1"></a>    <span class="dt">author</span> = {Alfred Tarski},</span>
+<span id="cb214-3"><a href="bibliography-1.html#cb214-3" tabindex="-1"></a>    <span class="dt">title</span> = {Der Wahrheitsbegriff in den formalisierten Sprachen},</span>
+<span id="cb214-4"><a href="bibliography-1.html#cb214-4" tabindex="-1"></a>    <span class="dt">journal</span> = {Studia Philosophica},</span>
+<span id="cb214-5"><a href="bibliography-1.html#cb214-5" tabindex="-1"></a>    <span class="dt">volume</span> = {1},</span>
+<span id="cb214-6"><a href="bibliography-1.html#cb214-6" tabindex="-1"></a>    <span class="dt">pages</span> = {261--405},</span>
+<span id="cb214-7"><a href="bibliography-1.html#cb214-7" tabindex="-1"></a>    <span class="dt">year</span> = {1936},</span>
+<span id="cb214-8"><a href="bibliography-1.html#cb214-8" tabindex="-1"></a>    <span class="dt">langid</span> = {de},</span>
+<span id="cb214-9"><a href="bibliography-1.html#cb214-9" tabindex="-1"></a>}</span>
+<span id="cb214-10"><a href="bibliography-1.html#cb214-10" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">Russell1905</span>,</span>
+<span id="cb214-11"><a href="bibliography-1.html#cb214-11" tabindex="-1"></a>    <span class="dt">author</span> = {Bertrand Russell},</span>
+<span id="cb214-12"><a href="bibliography-1.html#cb214-12" tabindex="-1"></a>    <span class="dt">title</span> = {On denoting},</span>
+<span id="cb214-13"><a href="bibliography-1.html#cb214-13" tabindex="-1"></a>    <span class="dt">journal</span> = {Mind},</span>
+<span id="cb214-14"><a href="bibliography-1.html#cb214-14" tabindex="-1"></a>    <span class="dt">volume</span> = {14},</span>
+<span id="cb214-15"><a href="bibliography-1.html#cb214-15" tabindex="-1"></a>    <span class="dt">number</span> = {56},</span>
+<span id="cb214-16"><a href="bibliography-1.html#cb214-16" tabindex="-1"></a>    <span class="dt">pages</span> = {479--493},</span>
+<span id="cb214-17"><a href="bibliography-1.html#cb214-17" tabindex="-1"></a>    <span class="dt">year</span> = {1905},</span>
+<span id="cb214-18"><a href="bibliography-1.html#cb214-18" tabindex="-1"></a>  <span class="dt">langid</span> = {en},</span>
+<span id="cb214-19"><a href="bibliography-1.html#cb214-19" tabindex="-1"></a>}</span></code></pre></div>
 <p>For more detail:</p>
 <ul>
 <li>the <code>langid</code> field is a <a href="https://www.ctan.org/pkg/biblatex"><code>biblatex</code> field
@@ -721,17 +721,17 @@ affect the formal of the bibliography.</li>
 from a 2010 edition of Locke’s 1689 essay, add a field origdate in the
 bibtex entry. (will not show up in the PDF at the moment, but our final template
 will do it). Ex:</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb214-1"><a href="bibliography-1.html#cb214-1" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
-<span id="cb214-2"><a href="bibliography-1.html#cb214-2" tabindex="-1"></a>  <span class="dt">Author</span> = {Jakobson, Roman},</span>
-<span id="cb214-3"><a href="bibliography-1.html#cb214-3" tabindex="-1"></a>  <span class="dt">Booktitle</span> = {The Framework of Language},</span>
-<span id="cb214-4"><a href="bibliography-1.html#cb214-4" tabindex="-1"></a>  <span class="dt">Location</span> = {Ann Arbor},</span>
-<span id="cb214-5"><a href="bibliography-1.html#cb214-5" tabindex="-1"></a>  <span class="dt">Year</span> = {1980}</span>
-<span id="cb214-6"><a href="bibliography-1.html#cb214-6" tabindex="-1"></a>  <span class="dt">Origdate</span> = {1956},</span>
-<span id="cb214-7"><a href="bibliography-1.html#cb214-7" tabindex="-1"></a>  <span class="dt">Pages</span> = {81<span class="ch">\-</span>-92},</span>
-<span id="cb214-8"><a href="bibliography-1.html#cb214-8" tabindex="-1"></a>  <span class="dt">Publisher</span> = {University of Michigan Press},</span>
-<span id="cb214-9"><a href="bibliography-1.html#cb214-9" tabindex="-1"></a>  <span class="dt">Shorttitle</span> = {Metalanguage as a Linguistic Problem},</span>
-<span id="cb214-10"><a href="bibliography-1.html#cb214-10" tabindex="-1"></a>  <span class="dt">Title</span> = {Metalanguage as a Linguistic Problem}</span>
-<span id="cb214-11"><a href="bibliography-1.html#cb214-11" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb215-1"><a href="bibliography-1.html#cb215-1" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
+<span id="cb215-2"><a href="bibliography-1.html#cb215-2" tabindex="-1"></a>  <span class="dt">Author</span> = {Jakobson, Roman},</span>
+<span id="cb215-3"><a href="bibliography-1.html#cb215-3" tabindex="-1"></a>  <span class="dt">Booktitle</span> = {The Framework of Language},</span>
+<span id="cb215-4"><a href="bibliography-1.html#cb215-4" tabindex="-1"></a>  <span class="dt">Location</span> = {Ann Arbor},</span>
+<span id="cb215-5"><a href="bibliography-1.html#cb215-5" tabindex="-1"></a>  <span class="dt">Year</span> = {1980}</span>
+<span id="cb215-6"><a href="bibliography-1.html#cb215-6" tabindex="-1"></a>  <span class="dt">Origdate</span> = {1956},</span>
+<span id="cb215-7"><a href="bibliography-1.html#cb215-7" tabindex="-1"></a>  <span class="dt">Pages</span> = {81<span class="ch">\-</span>-92},</span>
+<span id="cb215-8"><a href="bibliography-1.html#cb215-8" tabindex="-1"></a>  <span class="dt">Publisher</span> = {University of Michigan Press},</span>
+<span id="cb215-9"><a href="bibliography-1.html#cb215-9" tabindex="-1"></a>  <span class="dt">Shorttitle</span> = {Metalanguage as a Linguistic Problem},</span>
+<span id="cb215-10"><a href="bibliography-1.html#cb215-10" tabindex="-1"></a>  <span class="dt">Title</span> = {Metalanguage as a Linguistic Problem}</span>
+<span id="cb215-11"><a href="bibliography-1.html#cb215-11" tabindex="-1"></a>}</span></code></pre></div>
 <p>See <a href="http://texdoc.net/texmf-dist/doc/latex/biblatex/biblatex.pdf">biblatex documentation, §2.2.2 on data
 fields</a>.</p>
 </div>
@@ -756,11 +756,11 @@ respectively). Both are understood by Pandoc’s bibliography processor, <code>c
 <p>Note: if you have a full LaTeX installation on your computer you will have
 access to some of these documents from your terminal using the <code>texdoc</code>
 command. Try the commands:</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb215-1"><a href="bibliography-1.html#cb215-1" tabindex="-1"></a><span class="ex">texdoc</span> biblatex</span>
-<span id="cb215-2"><a href="bibliography-1.html#cb215-2" tabindex="-1"></a></span>
-<span id="cb215-3"><a href="bibliography-1.html#cb215-3" tabindex="-1"></a><span class="ex">texdoc</span> biblatex-cheatsheet</span>
-<span id="cb215-4"><a href="bibliography-1.html#cb215-4" tabindex="-1"></a></span>
-<span id="cb215-5"><a href="bibliography-1.html#cb215-5" tabindex="-1"></a><span class="ex">texdoc</span> bibtex</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb216-1"><a href="bibliography-1.html#cb216-1" tabindex="-1"></a><span class="ex">texdoc</span> biblatex</span>
+<span id="cb216-2"><a href="bibliography-1.html#cb216-2" tabindex="-1"></a></span>
+<span id="cb216-3"><a href="bibliography-1.html#cb216-3" tabindex="-1"></a><span class="ex">texdoc</span> biblatex-cheatsheet</span>
+<span id="cb216-4"><a href="bibliography-1.html#cb216-4" tabindex="-1"></a></span>
+<span id="cb216-5"><a href="bibliography-1.html#cb216-5" tabindex="-1"></a><span class="ex">texdoc</span> bibtex</span></code></pre></div>
 <p><strong>Dialectica guideline</strong>. We use the <code>biblatex</code> conventions.</p>
 </div>
 </div>
@@ -769,7 +769,7 @@ command. Try the commands:</p>
 <div id="unpublished-manuscript" class="section level3 hasAnchor" number="13.7.1">
 <h3><span class="header-section-number">13.7.1</span> Unpublished manuscript<a href="bibliography-1.html#unpublished-manuscript" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Choose the type <code>unpublished</code>. Add a note field:</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb216-1"><a href="bibliography-1.html#cb216-1" tabindex="-1"></a><span class="co">  note = {unpublished manuscript}</span></span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb217-1"><a href="bibliography-1.html#cb217-1" tabindex="-1"></a><span class="co">  note = {unpublished manuscript}</span></span></code></pre></div>
 <p>Add a URL if available.</p>
 <p><em>Dialectica guideline</em>. We require a URL. If the author cannot provide a URL, we
 do not create a bibliography entry at all but only describe the source in a
@@ -831,27 +831,27 @@ or use solution 1.</p>
 by citeproc, no matter (a) whether we write <code>Gödel</code> or <code>G{\¨o}del</code>, (b) no
 matter the position, i.e. we get “From gödel to Frege”. <strong>The solution
 is</strong> put G in curly brackets. But why???</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb218-1"><a href="bibliography-1.html#cb218-1" tabindex="-1"></a><span class="co">\@incollection{frege:1967a,</span></span>
-<span id="cb218-2"><a href="bibliography-1.html#cb218-2" tabindex="-1"></a><span class="co">  Author = {Frege, Gottlob},</span></span>
-<span id="cb218-3"><a href="bibliography-1.html#cb218-3" tabindex="-1"></a><span class="co">  Crossref = {vanheijenoort:1967},</span></span>
-<span id="cb218-4"><a href="bibliography-1.html#cb218-4" tabindex="-1"></a><span class="co">  Note = {translated by Stephan Bauer-Mengelberg},</span></span>
-<span id="cb218-5"><a href="bibliography-1.html#cb218-5" tabindex="-1"></a><span class="co">  Num_Sort = {40337},</span></span>
-<span id="cb218-6"><a href="bibliography-1.html#cb218-6" tabindex="-1"></a><span class="co">  Pages = {1\--82},</span></span>
-<span id="cb218-7"><a href="bibliography-1.html#cb218-7" tabindex="-1"></a><span class="co">  Title = {Begriffsschrift: A Formula Language Modeled on that of</span></span>
-<span id="cb218-8"><a href="bibliography-1.html#cb218-8" tabindex="-1"></a><span class="co">  Arithmetic, for Pure Thought},</span></span>
-<span id="cb218-9"><a href="bibliography-1.html#cb218-9" tabindex="-1"></a><span class="co">  Year = {1967}</span></span>
-<span id="cb218-10"><a href="bibliography-1.html#cb218-10" tabindex="-1"></a><span class="co">}</span></span>
-<span id="cb218-11"><a href="bibliography-1.html#cb218-11" tabindex="-1"></a></span>
-<span id="cb218-12"><a href="bibliography-1.html#cb218-12" tabindex="-1"></a><span class="co">\@book{vanheijenoort:1967,</span></span>
-<span id="cb218-13"><a href="bibliography-1.html#cb218-13" tabindex="-1"></a><span class="co">  editor = {van Heijenoort, Jan},</span></span>
-<span id="cb218-14"><a href="bibliography-1.html#cb218-14" tabindex="-1"></a><span class="co">  year = {1967},</span></span>
-<span id="cb218-15"><a href="bibliography-1.html#cb218-15" tabindex="-1"></a><span class="co">  title = {From Frege to G{\&quot;o}del: A Source Book in Mathematical Logic</span></span>
-<span id="cb218-16"><a href="bibliography-1.html#cb218-16" tabindex="-1"></a><span class="co">  1879-1931},</span></span>
-<span id="cb218-17"><a href="bibliography-1.html#cb218-17" tabindex="-1"></a><span class="co">  booktitle = {From Frege to {G}ödel: A Source Book in Mathematical Logic</span></span>
-<span id="cb218-18"><a href="bibliography-1.html#cb218-18" tabindex="-1"></a><span class="co">  1879-1931},</span></span>
-<span id="cb218-19"><a href="bibliography-1.html#cb218-19" tabindex="-1"></a><span class="co">  address = {Cambridge, Massachusetts},publisher = {Harvard University</span></span>
-<span id="cb218-20"><a href="bibliography-1.html#cb218-20" tabindex="-1"></a><span class="co">  Press}</span></span>
-<span id="cb218-21"><a href="bibliography-1.html#cb218-21" tabindex="-1"></a><span class="co">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb219-1"><a href="bibliography-1.html#cb219-1" tabindex="-1"></a><span class="co">\@incollection{frege:1967a,</span></span>
+<span id="cb219-2"><a href="bibliography-1.html#cb219-2" tabindex="-1"></a><span class="co">  Author = {Frege, Gottlob},</span></span>
+<span id="cb219-3"><a href="bibliography-1.html#cb219-3" tabindex="-1"></a><span class="co">  Crossref = {vanheijenoort:1967},</span></span>
+<span id="cb219-4"><a href="bibliography-1.html#cb219-4" tabindex="-1"></a><span class="co">  Note = {translated by Stephan Bauer-Mengelberg},</span></span>
+<span id="cb219-5"><a href="bibliography-1.html#cb219-5" tabindex="-1"></a><span class="co">  Num_Sort = {40337},</span></span>
+<span id="cb219-6"><a href="bibliography-1.html#cb219-6" tabindex="-1"></a><span class="co">  Pages = {1\--82},</span></span>
+<span id="cb219-7"><a href="bibliography-1.html#cb219-7" tabindex="-1"></a><span class="co">  Title = {Begriffsschrift: A Formula Language Modeled on that of</span></span>
+<span id="cb219-8"><a href="bibliography-1.html#cb219-8" tabindex="-1"></a><span class="co">  Arithmetic, for Pure Thought},</span></span>
+<span id="cb219-9"><a href="bibliography-1.html#cb219-9" tabindex="-1"></a><span class="co">  Year = {1967}</span></span>
+<span id="cb219-10"><a href="bibliography-1.html#cb219-10" tabindex="-1"></a><span class="co">}</span></span>
+<span id="cb219-11"><a href="bibliography-1.html#cb219-11" tabindex="-1"></a></span>
+<span id="cb219-12"><a href="bibliography-1.html#cb219-12" tabindex="-1"></a><span class="co">\@book{vanheijenoort:1967,</span></span>
+<span id="cb219-13"><a href="bibliography-1.html#cb219-13" tabindex="-1"></a><span class="co">  editor = {van Heijenoort, Jan},</span></span>
+<span id="cb219-14"><a href="bibliography-1.html#cb219-14" tabindex="-1"></a><span class="co">  year = {1967},</span></span>
+<span id="cb219-15"><a href="bibliography-1.html#cb219-15" tabindex="-1"></a><span class="co">  title = {From Frege to G{\&quot;o}del: A Source Book in Mathematical Logic</span></span>
+<span id="cb219-16"><a href="bibliography-1.html#cb219-16" tabindex="-1"></a><span class="co">  1879-1931},</span></span>
+<span id="cb219-17"><a href="bibliography-1.html#cb219-17" tabindex="-1"></a><span class="co">  booktitle = {From Frege to {G}ödel: A Source Book in Mathematical Logic</span></span>
+<span id="cb219-18"><a href="bibliography-1.html#cb219-18" tabindex="-1"></a><span class="co">  1879-1931},</span></span>
+<span id="cb219-19"><a href="bibliography-1.html#cb219-19" tabindex="-1"></a><span class="co">  address = {Cambridge, Massachusetts},publisher = {Harvard University</span></span>
+<span id="cb219-20"><a href="bibliography-1.html#cb219-20" tabindex="-1"></a><span class="co">  Press}</span></span>
+<span id="cb219-21"><a href="bibliography-1.html#cb219-21" tabindex="-1"></a><span class="co">}</span></span></code></pre></div>
 <p>Beginning of an answer: case is protected if a <em>subpart</em> of the word is bracketed. <code>A dog called {Pizza}</code> will be overriding by the style (and thus printed “A pizza” if the style calls for it) but <code>A dog called {P}izza</code> is
 protected.</p>
 

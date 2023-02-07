@@ -780,13 +780,13 @@ the title with <code>&amp;</code> in your BibTeX file, and it generates an error
 <p>The problem is that in
 LaTeX/BibTeX <code>&amp;</code> is a special character (to indicate tabs).</p>
 <p>Solution: ‘escape’ the ampersand in your BibTeX file:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb38-1"><a href="about-markdown-copyediting.html#cb38-1" tabindex="-1"></a><span class="co">  title = {Fear \&amp; Loathing in Las Vegas}</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb39-1"><a href="about-markdown-copyediting.html#cb39-1" tabindex="-1"></a><span class="co">  title = {Fear \&amp; Loathing in Las Vegas}</span></span></code></pre></div></li>
 <li><p>Your text has a pair of asterisks:</p>
 <pre><code>Principle (*) is strong. Principle (*) is stronger than Principle (**). </code></pre>
 <p>The text between the asterisks is wrongly interpreted as emphasized:</p>
 <p>Principle (<em>) is strong. Principle (</em>) is stronger than Principle (**).</p>
 <p>Solution: escape the asterisks:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb40-1"><a href="about-markdown-copyediting.html#cb40-1" tabindex="-1"></a>Principle (<span class="sc">\*</span>) is strong. Principle (<span class="sc">\*</span>) is stronger than Principle (<span class="sc">\*\*</span>). </span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb41-1"><a href="about-markdown-copyediting.html#cb41-1" tabindex="-1"></a>Principle (<span class="sc">\*</span>) is strong. Principle (<span class="sc">\*</span>) is stronger than Principle (<span class="sc">\*\*</span>). </span></code></pre></div>
 <p>Principle (*) is strong. Principle (*) is stronger than Principle (**).</p></li>
 <li><p>If two $ appear in a paragraph, the in-between text will be wrongly
 treated as a formula if there is no space to the right of the first and to

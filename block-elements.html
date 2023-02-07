@@ -517,19 +517,19 @@ author or simply pick one way or the other.</p>
 <p>Example. In the text below, the text after the quote is a <em>continuation</em>
 of the paragraph before the quote, but the text after the table is a new
 paragraph, so we insert the <code>\indent</code> code.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb86-1"><a href="block-elements.html#cb86-1" tabindex="-1"></a>The first study on that topic was @Obscureapaer. In detailing their results the</span>
-<span id="cb86-2"><a href="block-elements.html#cb86-2" tabindex="-1"></a>authors concluded:</span>
-<span id="cb86-3"><a href="block-elements.html#cb86-3" tabindex="-1"></a></span>
-<span id="cb86-4"><a href="block-elements.html#cb86-4" tabindex="-1"></a><span class="at">&gt; It&#39;s unclear what is going on here.</span></span>
-<span id="cb86-5"><a href="block-elements.html#cb86-5" tabindex="-1"></a></span>
-<span id="cb86-6"><a href="block-elements.html#cb86-6" tabindex="-1"></a>And we agree that this is was the data suggests, as shown by the</span>
-<span id="cb86-7"><a href="block-elements.html#cb86-7" tabindex="-1"></a>fatality rates in the table below.</span>
-<span id="cb86-8"><a href="block-elements.html#cb86-8" tabindex="-1"></a></span>
-<span id="cb86-9"><a href="block-elements.html#cb86-9" tabindex="-1"></a>Test group   Control group</span>
-<span id="cb86-10"><a href="block-elements.html#cb86-10" tabindex="-1"></a>----------- ----------------</span>
-<span id="cb86-11"><a href="block-elements.html#cb86-11" tabindex="-1"></a>.9            .9</span>
-<span id="cb86-12"><a href="block-elements.html#cb86-12" tabindex="-1"></a></span>
-<span id="cb86-13"><a href="block-elements.html#cb86-13" tabindex="-1"></a>\indent The second study on that topic was @Anotherobscure paper... </span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb87-1"><a href="block-elements.html#cb87-1" tabindex="-1"></a>The first study on that topic was @Obscureapaer. In detailing their results the</span>
+<span id="cb87-2"><a href="block-elements.html#cb87-2" tabindex="-1"></a>authors concluded:</span>
+<span id="cb87-3"><a href="block-elements.html#cb87-3" tabindex="-1"></a></span>
+<span id="cb87-4"><a href="block-elements.html#cb87-4" tabindex="-1"></a><span class="at">&gt; It&#39;s unclear what is going on here.</span></span>
+<span id="cb87-5"><a href="block-elements.html#cb87-5" tabindex="-1"></a></span>
+<span id="cb87-6"><a href="block-elements.html#cb87-6" tabindex="-1"></a>And we agree that this is was the data suggests, as shown by the</span>
+<span id="cb87-7"><a href="block-elements.html#cb87-7" tabindex="-1"></a>fatality rates in the table below.</span>
+<span id="cb87-8"><a href="block-elements.html#cb87-8" tabindex="-1"></a></span>
+<span id="cb87-9"><a href="block-elements.html#cb87-9" tabindex="-1"></a>Test group   Control group</span>
+<span id="cb87-10"><a href="block-elements.html#cb87-10" tabindex="-1"></a>----------- ----------------</span>
+<span id="cb87-11"><a href="block-elements.html#cb87-11" tabindex="-1"></a>.9            .9</span>
+<span id="cb87-12"><a href="block-elements.html#cb87-12" tabindex="-1"></a></span>
+<span id="cb87-13"><a href="block-elements.html#cb87-13" tabindex="-1"></a>\indent The second study on that topic was @Anotherobscure paper... </span></code></pre></div>
 <p>Optionally, we could have inserted the code <code>\noindent</code> at the beginning of the
 line <code>And we agree that...</code>, to remind ourselves that we treat this as a
 continuation of the previous paragraph.</p>
@@ -636,7 +636,7 @@ with no title.</p>
 <li>If an article starts with an introduction section, that section should not
 have aheading. So do not start articles with:</li>
 </ul>
-<div class="sourceCode" id="cb87"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb87-1"><a href="block-elements.html#cb87-1" tabindex="-1"></a><span class="fu"># Introduction</span></span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb88-1"><a href="block-elements.html#cb88-1" tabindex="-1"></a><span class="fu"># Introduction</span></span></code></pre></div>
 </div>
 </div>
 <div id="footnotes-and-endnotes" class="section level2 hasAnchor" number="10.3">
@@ -650,15 +650,15 @@ This is suitable for brief notes:</p>
 <p>This is the main text.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>
 This continues the main text.</p>
 </blockquote>
-<div class="sourceCode" id="cb88"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb88-1"><a href="block-elements.html#cb88-1" tabindex="-1"></a>This is the main text.^<span class="co">[</span><span class="ot">In footnote, I distract you with an irrelevant point.</span><span class="co">]</span></span>
-<span id="cb88-2"><a href="block-elements.html#cb88-2" tabindex="-1"></a>This continues the main text.</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb89-1"><a href="block-elements.html#cb89-1" tabindex="-1"></a>This is the main text.^<span class="co">[</span><span class="ot">In footnote, I distract you with an irrelevant point.</span><span class="co">]</span></span>
+<span id="cb89-2"><a href="block-elements.html#cb89-2" tabindex="-1"></a>This continues the main text.</span></code></pre></div>
 <p>The second is a <em>reference link, with identifier</em>. This is suitable for longer
 notes, and required if a note has several paragraphs:</p>
 <blockquote>
 <p>This is the main text.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> This continues the main text.</p>
 </blockquote>
 <p>It spans over several paragaphs.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb89-1"><a href="block-elements.html#cb89-1" tabindex="-1"></a><span class="ex">@echo</span> <span class="st">&quot;it even includes a code listing&quot;</span>.</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb90-1"><a href="block-elements.html#cb90-1" tabindex="-1"></a><span class="ex">@echo</span> <span class="st">&quot;it even includes a code listing&quot;</span>.</span></code></pre></div>
 <blockquote>
 <p>This is the next paragraph that isn’t part of the footnote.</p>
 </blockquote>
@@ -724,14 +724,14 @@ The second sentence is on a line starting with <code>&gt;</code>.</p>
 <p>This is quotation in the lazy style.
 The second line isn’t even indented or starting with <code>&gt;</code>.</p>
 </blockquote>
-<div class="sourceCode" id="cb92"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb92-1"><a href="block-elements.html#cb92-1" tabindex="-1"></a><span class="at">&gt; This is a quotation.</span></span>
-<span id="cb92-2"><a href="block-elements.html#cb92-2" tabindex="-1"></a><span class="at">  The second sentence is on an indented line.</span></span>
-<span id="cb92-3"><a href="block-elements.html#cb92-3" tabindex="-1"></a>  </span>
-<span id="cb92-4"><a href="block-elements.html#cb92-4" tabindex="-1"></a><span class="at">&gt; This is another quotation.</span></span>
-<span id="cb92-5"><a href="block-elements.html#cb92-5" tabindex="-1"></a><span class="at">&gt; The second sentence is on a line starting with </span><span class="in">`&gt;`</span><span class="at">.</span></span>
-<span id="cb92-6"><a href="block-elements.html#cb92-6" tabindex="-1"></a></span>
-<span id="cb92-7"><a href="block-elements.html#cb92-7" tabindex="-1"></a><span class="at">&gt; This is quotation in the lazy style.</span></span>
-<span id="cb92-8"><a href="block-elements.html#cb92-8" tabindex="-1"></a><span class="at">The second line isn&#39;t even indented or starting with </span><span class="in">`&gt;`</span><span class="at">.</span></span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb93-1"><a href="block-elements.html#cb93-1" tabindex="-1"></a><span class="at">&gt; This is a quotation.</span></span>
+<span id="cb93-2"><a href="block-elements.html#cb93-2" tabindex="-1"></a><span class="at">  The second sentence is on an indented line.</span></span>
+<span id="cb93-3"><a href="block-elements.html#cb93-3" tabindex="-1"></a>  </span>
+<span id="cb93-4"><a href="block-elements.html#cb93-4" tabindex="-1"></a><span class="at">&gt; This is another quotation.</span></span>
+<span id="cb93-5"><a href="block-elements.html#cb93-5" tabindex="-1"></a><span class="at">&gt; The second sentence is on a line starting with </span><span class="in">`&gt;`</span><span class="at">.</span></span>
+<span id="cb93-6"><a href="block-elements.html#cb93-6" tabindex="-1"></a></span>
+<span id="cb93-7"><a href="block-elements.html#cb93-7" tabindex="-1"></a><span class="at">&gt; This is quotation in the lazy style.</span></span>
+<span id="cb93-8"><a href="block-elements.html#cb93-8" tabindex="-1"></a><span class="at">The second line isn&#39;t even indented or starting with </span><span class="in">`&gt;`</span><span class="at">.</span></span></code></pre></div>
 <p>For readability avoid the lazy style.</p>
 <p>The quotation citation can be included at the end or in foonote:</p>
 <blockquote>
@@ -740,9 +740,9 @@ The second line isn’t even indented or starting with <code>&gt;</code>.</p>
 <blockquote>
 <p>I am sad.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
 </blockquote>
-<div class="sourceCode" id="cb93"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb93-1"><a href="block-elements.html#cb93-1" tabindex="-1"></a><span class="at">&gt; I am happy. </span><span class="co">[</span><span class="ot">@doe_j:2020</span><span class="co">]</span></span>
-<span id="cb93-2"><a href="block-elements.html#cb93-2" tabindex="-1"></a></span>
-<span id="cb93-3"><a href="block-elements.html#cb93-3" tabindex="-1"></a><span class="at">&gt; I am sad.^</span><span class="co">[</span><span class="ot">@doe_j:2020</span><span class="co">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb94-1"><a href="block-elements.html#cb94-1" tabindex="-1"></a><span class="at">&gt; I am happy. </span><span class="co">[</span><span class="ot">@doe_j:2020</span><span class="co">]</span></span>
+<span id="cb94-2"><a href="block-elements.html#cb94-2" tabindex="-1"></a></span>
+<span id="cb94-3"><a href="block-elements.html#cb94-3" tabindex="-1"></a><span class="at">&gt; I am sad.^</span><span class="co">[</span><span class="ot">@doe_j:2020</span><span class="co">]</span></span></code></pre></div>
 <p>You should distinguish <em>several consecutive quotations</em> from
 <em>a single quotation with several paragraphs</em>. One way to do this is as follows:</p>
 <blockquote>
@@ -752,18 +752,18 @@ The second line isn’t even indented or starting with <code>&gt;</code>.</p>
 <p>This is a second quotation.</p>
 <p>This is not a third quotation, but a further paragraph
 of the second quotation.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb94-1"><a href="block-elements.html#cb94-1" tabindex="-1"></a><span class="ex">@echo</span> <span class="st">&quot;this code block is yet a first block in that quotation too&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb95-1"><a href="block-elements.html#cb95-1" tabindex="-1"></a><span class="ex">@echo</span> <span class="st">&quot;this code block is yet a first block in that quotation too&quot;</span></span></code></pre></div>
 </blockquote>
-<div class="sourceCode" id="cb95"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb95-1"><a href="block-elements.html#cb95-1" tabindex="-1"></a><span class="at">&gt; This is a first quotation.</span></span>
-<span id="cb95-2"><a href="block-elements.html#cb95-2" tabindex="-1"></a></span>
-<span id="cb95-3"><a href="block-elements.html#cb95-3" tabindex="-1"></a><span class="at">&gt; This is a second quotation.</span></span>
-<span id="cb95-4"><a href="block-elements.html#cb95-4" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb95-5"><a href="block-elements.html#cb95-5" tabindex="-1"></a><span class="at">&gt; This is not a third quotation, but a further paragraph </span></span>
-<span id="cb95-6"><a href="block-elements.html#cb95-6" tabindex="-1"></a><span class="at">&gt; of the second quotation.</span></span>
-<span id="cb95-7"><a href="block-elements.html#cb95-7" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb95-8"><a href="block-elements.html#cb95-8" tabindex="-1"></a><span class="at">&gt; ```bash</span></span>
-<span id="cb95-9"><a href="block-elements.html#cb95-9" tabindex="-1"></a><span class="at">&gt; @echo &quot;this code block is yet a first block in that quotation too&quot;</span></span>
-<span id="cb95-10"><a href="block-elements.html#cb95-10" tabindex="-1"></a><span class="at">&gt; ```</span></span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb96-1"><a href="block-elements.html#cb96-1" tabindex="-1"></a><span class="at">&gt; This is a first quotation.</span></span>
+<span id="cb96-2"><a href="block-elements.html#cb96-2" tabindex="-1"></a></span>
+<span id="cb96-3"><a href="block-elements.html#cb96-3" tabindex="-1"></a><span class="at">&gt; This is a second quotation.</span></span>
+<span id="cb96-4"><a href="block-elements.html#cb96-4" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb96-5"><a href="block-elements.html#cb96-5" tabindex="-1"></a><span class="at">&gt; This is not a third quotation, but a further paragraph </span></span>
+<span id="cb96-6"><a href="block-elements.html#cb96-6" tabindex="-1"></a><span class="at">&gt; of the second quotation.</span></span>
+<span id="cb96-7"><a href="block-elements.html#cb96-7" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb96-8"><a href="block-elements.html#cb96-8" tabindex="-1"></a><span class="at">&gt; ```bash</span></span>
+<span id="cb96-9"><a href="block-elements.html#cb96-9" tabindex="-1"></a><span class="at">&gt; @echo &quot;this code block is yet a first block in that quotation too&quot;</span></span>
+<span id="cb96-10"><a href="block-elements.html#cb96-10" tabindex="-1"></a><span class="at">&gt; ```</span></span></code></pre></div>
 <p>That is, we start all lines of the long quotation with <code>&gt;</code>, <em>including the blank lines that separate its paragaphs or blocks</em>. By contrast, we leave an empty line
 between two distinct quotations.</p>
 <p>An alternative is instead to only have <code>&gt;</code> at the beginning of a long quotation
@@ -775,11 +775,11 @@ and indicate with subsequent paragraphs with an indent:</p>
 <blockquote>
 <p>This is a second quotation.</p>
 </blockquote>
-<div class="sourceCode" id="cb96"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb96-1"><a href="block-elements.html#cb96-1" tabindex="-1"></a><span class="at">&gt; This is a first quotation.</span></span>
-<span id="cb96-2"><a href="block-elements.html#cb96-2" tabindex="-1"></a></span>
-<span id="cb96-3"><a href="block-elements.html#cb96-3" tabindex="-1"></a>  This is still part of the first quotation.</span>
-<span id="cb96-4"><a href="block-elements.html#cb96-4" tabindex="-1"></a>  </span>
-<span id="cb96-5"><a href="block-elements.html#cb96-5" tabindex="-1"></a><span class="at">&gt; This is a second quotation.</span></span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb97-1"><a href="block-elements.html#cb97-1" tabindex="-1"></a><span class="at">&gt; This is a first quotation.</span></span>
+<span id="cb97-2"><a href="block-elements.html#cb97-2" tabindex="-1"></a></span>
+<span id="cb97-3"><a href="block-elements.html#cb97-3" tabindex="-1"></a>  This is still part of the first quotation.</span>
+<span id="cb97-4"><a href="block-elements.html#cb97-4" tabindex="-1"></a>  </span>
+<span id="cb97-5"><a href="block-elements.html#cb97-5" tabindex="-1"></a><span class="at">&gt; This is a second quotation.</span></span></code></pre></div>
 <p>You can have quotations within quotations.</p>
 <blockquote>
 <p>As someone said once:</p>
@@ -788,20 +788,20 @@ and indicate with subsequent paragraphs with an indent:</p>
 isn’t worth living.</p>
 </blockquote>
 </blockquote>
-<div class="sourceCode" id="cb97"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb97-1"><a href="block-elements.html#cb97-1" tabindex="-1"></a><span class="at">&gt; As someone said once:</span></span>
-<span id="cb97-2"><a href="block-elements.html#cb97-2" tabindex="-1"></a><span class="at">&gt; </span></span>
-<span id="cb97-3"><a href="block-elements.html#cb97-3" tabindex="-1"></a><span class="at">&gt; &gt; The life unexamined </span></span>
-<span id="cb97-4"><a href="block-elements.html#cb97-4" tabindex="-1"></a><span class="at">&gt; &gt; isn&#39;t worth living.</span></span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb98-1"><a href="block-elements.html#cb98-1" tabindex="-1"></a><span class="at">&gt; As someone said once:</span></span>
+<span id="cb98-2"><a href="block-elements.html#cb98-2" tabindex="-1"></a><span class="at">&gt; </span></span>
+<span id="cb98-3"><a href="block-elements.html#cb98-3" tabindex="-1"></a><span class="at">&gt; &gt; The life unexamined </span></span>
+<span id="cb98-4"><a href="block-elements.html#cb98-4" tabindex="-1"></a><span class="at">&gt; &gt; isn&#39;t worth living.</span></span></code></pre></div>
 </div>
 <div id="lists" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> Lists<a href="block-elements.html#lists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="simple-lists" class="section level3 hasAnchor" number="10.5.1">
 <h3><span class="header-section-number">10.5.1</span> Simple lists<a href="block-elements.html#simple-lists" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Simple unnumbered lists</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb98-1"><a href="block-elements.html#cb98-1" tabindex="-1"></a><span class="ss">* </span>an item</span>
-<span id="cb98-2"><a href="block-elements.html#cb98-2" tabindex="-1"></a><span class="ss">  * </span>a sub-item</span>
-<span id="cb98-3"><a href="block-elements.html#cb98-3" tabindex="-1"></a><span class="ss">  * </span>another sub-item</span>
-<span id="cb98-4"><a href="block-elements.html#cb98-4" tabindex="-1"></a><span class="ss">* </span>an item</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb99-1"><a href="block-elements.html#cb99-1" tabindex="-1"></a><span class="ss">* </span>an item</span>
+<span id="cb99-2"><a href="block-elements.html#cb99-2" tabindex="-1"></a><span class="ss">  * </span>a sub-item</span>
+<span id="cb99-3"><a href="block-elements.html#cb99-3" tabindex="-1"></a><span class="ss">  * </span>another sub-item</span>
+<span id="cb99-4"><a href="block-elements.html#cb99-4" tabindex="-1"></a><span class="ss">* </span>an item</span></code></pre></div>
 <p>Result:</p>
 <ul>
 <li><p>an item</p>
@@ -813,11 +813,11 @@ isn’t worth living.</p>
 </ul>
 <p>You can use <code>-</code> as well as <code>*</code>, and you can mix markers.</p>
 <p>Numbered lists:</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb99-1"><a href="block-elements.html#cb99-1" tabindex="-1"></a><span class="ss">1. </span>item</span>
-<span id="cb99-2"><a href="block-elements.html#cb99-2" tabindex="-1"></a><span class="ss">2. </span>item</span>
-<span id="cb99-3"><a href="block-elements.html#cb99-3" tabindex="-1"></a>  a. sub item</span>
-<span id="cb99-4"><a href="block-elements.html#cb99-4" tabindex="-1"></a>  b. sub item</span>
-<span id="cb99-5"><a href="block-elements.html#cb99-5" tabindex="-1"></a><span class="ss">3. </span>another item</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb100-1"><a href="block-elements.html#cb100-1" tabindex="-1"></a><span class="ss">1. </span>item</span>
+<span id="cb100-2"><a href="block-elements.html#cb100-2" tabindex="-1"></a><span class="ss">2. </span>item</span>
+<span id="cb100-3"><a href="block-elements.html#cb100-3" tabindex="-1"></a>  a. sub item</span>
+<span id="cb100-4"><a href="block-elements.html#cb100-4" tabindex="-1"></a>  b. sub item</span>
+<span id="cb100-5"><a href="block-elements.html#cb100-5" tabindex="-1"></a><span class="ss">3. </span>another item</span></code></pre></div>
 <p>Result</p>
 <ol style="list-style-type: decimal">
 <li>item</li>
@@ -833,12 +833,12 @@ isn’t worth living.</p>
 <li>another item</li>
 </ol>
 <p>Note that markdown ignores the particular number and number format you enter.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb100-1"><a href="block-elements.html#cb100-1" tabindex="-1"></a>a. apples</span>
-<span id="cb100-2"><a href="block-elements.html#cb100-2" tabindex="-1"></a>b. peaches</span>
-<span id="cb100-3"><a href="block-elements.html#cb100-3" tabindex="-1"></a></span>
-<span id="cb100-4"><a href="block-elements.html#cb100-4" tabindex="-1"></a><span class="ss">2. </span>pears</span>
-<span id="cb100-5"><a href="block-elements.html#cb100-5" tabindex="-1"></a><span class="ss">4. </span>bananas</span>
-<span id="cb100-6"><a href="block-elements.html#cb100-6" tabindex="-1"></a><span class="ss">7. </span>cherries</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb101-1"><a href="block-elements.html#cb101-1" tabindex="-1"></a>a. apples</span>
+<span id="cb101-2"><a href="block-elements.html#cb101-2" tabindex="-1"></a>b. peaches</span>
+<span id="cb101-3"><a href="block-elements.html#cb101-3" tabindex="-1"></a></span>
+<span id="cb101-4"><a href="block-elements.html#cb101-4" tabindex="-1"></a><span class="ss">2. </span>pears</span>
+<span id="cb101-5"><a href="block-elements.html#cb101-5" tabindex="-1"></a><span class="ss">4. </span>bananas</span>
+<span id="cb101-6"><a href="block-elements.html#cb101-6" tabindex="-1"></a><span class="ss">7. </span>cherries</span></code></pre></div>
 <p>Result</p>
 <ol style="list-style-type: lower-alpha">
 <li>apples</li>
@@ -852,15 +852,15 @@ isn’t worth living.</p>
 </ol>
 <p>You can put blocks (paragraphs, quotations, etc.) as list items. To do so, align
 the following blocks with a couple of spaces:</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb101-1"><a href="block-elements.html#cb101-1" tabindex="-1"></a><span class="ss">1. </span>This list item has not just one paragraph.</span>
-<span id="cb101-2"><a href="block-elements.html#cb101-2" tabindex="-1"></a></span>
-<span id="cb101-3"><a href="block-elements.html#cb101-3" tabindex="-1"></a>  It has two paragraphs.</span>
-<span id="cb101-4"><a href="block-elements.html#cb101-4" tabindex="-1"></a>  </span>
-<span id="cb101-5"><a href="block-elements.html#cb101-5" tabindex="-1"></a><span class="ss">2. </span>&gt; This section list item</span>
-<span id="cb101-6"><a href="block-elements.html#cb101-6" tabindex="-1"></a>  <span class="at">&gt; contains a quotation.</span></span>
-<span id="cb101-7"><a href="block-elements.html#cb101-7" tabindex="-1"></a>  </span>
-<span id="cb101-8"><a href="block-elements.html#cb101-8" tabindex="-1"></a>  <span class="at">&gt; And the quotation is two </span></span>
-<span id="cb101-9"><a href="block-elements.html#cb101-9" tabindex="-1"></a><span class="at">  &gt; paragraphs.</span></span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb102-1"><a href="block-elements.html#cb102-1" tabindex="-1"></a><span class="ss">1. </span>This list item has not just one paragraph.</span>
+<span id="cb102-2"><a href="block-elements.html#cb102-2" tabindex="-1"></a></span>
+<span id="cb102-3"><a href="block-elements.html#cb102-3" tabindex="-1"></a>  It has two paragraphs.</span>
+<span id="cb102-4"><a href="block-elements.html#cb102-4" tabindex="-1"></a>  </span>
+<span id="cb102-5"><a href="block-elements.html#cb102-5" tabindex="-1"></a><span class="ss">2. </span>&gt; This section list item</span>
+<span id="cb102-6"><a href="block-elements.html#cb102-6" tabindex="-1"></a>  <span class="at">&gt; contains a quotation.</span></span>
+<span id="cb102-7"><a href="block-elements.html#cb102-7" tabindex="-1"></a>  </span>
+<span id="cb102-8"><a href="block-elements.html#cb102-8" tabindex="-1"></a>  <span class="at">&gt; And the quotation is two </span></span>
+<span id="cb102-9"><a href="block-elements.html#cb102-9" tabindex="-1"></a><span class="at">  &gt; paragraphs.</span></span></code></pre></div>
 <p>Result</p>
 <ol style="list-style-type: decimal">
 <li>This list item has not just one paragraph.</li>
@@ -909,15 +909,15 @@ paper but numbered continuously. For example:</p>
 </blockquote>
 </blockquote>
 <p>You enter those as follows using <code class="sourceCode markdown">(@)</code> or <code class="sourceCode markdown">(@identifier)</code>:</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb102-1"><a href="block-elements.html#cb102-1" tabindex="-1"></a>Sentence @liar below illustrates the Liar paradox: </span>
-<span id="cb102-2"><a href="block-elements.html#cb102-2" tabindex="-1"></a></span>
-<span id="cb102-3"><a href="block-elements.html#cb102-3" tabindex="-1"></a>(@liar) Sentence (@liar) is false.</span>
-<span id="cb102-4"><a href="block-elements.html#cb102-4" tabindex="-1"></a></span>
-<span id="cb102-5"><a href="block-elements.html#cb102-5" tabindex="-1"></a>Not all self-referential sentences are paradoxical, however:</span>
-<span id="cb102-6"><a href="block-elements.html#cb102-6" tabindex="-1"></a></span>
-<span id="cb102-7"><a href="block-elements.html#cb102-7" tabindex="-1"></a>(@) This sentence contains several words.</span>
-<span id="cb102-8"><a href="block-elements.html#cb102-8" tabindex="-1"></a></span>
-<span id="cb102-9"><a href="block-elements.html#cb102-9" tabindex="-1"></a>(@three) Sentence @three contains several words.</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb103-1"><a href="block-elements.html#cb103-1" tabindex="-1"></a>Sentence @liar below illustrates the Liar paradox: </span>
+<span id="cb103-2"><a href="block-elements.html#cb103-2" tabindex="-1"></a></span>
+<span id="cb103-3"><a href="block-elements.html#cb103-3" tabindex="-1"></a>(@liar) Sentence (@liar) is false.</span>
+<span id="cb103-4"><a href="block-elements.html#cb103-4" tabindex="-1"></a></span>
+<span id="cb103-5"><a href="block-elements.html#cb103-5" tabindex="-1"></a>Not all self-referential sentences are paradoxical, however:</span>
+<span id="cb103-6"><a href="block-elements.html#cb103-6" tabindex="-1"></a></span>
+<span id="cb103-7"><a href="block-elements.html#cb103-7" tabindex="-1"></a>(@) This sentence contains several words.</span>
+<span id="cb103-8"><a href="block-elements.html#cb103-8" tabindex="-1"></a></span>
+<span id="cb103-9"><a href="block-elements.html#cb103-9" tabindex="-1"></a>(@three) Sentence @three contains several words.</span></code></pre></div>
 <p><code class="sourceCode markdown">(@)</code> is enough to create a numbered example item. You add an
 identifier as in <code class="sourceCode markdown">(@item3)</code> if you need to refer to it later.
 To refer to it, simply use <code>@identifier</code>, as above, which you can wrap between
@@ -943,9 +943,9 @@ numbered example:</p>
 <h3><span class="header-section-number">10.5.4</span> Custom labels lists<a href="block-elements.html#custom-labels-lists" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Requires: the labelled-lists filter</strong>.</p>
 <p>A simple illustration of the custom label syntax:</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb105-1"><a href="block-elements.html#cb105-1" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Premise 1</span><span class="co">]</span>{} This is the first claim.</span>
-<span id="cb105-2"><a href="block-elements.html#cb105-2" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Premise 2</span><span class="co">]</span>{} This is the second claim.</span>
-<span id="cb105-3"><a href="block-elements.html#cb105-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Conclusion</span><span class="co">]</span>{} This is the conclusion.</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb106-1"><a href="block-elements.html#cb106-1" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Premise 1</span><span class="co">]</span>{} This is the first claim.</span>
+<span id="cb106-2"><a href="block-elements.html#cb106-2" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Premise 2</span><span class="co">]</span>{} This is the second claim.</span>
+<span id="cb106-3"><a href="block-elements.html#cb106-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Conclusion</span><span class="co">]</span>{} This is the conclusion.</span></code></pre></div>
 <p>This generates the following list (process this file with the filter
 to see the result):</p>
 <ul>
@@ -1012,9 +1012,9 @@ A‴, A⁗</td>
 <p>Custom labels can be given internal identifiers. The syntax is
 <code>[label]{#identifier}</code>. In the list below, <code>A1ref</code>, <code>A2ref</code> and
 <code>Cref</code> identify the item:</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb106-1"><a href="block-elements.html#cb106-1" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">**A1**</span><span class="co">]</span>{#A1ref} This is the first claim.</span>
-<span id="cb106-2"><a href="block-elements.html#cb106-2" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">A2</span><span class="co">]</span>{#A2ref} This is the second claim.</span>
-<span id="cb106-3"><a href="block-elements.html#cb106-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">*C*</span><span class="co">]</span>{#Cref} This is the conclusion.</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb107-1"><a href="block-elements.html#cb107-1" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">**A1**</span><span class="co">]</span>{#A1ref} This is the first claim.</span>
+<span id="cb107-2"><a href="block-elements.html#cb107-2" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">A2</span><span class="co">]</span>{#A2ref} This is the second claim.</span>
+<span id="cb107-3"><a href="block-elements.html#cb107-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">*C*</span><span class="co">]</span>{#Cref} This is the conclusion.</span></code></pre></div>
 <p>Note that <code>#</code> is not part of the identifier. Identifiers should start
 with a letter and contain only letters, digits, colons <code>:</code>, dots <code>.</code>,
 dashes <code>-</code> and underscores <code>_</code>.</p>
@@ -1063,8 +1063,8 @@ links to cross-refer to custom label items that have a identifier.
 If your link has no text, the label with its formatting will be
 printed out; otherwise whichever text you give for the link.
 For instance, given the custom label list above, the following:</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb107-1"><a href="block-elements.html#cb107-1" tabindex="-1"></a>The claim [](#A1ref) together with <span class="co">[</span><span class="ot">the next claim</span><span class="co">](#A2ref)</span> </span>
-<span id="cb107-2"><a href="block-elements.html#cb107-2" tabindex="-1"></a>entail ([](#Cref)).</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb108-1"><a href="block-elements.html#cb108-1" tabindex="-1"></a>The claim [](#A1ref) together with <span class="co">[</span><span class="ot">the next claim</span><span class="co">](#A2ref)</span> </span>
+<span id="cb108-2"><a href="block-elements.html#cb108-2" tabindex="-1"></a>entail ([](#Cref)).</span></code></pre></div>
 <p>will output:</p>
 <blockquote>
 <p>The claim <a href=""><strong>A1</strong></a> together with <a href="">the next claim</a> entail (<a href=""><em>C</em></a>).</p>
@@ -1083,27 +1083,27 @@ example item other than the embedded list itself.</p>
 <p>Solution: place the embedded list within a statement. Note
 that the embedded content <em>must</em> be indented <em>exactly</em>
 twice (4 spaces). This works:</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb108-1"><a href="block-elements.html#cb108-1" tabindex="-1"></a>(@example-Batu) </span>
-<span id="cb108-2"><a href="block-elements.html#cb108-2" tabindex="-1"></a></span>
-<span id="cb108-3"><a href="block-elements.html#cb108-3" tabindex="-1"></a><span class="in">    ::: statement</span></span>
-<span id="cb108-4"><a href="block-elements.html#cb108-4" tabindex="-1"></a></span>
-<span id="cb108-5"><a href="block-elements.html#cb108-5" tabindex="-1"></a><span class="in">    * []{delimiter=none} Every head of a horse is a head </span></span>
-<span id="cb108-6"><a href="block-elements.html#cb108-6" tabindex="-1"></a><span class="in">     of an animal.</span></span>
-<span id="cb108-7"><a href="block-elements.html#cb108-7" tabindex="-1"></a><span class="in">    * [&amp;there4;]{} Batu is a head of an animal.</span></span>
-<span id="cb108-8"><a href="block-elements.html#cb108-8" tabindex="-1"></a>  </span>
-<span id="cb108-9"><a href="block-elements.html#cb108-9" tabindex="-1"></a><span class="in">    ::::</span></span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb109-1"><a href="block-elements.html#cb109-1" tabindex="-1"></a>(@example-Batu) </span>
+<span id="cb109-2"><a href="block-elements.html#cb109-2" tabindex="-1"></a></span>
+<span id="cb109-3"><a href="block-elements.html#cb109-3" tabindex="-1"></a><span class="in">    ::: statement</span></span>
+<span id="cb109-4"><a href="block-elements.html#cb109-4" tabindex="-1"></a></span>
+<span id="cb109-5"><a href="block-elements.html#cb109-5" tabindex="-1"></a><span class="in">    * []{delimiter=none} Every head of a horse is a head </span></span>
+<span id="cb109-6"><a href="block-elements.html#cb109-6" tabindex="-1"></a><span class="in">     of an animal.</span></span>
+<span id="cb109-7"><a href="block-elements.html#cb109-7" tabindex="-1"></a><span class="in">    * [&amp;there4;]{} Batu is a head of an animal.</span></span>
+<span id="cb109-8"><a href="block-elements.html#cb109-8" tabindex="-1"></a>  </span>
+<span id="cb109-9"><a href="block-elements.html#cb109-9" tabindex="-1"></a><span class="in">    ::::</span></span></code></pre></div>
 <p>You should reduce the right margin for the LaTeX output. (LaTeX
 experts: the statement is placed in a minipage whose with is
 that of the text minus the default list label width; this is
 typically too large for an embedded list.)</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb109-1"><a href="block-elements.html#cb109-1" tabindex="-1"></a>(@Allskunksaremammals) </span>
-<span id="cb109-2"><a href="block-elements.html#cb109-2" tabindex="-1"></a></span>
-<span id="cb109-3"><a href="block-elements.html#cb109-3" tabindex="-1"></a><span class="in">    ::: statement</span></span>
-<span id="cb109-4"><a href="block-elements.html#cb109-4" tabindex="-1"></a></span>
-<span id="cb109-5"><a href="block-elements.html#cb109-5" tabindex="-1"></a><span class="in">    * []{} All skunks are mammals. `\addtolength{\rightskip}{1em} % fix needed`{=latex}</span></span>
-<span id="cb109-6"><a href="block-elements.html#cb109-6" tabindex="-1"></a></span>
-<span id="cb109-7"><a href="block-elements.html#cb109-7" tabindex="-1"></a><span class="in">    * [&amp;there4;]{} All who fear all who respect all skunks fear all who respect all mammals.</span></span>
-<span id="cb109-8"><a href="block-elements.html#cb109-8" tabindex="-1"></a><span class="in">    :::</span></span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb110-1"><a href="block-elements.html#cb110-1" tabindex="-1"></a>(@Allskunksaremammals) </span>
+<span id="cb110-2"><a href="block-elements.html#cb110-2" tabindex="-1"></a></span>
+<span id="cb110-3"><a href="block-elements.html#cb110-3" tabindex="-1"></a><span class="in">    ::: statement</span></span>
+<span id="cb110-4"><a href="block-elements.html#cb110-4" tabindex="-1"></a></span>
+<span id="cb110-5"><a href="block-elements.html#cb110-5" tabindex="-1"></a><span class="in">    * []{} All skunks are mammals. `\addtolength{\rightskip}{1em} % fix needed`{=latex}</span></span>
+<span id="cb110-6"><a href="block-elements.html#cb110-6" tabindex="-1"></a></span>
+<span id="cb110-7"><a href="block-elements.html#cb110-7" tabindex="-1"></a><span class="in">    * [&amp;there4;]{} All who fear all who respect all skunks fear all who respect all mammals.</span></span>
+<span id="cb110-8"><a href="block-elements.html#cb110-8" tabindex="-1"></a><span class="in">    :::</span></span></code></pre></div>
 </div>
 </div>
 <div id="crossreferencing-and-captioning-tables-figures-images-equations" class="section level2 hasAnchor" number="10.6">
@@ -1112,24 +1112,24 @@ typically too large for an embedded list.)</p>
 filter</a>.</p>
 <p>Tables, images can be cross-referenced and can be given a coption
 text. To cross-reference an image:</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb110-1"><a href="block-elements.html#cb110-1" tabindex="-1"></a><span class="al">![](imagefile.png)</span> {#fig:my-image}</span>
-<span id="cb110-2"><a href="block-elements.html#cb110-2" tabindex="-1"></a></span>
-<span id="cb110-3"><a href="block-elements.html#cb110-3" tabindex="-1"></a>As you can see in @Fig:my-image ...</span></code></pre></div>
-<p>To add a caption to the image:</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb111-1"><a href="block-elements.html#cb111-1" tabindex="-1"></a><span class="al">![An image of a flying pig](imagefile.png)</span> {#fig:my-image}</span>
+<div class="sourceCode" id="cb111"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb111-1"><a href="block-elements.html#cb111-1" tabindex="-1"></a><span class="al">![](imagefile.png)</span> {#fig:my-image}</span>
 <span id="cb111-2"><a href="block-elements.html#cb111-2" tabindex="-1"></a></span>
 <span id="cb111-3"><a href="block-elements.html#cb111-3" tabindex="-1"></a>As you can see in @Fig:my-image ...</span></code></pre></div>
+<p>To add a caption to the image:</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb112-1"><a href="block-elements.html#cb112-1" tabindex="-1"></a><span class="al">![An image of a flying pig](imagefile.png)</span> {#fig:my-image}</span>
+<span id="cb112-2"><a href="block-elements.html#cb112-2" tabindex="-1"></a></span>
+<span id="cb112-3"><a href="block-elements.html#cb112-3" tabindex="-1"></a>As you can see in @Fig:my-image ...</span></code></pre></div>
 <p>Example with a table:</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb112-1"><a href="block-elements.html#cb112-1" tabindex="-1"></a>As the reader can see in @tbl:diffstyles, there are many</span>
-<span id="cb112-2"><a href="block-elements.html#cb112-2" tabindex="-1"></a>options:</span>
-<span id="cb112-3"><a href="block-elements.html#cb112-3" tabindex="-1"></a></span>
-<span id="cb112-4"><a href="block-elements.html#cb112-4" tabindex="-1"></a>+----------+-----------+</span>
-<span id="cb112-5"><a href="block-elements.html#cb112-5" tabindex="-1"></a>| style    | features |</span>
-<span id="cb112-6"><a href="block-elements.html#cb112-6" tabindex="-1"></a>+==========+===========+</span>
-<span id="cb112-7"><a href="block-elements.html#cb112-7" tabindex="-1"></a>| ...      | ...       |</span>
-<span id="cb112-8"><a href="block-elements.html#cb112-8" tabindex="-1"></a>+----------+-----------+</span>
-<span id="cb112-9"><a href="block-elements.html#cb112-9" tabindex="-1"></a></span>
-<span id="cb112-10"><a href="block-elements.html#cb112-10" tabindex="-1"></a>: The different styles of text {#tbl:diffstyles}</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb113-1"><a href="block-elements.html#cb113-1" tabindex="-1"></a>As the reader can see in @tbl:diffstyles, there are many</span>
+<span id="cb113-2"><a href="block-elements.html#cb113-2" tabindex="-1"></a>options:</span>
+<span id="cb113-3"><a href="block-elements.html#cb113-3" tabindex="-1"></a></span>
+<span id="cb113-4"><a href="block-elements.html#cb113-4" tabindex="-1"></a>+----------+-----------+</span>
+<span id="cb113-5"><a href="block-elements.html#cb113-5" tabindex="-1"></a>| style    | features |</span>
+<span id="cb113-6"><a href="block-elements.html#cb113-6" tabindex="-1"></a>+==========+===========+</span>
+<span id="cb113-7"><a href="block-elements.html#cb113-7" tabindex="-1"></a>| ...      | ...       |</span>
+<span id="cb113-8"><a href="block-elements.html#cb113-8" tabindex="-1"></a>+----------+-----------+</span>
+<span id="cb113-9"><a href="block-elements.html#cb113-9" tabindex="-1"></a></span>
+<span id="cb113-10"><a href="block-elements.html#cb113-10" tabindex="-1"></a>: The different styles of text {#tbl:diffstyles}</span></code></pre></div>
 <p>The identifiers of images or figures must have the form <code>#fig:...</code>,
 those of tables <code>#tbl:...</code>, those of equations <code>#eq:...</code>.</p>
 <p>When crossreferencing them we use citation syntax with the prefixed
@@ -1157,32 +1157,32 @@ PDF / html output, but they make your markdown source more readable. Now when
 you have a large table, you might need a bit more horizontal space in the
 markdown. For that you increase the wrap line size for the editor. In your file
 metadata block:</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb113-1"><a href="block-elements.html#cb113-1" tabindex="-1"></a><span class="fu">editor_options</span><span class="kw">:</span></span>
-<span id="cb113-2"><a href="block-elements.html#cb113-2" tabindex="-1"></a><span class="at">  </span><span class="fu">markdown</span><span class="kw">:</span></span>
-<span id="cb113-3"><a href="block-elements.html#cb113-3" tabindex="-1"></a><span class="at">    </span><span class="fu">wrap</span><span class="kw">:</span><span class="at"> </span><span class="dv">72</span></span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb114-1"><a href="block-elements.html#cb114-1" tabindex="-1"></a><span class="fu">editor_options</span><span class="kw">:</span></span>
+<span id="cb114-2"><a href="block-elements.html#cb114-2" tabindex="-1"></a><span class="at">  </span><span class="fu">markdown</span><span class="kw">:</span></span>
+<span id="cb114-3"><a href="block-elements.html#cb114-3" tabindex="-1"></a><span class="at">    </span><span class="fu">wrap</span><span class="kw">:</span><span class="at"> </span><span class="dv">72</span></span></code></pre></div>
 <p>Replace 72 with e.g. 80 or more if needed. You’ll see the difference if you go
 to the visual editor and expand your table’s columns a bit.</p>
 <p>In the markdown, words in tables should not be cut. If your markdown table is
 like this:</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb114-1"><a href="block-elements.html#cb114-1" tabindex="-1"></a>+-----+-------+</span>
-<span id="cb114-2"><a href="block-elements.html#cb114-2" tabindex="-1"></a>|know |valua- |</span>
-<span id="cb114-3"><a href="block-elements.html#cb114-3" tabindex="-1"></a>|ledge|tion   |</span>
-<span id="cb114-4"><a href="block-elements.html#cb114-4" tabindex="-1"></a>+=====+=======+</span>
-<span id="cb114-5"><a href="block-elements.html#cb114-5" tabindex="-1"></a>|...  |...    |</span>
-<span id="cb114-6"><a href="block-elements.html#cb114-6" tabindex="-1"></a>+-----+-------+</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb115-1"><a href="block-elements.html#cb115-1" tabindex="-1"></a>+-----+-------+</span>
+<span id="cb115-2"><a href="block-elements.html#cb115-2" tabindex="-1"></a>|know |valua- |</span>
+<span id="cb115-3"><a href="block-elements.html#cb115-3" tabindex="-1"></a>|ledge|tion   |</span>
+<span id="cb115-4"><a href="block-elements.html#cb115-4" tabindex="-1"></a>+=====+=======+</span>
+<span id="cb115-5"><a href="block-elements.html#cb115-5" tabindex="-1"></a>|...  |...    |</span>
+<span id="cb115-6"><a href="block-elements.html#cb115-6" tabindex="-1"></a>+-----+-------+</span></code></pre></div>
 <p>Then “knowledge” and “valuation” will print as “know ledge” and “valua- tion”
 respectively. You need to ensure that no word is cut by enlarging your table:</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb115-1"><a href="block-elements.html#cb115-1" tabindex="-1"></a>+----------+-----------+</span>
-<span id="cb115-2"><a href="block-elements.html#cb115-2" tabindex="-1"></a>|knowledge | valuation |</span>
-<span id="cb115-3"><a href="block-elements.html#cb115-3" tabindex="-1"></a>+==========+===========+</span>
-<span id="cb115-4"><a href="block-elements.html#cb115-4" tabindex="-1"></a>| ...      | ...       |</span>
-<span id="cb115-5"><a href="block-elements.html#cb115-5" tabindex="-1"></a>+----------+-----------+</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb116-1"><a href="block-elements.html#cb116-1" tabindex="-1"></a>+----------+-----------+</span>
+<span id="cb116-2"><a href="block-elements.html#cb116-2" tabindex="-1"></a>|knowledge | valuation |</span>
+<span id="cb116-3"><a href="block-elements.html#cb116-3" tabindex="-1"></a>+==========+===========+</span>
+<span id="cb116-4"><a href="block-elements.html#cb116-4" tabindex="-1"></a>| ...      | ...       |</span>
+<span id="cb116-5"><a href="block-elements.html#cb116-5" tabindex="-1"></a>+----------+-----------+</span></code></pre></div>
 <p>Tables found in your document will be turned into that format if their cells
 require multiple lines. Otherwise they will be turned into the simpler format:</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb116-1"><a href="block-elements.html#cb116-1" tabindex="-1"></a>Corner    Header 1    Header 2    Header 3</span>
-<span id="cb116-2"><a href="block-elements.html#cb116-2" tabindex="-1"></a>-------- ----------- ----------- -------------</span>
-<span id="cb116-3"><a href="block-elements.html#cb116-3" tabindex="-1"></a>Row 1     Hello       My          Friend</span>
-<span id="cb116-4"><a href="block-elements.html#cb116-4" tabindex="-1"></a>Row 2     1asdoi      23          234</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb117-1"><a href="block-elements.html#cb117-1" tabindex="-1"></a>Corner    Header 1    Header 2    Header 3</span>
+<span id="cb117-2"><a href="block-elements.html#cb117-2" tabindex="-1"></a>-------- ----------- ----------- -------------</span>
+<span id="cb117-3"><a href="block-elements.html#cb117-3" tabindex="-1"></a>Row 1     Hello       My          Friend</span>
+<span id="cb117-4"><a href="block-elements.html#cb117-4" tabindex="-1"></a>Row 2     1asdoi      23          234</span></code></pre></div>
 <p>You can create tables from scratch (a) in the RStudio visual editor or (b) in
 markdown code. For the latter you can use a <a href="https://www.tablesgenerator.com/markdown_tables">online markdown table
 generator</a>.</p>
@@ -1195,21 +1195,21 @@ area in the top left cell of the merged area. For example, the table below:</p>
 <blockquote>
 <p><strong>Example missing, to be entered in raw HTML</strong></p>
 </blockquote>
-<div class="sourceCode" id="cb117"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb117-1"><a href="block-elements.html#cb117-1" tabindex="-1"></a>| Cells merged across a row | Head 1                       | Head 2 |</span>
-<span id="cb117-2"><a href="block-elements.html#cb117-2" tabindex="-1"></a>|:--------------------------|:-----------------------------|:-------|</span>
-<span id="cb117-3"><a href="block-elements.html#cb117-3" tabindex="-1"></a>|                           | more                         | less   |</span>
-<span id="cb117-4"><a href="block-elements.html#cb117-4" tabindex="-1"></a>| Row head                  | Cells merged across a column |        |</span></code></pre></div>
-<p>Should be entered as if it was the table below:</p>
-<blockquote>
-<p><strong>Example flawed, to be fixed</strong></p>
-</blockquote>
 <div class="sourceCode" id="cb118"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb118-1"><a href="block-elements.html#cb118-1" tabindex="-1"></a>| Cells merged across a row | Head 1                       | Head 2 |</span>
 <span id="cb118-2"><a href="block-elements.html#cb118-2" tabindex="-1"></a>|:--------------------------|:-----------------------------|:-------|</span>
 <span id="cb118-3"><a href="block-elements.html#cb118-3" tabindex="-1"></a>|                           | more                         | less   |</span>
 <span id="cb118-4"><a href="block-elements.html#cb118-4" tabindex="-1"></a>| Row head                  | Cells merged across a column |        |</span></code></pre></div>
+<p>Should be entered as if it was the table below:</p>
+<blockquote>
+<p><strong>Example flawed, to be fixed</strong></p>
+</blockquote>
+<div class="sourceCode" id="cb119"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb119-1"><a href="block-elements.html#cb119-1" tabindex="-1"></a>| Cells merged across a row | Head 1                       | Head 2 |</span>
+<span id="cb119-2"><a href="block-elements.html#cb119-2" tabindex="-1"></a>|:--------------------------|:-----------------------------|:-------|</span>
+<span id="cb119-3"><a href="block-elements.html#cb119-3" tabindex="-1"></a>|                           | more                         | less   |</span>
+<span id="cb119-4"><a href="block-elements.html#cb119-4" tabindex="-1"></a>| Row head                  | Cells merged across a column |        |</span></code></pre></div>
 <p>A note should be made of the change. Next to the table code you should enter the
 following:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb119-1"><a href="block-elements.html#cb119-1" tabindex="-1"></a><span class="co">&lt;!-- cells to merge: C1R1 and C1R2; C2R3 and C3R3 --\&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb120-1"><a href="block-elements.html#cb120-1" tabindex="-1"></a><span class="co">&lt;!-- cells to merge: C1R1 and C1R2; C2R3 and C3R3 --\&gt;</span></span></code></pre></div>
 <p>This will be invisible in the output, but visible to those who edit the file.
 ‘C2R3’ abbreviates ’second column from the left, third row the top.</p>
 <p>We will then have to insert LaTeX and HTML output code directly.
@@ -1239,13 +1239,13 @@ filter.</p>
 <li>Once you have the latex code in the separate .md, you can embed
 it in the following code:</li>
 </ol>
-<div class="sourceCode" id="cb120"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb120-1"><a href="block-elements.html#cb120-1" tabindex="-1"></a><span class="in">```{=latex}</span></span>
-<span id="cb120-2"><a href="block-elements.html#cb120-2" tabindex="-1"></a><span class="in">\begin{center}</span></span>
-<span id="cb120-3"><a href="block-elements.html#cb120-3" tabindex="-1"></a></span>
-<span id="cb120-4"><a href="block-elements.html#cb120-4" tabindex="-1"></a><span class="in">[latex code for tables]</span></span>
-<span id="cb120-5"><a href="block-elements.html#cb120-5" tabindex="-1"></a></span>
-<span id="cb120-6"><a href="block-elements.html#cb120-6" tabindex="-1"></a><span class="in">\end{center}</span></span>
-<span id="cb120-7"><a href="block-elements.html#cb120-7" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb121-1"><a href="block-elements.html#cb121-1" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb121-2"><a href="block-elements.html#cb121-2" tabindex="-1"></a><span class="in">\begin{center}</span></span>
+<span id="cb121-3"><a href="block-elements.html#cb121-3" tabindex="-1"></a></span>
+<span id="cb121-4"><a href="block-elements.html#cb121-4" tabindex="-1"></a><span class="in">[latex code for tables]</span></span>
+<span id="cb121-5"><a href="block-elements.html#cb121-5" tabindex="-1"></a></span>
+<span id="cb121-6"><a href="block-elements.html#cb121-6" tabindex="-1"></a><span class="in">\end{center}</span></span>
+<span id="cb121-7"><a href="block-elements.html#cb121-7" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>The <code>\begin{center}</code> and <code>\end{center}</code> lines are optional, their
 effet is to center your table in the page.</p>
 <p>The LaTeX code will only produce a result in LaTeX/PDF output.
@@ -1253,20 +1253,20 @@ If the markdown code works with HTML output, you should leave it
 and embed it in a <code>::: {.not-in-format .latex} ... :::</code> Div,
 which ensures that the markdown table code is used only in
 formats other than LaTeX.</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb121-1"><a href="block-elements.html#cb121-1" tabindex="-1"></a></span>
-<span id="cb121-2"><a href="block-elements.html#cb121-2" tabindex="-1"></a><span class="in">```{=latex}</span></span>
-<span id="cb121-3"><a href="block-elements.html#cb121-3" tabindex="-1"></a><span class="in">\begin{center}</span></span>
-<span id="cb121-4"><a href="block-elements.html#cb121-4" tabindex="-1"></a></span>
-<span id="cb121-5"><a href="block-elements.html#cb121-5" tabindex="-1"></a><span class="in">[latex code for your table]</span></span>
-<span id="cb121-6"><a href="block-elements.html#cb121-6" tabindex="-1"></a></span>
-<span id="cb121-7"><a href="block-elements.html#cb121-7" tabindex="-1"></a><span class="in">\end{center}</span></span>
-<span id="cb121-8"><a href="block-elements.html#cb121-8" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb121-9"><a href="block-elements.html#cb121-9" tabindex="-1"></a></span>
-<span id="cb121-10"><a href="block-elements.html#cb121-10" tabindex="-1"></a>::: {.not-in-format .latex}</span>
-<span id="cb121-11"><a href="block-elements.html#cb121-11" tabindex="-1"></a></span>
-<span id="cb121-12"><a href="block-elements.html#cb121-12" tabindex="-1"></a><span class="co">[</span><span class="ot">markdown code for your table</span><span class="co">]</span></span>
-<span id="cb121-13"><a href="block-elements.html#cb121-13" tabindex="-1"></a></span>
-<span id="cb121-14"><a href="block-elements.html#cb121-14" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb122-1"><a href="block-elements.html#cb122-1" tabindex="-1"></a></span>
+<span id="cb122-2"><a href="block-elements.html#cb122-2" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb122-3"><a href="block-elements.html#cb122-3" tabindex="-1"></a><span class="in">\begin{center}</span></span>
+<span id="cb122-4"><a href="block-elements.html#cb122-4" tabindex="-1"></a></span>
+<span id="cb122-5"><a href="block-elements.html#cb122-5" tabindex="-1"></a><span class="in">[latex code for your table]</span></span>
+<span id="cb122-6"><a href="block-elements.html#cb122-6" tabindex="-1"></a></span>
+<span id="cb122-7"><a href="block-elements.html#cb122-7" tabindex="-1"></a><span class="in">\end{center}</span></span>
+<span id="cb122-8"><a href="block-elements.html#cb122-8" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb122-9"><a href="block-elements.html#cb122-9" tabindex="-1"></a></span>
+<span id="cb122-10"><a href="block-elements.html#cb122-10" tabindex="-1"></a>::: {.not-in-format .latex}</span>
+<span id="cb122-11"><a href="block-elements.html#cb122-11" tabindex="-1"></a></span>
+<span id="cb122-12"><a href="block-elements.html#cb122-12" tabindex="-1"></a><span class="co">[</span><span class="ot">markdown code for your table</span><span class="co">]</span></span>
+<span id="cb122-13"><a href="block-elements.html#cb122-13" tabindex="-1"></a></span>
+<span id="cb122-14"><a href="block-elements.html#cb122-14" tabindex="-1"></a>:::</span></code></pre></div>
 <p>Check how the tables look by producing pdfs from the separate .md
 (much faster than always producing the whole article).</p>
 <ol start="3" style="list-style-type: decimal">
@@ -1291,46 +1291,46 @@ here.</li>
 </ol>
 <p>You may need to do the same to insert HTML code. In that case you
 should still leave the original markdown for other formats (JATS-XML), using <code>not-in-format</code> again:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb122-1"><a href="block-elements.html#cb122-1" tabindex="-1"></a>  <span class="in">```{=latex}</span></span>
-<span id="cb122-2"><a href="block-elements.html#cb122-2" tabindex="-1"></a><span class="in">  [latex code for your table]</span></span>
-<span id="cb122-3"><a href="block-elements.html#cb122-3" tabindex="-1"></a><span class="in">  ```</span></span>
-<span id="cb122-4"><a href="block-elements.html#cb122-4" tabindex="-1"></a>  <span class="in">```{=html}</span></span>
-<span id="cb122-5"><a href="block-elements.html#cb122-5" tabindex="-1"></a><span class="in">  [html code for your table]</span></span>
-<span id="cb122-6"><a href="block-elements.html#cb122-6" tabindex="-1"></a><span class="in">  ```</span></span>
-<span id="cb122-7"><a href="block-elements.html#cb122-7" tabindex="-1"></a>  ::: {.not-in-format .latex .html}</span>
-<span id="cb122-8"><a href="block-elements.html#cb122-8" tabindex="-1"></a>  <span class="co">[</span><span class="ot">markdown code for your table</span><span class="co">]</span></span>
-<span id="cb122-9"><a href="block-elements.html#cb122-9" tabindex="-1"></a>  :::</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb123-1"><a href="block-elements.html#cb123-1" tabindex="-1"></a>  <span class="in">```{=latex}</span></span>
+<span id="cb123-2"><a href="block-elements.html#cb123-2" tabindex="-1"></a><span class="in">  [latex code for your table]</span></span>
+<span id="cb123-3"><a href="block-elements.html#cb123-3" tabindex="-1"></a><span class="in">  ```</span></span>
+<span id="cb123-4"><a href="block-elements.html#cb123-4" tabindex="-1"></a>  <span class="in">```{=html}</span></span>
+<span id="cb123-5"><a href="block-elements.html#cb123-5" tabindex="-1"></a><span class="in">  [html code for your table]</span></span>
+<span id="cb123-6"><a href="block-elements.html#cb123-6" tabindex="-1"></a><span class="in">  ```</span></span>
+<span id="cb123-7"><a href="block-elements.html#cb123-7" tabindex="-1"></a>  ::: {.not-in-format .latex .html}</span>
+<span id="cb123-8"><a href="block-elements.html#cb123-8" tabindex="-1"></a>  <span class="co">[</span><span class="ot">markdown code for your table</span><span class="co">]</span></span>
+<span id="cb123-9"><a href="block-elements.html#cb123-9" tabindex="-1"></a>  :::</span></code></pre></div>
 </div>
 <div id="table-aptions" class="section level3 hasAnchor" number="10.7.4">
 <h3><span class="header-section-number">10.7.4</span> Table aptions<a href="block-elements.html#table-aptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Requires:</strong>
 <a href="https://github.com/lierdakil/pandoc-crossref">pandoc-crossref</a>.</p>
 <p><strong>If your table is in markdown only</strong>, add a caption thus:</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb123-1"><a href="block-elements.html#cb123-1" tabindex="-1"></a>+----------+-----------+</span>
-<span id="cb123-2"><a href="block-elements.html#cb123-2" tabindex="-1"></a>|knowledge | valuation |</span>
-<span id="cb123-3"><a href="block-elements.html#cb123-3" tabindex="-1"></a>+==========+===========+</span>
-<span id="cb123-4"><a href="block-elements.html#cb123-4" tabindex="-1"></a>| ...      | ...       |</span>
-<span id="cb123-5"><a href="block-elements.html#cb123-5" tabindex="-1"></a>+----------+-----------+</span>
-<span id="cb123-6"><a href="block-elements.html#cb123-6" tabindex="-1"></a>: An analysis of knowledge and valuation {#tbl:K-and-V}</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb124-1"><a href="block-elements.html#cb124-1" tabindex="-1"></a>+----------+-----------+</span>
+<span id="cb124-2"><a href="block-elements.html#cb124-2" tabindex="-1"></a>|knowledge | valuation |</span>
+<span id="cb124-3"><a href="block-elements.html#cb124-3" tabindex="-1"></a>+==========+===========+</span>
+<span id="cb124-4"><a href="block-elements.html#cb124-4" tabindex="-1"></a>| ...      | ...       |</span>
+<span id="cb124-5"><a href="block-elements.html#cb124-5" tabindex="-1"></a>+----------+-----------+</span>
+<span id="cb124-6"><a href="block-elements.html#cb124-6" tabindex="-1"></a>: An analysis of knowledge and valuation {#tbl:K-and-V}</span></code></pre></div>
 <p>The optional <code>{#tbl:...}</code> provides an identifier for
 crossreferences:</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb124-1"><a href="block-elements.html#cb124-1" tabindex="-1"></a>As you can see in @tbl:K-and-V, the analysis...</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb125-1"><a href="block-elements.html#cb125-1" tabindex="-1"></a>As you can see in @tbl:K-and-V, the analysis...</span></code></pre></div>
 <p>For further details on how to cite see the
 <a href="https://github.com/lierdakil/pandoc-crossref">pandoc-crossref</a>
 manual.</p>
 <p><strong>If your table is in raw LaTeX and markdown</strong>, the solution is this:</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb125-1"><a href="block-elements.html#cb125-1" tabindex="-1"></a>::: {.not-in-format .latex }</span>
-<span id="cb125-2"><a href="block-elements.html#cb125-2" tabindex="-1"></a>+----------+-----------+</span>
-<span id="cb125-3"><a href="block-elements.html#cb125-3" tabindex="-1"></a>|knowledge | valuation |</span>
-<span id="cb125-4"><a href="block-elements.html#cb125-4" tabindex="-1"></a>+==========+===========+</span>
-<span id="cb125-5"><a href="block-elements.html#cb125-5" tabindex="-1"></a>| ...      | ...       |</span>
-<span id="cb125-6"><a href="block-elements.html#cb125-6" tabindex="-1"></a>+----------+-----------+</span>
-<span id="cb125-7"><a href="block-elements.html#cb125-7" tabindex="-1"></a>: An analysis of knowledge and valuation {#tbl:K-and-V}</span>
-<span id="cb125-8"><a href="block-elements.html#cb125-8" tabindex="-1"></a>:::</span>
-<span id="cb125-9"><a href="block-elements.html#cb125-9" tabindex="-1"></a></span>
-<span id="cb125-10"><a href="block-elements.html#cb125-10" tabindex="-1"></a>::: {.not-in-format .latex}</span>
-<span id="cb125-11"><a href="block-elements.html#cb125-11" tabindex="-1"></a></span>
-<span id="cb125-12"><a href="block-elements.html#cb125-12" tabindex="-1"></a></span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb126-1"><a href="block-elements.html#cb126-1" tabindex="-1"></a>::: {.not-in-format .latex }</span>
+<span id="cb126-2"><a href="block-elements.html#cb126-2" tabindex="-1"></a>+----------+-----------+</span>
+<span id="cb126-3"><a href="block-elements.html#cb126-3" tabindex="-1"></a>|knowledge | valuation |</span>
+<span id="cb126-4"><a href="block-elements.html#cb126-4" tabindex="-1"></a>+==========+===========+</span>
+<span id="cb126-5"><a href="block-elements.html#cb126-5" tabindex="-1"></a>| ...      | ...       |</span>
+<span id="cb126-6"><a href="block-elements.html#cb126-6" tabindex="-1"></a>+----------+-----------+</span>
+<span id="cb126-7"><a href="block-elements.html#cb126-7" tabindex="-1"></a>: An analysis of knowledge and valuation {#tbl:K-and-V}</span>
+<span id="cb126-8"><a href="block-elements.html#cb126-8" tabindex="-1"></a>:::</span>
+<span id="cb126-9"><a href="block-elements.html#cb126-9" tabindex="-1"></a></span>
+<span id="cb126-10"><a href="block-elements.html#cb126-10" tabindex="-1"></a>::: {.not-in-format .latex}</span>
+<span id="cb126-11"><a href="block-elements.html#cb126-11" tabindex="-1"></a></span>
+<span id="cb126-12"><a href="block-elements.html#cb126-12" tabindex="-1"></a></span></code></pre></div>
 </div>
 </div>
 <div id="figures-images-diagrams-graphs" class="section level2 hasAnchor" number="10.8">
@@ -1359,17 +1359,17 @@ so we’ll ignore the code option.</p>
 <div id="inserting-figures-as-files" class="section level4 hasAnchor" number="10.8.0.1">
 <h4><span class="header-section-number">10.8.0.1</span> Inserting figures as files<a href="block-elements.html#inserting-figures-as-files" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Basic syntax:</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb126-1"><a href="block-elements.html#cb126-1" tabindex="-1"></a><span class="al">![caption](file.svg &#39;title of the image&#39;)</span>{... attributes ..}</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb127-1"><a href="block-elements.html#cb127-1" tabindex="-1"></a><span class="al">![caption](file.svg &#39;title of the image&#39;)</span>{... attributes ..}</span></code></pre></div>
 <p>Where:</p>
 <ul>
 <li><code>file.svg</code> is the source file</li>
 <li><code>caption</code> is the text that will appear as the image’s caption <em>if</em> the
 image is treated as a floated.</li>
 </ul>
-<div class="sourceCode" id="cb127"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb127-1"><a href="block-elements.html#cb127-1" tabindex="-1"></a><span class="an">As can be seen in the image below:</span></span>
-<span id="cb127-2"><a href="block-elements.html#cb127-2" tabindex="-1"></a>![]</span>
-<span id="cb127-3"><a href="block-elements.html#cb127-3" tabindex="-1"></a>&quot;, followed by the image, followed</span>
-<span id="cb127-4"><a href="block-elements.html#cb127-4" tabindex="-1"></a>  by &quot;a triangle can be split into two right triangles</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb128-1"><a href="block-elements.html#cb128-1" tabindex="-1"></a><span class="an">As can be seen in the image below:</span></span>
+<span id="cb128-2"><a href="block-elements.html#cb128-2" tabindex="-1"></a>![]</span>
+<span id="cb128-3"><a href="block-elements.html#cb128-3" tabindex="-1"></a>&quot;, followed by the image, followed</span>
+<span id="cb128-4"><a href="block-elements.html#cb128-4" tabindex="-1"></a>  by &quot;a triangle can be split into two right triangles</span></code></pre></div>
 </div>
 <div id="prefer-vector-formats-for-figures" class="section level3 hasAnchor" number="10.8.1">
 <h3><span class="header-section-number">10.8.1</span> Prefer vector formats for figures<a href="block-elements.html#prefer-vector-formats-for-figures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1396,9 +1396,9 @@ computer-language equivalent of) “draw a circle of radius 10mm around the coor
 nate (0,0).” The bitmap equivalent would be a big grid with cells coloured to
 form a circle. Because of this, vector images <em>scale perfectly</em> and <em>magnify perfectly</em>. Bitmap images can get noisy and pixelated when scaled or magnified.
 See below if you can tell which is which:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="block-elements.html#cb128-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">rep</span>(<span class="st">&quot;images/vectorVSbitmap-vector.svg&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="block-elements.html#cb129-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">rep</span>(<span class="st">&quot;images/vectorVSbitmap-vector.svg&quot;</span>))</span></code></pre></div>
 <p><img src="images/vectorVSbitmap-vector.svg" /><!-- --></p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="block-elements.html#cb129-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">rep</span>(<span class="st">&quot;images/vectorVSbitmap-bitmap.png&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="block-elements.html#cb130-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">rep</span>(<span class="st">&quot;images/vectorVSbitmap-bitmap.png&quot;</span>))</span></code></pre></div>
 <p><img src="images/vectorVSbitmap-bitmap.png" /><!-- --></p>
 <p>As you can see, the vector (first one) looks smooth when magnified, the bitmap
 looks pixelated.</p>
@@ -1524,7 +1524,7 @@ anyway.</li>
 <h3><span class="header-section-number">10.9.1</span> Numbered equations<a href="block-elements.html#numbered-equations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Requires: pandoc-crossref filter</em>.</p>
 <p>Display formulas can be numbered by assigning them an identifier:</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb130-1"><a href="block-elements.html#cb130-1" tabindex="-1"></a>$$E = mc^2$$ {#eq:my-label}</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb131-1"><a href="block-elements.html#cb131-1" tabindex="-1"></a>$$E = mc^2$$ {#eq:my-label}</span></code></pre></div>
 <p>Here the identifier is <code>eq:my-label</code>. It must start with <code>eq:</code>.
 It can then be used for crossreferences:</p>
 <pre><code>As shown by @my-label, ...</code></pre>
@@ -1541,31 +1541,31 @@ the opening one). The fenced
 Div must have a class from one of the default theorem types
 like <code>theorem</code> (or <code>thm</code>), <code>proposition</code> (or <code>prop</code>), <code>lemma</code>
 (or <code>lem</code>), <code>definition</code> (or <code>defn</code>), <code>remark</code> (or <code>rmk</code>), etc.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb132-1"><a href="block-elements.html#cb132-1" tabindex="-1"></a>::: theorem</span>
-<span id="cb132-2"><a href="block-elements.html#cb132-2" tabindex="-1"></a>Content of the theorem</span>
-<span id="cb132-3"><a href="block-elements.html#cb132-3" tabindex="-1"></a></span>
-<span id="cb132-4"><a href="block-elements.html#cb132-4" tabindex="-1"></a>Second paragraph of the same theorem.</span>
-<span id="cb132-5"><a href="block-elements.html#cb132-5" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb133-1"><a href="block-elements.html#cb133-1" tabindex="-1"></a>::: theorem</span>
+<span id="cb133-2"><a href="block-elements.html#cb133-2" tabindex="-1"></a>Content of the theorem</span>
+<span id="cb133-3"><a href="block-elements.html#cb133-3" tabindex="-1"></a></span>
+<span id="cb133-4"><a href="block-elements.html#cb133-4" tabindex="-1"></a>Second paragraph of the same theorem.</span>
+<span id="cb133-5"><a href="block-elements.html#cb133-5" tabindex="-1"></a>:::</span></code></pre></div>
 <p>An theorem can have an id for cross-reference. If you add an
 ID don’t forget the curly brackets and point before <code>theorem</code>:</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb133-1"><a href="block-elements.html#cb133-1" tabindex="-1"></a>::: {.theorem #theorem}</span>
-<span id="cb133-2"><a href="block-elements.html#cb133-2" tabindex="-1"></a>Content of the theorem</span>
-<span id="cb133-3"><a href="block-elements.html#cb133-3" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb134-1"><a href="block-elements.html#cb134-1" tabindex="-1"></a>::: {.theorem #theorem}</span>
+<span id="cb134-2"><a href="block-elements.html#cb134-2" tabindex="-1"></a>Content of the theorem</span>
+<span id="cb134-3"><a href="block-elements.html#cb134-3" tabindex="-1"></a>:::</span></code></pre></div>
 <p>Theorems can also have a source, or some info. The source is a citation
 right at the beginning of the theorem:</p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb134-1"><a href="block-elements.html#cb134-1" tabindex="-1"></a>::: theorem</span>
-<span id="cb134-2"><a href="block-elements.html#cb134-2" tabindex="-1"></a>@jones1990 Content of the theorem</span>
-<span id="cb134-3"><a href="block-elements.html#cb134-3" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb135-1"><a href="block-elements.html#cb135-1" tabindex="-1"></a>::: theorem</span>
+<span id="cb135-2"><a href="block-elements.html#cb135-2" tabindex="-1"></a>@jones1990 Content of the theorem</span>
+<span id="cb135-3"><a href="block-elements.html#cb135-3" tabindex="-1"></a>:::</span></code></pre></div>
 <p>Info is some text between brackets at the beginning of the
 theorem. The text can itself contain brackets, provided they’re
 properly balanced:</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb135-1"><a href="block-elements.html#cb135-1" tabindex="-1"></a>::: theorem</span>
-<span id="cb135-2"><a href="block-elements.html#cb135-2" tabindex="-1"></a>(negative (or positive) values) Content of the theorem</span>
-<span id="cb135-3"><a href="block-elements.html#cb135-3" tabindex="-1"></a>:::</span></code></pre></div>
-<p>Proofs:</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb136-1"><a href="block-elements.html#cb136-1" tabindex="-1"></a>::: proof</span>
-<span id="cb136-2"><a href="block-elements.html#cb136-2" tabindex="-1"></a>Obvious from theorem @mytheorem.</span>
+<div class="sourceCode" id="cb136"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb136-1"><a href="block-elements.html#cb136-1" tabindex="-1"></a>::: theorem</span>
+<span id="cb136-2"><a href="block-elements.html#cb136-2" tabindex="-1"></a>(negative (or positive) values) Content of the theorem</span>
 <span id="cb136-3"><a href="block-elements.html#cb136-3" tabindex="-1"></a>:::</span></code></pre></div>
+<p>Proofs:</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb137-1"><a href="block-elements.html#cb137-1" tabindex="-1"></a>::: proof</span>
+<span id="cb137-2"><a href="block-elements.html#cb137-2" tabindex="-1"></a>Obvious from theorem @mytheorem.</span>
+<span id="cb137-3"><a href="block-elements.html#cb137-3" tabindex="-1"></a>:::</span></code></pre></div>
 <div id="statements-in-footnotes" class="section level3 hasAnchor" number="10.10.1">
 <h3><span class="header-section-number">10.10.1</span> Statements in footnotes<a href="block-elements.html#statements-in-footnotes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Statement environments don’t work in footnote for LaTeX/PDF
@@ -1578,14 +1578,14 @@ outputs. This</p>
 guidelines will allow them to be displayed directly in HTML
 <a href="#https://pandoc.org/MANUAL.html#math-rendering-in-html">when using the <code>Mathjax</code> option</a>.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a></p>
 <p>Bussproofs can be either inline, ending with <code>\DisplayProof</code>:</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb137-1"><a href="block-elements.html#cb137-1" tabindex="-1"></a><span class="fu">\AxiomC</span>{<span class="ss">$P </span><span class="sc">\land</span><span class="ss"> Q$</span>)}</span>
-<span id="cb137-2"><a href="block-elements.html#cb137-2" tabindex="-1"></a><span class="fu">\UnaryInfC</span>{<span class="ss">$Q$</span>}</span>
-<span id="cb137-3"><a href="block-elements.html#cb137-3" tabindex="-1"></a><span class="fu">\DisplayProof</span></span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb138-1"><a href="block-elements.html#cb138-1" tabindex="-1"></a><span class="fu">\AxiomC</span>{<span class="ss">$P </span><span class="sc">\land</span><span class="ss"> Q$</span>)}</span>
+<span id="cb138-2"><a href="block-elements.html#cb138-2" tabindex="-1"></a><span class="fu">\UnaryInfC</span>{<span class="ss">$Q$</span>}</span>
+<span id="cb138-3"><a href="block-elements.html#cb138-3" tabindex="-1"></a><span class="fu">\DisplayProof</span></span></code></pre></div>
 <p>Or display (block element), within a <code>prooftree</code> environment:</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb138-1"><a href="block-elements.html#cb138-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">prooftree</span>}</span>
-<span id="cb138-2"><a href="block-elements.html#cb138-2" tabindex="-1"></a><span class="fu">\AxiomC</span>{<span class="ss">$P </span><span class="sc">\land</span><span class="ss"> Q$</span>)}</span>
-<span id="cb138-3"><a href="block-elements.html#cb138-3" tabindex="-1"></a><span class="fu">\UnaryInfC</span>{<span class="ss">$Q$</span>}</span>
-<span id="cb138-4"><a href="block-elements.html#cb138-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">prooftree</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb139-1"><a href="block-elements.html#cb139-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">prooftree</span>}</span>
+<span id="cb139-2"><a href="block-elements.html#cb139-2" tabindex="-1"></a><span class="fu">\AxiomC</span>{<span class="ss">$P </span><span class="sc">\land</span><span class="ss"> Q$</span>)}</span>
+<span id="cb139-3"><a href="block-elements.html#cb139-3" tabindex="-1"></a><span class="fu">\UnaryInfC</span>{<span class="ss">$Q$</span>}</span>
+<span id="cb139-4"><a href="block-elements.html#cb139-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">prooftree</span>}</span></code></pre></div>
 <div id="inline-bussproofs" class="section level3 hasAnchor" number="10.11.1">
 <h3><span class="header-section-number">10.11.1</span> Inline bussproofs<a href="block-elements.html#inline-bussproofs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Mathjax does not display inline bussproofs. So prefer display ones
@@ -1596,16 +1596,16 @@ been. If you don’t follow them, you’re likely to get a messy
 output.</p>
 <ol style="list-style-type: decimal">
 <li><p>Enclose the proof within <code>$...$</code>:</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb139-1"><a href="block-elements.html#cb139-1" tabindex="-1"></a><span class="ss">$</span><span class="sc">\AxiomC</span><span class="ss">{$</span>P <span class="fu">\land</span> Q<span class="ss">$)}</span></span>
-<span id="cb139-2"><a href="block-elements.html#cb139-2" tabindex="-1"></a><span class="sc">\UnaryInfC</span><span class="ss">{$</span>Q<span class="ss">$}</span></span>
-<span id="cb139-3"><a href="block-elements.html#cb139-3" tabindex="-1"></a><span class="sc">\DisplayProof</span><span class="ss">$</span></span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb140-1"><a href="block-elements.html#cb140-1" tabindex="-1"></a><span class="ss">$</span><span class="sc">\AxiomC</span><span class="ss">{$</span>P <span class="fu">\land</span> Q<span class="ss">$)}</span></span>
+<span id="cb140-2"><a href="block-elements.html#cb140-2" tabindex="-1"></a><span class="sc">\UnaryInfC</span><span class="ss">{$</span>Q<span class="ss">$}</span></span>
+<span id="cb140-3"><a href="block-elements.html#cb140-3" tabindex="-1"></a><span class="sc">\DisplayProof</span><span class="ss">$</span></span></code></pre></div>
 <p>If you don’t, Pandoc does not output anything at all where
 the proof would have been.</p></li>
 <li><p>Replace all the <code>$...$</code> with the proof’s formulas
 with <code>\(...\)</code>:</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb140-1"><a href="block-elements.html#cb140-1" tabindex="-1"></a><span class="ss">$</span><span class="sc">\AxiomC</span><span class="ss">{</span><span class="sc">\(</span><span class="ss">P </span><span class="sc">\land</span><span class="ss"> Q</span><span class="sc">\)</span><span class="ss">}</span></span>
-<span id="cb140-2"><a href="block-elements.html#cb140-2" tabindex="-1"></a><span class="sc">\UnaryInfC</span><span class="ss">{</span><span class="sc">\(</span><span class="ss">Q</span><span class="sc">\)</span><span class="ss">}</span></span>
-<span id="cb140-3"><a href="block-elements.html#cb140-3" tabindex="-1"></a><span class="sc">\DisplayProof</span><span class="ss">$</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb141"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb141-1"><a href="block-elements.html#cb141-1" tabindex="-1"></a><span class="ss">$</span><span class="sc">\AxiomC</span><span class="ss">{</span><span class="sc">\(</span><span class="ss">P </span><span class="sc">\land</span><span class="ss"> Q</span><span class="sc">\)</span><span class="ss">}</span></span>
+<span id="cb141-2"><a href="block-elements.html#cb141-2" tabindex="-1"></a><span class="sc">\UnaryInfC</span><span class="ss">{</span><span class="sc">\(</span><span class="ss">Q</span><span class="sc">\)</span><span class="ss">}</span></span>
+<span id="cb141-3"><a href="block-elements.html#cb141-3" tabindex="-1"></a><span class="sc">\DisplayProof</span><span class="ss">$</span></span></code></pre></div></li>
 </ol>
 <p>If you don’t, the HTML output will display a confusing mix
 of LaTeX code and error message, such as:</p>
@@ -1619,76 +1619,76 @@ of LaTeX code and error message, such as:</p>
 <ul>
 <li><p>If we include the LaTeX directly in the source, it’s not printed
 at all in HTML output:</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb142-1"><a href="block-elements.html#cb142-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">prooftree</span>}</span>
-<span id="cb142-2"><a href="block-elements.html#cb142-2" tabindex="-1"></a><span class="fu">\AxiomC</span>{<span class="ss">\(P </span><span class="sc">\land</span><span class="ss"> Q\)</span>}</span>
-<span id="cb142-3"><a href="block-elements.html#cb142-3" tabindex="-1"></a><span class="fu">\UnaryInfC</span>{<span class="ss">\(Q\)</span>}</span>
-<span id="cb142-4"><a href="block-elements.html#cb142-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">prooftree</span>}</span></code></pre></div></li>
+<div class="sourceCode" id="cb143"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb143-1"><a href="block-elements.html#cb143-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">prooftree</span>}</span>
+<span id="cb143-2"><a href="block-elements.html#cb143-2" tabindex="-1"></a><span class="fu">\AxiomC</span>{<span class="ss">\(P </span><span class="sc">\land</span><span class="ss"> Q\)</span>}</span>
+<span id="cb143-3"><a href="block-elements.html#cb143-3" tabindex="-1"></a><span class="fu">\UnaryInfC</span>{<span class="ss">\(Q\)</span>}</span>
+<span id="cb143-4"><a href="block-elements.html#cb143-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">prooftree</span>}</span></code></pre></div></li>
 <li><p>If we enclose it within `<code>$$...$$</code>, it is passed to the HTML
 output and then correctly displayed by MathJax. But the PDF
 generation crashes.</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb143-1"><a href="block-elements.html#cb143-1" tabindex="-1"></a><span class="ss">$$</span><span class="kw">\begin</span>{<span class="ex">prooftree</span>}</span>
-<span id="cb143-2"><a href="block-elements.html#cb143-2" tabindex="-1"></a><span class="sc">\AxiomC</span><span class="ss">{</span><span class="er">$</span><span class="ss">P </span><span class="sc">\land</span><span class="ss"> Q</span><span class="er">$</span><span class="ss">}</span></span>
-<span id="cb143-3"><a href="block-elements.html#cb143-3" tabindex="-1"></a><span class="sc">\UnaryInfC</span><span class="ss">{</span><span class="er">$</span><span class="ss">Q</span><span class="er">$</span><span class="ss">}</span></span>
-<span id="cb143-4"><a href="block-elements.html#cb143-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">prooftree</span>}<span class="ss">$$</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb144"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb144-1"><a href="block-elements.html#cb144-1" tabindex="-1"></a><span class="ss">$$</span><span class="kw">\begin</span>{<span class="ex">prooftree</span>}</span>
+<span id="cb144-2"><a href="block-elements.html#cb144-2" tabindex="-1"></a><span class="sc">\AxiomC</span><span class="ss">{</span><span class="er">$</span><span class="ss">P </span><span class="sc">\land</span><span class="ss"> Q</span><span class="er">$</span><span class="ss">}</span></span>
+<span id="cb144-3"><a href="block-elements.html#cb144-3" tabindex="-1"></a><span class="sc">\UnaryInfC</span><span class="ss">{</span><span class="er">$</span><span class="ss">Q</span><span class="er">$</span><span class="ss">}</span></span>
+<span id="cb144-4"><a href="block-elements.html#cb144-4" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">prooftree</span>}<span class="ss">$$</span></span></code></pre></div></li>
 </ul>
 <p><strong>Solution</strong>. We provide <em>two</em> versions of the prootree environment,
 one for formats other than LaTeX, one for LaTeX. This is done as
 follows:</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb144-1"><a href="block-elements.html#cb144-1" tabindex="-1"></a>::: {.not-in-format .latex}</span>
-<span id="cb144-2"><a href="block-elements.html#cb144-2" tabindex="-1"></a> $$\begin{prooftree}</span>
-<span id="cb144-3"><a href="block-elements.html#cb144-3" tabindex="-1"></a>  \AxiomC{$P \land Q$}</span>
-<span id="cb144-4"><a href="block-elements.html#cb144-4" tabindex="-1"></a>  \UnaryInfC{$Q$}</span>
-<span id="cb144-5"><a href="block-elements.html#cb144-5" tabindex="-1"></a>\end{prooftree}$$</span>
-<span id="cb144-6"><a href="block-elements.html#cb144-6" tabindex="-1"></a>:::</span>
-<span id="cb144-7"><a href="block-elements.html#cb144-7" tabindex="-1"></a></span>
-<span id="cb144-8"><a href="block-elements.html#cb144-8" tabindex="-1"></a>::: {.only-in-format .latex}</span>
-<span id="cb144-9"><a href="block-elements.html#cb144-9" tabindex="-1"></a>\begin{prooftree}</span>
-<span id="cb144-10"><a href="block-elements.html#cb144-10" tabindex="-1"></a>  \AxiomC{$P \land Q$}</span>
-<span id="cb144-11"><a href="block-elements.html#cb144-11" tabindex="-1"></a>  \UnaryInfC{$Q$}</span>
-<span id="cb144-12"><a href="block-elements.html#cb144-12" tabindex="-1"></a>\end{prooftree}</span>
-<span id="cb144-13"><a href="block-elements.html#cb144-13" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb145-1"><a href="block-elements.html#cb145-1" tabindex="-1"></a>::: {.not-in-format .latex}</span>
+<span id="cb145-2"><a href="block-elements.html#cb145-2" tabindex="-1"></a> $$\begin{prooftree}</span>
+<span id="cb145-3"><a href="block-elements.html#cb145-3" tabindex="-1"></a>  \AxiomC{$P \land Q$}</span>
+<span id="cb145-4"><a href="block-elements.html#cb145-4" tabindex="-1"></a>  \UnaryInfC{$Q$}</span>
+<span id="cb145-5"><a href="block-elements.html#cb145-5" tabindex="-1"></a>\end{prooftree}$$</span>
+<span id="cb145-6"><a href="block-elements.html#cb145-6" tabindex="-1"></a>:::</span>
+<span id="cb145-7"><a href="block-elements.html#cb145-7" tabindex="-1"></a></span>
+<span id="cb145-8"><a href="block-elements.html#cb145-8" tabindex="-1"></a>::: {.only-in-format .latex}</span>
+<span id="cb145-9"><a href="block-elements.html#cb145-9" tabindex="-1"></a>\begin{prooftree}</span>
+<span id="cb145-10"><a href="block-elements.html#cb145-10" tabindex="-1"></a>  \AxiomC{$P \land Q$}</span>
+<span id="cb145-11"><a href="block-elements.html#cb145-11" tabindex="-1"></a>  \UnaryInfC{$Q$}</span>
+<span id="cb145-12"><a href="block-elements.html#cb145-12" tabindex="-1"></a>\end{prooftree}</span>
+<span id="cb145-13"><a href="block-elements.html#cb145-13" tabindex="-1"></a>:::</span></code></pre></div>
 <p>Within prooftree environements there’s no need to replace the
 <code>$...$</code> with <code>\(...\)</code>.</p>
 <p>The <code>not-in-format</code> and <code>only-in-format</code> Divs can contain any
 markdown content, including a mix of LaTeX and markdown if needed.
 For isntance, your proofs may be in numbered example lists:</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb145-1"><a href="block-elements.html#cb145-1" tabindex="-1"></a>::: {.not-in-format .latex}</span>
-<span id="cb145-2"><a href="block-elements.html#cb145-2" tabindex="-1"></a>(@) $$\begin{prooftree}</span>
-<span id="cb145-3"><a href="block-elements.html#cb145-3" tabindex="-1"></a>      \AxiomC{$P \land Q$}</span>
-<span id="cb145-4"><a href="block-elements.html#cb145-4" tabindex="-1"></a>      \UnaryInfC{$Q$}</span>
-<span id="cb145-5"><a href="block-elements.html#cb145-5" tabindex="-1"></a>    \end{prooftree}$$</span>
-<span id="cb145-6"><a href="block-elements.html#cb145-6" tabindex="-1"></a>:::</span>
-<span id="cb145-7"><a href="block-elements.html#cb145-7" tabindex="-1"></a></span>
-<span id="cb145-8"><a href="block-elements.html#cb145-8" tabindex="-1"></a>::: {.only-in-format .latex}</span>
-<span id="cb145-9"><a href="block-elements.html#cb145-9" tabindex="-1"></a>(@) \begin{prooftree}</span>
-<span id="cb145-10"><a href="block-elements.html#cb145-10" tabindex="-1"></a>      \AxiomC{$P \land Q$}</span>
-<span id="cb145-11"><a href="block-elements.html#cb145-11" tabindex="-1"></a>      \UnaryInfC{$Q$}</span>
-<span id="cb145-12"><a href="block-elements.html#cb145-12" tabindex="-1"></a>    \end{prooftree}</span>
-<span id="cb145-13"><a href="block-elements.html#cb145-13" tabindex="-1"></a>:::</span></code></pre></div>
-<p>And if you have several proofs in a row, you don’t need to have two
-Divs for each, you can have two Divs overall:</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb146-1"><a href="block-elements.html#cb146-1" tabindex="-1"></a>::: {.not-in-format .latex}</span>
-<span id="cb146-2"><a href="block-elements.html#cb146-2" tabindex="-1"></a><span class="ss">1.   </span>$$\begin{prooftree}</span>
+<span id="cb146-2"><a href="block-elements.html#cb146-2" tabindex="-1"></a>(@) $$\begin{prooftree}</span>
 <span id="cb146-3"><a href="block-elements.html#cb146-3" tabindex="-1"></a>      \AxiomC{$P \land Q$}</span>
 <span id="cb146-4"><a href="block-elements.html#cb146-4" tabindex="-1"></a>      \UnaryInfC{$Q$}</span>
 <span id="cb146-5"><a href="block-elements.html#cb146-5" tabindex="-1"></a>    \end{prooftree}$$</span>
-<span id="cb146-6"><a href="block-elements.html#cb146-6" tabindex="-1"></a><span class="ss">2.   </span>$$\begin{prooftree}</span>
-<span id="cb146-7"><a href="block-elements.html#cb146-7" tabindex="-1"></a>      \AxiomC{$P$}</span>
-<span id="cb146-8"><a href="block-elements.html#cb146-8" tabindex="-1"></a>      \UnaryInfC{$P\lor Q$}</span>
-<span id="cb146-9"><a href="block-elements.html#cb146-9" tabindex="-1"></a>    \end{prooftree}$$</span>
-<span id="cb146-10"><a href="block-elements.html#cb146-10" tabindex="-1"></a>:::</span>
-<span id="cb146-11"><a href="block-elements.html#cb146-11" tabindex="-1"></a></span>
-<span id="cb146-12"><a href="block-elements.html#cb146-12" tabindex="-1"></a>::: {.only-in-format .latex}</span>
-<span id="cb146-13"><a href="block-elements.html#cb146-13" tabindex="-1"></a><span class="ss">1.   </span>\begin{prooftree}</span>
-<span id="cb146-14"><a href="block-elements.html#cb146-14" tabindex="-1"></a>      \AxiomC{$P \land Q$}</span>
-<span id="cb146-15"><a href="block-elements.html#cb146-15" tabindex="-1"></a>      \UnaryInfC{$Q$}</span>
-<span id="cb146-16"><a href="block-elements.html#cb146-16" tabindex="-1"></a>    \end{prooftree}</span>
-<span id="cb146-17"><a href="block-elements.html#cb146-17" tabindex="-1"></a><span class="ss">2.   </span>\begin{prooftree}</span>
-<span id="cb146-18"><a href="block-elements.html#cb146-18" tabindex="-1"></a>      \AxiomC{$P$}</span>
-<span id="cb146-19"><a href="block-elements.html#cb146-19" tabindex="-1"></a>      \UnaryInfC{$P\lor Q$}</span>
-<span id="cb146-20"><a href="block-elements.html#cb146-20" tabindex="-1"></a>    \end{prooftree}</span>
-<span id="cb146-21"><a href="block-elements.html#cb146-21" tabindex="-1"></a></span>
-<span id="cb146-22"><a href="block-elements.html#cb146-22" tabindex="-1"></a>:::</span></code></pre></div>
+<span id="cb146-6"><a href="block-elements.html#cb146-6" tabindex="-1"></a>:::</span>
+<span id="cb146-7"><a href="block-elements.html#cb146-7" tabindex="-1"></a></span>
+<span id="cb146-8"><a href="block-elements.html#cb146-8" tabindex="-1"></a>::: {.only-in-format .latex}</span>
+<span id="cb146-9"><a href="block-elements.html#cb146-9" tabindex="-1"></a>(@) \begin{prooftree}</span>
+<span id="cb146-10"><a href="block-elements.html#cb146-10" tabindex="-1"></a>      \AxiomC{$P \land Q$}</span>
+<span id="cb146-11"><a href="block-elements.html#cb146-11" tabindex="-1"></a>      \UnaryInfC{$Q$}</span>
+<span id="cb146-12"><a href="block-elements.html#cb146-12" tabindex="-1"></a>    \end{prooftree}</span>
+<span id="cb146-13"><a href="block-elements.html#cb146-13" tabindex="-1"></a>:::</span></code></pre></div>
+<p>And if you have several proofs in a row, you don’t need to have two
+Divs for each, you can have two Divs overall:</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb147-1"><a href="block-elements.html#cb147-1" tabindex="-1"></a>::: {.not-in-format .latex}</span>
+<span id="cb147-2"><a href="block-elements.html#cb147-2" tabindex="-1"></a><span class="ss">1.   </span>$$\begin{prooftree}</span>
+<span id="cb147-3"><a href="block-elements.html#cb147-3" tabindex="-1"></a>      \AxiomC{$P \land Q$}</span>
+<span id="cb147-4"><a href="block-elements.html#cb147-4" tabindex="-1"></a>      \UnaryInfC{$Q$}</span>
+<span id="cb147-5"><a href="block-elements.html#cb147-5" tabindex="-1"></a>    \end{prooftree}$$</span>
+<span id="cb147-6"><a href="block-elements.html#cb147-6" tabindex="-1"></a><span class="ss">2.   </span>$$\begin{prooftree}</span>
+<span id="cb147-7"><a href="block-elements.html#cb147-7" tabindex="-1"></a>      \AxiomC{$P$}</span>
+<span id="cb147-8"><a href="block-elements.html#cb147-8" tabindex="-1"></a>      \UnaryInfC{$P\lor Q$}</span>
+<span id="cb147-9"><a href="block-elements.html#cb147-9" tabindex="-1"></a>    \end{prooftree}$$</span>
+<span id="cb147-10"><a href="block-elements.html#cb147-10" tabindex="-1"></a>:::</span>
+<span id="cb147-11"><a href="block-elements.html#cb147-11" tabindex="-1"></a></span>
+<span id="cb147-12"><a href="block-elements.html#cb147-12" tabindex="-1"></a>::: {.only-in-format .latex}</span>
+<span id="cb147-13"><a href="block-elements.html#cb147-13" tabindex="-1"></a><span class="ss">1.   </span>\begin{prooftree}</span>
+<span id="cb147-14"><a href="block-elements.html#cb147-14" tabindex="-1"></a>      \AxiomC{$P \land Q$}</span>
+<span id="cb147-15"><a href="block-elements.html#cb147-15" tabindex="-1"></a>      \UnaryInfC{$Q$}</span>
+<span id="cb147-16"><a href="block-elements.html#cb147-16" tabindex="-1"></a>    \end{prooftree}</span>
+<span id="cb147-17"><a href="block-elements.html#cb147-17" tabindex="-1"></a><span class="ss">2.   </span>\begin{prooftree}</span>
+<span id="cb147-18"><a href="block-elements.html#cb147-18" tabindex="-1"></a>      \AxiomC{$P$}</span>
+<span id="cb147-19"><a href="block-elements.html#cb147-19" tabindex="-1"></a>      \UnaryInfC{$P\lor Q$}</span>
+<span id="cb147-20"><a href="block-elements.html#cb147-20" tabindex="-1"></a>    \end{prooftree}</span>
+<span id="cb147-21"><a href="block-elements.html#cb147-21" tabindex="-1"></a></span>
+<span id="cb147-22"><a href="block-elements.html#cb147-22" tabindex="-1"></a>:::</span></code></pre></div>
 </div>
 </div>
 <div id="statements-and-indented-blocks" class="section level2 hasAnchor" number="10.12">
@@ -1704,13 +1704,13 @@ Divs for each, you can have two Divs overall:</p>
 <p>For theorems and proofs see above. This sections deals with statements otherthan theorems.</p>
 <p>We format statements as ‘fenced Divs’ with the statement class.
 A fenced Div is texted enclosed by “fences” of three or more colons:</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb147-1"><a href="block-elements.html#cb147-1" tabindex="-1"></a>::: statement</span>
-<span id="cb147-2"><a href="block-elements.html#cb147-2" tabindex="-1"></a>The sum of angles of a triangle equals two right angles.</span>
-<span id="cb147-3"><a href="block-elements.html#cb147-3" tabindex="-1"></a>:::</span>
-<span id="cb147-4"><a href="block-elements.html#cb147-4" tabindex="-1"></a></span>
-<span id="cb147-5"><a href="block-elements.html#cb147-5" tabindex="-1"></a>::: statement :::::</span>
-<span id="cb147-6"><a href="block-elements.html#cb147-6" tabindex="-1"></a>The sum of angles of a triangle equals two right angles.</span>
-<span id="cb147-7"><a href="block-elements.html#cb147-7" tabindex="-1"></a>:::::::::::::::::::</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb148-1"><a href="block-elements.html#cb148-1" tabindex="-1"></a>::: statement</span>
+<span id="cb148-2"><a href="block-elements.html#cb148-2" tabindex="-1"></a>The sum of angles of a triangle equals two right angles.</span>
+<span id="cb148-3"><a href="block-elements.html#cb148-3" tabindex="-1"></a>:::</span>
+<span id="cb148-4"><a href="block-elements.html#cb148-4" tabindex="-1"></a></span>
+<span id="cb148-5"><a href="block-elements.html#cb148-5" tabindex="-1"></a>::: statement :::::</span>
+<span id="cb148-6"><a href="block-elements.html#cb148-6" tabindex="-1"></a>The sum of angles of a triangle equals two right angles.</span>
+<span id="cb148-7"><a href="block-elements.html#cb148-7" tabindex="-1"></a>:::::::::::::::::::</span></code></pre></div>
 <p>These will be printed as simple indented blocks.</p>
 <p>The closing face must have at least as many columns as the
 starting one. The <code>statement</code> here makes it a element of
@@ -1725,9 +1725,9 @@ block as more features than <code>statement</code>, e.g. a ID for
 crossreference or some other class (some examples below).</p>
 <p>If you want to specify the type of statement (say, because you want to
 distinguish axioms from theorems), you need to use curly brackets:</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb149-1"><a href="block-elements.html#cb149-1" tabindex="-1"></a>::: {.statement .axiom}</span>
-<span id="cb149-2"><a href="block-elements.html#cb149-2" tabindex="-1"></a>Between any two distinct points there is a straight line.</span>
-<span id="cb149-3"><a href="block-elements.html#cb149-3" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb150-1"><a href="block-elements.html#cb150-1" tabindex="-1"></a>::: {.statement .axiom}</span>
+<span id="cb150-2"><a href="block-elements.html#cb150-2" tabindex="-1"></a>Between any two distinct points there is a straight line.</span>
+<span id="cb150-3"><a href="block-elements.html#cb150-3" tabindex="-1"></a>:::</span></code></pre></div>
 <p>Because we have two properties (<code>statement</code> and <code>axiom</code>),
 the curly brackets are mandatory: here <code>::: statement axiom</code>
 would not work.</p>
@@ -1736,10 +1736,10 @@ would not work.</p>
 <p>A statement can have a title (aka custom label). This is specified
 in Strong emphasis (<code>**...**</code> or <code>__...__</code>),
 at the beginning of the statement:</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb150-1"><a href="block-elements.html#cb150-1" tabindex="-1"></a>::: statement</span>
-<span id="cb150-2"><a href="block-elements.html#cb150-2" tabindex="-1"></a>**The Principal Principle**. One&#39;s credence in $p$ conditional</span>
-<span id="cb150-3"><a href="block-elements.html#cb150-3" tabindex="-1"></a>on the hypothesis that the chance of $p$ is $x$ should be $x$.</span>
-<span id="cb150-4"><a href="block-elements.html#cb150-4" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb151-1"><a href="block-elements.html#cb151-1" tabindex="-1"></a>::: statement</span>
+<span id="cb151-2"><a href="block-elements.html#cb151-2" tabindex="-1"></a>**The Principal Principle**. One&#39;s credence in $p$ conditional</span>
+<span id="cb151-3"><a href="block-elements.html#cb151-3" tabindex="-1"></a>on the hypothesis that the chance of $p$ is $x$ should be $x$.</span>
+<span id="cb151-4"><a href="block-elements.html#cb151-4" tabindex="-1"></a>:::</span></code></pre></div>
 <p>This will be rendered as an indented block with its title in
 the template’s preferred formatting of statement titles, for instance:</p>
 <blockquote>
@@ -1761,10 +1761,10 @@ acronym or custom ID (see below) they’re replace this one.</p>
 <h3><span class="header-section-number">10.12.2</span> Statement acronyms<a href="block-elements.html#statement-acronyms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If a statement has a title, you can also give it an acronym. It’s
 placed at the beginning of the title, within parentheses:</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb151-1"><a href="block-elements.html#cb151-1" tabindex="-1"></a>::: statement</span>
-<span id="cb151-2"><a href="block-elements.html#cb151-2" tabindex="-1"></a>**(PP) The Principal Principle**. One&#39;s credence in $p$ conditional</span>
-<span id="cb151-3"><a href="block-elements.html#cb151-3" tabindex="-1"></a>on the hypothesis that the chance of $p$ is $x$ should be $x$.</span>
-<span id="cb151-4"><a href="block-elements.html#cb151-4" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb152-1"><a href="block-elements.html#cb152-1" tabindex="-1"></a>::: statement</span>
+<span id="cb152-2"><a href="block-elements.html#cb152-2" tabindex="-1"></a>**(PP) The Principal Principle**. One&#39;s credence in $p$ conditional</span>
+<span id="cb152-3"><a href="block-elements.html#cb152-3" tabindex="-1"></a>on the hypothesis that the chance of $p$ is $x$ should be $x$.</span>
+<span id="cb152-4"><a href="block-elements.html#cb152-4" tabindex="-1"></a>:::</span></code></pre></div>
 <p>The result will depend on where the template prefers to place
 the acronym. For instance:</p>
 <blockquote>
@@ -1788,29 +1788,29 @@ it’ll be <code>PP-1</code> instead, or <code>PP-2</code>, etc.).</p>
 <p>A statement can have some info, e.g. a source citation or some text
 within parentheses This is put at the end of, or right after,
 the statement’s title.</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb152-1"><a href="block-elements.html#cb152-1" tabindex="-1"></a>::: statement</span>
-<span id="cb152-2"><a href="block-elements.html#cb152-2" tabindex="-1"></a>**(Acro) Title of the satement (some info).** Content of the statement</span>
-<span id="cb152-3"><a href="block-elements.html#cb152-3" tabindex="-1"></a>:::</span>
-<span id="cb152-4"><a href="block-elements.html#cb152-4" tabindex="-1"></a></span>
-<span id="cb152-5"><a href="block-elements.html#cb152-5" tabindex="-1"></a>::: statement</span>
-<span id="cb152-6"><a href="block-elements.html#cb152-6" tabindex="-1"></a>**(Acro) Title of the satement @Doe2020.** Content of the statement</span>
-<span id="cb152-7"><a href="block-elements.html#cb152-7" tabindex="-1"></a>:::</span>
-<span id="cb152-8"><a href="block-elements.html#cb152-8" tabindex="-1"></a></span>
-<span id="cb152-9"><a href="block-elements.html#cb152-9" tabindex="-1"></a>::: statement</span>
-<span id="cb152-10"><a href="block-elements.html#cb152-10" tabindex="-1"></a>**(Acro) Title of the satement.** (some info) Content of the statement</span>
-<span id="cb152-11"><a href="block-elements.html#cb152-11" tabindex="-1"></a>:::</span>
-<span id="cb152-12"><a href="block-elements.html#cb152-12" tabindex="-1"></a></span>
-<span id="cb152-13"><a href="block-elements.html#cb152-13" tabindex="-1"></a>::: statement</span>
-<span id="cb152-14"><a href="block-elements.html#cb152-14" tabindex="-1"></a>**(Acro) Title of the satement.**  @Doe2020 Content of the statement</span>
-<span id="cb152-15"><a href="block-elements.html#cb152-15" tabindex="-1"></a>:::</span></code></pre></div>
-<p>If there’s no title, the info is just at the beginning.</p>
 <div class="sourceCode" id="cb153"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb153-1"><a href="block-elements.html#cb153-1" tabindex="-1"></a>::: statement</span>
-<span id="cb153-2"><a href="block-elements.html#cb153-2" tabindex="-1"></a>(some info) Content of the statement</span>
+<span id="cb153-2"><a href="block-elements.html#cb153-2" tabindex="-1"></a>**(Acro) Title of the satement (some info).** Content of the statement</span>
 <span id="cb153-3"><a href="block-elements.html#cb153-3" tabindex="-1"></a>:::</span>
 <span id="cb153-4"><a href="block-elements.html#cb153-4" tabindex="-1"></a></span>
 <span id="cb153-5"><a href="block-elements.html#cb153-5" tabindex="-1"></a>::: statement</span>
-<span id="cb153-6"><a href="block-elements.html#cb153-6" tabindex="-1"></a>@Doe2020 <span class="co">[</span><span class="ot">@Doe2021; @Doe2022</span><span class="co">]</span> Content of the statement</span>
-<span id="cb153-7"><a href="block-elements.html#cb153-7" tabindex="-1"></a>:::</span></code></pre></div>
+<span id="cb153-6"><a href="block-elements.html#cb153-6" tabindex="-1"></a>**(Acro) Title of the satement @Doe2020.** Content of the statement</span>
+<span id="cb153-7"><a href="block-elements.html#cb153-7" tabindex="-1"></a>:::</span>
+<span id="cb153-8"><a href="block-elements.html#cb153-8" tabindex="-1"></a></span>
+<span id="cb153-9"><a href="block-elements.html#cb153-9" tabindex="-1"></a>::: statement</span>
+<span id="cb153-10"><a href="block-elements.html#cb153-10" tabindex="-1"></a>**(Acro) Title of the satement.** (some info) Content of the statement</span>
+<span id="cb153-11"><a href="block-elements.html#cb153-11" tabindex="-1"></a>:::</span>
+<span id="cb153-12"><a href="block-elements.html#cb153-12" tabindex="-1"></a></span>
+<span id="cb153-13"><a href="block-elements.html#cb153-13" tabindex="-1"></a>::: statement</span>
+<span id="cb153-14"><a href="block-elements.html#cb153-14" tabindex="-1"></a>**(Acro) Title of the satement.**  @Doe2020 Content of the statement</span>
+<span id="cb153-15"><a href="block-elements.html#cb153-15" tabindex="-1"></a>:::</span></code></pre></div>
+<p>If there’s no title, the info is just at the beginning.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb154-1"><a href="block-elements.html#cb154-1" tabindex="-1"></a>::: statement</span>
+<span id="cb154-2"><a href="block-elements.html#cb154-2" tabindex="-1"></a>(some info) Content of the statement</span>
+<span id="cb154-3"><a href="block-elements.html#cb154-3" tabindex="-1"></a>:::</span>
+<span id="cb154-4"><a href="block-elements.html#cb154-4" tabindex="-1"></a></span>
+<span id="cb154-5"><a href="block-elements.html#cb154-5" tabindex="-1"></a>::: statement</span>
+<span id="cb154-6"><a href="block-elements.html#cb154-6" tabindex="-1"></a>@Doe2020 <span class="co">[</span><span class="ot">@Doe2021; @Doe2022</span><span class="co">]</span> Content of the statement</span>
+<span id="cb154-7"><a href="block-elements.html#cb154-7" tabindex="-1"></a>:::</span></code></pre></div>
 <p>The output depends on the template. (The template may even define
 different styles for different kinds of statement.) It may look like this, for instance:</p>
 <blockquote>
@@ -1826,28 +1826,28 @@ should be <span class="math inline">\(x\)</span>.</p>
 statement has an acronym or title, you can use the ID automatically
 generated based on those. Otherwise you can give it an ID
 by putting a <code>#myidentifier</code> entry in its attributes:</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb154-1"><a href="block-elements.html#cb154-1" tabindex="-1"></a>::: {.statement #my-favourite-statement}</span>
-<span id="cb154-2"><a href="block-elements.html#cb154-2" tabindex="-1"></a>__Title of the statement__. Content of the statement</span>
-<span id="cb154-3"><a href="block-elements.html#cb154-3" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb155-1"><a href="block-elements.html#cb155-1" tabindex="-1"></a>::: {.statement #my-favourite-statement}</span>
+<span id="cb155-2"><a href="block-elements.html#cb155-2" tabindex="-1"></a>__Title of the statement__. Content of the statement</span>
+<span id="cb155-3"><a href="block-elements.html#cb155-3" tabindex="-1"></a>:::</span></code></pre></div>
 <p>It’s good practice to start your ID by <code>sta:</code> to make clear
 that it’s a statement ID:</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb155-1"><a href="block-elements.html#cb155-1" tabindex="-1"></a>::: {.statement #sta:psr}</span>
-<span id="cb155-2"><a href="block-elements.html#cb155-2" tabindex="-1"></a>__(PSR) Principle of Sufficient Reason__. Content of the statement</span>
-<span id="cb155-3"><a href="block-elements.html#cb155-3" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb156-1"><a href="block-elements.html#cb156-1" tabindex="-1"></a>::: {.statement #sta:psr}</span>
+<span id="cb156-2"><a href="block-elements.html#cb156-2" tabindex="-1"></a>__(PSR) Principle of Sufficient Reason__. Content of the statement</span>
+<span id="cb156-3"><a href="block-elements.html#cb156-3" tabindex="-1"></a>:::</span></code></pre></div>
 <p>Beware of adding curly brackets and a dot before <code>statement</code>:</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb156-1"><a href="block-elements.html#cb156-1" tabindex="-1"></a>GOOD</span>
-<span id="cb156-2"><a href="block-elements.html#cb156-2" tabindex="-1"></a>::: {.statement #my-favourite-statement}</span>
-<span id="cb156-3"><a href="block-elements.html#cb156-3" tabindex="-1"></a>...</span>
-<span id="cb156-4"><a href="block-elements.html#cb156-4" tabindex="-1"></a>:::</span>
-<span id="cb156-5"><a href="block-elements.html#cb156-5" tabindex="-1"></a></span>
-<span id="cb156-6"><a href="block-elements.html#cb156-6" tabindex="-1"></a>BAD</span>
-<span id="cb156-7"><a href="block-elements.html#cb156-7" tabindex="-1"></a>::: statement #my-fav-statement</span>
-<span id="cb156-8"><a href="block-elements.html#cb156-8" tabindex="-1"></a>...</span>
-<span id="cb156-9"><a href="block-elements.html#cb156-9" tabindex="-1"></a>:::</span>
-<span id="cb156-10"><a href="block-elements.html#cb156-10" tabindex="-1"></a></span>
-<span id="cb156-11"><a href="block-elements.html#cb156-11" tabindex="-1"></a>::: {statement #my-fav-statement}</span>
-<span id="cb156-12"><a href="block-elements.html#cb156-12" tabindex="-1"></a>...</span>
-<span id="cb156-13"><a href="block-elements.html#cb156-13" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb157-1"><a href="block-elements.html#cb157-1" tabindex="-1"></a>GOOD</span>
+<span id="cb157-2"><a href="block-elements.html#cb157-2" tabindex="-1"></a>::: {.statement #my-favourite-statement}</span>
+<span id="cb157-3"><a href="block-elements.html#cb157-3" tabindex="-1"></a>...</span>
+<span id="cb157-4"><a href="block-elements.html#cb157-4" tabindex="-1"></a>:::</span>
+<span id="cb157-5"><a href="block-elements.html#cb157-5" tabindex="-1"></a></span>
+<span id="cb157-6"><a href="block-elements.html#cb157-6" tabindex="-1"></a>BAD</span>
+<span id="cb157-7"><a href="block-elements.html#cb157-7" tabindex="-1"></a>::: statement #my-fav-statement</span>
+<span id="cb157-8"><a href="block-elements.html#cb157-8" tabindex="-1"></a>...</span>
+<span id="cb157-9"><a href="block-elements.html#cb157-9" tabindex="-1"></a>:::</span>
+<span id="cb157-10"><a href="block-elements.html#cb157-10" tabindex="-1"></a></span>
+<span id="cb157-11"><a href="block-elements.html#cb157-11" tabindex="-1"></a>::: {statement #my-fav-statement}</span>
+<span id="cb157-12"><a href="block-elements.html#cb157-12" tabindex="-1"></a>...</span>
+<span id="cb157-13"><a href="block-elements.html#cb157-13" tabindex="-1"></a>:::</span></code></pre></div>
 <p>A statement can only have one ID so if you provide one
 you can’t refer to it by its acronym or title.</p>
 </div>
@@ -1887,13 +1887,13 @@ with a link to the statement.</li>
 </ul>
 <p>Within the link text, <code>&lt;&gt;</code> will be replaced the statement’s automatic
 label, i.e. its acronym (it is has one) or title.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb157-1"><a href="block-elements.html#cb157-1" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">principle &lt;&gt;</span><span class="co">]</span>{#sta:pp} above.</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb158-1"><a href="block-elements.html#cb158-1" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">principle &lt;&gt;</span><span class="co">]</span>{#sta:pp} above.</span></code></pre></div>
 <p>This will produce: ‘See the <a href="#">principle PP</a>’ if the statement <code>@sta:pp</code> has acronym <code>PP</code>.</p>
 <p>The link syntax can’t be used to refer multiple statements.
 But it gives you more control over how the link is formatted.
 Compare:</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb158-1"><a href="block-elements.html#cb158-1" tabindex="-1"></a><span class="ss">* </span>According to principle @sta:pp, ...</span>
-<span id="cb158-2"><a href="block-elements.html#cb158-2" tabindex="-1"></a><span class="ss">* </span>According to <span class="co">[</span><span class="ot">principle &lt;&gt;</span><span class="co">]</span>{#sta:pp}, ...</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb159-1"><a href="block-elements.html#cb159-1" tabindex="-1"></a><span class="ss">* </span>According to principle @sta:pp, ...</span>
+<span id="cb159-2"><a href="block-elements.html#cb159-2" tabindex="-1"></a><span class="ss">* </span>According to <span class="co">[</span><span class="ot">principle &lt;&gt;</span><span class="co">]</span>{#sta:pp}, ...</span></code></pre></div>
 <p>The former generates a small link: ‘according to principle <a href="#">PP</a>’,
 the latter a longer one: ‘according to <a href="#">principle PP</a>’.</p>
 </div>
@@ -1906,16 +1906,16 @@ the latter a longer one: ‘according to <a href="#">principle PP</a>’.</p>
 <a href="block-elements.html#custom-labels-lists">custom labelled lists</a>. To indicate the
 the conclusion, the last label is <code>&amp;there4;</code>, i.e. the
 symbol ∴.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb159-1"><a href="block-elements.html#cb159-1" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span>{} No man is wise.</span>
-<span id="cb159-2"><a href="block-elements.html#cb159-2" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span>{} Socrates is a man.</span>
-<span id="cb159-3"><a href="block-elements.html#cb159-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">C</span><span class="co">]</span>{} Socrates is not wise.</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb160-1"><a href="block-elements.html#cb160-1" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span>{} No man is wise.</span>
+<span id="cb160-2"><a href="block-elements.html#cb160-2" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span>{} Socrates is a man.</span>
+<span id="cb160-3"><a href="block-elements.html#cb160-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">C</span><span class="co">]</span>{} Socrates is not wise.</span></code></pre></div>
 <p>Here <code>1</code>, <code>2</code>, <code>C</code> are custom labels. We can also write
 an argument without labels, but we should then add the option
 <code>deliminter=none</code> to the first item in order to avoid
 empty parentheses:</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb160-1"><a href="block-elements.html#cb160-1" tabindex="-1"></a><span class="ss">* </span>[]{delimiter=none} No man is wise.</span>
-<span id="cb160-2"><a href="block-elements.html#cb160-2" tabindex="-1"></a><span class="ss">* </span>[]{} Socrates is a man.</span>
-<span id="cb160-3"><a href="block-elements.html#cb160-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">there4;</span><span class="co">]</span>{} Socrates is not wise.</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb161-1"><a href="block-elements.html#cb161-1" tabindex="-1"></a><span class="ss">* </span>[]{delimiter=none} No man is wise.</span>
+<span id="cb161-2"><a href="block-elements.html#cb161-2" tabindex="-1"></a><span class="ss">* </span>[]{} Socrates is a man.</span>
+<span id="cb161-3"><a href="block-elements.html#cb161-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">there4;</span><span class="co">]</span>{} Socrates is not wise.</span></code></pre></div>
 <p><code>&amp;there4</code> is the standard ‘therefore’ sign (three dots).</p>
 <p>The <code>delimiter=none</code> option can be set in the document
 metadata. It will then apply to all custom labelled lists
@@ -1924,11 +1924,11 @@ themselves. See <a href="block-elements.html#custom-labels-lists">custom labelle
 <p>As explained in <a href="block-elements.html#custom-labels-lists">custom labelled lists</a>,
 crossreference links to premises can be done by giving them
 identifiers and using the citation syntax:</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb161-1"><a href="block-elements.html#cb161-1" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span>{#prem1} No man is wise.</span>
-<span id="cb161-2"><a href="block-elements.html#cb161-2" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span>{#prem2} Socrates is a man.</span>
-<span id="cb161-3"><a href="block-elements.html#cb161-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">C</span><span class="co">]</span>{#conc} Socrates is not wise.</span>
-<span id="cb161-4"><a href="block-elements.html#cb161-4" tabindex="-1"></a></span>
-<span id="cb161-5"><a href="block-elements.html#cb161-5" tabindex="-1"></a>Premises @prem1 and @prem2 entail @conc.</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb162-1"><a href="block-elements.html#cb162-1" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span>{#prem1} No man is wise.</span>
+<span id="cb162-2"><a href="block-elements.html#cb162-2" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span>{#prem2} Socrates is a man.</span>
+<span id="cb162-3"><a href="block-elements.html#cb162-3" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">C</span><span class="co">]</span>{#conc} Socrates is not wise.</span>
+<span id="cb162-4"><a href="block-elements.html#cb162-4" tabindex="-1"></a></span>
+<span id="cb162-5"><a href="block-elements.html#cb162-5" tabindex="-1"></a>Premises @prem1 and @prem2 entail @conc.</span></code></pre></div>
 <p><em>Requires</em>: the <code>statement.lua</code> filter.</p>
 <p>Arguments can be placed within statements, especially if
 they have a name.</p>
@@ -1952,30 +1952,30 @@ side by side. Note that this is <em>not</em> the same as using a
 <a href="block-elements.html#tables">table</a>. Here we just divide part of the text
 into two or more columns, and the text may be allowed to
 flow from one to the other. The syntax is this:</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb163-1"><a href="block-elements.html#cb163-1" tabindex="-1"></a>::: columns</span>
-<span id="cb163-2"><a href="block-elements.html#cb163-2" tabindex="-1"></a>:::: column</span>
-<span id="cb163-3"><a href="block-elements.html#cb163-3" tabindex="-1"></a>This goes in the first column</span>
-<span id="cb163-4"><a href="block-elements.html#cb163-4" tabindex="-1"></a>::::</span>
-<span id="cb163-5"><a href="block-elements.html#cb163-5" tabindex="-1"></a></span>
-<span id="cb163-6"><a href="block-elements.html#cb163-6" tabindex="-1"></a>:::: column</span>
-<span id="cb163-7"><a href="block-elements.html#cb163-7" tabindex="-1"></a>This goes in the second column</span>
-<span id="cb163-8"><a href="block-elements.html#cb163-8" tabindex="-1"></a>::::</span>
-<span id="cb163-9"><a href="block-elements.html#cb163-9" tabindex="-1"></a></span>
-<span id="cb163-10"><a href="block-elements.html#cb163-10" tabindex="-1"></a>:::: column</span>
-<span id="cb163-11"><a href="block-elements.html#cb163-11" tabindex="-1"></a>This goes in a third column</span>
-<span id="cb163-12"><a href="block-elements.html#cb163-12" tabindex="-1"></a>::::</span>
-<span id="cb163-13"><a href="block-elements.html#cb163-13" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb164-1"><a href="block-elements.html#cb164-1" tabindex="-1"></a>::: columns</span>
+<span id="cb164-2"><a href="block-elements.html#cb164-2" tabindex="-1"></a>:::: column</span>
+<span id="cb164-3"><a href="block-elements.html#cb164-3" tabindex="-1"></a>This goes in the first column</span>
+<span id="cb164-4"><a href="block-elements.html#cb164-4" tabindex="-1"></a>::::</span>
+<span id="cb164-5"><a href="block-elements.html#cb164-5" tabindex="-1"></a></span>
+<span id="cb164-6"><a href="block-elements.html#cb164-6" tabindex="-1"></a>:::: column</span>
+<span id="cb164-7"><a href="block-elements.html#cb164-7" tabindex="-1"></a>This goes in the second column</span>
+<span id="cb164-8"><a href="block-elements.html#cb164-8" tabindex="-1"></a>::::</span>
+<span id="cb164-9"><a href="block-elements.html#cb164-9" tabindex="-1"></a></span>
+<span id="cb164-10"><a href="block-elements.html#cb164-10" tabindex="-1"></a>:::: column</span>
+<span id="cb164-11"><a href="block-elements.html#cb164-11" tabindex="-1"></a>This goes in a third column</span>
+<span id="cb164-12"><a href="block-elements.html#cb164-12" tabindex="-1"></a>::::</span>
+<span id="cb164-13"><a href="block-elements.html#cb164-13" tabindex="-1"></a>:::</span></code></pre></div>
 <p>In LaTeX, columns are justified vertically by default. That is, if columns
 are explicitly broken at certain points, LaTeX ensures that the text in
 each column occupies its full height by stretching inter-paragraph space.
 This means that some paragraph may end up being “bumped” at the end
 of a column. To avoid this, set the <code>.ragged</code> class on your <code>columns</code>
 Div like so:</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb164-1"><a href="block-elements.html#cb164-1" tabindex="-1"></a>::: {.columns .ragged}</span>
-<span id="cb164-2"><a href="block-elements.html#cb164-2" tabindex="-1"></a></span>
-<span id="cb164-3"><a href="block-elements.html#cb164-3" tabindex="-1"></a>...</span>
-<span id="cb164-4"><a href="block-elements.html#cb164-4" tabindex="-1"></a></span>
-<span id="cb164-5"><a href="block-elements.html#cb164-5" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb165-1"><a href="block-elements.html#cb165-1" tabindex="-1"></a>::: {.columns .ragged}</span>
+<span id="cb165-2"><a href="block-elements.html#cb165-2" tabindex="-1"></a></span>
+<span id="cb165-3"><a href="block-elements.html#cb165-3" tabindex="-1"></a>...</span>
+<span id="cb165-4"><a href="block-elements.html#cb165-4" tabindex="-1"></a></span>
+<span id="cb165-5"><a href="block-elements.html#cb165-5" tabindex="-1"></a>:::</span></code></pre></div>
 <p>Note that this doesn’t work on individual <code>column</code> Divs, only on the
 <code>columns</code> Div that contains them.</p>
 <p>Above I use three colons to open and close the “columns” part, and four colons
@@ -1997,90 +1997,90 @@ distinct from each other.</p>
 <td><p>Columns opens and closes with 3
 colons, each column opens and closes
 with 5:</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb165-1"><a href="block-elements.html#cb165-1" tabindex="-1"></a>::: {.columns}</span>
-<span id="cb165-2"><a href="block-elements.html#cb165-2" tabindex="-1"></a>::::: {.column}</span>
-<span id="cb165-3"><a href="block-elements.html#cb165-3" tabindex="-1"></a>On the left</span>
-<span id="cb165-4"><a href="block-elements.html#cb165-4" tabindex="-1"></a>:::::</span>
-<span id="cb165-5"><a href="block-elements.html#cb165-5" tabindex="-1"></a></span>
-<span id="cb165-6"><a href="block-elements.html#cb165-6" tabindex="-1"></a>::::: {.column}</span>
-<span id="cb165-7"><a href="block-elements.html#cb165-7" tabindex="-1"></a>On the right</span>
-<span id="cb165-8"><a href="block-elements.html#cb165-8" tabindex="-1"></a>:::::</span>
-<span id="cb165-9"><a href="block-elements.html#cb165-9" tabindex="-1"></a>:::</span></code></pre></div></td>
+<div class="sourceCode" id="cb166"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb166-1"><a href="block-elements.html#cb166-1" tabindex="-1"></a>::: {.columns}</span>
+<span id="cb166-2"><a href="block-elements.html#cb166-2" tabindex="-1"></a>::::: {.column}</span>
+<span id="cb166-3"><a href="block-elements.html#cb166-3" tabindex="-1"></a>On the left</span>
+<span id="cb166-4"><a href="block-elements.html#cb166-4" tabindex="-1"></a>:::::</span>
+<span id="cb166-5"><a href="block-elements.html#cb166-5" tabindex="-1"></a></span>
+<span id="cb166-6"><a href="block-elements.html#cb166-6" tabindex="-1"></a>::::: {.column}</span>
+<span id="cb166-7"><a href="block-elements.html#cb166-7" tabindex="-1"></a>On the right</span>
+<span id="cb166-8"><a href="block-elements.html#cb166-8" tabindex="-1"></a>:::::</span>
+<span id="cb166-9"><a href="block-elements.html#cb166-9" tabindex="-1"></a>:::</span></code></pre></div></td>
 <td><p>Everything opens and closes with 4
 colons:</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb166-1"><a href="block-elements.html#cb166-1" tabindex="-1"></a>:::: {.columns}</span>
-<span id="cb166-2"><a href="block-elements.html#cb166-2" tabindex="-1"></a>:::: {.column}</span>
-<span id="cb166-3"><a href="block-elements.html#cb166-3" tabindex="-1"></a>On the left</span>
-<span id="cb166-4"><a href="block-elements.html#cb166-4" tabindex="-1"></a>::::</span>
-<span id="cb166-5"><a href="block-elements.html#cb166-5" tabindex="-1"></a></span>
-<span id="cb166-6"><a href="block-elements.html#cb166-6" tabindex="-1"></a>:::: {.column}</span>
-<span id="cb166-7"><a href="block-elements.html#cb166-7" tabindex="-1"></a>On the right</span>
-<span id="cb166-8"><a href="block-elements.html#cb166-8" tabindex="-1"></a>::::</span>
-<span id="cb166-9"><a href="block-elements.html#cb166-9" tabindex="-1"></a>::::</span></code></pre></div></td>
+<div class="sourceCode" id="cb167"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb167-1"><a href="block-elements.html#cb167-1" tabindex="-1"></a>:::: {.columns}</span>
+<span id="cb167-2"><a href="block-elements.html#cb167-2" tabindex="-1"></a>:::: {.column}</span>
+<span id="cb167-3"><a href="block-elements.html#cb167-3" tabindex="-1"></a>On the left</span>
+<span id="cb167-4"><a href="block-elements.html#cb167-4" tabindex="-1"></a>::::</span>
+<span id="cb167-5"><a href="block-elements.html#cb167-5" tabindex="-1"></a></span>
+<span id="cb167-6"><a href="block-elements.html#cb167-6" tabindex="-1"></a>:::: {.column}</span>
+<span id="cb167-7"><a href="block-elements.html#cb167-7" tabindex="-1"></a>On the right</span>
+<span id="cb167-8"><a href="block-elements.html#cb167-8" tabindex="-1"></a>::::</span>
+<span id="cb167-9"><a href="block-elements.html#cb167-9" tabindex="-1"></a>::::</span></code></pre></div></td>
 </tr>
 <tr class="even">
 <td><p>First column opens and closes with 5
 colons, second with 7:</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb167-1"><a href="block-elements.html#cb167-1" tabindex="-1"></a>::: {.columns}</span>
-<span id="cb167-2"><a href="block-elements.html#cb167-2" tabindex="-1"></a>::::: {.column}</span>
-<span id="cb167-3"><a href="block-elements.html#cb167-3" tabindex="-1"></a>On the left</span>
-<span id="cb167-4"><a href="block-elements.html#cb167-4" tabindex="-1"></a>:::::</span>
-<span id="cb167-5"><a href="block-elements.html#cb167-5" tabindex="-1"></a></span>
-<span id="cb167-6"><a href="block-elements.html#cb167-6" tabindex="-1"></a>::::::: {.column}</span>
-<span id="cb167-7"><a href="block-elements.html#cb167-7" tabindex="-1"></a>On the right</span>
-<span id="cb167-8"><a href="block-elements.html#cb167-8" tabindex="-1"></a>:::::::</span>
-<span id="cb167-9"><a href="block-elements.html#cb167-9" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb168-1"><a href="block-elements.html#cb168-1" tabindex="-1"></a>::: {.columns}</span>
+<span id="cb168-2"><a href="block-elements.html#cb168-2" tabindex="-1"></a>::::: {.column}</span>
+<span id="cb168-3"><a href="block-elements.html#cb168-3" tabindex="-1"></a>On the left</span>
+<span id="cb168-4"><a href="block-elements.html#cb168-4" tabindex="-1"></a>:::::</span>
+<span id="cb168-5"><a href="block-elements.html#cb168-5" tabindex="-1"></a></span>
+<span id="cb168-6"><a href="block-elements.html#cb168-6" tabindex="-1"></a>::::::: {.column}</span>
+<span id="cb168-7"><a href="block-elements.html#cb168-7" tabindex="-1"></a>On the right</span>
+<span id="cb168-8"><a href="block-elements.html#cb168-8" tabindex="-1"></a>:::::::</span>
+<span id="cb168-9"><a href="block-elements.html#cb168-9" tabindex="-1"></a>:::</span></code></pre></div>
 <p>```</p></td>
 <td><p>First column opens with 5 but closes
 with 7, second column opens with 7
 but closes with 5:</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb168-1"><a href="block-elements.html#cb168-1" tabindex="-1"></a>::: {.columns}</span>
-<span id="cb168-2"><a href="block-elements.html#cb168-2" tabindex="-1"></a>::::: {.column}</span>
-<span id="cb168-3"><a href="block-elements.html#cb168-3" tabindex="-1"></a>On the left</span>
-<span id="cb168-4"><a href="block-elements.html#cb168-4" tabindex="-1"></a>::::::::</span>
-<span id="cb168-5"><a href="block-elements.html#cb168-5" tabindex="-1"></a></span>
-<span id="cb168-6"><a href="block-elements.html#cb168-6" tabindex="-1"></a>::::::: {.column}</span>
-<span id="cb168-7"><a href="block-elements.html#cb168-7" tabindex="-1"></a>On the right</span>
-<span id="cb168-8"><a href="block-elements.html#cb168-8" tabindex="-1"></a>:::::</span>
-<span id="cb168-9"><a href="block-elements.html#cb168-9" tabindex="-1"></a>:::</span></code></pre></div></td>
+<div class="sourceCode" id="cb169"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb169-1"><a href="block-elements.html#cb169-1" tabindex="-1"></a>::: {.columns}</span>
+<span id="cb169-2"><a href="block-elements.html#cb169-2" tabindex="-1"></a>::::: {.column}</span>
+<span id="cb169-3"><a href="block-elements.html#cb169-3" tabindex="-1"></a>On the left</span>
+<span id="cb169-4"><a href="block-elements.html#cb169-4" tabindex="-1"></a>::::::::</span>
+<span id="cb169-5"><a href="block-elements.html#cb169-5" tabindex="-1"></a></span>
+<span id="cb169-6"><a href="block-elements.html#cb169-6" tabindex="-1"></a>::::::: {.column}</span>
+<span id="cb169-7"><a href="block-elements.html#cb169-7" tabindex="-1"></a>On the right</span>
+<span id="cb169-8"><a href="block-elements.html#cb169-8" tabindex="-1"></a>:::::</span>
+<span id="cb169-9"><a href="block-elements.html#cb169-9" tabindex="-1"></a>:::</span></code></pre></div></td>
 </tr>
 <tr class="odd">
 <td><p>The {. … } is optional if you have
 one word only, but mandatory if you
 have several</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb169-1"><a href="block-elements.html#cb169-1" tabindex="-1"></a>::: {.columns}</span>
-<span id="cb169-2"><a href="block-elements.html#cb169-2" tabindex="-1"></a>::: {.column}</span>
-<span id="cb169-3"><a href="block-elements.html#cb169-3" tabindex="-1"></a>On the left</span>
-<span id="cb169-4"><a href="block-elements.html#cb169-4" tabindex="-1"></a>:::</span>
-<span id="cb169-5"><a href="block-elements.html#cb169-5" tabindex="-1"></a></span>
-<span id="cb169-6"><a href="block-elements.html#cb169-6" tabindex="-1"></a>::: {.column}</span>
-<span id="cb169-7"><a href="block-elements.html#cb169-7" tabindex="-1"></a>On the right</span>
-<span id="cb169-8"><a href="block-elements.html#cb169-8" tabindex="-1"></a>:::</span>
-<span id="cb169-9"><a href="block-elements.html#cb169-9" tabindex="-1"></a>:::</span>
-<span id="cb169-10"><a href="block-elements.html#cb169-10" tabindex="-1"></a></span>
-<span id="cb169-11"><a href="block-elements.html#cb169-11" tabindex="-1"></a>::: {.columns <span class="sc">\#</span>my-columns}</span>
-<span id="cb169-12"><a href="block-elements.html#cb169-12" tabindex="-1"></a>::: {.column}</span>
-<span id="cb169-13"><a href="block-elements.html#cb169-13" tabindex="-1"></a>On the left</span>
-<span id="cb169-14"><a href="block-elements.html#cb169-14" tabindex="-1"></a>:::</span>
-<span id="cb169-15"><a href="block-elements.html#cb169-15" tabindex="-1"></a>::: {.column}</span>
-<span id="cb169-16"><a href="block-elements.html#cb169-16" tabindex="-1"></a>On the right</span>
-<span id="cb169-17"><a href="block-elements.html#cb169-17" tabindex="-1"></a>:::</span>
-<span id="cb169-18"><a href="block-elements.html#cb169-18" tabindex="-1"></a>:::</span></code></pre></div></td>
-<td><div class="sourceCode" id="cb170"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb170-1"><a href="block-elements.html#cb170-1" tabindex="-1"></a>::: columns <span class="sc">\#</span>my-columns</span>
-<span id="cb170-2"><a href="block-elements.html#cb170-2" tabindex="-1"></a></span>
-<span id="cb170-3"><a href="block-elements.html#cb170-3" tabindex="-1"></a>::::: column width=&quot;40%&quot;</span>
-<span id="cb170-4"><a href="block-elements.html#cb170-4" tabindex="-1"></a></span>
-<span id="cb170-5"><a href="block-elements.html#cb170-5" tabindex="-1"></a>On the left</span>
-<span id="cb170-6"><a href="block-elements.html#cb170-6" tabindex="-1"></a></span>
-<span id="cb170-7"><a href="block-elements.html#cb170-7" tabindex="-1"></a>:::::</span>
-<span id="cb170-8"><a href="block-elements.html#cb170-8" tabindex="-1"></a></span>
-<span id="cb170-9"><a href="block-elements.html#cb170-9" tabindex="-1"></a>::::::: column label=&quot;red&quot;</span>
+<div class="sourceCode" id="cb170"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb170-1"><a href="block-elements.html#cb170-1" tabindex="-1"></a>::: {.columns}</span>
+<span id="cb170-2"><a href="block-elements.html#cb170-2" tabindex="-1"></a>::: {.column}</span>
+<span id="cb170-3"><a href="block-elements.html#cb170-3" tabindex="-1"></a>On the left</span>
+<span id="cb170-4"><a href="block-elements.html#cb170-4" tabindex="-1"></a>:::</span>
+<span id="cb170-5"><a href="block-elements.html#cb170-5" tabindex="-1"></a></span>
+<span id="cb170-6"><a href="block-elements.html#cb170-6" tabindex="-1"></a>::: {.column}</span>
+<span id="cb170-7"><a href="block-elements.html#cb170-7" tabindex="-1"></a>On the right</span>
+<span id="cb170-8"><a href="block-elements.html#cb170-8" tabindex="-1"></a>:::</span>
+<span id="cb170-9"><a href="block-elements.html#cb170-9" tabindex="-1"></a>:::</span>
 <span id="cb170-10"><a href="block-elements.html#cb170-10" tabindex="-1"></a></span>
-<span id="cb170-11"><a href="block-elements.html#cb170-11" tabindex="-1"></a>On the right</span>
-<span id="cb170-12"><a href="block-elements.html#cb170-12" tabindex="-1"></a></span>
-<span id="cb170-13"><a href="block-elements.html#cb170-13" tabindex="-1"></a>:::::::</span>
-<span id="cb170-14"><a href="block-elements.html#cb170-14" tabindex="-1"></a></span>
-<span id="cb170-15"><a href="block-elements.html#cb170-15" tabindex="-1"></a>:::</span></code></pre></div></td>
+<span id="cb170-11"><a href="block-elements.html#cb170-11" tabindex="-1"></a>::: {.columns <span class="sc">\#</span>my-columns}</span>
+<span id="cb170-12"><a href="block-elements.html#cb170-12" tabindex="-1"></a>::: {.column}</span>
+<span id="cb170-13"><a href="block-elements.html#cb170-13" tabindex="-1"></a>On the left</span>
+<span id="cb170-14"><a href="block-elements.html#cb170-14" tabindex="-1"></a>:::</span>
+<span id="cb170-15"><a href="block-elements.html#cb170-15" tabindex="-1"></a>::: {.column}</span>
+<span id="cb170-16"><a href="block-elements.html#cb170-16" tabindex="-1"></a>On the right</span>
+<span id="cb170-17"><a href="block-elements.html#cb170-17" tabindex="-1"></a>:::</span>
+<span id="cb170-18"><a href="block-elements.html#cb170-18" tabindex="-1"></a>:::</span></code></pre></div></td>
+<td><div class="sourceCode" id="cb171"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb171-1"><a href="block-elements.html#cb171-1" tabindex="-1"></a>::: columns <span class="sc">\#</span>my-columns</span>
+<span id="cb171-2"><a href="block-elements.html#cb171-2" tabindex="-1"></a></span>
+<span id="cb171-3"><a href="block-elements.html#cb171-3" tabindex="-1"></a>::::: column width=&quot;40%&quot;</span>
+<span id="cb171-4"><a href="block-elements.html#cb171-4" tabindex="-1"></a></span>
+<span id="cb171-5"><a href="block-elements.html#cb171-5" tabindex="-1"></a>On the left</span>
+<span id="cb171-6"><a href="block-elements.html#cb171-6" tabindex="-1"></a></span>
+<span id="cb171-7"><a href="block-elements.html#cb171-7" tabindex="-1"></a>:::::</span>
+<span id="cb171-8"><a href="block-elements.html#cb171-8" tabindex="-1"></a></span>
+<span id="cb171-9"><a href="block-elements.html#cb171-9" tabindex="-1"></a>::::::: column label=&quot;red&quot;</span>
+<span id="cb171-10"><a href="block-elements.html#cb171-10" tabindex="-1"></a></span>
+<span id="cb171-11"><a href="block-elements.html#cb171-11" tabindex="-1"></a>On the right</span>
+<span id="cb171-12"><a href="block-elements.html#cb171-12" tabindex="-1"></a></span>
+<span id="cb171-13"><a href="block-elements.html#cb171-13" tabindex="-1"></a>:::::::</span>
+<span id="cb171-14"><a href="block-elements.html#cb171-14" tabindex="-1"></a></span>
+<span id="cb171-15"><a href="block-elements.html#cb171-15" tabindex="-1"></a>:::</span></code></pre></div></td>
 </tr>
 </tbody>
 </table>
@@ -2093,15 +2093,15 @@ have several</p>
 <p>When there is no markdown solution to typeset something there is fallback solution: include raw output code of other formats directly in your markdown document. We first figure out how the element should be coded in relevant output formats (LaTeX, html, xml); we call this <em>raw code</em>. Then we insert raw code without our markdown document.</p>
 <p>In some cases you’re happy with the output markdown generates in some, but not all, formats. For instance, the XML output is fine (XML has no typesetting), but you’d like to do some fine-grained typesetting in LaTeX that the normal LaTeX output doesn’t handle. In that case you’ll use markdown for some output formats, but provide raw code only for LaTeX.</p>
 <p>To provide Raw code for all output formats, you insert it as follows:</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb171-1"><a href="block-elements.html#cb171-1" tabindex="-1"></a><span class="in">``` {=latex}</span></span>
-<span id="cb171-2"><a href="block-elements.html#cb171-2" tabindex="-1"></a><span class="in">... LaTeX code here ...</span></span>
-<span id="cb171-3"><a href="block-elements.html#cb171-3" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb171-4"><a href="block-elements.html#cb171-4" tabindex="-1"></a><span class="in">``` {=html}</span></span>
-<span id="cb171-5"><a href="block-elements.html#cb171-5" tabindex="-1"></a><span class="in">... html/epub code here ...</span></span>
-<span id="cb171-6"><a href="block-elements.html#cb171-6" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb171-7"><a href="block-elements.html#cb171-7" tabindex="-1"></a><span class="in">``` {=xml}</span></span>
-<span id="cb171-8"><a href="block-elements.html#cb171-8" tabindex="-1"></a><span class="in">... xml code here ...</span></span>
-<span id="cb171-9"><a href="block-elements.html#cb171-9" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb172-1"><a href="block-elements.html#cb172-1" tabindex="-1"></a><span class="in">``` {=latex}</span></span>
+<span id="cb172-2"><a href="block-elements.html#cb172-2" tabindex="-1"></a><span class="in">... LaTeX code here ...</span></span>
+<span id="cb172-3"><a href="block-elements.html#cb172-3" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb172-4"><a href="block-elements.html#cb172-4" tabindex="-1"></a><span class="in">``` {=html}</span></span>
+<span id="cb172-5"><a href="block-elements.html#cb172-5" tabindex="-1"></a><span class="in">... html/epub code here ...</span></span>
+<span id="cb172-6"><a href="block-elements.html#cb172-6" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb172-7"><a href="block-elements.html#cb172-7" tabindex="-1"></a><span class="in">``` {=xml}</span></span>
+<span id="cb172-8"><a href="block-elements.html#cb172-8" tabindex="-1"></a><span class="in">... xml code here ...</span></span>
+<span id="cb172-9"><a href="block-elements.html#cb172-9" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>The part marked with <code>{=latex}</code> will be included as is in the LaTeX output (for PDFs) and only in the LaTeX output.</p>
 <p>To provide raw code for some, but not all, formats, you should put the relevant bits of markdown within a <code>not-in-format</code> div, and the raw code after it. (This method requires the <code>not-in-format</code> Pandoc filter.) For instance:</p>
 <pre><code>::: {.not-in-format .latex}

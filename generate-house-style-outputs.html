@@ -670,22 +670,23 @@ this command again.</p>
 <div id="single-article-with-rstudio" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Single article with RStudio<a href="generate-house-style-outputs.html#single-article-with-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Create a RStudio project for the article you are working on</strong>. This is explained in the next chapter of the guide.</p>
-<p><strong>Copy the script and master files in your article’s project folder</strong>. The files needed are:</p>
+<p><strong>Copy the script and master files in your article’s project folder</strong>
+(<em>Dialectica-specific</em>). The files needed are in <code>template/&lt;x.x&gt;/EXTRA/copyeditor-scripts</code>, where <code>x.x</code> is the latest
+version of the template (e.g. <code>1.1</code>):</p>
 <ul>
 <li>Linux / MacOS: <code>master.md</code>, <code>Makefile</code>.</li>
-<li>Windows: <code>master.md</code>, <code>make.bat</code></li>
+<li>Windows: <code>master.md</code>, <code>make.bat</code>.</li>
 </ul>
-<p><em>Dialectica-specific</em>. These can be found in the workhouse folder at
-<code>template/&lt;x.x&gt;/EXTRA/copyeditor-scripts</code>, where <code>x.x</code> is the latest
-version of the template (e.g. <code>1.1</code>). It’s good to copy all in case
-someone working on a different system than yours needs to regenerate your article’s output. These are very tiny files.</p>
-<p>Optional: on Linux/MacOS, you can also copy <code>generatemakefile.sh</code> to
-your article folder. Running it (in that folder) with <code>sh generatemakefile.sh</code>
-will update the <code>Makefile</code> and <code>make.bat</code> from EXTRAS.</p>
+<p>Option 1. Copy <code>generatemakefile.sh</code> in your article folder. Run the command below in a terminal. On Linux / MacOS, you can simply use the terminal in RStudio (it’s automatically located in the project folder). On Windows, you
+need a <em>Linux</em> terminal: in Windows’ file explorer, press Shift + right-click
+the article folder and chose “Open Linux shell here”.</p>
+<pre><code>sh generatemakefile.sh</code></pre>
+<p>This copies the <code>master.md</code>, <code>make.bat</code>, <code>Makefile</code> files in the folder.</p>
+<p>Option 2. Manually copy the files.</p>
 <p><strong>Edit the master file(s) to indicate your source file name</strong>. Open
 <code>master.md</code>. Find the lines:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="generate-house-style-outputs.html#cb11-1" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
-<span id="cb11-2"><a href="generate-house-style-outputs.html#cb11-2" tabindex="-1"></a><span class="kw">-</span><span class="at"> source.md</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb12-1"><a href="generate-house-style-outputs.html#cb12-1" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
+<span id="cb12-2"><a href="generate-house-style-outputs.html#cb12-2" tabindex="-1"></a><span class="kw">-</span><span class="at"> source.md</span></span></code></pre></div>
 <p>Replace <code>source.md</code> with the name of your article’s markdown file, save.</p>
 <p><strong>In RStudio, open your article’s project and go to the menu Build &gt; Configure Build Tools</strong>. Enter the following choices:</p>
 <ul>
@@ -806,7 +807,7 @@ is just a copy of <code>master.md</code>.</p>
 <div id="simple-pdf" class="section level3 hasAnchor" number="6.6.1">
 <h3><span class="header-section-number">6.6.1</span> simple PDF<a href="generate-house-style-outputs.html#simple-pdf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Go the folder of your article, say <code>processing/2020-01-special-issue/01-smith</code>. Enter:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="generate-house-style-outputs.html#cb19-1" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-L</span> ../../../template/1.1/filters/collection.lua master.md <span class="at">-d</span> ../../../template/1.1/offprint.yaml <span class="at">-M</span> offprint-mode=1 <span class="at">-o</span> article.pdf</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="generate-house-style-outputs.html#cb20-1" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-L</span> ../../../template/1.1/filters/collection.lua master.md <span class="at">-d</span> ../../../template/1.1/offprint.yaml <span class="at">-M</span> offprint-mode=1 <span class="at">-o</span> article.pdf</span></code></pre></div>
 <p>On Windows, replace <code>master.md</code> with <code>master-win.md</code>. Explanation of
 the parameters:</p>
 <ul>
@@ -847,15 +848,15 @@ to generate a custom <code>Makefile</code> for the issue (see below).</p>
 <p><strong>Edit the master file</strong>. Open <code>master.md</code> and check its <code>imports</code>
 field. This should specify the list of source files for the issue,
 in the order desired. For instance:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb20-1"><a href="generate-house-style-outputs.html#cb20-1" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
-<span id="cb20-2"><a href="generate-house-style-outputs.html#cb20-2" tabindex="-1"></a><span class="kw">-</span><span class="at"> 01-michels/michels.md</span></span>
-<span id="cb20-3"><a href="generate-house-style-outputs.html#cb20-3" tabindex="-1"></a><span class="kw">-</span><span class="at"> 02-benyami/benyami.md</span></span>
-<span id="cb20-4"><a href="generate-house-style-outputs.html#cb20-4" tabindex="-1"></a><span class="kw">-</span><span class="at"> 03-dicher/dicher.md</span></span>
-<span id="cb20-5"><a href="generate-house-style-outputs.html#cb20-5" tabindex="-1"></a><span class="kw">-</span><span class="at"> 04-kim/kim.md</span></span>
-<span id="cb20-6"><a href="generate-house-style-outputs.html#cb20-6" tabindex="-1"></a><span class="kw">-</span><span class="at"> 05-reinmuth/reinmuth.md</span></span>
-<span id="cb20-7"><a href="generate-house-style-outputs.html#cb20-7" tabindex="-1"></a><span class="kw">-</span><span class="at"> 06-sagi/sagi.md</span></span>
-<span id="cb20-8"><a href="generate-house-style-outputs.html#cb20-8" tabindex="-1"></a><span class="kw">-</span><span class="at"> 07-cook/cook.md</span></span>
-<span id="cb20-9"><a href="generate-house-style-outputs.html#cb20-9" tabindex="-1"></a><span class="kw">-</span><span class="at"> 08-djordjevic/djordjevic.md</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb21-1"><a href="generate-house-style-outputs.html#cb21-1" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
+<span id="cb21-2"><a href="generate-house-style-outputs.html#cb21-2" tabindex="-1"></a><span class="kw">-</span><span class="at"> 01-michels/michels.md</span></span>
+<span id="cb21-3"><a href="generate-house-style-outputs.html#cb21-3" tabindex="-1"></a><span class="kw">-</span><span class="at"> 02-benyami/benyami.md</span></span>
+<span id="cb21-4"><a href="generate-house-style-outputs.html#cb21-4" tabindex="-1"></a><span class="kw">-</span><span class="at"> 03-dicher/dicher.md</span></span>
+<span id="cb21-5"><a href="generate-house-style-outputs.html#cb21-5" tabindex="-1"></a><span class="kw">-</span><span class="at"> 04-kim/kim.md</span></span>
+<span id="cb21-6"><a href="generate-house-style-outputs.html#cb21-6" tabindex="-1"></a><span class="kw">-</span><span class="at"> 05-reinmuth/reinmuth.md</span></span>
+<span id="cb21-7"><a href="generate-house-style-outputs.html#cb21-7" tabindex="-1"></a><span class="kw">-</span><span class="at"> 06-sagi/sagi.md</span></span>
+<span id="cb21-8"><a href="generate-house-style-outputs.html#cb21-8" tabindex="-1"></a><span class="kw">-</span><span class="at"> 07-cook/cook.md</span></span>
+<span id="cb21-9"><a href="generate-house-style-outputs.html#cb21-9" tabindex="-1"></a><span class="kw">-</span><span class="at"> 08-djordjevic/djordjevic.md</span></span></code></pre></div>
 <p><strong>Use a <code>make</code> command to generate an issue or offprint output</strong>.
 Open a terminal and navigate to the issue folder. The following
 commands will generate issue outputs:</p>
@@ -882,7 +883,7 @@ generate a custom Makefile (see below).</p>
 navigate to the issue folder. If you have copied the
 <code>generatemakefile.sh</code> script in that folder, simply run the
 command:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="generate-house-style-outputs.html#cb21-1" tabindex="-1"></a><span class="fu">sh</span> generatemakefile.sh</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="generate-house-style-outputs.html#cb22-1" tabindex="-1"></a><span class="fu">sh</span> generatemakefile.sh</span></code></pre></div>
 <p>This will generate a <code>Makefile</code> with the same commands (<code>off1</code>,
 <code>off1tex</code>) but whose offprint outputs will take the name of the
 respective sources (<code>djordjevic.pdf</code>, etc). The issue output
@@ -890,23 +891,23 @@ will be named after the doi if one is specified, e.g.
 <code>dial.v74.i1.pdf</code>.</p>
 <p>This also gives you new commands to generate <em>all</em> the outputs
 of an issue: the issue and all its offprints, or all the offprints.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="generate-house-style-outputs.html#cb22-1" tabindex="-1"></a><span class="fu">make</span> all</span>
-<span id="cb22-2"><a href="generate-house-style-outputs.html#cb22-2" tabindex="-1"></a><span class="fu">make</span> alltex</span>
-<span id="cb22-3"><a href="generate-house-style-outputs.html#cb22-3" tabindex="-1"></a><span class="fu">make</span> offprints</span>
-<span id="cb22-4"><a href="generate-house-style-outputs.html#cb22-4" tabindex="-1"></a><span class="fu">make</span> offprintstex</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="generate-house-style-outputs.html#cb23-1" tabindex="-1"></a><span class="fu">make</span> all</span>
+<span id="cb23-2"><a href="generate-house-style-outputs.html#cb23-2" tabindex="-1"></a><span class="fu">make</span> alltex</span>
+<span id="cb23-3"><a href="generate-house-style-outputs.html#cb23-3" tabindex="-1"></a><span class="fu">make</span> offprints</span>
+<span id="cb23-4"><a href="generate-house-style-outputs.html#cb23-4" tabindex="-1"></a><span class="fu">make</span> offprintstex</span></code></pre></div>
 <p>These commands can be combined with <code>proof=true</code>. To get all the
 issue’s offprints with a proof watermark:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="generate-house-style-outputs.html#cb23-1" tabindex="-1"></a><span class="fu">make</span> offprints proof=true</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="generate-house-style-outputs.html#cb24-1" tabindex="-1"></a><span class="fu">make</span> offprints proof=true</span></code></pre></div>
 <p><em>Warning</em>. The custom <code>Makefile</code> must be regenerated each time a
 source’s path or filename is changed or the issue doi modified.</p>
 <p>If the <code>generatemakefile.sh</code> script isn’t present in the folder,
 copy it from <code>template/VVV/extras/copyeditor-scripts-issue</code>. This
 can be done from the terminal with this command (where <code>1.1</code> is replaced by the template’s latest version number):</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="generate-house-style-outputs.html#cb24-1" tabindex="-1"></a><span class="fu">cp</span> ../../template/1.1/extras/copyeditor-scripts-issue/generatemakefile.sh ./</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="generate-house-style-outputs.html#cb25-1" tabindex="-1"></a><span class="fu">cp</span> ../../template/1.1/extras/copyeditor-scripts-issue/generatemakefile.sh ./</span></code></pre></div>
 <p>Alternatively, you can generate a makefile without using the
 <code>generatemakefile.sh</code> script. You only need to enter the command
 (where <code>1.1</code> is replaced by the template’s latest version number):</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="generate-house-style-outputs.html#cb25-1" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-L</span> ../../template/1.1/filters/makemakefile.lua master.d <span class="at">-t</span> plain <span class="at">-o</span> Makefile</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="generate-house-style-outputs.html#cb26-1" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-L</span> ../../template/1.1/filters/makemakefile.lua master.d <span class="at">-t</span> plain <span class="at">-o</span> Makefile</span></code></pre></div>
 </div>
 <div id="troubleshooting-outputs" class="section level2 hasAnchor" number="6.8">
 <h2><span class="header-section-number">6.8</span> Troubleshooting<a href="generate-house-style-outputs.html#troubleshooting-outputs" class="anchor-section" aria-label="Anchor link to header"></a></h2>

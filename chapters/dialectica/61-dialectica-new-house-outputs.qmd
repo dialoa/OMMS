@@ -1,4 +1,4 @@
-# Dialectica new house style outputs DRAFT {#sec-dialectica-house-outputs}
+# Dialectica new house style outputs DRAFT {#sec-dialectica-new-house-outputs}
 
 The association is setting up a standardized compilation environment for
 Dialectica. This environment essentially encapsulate all of the tools

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Markdown Manual of Style - 24&nbsp; Trouble and troubleshooting</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../chapters/copyediting/29-cop-markdown-cheatsheet.html" rel="next">
+<link href="../../chapters/copyediting/25-cop-imagify.html" rel="prev">
+<link href="../../media/dialoa.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/copyediting/12-cop-preliminaries.html">Copyediting</a></li><li class="breadcrumb-item"><a href="../../chapters/copyediting/27-cop-troubleshooting.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Trouble and troubleshooting</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Open Markdown Manual of Style</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Authoring</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/authoring/00-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/authoring/10-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Instructions for authors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Copyediting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/12-cop-preliminaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/13-cop-preparing-a-manuscript.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preparing a manuscript</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/15-cop-markdown-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">About Markdown copyediting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/155-cop-checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Copyeditor workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/16-cop-metadata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Metadata</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/165-cop-grammar-usage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Grammar and usage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/17-cop-inline-elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Inline elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/171-cop-inline-special-chars.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Special characters</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/19-cop-block-elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple block elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/191-cop-block-quotations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Quotations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/192-cop-block-lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lists</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/193-cop-block-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Tables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/194-cop-block-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Figures (images, diagrams, graphs)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/195-cop-block-statements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Statements and indented blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/196-cop-block-columns.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multiple columns</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/199-cop-block-other.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Troublesome blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/21-cop-block-crossreferencing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Cross-referencing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/23-cop-citations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Citations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/24-cop-bibliography.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Bibliography</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/241-cop-math-latex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Math and LaTeX elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/25-cop-imagify.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Imagify</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/27-cop-troubleshooting.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Trouble and troubleshooting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/29-cop-markdown-cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Markdown Cheatsheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Dialectica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/60-dialectica-house-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Dialectica house style outputs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/61-dialectica-new-house-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Dialectica new house style outputs DRAFT</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/65-dialectica-troubleshooting-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Troubleshooting outputs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/70-dialectica-template.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Dialectica template</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/80-dialectica-bibliography.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Interface with <em>dialectica</em>’s main bibliography</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Design</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/design/52-pub-the-structure-of-volumes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">The structure of a book and a journal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Publishing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/publishing/42-ojs-advice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(PART) Open Journal Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/publishing/51-pub-why-markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(PART) Publishing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/appendices/terminal-help.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Terminal help</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/appendices/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Further resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/appendices/glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/appendices/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#paragraph-starts-with-1-or-1.-or-some-other-list-code" id="toc-paragraph-starts-with-1-or-1.-or-some-other-list-code" class="nav-link active" data-scroll-target="#paragraph-starts-with-1-or-1.-or-some-other-list-code"><span class="header-section-number">24.1</span> Paragraph starts with ‘(1)’ or ‘1.’ or some other list code</a></li>
+  <li><a href="#if-pdf-generation-doesnt-work" id="toc-if-pdf-generation-doesnt-work" class="nav-link" data-scroll-target="#if-pdf-generation-doesnt-work"><span class="header-section-number">24.2</span> If PDF generation doesn’t work</a></li>
+  <li><a href="#word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols." id="toc-word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols." class="nav-link" data-scroll-target="#word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols."><span class="header-section-number">24.3</span> Word manuscript with many symbols (phi, psy, greek letters, logical symbols,).</a></li>
+  <li><a href="#reverse-conversion-.md---.tex" id="toc-reverse-conversion-.md---.tex" class="nav-link" data-scroll-target="#reverse-conversion-.md---.tex"><span class="header-section-number">24.4</span> Reverse conversion .md -&gt; .tex</a></li>
+  <li><a href="#file-not-found-in-resource-path" id="toc-file-not-found-in-resource-path" class="nav-link" data-scroll-target="#file-not-found-in-resource-path"><span class="header-section-number">24.5</span> File not found in resource path</a></li>
+  <li><a href="#htmlmathjax-math-mode-letter-in-heading-not-showing" id="toc-htmlmathjax-math-mode-letter-in-heading-not-showing" class="nav-link" data-scroll-target="#htmlmathjax-math-mode-letter-in-heading-not-showing"><span class="header-section-number">24.6</span> HTML/MathJax: Math-mode letter in heading not showing</a></li>
+  <li><a href="#missing-character" id="toc-missing-character" class="nav-link" data-scroll-target="#missing-character"><span class="header-section-number">24.7</span> Missing character</a></li>
+  <li><a href="#yaml-parse-exception" id="toc-yaml-parse-exception" class="nav-link" data-scroll-target="#yaml-parse-exception"><span class="header-section-number">24.8</span> YAML Parse exception</a></li>
+  <li><a href="#attempt-to-compare-nil-with-number" id="toc-attempt-to-compare-nil-with-number" class="nav-link" data-scroll-target="#attempt-to-compare-nil-with-number"><span class="header-section-number">24.9</span> attempt to compare nil with number</a></li>
+  <li><a href="#hard-coded-latex-table-undefined-control-sequence" id="toc-hard-coded-latex-table-undefined-control-sequence" class="nav-link" data-scroll-target="#hard-coded-latex-table-undefined-control-sequence"><span class="header-section-number">24.10</span> Hard-coded LaTeX table: Undefined control sequence</a></li>
+  <li><a href="#a-list-of-things-that-cause-trouble" id="toc-a-list-of-things-that-cause-trouble" class="nav-link" data-scroll-target="#a-list-of-things-that-cause-trouble"><span class="header-section-number">24.11</span> A list of things that cause trouble</a>
+  <ul class="collapse">
+  <li><a href="#visual-editor-rstudio" id="toc-visual-editor-rstudio" class="nav-link" data-scroll-target="#visual-editor-rstudio"><span class="header-section-number">24.11.1</span> Visual editor RStudio</a></li>
+  <li><a href="#pandoc" id="toc-pandoc" class="nav-link" data-scroll-target="#pandoc"><span class="header-section-number">24.11.2</span> Pandoc</a></li>
+  <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex"><span class="header-section-number">24.11.3</span> LaTeX</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Trouble and troubleshooting</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="paragraph-starts-with-1-or-1.-or-some-other-list-code" class="level2" data-number="24.1">
+<h2 data-number="24.1" class="anchored" data-anchor-id="paragraph-starts-with-1-or-1.-or-some-other-list-code"><span class="header-section-number">24.1</span> Paragraph starts with ‘(1)’ or ‘1.’ or some other list code</h2>
+<p>Problem. you have a paragraph or blockquote starting with <code>(1)</code> or <code>2)</code> or <code>3.</code>. Pandoc thinks it’s a list, but it’s not.</p>
+<p>Solution. Escape the parenthesis or dot that follows the number.</p>
+<table class="table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>I TYPE</th>
+<th>I GET</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(1) This is interpreted</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>as a list item.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>And so is this.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><ol type="1">
+<li>This is interpreted as a list item.</li>
+</ol>
+<!-- -->
+<ol start="3" type="1">
+<li>And so is this.</li>
+</ol></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(1<span class="sc">\)</span> This isn't interpreted</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>as a list item.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>3<span class="sc">\.</span> This isn't either.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><p>(1) This isn’t interpreted as a list item.</p>
+<p>3. This isn’t either.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="if-pdf-generation-doesnt-work" class="level2" data-number="24.2">
+<h2 data-number="24.2" class="anchored" data-anchor-id="if-pdf-generation-doesnt-work"><span class="header-section-number">24.2</span> If PDF generation doesn’t work</h2>
+<p>Make sure first that you’ve checked the advice in the “how to produce outputs” sections.</p>
+<p>PDF generation happens in two stages. Identify which one fails:</p>
+<ul>
+<li>Markdown to LaTeX (the Pandoc stage)</li>
+<li>or LaTeX to PDF (the LaTeX stage)</li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>You do so by trying to generate a <em>LaTeX</em> (.tex) output. If that fails, there’s an error at the Pandoc stage, otherwise (more commonly, unfortunately) the error is at the latex stage.</p>
+<p>Pandoc-stage errors are mostly due to:</p>
+<ol type="1">
+<li>Faulty YAML metadata.
+<ol type="a">
+<li><code>YAML parse exception at line 453..</code> your YAML is not well formatted. See the metadata section.</li>
+<li>Even if you don’t get the YAML parse error, there might be some formatting error around line breaks or identation. Check multiline fields and nested fields of maps/lists.</li>
+<li>Some YAML value isn’t correct and makes a filter crash.</li>
+</ol></li>
+<li>File not found. <code>File not found in resource path</code> error, see below.</li>
+<li>A bug in one of the “filters” that we use to handle various typesetting tasks (e.g. statements). You will see the name <code>lua</code> in the error message.</li>
+<li>Faulty LaTeX template. <code>Cannot compile the template</code> error. There’s an error in the house template.</li>
+</ol>
+<div class="no-first-line-indent-after"></div>
+<p>LaTeX stage errors are due to a multitude of causes. You can learn more about the error by running your pdf engine on the LaTeX output:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lualatex</span> article.tex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>For <code>lualatex</code>; replace with <code>pdflatex</code> or <code>xelatex</code> depending on your setup.</p>
+<p>Once you run LaTeX a detailed log of its action rolls out—faster than you can read. The error message will be close to the end and look like this:</p>
+<pre><code>Error/Warning (...) Error: MESSAGE
+
+Type  H &lt;return&gt;  for immediate help.
+ ...                                              
+                                                  
+l.3984       {See the manual for further details.}</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>The <code>l.3984</code> is the line of the LaTeX file where the error arose. (Not necessarily the line that caused it! The cause might be earlier in the code, though not later.) You can go to that location in your LaTeX file and investigate.</p>
+<p>You can place the LaTeX run log in a file if you want to examine it in a text editor rather than the terminal:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lualatex</span> article.tex <span class="op">&gt;</span> latex_log.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols." class="level2" data-number="24.3">
+<h2 data-number="24.3" class="anchored" data-anchor-id="word-manuscript-with-many-symbols-phi-psy-greek-letters-logical-symbols."><span class="header-section-number">24.3</span> Word manuscript with many symbols (phi, psy, greek letters, logical symbols,).</h2>
+<p>If the symbols aren’t in MS Word Equations, they will be preserved as is in markdown - and the document won’t work. All the symbols have to converted into LaTeX formulas. A tip:</p>
+<ul>
+<li><p>Use search and replace in RStudio to convert each symbol in its &gt; LaTeX equivalent.</p></li>
+<li><p>Then go through the document to enclose each of them in $...$ (to &gt; indicate maths formulas).</p></li>
+</ul>
+</section>
+<section id="reverse-conversion-.md---.tex" class="level2" data-number="24.4">
+<h2 data-number="24.4" class="anchored" data-anchor-id="reverse-conversion-.md---.tex"><span class="header-section-number">24.4</span> Reverse conversion .md -&gt; .tex</h2>
+<table class="table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 32%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>I want</strong></th>
+<th><strong>I type</strong></th>
+<th><strong>LaTex</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Basic</p>
+<p>(Smith, 2012)</p>
+<p>(Smith, 2012, 2015)</p>
+<p>(Smith 2012; Jones 2015)</p>
+<p>(Smith 2012, 205)</p>
+<p>(see Smith 2012, 205)</p>
+<p>(Smith 2012, 205-210, 235)</p>
+<p>(Smith 2012, 28; Jones 2015, 2017)</p>
+<p>(see Smith 2012, 28; comp. Jones 2015, 28; also Jones 2017, 45-58)</p></td>
+<td><p>[@Smith2012]</p>
+<p>[@Smi th2012;@Smith2015]</p>
+<p>[@Smi th2012;@Jones2015]</p>
+<p>[@Smith2012, 205]</p>
+<p>[see @Smith2012, 205]</p>
+<p>[@Smith2012, 205--210, 235]</p>
+<p>[@Smith2012, 28; @Jones2015; @Jones2017]</p>
+<p>[see @Smith2018, 28; comp. @Jones2015, 28; also @Jones2017, 45--48].</p></td>
+<td><p>\citep{smith:2012}</p>
+<p>\citep{sm ith:2012,smith:2015}</p>
+<p>\citep{sm ith:2012,jones:2015}</p>
+<p>\cite p[205]{smith:2012}</p>
+<p>\citep[see<br>
+][205]{smith:2012}</p>
+<p>\citep[205--2 10,235]{smith:2012}</p>
+<p>(Smith \citeyea r[28]{smith:2012}; Jones \citeyear{jon es:2015,jones:2017})</p>
+<p>(see Smith \citeyea r[28]{smith:2012}; comp. Jones \citeyea r[28]{jones:2015}; also Jones \citeyear[45 --58]{jones:2017})</p></td>
+</tr>
+<tr class="even">
+<td><p>Inline</p>
+<p>Smith (2012) says that</p>
+<p>Smith (2012, 205) says that</p>
+<p>Smith (2012; 2015, 205) says that</p>
+<p>Peregrin &amp; Svoboda (2013, 2016, 2017, and also Read, 2018)</p>
+<p><em>Alternatively, you can type the name and use year-only:</em></p>
+<p>Smith (2012; 2015)</p></td>
+<td><p>@Smith2012 says that</p>
+<p>@Smith2012 [205] says that</p>
+<p>@Smith2012 [@Smith2015, 205] says that</p>
+<p>@pe regrin-svoboda:2013a [@pe regrin-svoboda:2016;</p>
+<p>@pe regrin-svoboda:2017; and also @read_s:2000]</p>
+<p>Smith [-@Smith2012, @Smith2015]</p></td>
+<td><p>\citet{smith:2012} says that</p>
+<p>\cite t[205]{smith:2012} says that</p>
+<p>Smith (\c iteyear{smith:2012}, \citeyea r[205]{smith:205}) says that</p>
+<p>\citet[][and also Read \citeyear{r ead_s:2000}]{peregr in-svoboda:2013,pere grin-svoboda:2016,pe regrin-svoboda:2017}</p>
+<p>Peregrin \&amp; Svoboda (\citeyear{peregri n-svoboda:2013,pereg rin-svoboda:2016,per egrin-svoboda:2017}, and also Read \ci teyear{read_s:2000})</p></td>
+</tr>
+<tr class="odd">
+<td><p>Year only</p>
+<p>Smith makes an outrageous claim (2015, 277).</p>
+<p>Smith keeps repeating himself (2012, 2013, 2014, 2015).</p>
+<p>Smith said this in a few places (2012, 20; 2013, 30)</p></td>
+<td><p>Smith makes an outrageous claim [-@Smith2015, 277].</p>
+<p>Smith keeps repeating himself [-@Smith2012; @Smith2013; @Smith2014; @Smith2015].</p>
+<p>Smith said this in a few places [-@Smith2012, 20; @Smith2013, 30].</p></td>
+<td><p>Smith makes an outrageous claim (\citeyear<br>
+[277]{smith:2015}).</p>
+<p>Smith keeps repeating himself (\citeyear{smith :2012,smith:2013,smi th:2014,smith:2015})</p>
+<p>Smith said this in a few places (\citeyea r[29]{smith:2012}, \citeyear [30]{smith:2013}).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="file-not-found-in-resource-path" class="level2" data-number="24.5">
+<h2 data-number="24.5" class="anchored" data-anchor-id="file-not-found-in-resource-path"><span class="header-section-number">24.5</span> File not found in resource path</h2>
+<pre><code>File mydefaults.yaml not found in resource path</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>The file <code>mydefaults.yaml</code> is absent or not at the place expected. Check whether the relative locations of your article, master and template are correct.</p>
+<pre><code>File  not found in resource path</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>Pandoc is looking for a file with no name. Check if you don’t have an emtpy <code>bibliography</code> field in the metadata.</p>
+</section>
+<section id="htmlmathjax-math-mode-letter-in-heading-not-showing" class="level2" data-number="24.6">
+<h2 data-number="24.6" class="anchored" data-anchor-id="htmlmathjax-math-mode-letter-in-heading-not-showing"><span class="header-section-number">24.6</span> HTML/MathJax: Math-mode letter in heading not showing</h2>
+<p>PROBLEM: a Math-mode letter (e.g.&nbsp;<span class="math inline">\(\alpha\)</span>) is not showing in a heading in HTML/MathJax output.</p>
+<p>SOLUTION. Is your CSS using a font variant, e.g.&nbsp;<code>small-caps</code>? Make sure Spans of the math-inline class are in regular shape and variant.</p>
+</section>
+<section id="missing-character" class="level2" data-number="24.7">
+<h2 data-number="24.7" class="anchored" data-anchor-id="missing-character"><span class="header-section-number">24.7</span> Missing character</h2>
+<pre><code>[WARNING] Missing character: There is no SPECIAL-CHAR (U+2192) in font FONT</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>Means that your markdown file include a character SPECIAL-CHAR that is not available in the font you use. Typically, SPECIAL-CHAR is a symbol or character from non-latin languages. Note that you might not see anything where SPECIAL-CHAR is above, if the character in question is a (special kind of) space or if it’s not present in the font in which this warning is printed.</p>
+<p>Solution: if SPECIAL-CHAR is visible you can copy it, and search it in your markdown file. Remove it and if needed replace it with some character that is present in your font. Typically, this involves replacing a unicode symbol (a right arrow) by its LaTeX equivalent, e.g.&nbsp;<span class="math inline">\(\rightarrow\)</span>.</p>
+<p>Solution: if SPECIAL-CHAR is not visible, look up the unicode number (e.g.&nbsp;<code>U+2192</code> online) to see what character is it, and hunt it down in your markdown manuscript.</p>
+</section>
+<section id="yaml-parse-exception" class="level2" data-number="24.8">
+<h2 data-number="24.8" class="anchored" data-anchor-id="yaml-parse-exception"><span class="header-section-number">24.8</span> YAML Parse exception</h2>
+<p>Error message: <code>PandocParseError "YAML parse exception at line 2, column 2:\nmapping values are not allowed in this context"</code></p>
+<p>Solution: this is probably due to several <code>---</code> lines in your source markdown. The text in between might be interpreted as an additional YAML metadata block by Pandoc. Replace them with a longer dash sequence, e.g <code>------</code>.</p>
+</section>
+<section id="attempt-to-compare-nil-with-number" class="level2" data-number="24.9">
+<h2 data-number="24.9" class="anchored" data-anchor-id="attempt-to-compare-nil-with-number"><span class="header-section-number">24.9</span> attempt to compare nil with number</h2>
+<p>Error:</p>
+<pre><code>warning  (node filter): error: ...e/2022/texmf-dist/tex/generic/babel/babel-bid
+i-basic.lua:155: attempt to compare nil with number</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>This bug can be produced by a statement with a custom label containing an <strong>uppercase letter followed by a dash</strong>, such as:</p>
+<pre><code>::: statement
+__L-a__. This statement might generate an error!
+:::</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p><strong>Fix</strong>. Surround the dash with spaces</p>
+<pre><code>::: statement
+__L - a__. This will not generate an error.
+:::</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>A longer dash probably looks better:</p>
+<pre><code>::: statement
+__L -- a__. This will not generate an error.
+:::</code></pre>
+</section>
+<section id="hard-coded-latex-table-undefined-control-sequence" class="level2" data-number="24.10">
+<h2 data-number="24.10" class="anchored" data-anchor-id="hard-coded-latex-table-undefined-control-sequence"><span class="header-section-number">24.10</span> Hard-coded LaTeX table: Undefined control sequence</h2>
+<p>We hard-coded a complex LaTeX table but used markdown to include a link target in the caption:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>::::: {.only-in-format .latex}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="in">`\begin{longtable}{ccc}`</span>{=latex}</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="in">`\caption{`</span>{=latex}Numbers to prove <span class="co">[</span><span class="ot">this idea</span><span class="co">]</span>{#idea}.<span class="in">`}\\`</span>{=latex}</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="in">``` {=latex}</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="in"> \hline</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="in">    header &amp; header &amp; header \\</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="in">  \hline</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="in">  ... table rows \\</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="in"> \hline</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="in">\end{longtable}</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>:::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>We got a “Undefined control sequence” for an obscure command (HyperRaiseLinkLength) that doesn’t appear in the pandoc-generated LaTeX. The cause is that Pandoc inserts a <code>\phantomsection</code> command before the link target:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">longtable</span>}{ccc}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\caption</span>{Numbers to prove <span class="fu">\phantomsection\label</span>{idea}{#idea}.} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Which cannot be inserted within table captions.</p>
+<p><strong>Solution</strong>. Redefine <code>\phantomsection</code> to nothing (or <code>\relax</code>) within the scope of this table. Note that we wrap the entire table within <code>{...}</code> to ensure that <code>\renewcommand</code> only affects this table, not the rest of the document:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::::: {.only-in-format .latex}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="in">``` {=latex}</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="in">{</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="in">\renewcommand{\phantomsection}{}</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{longtable}{ccc}</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="in">`\caption{`</span>{=latex}Numbers to prove <span class="co">[</span><span class="ot">this idea</span><span class="co">]</span>{#idea}.<span class="in">`}\\`</span>{=latex}</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="in">``` {=latex}</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="in"> \hline</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="in">    header &amp; header &amp; header \\</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="in">  \hline</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="in">  ... table rows \\</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="in"> \hline</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="in">\end{longtable}</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>:::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="a-list-of-things-that-cause-trouble" class="level2" data-number="24.11">
+<h2 data-number="24.11" class="anchored" data-anchor-id="a-list-of-things-that-cause-trouble"><span class="header-section-number">24.11</span> A list of things that cause trouble</h2>
+<p>Some hurdles that beginning copyeditors typically face.</p>
+<section id="visual-editor-rstudio" class="level3" data-number="24.11.1">
+<h3 data-number="24.11.1" class="anchored" data-anchor-id="visual-editor-rstudio"><span class="header-section-number">24.11.1</span> Visual editor RStudio</h3>
+<ul>
+<li><p>Does not preserve numbered examples code (all processed).</p></li>
+<li><p>Tables: Doesn’t preserve code (not pipe format -&gt; loss of cell &gt; alignment)</p></li>
+<li><p>Interprets \[ and \] as display maths.</p>
+<ul>
+<li>Solution: do not escape the [ ]. Only possible problem: it &gt; picks up a section label. But I think you can change the title &gt; in section labels.</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandoc" class="level3" data-number="24.11.2">
+<h3 data-number="24.11.2" class="anchored" data-anchor-id="pandoc"><span class="header-section-number">24.11.2</span> Pandoc</h3>
+<ul>
+<li><p>LaTeX encoding of tables is heavy (every cell is a minipage! &gt; Specifies detailed widths)</p></li>
+<li><p>Tables: no colspan nor rowspan yet</p></li>
+<li><p>Indented blocks (statements, arguments, …) and AMS theorems</p></li>
+<li><p>HTML default encoding of formulas uses unicode + italics + “math &gt; inline” custom style class. Use --mathjax flag; adds a link to &gt; mathjax.js in the head so this should be present on the website &gt; (or unnecessary if the galley has its own head). See <a href="https://pandoc.org/MANUAL.html#math-rendering-in-html"><u>pandoc &gt; manual on maths in &gt; html</u></a> &gt; .</p></li>
+</ul>
+</section>
+<section id="latex" class="level3" data-number="24.11.3">
+<h3 data-number="24.11.3" class="anchored" data-anchor-id="latex"><span class="header-section-number">24.11.3</span> LaTeX</h3>
+<ul>
+<li>Standard logic symbols: \neg, \lnot, \land, \lor, \sim all well &gt; supported in MathML? (Not a big worry!)</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../chapters/copyediting/25-cop-imagify.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Imagify</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../chapters/copyediting/29-cop-markdown-cheatsheet.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Markdown Cheatsheet</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

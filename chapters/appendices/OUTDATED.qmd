@@ -1,0 +1,128 @@
+# Outdated instructions
+
+NOT INCLUDED IN THE GUIDE. Stored here in case we need to revive it.
+
+## Windows-specific
+
+### Windows Subsystem for Linux (WSL)
+
+This provides a Linux system (terminal-only) in Windows. It's needed to
+generate outputs within RStudio and with `make` commands. It's not
+needed to generate outputs by running `pandoc` on the command line.
+
+Note that you will need a computer restart during the installation. You
+will also need to set a username and password (to run Linux admin tasks,
+e.g. installing programs). The username and password need not be those
+you use for Windows, but remember them!
+
+Command line users: `wsl --install` (works on a CMD terminal or a
+Powershell) is supposed to do Steps 1-3 all at once, but I found I had
+to do Step 2 below anyway, and you may need to do
+`wsl --install -d ubuntu` in addition instead of Step 1.
+
+Other users:
+
+Step 1. Open the Microsoft Store and install **Ubuntu**. There are
+several versions, you can take the one called "Ubuntu" or the
+highest-numbered with "LTS" (long term service) in its name.
+
+Step 2. Go to **Control Panel** (search or type in the start menu bar)
+\> **Programs** \> **Turn Windows Features on or off**. In the list find
+**Windows Subsystem for Linux** and tick it. After the change is applied
+you will be asked to restart the computer.
+
+Step 3. After the computer has restarted, open Ubuntu (search or type in
+the start menu bar). A terminal is opened with an installation message,
+and after a few minutes, a prompt to create a username and then a
+password. (You'll need to type the password blind: it's not displayed
+for security reasons.) If you get an error message instead, see
+'Troubleshooting WSL' below.
+
+Step 4. Install the `make` program by typing `sudo apt install make`
+then Enter. You will be prompted for your password. This should look
+like this:
+
+```         
+<username>@MACHINENAME:~$ sudo apt install make
+[sudo] password for <username>:
+Reading package lists... Done
+Building dependcy tree... Done
+(... more install messages ...)
+```
+
+The installation is done when you get your user prompt again:
+
+```         
+<username>@MACHINENAME:~$
+```
+
+You can close the window. You're done. Your computer can now run Linux
+command-line programs, in particular the `make` program that we use to
+simplify the generation of outputs.
+
+*Troubleshooting*. At step 3 you may see the following instead:
+
+```         
+Installing, this may take a few minutes...
+WslRegisterDistribution failed with error: 0x800719e
+The Windows Subsystem for Linux optional component is not enabled. Please enable it and try again.
+See https://aka.mx/wslinstall for details.
+Press any key to continue...
+```
+
+If so try again step 1.
+
+More help on installing WSL: [Microsoft WSL
+instructions](https://aka.mx/wslinstall) or the [Ubuntu WSL
+instructions](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview).
+There's also a [visual How-To Geek
+guide](https://www.howtogeek.com/744328/how-to-install-the-windows-subsystem-for-linux-on-windows-11/).
+
+### Latexmk
+
+Latexmk is needed to generate PDFs within RStudio and with `make`
+commands. It's not needed to generate PDFs by running `pandoc` on the
+command line.
+
+First check whether it's already installed. It is part of LaTeX and your
+distribution may already include it. Open a terminal (or use the one
+within RStudio) and enter `latexmk -v`. If it is installed, you will get
+a version number like so:
+
+```         
+$ latexmk -v
+Latexmk, John Collins, 17 Mar. 2022. Version 4.77
+```
+
+If you get an error message along the lines of 'command/binary not
+found' or "MikTeX cannot install latexmk: Perl required", you need to
+install it.
+
+**MikTeX installation**. Follow these steps:
+
+-   Install Perl. Download on [Perl's
+    webpage](#https://www.perl.org/get.html). You can choose the
+    open-source version (Strawberry). Command line users: with
+    Chocolatey, `choco install strawberryperl`.
+-   Enter `latexmk -v` in a terminal. This will prompt MikTeX to dowload
+    and install Latexmk automatically.
+
+*Note*: previously open RStudio windows and terminals won't recognize
+`latexmk` yet. Close and reopen before using it.
+
+**TexLive installation**. Try this. If it doesn't work, you may have to
+install Perl first (see above).
+
+-   Open a Powershell in Administrator mode: search "Powershell" in the
+    start menu, look for "Windows PowerShell (x86)", right-click and
+    choose "Run as administrator".
+-   Run the following command (i.e. type it and press Enter):
+
+``` bash
+tlmgr install latexmk
+```
+
+You should get a message telling you whether the installation is
+successful or not. If in doubt, run `latexmk -v` to check. If you get an
+error message, you could try installing Perl first (see MikTeX
+instructions above) and trying this command again.

@@ -1,0 +1,239 @@
+# Terminal help {#sec-terminal-help}
+
+Some instructions in this book mention the terminal. Here's all you need
+to know about it; you can learn it in 20 minutes or less.
+
+A *terminal*, aka *shell* or *command line* is a tool for text-based
+interaction with a computer, as opposed to graphical user interfaces
+("GUI", mouse, trackpad or touch-based). There are some things you can
+only do with a terminal (e.g. running Pandoc), and others that can be
+done very quickly if you know how to use a terminal. Using it is a
+throwback to the 80s and will make you feel like a hacker.
+
+You can use a dedicated terminal application. But note that editors like
+RStudio or Visual Code conveniently embed a terminal application.
+
+To open a terminal on its own:
+
+-   Linux: you probably already know how to do this. In Ubuntu, for
+    instance, hit Ctrl+Alt+t, or search for 'terminal' in the Dash menu
+    (top left corner).
+
+-   MacOS: spotlight (⌘ + Space) and search for "Terminal", or Finder \>
+    Go \> Applications \> Utilities \> Terminal
+
+-   Win: there are two terminal programs, the old-fashioned "CMD" and
+    newer "Powershell". Enter "PowerShell" or "cmd" in the search bar
+    next to the start menu. Alternatively, open start menu look for
+    Windows Accessories \> PowerShell or Windows Accessories \> Command
+    Prompt or Windows Accessories \> Command Prompt.
+
+To open a terminal in your editor:
+
+-   In RStudio, go to Tools \> Terminal. There's normally one already
+    open at the bottom of the screen, "Terminal" tab. Bonus: it opens in
+    at your current project's folder (see @sec-terminal-help-navigation
+    below).
+
+-   In Visual Code, Terminal \> New Terminal. Bonus: it opens in at your
+    current project's folder (see @sec-terminal-help-navigation below).
+
+When you open the terminal a line shows up waiting for your input, e.g.:
+
+``` bash
+user@my-laptop ~ %
+```
+
+or
+
+``` sh
+C:Users\MyName>
+```
+
+This is called the *command prompt* because it prompts you to enter a
+command.
+
+## Running a command
+
+"Entering" or "running" or "executing" a "command" on the terminal means
+typing some text and press the "Enter" key. For instance, type the
+following and press "Enter":
+
+``` bash
+pandoc --version
+```
+
+If you get an error message, this means that pandoc is not installed
+---not somewhere your system finds it, at any rate. If you get instead
+something like:
+
+```         
+pandoc 3.1.2
+Features: +server +lua
+Scripting engine: Lua 5.4
+User data directory: /Users/julien/.local/share/pandoc
+Copyright (C) 2006-2023 John MacFarlane. Web:  https://pandoc.org
+This is free software; see the source for copying conditions. There is no
+warranty, not even for merchantability or fitness for a particular purpose.
+```
+
+\noindent then congratulations, you have just "run" or "executed" the
+command `pandoc` with the option `--version`. The program Pandoc has
+replied by printing out its version number.
+
+## Copying and pasting commands
+
+In most terminals the usual copying-paste shortcuts (e.g. Ctrl + C,
+Ctrl + V) don't work. But you should be able to copy/paste by using
+menus or right-clicking and chose "Paste".
+
+## Navigation {#sec-terminal-help-navigation}
+
+Your terminal is always "at" or "in" some folder or other. We call it
+the "current folder" of the "present working directory". On Windows' CMD
+the folder you're "in" is displayed at the beginning of the line:
+
+``` sh
+C:Users\MyName>
+```
+
+On Linux and MacOS you might only see the name of the folder you are in
+(`myfolder`), not the full path; and it might just be `~`, which is a
+shorthand for your main user folder. You can run the `pwd` ("present
+working directory") command to display its full name.
+
+Where you are located matters to the execution of most commands. Suppose
+you run the command:
+
+``` bash
+pandoc article.md -o article.pdf
+```
+
+This asks pandoc to convert the file `article.md` into `article.pdf` *in
+the current folder*. If you don't run that command while being located
+in the folder where the file `article.md` is, you will get an error
+message telling you that there is no file of that name.
+
+So basic terminal usage requires you to know which folder you are
+currently in, and how to change folder, and to refer to files in
+different folders. The commands you need are:
+
+-   List contents of current folder with `ls` (Linux/MacOS) or `dir`
+    (Win).
+
+-   `cd` change directory. If your current folder contains a subfolder
+    called `MyFolder`, you can get into it with `cd MyFolder`. You can
+    use `cd ..` go "up" to the folder that contains yours. Several
+    folders can be combined with the *directory separator* `/` (Linux
+    MacOs) or `\` (Windows): `cd MyFolder/article/example` to go down
+    three folders, `cd ../..` to go up two.
+
+That's it! If you need more, you can learn in a few minutes using an
+online tutorial. Here are some, as of time of writing:
+
+-   Linux / MacOS: [Command Line for
+    Beginners](https://ubuntu.com/tutorials/command-line-for-beginners).
+    The Linux and MacOS terminals are essentially the same, so tutorials
+    will work for both.
+
+-   MacOS: [Navigating files and
+    folders](#https://www.macworld.com/article/221277/command-line-navigating-files-folders-mac-terminal.html)
+    .
+
+-   Windows: [How to use the Windows command line
+    (cmd)](#https://www.computerhope.com/issues/chusedos.htm) Note that
+    these instructions work with Powershell too.
+
+Try searching for "command line tutorial \<Win/Linux/MacOS" for more.
+
+## Life-saving tips
+
+If you don't use those tips you'll find the command line frustrating. If
+you do use them you'll probably get to like it.
+
+### Don't type file and folder names, use auto-completion
+
+In the terminal you *almost never need to type an entire file or folder
+name*. Instead, type the first few letters and hit the "Tab" key one or
+two times.
+
+-   On Linux/MacOS terminals, the first "Tab" hit will auto-complete if
+    there's only one way to complete. If there are several, nothing
+    happens but a second "Tab" hit will list you the possible
+    completions.
+-   On Windows, the first "Tab" hit gives you one auto-complete
+    possibility, hit again to see others.
+
+This only applies to file and folder names. The terminal won't guess
+which command you type (`pand` plus Tab won't be completed to `pandoc`).
+
+Auto-completion is also a good way to avoid typos. If no completion
+shows up, you've probably mis-typed the beginning.
+
+### File and folder names with spaces need quotation marks
+
+When you type file and folder names that contain spaces, you should
+enclose them in quotation marks (either single `'` or double `"`):
+
+``` bash
+pandoc -s "my article 2022.md" -o "output april 24th.pdf"
+```
+
+On Linux and MacOS if you use auto-completion on Linux or MacOS, you'll
+notice that the system places `\` before the spaces. This is called
+"escaping" the spaces and works too, but only in those systems:
+
+``` bash
+pandoc -s my\ article\ 2022.md -o output\ april\ 24th.pdf 
+```
+
+On Windows, `\` is used to separate folders, so you can't use it. You
+have to use quotes.
+
+You're better off without spaces in your file and folder names, to be
+honest. Linux typically uses "kebab case", skewering words with dashes:
+`my-article-april-24th.pdf`. "Snake case" with slithering underscores is
+good too: `my_article_april_24th.pdf`.
+
+### Don't retype commands, use up arrow
+
+Example: run the command `ls` (or `dir` on Win). Then, at the new
+prompt, type the Up arrow on your keyboard: you'll see `ls` (or `dir`)
+displayed again, and you only need to type "Enter" to run it again.
+
+Type the arrow several times to see the commands you've entered before
+last, before before last and so on.
+
+### Move the cursor with quick arrows
+
+You'll find that in the terminal you can't reposition the cursor with a
+mouse click. Instead, you have to move it with the left and right
+arrows. This can be frustratingly slow. The solution is to use quick
+arrows that move 'word' per 'word' (where a 'word' is any chunk of text
+separated by spaces):
+
+-   Linux: Alt + Left/Right arrow
+
+-   MacOS: option + Left/Right arrow
+
+-   Win: Ctrl + Left/Right arrow
+
+For instance, if you typed a long command like this and got an error.
+You realize you need to replace "procesing" with "processing":
+
+``` bash
+pandoc -s procesing/new/articles/2020/issue-02/02-article.md --defaults mydefaultsfile.md -t outputs/recent/articles/2020/issue-02/02.article.pdf 
+```
+
+(See, you should have used auto-completion to avoid the typo!) So you
+hit the Up arrow, the command shows again. If you hit the Left arrow,
+you'll need to press the key **137 times** to get to the typo. You can
+keep it pressed instead, but that's still very slow. If you use
+Alt/Option/Ctrl + Left arrow, you're there in **5 times**. Get used to
+it!
+
+### Ctrl + C if a command hangs
+
+If you run a command and it hangs, or takes too much time to run, you
+can (normally) interrupt it by hitting Ctrl + C (on all systems, MacOS
+included).

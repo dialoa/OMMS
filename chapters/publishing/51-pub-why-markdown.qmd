@@ -1,0 +1,71 @@
+# (PART) Publishing {-} 
+
+# Why publish a journal in markdown
+
+## Why use a markdown workflow
+
+A journal needs to produce outputs in different formats: html, PDF, possibly Epub. The aim is to generate all automatically from a single source. There are two ways to do this:
+
+-   `XML`.
+-   `markdown`.
+
+`XML` is the industry standard. But it is costly to work with (proprietary tools). `markdown` is a lighter-weight, popular authoring language.
+
+`pandoc` is a powerful converter that turns a large number of formats into markdown and conversely. It can be harnessed to produce outputs in all formats, including `XML`.
+
+## MS Word - Google docs workflow
+
+(to be elaborated on!)
+
+::: private
+-   Clean the MS word document using our tool: [[https://dialectica-philosophy.herokuapp.com/pandoc]{.ul}](https://dialectica-philosophy.herokuapp.com/pandoc)
+
+:::
+
+-   Clean the MS word document
+
+-   Import it in Google Docs and edit it there, keeping all and only the meaningful elements (there's a list in the document I'll share). Don't bother with fixing references at this stage.
+
+-   Save a snapshot of your document before you send it to the author.
+
+-   Share the edited document with the author, ask whether they're happy with any modifications. You can activate the 'track changes' in google docs to make any major modifications visible to the author.
+
+-   Review the author changes, and once you and they are happy pass it on to the markdown team.
+
+To check: what edits are preserved in markdown:
+
+-   Cross References done with link & bookmark in google doc
+
+## Markdown workflow
+
+The accepted papers will be in either .doc, .docx (Word) or .tex (LaTeX) format.
+
+-   First we convert doc and tex files to markdown files (.md).
+
+-   Then we do all the editing using RStudio, a visual markdown editor (for steps on editing, see next paragraph).
+
+-   Once the edits are done, the file is converted into a pdf which is sent back to the author for questions and / or for a final approval.
+
+-   If there are more changes, they are done again in the markdown file, and the final version is again converted into a pdf, then sent to the author for final approval.
+
+-   Once the final version is approved, we use Pandoc to convert the markdown file into a pdf (via LaTeX, which will have the determined style template) and html.
+
+**Editing** consists of:
+
+-   Editing the language (correct typos, bad English, strange sentences)
+
+-   Preserve and implement meaningful elements: headings, block quotations, formulas, ... .
+
+-   Check that the bibliography is correct: that every citation has a reference in the bibliography.
+
+-   Replace manually added citations by automatic ones (for Word files, the bibliography needs to be converted into a Bibtex file with a website that is yet to be developed. Latex papers will already have a Bibtex file).
+
+-   Once all the changes are done, send the paper to the author for possible questions and to have their approval of the changes.
+
+
+## Interaction with authors
+
+-   Title + abstract. Remind authors that most online searches will only
+    > return title and abstract. Most potential readers won't get
+    > further. They are advised to choose their title and abstract well.
+

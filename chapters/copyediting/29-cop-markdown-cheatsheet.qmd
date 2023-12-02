@@ -1,0 +1,176 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 90
+---
+
+# Markdown Cheatsheet
+
+## Inline elements
+
++-----------------------------------+-------------------------------------------+
+| **I want**                        | **I type**                                |
++===================================+===========================================+
+| An *emphasized* word.             | `An *emphasized* word.`\                  |
+|                                   | `An _emphasized_ word.`                   |
++-----------------------------------+-------------------------------------------+
+| Some **strong emphasis**.         | `Some **strong emphasis**.`\              |
+|                                   | `Some __strong emphasis__.`               |
++-----------------------------------+-------------------------------------------+
+| A sub~1~ script and a sup^1^      | `A sub~1~ script and a sup^1^ script.`    |
+| script (when attached to plain    |                                           |
+| text words).                      |                                           |
++-----------------------------------+-------------------------------------------+
+| With $p_1$ and $p^2$ the          | `With   $p_1$ and $p^2$ the ...`          |
+| sub(sup)scripts are in math       |                                           |
+| formulas.                         |                                           |
++-----------------------------------+-------------------------------------------+
+
+
+## Block elements
+
++-----------------------------------+-------------------------------------------+
+| Paragraph                         | Leave an empty line to separate two       |
+|                                   | paragraphs                                |
++-----------------------------------+-------------------------------------------+
+| Unindented paragraph (following   | `\noindent This new paragraph...`         |
+| equation, quotation)              |                                           |
++-----------------------------------+-------------------------------------------+
+| **1. Section heading**            | `# Section title`\                        |
+|                                   | Do not put a number: the house style      |
+|                                   | should add numbers.                       |
++-----------------------------------+-------------------------------------------+
+| **1.2 Subsection heading**        | `## Subsection title`                     |
++-----------------------------------+-------------------------------------------+
+| **1.2.1 Subsubsection title**\    | `### Subsection title`                    |
+|                                   |                                           |
+|                                   | `####`, `#####`, `######`                 |
+| lower titles                      |                                           |
++-----------------------------------+-------------------------------------------+
+| Quotations                        |     > Start each line with `>`            |
+|                                   |     > This is a quotation                 |
+| *Note: only use this for genuine* |     > with two lines                      |
+| *quotations, not to indent*       |                                           |
+| *blocks.*                         |                                           |
++-----------------------------------+-------------------------------------------+
+| Statement (indented block)        |     ::: statement                         |
+|                                   |     These lines are going to              |
+| These lines are going to be       |     be indented.                          |
+| indented                          |     :::                                   |
+|                                   |                                           |
+| *First Principle* (**FP**).       |     ::: {.statement}                      |
+| Everything is what it is.         |     *First principle* (**FP**).           |
+|                                   |     Everything is what                    |
+| See below on how to cross-refer   |     it is.`                               |
+| to statements.                    |     :::                                   |
++-----------------------------------+-------------------------------------------+
+
+### Citations
+
+Citations are a more difficult aspect of markdown. You should read the chapter
+on copyediting citations before you use this cheatsheet. 
+
+For the following we assume that your document's bibliography has keys (identifiers)
+`Smith2012`, `Jones2017` for Smith's 2012 article, Jone's 2017 articles, and so
+on. 
+
++---------------------------------------+---------------------------------------+
+| **I want**                            | **I type**                            |
++=======================================+=======================================+
+| Basic                                 | `[@Smith2012]`                        |
+|                                       |                                       |
+| (Smith, 2012)                         | `[@Smith2012; @Smith2015]`            |
+|                                       |                                       |
+| (Smith, 2012, 2015)                   | `[@Smith2012;@Jones2015]`             |
+|                                       |                                       |
+| (Smith 2012; Jones 2015)              | `[@Smith2012, 205]`                   |
+|                                       |                                       |
+| (Smith 2012, 205)                     | `[see @Smith2012, 205]`               |
+|                                       |                                       |
+| (see Smith 2012, 205)                 | `[@Smith2012, 205\--210, 235]`        |
+|                                       |                                       |
+| (Smith 2012, 205-210, 235)            | `[@Smith2012, 28; @Jones2015;`        |
+|                                       | `@Jones2017]`                         |
+| (Smith 2012, 28; Jones 2015, 2017)    |                                       |
+|                                       | `see @Smith2018, 28; comp.`           |
+| (see Smith 2012, 28; comp. Jones      | `@Jones2015, 28; also`                |
+| 2015, 28; also Jones 2017, 45-58)     | `@Jones2017, 45\--48]`                |
+|                                       |                                       |
+| *Note: whether you                    |                                       |
+| get ';' or ',' or ':' separators      |                                       |
+| between several citations should      |                                       |
+| be specified and handled              |                                       |
+| automatically by the                  |                                       |
+| template.*                            |                                       |
++---------------------------------------+---------------------------------------+
+| Inline (*note: should with latest     | `@Smith2012 says that`                |
+| RStudio visual mode, but read warning |                                       |
+| below*)                               | `@Smith2012 [205] says that`          |
+|                                       |                                       |
+| Smith (2012) says that                | `@Smith2012 [@Smith2015, 205]`        |
+|                                       | `says that`                           |
+| Smith (2012, 205) says that           |                                       |
+|                                       | `@peregrin-svoboda:2013a`             |
+| *Inline several papers by same        | `[@peregrin-svoboda:2016;`            |
+| author, you format the first inline   |                                       |
+| and the rest regular:*                | `@peregrin-svoboda:2017; and`         |
+|                                       | `also @read_s:2000]`                  |
+| Smith (2012; 2015, 205) says that     |                                       |
+|                                       | `Smith [-@Smith2012,` `@Smith2015]`   |
+| Peregrin & Svoboda (2013, 2016, 2017, |                                       |
+| and also Read, 2018)                  |                                       |
+|                                       |                                       |
+| *Alternatively, you can type the name |                                       |
+| and use year-only:*                   |                                       |
+|                                       |                                       |
+| Smith (2012; 2015)                    |                                       |
++---------------------------------------+---------------------------------------+
+| Year only                             | Smith makes an outrageous claim       |
+|                                       | `[-@Smith2015, 277]`.                 |
+| Smith makes an outrageous claim       |                                       |
+| (2015, 277).                          | Smith keeps repeating himself         |
+|                                       | `[-@Smith2012; @Smith2013;`           |
+| Smith keeps repeating himself (2012,  | `@Smith2014; @Smith2015]`             |
+| 2013, 2014, 2015).                    |                                       |
+|                                       | Smith said this in a few places       |
+| Smith said this in a few places       | `[-@Smith2012, 20; @Smith2013,`       |
+| (2012, 20; 2013, 30)                  | `30]`.                                |
++---------------------------------------+---------------------------------------+
+
+Common errors:
+
++---------------------------------------+---------------------------------------+
+| **Bad**                               | **Good**                              |
++=======================================+=======================================+
+| Code:                                 | Code:                                 |
+|                                       |                                       |
+| `(See for instance` `[@Smith2015]).`  | `[See for instance,` `@Smith2015]`    |
+|                                       |                                       |
+| (See for instance `@Jones2018`).      | Output:                               |
+|                                       |                                       |
+| Output:                               | (See for instance Smith, 2015).       |
+|                                       |                                       |
+| (See for instance (Smith, 2015)).     |                                       |
+|                                       |                                       |
+| (See for instance Jones (2018)).      |                                       |
++---------------------------------------+---------------------------------------+
+| Code:                                 | Code:                                 |
+|                                       |                                       |
+| `See f                                | `See for insta                        |
+| o r instance @Smith2012; @Smith2015.` | n ce Smith [-@Smith2012; @Smith2015]` |
+|                                       |                                       |
+| Output:                               | Output:                               |
+|                                       |                                       |
+| See for instance Smith (2012); Smith  | See for instance Smith (2012, 2015).  |
+| (2015).                               |                                       |
++---------------------------------------+---------------------------------------+
+| **Space after a formula marker `$`:** | Code:                                 |
+|                                       |                                       |
+| Code:                                 | `$\Delta \rightarrow \Phi$`           |
+|                                       |                                       |
+| `$ \Delta \rightarrow \Phi $` \|      | Output:                               |
+| Output:                               |                                       |
+|                                       | $\Delta \rightarrow \Phi$             |
+| Error, missing \$ at line...          |                                       |
++---------------------------------------+---------------------------------------+
+

@@ -1,0 +1,86 @@
+# Further resources
+
+## Style and copyediting manuals
+
+### In English
+
+* New Hart's Rules, the Oxford style guide. Short compared to the others, and it's good on the British vs American options.
+    - For copyeditors: see esp. chaps 2-12 and 17-18. In all those chapters 
+    there are of course many bits that are irrelevant for you but they are easy to skip.  
+* The Chicago Manual of Style. The one we preferably refer to
+    if needed, very thorough and good for humanities, but 1000 pages long.
+* Publication Manual of the American Psychological Association. Like the Chicago manual, more geared towards science, and more prescriptive. The [website](https://apastyle.apa.org/) gives free access to simplified version of the rules for authors. But these are not useful for copyeditors (they'll tell you to your word processor's automatic bullet points styles, for instance).
+* Butcher's Copy-editing, the Cambridge Handbook for Editors, Copy-Editors and Proofreaders. A classic too, but different in scope from the others three. Unlike them doesn't get into specific rules of punctuation, capitalization, spelling and the like. Rather, it maps out all the things a professional copyeditor has to do. A lot are things taken care of by our templates (how you can structure a book, how you can present various bits of it). Others are more general: which aspects of the author manuscripts should be changed or not, how to communicate these changes to the author, how to communicate instructions to typesetters, etc. Gives a good sense of how professional academic copyediting is like. 
+* [MLA Handook](https://style.mla.org/). The style hanbook published by the Modern Languages Association of America. 
+
+### In French
+
+* [Le Ramat de la typographie](http://www.ramat.ca/], par Aurel Ramat et Anne-Marie
+   Benoit, franco-canadien. Voir aussi le Ramat européen de la typographie. Bien
+   structuré, complet. Inclut des
+   comparaisons entre styles français, canadien, Chicago. 
+* [Le Guide du typographe](http://www.arci.ch/2016/guide.html), par le Groupe de Lausanne 
+  de l'Association suisse des typographes (AST) et publié par l'[Association 
+  Suisse des Correcteurs d'Imprimerie](http://www.arci.ch/). Difficile à se procurer
+  (commander directement auprès de l'association).
+
+En France, il y a une pluralité de livres écrits par des auteurs individuels. 
+Nous ne savons pas lesquels sont les plus communément utilisés. 
+
+* Dictionnaire orthotypographique moderne [@Colignon-DictionnaireOrthotypographiqueModerne-2019]. 
+  Par Jean-Pierre Colignon, publié par
+  l'une des principales écoles de journalisme en France (CFPJ).
+* Abrégé du code typographique à l'usage de la presse, par Louis Guéry. (126 pages)
+* Dictionnaire des règles typographiques, par Louis Guéry. (287 pages)
+* Orthotypo, par Jean-Pierre Lacroux, posthume, distribué en ligne sous licence Creative Commons [@Lacroux-ORTHOTYPODictionnaireRaisonne-2010]. Organisation alphabétique, ne couvre pas 
+  tous les sujets systématiquement. 
+* Les règles typographiques, Richard Herlin. 
+
+Ouvrages qui étaient largement utilisés par le passé:
+
+* Code Typographique (France, 1928-1997). Inactif. 
+* Lexique des règles typographiques en usage à l'Imprimerie nationale, par 
+  l'Imprimerie nationale de France. Inactif (dernière édition 2002). A usage limité: 
+  organisé par ordre alphabétique, avec un choix d'entrées qui semble arbitraire
+  (ex, "Assemblée Nationale", "Astérisque"), sommaire (une seule page sur la structure
+  des ouvrages). Utile sur quelques points de détails ("particule patronymique").
+  200 pages. 
+
+::: house
+## Interface with dialectica's main bibliography
+
+More information on the bibliography is in the bibliography-section of
+the overleaf-document.
+
+JD some experiments:
+
+-   Tried simply adding the main bib file (biblio-check.bib) as the
+    > bibliography file of an article in RStudio. Problems:
+
+    -   It takes circa 15-30sec to 'Read the bibliography" when opening
+        > the article, and 10-20sec again when opening the
+        > insert-citation window.
+
+    -   But the bibliographies entries don't show up in the
+        > 'Bibliography' tab.
+
+    -   It looks as if either RStudio can't read it (bug / unusual code
+        > somewhere?), or just gives up above a certain number of
+        > entries
+
+
+JD thought: We need either:
+
+-   some way of either generating a sub-selection of the main
+    > bibliography for the article. Automated? Something like Sandro's /
+    > crossref bibtex convertor, but for this bibliography? (Suggestion:
+    > linking via DOIs?)
+
+-   Some way of having the main biblio as one of the source in RStudio
+    > citation-insertion popup, the way Zotero appears. However: risk
+    > that it is slow because of the size.
+
+-   Some way of *searching* the main biblio as one of the sources in
+    > RStudio, the way CrossRef appears in the citation-insertion popup.
+
+:::

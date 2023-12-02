@@ -1,0 +1,359 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 90
+---
+
+# Trouble and troubleshooting
+
+## Paragraph starts with '(1)' or '1.' or some other list code
+
+Problem. you have a paragraph or blockquote starting with `(1)` or `2)` or `3.`. Pandoc
+thinks it's a list, but it's not.
+
+Solution. Escape the parenthesis or dot that follows the number.
+
++----------------------------------+-----------------------------------------------------+
+| I TYPE                           | I GET                                               |
++==================================+=====================================================+
+| ``` markdown                     | (1) This is interpreted as a list item.             |
+| (1) This is interpreted          |                                                     |
+| as a list item.                  | ```{=html}                                          |
+|                                  | <!-- -->                                            |
+| 3. And so is this.               | ```                                                 |
+| ```                              | 3.  And so is this.                                 |
++----------------------------------+-----------------------------------------------------+
+| ``` markdown                     | \(1\) This isn't interpreted as a list item.        |
+| (1\) This isn't interpreted      |                                                     |
+| as a list item.                  | 3\. This isn't either.                              |
+|                                  |                                                     |
+| 3\. This isn't either.           |                                                     |
+| ```                              |                                                     |
++----------------------------------+-----------------------------------------------------+
+
+## If PDF generation doesn't work
+
+Make sure first that you've checked the advice in the "how to produce outputs" sections.
+
+PDF generation happens in two stages. Identify which one fails:
+
+-   Markdown to LaTeX (the Pandoc stage)
+-   or LaTeX to PDF (the LaTeX stage)
+
+You do so by trying to generate a *LaTeX* (.tex) output. If that fails, there's an error
+at the Pandoc stage, otherwise (more commonly, unfortunately) the error is at the latex
+stage.
+
+Pandoc-stage errors are mostly due to:
+
+1.  Faulty YAML metadata.
+    a.  `YAML parse exception at line 453..` your YAML is not well formatted. See the
+        metadata section.
+    b.  Even if you don't get the YAML parse error, there might be some formatting error
+        around line breaks or identation. Check multiline fields and nested fields of
+        maps/lists.
+    c.  Some YAML value isn't correct and makes a filter crash.
+2.  File not found. `File not found in resource path` error, see below.
+3.  A bug in one of the "filters" that we use to handle various typesetting tasks (e.g.
+    statements). You will see the name `lua` in the error message.
+4.  Faulty LaTeX template. `Cannot compile the template` error. There's an error in the
+    house template.
+
+LaTeX stage errors are due to a multitude of causes. You can learn more about the error by
+running your pdf engine on the LaTeX output:
+
+``` bash
+lualatex article.tex
+```
+
+For `lualatex`; replace with `pdflatex` or `xelatex` depending on your setup.
+
+Once you run LaTeX a detailed log of its action rolls out---faster than you can read. The
+error message will be close to the end and look like this:
+
+```         
+Error/Warning (...) Error: MESSAGE
+
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3984       {See the manual for further details.}
+```
+
+The `l.3984` is the line of the LaTeX file where the error arose. (Not necessarily the
+line that caused it! The cause might be earlier in the code, though not later.) You can go
+to that location in your LaTeX file and investigate.
+
+You can place the LaTeX run log in a file if you want to examine it in a text editor
+rather than the terminal:
+
+``` bash
+lualatex article.tex > latex_log.txt
+```
+
+## Word manuscript with many symbols (phi, psy, greek letters, logical symbols,).
+
+If the symbols aren't in MS Word Equations, they will be preserved as is in markdown - and
+the document won't work. All the symbols have to converted into LaTeX formulas. A tip:
+
+-   Use search and replace in RStudio to convert each symbol in its \> LaTeX equivalent.
+
+-   Then go through the document to enclose each of them in \$\...\$ (to \> indicate maths
+    formulas).
+
+## Reverse conversion .md -\> .tex
+
++----------------------------+----------------------------+----------------------------+
+| **I want**                 | **I type**                 | **LaTex**                  |
++============================+============================+============================+
+| Basic                      | \[\@Smith2012\]            | \\citep{smith:2012}        |
+|                            |                            |                            |
+| (Smith, 2012)              | \[\@Smi                    | \\citep{sm                 |
+|                            | th2012;\@Smith2015\]       | ith:2012,smith:2015}       |
+| (Smith, 2012, 2015)        |                            |                            |
+|                            | \[\@Smi                    | \\citep{sm                 |
+| (Smith 2012; Jones 2015)   | th2012;\@Jones2015\]       | ith:2012,jones:2015}       |
+|                            |                            |                            |
+| (Smith 2012, 205)          | \[\@Smith2012, 205\]       | \\cite                     |
+|                            |                            | p\[205\]{smith:2012}       |
+| (see Smith 2012, 205)      | \[see \@Smith2012, 205\]   |                            |
+|                            |                            | \\citep\[see\              |
+| (Smith 2012, 205-210, 235) | \[\@Smith2012, 205\--210,  | \]\[205\]{smith:2012}      |
+|                            | 235\]                      |                            |
+| (Smith 2012, 28; Jones     |                            | \\citep\[205\--2           |
+| 2015, 2017)                | \[\@Smith2012, 28;         | 10,235\]{smith:2012}       |
+|                            | \@Jones2015; \@Jones2017\] |                            |
+| (see Smith 2012, 28; comp. |                            | (Smith \\citeyea           |
+| Jones 2015, 28; also Jones | \[see \@Smith2018, 28;     | r\[28\]{smith:2012}; Jones |
+| 2017, 45-58)               | comp. \@Jones2015, 28;     | \\citeyear{jon             |
+|                            | also \@Jones2017,          | es:2015,jones:2017})       |
+|                            | 45\--48\].                 |                            |
+|                            |                            | (see Smith \\citeyea       |
+|                            |                            | r\[28\]{smith:2012}; comp. |
+|                            |                            | Jones \\citeyea            |
+|                            |                            | r\[28\]{jones:2015}; also  |
+|                            |                            | Jones \\citeyear\[45       |
+|                            |                            | \--58\]{jones:2017})       |
++----------------------------+----------------------------+----------------------------+
+| Inline                     | \@Smith2012 says that      | \\citet{smith:2012} says   |
+|                            |                            | that                       |
+| Smith (2012) says that     | \@Smith2012 \[205\] says   |                            |
+|                            | that                       | \\cite                     |
+| Smith (2012, 205) says     |                            | t\[205\]{smith:2012} says  |
+| that                       | \@Smith2012 \[\@Smith2015, | that                       |
+|                            | 205\] says that            |                            |
+| Smith (2012; 2015, 205)    |                            | Smith (\\c                 |
+| says that                  | \@pe regrin-svoboda:2013a  | iteyear{smith:2012},       |
+|                            | \[\@pe                     | \\citeyea                  |
+| Peregrin & Svoboda (2013,  | regrin-svoboda:2016;       | r\[205\]{smith:205}) says  |
+| 2016, 2017, and also Read, |                            | that                       |
+| 2018)                      | \@pe regrin-svoboda:2017;  |                            |
+|                            | and also \@read_s:2000\]   | \\citet\[\]\[and also Read |
+| *Alternatively, you can    |                            | \\citeyear{r               |
+| type the name and use      | Smith \[-\@Smith2012,      | ead_s:2000}\]{peregr       |
+| year-only:*                | \@Smith2015\]              | in-svoboda:2013,pere       |
+|                            |                            | grin-svoboda:2016,pe       |
+| Smith (2012; 2015)         |                            | regrin-svoboda:2017}       |
+|                            |                            |                            |
+|                            |                            | Peregrin \\& Svoboda       |
+|                            |                            | (\\citeyear{peregri        |
+|                            |                            | n-svoboda:2013,pereg       |
+|                            |                            | rin-svoboda:2016,per       |
+|                            |                            | egrin-svoboda:2017}, and   |
+|                            |                            | also Read \\ci             |
+|                            |                            | teyear{read_s:2000})       |
++----------------------------+----------------------------+----------------------------+
+| Year only                  | Smith makes an outrageous  | Smith makes an outrageous  |
+|                            | claim \[-\@Smith2015,      | claim (\\citeyear\         |
+| Smith makes an outrageous  | 277\].                     | \[277\]{smith:2015}).      |
+| claim (2015, 277).         |                            |                            |
+|                            | Smith keeps repeating      | Smith keeps repeating      |
+| Smith keeps repeating      | himself \[-\@Smith2012;    | himself (\\citeyear{smith  |
+| himself (2012, 2013, 2014, | \@Smith2013; \@Smith2014;  | :2012,smith:2013,smi       |
+| 2015).                     | \@Smith2015\].             | th:2014,smith:2015})       |
+|                            |                            |                            |
+| Smith said this in a few   | Smith said this in a few   | Smith said this in a few   |
+| places (2012, 20; 2013,    | places \[-\@Smith2012, 20; | places (\\citeyea          |
+| 30)                        | \@Smith2013, 30\].         | r\[29\]{smith:2012},       |
+|                            |                            | \\citeyear                 |
+|                            |                            | \[30\]{smith:2013}).       |
++----------------------------+----------------------------+----------------------------+
+
+## File not found in resource path
+
+```         
+File mydefaults.yaml not found in resource path
+```
+
+The file `mydefaults.yaml` is absent or not at the place expected. Check whether the
+relative locations of your article, master and template are correct.
+
+```         
+File  not found in resource path
+```
+
+Pandoc is looking for a file with no name. Check if you don't have an emtpy `bibliography`
+field in the metadata.
+
+## HTML/MathJax: Math-mode letter in heading not showing
+
+PROBLEM: a Math-mode letter (e.g. $\alpha$) is not showing in a heading in HTML/MathJax
+output.
+
+SOLUTION. Is your CSS using a font variant, e.g. `small-caps`? Make sure Spans of the
+math-inline class are in regular shape and variant.
+
+## Missing character
+
+```         
+[WARNING] Missing character: There is no SPECIAL-CHAR (U+2192) in font FONT
+```
+
+Means that your markdown file include a character SPECIAL-CHAR that is not available in
+the font you use. Typically, SPECIAL-CHAR is a symbol or character from non-latin
+languages. Note that you might not see anything where SPECIAL-CHAR is above, if the
+character in question is a (special kind of) space or if it's not present in the font in
+which this warning is printed.
+
+Solution: if SPECIAL-CHAR is visible you can copy it, and search it in your markdown file.
+Remove it and if needed replace it with some character that is present in your font.
+Typically, this involves replacing a unicode symbol (a right arrow) by its LaTeX
+equivalent, e.g. $\rightarrow$.
+
+Solution: if SPECIAL-CHAR is not visible, look up the unicode number (e.g. `U+2192`
+online) to see what character is it, and hunt it down in your markdown manuscript.
+
+## YAML Parse exception
+
+Error message:
+`PandocParseError "YAML parse exception at line 2, column 2:\nmapping values are not allowed in this context"`
+
+Solution: this is probably due to several `---` lines in your source markdown. The text in
+between might be interpreted as an additional YAML metadata block by Pandoc. Replace them
+with a longer dash sequence, e.g `------`.
+
+## attempt to compare nil with number
+
+Error:
+
+```         
+warning  (node filter): error: ...e/2022/texmf-dist/tex/generic/babel/babel-bid
+i-basic.lua:155: attempt to compare nil with number
+```
+
+This bug can be produced by a statement with a custom label containing an **uppercase
+letter followed by a dash**, such as:
+
+```         
+::: statement
+__L-a__. This statement might generate an error!
+:::
+```
+
+**Fix**. Surround the dash with spaces
+
+```         
+::: statement
+__L - a__. This will not generate an error.
+:::
+```
+
+A longer dash probably looks better:
+
+```         
+::: statement
+__L -- a__. This will not generate an error.
+:::
+```
+
+## Hard-coded LaTeX table: Undefined control sequence
+
+We hard-coded a complex LaTeX table but used markdown to include a link 
+target in the caption:
+
+~~~ markdown
+::::: {.only-in-format .latex}
+
+`\begin{longtable}{ccc}`{=latex}
+`\caption{`{=latex}Numbers to prove [this idea]{#idea}.`}\\`{=latex}
+``` {=latex}
+ \hline
+    header & header & header \\
+  \hline
+  ... table rows \\
+ \hline
+\end{longtable}
+```
+:::::
+~~~
+
+We got a "Undefined control sequence" for an obscure command (HyperRaiseLinkLength)
+that doesn't appear in the pandoc-generated LaTeX. The cause is that
+Pandoc inserts a `\phantomsection` command before the link target:
+
+``` latex
+\begin{longtable}{ccc}
+\caption{Numbers to prove \phantomsection\label{idea}{#idea}.} 
+```
+
+Which cannot be inserted within table captions.
+
+**Solution**. Redefine `\phantomsection` to nothing (or `\relax`)
+within the scope of this table. Note that we wrap the entire table within `{...}` to
+ensure that `\renewcommand` only affects this table, not the rest
+of the document:
+
+~~~ markdown
+::::: {.only-in-format .latex}
+
+``` {=latex}
+{
+\renewcommand{\phantomsection}{}
+\begin{longtable}{ccc}
+```
+`\caption{`{=latex}Numbers to prove [this idea]{#idea}.`}\\`{=latex}
+``` {=latex}
+ \hline
+    header & header & header \\
+  \hline
+  ... table rows \\
+ \hline
+\end{longtable}
+```
+:::::
+~~~
+
+## A list of things that cause trouble
+
+Some hurdles that beginning copyeditors typically face.
+
+### Visual editor RStudio
+
+-   Does not preserve numbered examples code (all processed).
+
+-   Tables: Doesn't preserve code (not pipe format -\> loss of cell \> alignment)
+
+-   Interprets \\\[ and \\\] as display maths.
+
+    -   Solution: do not escape the \[ \]. Only possible problem: it \> picks up a section
+        label. But I think you can change the title \> in section labels.
+
+### Pandoc
+
+-   LaTeX encoding of tables is heavy (every cell is a minipage! \> Specifies detailed
+    widths)
+
+-   Tables: no colspan nor rowspan yet
+
+-   Indented blocks (statements, arguments, ...) and AMS theorems
+
+-   HTML default encoding of formulas uses unicode + italics + "math \> inline" custom
+    style class. Use \--mathjax flag; adds a link to \> mathjax.js in the head so this
+    should be present on the website \> (or unnecessary if the galley has its own head).
+    See [[pandoc \> manual on maths in \>
+    html]{.underline}](https://pandoc.org/MANUAL.html#math-rendering-in-html) \> .
+
+### LaTeX
+
+-   Standard logic symbols: \\neg, \\lnot, \\land, \\lor, \\sim all well \> supported in
+    MathML? (Not a big worry!)

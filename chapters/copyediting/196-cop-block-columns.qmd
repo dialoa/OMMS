@@ -1,0 +1,118 @@
+# Multiple columns
+
+**Requires: the `columns` filter**. 
+
+This is about setting *parts of text* in multiple columns, not 
+about typesetting an entire document in two columns. 
+
+It is sometimes useful to typset a part of text into 
+multiple columns, e.g. to display some claims or formulas
+side by side. Note that this is *not* the same as using a
+ [table](#tables). Here we just divide part of the text 
+ into two or more columns, and the text may be allowed to 
+ flow from one to the other. The syntax is this:
+
+``` {.markdown}
+::: columns
+:::: column
+This goes in the first column
+::::
+
+:::: column
+This goes in the second column
+::::
+
+:::: column
+This goes in a third column
+::::
+:::
+```
+
+In LaTeX, columns are justified vertically by default. That is, if columns
+are explicitly broken at certain points, LaTeX ensures that the text in
+each column occupies its full height by stretching inter-paragraph space. 
+This means that some paragraph may end up being "bumped" at the end
+of a column. To avoid this, set the `.ragged` class on your `columns`
+Div like so: 
+
+```markdown
+::: {.columns .ragged}
+
+...
+
+:::
+```
+
+Note that this doesn't work on individual `column` Divs, only on the 
+`columns` Div that contains them.
+
+
+Above I use three colons to open and close the "columns" part, and four colons
+to open and close each "column". Any number above two works, provided they are
+distinct from each other.
+
++---------------------------------------+---------------------------------------+
+| **Good**                              | **Bad**                               |
++=======================================+=======================================+
+| Columns opens and closes with 3       | Everything opens and closes with 4    |
+| colons, each column opens and closes  | colons:                               |
+| with 5:                               |                                       |
+|                                       | ``` {.markdown}                       |
+| ``` {.markdown}                       | :::: {.columns}                       |
+| ::: {.columns}                        | :::: {.column}                        |
+| ::::: {.column}                       | On the left                           |
+| On the left                           | ::::                                  |
+| :::::                                 |                                       |
+|                                       | :::: {.column}                        |
+| ::::: {.column}                       | On the right                          |
+| On the right                          | ::::                                  |
+| :::::                                 | ::::                                  |
+| :::                                   | ```                                   |
+| ```                                   |                                       |
++---------------------------------------+---------------------------------------+
+| First column opens and closes with 5  | First column opens with 5 but closes  |
+| colons, second with 7:                | with 7, second column opens with 7    |
+|                                       | but closes with 5:                    |
+| ``` {.markdown}                       |                                       |
+| ::: {.columns}                        | ``` {.markdown}                       |
+| ::::: {.column}                       | ::: {.columns}                        |
+| On the left                           | ::::: {.column}                       |
+| :::::                                 | On the left                           |
+|                                       | ::::::::                              |
+| ::::::: {.column}                     |                                       |
+| On the right                          | ::::::: {.column}                     |
+| :::::::                               | On the right                          |
+| :::                                   | :::::                                 |
+| ```                                   | :::                                   |
+|                                       | ```                                   |
+| \`\`\`                                |                                       |
++---------------------------------------+---------------------------------------+
+| The {. ... } is optional if you have  | ``` {.markdown}                       |
+| one word only, but mandatory if you   | ::: columns \#my-columns              |
+| have several                          |                                       |
+|                                       | ::::: column width="40%"              |
+| ``` {.markdown}                       |                                       |
+| ::: {.columns}                        | On the left                           |
+| ::: {.column}                         |                                       |
+| On the left                           | :::::                                 |
+| :::                                   |                                       |
+|                                       | ::::::: column label="red"            |
+| ::: {.column}                         |                                       |
+| On the right                          | On the right                          |
+| :::                                   |                                       |
+| :::                                   | :::::::                               |
+|                                       |                                       |
+| ::: {.columns \#my-columns}           | :::                                   |
+| ::: {.column}                         | ```                                   |
+| On the left                           |                                       |
+| :::                                   |                                       |
+| ::: {.column}                         |                                       |
+| On the right                          |                                       |
+| :::                                   |                                       |
+| :::                                   |                                       |
+| ```                                   |                                       |
++---------------------------------------+---------------------------------------+
+
+At present you cannot set the relative width of columns.
+
+See [columns filter manual](https://github.com/dialoa/columns) for further details.

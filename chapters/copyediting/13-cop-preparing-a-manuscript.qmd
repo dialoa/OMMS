@@ -1,0 +1,111 @@
+# Preparing a manuscript
+
+Steps to prepare a manuscript for copyediting.
+
+## Create a working folder for your article
+
+If you don't have a dedicated working folder for your article, create
+one.
+
+If you're going to use RStudio, create a project for the article with
+File \> New Project.... Use 'Existing directory' if your project already
+has a folder, otherwise "Create project in a new directory" to create
+one.
+
+## Place original materials in a preserved folder
+
+A submission comes with a manuscript file and possibly others:
+bibliography, PDF version, figures, etc. It's handy to have those in
+your working folder for the article, but you want to keep them safe.
+Place them either in a subfolder called `original` or `history`. (The
+`history` folder will then be used to keep track of your exchanges with
+the author.)
+
+## Convert to markdown
+
+Two options: conversion box (RStudio) or with Pandoc. The first is easy
+if you're not familiar with the terminal and allows you to do a bunch of
+manuscripts at once. The second is faster for a single manuscript once
+you've learnt how to do it.
+
+### With the conversion box and RStudio
+
+Requires RStudio and a `conversion-box` folder at the root of journal's
+working folder.
+
+1.  Delete any manuscript already present in the `conversion-box`
+    folder: Word files (`.docx`, `.doc`), LaTeX files (`.tex`), markdown
+    or quarto files (`.md`, `.qmd`). This is a temporary folder,
+    whomever left it there has made copies.
+2.  Copy your original manuscript (MS Word, LaTeX) in the
+    `conversion-box` folder. You can copy several if you want to convert
+    multiple manuscripts in one go.
+3.  Rename the manuscript file(s) if necessary: manuscript filenames
+    *must not contain spaces, colons, question or exclamation marks*.
+4.  Open `conversion-box.Rproj` in the `conversion-box` folder. This
+    opens RStudio in the 'conversion box' project.
+5.  In RStudio, do Build \> Build All, or equivalently hit Shift-Ctrl-B
+    (Win. Linux) or Shift-Cmd-B (Mac). This converts any MS Word or
+    LaTeX file in the folder to markdown.
+6.  Copy the resulting markdown file from the `conversion-box` to your
+    article's working folder.
+
+### With Pandoc only
+
+Open a terminal. If using RStudio or VSCode, there is a Terminal tab.
+This opens a terminal already located in your article's working folder.
+If you're opening a terminal from your system, you need to navigate
+(using `cd`, change directory commands) to your article working folder.
+
+If you need help with using the terminal see section @sec-terminal-help.
+
+Run the following command:
+
+```         
+pandoc -s original/manuscript.docx -o manuscript.md
+```
+
+-   `original/manuscript.docx` is the path and filename of the original
+    manuscript. Here I'm assuming that the submission is called
+    `manuscript.docx` and placed in a folder `original`. On Windows we
+    use backlash to mark folders so that would be
+    `original\mansucript.docx` instead.
+-   `-o manuscript.md` tells pandoc to convert to markdown (`.md`) and
+    save the result as `manuscript.md` in your cuurent folder.
+-   `-s`, short for `--standalone`, tells Pandoc to produce a
+    "standalone" document, i.e. include a header with any metadata it is
+    able to extract from the source.
+
+For instance, if your terminal was not located in your article working
+folder but in its `original` subfolder, and you wanted to write the
+result in the main sufolder (i.e. one folder up), you'd use instead:
+
+```         
+pandoc -s mansucript.docx -o ../manuscript.md
+```
+
+Where `../` (`..\` on Windows) means "one folder up".
+
+#### LaTeX manuscripts: check the bibliography field
+
+Converting from LaTeX is the same, but **pay attention to the
+bibliography file location**. The resulting markdown file may have a
+`bibliography` key:
+
+``` yaml
+bibliography: original/references.bib
+
+bibliography: C:/Windows/Users/Zotero/references.bib
+```
+
+Update these if needed. Here `original` is the subfolder for preserving
+the original: I should instead copy the `.bib` file to the main article
+folder and replace this key with `bibliography: references.bib`. The
+second one, `C:/Windows...` is a location in the author's computer as it
+was cited in their LaTeX file, it should be removed.
+
+#### More options for Pandoc conversion
+
+See [Pandoc's Manual: reader
+options](https://pandoc.org/MANUAL.html#reader-options) for more
+options.

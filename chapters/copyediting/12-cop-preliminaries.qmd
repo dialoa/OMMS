@@ -1,0 +1,152 @@
+# Preliminaries
+
+This chapter explains what you need to set up a markdown 
+production chain.
+
+## What you need
+
+### Skills
+
+-   Use a text editor (RStudio will do).
+
+-   Optionally, use [RStudio's visual editor](https://quarto.org/docs/visual-editor/). 
+    This provides a MS Word-like way of editing a markdown document: 
+    no need to view the source code. An easy entry into markdown and
+    a nicer way to edit. See @sec-rstudio-visual-source-modes.
+
+-   Optionally, how to use the command line interface. The very basics are enough: navigate to a directory, run a command. See @sec-terminal-help.
+
+
+
+### Software
+
+All the software needed is free: Pandoc, LaTeX and optionally RStudio. 
+
+See the Dialectica chapter on generating outputs to set yourself up 
+[@sec-dialectica-house-outputs]. 
+
+## Working folder
+
+Create a working folder for your journal. This may be shared between copyeditors if you're a team. We suggest a structure such as this:
+
+```
+tree/copyediting
+└── 2023-v51
+    ├── 01-i01
+    │   ├── 01-ehrenfest-afanassjewa
+    │   │   └── history
+    │   └── 02-estrin
+    └── 03-i02
+        ├── 01-ehrenfest-afanassjewa
+        │   └── history
+        └── 02-estrin
+            └── history
+tree/published
+└── 2023-v50
+    ├── 01-i01
+    │   ├── 01-ayrton
+    │   │   └── history
+    │   └── 02-berdichevsky
+    │       └── history
+    └── 03-i02
+        ├── 01-borg
+        │   └── history
+        └── 02-daubechies
+            └── history
+tree/guide
+tree/resources
+└── fonts
+tree/template
+├── 1.0
+│   ├── defaults
+│   ├── filters
+│   ├── metadata
+│   └── scripts
+└── 1.1
+    ├── defaults
+    ├── filters
+    ├── metadata
+    └── scripts
+
+```
+
+We're dividing the articles in two stages, *copyediting* and 
+*published*. We could further divide copyediting into copyediting proper 
+(language, style) and production (typesetting) but
+these tend to be intertwined in markdown production. 
+
+'Copyediting' and 'published' folders are organized by year-volume and
+month-issue. 
+
+Each article has its own folder, with a `history` subfolder to keep 
+track of the author's original submissions and revisions. 
+
+To these we add a few other folders for resources shared among copyeditors:
+
+* `template`: template engine to produce the journal. This might change
+  over the years, so it is organized by versions. Each issue includes
+  metadata that indicate which version of the template was used.
+  It includes `scripts` that copyeditors may need to copy or use.
+* `guide`: this guide
+* `resources`: resources such as fonts, logos, documentation. 
+
+
+## New Workflow Start [Draft]
+
+Note: below, when saying "in a terminal", we mean either PowerShell on Windows, or your default terminal in Mac or Linux.
+All of the commands provided should work in all PowerShell (Windows), zsh (Mac) and bash (Linux). 
+
+
+The association is setting up a standardized compilation environment for Dialectica.
+The environment is encapsulated in a *docker container* and includes all of the tools needed for the copyediting work, including pandoc, LaTeX, Lua, Quarto, and the fonts.
+The idea is that you will only need to interact with the container in your local machine, as if it was a "box" containing the Dialectica copyediting tools, without needing to install each tool separatedly.
+In this way, all of the copyeditors can share a single complete environment (i.e., the versions of all of the tools used by the team will be the same), minimizing compiling problems and compatibility issues.
+This also allows for issues to be fixed in a centralized manner, as new versions of the environment (with fixed issues) will affect everyone.
+
+Follow the steps here everytime you want to start working using the Dialectica compilation environment.
+This section assumes you have already set up your machine as explained in [@sec-dltc-env-setup].
+
+1. First make sure that docker is running. In a terminal, do:
+```sh
+docker ps
+```
+If there are no errors, then docker is running. If not, try the following to start docker:
+
+  - On Windows, open Docker Desktop
+  - On Mac, in a terminal, do `colima start`
+  - On Linux, in a terminal, do `sudo service docker start`
+  - Now wait until docker starts, and do `docker ps` again
+
+2. Now check if you have the latest version of the image of the compilation environment. Every new release will be announced on the Team News, and they shouldn't happen very often. If a new version has been released, or if you're unsure if you have the last version, in a terminal do the following. For this, you will need the `access token` which you can find in the Institutional Setup page in our Google Drive:
+```sh
+docker login -u philosophiech
+# Paste the access token as the password
+docker pull philosophiech/dltc-env:latest
+# Wait until the pull is complete, and check with
+docker image ls
+```
+**NOTE**: terminals often hide the characters when you type in passwords. Just copy and paste the access token when asked for the password and it will work.
+  - If you downloaded a new image, you need to stop any container created with the old one. For this, go to the root of the git repository (where the docker compose file is) and do
+```sh
+# On Windows and Linux
+docker compose down
+# On Mac
+docker-compose down
+```
+
+3. From step 1, if you do have the latest image, and if in the output of `docker ps` you see the name "philosophiech/dltc-env:latest", then the compilation environment is ready to be used
+  - If not, in a terminal, navigate to the root of the git repository you cloned (where the docker compose file is), and do:
+```sh
+git pull
+
+# On Windows and Linux
+docker compose up -d
+# On Mac
+docker-compose up -d
+```
+Now if you do `docker ps` you should see the name of the container ("philosophiech/dltc-env:latest").
+
+4. Start VSCode, select "Remote Explorer" on the vertical toolbar to the left, select "Dev Containers" on the dropdown menu above, then hover above "compilation-env" and click on the arrow next to it. You can now "Open Folder" and choose "dltc-workhouse", which is the same folder you have in Dropbox.
+
+All set, you're ready to work. Remember that you can open a terminal inside VSCode (in the menu above: Terminal >> New Terminal), which will give you a terminal *inside* the container. Here you'll find all of the tools you need (pandoc, LaTeX, Lua, quarto, dltc-make, and the fonts).
+

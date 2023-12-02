@@ -1,0 +1,37 @@
+# Interface with  *dialectica*'s main bibliography
+
+Interface with dialectica's main bibliography
+
+More information on the bibliography is in the bibliography-section of
+the overleaf-document.
+
+JD some experiments:
+
+-   Tried simply adding the main bib file (biblio-check.bib) as the
+    > bibliography file of an article in RStudio. Problems:
+
+    -   It takes circa 15-30sec to 'Read the bibliography" when opening
+        > the article, and 10-20sec again when opening the
+        > insert-citation window.
+
+    -   But the bibliographies entries don't show up in the
+        > 'Bibliography' tab.
+
+    -   It looks as if either RStudio can't read it (bug / unusual code
+        > somewhere?), or just gives up above a certain number of
+        > entries
+
+
+JD thought: We need either:
+
+-   some way of either generating a sub-selection of the main
+    > bibliography for the article. Automated? Something like Sandro's /
+    > crossref bibtex convertor, but for this bibliography? (Suggestion:
+    > linking via DOIs?)
+
+-   Some way of having the main biblio as one of the source in RStudio
+    > citation-insertion popup, the way Zotero appears. However: risk
+    > that it is slow because of the size.
+
+-   Some way of *searching* the main biblio as one of the sources in
+    > RStudio, the way CrossRef appears in the citation-insertion popup.

@@ -1,0 +1,507 @@
+# Dialectica house style outputs {#sec-dialectica-house-outputs}
+
+By "Terminal" we mean a command line interface. See Appendix
+-@sec-terminal-help on how to use it.
+
+All file paths are given relative to the base ("root") of Dialectica's
+workhouse folder. For instance:
+
+```         
+template/1.1/scripts/make.sh
+```
+
+\noindent is the `make.sh` file contained in the `scripts` folder
+contained in the `1.1` folder contained in the `template` folder within
+the dialectica workhouse folder.
+
+Note for Windows users: paths are noted in the Linux / MacOS style with
+a forward slash `/` separator. In Windows this would be a backslash `\`
+instead:
+
+```         
+template\1.1\scripts\make.sh
+```
+
+## Setting up your system
+
+### Pre-requisites
+
+You will need the following (2 to 8 Gb disk space):
+
+-   **Pandoc** version 3+. *\~240Mb*
+
+-   A **LaTeX distribution**.[^60-dialectica-house-outputs-1] *\~200Mb
+    (custom) to \~5Gb (full)*
+
+-   **Fonts**: STIX Two, Libertinus (incl. Libertinus Display) and
+    VenusSBExtended available in `dialectica-workhouse/resources/fonts`.
+    *\<1Mb*
+
+-   On **MacOS**, Apple's **Command line tools for Xcode**. *\~2.5Gb*
+
+-   (Optional but recommended) **RStudio**, a markdown editor with a
+    visual mode, a built-in terminal, and the ability to run scripts
+    that generate HTML / PDF versions of your manuscript. *\~1Gb*
+
+-   (Optional but recommended) on **Windows, latexmk**, a command-line
+    program we use to generate PDFs. It is part of LaTeX but not always
+    installed by default. *\~100Mb, if you need to install Perl*
+
+[^60-dialectica-house-outputs-1]: LaTeX is called a 'distribution' or
+    'installation' because it's not a single program but a large
+    collection of programs and 'packages' that work together to generate
+    PDFs.
+
+#### How to check what's installed
+
+To check whether Pandoc, LaTeX and latexmk are installed, you can run
+the following on a terminal (see Appendix -@sec-terminal-help on how to
+do this). For Pandoc:
+
+``` bash
+pandoc -v
+```
+
+For LaTeX:
+
+``` bash
+pdflatex -version
+```
+
+For latexmk:
+
+``` bash
+latexmk -v
+```
+
+If you get error messages, they are not installed. If you get version
+numbers, they are installed. This works on all systems.
+
+### MacOS only
+
+**To install Apple's Command Line Tools**. This is necessary even if
+you're not going to use the command line your self: it installs the
+software needed to run the "scripts" (short instruction files) that
+render our outputs. Open the Terminal (in Applications \> Utilities),
+type the following and hit Enter:
+
+``` bash
+xcode-select --install
+```
+
+If you get the error message "command line tools already installed",
+it's already installed, you can close the terminal. Otherwise it will
+download and install for some time. When it's finished, close the
+terminal.
+
+### Optional: install tools with a package manager
+
+Package managers are tools to install and update software. Typically
+terminal tools [see @sec-terminal-help] but Linux has graphical ones
+too.
+
+-   At installation time, they spare you looking up the software's
+    website, downloading, running the installer. Instead you just run a
+    simple command like `choco install pandoc` on the terminal and the
+    manager installs Pandoc for you.
+-   Later, they allow you to update *all* the software you've installed
+    with them at once. No need to go back to the websites, download
+    again etc. You run a command like `choco upgrade all`.
+-   Less relevant for us: it handles 'dependencies', ie if the software
+    you're installing needs another, it'll install the latter too.
+
+For instance on MacOS you'd install LaTeX, Pandoc and RStudio by typing
+just one command on the terminal: `brew install mactex pandoc rstudio`.
+
+-   On Linux, there's a package manager pre-installed and you'll
+    probably know what it is. In "Debian" distributions, Ubuntu
+    included, it's [APT](https://en.wikipedia.org/wiki/APT_(software))
+    (`apt-get install pandoc`). There are graphical user interfaces for
+    it: Software center in Ubuntu, Synaptic in Linux Mint, and others.
+
+-   On MacOS, install [Homebrew](https://brew.sh). Note: sometimes
+    you'll see `--cask` in the command (compare `brew install pandoc` vs
+    `brew install –cask rstudio`). The rule of thumb is that graphical
+    programs are `--cask`, command line programs aren't. But don't
+    worry, if you omit `--cask` the installation typically works anyway.
+    You can formally check whether it's needed by searching the software
+    on [homebrew](https://formulae.brew.sh)'s depository.
+
+-   On Windows, install [Chocolatey](https://chocolatey.org). Important:
+    don't forget that it can't be run in the basic CMD terminal but only
+    in the "Windows Powershell" with administrator privileges. Search it
+    in the start menu, right-click and chose "Run as administrator".
+
+If unsure what the package name of some software is you can search it
+online (e.g. "Ubuntu package texlive"). It'll probably land you on the
+right page of their online package lists:
+[debian](https://www.debian.org/distrib/packages#view),
+[ubuntu](https://packages.ubuntu.com),
+[homebrew](https://formulae.brew.sh),
+[chocolatey](https://community.chocolatey.org/packages).
+
+### Common to all platforms
+
+#### Pandoc
+
+Download and install from [Pandoc's
+website](https://pandoc.org/installing.html).
+
+Command line users: run `brew install pandoc` (MacOS, Homebrew),
+`choco install pandoc` (Win, Chocolatey) or `apt-get install pandoc`
+(APT, Linux) in a terminal.
+
+#### LaTeX
+
+Use either [MikTeX](https://miktex.org/download) or
+[TexLive](https://tug.org/texlive/) (whose Mac version is called
+[MacTeX](https://www.tug.org/mactex/)).
+
+-   For MikTeX: download the installer, launch it. Select "install only
+    for this user", and for installing packages on the fly, select "Ask
+    me first".
+-   For TexLive, non-Mac: download [the network
+    installer](https://tug.org/texlive/acquire-netinstall.html), launch
+    it. When/if offered the choice, choose to install "all" or
+    "everything". This can take \~30 minutes depending on download
+    speed.
+-   For TexLive, Mac users: download [the
+    installer](https://www.tug.org/mactex/).
+
+MikTeX's advantage is that it downloads any needed packages on the fly,
+so it's quicker to install and will get whatever you need. **So be aware
+that if you use MikTeX, you first PDFs generation will open a window
+asking you to confirm the download of packages and take a long time as
+MikTeX download missing pages**. Don't worry, subsequent PDF generations
+are much faster.
+
+TexLive's full install is large (5Gb) and takes \~30 mins but you're
+done once and for all---well, for one year, as it is updated yearly.
+
+Command-line users:
+
+-   Homebrew: `brew install --cask mactex`. Cannot install MikTeX (as of
+    Jan 2023). MikTeX doesn't need brew anyway, it self-updates.
+-   Chocolatey: `choco install miktex` or
+    `choco install texlive --params "'/scheme:full'"`.
+-   Linux: depends on package managers, e.g.
+    `sudo apt-get install miktex` or
+    `sudo apt-get install texlive-full`. However, you might need to add
+    'Software sources' to do this: see e.g. the MikTeX webpage.
+
+#### Fonts
+
+Dialectica's fonts are located in
+`dialectica-workhouse\resources\fonts`. Open a file browser and navigate
+to the folder of a desired font (for Stix Two, `STIX Two fonts\OTF`).
+Select all the files and, depending on system:
+
+**To install fonts**, open the Finder and navigate to the folder where
+the fonts are located (`dialectica-workhouse/resources/fonts`). Open the
+folder of the desired font (for Stix Two, `STIX Two fonts/OTF`).
+Double-click each file there (regular, italic, bold, ...), and in the
+windows that appear, select "Install font". You can check that the fonts
+are installed by opening the Font Book (in the Applications folder, or
+Cmd + Space and search for Font Book) and selecting the User tab.
+
+-   (Windows) right-click and select "Install fonts",
+-   (Mac) Enter or right-click \> Open. Select "Install font" in the
+    windows that open. You can check that they are installed by opening
+    the Font Book app.
+-   (Linux) depends on distribution. On Ubuntu, for instance,
+    double-click on the font files opens a font viewer with the option
+    to install. If that doesn't work on your distribution, try an online
+    search.
+
+#### RStudio (optional)
+
+See [RStudio's download page](https://posit.co/downloads/) for
+installation instructions. Command line users also install it with
+package managers (e.g. `brew install rstudio`). RStudio needs R (a
+statistics programming language), so you might need to install it too
+(e.g. `brew install r rstudio`).
+
+When installed, note that RStudio includes:
+
+-   a *file browser* on the left
+-   a *terminal* at the bottom, under the 'Terminal' tab. (The 'Console'
+    is something else).
+-   when editing markdown files, the `Source` and `Visual` tabs at the
+    top left of the editor. These allows you to edit files in visual
+    mode rather than markdown. Limitation: the visual mode can't be used
+    if the manuscript contains "numbered examples lists".
+-   when editing markdown files, an 'Outline' panel on the right side of
+    the editor. Useful to navigate a manuscript.
+
+RStudio might be intimidating at first: it's not a word processor but a
+"development environment" for the statistics programming language R.
+It's not just used to write programs, however, but also write documents
+that embed compuations: a webpage with a graph that is daily updated, or
+a scientific article that includes algorithms and data to reproduce its
+results. So don't worry: you will mostly be using its markdown editor
+here, which is powerful but simple. Some of the development features are
+handy too, like the file browser and the ability to run scripts to
+generate our outputs.
+
+## Prepare an article or issue folder
+
+You'll need to add a few files to your article working folder to be able
+to generate outputs.
+
+-   A 'maker script', i.e. a mini program that tells the computer how to
+    generate your outputs.\
+    This is the file titled `make.sh`.
+
+-   A *master file*, which contains issue-level metadata needed to
+    generate your article outputs.
+
+### Ensure your folder contains the maker script
+
+Check whether your working article folder contains a file title
+`make.sh`. If it does, you're good.
+
+If it doesn't, you should make a copy of it in your work article folder.
+You can find it in `template/X.X/copyeditors-scripts`, where `X.X`
+stands for the most recent template version. (That is the highest you
+find, e.g. 1.2.) But this file is the same for each article and issue
+that uses the *same* version of the *Dialectica* template, so you can
+also copy it from other *article* folder in the same year.
+
+Beware of copying `make.sh` from an *article* folder, not the *issue*
+folder that contains it. (Article-folders `make.sh` tell the computer:
+go three folder up and find the template engine; issue-folders `make.sh`
+tell it: go *two* folders up and find the template engine; that's why
+issue maker files don't work in article folders and conversely.)
+
+### Create a master file
+
+Copy a `master.md` file into your article folder. You can take one from
+another article in the same issue, or the template one at
+`template/X.X/copyeditors-scripts`. Beware: you can take the master file
+in the *issue* folder, but if you do so you'll need to modify paths in
+the `imports` field (see below).
+
+Open the file in text editor. It should already contain an `imports`
+metadata field that consists of a list of one or more files (each item
+on a single line starting with a dash), for instance:
+
+``` yaml
+imports:
+- 01-author.md
+- 02-author.md
+```
+
+You should amend it to contain just one item referring to your file. If
+your markdown file is `smith_j-2023.md` you should make it:
+
+``` yaml
+imports:
+- smith_j-2023.md
+```
+
+*Note on issue master files*. Issues have master files too, where
+located in issue folders. Their `imports` field normally contain a list
+of all article files for that issue, *including which subfolder they're
+in*, for instance:
+
+``` yaml
+imports:
+- 01-jones/jones_s-2023.md
+- 02-smith/smith_j-2023.md
+- ...
+```
+
+Therefore, if you copy an issue master file within an article folder, or
+the other way round, you should make sure you add (issue master file) or
+remove (article master file) the subfolders names as required.
+
+## Generate outputs
+
+### With RStudio on Windows
+
+On Windows, you might be able to generate outputs from RStudio directly
+without running a command. If that fails, skip to the next sections and
+run a command instead.
+
+**Setup.** In RStudio, open your article's project and go to the menu
+Build \> Configure Build Tools. Enter the following choices:
+
+-   Project build tools: "Makefile"
+-   Makefile directory: leave as default (Project Root).
+-   Additional argument: empty to generate html, or any of the rendering
+    commands detailed below [@sec-house-outputs-rendering-commands].
+
+**Generate**. Once that is done, go to Build \> Build all (or use
+Shift-Ctrl + B) to generate the desired output.
+
+Go back to Build \> Configure Build Tools if you want to change the
+format you're generating, e.g. enter `offpdf —proof` in Additional
+argument to generate a proof PDF.
+
+### Run a command in the terminal
+
+In all systems, you can generate outputs by running the `sh make.sh`
+command in a terminal.
+
+-   In RStudio, if you've created a project for your article, it's best
+    to use the Terminal within RStudio itself. See Tools \> Terminal.
+    This terminal will be "located in" the project's folder, so you can
+    just take `sh make.sh` to generate a html output.
+
+-   If you're using a separate terminal application, you'll need to
+    "navigate" to the folder where your article is. See
+    @sec-terminal-help for help.
+
+### Short rendering commands {#sec-house-outputs-rendering-commands}
+
+Rendering commands can be executed in a *article*'s folder or in an
+*issue* folder. All these commmands must be added to `sh make.sh`, e.g.:
+
+``` bash
+sh make.sh offprints
+```
+
+or used in the "additional argument" of RStudio's configure build tools
+in Windows, as explained above.
+
+Single-article outputs will be named after the source file, e.g.
+`smith_j-2020.pdf`. Issue outputs will be named after the issue DOI,
+e.g. `dial.v74.i1.pdf` or `dial.v75.i2-book.pdf`.
+
++----------------+-------------------------------------------+
+| Command        | Output                                    |
++================+===========================================+
+| (empty)        | article in HTML                           |
++----------------+-------------------------------------------+
+| `offpdf`       | article in PDF                            |
+|                |                                           |
+| `off1pdf`      |                                           |
++----------------+-------------------------------------------+
+| `offtex`       | article in LaTeX. Useful to debug when    |
+|                | the PDF generation crashes: try           |
+| `off1tex`      | `lualatex smith_j-2020.tex` to see error  |
+|                | messages.                                 |
++----------------+-------------------------------------------+
+| `refs`         | generate a list of references cited in    |
+|                | the article. Saved as                     |
+|                | `<article_name>.bib.txt`. Only works when |
+|                | the references have been turned into      |
+|                | citations and a bibtex file is provided.  |
++----------------+-------------------------------------------+
+
+: Article folder rendering commands
+
++----------------+-------------------------------------------+
+| Command        | Output                                    |
++================+===========================================+
+| (empty)        | first article in HTML                     |
++----------------+-------------------------------------------+
+| `all`          | issue pdf, all articles PDF + HTML        |
++----------------+-------------------------------------------+
+| `allhtml`      | all offprints (=articles) in HTML         |
++----------------+-------------------------------------------+
+| `offprints`    | all offprints HTML and PDF                |
+|                |                                           |
+| `off`          |                                           |
++----------------+-------------------------------------------+
+| `vol`          | issue PDF                                 |
+|                |                                           |
+| `volpdf`       |                                           |
++----------------+-------------------------------------------+
+| `off2`         | HTML of the second article (i.e. second   |
+|                | item in the masterfile's `imports` list). |
+| `off2html`     |                                           |
++----------------+-------------------------------------------+
+| `off2pdf`      | PDF of the second article (i.e. second    |
+|                | item in the masterfile's `imports` list). |
++----------------+-------------------------------------------+
+| `off7tex`      | LaTeX of seventh article                  |
++----------------+-------------------------------------------+
+| `voltex`       | LaTeX of the issue                        |
++----------------+-------------------------------------------+
+| `refs`         | generate list of references cited for     |
+|                | each article. Saved as                    |
+|                | `<article_name>.bib.txt`. Only works when |
+|                | for articles where references have been   |
+|                | turned into citations and given in bibtex |
+|                | files.                                    |
++----------------+-------------------------------------------+
+| `bare`         | Issue covers only, PDF (`bare`) or LaTeX  |
+|                | (`baretex`). articles (also `baretex`).   |
+| `baretex`      | Useful for cover design.                  |
++----------------+-------------------------------------------+
+
+: Issue folder rendering commands
+
+### Rendering options
+
+Proof mode
+
+:   Add `--proof` or `-p` at the end of your command (separated by a
+    space):
+
+:   ``` bash
+    sh make.sh off2 --proof
+    sh make.sh off3pdf -p
+    ```
+
+:   This only affects PDF output.
+
+Verbose or quiet
+
+:   Add `--verbose` or `-v` to get a detailed log of the rendering
+    process. Useful for debug. You can save the output in a log file
+    like so:
+
+    ``` bash
+    sh make.sh off2pdf -v 2> out.log 
+    ```
+
+    The `2>` tells the computer to "redirect" the error/information
+    output to a file named `out.log`. This works in Windows and Linux /
+    MacOS terminals.
+
+    You can make the output quieter with `--quiet` or `-q`. Though
+    certain programs executed during the rendering process may still
+    display error or output messages. If you don't want to see anything
+    just "redirect" the output to a file with `sh make.sh … 2> out.log`.
+
+Single letter options can be combined: `-pv` is short for
+`--proof —verbose`.
+
+### Long rendering commands
+
+Rendering commands can also be given in key-value form:
+
+``` bash
+sh make.sh mode=offprint chapter=3 format=pdf
+```
+
+-   `mode` includes "offprint" aka "off", "vol" aka "issue", "bare" ,
+    "refs"
+
+-   `format` includes `pdf`, `html`, `tex` aka `latex` (also `epub`,
+    `jats` but we don't generate these yet)
+
+-   `chapter` includes chapter numbers.
+
+The advantage is that you can specify multiple modes and formats
+separated by commas:
+
+```         
+sh make.sh mode=off,refs chapter=3,4,5
+```
+
+Rendering options like `--proof` can be combined with long rendering
+commands.
+
+## Advice on HTML vs PDF
+
+HTML is best when you start working on an article because it's much
+faster and less error-prone than PDF. HTML only fails to produce an
+output if your document's metadata is ill-formed or if there's a bug in
+the "filters" we use to format outputs.
+
+PDF is best for the latter typesetting stages when you need to check
+that the fine-grained outputs look right, that advanced LaTeX formulas
+or images work correctly, that there is no awkward page break and so on.

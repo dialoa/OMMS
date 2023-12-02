@@ -1,0 +1,470 @@
+# Troubleshooting outputs {#sec-troubleshooting-outputs}
+
+## Cannot run pandoc-crossref because it is not from a trusted developer
+
+MacOS-specific error. Solution: close the alert---don't chose "Move to
+Bin"! In Finder, go to the `template/X.X/filters` folder, where X.X is
+the latest version of the template. ⌘-click the file `pandoc-crossref`
+(not `pandoc-crossref.exe` nor `pandoc-crossref-nix`). Chose "Open". You
+will get the same alert but this time with the option to Open: select
+it. Nothing will happen but after that the system will trust the file
+and you'll be able to generate outputs.
+
+## HTML empty or PDF with cover only
+
+The maker hasn't find your article source. You probably forgot to update
+the master file's `imports` list with your source file name.
+
+## WARNING: pandoc-crossref was compiled with pandoc X.X.X but is being run through Y.Y.Y etc.
+
+Ignore this if the first two digits X.X and Y.Y are the same, e.g.
+"pandoc 3.1.2 but is being run through 3.1". It's small mismatch between
+the Pandoc version and the cross-references filter's version, normally
+harmless. You may remind the workhouse administrator to update the
+cross-references filter, or check that your pandoc is up to date.
+
+If the Y.Y number is 2 or more lower than the X.X, e.g. "pandoc 3.4 but
+being run through 3.1" then you need to update your Pandoc.
+
+## Error message about Stix TWO
+
+PDF-specific. Means that you haven't installed the Stix Two font.
+
+## Error: PDF output not produced
+
+Pandoc can't generate a PDF. There are, unfortunately, many reasons why
+this can happen. Essential background first: PDF generation happens in
+two stages:
+
+1.  Pandoc converts Markdown to LaTeX.
+2.  A LaTeX engine converts LaTeX to PDF.
+
+First we need to check that no crash occurs at stage 1.
+
+-   Check first that you can generate a HTML of the article. If not, you
+    have first to fix the error in HTML generation. See
+    [@sec-house-outputs-html-errors].
+
+-   Then generate a LaTeX file for the article.
+    [@sec-house-outputs-rendering-commands]
+
+If Pandoc generates HTML and LaTeX with no crash, then the error happens
+at the LaTeX stage.
+
+Typical causes for a LaTeX-stage error are:
+
+-   Typos in a math formulas.
+
+-   An author's LaTeX uses some packages or defined commands. These need
+    to be provided to the article as `header-includes`. (Though
+    sometimes you need to tell the author to simplify their LaTeX
+    first!)
+
+-   Raw LaTeX code, either from the author or from you (e.g. added to
+    handle fine-grained spacing) doesn't work correctly
+
+-   An author's LaTeX code doesn't interact well with our template.
+
+-   there's a bug in our filters or our template
+
+To make progress you should look for the LaTeX error message. It's
+displayed in the output when Pandoc fails to produce a PDF. It is on a
+line that starts with `!`, such as:
+
+```         
+! Undefined control sequence.
+l.512 \llbracket
+          
+[1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./smith_j.aux))
+(see the transcript file for additional information)
+... 
+(more text)
+...
+```
+
+Or:
+
+```         
+! LaTeX Error: File `image.png' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.618 \includegraphics{image.png}
+                        
+[1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./test.aux))
+... 
+(more text)
+...
+```
+
+Note that you can get the log as a text file in two ways:
+
+-   Run the command to generate the pdf but add `2> out.log` at the end,
+    e.g. `make off1pdf 2> out.log`. This will save the log as out.log.
+
+-   Run the LaTeX engine on the LaTeX file itself. Make sure you've
+    generated a LaTeX file (`.tex)` and that you have a terminal localed
+    in that folder. Run:
+
+    `lualatex --interaction=nonstopmode smith_j-2020.tex 2> out.log`
+
+    adapting to your LaTeX file name. If you omit
+    `--interaction=nonstopmode` the engine will instead stop at any
+    error encountered and ask you what to do; you can enter "x" for
+    exiting. (You can also enter "i" for ignoring the error, but
+    typically that generates further errors down the line, and anyway
+    all LaTeX errors have to be fixed before final output.)
+
+-   If you run the LaTeX engine you'll get a few 'artefact' files:
+    `<article-name>.log` , `.synctex`, `.aux`. You can later erase them;
+    try the command `latexmk -C <article-name>` (assumes you have
+    `latexmk` in your LaTeX installation), otherwise erase them but
+    remember to keep your source file `.md` and any `.bib` files!
+
+The file `out.log` is a plain text file, you can open it for inspection
+in any simple editor and you can send it by email for help.
+
+Even if you don't know LaTeX, you can glean some pointers form the LaTeX
+error message.
+
+-   The line number (e.g. `l. 618`) is the line number *in the LaTeX
+    file*, not in your source markdown file. Generate the LaTeX output
+    (if it's not already done) and go to that line in it: you'll
+    probably be able to figure out which part of the article is
+    generating the error. Note however that it's not a sure shot: LaTeX
+    error at a line are sometimes due to issues much earlier in the
+    document.
+
+-   Error messages are often followed by a line split in two, as in:
+
+    ```         
+    ! Undefined control sequence.
+    l.618 $\binom{n}{k} = \fract
+                            {n!}{k!(n-k)!}$
+    ```
+
+    This means LaTeX crashed just before the split. Here the split
+    occurs between `\fract` and `{n!}`, so LaTeX crashed at `\fract`.
+    Often that is where the error is: the correct command for fractions
+    is `\frac` not `\fract`. Again, it's not a sure shot: LaTeX error at
+    a line are sometimes due to issues much earlier in the document.
+
+If that doesn't help solving the issue, you can still try the
+time-consuming method below. Otherwise get help from somebody who's more
+familiar with LaTeX or the journal's template coder. Tell them what
+article generated the error, and copy-paste or attach the error log (or
+at least the part where the error message is).
+
+A last resort. More time-consuming but guaranteed result. Isolate the
+error. Make a copy of your file and trim it down until you can generate
+a PDF, as follows:
+
+-   Disconnect the bibliography file. In the metadata block, put a `#`
+    in front of the bibliography line:
+
+    ```         
+    # bibliography = smith-paper-references.bib
+    ```
+
+    This deactivates the line. Try producing a PDF; if you don't get the
+    error, you know that the source is something in your bibliography
+    file. Otherwise continue.
+
+-   Isolate the error by halves. Remove the second half of the document.
+    Try producing a PDF. If you get an error, you know the problem is in
+    the first half; divide it in two, repeat. When you get to the point
+    where you don't get an error (at a given point), start re-adding
+    parts of the text one by one, until you identify what addition
+    generates the error.
+
+-   In that process you may get "warnings" you didn't get before, e.g.
+    because you've cut out the footnotes associated with a paragraph.
+    Don't worry about them, they'll disappear once the relevant bits are
+    re-added.
+
+## Errors in HTML generation {#sec-house-outputs-html-errors}
+
+Errors in HTML generation should arise from three possible sources only:
+
+-   wrong formatting of the metadata block in your article source file.
+    You will get a `YAML Parse error` or the like, possibly with a
+    number indicating the line where Pandoc *thinks* the error is.
+
+-   Error in the citation file. You will get a `Citeproc error` or the
+    like, with possibly a number indicating the line in the `.bib` file
+    where Pandoc *thinks* the error is.
+
+-   bug in *Dialectica*'s template. You get a `Error running Lua filter`
+    or the like. The error message may give you some clue as to which
+    filter is improved.
+
+    -   Email the template programmer. Include in your email: which
+        source file generates the error, a copy/paste of the error.
+
+    -   You can experiment to find more about the error. If it comes
+        from a particular filter and your article sets options for that
+        filter, you may try changing those options.
+
+update the filename in `master.md` or `master-win.md` with your markdown
+source file's name.
+
+-   If you get a pdf file with a cover but no title or article content,
+-   If it doesn't create an html, your pandoc is not updated. Ask us for
+    help if needed.
+-   If you get an error message about Stix TWO, you haven't installed
+    the font in your computer. See above.
+-   If you get an error message "Error: PDF output not produced", Pandoc
+    is probably able to generate html and LaTeX output (you can test
+    with the options above), but the conversion from LaTeX to PDF (done
+    by a LaTeX engine such as pdflatex, xelatex, lualatex) fails. In
+    those cases it's useful to use the `debug` option generated above.
+    You will get a `.log` file that gives you more detail about the
+    error. The file can be opened in RStudio and its structure is
+    explained a bit in the\
+    [Troubleshooting](#troubleshooting-outputs) section below.
+
+## A brief guide on Pandoc's PDF output logs
+
+When asking pandoc to produce a PDF you can produce an output log (see
+the sections on generating outputs to see how to do this with RStudio or
+the terminal).
+
+The file begins with `[INFO]` messages about Pandoc's source to LaTeX
+conversion. Typically this is just information about the \`filters' that
+Pandoc runs, e.g.:
+
+```         
+[INFO] Running filter ../../../resources/filters/abstract-to-meta.lua
+[INFO] Completed filter ../../../resources/filters/abstract-to-meta.lua in 70 ms
+```
+
+Then, `[makePDF]` messages about the commands Pandoc executes to launch
+a LaTeX engine that converts the LaTeX to PDF. The "Command line" one
+tells you which LaTeX engine is used, here `lualatex`:
+
+```         
+[makePDF] Command line:
+lualatex "-halt-on-error" "-interaction" "nonstopmode" "-output-directory" "<TEMPDIR>" "<TEMPDIR>/input.tex"
+```
+
+The "Source" message copies the *entire LaTeX file* that Pandoc sends to
+the LaTeX engine. It can be useful for a quick look, but it's more
+convenient to generate that LaTeX file separately (see how above). When
+you have LaTeX error messages that give a line number, that is the line
+number in the LaTeX file (hence it's easier to find those when you open
+the separate LaTeX file in a text editor with numbered lines.)
+
+```         
+[makePDF] Source:
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+... % more LaTeX code
+```
+
+The LaTeX source is usually very long (200-500 lines + at least the
+number of lines in your markdown source). To find the next section, you
+can search for `[makePDF] Run` in the file.
+
+The "Run" messages (`[makePDF] Run #1`, `[makePDF] Run #2`...) give the
+LaTeX engine's output messages. Generating PDFs from LaTeX typically
+requires several 'runs' of the LaTeX engine on the file: the first run
+generates various bits stored in an auxiliary file (e.g., which page a
+heading ends in, whether a citation is labelled Smith 2020 or Smith
+2020a, ...) and the second run uses them to finalize the PDF. Under each
+`[makePDF] Run #` you get the full *LaTeX Log* of the LaTeX engine. This
+is where you'll find information, warnings and errors concerning PDF
+generation. For instance:
+
+```         
+[makePDF] Run #1
+This is LuaHBTeX, Version 1.13.0 (TeX Live 2021) 
+ restricted system commands enabled.
+
+(/private/var/folders/j2/zp5ggjhx12xccgy5_wx32tfw0000gp/T/tex2pdf.-12ef5244637e
+dfd8/input.tex
+LaTeX2e <2020-10-01> patch level 4
+ L3 programming layer <2021-02-18>
+(/usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/scrbook.cls
+Document Class: scrbook 2021/03/17 v3.33 KOMA-Script document class (book)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/scrkbase.sty
+...
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+LaTeX Font Warning: Font shape `U/stmry/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 70.
+
+...
+...
+
+Underfull \hbox (badness 2469) in paragraph at lines 559--574
+[]\TU/STIXTwoText(0)/m/n/10 I will also adopt the or-tho-dox ap-proach to meta-
+ontology, \TU/STIXTwoText(0)/m/it/10 neo-
+
+Underfull \hbox (badness 1158) in paragraph at lines 559--574
+\TU/STIXTwoText(0)/m/it/10 Quineanism\TU/STIXTwoText(0)/m/n/10 . Ac-cord-ing to
+ neo-Quineanism, a the-ory’s on-to-log-i-cal
+[1]
+[2] [3] [4] [5] [6] [7]
+...
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+)
+(see the transcript file for additional information)
+ 780 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 18 glue, 4 kern, 1 glyph, 26 attribute, 72 glue_sp
+ec, 26 attribute_list, 1 write, 1 user_defined nodes
+   avail lists: 2:495,3:199,4:152,5:788,6:105,7:7249,8:76,9:429,10:25,11:651
+
+Output written on input.pdf (18 pages, 113569 bytes).
+Transcript written on input.log.
+```
+
+The above is a LaTeX log of a file that converts into PDF without error.
+The overal structure is:
+
+-   PDF engine: `This is LuaHBTeX, Version 1.13.0 (TeX Live 2021)`
+-   Document class: `Document Class: scrbook...`
+-   LaTeX packages used and their own messages: `(path/to/package.sty`.
+    Here the package `Ustmaryrd` (a font collection) issues a warning
+    that it's using a 5pt characters in the absence of 5.5pt characters.
+    `input line 70` refers to the line in the LaTeX file.
+-   pages generated: `[1] [2] [3] [4] ...` indicate that the
+    corresponding page is "shipped out" (generated and saved into the
+    PDF). This means we have no error or warning at pages 1 to 4, yay!
+-   Underfull and overfull `\hbox` warnings, e.g.
+    `Underfull \hbox (badness 2469)`. These indicate that LaTeX has
+    generated a less-than-ideal horizontal line: an horizontal line with
+    a bit too much, or not enough, text. Typically nothing to worry
+    about: the text is just slightly more or less spaced than usual.
+    However, very bad cases of overfull can be a table or long equation
+    or image or some unbreakable large item that sticks out of your text
+    block. The easiest is to check for them visually in the PDF output,
+    but if you are after perfection you can check all the ones mentioned
+    in the log. To know which pages they're on, look for `[n]` page
+    shipout indicators before and after the overfull message.
+-   If compilation runs without error, the end messages. These includes
+    the warning if a LaTeX rerun is needed
+    (`LaTeX Warning: Label(s) may   have changed. Rerun to get cross-references right.`),
+    which you don't need to worry about because Pandoc takes care of
+    this, and statistics about the output
+    (`Output written on input.pdf (18 pages, 113569 bytes).`)
+
+If the PDF building from LaTeX has failed, you will see LaTeX error
+messages. For instance:
+
+```         
+! Missing $ inserted.
+<inserted text> 
+                $
+l.6 
+    
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on dummy.log.
+```
+
+The error message starts with `!`, followed by a (more or less useful)
+description of the message, and an excerpt of the LaTeX code before and
+after the error occurred, and the line the engine was processing when
+the error occurred. Here the error was a missing `$`: in LaTeX `$` is
+used to surround mathematical formulas, and each 'opening' dollar sign
+must be matched with a 'closing' one. The error was produced as the
+engine was processing line 6.
+
+*Important*. The line *at which the error occurred* is not necessarily
+the line *where the mistake is*. For instance, with matching `$` the
+error is at the point where the engine realizes that the number of `$`
+isn't matched. But typically the *mistake* was earlier on, where a `$`
+sign should have been.
+
+To diagnose and solve LaTeX error you need knwoledge and experience of
+LaTeX, which is beyond the scope of this guide. It often helps to make
+an internet search on the error message text.
+
+## pandoc says "Error"unknown option "citeproc""
+
+Your need to update pandoc to a newer version. "Citeproc" (the pandoc
+extension that prints bibliographies, and replaces BibTeX/BibLaTeX) is
+only in versions \>2.11 (september 2020). How to update depends on how
+you've installed it: download from pandoc page, or do brew --upgrade (if
+you're using homebrew for MacOS), etc.
+
+## pandoc says `pandoc: FILENAME: OpenBinaryFile: file not found`
+
+`pandoc` doesn't find one of the files needed.
+
+The instructions above work only if:
+
+-   your execute the pandoc command while located in the folder that
+    contains your markdown file and its bibliography while. (Learn how
+    to navigate folders in the command line, and go where your markdown
+    file is.)
+
+-   that folder is located three folders down from the workhouse's base
+    folder (the folder where the `processing`, `resources` folders are
+    located). So your markdown file can be in:
+
+-   `processing/2020-01-special-issue/01-michels`
+
+-   `finished/2020-02-issue/01-elzein`
+
+-   ...
+
+The file `resources/defaults.yaml` contains our default settings for
+pandoc, and they *also* assume that your file is three folder down from
+the base. This is why we preface `resources/defaults` with `../../../`
+in our `pandoc` command (to indicate that the file is three folder up
+from where you are when you run `pandoc`).
+
+If you want to run `pandoc` with our settings on a file that's located
+elsewhere, you can use the full command. You can figure it out from
+`resource/defaults.yaml`. At present this would be:
+
+```         
+pandoc --standalone --pdf-engine=xelatex --citeproc --csl=PATH/TO/dialectica.csl  --template=PATH/TO/dltc-template.tex SOURCE.md -o OUTPUT.pdf
+```
+
+\noindent but the details might change as we update our defaults. You
+may add any additional option you wish. `PATH/TO/` should be replaced
+with the path from your folder to the templates. For instance, if the
+templates and style files are respectively in in:
+
+-   `journal-new/design/templates`
+-   `journal-new/biblio/`
+
+and your manuscript is in:
+
+-   `journal-new/articles/issue-01/`
+
+You could try:
+
+```         
+pandoc --standalone --pdf-engine=xelatex --citeproc --csl=../../biblio/biblio-style,csl  --template=../../design/templates/dltc-template.tex SOURCE.md -o OUTPUT.pdf
+```
+
+That is, `../../` going two folders up (hence at `journal/new`) and from
+there down `biblio` in one case and `design/templates` in the other.
+
+You can also create your own defaults file `mydefaults.yaml` in a text
+editor, with contents like:
+
+```         
+standalone: true
+pdf-engine: xelatex
+citeproc: true
+csl: ../../biblio/biblio-style,csl
+template: ./../design/templates/dltc-template.tex
+```
+
+Save it next to your manuscript and run `pandoc` with:
+
+```         
+pandoc -d mydefaults SOURCE.md -o OUTPUT.pdf
+```

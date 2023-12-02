@@ -1,0 +1,511 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 90
+---
+
+# Metadata
+
+Your markdown document should start with a 'metadata' block. This contains
+information about the document that isn't part of the body of the article,
+namely:
+
+-   Title
+
+-   Author
+
+-   Affiliation
+
+-   Acknowledgements
+
+-   Abstract
+
+-   Keywords
+
+It also contains information about the resources needed to generate the PDF
+file:
+
+-   Bibliography (name of the .bib file)
+
+-   Latex packages needed
+
+It's used for search engine indexing, generating PDF table of contents and the title and author page of the article.
+
+The metadata block is at the beginning of your markdown file, and it starts and
+ends with lines consisting of three hyphens `---`. Here is a template - you can
+add this at the beginning of the markdown file. In RStudio, the metadata block
+is displayed both in **Source** and **Visual** modes. 
+
+``` {.yaml}
+---
+title: The Solution to the Problem that has Plagued Many People in the Past
+shorttitle: The Solution to the Problem
+author: Max Mustermann
+affiliation: University of Wisemen
+---
+```
+
+-   The block consists of **fields** and their **value**. For example, one of
+    the fields is named `title` and its value is the title of the paper (say,
+    `The Greatest Paper this Year`). Another field is named `bibliography` and
+    its value is the name of the bibliography file, say `mybiblio.bib`.
+
+-   The field names are mostly self-explanatory: `title` is for the title, 
+    `thanks` for the acknowledgments, etc. If you use the template above, simply
+    remove any field that is not relevant to your article (e.g. keywords or
+    thanks). Only `header-includes` is not obvious: it is used when an article
+    relies on special LaTeX packages (or HTML scripts), otherwise it should be
+    omitted.
+
+-   These are written in the form `fieldname: value`, in one line. Note the
+    space after the colon. You can enclose the value in single (`'`) or double
+    (`"`) quotation marks.
+
++-------------------------------------+----------------------------------------+
+| BAD                                 | GOOD                                   |
++=====================================+========================================+
+| `title:An interesting fact`         | `title: An interesting fact`           |
+|                                     |                                        |
+| `title:'An interesting fact'`       | `title: 'An interesting fact'`         |
+|                                     |                                        |
+| `title:"An interesting fact"`       | `title: "An interesting fact"`         |
++-------------------------------------+----------------------------------------+
+
+-   In case the value of a field occupies more than one line, you indicate this
+    with the `|` character, and enter it as follows. Each of these new lines
+    must be indented. In this form, you do not enclose the value in quotation
+    marks (if you do, they will be printed too).
+
++-------------------------------------+----------------------------------------+
+| BAD                                 | GOOD                                   |
++=====================================+========================================+
+| ``` {.yaml}                         | ``` {.yaml}                            |
+| title: A longish                    | title: A longish phrase                |
+|     phrase                          |                                        |
+| ```                                 | title: |                               |
+|                                     |   A longish                            |
+|                                     |     phrase                             |
+|                                     | ```                                    |
++-------------------------------------+----------------------------------------+
+
+*Tip*. On RStudio, the **Source** mode is preferred to edit the metadata block,
+because it displays line numbers. This makes it easy to edit multi-line fields
+and indent them properly. 
+
+*Tip*. On most editors (e.g. RStudio), you can indent several lines at a time:
+select the lines you want to indent and press Tab. (You can also de-indent by
+selecting them and pressing Shift+Tab.)
+
+## Title, subtitle, short title
+
+In most cases the title can be inserted in one line, as it is:
+
++----------------------------------------------+-------------------------------+
+| Markdown                                     | Printed title                 |
++==============================================+===============================+
+| ```yaml                                      |                               |
+| title: An Interesting Story                  | An Interesting Fact           |
+| ```                                          |                               |
++----------------------------------------------+-------------------------------+
+
+A title may include some markdown code, e.g. for italics:
+
++----------------------------------------------+-------------------------------+
+| Markdown                                     | Printed title                 |
++==============================================+===============================+
+| ```yaml                                      |                               |
+| title: A Study of the Word *delicious*.      | An Interesting Fact           |
+| ```                                          |                               |
++----------------------------------------------+-------------------------------+
+
+In some cases the title **must** be surrounded by quotation marks. Namely:
+
+* if the title itself contains a colon followed by a space, as in 
+  `Formalization: a dummy's guide`) 
+* or if it contains quotation marks, as in 
+  `The Meaning of 'meaning'`. If it contains single quotation marks `'`, 
+  you should enclose it with double ones `"` and conversely. 
+
++-------------------------------------+----------------------------------------+
+| BAD                                 | GOOD                                   |
++=====================================+========================================+
+| `title: A "good" friend`            | `title: 'A "good" friend'`             |
+|                                     |                                        |
+| `title: A 'good' friend`            | `title: "A 'good' friend"`             |
+|                                     |                                        |
+| `title: My Life: a Long Story`      | `title: "My Life: A Long Story"`       |
++-------------------------------------+----------------------------------------+
+
+A long title can also be entered on several lines. (EXPAND)
+
+A **common source of error**: you break a line in a middle of a field's value
+and continue on the next line. Then `pandoc` interprets the next line not as
+part of the value, as you intended, but as a new field altogether, and can't
+make sense of the rest of your block. For instance, the following will generate
+an error:
+
+``` {.yaml}
+title: 'Introduction: The Formalization of
+arguments with various applications'
+author: Robert Michels
+```
+
+Why? Because the second line starts with 'arguments', which `pandoc` takes to be
+the name of a metadata field, which it doesn't understand and complains about.
+Instead, there should be no manual line-break within the title:
+
+``` {.yaml}
+title: 'Introduction: The Formalization of arguments with various applications'
+author: Robert Michels
+```
+
+**Genuine vs apparent linebreak**. Your text editor is likely set up to "soft
+wrap" long lines. This means that a very long line is *in apparence* broken and
+displayed as several lines. In the file though, and most importantly in the eyes
+of the computer, it remains a single line.[^copyediting-1] When a text editor
+displays line numbers, you can tell that a line is soft-wrapped by the fact that
+doesn't introduce a new line number. Another way to tell that your editor is
+soft-wrapping is to resize the windows: if the linebreaks are rearranged so that
+your text is showing, your editor is soft-wrapping and hence what looks like a
+new line could just be the continuation of a previous line.
+
+[^copyediting-1]: Technically: a text file is just a sequence of characters
+    (letters, numbers, spaces, etc.). But among those is the special "newline"
+    character that ends a line. It's sometimes displayed as a backwards P, or a
+    carriage return arrow. *Real* lines are sequences of characters between
+    newlines characters. *Hard* wrapping is cutting a line by adding a newline
+    character. By contrast, soft-wrapping doesn't add a newline character in the
+    file, doesn't create a *real* new line, and is just a matter of appearance.
+
+(To check that this happens, reduce the size of your windows: are the line
+breaks changed to fit the new window? if yes, then your display is
+"soft-wrapped".) If your editor as line numbers on the left (e.g. RStudio,
+sublime), you can tell which are the genuine
+
+If you aren't sure whether there's a line-break in the middle of your title
+(between `various` and `applications` in the title above, say), you can:
+
+-   widen your editor's window and see whether the text moves back up to the
+    original line,
+-   or otherwise go to the beginning of the second line, hit backspace to 'glue'
+    the two words (`variousapplications`), and hit the space key to make sure
+    that they're separated by a space and not a line-break.
+
+## Additional title fields
+
+### Short title
+
+If the title is too long to fit in the header, you can specify a short title in
+addition:
+
+``` {.yaml}
+title: An extremely long-winded and verbose title about a range of topics including but not restricted to the weather
+shorttitle: A long-winded title about the weather
+```
+
+This will be used in the table of contents too. 
+
+### Linebreaks in a title
+
+**Requires: dialectica templates**. 
+
+In LaTeX/PDF output it is sometimes useful to manually specify
+a line break within the title. There are two fields to provide
+this, `title-latex` and `title-cover`:
+
+```yaml
+title: A Very Long Title that Can be Broken in Various Places
+title-latex: |
+  A Very Long Title that \
+  Can be Broken in Various Places
+title-cover: |
+  A Very Long Title that Can be\
+  Broken in Various Places
+```
+In a metadata field, the `\` at then end of a line specifies a 
+linebreak. *Warning*: it must be immediately followed by an end of
+line (no spaces!).
+
+* `title-latex` controls the title on the first page ("chapter" title).
+  It also sets the offprint cover page unless `title-cover` is also
+  supplied.
+* `title-cover` controls the title on the offprint's cover page. If you
+  want `title-latex` to modify the first page's title only, simply 
+  insert `title-cover` with the same content as `title`. 
+* The `title` field must be provided, even if `title-cover` and/or        `title-latex` are given
+
+By default titles on the offprint's cover are of LaTeX size 
+`\Huge` if they are less than 31 characters long, otherwise the 
+slightly smaller size `\huge`. You can specify a custom LaTeX size
+if needed (`\Huge`, `\huge`, `\LARGE`, `\Large`, `\large` etc.) 
+with the `title-cover-size` field. This only affects LaTeX/PDF output.
+
+```yaml
+title-cover-size: \huge
+```
+
+### Subtitle
+
+You can provide a subtitle with the `subtitle` key:
+
+```yaml
+title: Frankenstein
+subtitle: The Modern Prometheus
+```
+
+**Requires: dialetica templates**. Dialectica's template
+typeset the subtitle thus:
+
+1. On the paper's title page, it is printed below the title,
+  in smaller font.
+2. In the table of contents, it is printed after a colon:
+
+  > Frankenstein: The Modern Promoetheus
+
+You can override the colon by specifying a subtitle separator,
+e.g. a simple space:
+
+```yaml
+title: So What?
+subtitle: My Quest for the Meaning of Life
+subtitleseparator: ' '
+```
+
+As with `title`, you can use the additional `subtitle-latex`,
+`subtitle-cover`, `subtitle-cover-size` to add linebreaks
+in the first page and cover subtitles and to control the 
+size of the cover subtitle if needed.  
+You *must* still provide the `subtitle` key. 
+
+```yaml
+title: So What?
+subtitle: My Quest for the Meaning of Life
+subtitle-separator: ' '
+subtitle-latex: |
+  My Quest\
+  for the Meaning of Life
+subtitle-cover: |
+  My Quest\
+  for the Meaning of Life
+subtitle-cover-size: \Large
+```
+
+## Author(s) information
+
+*Requires*. The `scholarly-metadata` and `scholarly-format` filters.
+
+We specify author information as follows.
+
+```yaml
+author:
+- name: Susan Stebbing
+  email: s.stebbing@kcl.ac.uk
+  correspondence: true
+  institute: "King's College London"
+```
+
+Note that there is a dash (`-`) before the first line (`name` field), and that 
+all the other lines begin with a couple of spaces. `correspondence: true` is 
+needed to indicate that the email address should be printed. Here we have put
+the affiliation in `"` quotes because it contains a special symbol (the `'` quote
+sign). 
+
+When we have several authors, each gets a block that starts with a dash:
+
+```yaml
+author:
+- name: Susan Stebbing
+  email: s.stebbing@kcl.ac.uk
+  correspondence: true
+  institute: "King's College London"
+- name: Cecil Day-Lewis
+  institute: Cambridge University
+```
+
+You can specify several affiliations for an author:
+
+```yaml
+author:
+- name: Susan Stebbing
+  email: s.stebbing@kcl.ac.uk
+  correspondence: true
+  institute: 
+  - "King's College London"
+  - Bedford College, London
+```
+
+You can also specify a list of affiliations separately, and associate each 
+author to their affiliations. This is most useful
+when several authors share the same affiliation:
+
+```yaml
+institute:
+- kcl: "King's College London"
+- bedford: Bedford College, London
+author:
+- name: Susan Stebbing
+  institute: [kcl, beford]
+- name: "Jane Q. Doe"
+  institute: bedford
+```
+
+Here `kcl`, `bedford` are used as internal keys to associate each author with their
+affiliations - they won't be printed. Note that if an author has several
+affiliations, they should be listed in brackets, separated by commas: `[kcl, bedford]`.
+Where there is only one the brackets are optional: for Jane Q. Doe above we 
+could have written `institute: [bedford]` as well. 
+
+You can do without keys too, by listing
+the affiliations in some order and using numbers to refer to them. The metadata
+below is equivalent to the above: 
+
+```yaml
+institute:
+- "King's College London"
+- Bedford College, London
+author:
+- name: Susan Stebbing
+  institute: [1, 2]
+- name: Jane Doe
+  institute: [2]
+```
+
+See the [scholarly-metadata](https://github.com/pandoc/lua-filters/tree/master/scholarly-metadata) filter page for more options and information.
+
+## Author in page header and table of contents
+
+*Requires*. The dialectica template.
+
+You may sometimes need to typset the authors differently in
+the page header and table of contents. This is done using
+the `author-header` and `author-toc` keys:
+
+```yaml
+author:
+- name: Doe, Alice
+- name: Doe, Brit
+- name: Doe, Celia
+- name: Doe, Denis
+- name: Doe, Ethne
+author-header: Doe et al.
+author-toc: Doe A., Doe B., Doe C., Doe D., and Doe E.
+```
+
+## Abstract and thanks
+
+``` yaml
+thanks: |
+  The author would like to thank Jane Doe and Erika Mustermann
+  as well as audiences at the Universities of Shallow Objections.
+abstract: |
+  In this paper I explain that the *problem* is more difficult to
+  solve that the equation $4x^2 = 8$ and more complicated than the
+  formula $(P \land \lnot P) \rightarrow Q$. Thankfully, I have
+  found the solution.
+keywords:
+-   problem
+-   solution
+-   symbols
+bibliography: references.bib
+header-includes: |
+  '''{=latex}
+  \\usepackage{bussproofs}
+  '''
+```
+Fields like **abstract** and **thanks** usually spread over several lines. If
+so, the field starts with a "I" and the content is written below. Each line
+should start with a space (so that the computer knows it's still the abstract,
+and not a new metadata field). For instance, this would break down:
+
+```yaml
+abstract: |
+  The purpose of this introduction is to give a rough overview of the 
+discussion of the formalization of arguments, focusing on deductive
+arguments.
+```
+
+Because "discussion" is at the beginning of a line, so Pandoc assumes it's a new field rather than the continuation of the multiline text.
+
+Instead you should have a space at the beginning of every line:
+
+```yaml
+abstract: |
+  The purpose of this introduction is to give a rough overview of the
+  discussion of the formalization of arguments, focusing on deductive
+  arguments.
+```
+
+__Warning__. Abstract and acknowledgments cannot contain markdown citations like `@Smith`. Write them in plain text instead, `Smith (1980)`.
+
+
+::: house
+**Dialectica guidelines**.
+
+Abstracts are strongly recommended. Most people who bump on the article 
+will only read that. They must be at most 200 words or so, to fit in
+the first article page.
+
+:::
+
+## Keywords (and other lists)
+
+In some cases the content is a list, and in those case the syntax is as with a
+list of authors:
+
+```yaml
+keywords:
+- speculative metaphysics
+- nonsense
+```
+
+## Bibliography
+
+The name of the associated .bib file.
+
+__Important__. The bibliography field cannot be empty. This:
+
+```markdown
+title: My paper
+author: Jane E. Doe
+bibliography:
+```
+
+Will generate a Pandoc error `File  not found in resource path`.
+
+## And more generally...
+
+More generally format is simple, each entry is of the form:
+
+field : content
+
+List entries are:
+
+field :
+
+```yaml
+- item 1
+- item 2
+```
+
+List within lists are sometimes used
+
+field :
+
+```yaml
+- first list
+  - item 1
+  - item 2
+- another list
+  - object 1
+  - object 2
+```
+
+Multiline fields start with `|`, followed by one or more lines that each start
+at least one space:
+
+```yaml
+field : |
+  This very verbose field contains a bunch of text that 
+  spans over a few lines
+  to allow the author to vent a few grudges.
+```

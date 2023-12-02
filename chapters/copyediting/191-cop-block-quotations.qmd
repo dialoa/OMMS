@@ -1,0 +1,240 @@
+---
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Quotations {#sec-quotations}
+
+Quotations should only be used for quoted material: text coming from
+another source. For other indented block of materials, cf
+[Statements]{#cop-block-statements}.
+
+## Inline vs block quotations
+
+Some quotations are inline and other are blocks.
+
+::: house
+**Dialectica guidelines**. Short quotations (up to about 2 lines) are
+inline, unless authors specifically want to set them out. Longer
+quotations (from about 3 lines) are normally block. But they can be
+inline, especially if they're basically used as a substitute for the
+authors' own words rather than something to be examined or discussed.
+:::
+
+## Inline quotations
+
+Inline quotations are encoded with quotation marks `'` or `"`. Don't use
+special opening and closing quotation mark characters:
+
+::: house
+For inline quotations use double quotation marks:
+
+| GOOD                              | output                          |
+|-----------------------------------|---------------------------------|
+| `This "best practice" is a hack.` | This "best practice" is a hack. |
+| `This 'best practice' is a hack.` | This 'best practice' is a hack. |
+:::
+
+As you can see, Pandoc automatically converts straight marks into
+opening or closing ones as needed.
+
+There are two traditions:
+
+-   US/modern British. Double quotation marks. Closing quotation mark
+    placed after punctuation marks, even if those aren't in the quote:
+
+    > She never said the word "traitor."
+
+-   traditional British. Single quotation marks. Closing quotation mark
+    before punctuation marks unless these are parts of the quote:
+
+    > She never said the word 'traitor'&zmj;.
+
+Pandoc applies the US convention by default. This can be avoided
+globally by setting the document's language to `en-GB`. It can be
+avoided on a case-by-case basis by using a "zero-width joiner"
+characters, markdown code `&zmj;`:
+
+``` markdown
+She never said the word 'traitor'&zmj;.
+```
+
+> She never said the word 'traitor'&zmj;.
+
+::: house
+**Dialectica guidelines**
+
+*Dialectica* adopts the US/Chicago convention, unless authors insist
+otherwise or the results are particularly problematic. If an author
+insists to use the traditional British convention, it should be
+consistent throughout their paper.
+:::
+
+### Quoting words
+
+When a word or expression is used not with its usual meaning but to
+denote that word or expression itself, we use quotation marks or
+italics.
+
+> I can't stand the word "scrumptious".
+
+> I can't stand the word *scrumptious*.
+
+Don't use italics if the word is scare-quoted, put a distance, quoted
+from some other person's use, etc. Italics are only appropriate if we're
+talking of the word or expression italicized.
+
+::: house
+**Dialectica guidelines**. If references to a word or words are common
+throughout the paper, as in e.g. linguistics papers, use italics.
+Otherwise both options are fine, but be consistent throughout a single
+paper.
+:::
+
+### Quotations within quotations
+
+If you must use quotation marks within quotation marks, use different
+ones:
+
+| GOOD                       | output                   |
+|----------------------------|--------------------------|
+| `"This 'word' is quoted."` | "This 'word' is quoted." |
+| `'This "word" is quoted.'` | 'This "word" is quoted.' |
+
+If you try to put double quotes with double quotes, Pandoc doesn't
+output them correctly.
+
+| BAD                        | output                  |
+|----------------------------|-------------------------|
+| `"This "word" is quoted."` | "This"word" is quoted." |
+
+It is best to impose the rule unless it is imperative to use the same
+quotes.
+
+If you do need to embed the same quotation marks within themselves, use
+HTML entitles:
+
+| GOOD                                  | output                  |
+|---------------------------------------|-------------------------|
+| `"This &ldquo;word&rdquo; is quoted"` | "This "word" is quoted" |
+| `'This &lsquo;word&rsquo; is quoted'` | 'This 'word' is quoted' |
+
+## Block quotations
+
+Quotations are marked by either starting a paragraph with `>` and
+indenting it, or by starting each line of the paragraph with `>`, or
+simply having the first line starting with `>`
+
+> This is a quotation. The second sentence is on an indented line.
+
+> This is another quotation. The second sentence is on a line starting
+> with `>`.
+
+> This is quotation in the lazy style. The second line isn't even
+> indented or starting with `>`.
+
+``` markdown
+> This is a quotation.
+  The second sentence is on an indented line.
+  
+> This is another quotation.
+> The second sentence is on a line starting with `>`.
+
+> This is quotation in the lazy style.
+The second line isn't even indented or starting with `>`.
+```
+
+For readability avoid the lazy style.
+
+The quotation citation can be included at the end or in foonote:
+
+> I am happy. [@doe_j:2020]
+
+> I am sad.[^191-cop-block-quotations-1]
+
+[^191-cop-block-quotations-1]: @doe_j:2020
+
+``` markdown
+> I am happy. [@doe_j:2020]
+
+> I am sad.^[@doe_j:2020]
+```
+
+You should distinguish *several consecutive quotations* from *a single
+quotation with several paragraphs*. One way to do this is as follows:
+
+> This is a first quotation.
+
+> This is a second quotation.
+>
+> This is not a third quotation, but a further paragraph 
+> of the second quotation.
+>
+> ```bash
+> @echo "this code block is a further block in the second quotation"
+> ```
+
+``` markdown
+> This is a first quotation.
+
+> This is a second quotation.
+>
+> This is not a third quotation, but a further paragraph 
+> of the second quotation.
+>
+> ```bash
+> @echo "this code block is a further block in the second quotation"
+> ```
+```
+
+That is, we start all lines of the long quotation with `>`, *including
+the blank lines that separate its paragaphs or blocks*. By contrast, we
+leave an empty line between two distinct quotations.
+
+An alternative is instead to only have `>` at the beginning of a long
+quotation and indicate with subsequent paragraphs with an indent:
+
+> This is a first quotation.
+
+This is still part of the first quotation.
+
+> This is a second quotation.
+
+``` markdown
+> This is a first quotation.
+
+  This is still part of the first quotation.
+  
+> This is a second quotation.
+```
+
+You can have quotations within quotations.
+
+> As someone said once:
+>
+> > The life unexamined isn't worth living.
+
+``` markdown
+> As someone said once:
+> 
+> > The life unexamined 
+> > isn't worth living.
+```
+
+::: house
+**Dialectica guidelines**
+
+If the quote is longer than 4 lines, use block quotation.
+
+-   no double marks
+-   period goes before reference
+
+``` markdown
+> [block quotation]. [@doe_j:2020, 20]
+```
+
+Result:
+
+> \[block quotation\]. [@doe_j:2020, 20]
+:::

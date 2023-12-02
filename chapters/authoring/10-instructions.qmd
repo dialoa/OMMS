@@ -1,0 +1,58 @@
+# Instructions for authors
+
+Authors can prepare manuscripts in markdown, docx, LaTeX, html formats. Below
+are some recommendations for authoring manuscripts in formats other than
+markdown. For markdown format, they can use the copyeditor recommendations
+of this guide.
+
+## Generic
+
+Provide an informative abstract, 50 to 200 words. 
+
+Formulate it carefully: it is indexed in databases and search engines,
+and plays in crucial role in the long-term visibility of your article. 
+
+## MS Word
+
+Authors should use Word's styles:
+
+- Heading 1, Heading 2 etc for headings
+- Title for the title
+- Block citations
+- (optional) Author for author (requires creating a style called "Author)
+
+Formulas should be entered in Word's equation mode. This helps our document converter to turn them into reusable LaTeX formulas. 
+
+References should be provided in a separate BibTeX (`.bib`) 
+or CSL-Json file (e.g. using Zotero).
+
+{{< requires sections-to-meta >}} Abstract and 
+acknowledgements should be provided below "Abstract"
+and "Acknowledgements" headings at the beginning of the paper.
+If the paper itself doesn't start with a heading, separate
+those from the main text by a horizontal line (three dashes
+and return).
+
+
+
+If the document contains complex mathematical symbols or formulas, make
+sure that these are put in "equation mode". This ensures that pandoc converts
+them to LaTeX code and spares you the need to re-encode them.
+
+There are various ways in which authors can make the editing process easier and quicker:
+
+-   Checking their bibliography for mistakes
+-   Sending their bibliography as a .bib file, which can easily be created if they use software such as Zotero.
+-   (If they use Word) Preparing their Word document: writing their formulas in "equation mode", using the definite styles for article title, abstract, author name, section titles, block citations.
+-   Remind them of the importance of a good title and abstract.
+
+## LaTeX
+
+Authors should provide a LaTeX source file, with references in a a separate 
+BibTeX file and any included file (images, preamble) or package not 
+available in standard distributions.
+
+
+
+TikZ figures and other advanced packages (ie those that aren't handled
+by MathJax) should be compilable as standalone documents.

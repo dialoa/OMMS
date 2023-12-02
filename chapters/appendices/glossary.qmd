@@ -1,0 +1,63 @@
+# Glossary
+
+Block
+
+:   A block element of a document, such as a paragraph. Blocks include
+    paragraphs, headings, block quotes, lists, code blocks.
+
+    Block elements are distinguished from *inline* elements (arranged
+    horizontally in lines within a block, like words) and *float*
+    elements (that don't have a fixed position in the text flow, like
+    figures and tables).
+
+    Some elements have both block and inline versions (images,
+    formulas). Some have both block and float versions (images, tables).
+
+    Some blocks may contain other blocks: block quotes can consist of
+    several paragraphs.
+
+    Divs are arbitrary 'container' blocks. They are used to group blocks
+    into units to which special typesetting rules can be applied.
+
+Div
+
+:   An arbitrary container blocks. Divs can have a unique identifier,
+    classes and attributes. Classes are types of Divs, attributes are
+    features that can take various values.
+
+    Divs are used to group blocks into a unit to which special
+    typesetting rules can be applied. How Divs are typeset is determined
+    by your house template and the extensions it uses.
+
+    For instance, this bit of markdown places a paragraph in a Div
+    uniquely identified as `firstpostulate`, of type (class)
+    `statement`, with a `style` attribute of value `theorem`:
+
+    ``` markdown
+    ::: {#firstpostulate .statement style="theorem"}
+
+    A line can be drawn from a point to any other point.
+
+    :::
+    ```
+
+Inline
+
+:   An inline element, such as a word. Inlines include words, emphasized
+    text, citations, inline formulas, inline code.
+
+    Inlines elements are distinguished from *block* elements (arranged
+    vertically one after another, like paragraphs) and *float* elements
+    (that don't have a fixed position in the text flow, like figures and
+    tables).
+
+    Some elements have both inline and block versions (e.g. formulas,
+    images, quotations, code).
+
+    Spans are arbitrary 'container' inlines. They are used to group
+    inlines into units to which special typesetting rules can be
+    applied.
+    
+Terminal
+
+: A tool to interact with your computer via text commands. Also called "command line interface", "shell". 

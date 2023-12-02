@@ -1,0 +1,428 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 90
+---
+
+# Lists
+
+Lists are a special kind of block elements. We have three types of lists:
+
+1. Simple lists: bullet point lists and numbered lists.
+2. Numbered examples lists: these are lists whose items are scattered throughout the papers, but numbered continuously.
+3. custom labelled lists: like simple lists but with arbitrary
+  (or no) labels instead of bullets or numbers. 
+  
+Custom labelled lists are sometimes used to typset things that 
+aren't really lists: arguments with labelled premises, statements
+within footnotes. 
+
+Custom-labelled lists must also be used if you need to
+crossreference specific items within a list. 
+
+## Simple lists
+
+Simple unnumbered lists
+
+``` {.markdown}
+* an item
+  * a sub-item
+  * another sub-item
+* an item
+```
+
+Result:
+
+-   an item
+
+    -   a sub-item
+    -   another sub-item
+
+-   an item
+
+You can use `-` as well as `*`, and you can mix markers.
+
+Numbered lists:
+
+``` {.markdown}
+1. item
+2. item
+  a. sub item
+  b. sub item
+3. another item
+```
+
+Result
+
+1.  item
+2.  item
+
+```{=html}
+<!-- -->
+```
+a.  sub item
+b.  sub item
+
+```{=html}
+<!-- -->
+```
+3.  another item
+
+Note that markdown ignores the particular number and number format you enter.
+
+``` {.markdown}
+a. apples
+b. peaches
+
+2. pears
+4. bananas
+7. cherries
+```
+
+Result
+
+a.  apples
+b.  peaches
+
+```{=html}
+<!-- -->
+```
+2.  pears
+3.  bananas
+4.  cherries
+
+You can put blocks (paragraphs, quotations, etc.) as list items. To do so, align
+the following blocks with a couple of spaces:
+
+``` {.markdown}
+1. This list item has not just one paragraph.
+
+  It has two paragraphs.
+  
+2. > This section list item
+  > contains a quotation.
+  
+  > And the quotation is two 
+  > paragraphs.
+```
+
+Result
+
+1.  This list item has not just one paragraph.
+
+It has two paragraphs.
+
+2.  
+
+    > This section list item contains a quotation.
+
+> And the quotation is two paragraphs.
+
+## What to do if a list has non-standard labels?
+
+Problem: a text has a list with regularly numbered items (1, 2, 3, or a, b, c,
+...) but uses \* or \' labels in some cases.
+
+There are two solutions to this:
+
+* If it's not too important to single out some items with \* or \', 
+  then you can re-number the author's list, using a simple
+  numbered list instead.
+* If it is important to preserve the author's labels, e.g. if it 
+  helps comprehension to see item '2**' as a revision of item '2',
+  then use custom labelled lists.
+
+## Numbered examples lists
+
+Some papers have examples (or other items) that are scattered throughout the
+paper but numbered continuously. For example:
+
+> Sentence (1) below illustrates the Liar paradox:
+>
+> > (1) Sentence (1) is false.
+>
+> Not all self-referential sentences are paradoxical, however:
+>
+> > (2) This sentence contains several words.
+> > (3) Sentence (3) is written in English.
+
+You enter those as follows using `(@)`{.markdown} or `(@identifier)`{.markdown}:
+
+``` {.markdown}
+Sentence @liar below illustrates the Liar paradox: 
+
+(@liar) Sentence (@liar) is false.
+
+Not all self-referential sentences are paradoxical, however:
+
+(@) This sentence contains several words.
+
+(@three) Sentence @three contains several words.
+```
+
+`(@)`{.markdown} is enough to create a numbered example item. You add an
+identifier as in `(@item3)`{.markdown} if you need to refer to it later.
+To refer to it, simply use `@identifier`, as above, which you can wrap between
+parentheses if desired.
+
+*Warning*. References to numbered examples do not generate hyperlinks
+and cannot be placed within links. 
+
+*Problem*. If a paragraph starts by a reference to a number example that you
+want to wrap between parentheses, markdown will wrongly think that it's a new
+numbered example:
+
+```
+The sentence below illustrates the Liar paradox: 
+
+(@liar) Sentence (@liar) is false.
+
+(@liar) cannot be true, because...
+```
+
+*Solution*. "Escape" (i.e., put a backslash in front of) the first parenthesis
+
+```
+The sentence below illustrates the Liar paradox: 
+
+(@liar) Sentence (@liar) is false.
+
+\(@liar) cannot be true, because...
+```
+
+## Custom labelled lists {#sec-custom-labelled-lists}
+
+**Requires: the labelled-lists filter**. 
+
+A simple illustration of the custom label syntax:
+
+```markdown
+* [Premise 1]{} This is the first claim.
+* [Premise 2]{} This is the second claim.
+* [Conclusion]{} This is the conclusion.
+```
+
+This generates the following list (process this file with the filter
+to see the result):
+
+* [Premise 1]{} This is the first claim.
+* [Premise 2]{} This is the second claim.
+* [Conclusion]{} This is the conclusion.
+
+In general, the filter will turn a bullet list into a custom label
+list provided that *every item starts with a Span
+element*.
+
+* A Span element is inline text (i.e., not block like a paragraph)
+  that optinally has some attributes. The default syntax is `
+  [inline text]{attributes}`. Inline text will be used as label, 
+  placed within round bracket. 
+* There is no need to specify attributes on the Span. But curly
+  brackets must be present: `[label]` won't work, `[label]{}` will.
+* The label can include formatting. `[**T1**]{}` will generate a label     with
+  strong emphasis (bold by default).
+* Span elements can also be entered using HTML syntax: `<span>inline     text
+  </span>`. See [Pandoc manual]
+  (https://pandoc.org/MANUAL.html#divs-and-spans) for details. 
+
+If an article has many custom labelled lists with empty
+labels (see [Arguments]), you may set the delimiters to be
+empty rather than parentheses by default. See the
+`labelled-lists.lua` filter manual.
+  
+### Commonly used custom labels
+
+See also [the section on symbols](#cop-inlines-elements-symbols).
+
++---------------------------------------+---------------------------------------+
+| I want                                | I type                                |
++=======================================+=======================================+
+| A*, A**, ...                          | `A*`, `A**`, ...                      |
++---------------------------------------+---------------------------------------+
+| A&prime;, A&Prime;,                   | `A&prime;`, `A&Prime;`,               |
+| A&tprime;, A&qprime;                  | `A&tprime;`, `A&qprime;`              |
++---------------------------------------+---------------------------------------+
+| A^1^, A^2^, ...                       | `A^1^`, `A^2^`, ...                   |
++---------------------------------------+---------------------------------------+
+| A~1~, A~2~, ...                       | `A~1~`, `A~2~`, ...                   |
++---------------------------------------+---------------------------------------+
+
+### Cross-referencing custom-label items
+
+Custom labels can be given internal identifiers. The syntax is 
+`[label]{#identifier}`. In the list below, `A1ref`, `A2ref` and
+`Cref` identify the item:
+
+```markdown
+* [**A1**]{#A1ref} This is the first claim.
+* [A2]{#A2ref} This is the second claim.
+* [*C*]{#Cref} This is the conclusion.
+```
+
+Note that `#` is not part of the identifier. Identifiers should start 
+with a letter and contain only letters, digits, colons `:`, dots `.`,
+dashes `-` and underscores `_`. 
+
+Labels with identifiers can be crossreferenced using 
+Pandoc's citations or internal links.
+
+### Cross-referencing with citations
+
+The basic syntax is:
+
+* Reference in text: `@A1ref`. Outputs the label with its formatting: **A1**.
+* Normal reference: `[@A1ref]`. Outputs the label with its formatting, 
+  in parentheses: (**A1**). A prefix and suffix can be specified too:
+  `[remember @A1ref and the like]` will output (remember **A1** and the like).
+* The suppressed author style, `[-@A1ref]`, will be processed 
+  as normal reference
+
+You can crossrefer to several custom labels at a time: 
+`[@A1ref; @A2ref]`. But mixing references to a custom label
+with bibliographic ones in a same citation won't work: if
+`Smith2003` is a key in your bibliography `[@A1ref; Smith2003]`
+will only output "(@A1ref; Smith, 2003)".
+
+Because this syntax overlaps with Pandoc's citation syntax, conflicts
+should be avoided:
+
+* Avoid giving the same identifier (e.g. `Smith2005`) to 
+  a custom label item and a bibliographic entry. If that happens,
+  the citation will be interpreted as crossreference to the custom
+  label item. To make sure you you may use identifiers starting 
+  with `item:`: `item:A1ref`, `item:A2ref`, or some other prefix.
+* The filter should preferably be run before `citeproc`, and 
+  before other filters that use citations (like `pandoc-crossref`). 
+  It may work properly even if it is run after, though `citeproc` 
+  will issue "citations not found" warnings. To ensure that
+  the filter is run before, just place it before in the 
+  command line or in your YAML options file's `filters` field.
+
+Alternatively, the citation syntax for crossreferencing 
+custom label items can be deactivated. 
+See [Customization] below. 
+
+### Cross-referencing with internal links
+
+In Pandoc markdown internal links are created with the syntax `[link 
+text](#target_identifier)`. (Note the rounded brackets instead of
+curly ones for Span element identifiers.) You can use internal
+links to cross-refer to custom label items that have a identifier.
+If your link has no text, the label with its formatting will be
+printed out; otherwise whichever text you give for the link. 
+For instance, given the custom labelled list above, the following:
+
+```markdown
+The claim [](#A1ref) together with [the next claim](#A2ref) 
+entail ([](#Cref)).
+```
+
+will output:
+
+> The claim [**A1**]() together with [the next claim]() entail ([*C*]()).
+
+where the links point to the corresponding items in the list. 
+
+### Custom labelled lists within a numbered example list {#cll-in-nel}
+
+Requires: `labelled-lists.lua`, `statement.lua`.
+
+In some cases we wanted to put a custom labelled list
+within a numbered example list. This is particularly
+difficult when we don't want any content in the numbered
+example item other than the embedded list itself.
+
+Solution: place the embedded list within a statement. Note
+that the embedded content *must* be indented *exactly* 
+twice (4 spaces). This works:
+
+``` markdown
+(@example-Batu) 
+
+    ::: statement
+
+    * []{delimiter=none} Every head of a horse is a head 
+     of an animal.
+    * [&there4;]{} Batu is a head of an animal.
+  
+    ::::
+
+```
+
+You should reduce the right margin for the LaTeX output. (LaTeX
+experts: the statement is placed in a minipage whose with is 
+that of the text minus the default list label width; this is 
+typically too large for an embedded list.)
+
+``` markdown
+(@Allskunksaremammals) 
+
+    ::: statement
+
+    * []{} All skunks are mammals. `\addtolength{\rightskip}{1em} % fix needed`{=latex}
+
+    * [&there4;]{} All who fear all who respect all skunks fear all who respect all mammals.
+    :::
+```
+
+## Arguments {#sec-arguments}
+
+*Requires*: the `labelled-lists.lua` filter.
+
+We format arguments as 
+[custom labelled lists](#custom-labels-lists). To indicate the
+the conclusion, the last label is  `&there4;`, i.e. the
+symbol &there4;.
+
+```markdown
+* [1]{} No man is wise.
+* [2]{} Socrates is a man.
+* [C]{} Socrates is not wise.
+```
+Here `1`, `2`, `C` are custom labels. We can also write
+an argument without labels, but we should then add the option
+`deliminter=none` to the first item in order to avoid 
+empty parentheses:
+
+```markdown
+* []{delimiter=none} No man is wise.
+* []{} Socrates is a man.
+* [there4;]{} Socrates is not wise.
+```
+
+`&there4` is the standard 'therefore' sign (three dots).
+
+The `delimiter=none` option can be set in the document
+metadata. It will then apply to all custom labelled lists
+in the document unless specified otherwise in the lists
+themselves. See [custom labelled lists](#custom-labels-lists).
+
+As explained in [custom labelled lists](#custom-labels-lists),
+crossreference links to premises can be done by giving them
+identifiers and using the citation syntax:
+
+```markdown
+* [1]{#prem1} No man is wise.
+* [2]{#prem2} Socrates is a man.
+* [C]{#conc} Socrates is not wise.
+
+Premises @prem1 and @prem2 entail @conc.
+```
+
+*Requires*: the `statement.lua` filter.
+
+Arguments can be placed within statements, especially if 
+they have a name.
+
+```
+::: statement
+__The ontological argument__
+
+* []{delimiter=none}
+* []{}
+:::
+```
+
+To place an argument within a numbered example list,
+see [custom-labelled lists within numbered example lists](#cll-in-nel).
+

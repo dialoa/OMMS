@@ -1,0 +1,69 @@
+# Special characters {#cop-inlines-elements-symbols}
+
+This chapter deals with special characters and symbols. 
+
+A guiding principle: try to use LaTeX formulas for maths, but only for maths.
+
+For non-math symbols, "HTML entities" are useful: these are codes of the 
+form `&..;` for
+special characters, e.g. `&nbsp;` for a non-breakable space or
+`&rarr;` and `&larr;` for right and left arrows. Various websites allow
+you to search for HTML entities; try 
+[this one](https://unicode-table.com/en/html-entities/) for instance.
+
+Using HTML entities requires a font with fairly good unicode support. 
+If your font miss a particular HTML entity, you will get a warning. 
+If that's the case you can try using a LaTeX formula instead 
+(e.g. `$\rightarrow$`). But for non-math content HTML entities are
+preferable. because they make your content more machine-readable.
+
+* Latin characters with diacritics (å, é, è, ü, ø, etc.) should be entered as
+  such, not in LaTeX codes.
+* Greek text (not: Greek letters in maths) should be
+  entered as such, provided your font covers Greek as well as Latin.
+* § should be simply entered `§`, because it's a fairly basic character
+    available on your keyboard and most fonts. Not its LaTeX equivalent, `$\S$`.
+* &rarr; and &larr;, when used outside of a logical formula (say "the
+    appearance&rarr;reality principle") should be inserted as HTML
+    entities: `&rarr;` and `&larr;`. If they are absent from your 
+    font, you can use their LaTeX math version as a fallback: 
+    `$\rightarrow$` and `$leftarrow$`.
+* Prime, double prime in labels. E.g. you want a list with items labelled
+  A&prime;, A&Prime;, A&tprime;, A&qprime;. Use `&prime;` (one prime), 
+  `&Prime;` (two), `&tprime;` (three), `&qprime;` (four). You should not 
+  go beyond that, but if really needed, use math as fallback: `A$'''''$`,
+  (A$'''''$), `A$''''''$`.
+* Number subscripts and superscripts. For mathematical names, e.g. 
+  variables, use math mode: `$c_1, c_2, \ldots, c_n$` ($c_1, c_2, \ldots, c_n$)
+  and `$c^1, c^2, \ldots, c^n$` ($c^1, c^2, \ldots, c^n$). Note that 
+  in LaTeX sub/superscripted bits of more than one character should be in 
+  curly braces, e.g. `c^{10}` ($c^{10}$). For names that aren't mathematical,
+  e.g. custom labels A^1^, A^2^, ..., use Pandoc's subscripts and
+  superscripts: `A^1^`, `A^12^`, `B~2~`, ... (A^1^, A^12^, B~2~).
+* Asterisks. For labels A*, A** etc. use `*` as is: `A*`, `A**`. Not
+  the LaTeX `$A^{*}$` ($A^{*}$). 
+* Therefore (&there4;): `&there4;`, not the LaTeX formula `$\therefore$`.
+
+## Schematic letters
+
+Schematic letters in the text, as in:
+
+> $S$ knows that $p$
+
+\noindent should normally be typset as math formulas. See @sec-cop-math-latex.
+
+If there are very few schematic letters in an article, it's acceptable to 
+typeset them as caps and/or emphasis:
+
+> S knows that *p*. 
+
+## Hyphens and dashes
+
+See @sec-hyphens-dashes.
+
+## Split fractions
+
+Inline fractions look better when split as in &frac12; than straight as in $\frac{1}{2}$. For &frac12;, &frac14; and &frac34; you can use the HTML entites `&frac12;`, `&frac14;` and `&frac34;` respectively.
+
+For more see @sec-cop-math-latex-split-fractions.
+

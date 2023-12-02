@@ -1,0 +1,218 @@
+---
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Copyeditor workflow
+
+Below is a step-by-step workflow for copyeditors, followed by a final
+checklist and revision tracker that the Dialectica journal uses. 
+
+The markdown source for the checklist and revision tracker is also included.
+You can use it to create a revision tracker document for each article you 
+edit. 
+
+## Copyediting workflow
+
+1.   (If needed) Prepare Word manuscript for conversion (formulas, styles
+  for headings, abstract, ...)
+2.  Convert document into markdown
+3.  Complete/Create metadata block
+4. Section headings (if needed)
+5. Format inline and block elements
+6. Cross-references
+7. Create a .bib file from the author's bibliography
+8. Replace the references in the article with the keys from your .bib file
+9. Create References section at the end of the document
+10. Proofread the outputs.
+11. Checklist!
+
+## The checklist
+
+1.  Metadata block: check that you have correctly added the information
+    that you want to include (e.g. title, author, affiliation).
+    Abstracts, acknowledgements and keywords should be here or as
+    sections at the beginning of the paper.
+2.  Sections: check that their headings are correctly formatted with
+    `#`, `##`, etc. 3.Emphasis: check that emphasised words and
+    sentences in the original text are emphasized in markdown (with
+    asterisks and underscores).
+3.  Bold. No bold unless absolutely needed.
+4.  Dashes: check that hyphens, en dashes and em dashes are correctly
+    and coherently used.
+5.  Quotations: use a consistent style (e.g. double quotation marks) and
+    check that they're formatted as blocks where needed. Distinguish two
+    subsequent block quotes from a single long one.
+6.  Math content: check that math content (incl. schematic letters) is
+    formatted as such, and non-math special characters formatted as
+    such.
+7.  Statements: check that claims, examples, theorems etc. are formatted
+    as statements. Arguments with labelled premises are custom-labelled
+    lists. Block equations are display maths.
+8.  First-line indentation: paragraphs that *continue* after a block
+    quote, table or list should not have an indentation. Add `\noident`
+    codes where needed.
+9.  Tables. Check that the tables created are faithful renderings of the
+    original tables by the author.
+10. Special symbols: check that the special symbols and punctuation used
+    by the author are in a format recognizable in markdown (using LaTeX
+    formulas wherever needed).
+11. LaTeX code. Check that they display correctly in HTML. If not, use
+    *Imagify* [@sec-imagify].
+12. Footnotes: check that they display correctly in outputs.
+13. Crossreferences: check that you have identified the crossreferences
+    in the text and added labels wherever needed (e.g. references to
+    sections, footnotes, claims, premises, arguments)
+14. Citations: check that you have identified all citations in the text
+    and replaced them with keys from your bibligraphy. Be consistent on
+    borderline cases: you may or may not use year-only when the
+    citation's author is already named in the sentence, but apply your
+    choice consistenly.
+15. Bibliography: you should have recreated the author's bibliography
+    (e.g. using Zotero), double-checked it for mistakes in the process,
+    and inserted DOIs wherever they exist. Mistakes: wrong year of
+    publication, missing editor initials, etc.
+
+### TO DO changes and questions
+
+*insert here list of changes still to be done and things you need  
+ to check, e.g. missing citations.*
+
+### ASK questions for the author(s)
+
+*insert lists of questions to put to the author(s). You may organize them in
+categories:*
+
+#### general
+
+#### grammar and spelling
+
+#### formulas
+
+#### quotations and citations
+
+#### special elements: statements, tables etc.
+
+### DONE changes done
+
+*List here non-trivial changes done during this revision. This is
+useful to send to the author, and as a record for future rounds
+of revision.*
+
+### LEAVE things that don't need to be change
+
+*Changes considered that you ultimately decided against. 
+Useful for future rounds.This includes:*
+
+#### IGNORE
+
+*things you considered, but ultimately decided against. Spares
+you and future copyeditors considering them again.*
+
+#### REJECT
+
+*things asked by the author that you decided against. Useful to 
+record your reasons and remind them if they ask again.*
+
+### TO EDITORS
+
+*questions for the editor or for your copyediting expert, e.g. 
+markdown or technical issues with LaTeX or some other output format.*
+
+### The checklist markdown source
+
+``` markdown
+1.  Metadata block: check that you have correctly added the information
+    that you want to include (e.g. title, author, affiliation).
+    Abstracts, acknowledgements and keywords should be here or as
+    sections at the beginning of the paper.
+2.  Sections: check that their headings are correctly formatted with
+    `#`, `##`, etc. 3.Emphasis: check that emphasised words and
+    sentences in the original text are emphasized in markdown (with
+    asterisks and underscores).
+3.  Bold. No bold unless absolutely needed.
+4.  Dashes: check that hyphens, en dashes and em dashes are correctly
+    and coherently used.
+5.  Quotations: use a consistent style (e.g. double quotation marks) and
+    check that they're formatted as blocks where needed. Distinguish two
+    subsequent block quotes from a single long one.
+6.  Math content: check that math content (incl. schematic letters) is
+    formatted as such, and non-math special characters formatted as
+    such.
+7.  Statements: check that claims, examples, theorems etc. are formatted
+    as statements. Arguments with labelled premises are custom-labelled
+    lists. Block equations are display maths.
+8.  First-line indentation: paragraphs that *continue* after a block
+    quote, table or list should not have an indentation. Add `\noident`
+    codes where needed.
+9.  Tables. Check that the tables created are faithful renderings of the
+    original tables by the author.
+10. Special symbols: check that the special symbols and punctuation used
+    by the author are in a format recognizable in markdown (using LaTeX
+    formulas wherever needed).
+11. LaTeX code. Check that they display correctly in HTML. If not, use
+    *Imagify* [@sec-imagify].
+12. Footnotes: check that they display correctly in outputs.
+13. Crossreferences: check that you have identified the crossreferences
+    in the text and added labels wherever needed (e.g. references to
+    sections, footnotes, claims, premises, arguments)
+14. Citations: check that you have identified all citations in the text
+    and replaced them with keys from your bibligraphy. Be consistent on
+    borderline cases: you may or may not use year-only when the
+    citation's author is already named in the sentence, but apply your
+    choice consistenly.
+15. Bibliography: you should have recreated the author's bibliography
+    (e.g. using Zotero), double-checked it for mistakes in the process,
+    and inserted DOIs wherever they exist. Mistakes: wrong year of
+    publication, missing editor initials, etc.
+
+### TO DO changes and questions
+
+*insert here list of changes still to be done and things you need  
+ to check, e.g. missing citations.*
+
+### ASK questions for the author(s)
+
+*insert lists of questions to put to the author(s). You may organize them in
+categories:*
+
+#### general
+
+#### grammar and spelling
+
+#### formulas
+
+#### quotations and citations
+
+#### special elements: statements, tables etc.
+
+### DONE changes done
+
+*List here non-trivial changes done during this revision. This is
+useful to send to the author, and as a record for future rounds
+of revision.*
+
+### LEAVE things that don't need to be change
+
+*Changes considered that you ultimately decided against. 
+Useful for future rounds.This includes:*
+
+#### IGNORE
+
+*things you considered, but ultimately decided against. Spares
+you and future copyeditors considering them again.*
+
+#### REJECT
+
+*things asked by the author that you decided against. Useful to 
+record your reasons and remind them if they ask again.*
+
+### TO EDITORS
+
+*questions for the editor or for your copyediting expert, e.g. 
+markdown or technical issues with LaTeX or some other output format.*
+
+```
+
+

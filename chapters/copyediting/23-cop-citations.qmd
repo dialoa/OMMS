@@ -1,0 +1,333 @@
+# Citations
+
+## Encoding citations
+
+There are three styles of citations:
+
+-   Normal: (Smith 2012) in author-date style, [7] in number style,
+    footnote in citations-in-footnotes style.
+-   Inline: Smith (2012) says that....
+-   Year-only: ... that elephants are happier than humans (2012).
+
+How normal citations are displayed is taken care of by the journal's
+template. The illustrations below use the author-date style.
+
+To code a citation of a given reference, you need to know the reference's
+*citation key*. You can see the keys from the `.bib` file of your article. In
+RStudio, if you use the visual mode, use Insert \> citation and select the
+source "Bibliography", and it will allow you to select entries from the `.bib`
+file.
+
++---------------------------------------+---------------------------------------+
+| I want                                | I type                                |
++=======================================+=======================================+
+| **Normal**                            |                                       |
++---------------------------------------+---------------------------------------+
+| (Smith, 2012)                         | `[@Smith2012]`                        |
++---------------------------------------+---------------------------------------+
+| (Smith, 2012, 2015)                   | `[@Smith2012; @Smith2015]`            |
++---------------------------------------+---------------------------------------+
+| (Smith 2012; Jones 2015)              | `[@Smith2012;@Jones2015]`             |
++---------------------------------------+---------------------------------------+
+| (Smith 2012, 205)                     | `[@Smith2012, 205]`                   |
++---------------------------------------+---------------------------------------+
+| (Smith 2012, iv-vii)                  | `[@Smith2012, p. iv-viii]`            |
+|                                       |                                       |
+| *Note: when non-numerical page        |                                       |
+| numbers specify `p.`* *in the code*   |                                       |
++---------------------------------------+---------------------------------------+
+| (see Smith 2012, 205)                 | `[see @Smith2012, 205]`               |
++---------------------------------------+---------------------------------------+
+| (Smith 2012, 205-210, 235)            | `[@Smith2012, 205-210, 235]`          |
++---------------------------------------+---------------------------------------+
+| (Smith 2012, 28; Jones 2015, 2017)    | `[@Smith2012, 28; @Jones2015;`        |
+|                                       | `@Jones2017]`                         |
++---------------------------------------+---------------------------------------+
+| (see Smith 2012, 28; comp. Jones      |     [see @Smith2018, 28; comp.        |
+| 2015, 28; also Jones 2017, 45-58)     |      @Jones2015, 28; also             |
+|                                       |      @Jones2017, 45--48]              |
+| *Note: whether you                    |                                       |
+| get ';' or ',' or ':' separators      |                                       |
+| between several citations should      |                                       |
+| be specified and handled              |                                       |
+| automatically by the template.*       |                                       |
+|                                       |                                       |
++---------------------------------------+---------------------------------------+
+| **Inline**                            |                                       |
++---------------------------------------+---------------------------------------+
+| Smith (2012) says that                | `@Smith2012 says that`                |
++---------------------------------------+---------------------------------------+
+| Smith (2012, 205) says that           | `@Smith2012 [205] says that`          |
++---------------------------------------+---------------------------------------+
+| Smith (2012, x-xii) says that         | `@Smith2012 [p. x-xii] says that`     |
+|                                       |                                       |
+| *Specify `p.`* *when the page numbers |                                       |
+| are not numerical*                    |                                       |
++---------------------------------------+---------------------------------------+
+| *Inline several papers by same        |                                       |
+| author, you format the first inline   |                                       |
+| and the rest regular:*                |                                       |
++---------------------------------------+---------------------------------------+
+| Smith (2012; 2015, 205) says that     | `@Smith2012 [@Smith2015, 205]`        |
+|                                       | `says that`                           |
++---------------------------------------+---------------------------------------+
+| Peregrin & Svoboda (2013, 2016, 2017, | `@peregrin-svoboda:2013a`             |
+| and also Read, 2018)                  | `[@peregrin-svob                      |
+|                                       | oda:2016;@peregrin-svoboda:2017; and` |
+| Smith (2012, p. 33; 2015, p. 300)     | `also @read_s:2000]`                  |
+|                                       |                                       |
+| *Alternatively, you can type the name | `                                     |
+| and use year-only:*                   | @Smith2012 [p.33; @Smith2015, p.300]` |
+|                                       |                                       |
+| Smith (2012; 2015)                    | `Smith [-@Smith2012,` `@Smith2015]`   |
++---------------------------------------+---------------------------------------+
+| Year only                             | Smith makes an outrageous claim       |
+|                                       | `[-@Smith2015, 277]`.                 |
+| Smith makes an outrageous claim       |                                       |
+| (2015, 277).                          | Smith keeps repeating himself         |
+|                                       | `[-@Smith2012; @Smith2013;`           |
+| Smith keeps repeating himself (2012,  | `@Smith2014; @Smith2015]`             |
+| 2013, 2014, 2015).                    |                                       |
+|                                       | Smith said this in a few places       |
+| Smith said this in a few places       | `[-@Smith2012, 20; @Smith2013,`       |
+| (2012, 20; 2013, 30)                  | `30]`.                                |
+|                                       |                                       |
+| Smith said (in his 2012 a.o.) that    | Smith said [in his -@Smith2012        |
+|                                       | a.o] that                             |
+|                                       |                                       |
+| note: -@Smith2012 doesn't work,       |                                       |
+| brackets are needed.                  |                                       |
++---------------------------------------+---------------------------------------+
+
+Common errors:
+
++---------------------------------------+---------------------------------------+
+| **Bad**                               | **Good**                              |
++=======================================+=======================================+
+| Code:                                 | Code:                                 |
+|                                       |                                       |
+| `(See for instance` `[@Smith2015]).`  | `[See for instance,` `@Smith2015]`    |
+|                                       |                                       |
+| (See for instance `@Jones2018`).      | Output:                               |
+|                                       |                                       |
+| Output:                               | (See for instance Smith, 2015).       |
+|                                       |                                       |
+| (See for instance (Smith, 2015)).     |                                       |
+|                                       |                                       |
+| (See for instance Jones (2018)).      |                                       |
++---------------------------------------+---------------------------------------+
+| Code:                                 | Code:                                 |
+|                                       |                                       |
+| `See f                                | `See for insta                        |
+| o r instance @Smith2012; @Smith2015.` | n ce Smith [-@Smith2012; @Smith2015]` |
+|                                       |                                       |
+| Output:                               | Output:                               |
+|                                       |                                       |
+| See for instance Smith (2012); Smith  | See for instance Smith (2012, 2015).  |
+| (2015).                               |                                       |
++---------------------------------------+---------------------------------------+
+
++---------------------------------------+---------------------------------------+
+|                                       |                                       |
++---------------------------------------+---------------------------------------+
+|                                       |                                       |
++---------------------------------------+---------------------------------------+
+
+More details explained in [pandoc's markdown reference, citations
+section](https://pandoc.org/MANUAL.html#citations).
+
+### Ibid., Op. Cit., sec. or § and the like
+
+**All the finer-grained formating is handled by the bibliography template**.
+Whether repeated citations are printed out as "ibid", "op. cit", whether page
+ranges are referred to as "pp. 12-15" or "p. 12-15" or "12-15", whether sections
+are called "sec." or "§", etc., all of this is decided and automatically handled
+by the bibliography template.
+
+If an author uses *ibid.* or *op. cit.*, just replace it with the original
+citation. For instance, if the author's manuscript has:
+
+> Lewis (1986, 19) says something important. He adds something less interesting
+> a few pages later (ibid., 29).
+
+We encode:
+
+``` {.markdown}
+@Lewis1986 [19] says something important. He adds something less
+interesting a few pages later [@Lewis1986, 29].
+```
+
+### Putting a citation link on a page number, or a word
+
+Citations must all be in one of the three forms above (Normal, Inline 
+or Year-only). We cannot, and should not, put them on arbitrary words
+or page numbers. For instance, in the following:
+
+``` markdown
+@Lewis1986 [19] says something important, but see also page 29.
+```
+
+We could either turn "page 29" in an inline or year-only citation,
+or leave it without link---provided there's already a link to the
+work nearby, as is the case above.
+
+## Examples with preferred answers
+
+### Example: Doe (2019, 2020)
+
+__Original__
+
+> It should be noted here that, on the face of it, Doe (2019, 2020) does introduce his theory to justify placing greater weight on oneself than on others in making decisions.
+
+__Proposed__
+
+> It should be noted here that, on the face of it, Doe [-@doe_j:2020; -@doe_j:2019] does introduce his theory to justify placing greater weight on oneself than on others in making decisions.
+
+```markdown
+on the face of it, Doe [-@doe_j:2020; -@doe_j:2019] does introduce...
+```
+
+__Preferred__
+
+Use the inline citation format. 
+
+> It should be noted here that, on the face of it, @doe_j:2020 [@doe_j:2019] does introduce his theory to justify placing greater weight on oneself than on others in making decisions.
+
+```markdown
+on the face of it, @doe_j:2020 [@doe_j:2019] does introduce
+```
+
+### Example: locating the possessive "'s"
+
+__Original__
+
+> One example is Doe (2020)'s notion of the “personal horizon,” especially considering his discussion of "the truth in solipsism" and his insistence that “my” horizon is really “the” (preeminent) horizon. 
+
+__Proposal__
+
+> One example is Doe
+[-@doe_j:2020]'s notion of the "personal horizon," especially
+considering his discussion of "the truth in solipsism" and his
+insistence that "my" horizon is really "the" (preeminent) horizon.
+
+```markdown
+One example is Doe
+[-@doe_j:2020]'s notion...
+```
+
+__Preferred__
+
+Inline citations are simpler and give a better output link (clickable name as well as year):
+
+> One example is @doe_j:2020's notion...
+
+```markdown
+One example is @doe_j:2020's notion...
+```
+
+But in the original, "Doe (2020)'s ..." is bad typesetting. Better move the citation to the end of the sentence or attach the possessive to the author's name:
+
+> One example is Doe's notion of the “personal horizon,” especially considering his discussion of "the truth in solipsism" and his insistence that “my” horizon is really “the” (preeminent) horizon [doe_j:2020]. 
+
+```markdown
+“the” (preeminent) horizon [doe_j:2020]. 
+```
+
+> One example is Doe's [-doe_j:2020] notion...
+
+```markdown
+One example is Doe's [-doe_j:2020] notion...
+```
+
+Both are fine, my favoured option is the first.
+
+### Example
+
+__Original__
+
+> Others have granted him as much (e.g., Jones (2017), and Jane Doe in the introduction to Smith (2018)).
+
+__Copyedited__
+
+We would avoid the double parenthesis at the end. More generally, avoid parentheses when the references is in parentheses:
+
+> Others have granted him as much (e.g., Jones, 2017, and Jane Doe in the introduction to Smith, 2018).
+
+But also, if we're citing Jane Doe's introduction to @smith_j:2018, we
+should have a bibliography entry for that chapter itself. So ultimately
+we want:
+
+> (e.g., Jones, 2017, Doe 2018).
+
+__Proposed__
+
+First attempt, use two inline citations. But it results in a double parenthesis:
+
+> Others have granted him as much (e.g., @jones_j:2017, and Jane Doe in the introduction to @smith_j:2018).
+
+```markdown
+as much (e.g., @jones_j:2017, and Jane Doe in the introduction to @smith_j:2018).
+```
+
+Second attempt, make it a single parenthesis citation with two references, on the model [@jones_j:2017; @smith_j:2018] (`[@jones_j:2017; @smith_j:2018]`). But pandoc doesn't see it as a citation and the phrase disappears:
+
+> Others have granted him as much [e.g., @jones_j:2017, and Jane Doe in the introduction to @smith_j:2018].
+
+```markdown
+as much [e.g., @jones_j:2017, and Jane Doe in the introduction to @smith_j:2018].
+```
+
+What is going on? The syntax of inline citation separates *prefixes and suffixes* with commas (`,`) or spaces and *different references* with semi-colons (`;`). So the general rule is: *if you have two keys you should have a semi-colon*. In the code above what pandoc sees is:
+
+```markdown
+[prefix, @citekey, verylongsuffix]
+```
+
+where `verylongsuffix` is the code `and Jane Doe in the introduction to @smith_j:2018`. But a suffix cannot include citations. It can only be simple text (`and passim` or `a famous passage`) or locator type + location (`chap. 2`, `pages 12-13`) or location (`12-13`). 
+
+To avoid that, we must make "and Jane Doe in the introduction to" the *prefix* of the second citation, `@smight_j:2018`:
+
+> Others have granted him as much [e.g., @jones_j:2017; and Jane Doe in the introduction to @smith_j:2018].
+
+```markdown
+as much [e.g., @jones_j:2017; and Jane Doe in the introduction to @smith_j:2018].
+```
+
+This is seen by pandoc as:
+
+```markdown
+[prefix, @jones_j:2017; anotherprefix @smith_j:2018].
+```
+
+Remark that we get `;` rather than `,` in between the citations. Compare:
+
+> Others have granted him as much (e.g., Jones, 2017, and Jane Doe in the introduction to Smith, 2018).
+
+> Others have granted him as much (e.g., Jones, 2017; and Jane Doe in the introduction to Smith, 2018).
+
+Some might prefer the first. But this is a small cost and one could argue that the second is more systematic.
+
+__Preferred__
+
+The preferred method is to cite Doe's introduction to @smith_j:2018 as a reference in its own right: 
+
+> Others have granted him as much [e.g., @jones_j:2017; @doe_j:2018].
+
+```markdown
+as much [e.g., @jones_j:2017; @doe_j:2018].
+```
+
+This requires an adding to the entry in the bibliography. The entry is a book section authored by Doe is a book *authored* (not *edited*) by Smith. Entering it in Zotero and exporting as Bibtex gives us the code:
+
+```bibtex
+@inbook{doe_j:2018,
+    author = {Doe, John},
+    title = {Introduction},
+    booktitle = {An imaginary book},
+    bookauthor = {Smith, John},
+    publisher = {Ideas Press},
+    address = {Mainville},
+    year = {2018}
+}
+```
+

@@ -1,0 +1,47 @@
+\documentclass[10pt,
+	paper=14cm:21cm,
+	DIV=12,
+	headinclude=yes,
+	footinclude=no,
+	twoside=no]{scrartcl}
+
+% Color
+\usepackage{xcolor}
+\definecolor{dialoablue}{cmyk}{1,1,.29,.20}
+\usepackage{pagecolor,afterpage}
+
+% Images
+\usepackage{graphicx}
+
+% Fonts
+\usepackage{fontspec}
+\setmainfont{VenusSB-BoldExtended}
+\newkomafont{mytitle}{\Large\fontsize{30pt}{36pt}\selectfont}
+
+
+\begin{document}
+
+{ % title page
+\thispagestyle{empty}
+\setlength\parindent{0pt}
+\newpagecolor{dialoablue}\afterpage{\restorepagecolor}
+\color{white}
+\begin{raggedleft}\usekomafont{mytitle}
+
+Open \\
+Markdown \\
+Manual of Style
+
+\end{raggedleft}
+
+\vfill
+
+\begin{centering}
+
+\includegraphics[height=48pt]{DialOA_logo_WhiteTransp}
+
+\end{centering}
+
+} % end of title page
+
+\end{document}

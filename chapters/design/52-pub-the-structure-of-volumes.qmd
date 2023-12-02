@@ -1,0 +1,142 @@
+# The structure of a book and a journal
+
+## The structure of a book
+
+The *cover* is typically designed separately. It has five components: front cover,
+inside front cover, inside back cover, back cover, and spine.
+
+* Front cover. Author and title, optionally publisher. 
+* Spine. Author and title, optionally publisher, series, volume, year....
+* Back cover. Title, blurb, credits for the cover image, barcode or QR code, 
+  publisher. 
+* Inside front and back cover. Could be empty. 
+
+The book is divided in three parts: front, main and back matter. 
+
+Following @Wddingham-NewHartRules-2014 [p. 3] and 
+@UniversityOfChicagoPress-ChicagoManualStyle-2010 [sec. 1.4] the *frontmatter* contains:
+
+- half-title, recto
+- verso of the half-title: empty, series title, frontispiece
+- title page, recto
+- verso of the title page: empty, copyright
+- dedication
+
+Then (Hart):
+
+- foreword
+- preface
+- acknowledgments
+- table of contents
+- lists:
+  - illustrations, 
+  - figures, 
+  - maps, 
+  - tables,
+  - table of cases and legislation (law books)
+  - abbreviations
+  - contributors
+- note to the reader
+- epigraph 
+
+Or (Chicago):
+
+- epigraph
+- contents
+- lists
+  - illustrations
+  - tables
+- foreword
+- Preface
+- Acknowledgements (if not in preface)
+- Introduction (it not part of text)
+- Abbreviations (if not in back matter)
+- Chronology (if not in back matter)
+
+Back matter
+
+Following @Wddingham-NewHartRules-2014 [p. 17]
+
+- appendix
+- glossary
+- endnotes
+- bibliography
+- notes on contributors
+- indexes
+
+Following 
+@UniversityOfChicagoPress-ChicagoManualStyle-2010 [sec. 1.4]:
+
+- acknowledgments (if not in front matter)
+- appendices
+- chronology (if not in front)
+- abbreviations (if not in front)
+- endnotes
+- glossary
+- bibliography
+- note on contributors
+- illustration credits
+- indexes
+
+
+## The structure of a journal
+
+
+Typical order of pages.
+
+- Front matter
+  - editorial board
+  - title
+  - imprint
+- Main matter
+  - article
+
+## Non-English conventions
+
+#### Français
+
+Couverture:
+  - première de couverture:
+  - seconde de couverture:
+  - troisième de couverture:
+  - quatrième de couverture:
+  - épine (dos): auteur, titre, maison d'édition (logo), ...
+
+Suivant @Collectif-LexiqueReglesTypographiques-2002:
+
+Couvertures intérieures ou rabats de la jaquette: autres ouvrages de la même 
+maison, présentation de l'auteur.
+
+Facultatif: un feuillet blanc en début et fin de volume.
+
+En tête de volume, pagination en chiffres romains:
+
+- le faux titre, recto. Titre et sous-titre
+- verso du faux titre: illustration de frontispice ou liste des oeuvres de 
+  l'auteur.
+- titre: recto. Titre, sous-titre auteur, copyright; eventuellement ISBN ou ISSN, édition, 
+  tirage, sommaire.
+- dédicace: recto, après le titre.
+- avis ou avertissement: en verso de l'une des premières pages.
+- chapitres en tête d'ouvrage, dans l'ordre:
+  - avant-propos,
+  - préface,
+  - introduction (cas exceptionnel, voir ci-dessous),
+  - notice (par ex., notice sur les auteurs, ou sur l'utilisation de l'ouvrage, 
+  par exemple une liste d'abbréviations),
+  - (exceptionellement) bibliographie.
+
+En corps de volume, les chapitres, pagination en chiffres arabes.
+
+- l'introduction est normalement en corps de volume. Elle est placée en tête 
+  seulement si ne fait pas partie du corps: introduction du traducteur, de 
+  l'éditeur d'un texte historique, etc.
+
+En fin de volume, pagination en chiffre arabe continuant celle du corps:
+
+- postface,
+- bibliographie (exceptionellement placée en tête),
+- index,
+- table des matières,
+- colophon: tirage, achevé d'imprimé, mention du dépôt légal, mention de 
+  l'imprimeur sur la dernière page.

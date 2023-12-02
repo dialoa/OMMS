@@ -1,0 +1,327 @@
+# Imagify {#sec-imagify}
+
+**Requires: the Imagify filter**. The Imagify filter transforms chosen LaTeX 
+elements into images when producing non-PDF outputs.
+
+Math formulas in LaTeX are generally well rendered in HTML output. But some
+LaTeX components aren't. Example
+
+* TikZ pictures.
+* `\doubleline` commands in `bussproofs`.
+* Boxes surrounding text, e.g. with `mdframed`.
+
+Example usage. Below the first proof is passed directly to HTML (where MathJaX 
+handles it) but the second is converted to an image (because MathJaX cannot
+display `\doubleline`):
+
+``` markdown
+
+\begin{prooftree}
+  \AxiomC{$A$, $A \rightarrow C $} 
+  \UnaryInfC{$C$}
+\end{prooftree}
+
+::: imagify 
+
+\begin{prooftree}
+  \AxiomC{$A$, $A \rightarrow C$}
+  \doubleLine
+  \UnaryInfC{$C$}
+\end{prooftree}
+
+:::
+
+```
+
+## Basic usage
+
+### When is imagify needed?
+
+You see red text in the HTML output corresponding to some LaTeX code in the 
+original. E.g. `\llbracket` in red.
+
+### Imagify with default settings or specific settings
+
+You'll have to figure out whether you can imagify with default settings alone 
+or whether you need specific settings. Simply try the default settings first,
+and move to specific ones if that doesn't work.
+
+Default settings work e.g. when you have a `bussproof` that uses `doubleLine`, 
+a table, or a Tikz image. Specific settings are required e.g. when the LaTeX uses
+symbols found in a extra package (double brackets from the `stmaryrd` package).
+
+Specific settings may also be used to fine-tune the image: its vertical alignment,
+or size (zoom).
+
+### Imagifying with default settings
+
+Create a Div with class imagify:
+
+``` markdown
+
+::: {.imagify} 
+
+Mixed content here.
+
+:::
+
+```
+
+The Div can contain a mix of text and LaTeX elements. So you don't need to place
+your Div exactly around the LaTeX bit that needs to be converted, you can take
+e.g. the paragraph that contains it.
+
+Within the Div, any LaTeX element is converted to a separate image:
+
+* Every math formula (`$...$`, `/(.../)`, `$$...$$`, `/[.../]`) 
+* Every raw LaTeX element, block or inline:
+
+  `````markdown
+  `...inline latex...`{=latex}
+  
+  ```{=latex}
+  ...block latex...
+  ```
+  `````
+* Every LaTeX command directly inserted into the text:
+
+  ```markdown
+  ... (end of some paragraph).
+  
+  \pagebreak
+  
+  ... (begining of some other paragraph)
+  ```
+
+By default, images are embedded within the HTML document. But Imagify options
+allow you to save them as separate files instead.
+
+__TikZ__. Tikz images start with `\begin{tikzpicture}` (sometimes preceeded 
+with `\usetikzlibrary{...}`). They should work with default settings. However,
+you sometimes need to check which "libraries" are loaded. Suppose the original
+manuscript (in LaTeX) has a preamble with either of the following commands:
+
+``` latex
+\usepackage[arrows]{tikz}
+\usetikzlibrary{arrows}
+```
+
+Then the document is loading a "package" for TikZ images, the `arrows` package.
+You need to tell Imagify that it's used in your particular image. To do so you
+add the `\usetikzlibrary` command at the beginning of the LaTeX code itself:
+
+``` latex
+\usetikzlibrary{arrows}
+\begin{tikzpicture}...
+```
+
+### Imagify with specific settings
+
+You may use specific Imagify settings instead. The best way to do so is to 
+declare an Imagify "class" in the document's metadata:
+
+```yaml
+imagify-classes:
+  myclass:
+    header-includes: |
+      \usepackage{stmaryrd}
+    zoom: 1.6
+```
+
+Here we declare an imagifying class `myclass`. It uses the LaTeX package `stmaryrd`
+(with provides a bunch of symbols like double brackets) and an extra zoom of
+1.6 (default is 1.5 or 1.4). You can then use the class by putting content in 
+a Div of that class:
+
+``` markdown
+
+::: myclass
+
+... Mixed content (LaTeX elements here are imagified with those settings)
+
+:::
+
+```
+
+It that helps clarity you can also declare the Div *both* of `imagify` and `myclass`:
+
+``` markdown
+
+::: {.myclass .imagify}
+
+...
+
+:::
+
+```
+
+(Recall that when multiple identifier/classes/attributes are declared we need to use 
+curly brackets and dots at the beginning of classes.)
+
+__Class names rules__. It's a good idea to use 
+if you use "imagify" in the name, perhaps with the name of the author (`imagify-smith`)
+or a name related to the particular element to be imagified (`imagify-bussproofs`).
+__Important__: avoid name clashes between two papers in the same issue. E.g. two
+papers with the same `imagify-table` class but different class settings in each.
+
+__How to find out which packages are needed__. Sometimes it's obvious which 
+LaTeX package is needed from the original LaTeX manuscript.
+
+Often the missing LaTeX is a symbol.Look at the command(s) that are printed in 
+red in HTML output. Suppose you see the `\\llbracket` command, for instance.
+A good idea is to check whether this command is in 
+the *LaTeX Comprehensive Symbols List*:
+
+- run `texdoc symbols` on a Terminal. If you have a rich enough LaTeX distribution
+installed this will open the *LaTeX Comprehensive Symbols List* (a large PDF). 
+Otherwise search for it online. 
+- search in the document for your command, e.g. search for `llbracket`. 
+- if it shows up, it'll be in a Table. The table caption tells you which LaTeX
+  package contains the symbol, e.g. "Table 225: `stmaryrd` Variable-sized 
+  Delimiters" tells me that `\llbracket` is part of the `stmaryrd` package.
+
+When you figure out which LaTeX package is needed to imagify your bit of LaTeX,
+add it to the relevant imagify class with `header-includes`.
+
+__Specifying settings on the Div itself__. You can also specify Imagify settings 
+on the Div itself:
+
+``` markdown
+::: {.imagify zoom="1.6" }
+
+...
+
+:::
+
+```
+
+Unfortunately, you *cannot* use this to specify LaTeX packages. The following:
+
+```
+::: {.imagify header-includes="\usepackage{stmaryrd}" }
+```
+
+\noindent is converted by Pandoc into "\textbackslash usepackage{stmaryrd}", i.e.
+a backslash symbol followed by the text 'usepackage' rather than the
+actual LaTeX command `\usepackage`.
+
+
+__Cascading styles__. Imagify settings are applied in a "cascading" order: first
+the defaults, then those associated with a Div's class, then those specified
+on the Div itself. The latter ones override the former. 
+
+If a LaTeX element is contained within an imagify-class Div
+that is itself contained in another imagify-class Div, then the settings (class 
+and local) of the first are applied first, then those of the contained one. And
+so on for multiple containment. 
+
+## Advanced usage
+
+### See the LaTeX document used to generate an image
+
+Imagify uses Pandoc's default LaTeX template to create a document of the 
+standalone class that contains your LaTeX element's code. 
+
+* Several packages
+are already included: `amsmath`, `amssymb`, etc.
+* Your `header-includes` code is included. To prevent that, set an 
+  alternative Imagify `header-includes` empty in your doc metadata:
+  
+  ```yaml
+  header-includes: |
+    ... document header-includes ...
+  imagify:
+    header-includes: |
+    ... header-includes used by Imagify ...
+  ```
+
+To see
+these intermediate LaTeX files, set imagify's `debug` option in your
+document's metadata:
+
+``` yaml
+imagify:
+  debug: true
+```
+
+They will be placed in the document folder, or if the
+folder specified by Imagify's output-folder option:
+
+```yaml
+imagify:
+  output-folder: imagify_files
+```
+
+If Imagify conversion crashes, you can open these files
+in an editor and figure out which modifications (e.g.
+additional packages) are needed to make it work.
+
+### TikZ
+
+If `\begin{tikzpicture}` or `usetikzlibrary` appears within the imagified code,
+Imagify will handle it well.
+
+If your code uses TikZ indirectly (e.g., it uses a package
+that loads TikZ), you normally have to set the `tikz` 
+classoption:
+
+``` yaml
+imagify:
+  classoption: tikz
+```
+
+### Additional packages
+
+You can use Imagify's `header-includes` to provide any LaTeX packages an image
+needs:
+
+`````{.yaml}
+header-includes: |
+  ... document header-includes ...
+imagify:
+  header-includes: |
+     ... header-includes used by Imagify ...
+`````
+
+### Imagify classes
+
+You can create multiple imagify classes with different options. This allows you
+to provide different packages for different images:
+
+````` {.yaml}
+imagify:
+  classes:
+    fitchproof:
+      header-includes: |
+        ```{=latex}
+        \usepackage{fitch}
+        ```
+    bussproof:
+      header-includes: |
+        ```{=latex}
+        \usepackage{bussproofs}
+        ```
+`````
+
+All of Imagify's rendering options (zoom, pdf-engine, embed, etc.) work under these classes too. 
+
+## Brief notes
+
+### mdframed
+
+Set-up for using the `mdframed` package:
+
+* Will crash if you don't provide the `varwidth=...` standalone class option.
+* Will crash if you provide the `tikz` option, even though it uses tikz.
+
+``` yaml
+imagify-framed: # varwidth, no TikZ even though mdframed uses it
+  classoption: varwidth=3.5cm
+  header-includes: |
+    ```{=latex}
+    \usepackage[framemethod=TikZ]{mdframed}
+    ```
+```
+
+
+

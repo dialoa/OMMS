@@ -1,0 +1,40 @@
+# Dialectica template
+
+Metadata specific to the dialectica template.
+
+## Title and subtitle
+
+Here are the fields used to format titles and subtitles:
+
+```yaml
+title: Plain title here
+subtitle: Plain subtitle here
+shorttitle: Shorter subtitle for page headers
+title-latex: |
+  Title for the first page title \
+  with possibly some linebreaks
+subtitle-latex: |
+  Title for the first page title \
+  with possibly some linebreaks
+title-cover: |
+  Title for the offprint cover \
+  with possibly some \
+  linebreaks
+subtitle-cover: |
+  Subtitle for the cover
+title-cover-size: \huge
+subtitle-cover-size: \Large
+```
+
+All fields except `title` are optional. `shorttitle` is used for page headers 
+and the table of contents. `title-latex` and `subtitle-latex` are used for
+the title on the first page and `title-cover` and `subtitle-cover` are used 
+for the offprint cover; they may include linebreaks as shown above. 
+If `title-latex` is provided but `title-cover` is not, the former is used for
+the cover too.
+
+The offprint cover sizes are controlled by`title-cover-size`and 
+`subtitle-cover-size`. Defaults is `\Huge` for titles of 30 chars or less, `\huge`
+for longer titles, and `\LARGE` for subtitles. 
+
+There is no control of the first page title and subtitle font sizes. 

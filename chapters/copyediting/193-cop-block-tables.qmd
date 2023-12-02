@@ -1,0 +1,342 @@
+# Tables
+
+## Basic table syntax
+
+There are [three formats to encode tables in `pandoc`'s
+markdown](https://pandoc.org/MANUAL.html#tables) ('simple', 'grid' and 'pipe').
+Some are easier to type, some easier to read, some give more functionality (i.e.
+having several lines in a cell).
+
+The easiest way to create a table is to use RStudio's visual editor. The editor
+allows you to create multiline cells, resize the columns a bit and so on.
+Alternatively, you can write tables in the markdown code. An [online markdown
+table generator](https://www.tablesgenerator.com/markdown_tables) can help.
+
+For tables with large cells (a lot of text in the cell), you might need to
+expand the "wrap line size" for the RStudio editor. The visual editor ensures that your
+markdown files has lines of a certain length. These don't matter to the final
+PDF / html output, but they make your markdown source more readable. Now when
+you have a large table, you might need a bit more horizontal space in the
+markdown. For that you increase the wrap line size for the editor. In your file
+metadata block:
+
+```yaml
+editor_options:
+  markdown:
+    wrap: 72
+```
+
+Replace 72 with e.g. 80 or more if needed. You'll see the difference if you go
+to the visual editor and expand your table's columns a bit.
+
+In the markdown, words in tables should not be cut. If your markdown table is
+like this:
+
+``` {.markdown}
++-----+-------+
+|know |valua- |
+|ledge|tion   |
++=====+=======+
+|...  |...    |
++-----+-------+
+```
+
+Then "knowledge" and "valuation" will print as "know ledge" and "valua- tion"
+respectively. You need to ensure that no word is cut by enlarging your table:
+
+``` {.markdown}
++----------+-----------+
+|knowledge | valuation |
++==========+===========+
+| ...      | ...       |
++----------+-----------+
+```
+
+Tables found in your document will be turned into that format if their cells
+require multiple lines. Otherwise they will be turned into the simpler format:
+
+``` {.markdown}
+Corner    Header 1    Header 2    Header 3
+-------- ----------- ----------- -------------
+Row 1     Hello       My          Friend
+Row 2     1asdoi      23          234
+```
+
+You can create tables from scratch (a) in the RStudio visual editor or (b) in
+markdown code. For the latter you can use a [online markdown table
+generator](https://www.tablesgenerator.com/markdown_tables).
+
+## Cells that span several rows or several columns
+
+Unfortunately this is *not* feasible in pandoc's markdown, though that should change in the near future.[^copyediting-2]
+
+[^copyediting-2]: It is now implemented in `pandoc`'s inner data representation,
+    but `pandoc` can't yet read that from your markdown file.
+
+**Solution**. Enter your table with all cells, and put the content of any merged
+area in the top left cell of the merged area. For example, the table below:
+
+> **Example missing, to be entered in raw HTML**
+
+``` {.markdown}
+| Cells merged across a row | Head 1                       | Head 2 |
+|:--------------------------|:-----------------------------|:-------|
+|                           | more                         | less   |
+| Row head                  | Cells merged across a column |        |
+```
+
+Should be entered as if it was the table below:
+
+> **Example flawed, to be fixed**
+
+``` {.markdown}
+| Cells merged across a row | Head 1                       | Head 2 |
+|:--------------------------|:-----------------------------|:-------|
+|                           | more                         | less   |
+| Row head                  | Cells merged across a column |        |
+```
+
+A note should be made of the change. Next to the table code you should enter the
+following:
+
+``` {.markdown}
+<!-- cells to merge: C1R1 and C1R2; C2R3 and C3R3 --\>
+```
+
+This will be invisible in the output, but visible to those who edit the file.
+'C2R3' abbreviates 'second column from the left, third row the top.
+
+We will then have to insert LaTeX and HTML output code directly.
+See [if-markdown-cant-handle-a-table] below.
+
+## If markdown can't handle a table
+
+**Requires: the `not-in-format` filter.** The instructions using
+Divs with `not-in-format` class below require the `not-in-format`
+filter.
+
+In case the usual markdown code for a table doesn’t work, we can insert a set of LaTeX code to the markdown file. The goal is then to have a set of latex code that can be inserted into the articles markdown file and then be run the usual way. For that, there are three steps needed: 
+
+1. get the latex code for the desired table
+2. make the table look as desired
+3. get the code into the markdown file.
+
+Generate a separate markdown file (in the following called “separate .md”, whereas the initial markdown file of the article is called “articles .md”). Here we want to put only the latex code that will be inserted into the articles .md.
+
+1.	For the first step (get the latex code for the desired table), there are two options:
+  i.	Build the latex code from scratch or via the [table generator for latex](https://www.tablesgenerator.com/latex_tables), put the code to the separate .md.
+  ii.	Build the markdown code from scratch or via the [table generator for markdown](https://www.tablesgenerator.com/markdown_tables), put it to the separate .md, let it produce a latex output, copy/paste the latex code to the separate .md (it probably begins with something like “\begin{longtable}” or “\begin{table}” and ends with something like “\end{longtable}” or “\end{table}”).
+
+2.	Once you have the latex code in the separate .md, you can embed 
+  it in the following code:
+
+  `````markdown
+  ```{=latex}
+  \begin{center}
+  
+  [latex code for tables]
+  
+  \end{center}
+  ```
+  `````
+
+  The `\begin{center}` and `\end{center}` lines are optional, their
+  effet is to center your table in the page. 
+  
+  The LaTeX code will only produce a result in LaTeX/PDF output. 
+  If the markdown code works with HTML output, you should leave it
+  and embed it in a `::: {.not-in-format .latex} ... :::` Div,
+  which ensures that the markdown table code is used only in 
+  formats other than LaTeX. 
+  
+  `````markdown
+
+  ```{=latex}
+  \begin{center}
+  
+  [latex code for your table]
+  
+  \end{center}
+  ```
+
+  ::: {.not-in-format .latex}
+  
+  [markdown code for your table]
+  
+  :::
+
+  `````
+
+  Check how the tables look by producing pdfs from the separate .md
+  (much faster than always producing the whole article).
+
+3. From here, you might have or want to change several things:
+
+  a. “longtable” -> “tabular” (so that it doesn’t rely on longtable
+    package, which doesn’t work within multicolumn environments).
+  b.	“\toprule”, “\midrule” and “\bottomrule” -> “\hline” for simple     horizontal lines
+  c.	If a vertical line is desired at some point in the table
+    change latex code `\begin{tabular}[]{@{}lcccc@{}}` to
+    `\begin{tabular}[]{@{}c|cccc@{}}`. See that the number of letters
+    determines the number of columns in the table. The letter “l” in 
+    the former code is to change into a “c” in the latter. To have a 
+    vertical line after the first column from the left, insert the 
+    sign (not letter!) “|” after the first c from the left.
+
+4.	Once that frame is set, we can insert the code from the separate
+  .md into the articles .md and see how it produces the tables from 
+  here.
+
+You may need to do the same to insert HTML code. In that case you
+should still leave the original markdown for other formats (JATS-XML), using `not-in-format` again:
+
+`````markdown
+  ```{=latex}
+  [latex code for your table]
+  ```
+  ```{=html}
+  [html code for your table]
+  ```
+  ::: {.not-in-format .latex .html}
+  [markdown code for your table]
+  :::
+  `````
+
+## Table captions
+
+**Requires:** 
+[pandoc-crossref](https://github.com/lierdakil/pandoc-crossref).
+
+__If your table is in markdown only__, add a caption thus:
+
+``` {.markdown}
++----------+-----------+
+|knowledge | valuation |
++==========+===========+
+| ...      | ...       |
++----------+-----------+
+: An analysis of knowledge and valuation {#tbl:K-and-V}
+```
+
+The optional `{#tbl:...}` provides an identifier for 
+crossreferences:
+
+```markdown
+As you can see in @tbl:K-and-V, the analysis...
+```
+
+For further details on how to cite see the 
+[pandoc-crossref](https://github.com/lierdakil/pandoc-crossref) 
+manual.
+
+__If your table is in raw LaTeX and markdown__, the solution is this:
+
+``` markdown
+::: {.not-in-format .latex }
++----------+-----------+
+|knowledge | valuation |
++==========+===========+
+| ...      | ...       |
++----------+-----------+
+: An analysis of knowledge and valuation {#tbl:K-and-V}
+:::
+
+::: {only-in-format .latex}
+
+(latex code)
+
+:::
+
+```
+
+Or you use the Imagify to convert the table into an image in non-PDF
+outputs.
+
+## LaTeX tables tips
+
+Start with the Pandoc-generated table code: write your table in markdown,
+generate the LaTeX output and extract the LaTeX code for the table.
+
+Test your table in a simple LaTeX document. Pandoc uses `longtable`, 
+`booktabs`, `array`, `multicol`, `calc`:
+
+``` latex
+\documentclass{article}
+\usepackage{longtable,booktabs,array}
+\usepackage{multicol}
+\usepackage{calc}
+\begin{document}
+
+[TABLE CODE HERE]
+
+\end{document}
+```
+
+(*Dialectica-specific*: add the font, `\usepackage{stix2}`, and preferably
+compile using LuaLaTeX.)
+
+**Reduce the space between column**. Add:
+
+``` latex
+{\setlength{\tabcolsep}{2pt}
+
+[TABLE CODE HERE]
+
+}
+```
+
+Important: don't forget to wrap this between `{` and `}`, otherwise it will
+affect subsequent tables---in the whole journal issue.
+
+**Make the table font smaller**. Add:
+
+```latex
+{\small
+
+[TABLE CODE HERE]
+
+}
+```
+
+Don't forget the `{`, `}` or subsequent text is small.
+
+**Add a space between rows**. Use `\addlinespace`:
+
+``` latex
+ cell content & cell content & cell content \\
+ \addlinespace
+ cell content & cell content & cell content \\
+ ```
+ 
+ **Add/remove a line between rows**. Add/remove `midrule()`:
+ 
+``` latex
+ cell content & cell content & cell content \\
+ \midrule()
+ cell content & cell content & cell content \\
+ ```
+
+**Vertically center rows**. Use `m` rather than `p` for the first column ([details here](https://stackoverflow.com/questions/25163873/horizontal-and-vertical-alignment-in-tabular-cell)). This table has three `p` type columns and aligns cell contents on top:
+
+``` latex
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.5}}@{}}
+\toprule\noalign{}
+[TABLE ROWS]
+\end{longtable}
+```
+
+This one centers cell content vertically:
+
+
+``` latex
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}m{(\columnwidth - 10\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.5}}@{}}
+\toprule\noalign{}
+[TABLE ROWS]
+\end{longtable}
+```

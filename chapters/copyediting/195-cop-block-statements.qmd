@@ -1,0 +1,284 @@
+# Statements and indented blocks
+
+*Requires*: the `statement.lua` filter.
+
+In articles some special blocks appear as indented. They fall into three types:
+
+* *quotations*: bits of text *from another source*.
+* *equations*: bits of text that are entirely (or mostly) symbols. Example:
+
+  $A = \{ x \in \Omega: x \textrm{ is even}\}$
+  
+* *statements*: theorems, proofs, principles, examples, cases (a story that illustrates a problem), vignettes (a story given to subjects in an experiment) and the like. 
+
+This section deals with statements, more precisely statements other than
+proofs and theorems. For the latter see @sec-cop-math-latex. 
+
+*Arguments* that are set out of the main text can be typeset as statements. But when they have labelled premises, especially when we need to crossrefer to specific premises or the conclusion,
+we typeset them as custom-labelled lists. See @sec-arguments.
+
+The simplest statements are just a block of idented text. Optionally, some 
+statements have a label (aka title). They may also have some extra encoded
+fields like acronym, info, ID for crossreferencing---these are explained below.
+
+Statements are encoded as Divs. See @sec-divs if you don't yet
+know what Divs are. 
+
+## Statements basics
+
+A statement is encoded as a Div with the special class `statement`:
+
+```markdown
+...main flow of text...
+
+::: { .statement }
+
+The sum of angles of a triangle equals two right angles.
+
+:::
+
+...subsequent flow of text...
+```
+
+As explained in @sec-divs, there are a couple of equivalent
+variations for this code.
+
+First, *provided that the Div has no other attribute than 
+a single class*, you can omit dot and curly braces:
+
+
+```markdown
+::: statement 
+
+The sum of angles of a triangle equals two right angles.
+
+:::
+```
+
+Second, you can make the opening and closing 'fences' as
+wide as you want, if you find that this makes your source
+code more readible. This doesn't affect the output:
+
+```markdown
+::: { .statement } ::::::::::::::::::::::::::::::::::::::::::
+
+The sum of angles of a triangle equals two right angles.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::: statement :::::::::::::::::::::::::::::::::::::::::::::::
+
+The sum of angles of a triangle equals two right angles.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+```
+
+## No statements in footnotes
+
+Statements don't work in footnotes---that's a limitation of the 
+LaTeX package we use for them, `amsthm`. 
+
+To get an indented block in footnote use a custom-labelled list with
+an empty label. See @sec-custom-labelled-lists.
+
+## Statement titles
+
+A statement can have a title (aka custom label). This is specified
+in Strong emphasis (`**...**` or `__...__`), 
+at the beginning of the statement:
+
+```markdown
+::: statement
+**The Principal Principle**. One's credence in $p$ conditional
+on the hypothesis that the chance of $p$ is $x$ should be $x$.
+:::
+```
+
+This will be rendered as an indented block with its title in 
+the template's preferred formatting of statement titles, for instance:
+
+> [The Principal Principle]{.smallcaps}. One's credence in $p$
+> conditional on the hypothesis that the chance of $p$ is $x$ 
+> should be $x$.
+
+If you don't specify an ID or acronym for the statement, its title
+is used to generate an ID automatically. The automatic ID is a
+lower case version, with all spaces and symbols replaced by `_`: 
+`the-principal-principle`. If this ID already exists in your
+document (for instance, if it's also the title of a section that Pandoc
+uses to automatically generate an ID for that section), the
+ID will be `...-1`, or `...-2`, as needed.
+
+A statement can only have one ID so if the statement has an 
+acronym or custom ID (see below) they're replace this one.
+
+## Statement acronyms
+
+If a statement has a title, you can also give it an acronym. It's 
+placed at the beginning of the title, within parentheses:
+
+```markdown
+::: statement
+**(PP) The Principal Principle**. One's credence in $p$ conditional
+on the hypothesis that the chance of $p$ is $x$ should be $x$.
+:::
+```
+
+The result will depend on where the template prefers to place
+the acronym. For instance:
+
+> [The Principal Principle (PP)]{.smallcaps}. One's credence in $p$
+> conditional on the hypothesis that the chance of $p$ is $x$ 
+> should be $x$.
+
+Beware that the acronym must be *within* the title, i.e. within
+the strong emphasis delimiters:
+
+* GOOD: `__(PP) The Principal Principle__`
+* BAD: `(PP) __The Principal Principle__`
+
+If you don't specify an ID for a statement with an acronym, the
+acronym will be used to automatically generated an ID, 
+e.g. `PP`. (When the ID `PP` already exists in your document,
+it'll be `PP-1` instead, or `PP-2`, etc.). 
+
+## Statement info
+
+A statement can have some info, e.g. a source citation or some text
+within parentheses This is put at the end of, or right after, 
+the statement's title.
+
+```markdown
+::: statement
+**(Acro) Title of the satement (some info).** Content of the statement
+:::
+
+::: statement
+**(Acro) Title of the satement @Doe2020.** Content of the statement
+:::
+
+::: statement
+**(Acro) Title of the satement.** (some info) Content of the statement
+:::
+
+::: statement
+**(Acro) Title of the satement.**  @Doe2020 Content of the statement
+:::
+```
+
+If there's no title, the info is just at the beginning.
+
+```markdown
+::: statement
+(some info) Content of the statement
+:::
+
+::: statement
+@Doe2020 [@Doe2021; @Doe2022] Content of the statement
+:::
+```
+
+The output depends on the template. (The template may even define
+different styles for different kinds of statement.) It may look like this, for instance:
+
+> [The Principal Principle (PP)]{.smallcaps}. (Lewis (1990)) One's
+> credence in $p$
+> conditional on the hypothesis that the chance of $p$ is $x$ 
+> should be $x$.
+
+## Statement custom IDs
+
+You can cross-reference statements that have an ID If the 
+statement has an acronym or title, you can use the ID automatically
+generated based on those. Otherwise you can give it an ID
+by putting a `#myidentifier` entry in its attributes:
+
+```markdown
+::: {.statement #my-favourite-statement}
+__Title of the statement__. Content of the statement
+:::
+```
+
+It's good practice to start your ID by `sta:` to make clear
+that it's a statement ID:
+
+```markdown
+::: {.statement #sta:psr}
+__(PSR) Principle of Sufficient Reason__. Content of the statement
+:::
+```
+
+Beware of adding curly brackets and a dot before `statement`:
+
+```markdown
+GOOD
+::: {.statement #my-favourite-statement}
+...
+:::
+
+BAD
+::: statement #my-fav-statement
+...
+:::
+
+::: {statement #my-fav-statement}
+...
+:::
+```
+A statement can only have one ID so if you provide one 
+you can't refer to it by its acronym or title.
+
+## Statement within a numbered example list
+
+See [custom-labelled lists within numbered example lists](#cll-in-nel).
+
+## Crossreferencing statements
+
+Statements with ID (either automatically generated from their
+title or acronym, if any, or custom IDs that you provide) can 
+be crossreferenced. You can use the citation syntax or the link
+syntax.
+
+### Citation syntax
+
+* `@mystatement` will produce a link with the 
+  statement acronym if it has one: [PP](#), otherwise a link
+  its title if has one: [The Principal Principle](#) or nothing.
+* `[@mystatement]` will produce the same as above, surrounding
+  by bracket. Beware that if your statement has no title or
+  acronym (and it's not a numbered statement e.g. `theorem`)
+  you'll only get two parentheses: ().
+* Citations of multiple statements produce a `;`-separated list.
+  `[@sta:psr, @sta:pp]` can produce 
+    '([Principle of Sufficient Reason]{.smallcaps}; 
+    [Principal Principle]{.smallcaps})' for instance.
+* citation prefixes and suffixes are allowed: `[See @sta:pp above]`.
+
+### Link syntax 
+
+* `[](#mystatement)` will produce the same as `@mystatement`.
+* `[arbitrary text](#mystatement) will produce "[arbitrary text]"
+  with a link to the statement.
+  
+Within the link text, `<>` will be replaced the statement's automatic
+label, i.e. its acronym (it is has one) or title.
+
+```markdown
+See the [principle <>]{#sta:pp} above.
+```
+
+This will produce: 'See the [principle PP](#)' if the statement `@sta:pp` has acronym `PP`.
+  
+The link syntax can't be used to refer multiple statements. 
+But it gives you more control over how the link is formatted.
+Compare:
+
+```markdown
+* According to principle @sta:pp, ...
+* According to [principle <>]{#sta:pp}, ...
+```
+
+The former generates a small link: 'according to principle [PP](#)',
+the latter a longer one: 'according to [principle PP](#)'.

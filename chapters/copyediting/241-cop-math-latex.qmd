@@ -1,0 +1,653 @@
+# Math and LaTeX elements {#sec-cop-math-latex}
+
+This chapter focuses on formulas, maths and other LaTeX elements.
+
+## Math and logic conventions
+
+These are decided by your house style.
+
+**Dialectica guidelines**. 
+
+* Propositional connectives: `\lnot` ($\lnot$) rather than `\sim` (`\~`).
+  (those who prefer the latter should note that `\sim` doesn't have 
+  operator spacing in LaTeX, better redefine `\lnot` to print \~
+  with math operator spacing.)
+
+Resources: many websites allow you to search for HTML entites code. 
+
+## Formulas
+
+### Basics
+
+If the author's manuscript includes formulas, make sure they are in MS Word /
+Google Docs **Equation mode** before converting to markdown. `pandoc` will then
+convert them in LaTeX formulas, which will greatly simplify your work.
+
+An "inline" formula, that is a formula within the flow of the text, is delimited
+by `$` signs. For instance, this:
+
+> The principle of non-contradition, $\lnot (\phi \land \lnot \phi)$ is
+> Leibniz's...
+
+is coded:
+
+``` {.markdown}
+The principle of non-contradition, $\lnot (\phi \land \lnot \phi)$ is
+Leibniz's...
+```
+
+A "display" formula, one that occupies more than one line, is delimited by `$$`
+signs. For instance, this:
+
+> Leibniz's law, $$\forall x \forall y (x=y \rightarrow \forall X 
+> (Xx \leftrightarrow Xy))$$ is ...
+
+is coded:
+
+``` {.markdown}
+Leibniz's law, $$\forall x \forall y (x=y \rightarrow \forall X 
+(Xx \leftrightarrow Xy))$$ is ... 
+```
+
+Display formulas are 'block' elements. For more or them, in
+particular, numbering them, see the [Equations](#equations).
+
+Do not leave a space after the opening `$` or before the 
+closing one, otherwise markdown thinks
+they are ordinary dollar signs.
+
+-   GOOD: `$\forall x (Fx \rightarrow Gx)$`
+-   BAD: `$ \forall x (Fx \rightarrow Gx) $`
+
+**Can `pandoc` confuse ordinary dollar signs and formula delimiters**? Normally not. In the following:
+
+-   `Amounts of $20,000 and $30,000 are...`
+
+Pandoc will not think that `$20,000 and $` is a formula,
+because the last `$` is preceded by a space. If, however,
+for some reason you need to typeset something like:
+
+-   `Amounts of $20,000 and 0.00$ are...`
+
+where Pandoc will turn into a formula, "escape" the
+dollar signs:
+
+``` markdown
+Amounts of \$20,000 and 0.00\$ are...
+```
+
+> Amounts of \$20,000 and 0.00\$ are...
+
+### Good practices
+
+**Do not break up a formula apart into its individual symbols**. For instance, this:
+
+> The formulas $\exists x(Fx \rightarrow Gx)$, $\forall x\neg\text{Gx}$ are
+> quantified formulas.
+
+Should be entered in markdown as:
+
+``` {.markdown}
+The formulas $\exists x(Fx \rightarrow Gx)$, $\forall x\neg\text{Gx}$
+are quantified formulas.
+```
+
+Not as:
+
+``` {.markdown}
+The formulas $\exists$ x (Fx $\rightarrow$ Gx), $\forall$ x$\neg$Gx
+are quantified formulas.
+```
+
+**Do not enter a list of formulas as a single formula (with exceptions)**. 
+Merging two formulas into one prevents
+linbreaks between them in the output:
+
+-   GOOD: `$\exists x (Fx \rightarrow Gx)$, $\forall x \lnot Gx$.`{.markdown}
+-   BAD: `$\exists x (Fx \rightarrow Gx), \forall x \lnot Gx$.`{.markdown}
+
+Exception: if you have lists of small items as in $p_1, p_2, \ldots , p_n$, no need to
+split those into many equations:
+
+-   GOOD: `$p_1, p_2, \ldots, p_n$`{.markdown}[^copyediting-3]
+-   ALSO GOOD: `$p_1$, $p_2$, ..., $p_n$`{.markdown}.
+
+[^copyediting-3]: `\ldots` is LaTeX code for suspension dots.
+
+Another exception, list of premises in a formula stating that
+they entail a conclusion:
+
+> $A, B, \vDash C$
+
+- GOOD: `$A, B, \vDash C$`
+- BAD: `$A$, $B$, $vDash C$`
+
+The latter might look right but it is not accurate in e.g. a 
+machine-readable JATS XML export, as the whole line here 
+should be treated as a single claim
+(that $A$,$B$ entail $C$), not three claims ($A$, $B$ and $\vDash C$). 
+
+**Elements of formulas repeated in the text are entered as formulas too**. 
+For instance this:
+
+> In the formula $\exists xFx$ the variable $x$ is bound.
+
+is coded thus:
+
+-   GOOD: `In the formula $\exists xFx$ the variable $x$ is...`{.markdown}
+-   BAD: `In the formula $\exists xFx$ the variable x is...`{.markdown}
+-   BAD: `In the formula $\exists xFx$ the variable *x* is...`{.markdown}
+
+Note that `*x*` is not in formula mode and not a suitable replacement for `$x$`
+here. While both would be displayed in italics, their meaning is different (on
+indicates emphasis, the other indicates an element of a formula) and they are
+subtle differences in typesetting (different font and spacing for formulas).
+Similarly:
+
+> If a subject $S$ has property $P$
+
+-   GOOD: `If a subject $S$ has property $P$...`{.markdown}
+-   BAD: `If a subject S has property P...`{.markdown}
+-   BAD: `If a subject *S* has property *P*...`{.markdown}
+-   BAD: `If a subject **S** has property **P**...`{.markdown}
+
+**Ordinary text within formulas**. Some authors put ordinary text within
+formulas:
+
+$\exists\Phi(\textrm{All }\Phi\textrm{ one})$
+
+You should put that text within the formula LaTeX code, using `\textrm{...}` for normal text, and `\textit{...}` for italic, `\textbf{...}` for bold, `\texttt{...}` for code.
+
+- BAD: `($\exists\Phi$)(All $\Phi$ One)`{.markdown}
+- GOOD: `$(\exists\Phi)(\textrm{All} \Phi \textrm{One})$`{.latex}
+
+This makes more sense (the first is one formula, the second is 
+two mixed with the text) and the spacing will be better.
+  
+
+
+## Schematic letters in the text
+
+Schematic letters in the main text should normally be typeset as formulas:
+
+| I want             |             I type              |
+|:-------------------|:-------------------------------:|
+| $S$ knows that $p$ | `$S$ knows that $p$`{.markdown} |
+| $n$-ary predicate  | `$n$-ary predicate`{.markdown}  |
+| $F$-ness           |  `$F$-ness`{.markdown}          |
+| $\mathrm{F}$-ness  |  `$\mathrm{F}$-ness`{.markdown} |
+
+This does not apply to *acronyms*, e.g. "PP" for the 
+Precautionary Principle.
+
+_Remark_. If there are few, e.g $S$, $p$, and they don't appear 
+in formulas proper such as $K_Sp$, then it can be 
+*tolerated* to enter them as is (`S`) or
+with emphasis to obtain italics (`*p*`). We advise against
+this because `*...*` indicates emphasis and not a symbol 
+or italics. For instance, if the markdown source is later
+fed into text-to-speech software the read out will wrongly 
+stress `*p*` wherever it's used.
+
+Some mathematic texts use upright uppercase letters and lowercase
+italicized letters.^[Because latin lowercase letters come from
+handwritten Carolingian letters but latin uppercase letters 
+come from stone-engraved Roman letters, some think that uppercase
+latin letters shouldn't be used unless strictly necessary. 
+The same can be said for uppercase/lowercase greek letters.] To
+get upright letters with math mode use the `\mathrm{...}` LaTeX
+command. All letters within `{...}` will be typset as upright
+serif letters ("roman" is another name for serif):
+
+| I want             |             I type              |
+|:-------------------|:-------------------------------:|
+| $\mathrm{MA}p$     | `$\mathrm{MA}p$`{.markdown}     |
+| $\mathrm{M}Ap$     | `\mathrm{M}Ap`{.markdown}       |
+| $\mathrm{A+B}$     |  `\mathrm{A+B}`{.markdown}      |
+
+If the predicates are referred to in the text around, I would make sure there
+are in dollar signs too:
+
+> Predicate $F$ is unary, predicate $G$ binary.
+
+-   GOOD `Predicate $F$ is unary, predicate $G$ binary.`{.markdown}
+-   NOT ADVISED `Predicate F is unary, predicate G binary.`{.markdown}
+-   NOT ADVISED `Predicate *F* is unary, predicate *G* binary.`{.markdown}
+
+## Split fractions {#sec-cop-math-latex-split-fractions}
+
+Fractions like 2/3, 1/2, can (and are often better) be printed out as 
+split fractions, with the first number slightly up and left and the lower slightly down and right. 
+
+Solution 1. Fraction &frac12;. This can be printed in both HTML and LaTeX output with the HTML entity code `&frac12;`. However, the HTML
+entites cannot be used in LaTeX so you need to break down any formula including it, which is potentiall bad for output (allows an
+unwanted linebreak, for instance).
+
+```markdown
+The glass is &frac12; empty.
+
+$x =$&frac12;$+ 1$. 
+```
+
+>  The glass is &frac12; empty.
+>  
+>  $x =$&frac12;$+ 1$. 
+
+
+Solution 2. LaTeX package + imagify. Use the `xfrac` LaTeX package by adding the following to the `header-includes` metadata field:^[Recall
+that `~~~` marks code blocks like ` ``` `.]
+
+``` yaml
+header-includes: |
+  ~~~ {=latex}
+  \usepackage{xfrac}
+  ~~~
+```
+
+and enter the fractions in formulas like so:
+
+``` latex
+$\sfrac{2}{3}$
+```
+
+Downside: these are not handled by MathJAX in HTML output, so they 
+have to be converted to images by your template [@sec-imagify].
+
+Future solution? (fails with MathJAX 3). Use `xfrac` as above but add a custom extension to MathJaX instead of imagifying. See [this page](https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac) for a MathJaX 2 example. This doesn't seem to work in MathJAX 3 (perhaps because we can't have the "unpacked" version from the CDN). With a working extension the idea would be to add the conde:
+
+```yaml
+header-includes:
+  ~~~ {=latex}
+  \usepackage{xfrac}
+  ~~~
+  ~~~ {=html}
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+   ... extension code
+  });
+  </script>  
+  ~~~
+```
+
+Warning though: if using OJS's inline HTML the script should be in 
+the body rather than header.
+
+## Equations
+
+For the basics of formulas, see [Formulas](#formulas). 
+
+### Numbered equations
+
+*Requires: pandoc-crossref filter*. 
+
+Display formulas can be numbered by assigning them an identifier:
+
+```markdown
+$$E = mc^2$$ {#eq:my-label}
+```
+
+Here the identifier is `eq:my-label`. It must start with `eq:`. 
+It can then be used for crossreferences:
+
+```
+As shown by @my-label, ...
+```
+
+The syntax for crossreferences is like that of citations, but it 
+can also automatically add a prefix like 'Eq.' or 'Eqs.'. See the [pandoc-crossref](https://lierdakil.github.io/pandoc-crossref/#equation-labels) documentation.
+
+## Theorems and proofs
+
+*Requires*: the `statement.lua` filter.
+
+We format them as "fenced Div blocks", i.e. blocks separated by
+three or more colons (the closing fence must have as many as
+the opening one). The fenced
+Div must have a class from one of the default theorem types
+like `theorem` (or `thm`), `proposition` (or `prop`), `lemma`
+(or `lem`), `definition` (or `defn`), `remark` (or `rmk`), etc.
+
+```markdown
+::: theorem
+Content of the theorem
+
+Second paragraph of the same theorem.
+:::
+```
+
+An theorem can have an id for cross-reference. If you add an
+ID don't forget the curly brackets and point before `theorem`:
+```markdown
+::: {.theorem #theorem}
+Content of the theorem
+:::
+```
+
+Theorems can also have a source, or some info. The source is a citation
+right at the beginning of the theorem:
+
+```markdown
+::: theorem
+@jones1990 Content of the theorem
+:::
+```
+
+Info is some text between brackets at the beginning of the 
+theorem. The text can itself contain brackets, provided they're
+properly balanced:
+
+```markdown
+::: theorem
+(negative (or positive) values) Content of the theorem
+:::
+```
+
+Proofs:
+
+```markdown
+::: proof
+Obvious from theorem @mytheorem.
+:::
+```
+
+### No theorems in footnotes
+
+Statements don't works in footnote for LaTeX/PDFoutput. That's a 
+limitation imposed by the LaTeX `amsthm` package we rely on. It's a 
+sensible limitation: countless maths books are published with this
+package and not a single one of them needs theorems in footnotes.
+
+Indented blocks (plain statements) may appear in footnote. If so use a custom labelled list with empty labels.
+
+### More theorem options
+
+The Statement filter has many more options. Check its manual (in 
+progress as of April 2023)
+
+[Statement filter manual](https://dialoa.github.io/statement)
+
+## Natural deduction proofs with `bussproofs`
+
+If an article uses the LaTeX bussproofs package, the following
+guidelines will allow them to be displayed directly in HTML
+[when using the `Mathjax` option](#https://pandoc.org/MANUAL.html#math-rendering-in-html).^[MathJax is a HTML-embedded script that allows your browser to display
+most LaTeX-encoded math. When Pandoc converts to HTML in MathJax
+code, it includes LaTeX code within `$...$` and `$$...$$` directly
+in the HTML, and MathJax typesets it. However, MathJax cannot
+process all LaTeX. It covers most of the standard maths and
+some special math-related packages like `bussproofs` for 
+natural deduction. But custom commands, special packages
+and other advanced LaTeX will result in red text error messages.]
+
+Bussproofs can be either inline, ending with `\DisplayProof`:
+
+``` latex
+\AxiomC{$P \land Q$)}
+\UnaryInfC{$Q$}
+\DisplayProof
+```
+
+Or display (block element), within a `prooftree` environment:
+
+``` latex
+\begin{prooftree}
+\AxiomC{$P \land Q$)}
+\UnaryInfC{$Q$}
+\end{prooftree}
+```
+
+MathJax can only render the latter, so we always use display proofs.
+They're a bit more spaced than inline ones, but that looks better.
+If, for some reasons, inline bussproofs are required, we would 
+imagify them. 
+
+
+### Inline bussproofs
+
+Mathjax does not display inline bussproofs. So prefer block ones
+wherever possible. If you must use an inline proof, you have two
+options.
+
+1. Use the [Imagify](#imagify) to convert the proof to image in HTML output.
+2. Replace any `$...$` math delimitors in the proof with `\(...\)`, and
+    wrap the proof within `$...$`. If you do this, the HTML output will 
+    display a warning message where the proof would have been. If you
+    don't, you will get nothing at all or a confusing mix of LaTeX
+    code and error message 
+    such as `...A\(}\UnaryInfC{\)AExtra close brace or missing open..`.
+
+**(Dialectica-specific)**. We strongly prefer block proofs. We imagify
+any proof that doesn't display correctly.
+
+Illustration of option 2. Suppose you have the Inline proof:
+
+``` latex
+\AxiomC{$P \land Q$)}
+\UnaryInfC{$Q$}
+\DisplayProof
+```
+
+You should rewrite it as:
+    
+```latex
+$\AxiomC{\(P \land Q\)}
+\UnaryInfC{\(Q\)}
+\DisplayProof$
+```
+  
+### Block bussproofs
+
+**Requires: Pandoc 2.19.3+**. Enter the prooftree environment
+directly in markdown, without enclosing `$$...$$`:
+
+```latex
+\begin{prooftree}
+\AxiomC{\(P \land Q\)}
+\UnaryInfC{\(Q\)}
+\end{prooftree}
+```
+
+It should display correctly in HTML output. 
+
+Exceptions: some commands like `\doubleline` aren't handled by MathJaX. They
+are displayed in red in the HTML output. You can either leave it as is
+or use [Imagify](#imagify) to convert it to an image:
+
+```
+::: {.imagify}
+
+\begin{prooftree}
+...
+\end{prooftree}
+
+:::
+```
+
+See the [Imagify](#imagify) section to fine-tune the result.
+
+*(Dialectica-specific)**. We strongly prefer block proofs. We imagify
+any proof that doesn't display correctly.
+
+
+*Requires: the not-in-format filter*.
+
+(_Note_: *the problem below will be fixed with Pandoc 2.19.3. With this update we should be able to enter the prooftree environments without the surrounding `$$..$$`. (to be tested).*)
+
+With prooftree environments we face the following problem:
+
+* If we include the LaTeX directly in the source, it's not printed
+  at all in HTML output:
+  
+  ```latex
+  \begin{prooftree}
+  \AxiomC{\(P \land Q\)}
+  \UnaryInfC{\(Q\)}
+  \end{prooftree}
+  ```
+  
+* If we enclose it within ``$$...$$`, it is passed to the HTML
+  output and then correctly displayed by MathJax. But the PDF
+  generation crashes. 
+  
+   ```latex
+  $$\begin{prooftree}
+  \AxiomC{$P \land Q$}
+  \UnaryInfC{$Q$}
+  \end{prooftree}$$
+  ```
+  
+__Solution__. We provide *two* versions of the prootree environment,
+one for formats other than LaTeX, one for LaTeX. This is done as
+follows:
+
+``` markdown
+::: {.not-in-format .latex}
+ $$\begin{prooftree}
+  \AxiomC{$P \land Q$}
+  \UnaryInfC{$Q$}
+\end{prooftree}$$
+:::
+
+::: {.only-in-format .latex}
+\begin{prooftree}
+  \AxiomC{$P \land Q$}
+  \UnaryInfC{$Q$}
+\end{prooftree}
+:::
+
+```
+
+Within prooftree environements there's no need to replace the
+`$...$` with `\(...\)`. 
+
+The `not-in-format` and `only-in-format` Divs can contain any 
+markdown content, including a mix of LaTeX and markdown if needed. 
+For isntance, your proofs may be in numbered example lists:
+
+``` markdown
+::: {.not-in-format .latex}
+(@) $$\begin{prooftree}
+      \AxiomC{$P \land Q$}
+      \UnaryInfC{$Q$}
+    \end{prooftree}$$
+:::
+
+::: {.only-in-format .latex}
+(@) \begin{prooftree}
+      \AxiomC{$P \land Q$}
+      \UnaryInfC{$Q$}
+    \end{prooftree}
+:::
+```
+
+And if you have several proofs in a row, you don't need to have two
+Divs for each, you can have two Divs overall:
+
+``` markdown
+::: {.not-in-format .latex}
+1.   $$\begin{prooftree}
+      \AxiomC{$P \land Q$}
+      \UnaryInfC{$Q$}
+    \end{prooftree}$$
+2.   $$\begin{prooftree}
+      \AxiomC{$P$}
+      \UnaryInfC{$P\lor Q$}
+    \end{prooftree}$$
+:::
+
+::: {.only-in-format .latex}
+1.   \begin{prooftree}
+      \AxiomC{$P \land Q$}
+      \UnaryInfC{$Q$}
+    \end{prooftree}
+2.   \begin{prooftree}
+      \AxiomC{$P$}
+      \UnaryInfC{$P\lor Q$}
+    \end{prooftree}
+
+:::
+```
+
+## Latex new and redefined commands
+
+A document can include `\newcommand` (`\renewcommand`,
+`\newenvironment`, `\renewenvironment`, `\def`,`\let`) commands 
+to define abbreviations. For instance some authors introduce
+a command to produce tuples:
+
+```latex
+\newcommand{\tuple}{\langle #1 \rangle}
+...
+
+The pair \tuple{a,b} is...
+```
+
+The command `\tuple{a,b}` then abbreviates `\langle a,b \rangle` which
+produces $\langle a,b \rangle$. 
+
+We can use these commands, but *not put them in `{=latex}` wrappers*. 
+
+BAD: 
+
+```yaml
+header-includes: |
+  ```{=latex}
+  \usepackage{fancypkg}
+  \newcommand{\tuple}{\langle #1 \rangle}
+  ```
+```
+
+GOOD:
+
+```yaml
+header-includes: |
+  ```{=latex}
+  \usepackage{fancypkg}
+  ```
+  \newcommand{\tuple}{\langle #1 \rangle}
+```
+
+* Put in `{=latex}` things that only work in LaTeX. Special packages that can only be imagified in HTML output go there. For example `stmaryrd` is a package often used to get double brackets; it doesn't work in MathJaX and we need to imagify those elements instead. So it goes in `{=latex}`. 
+* Put outside of `{latex}` things that Pandoc needs to know about even when generating HTML output. Here the new command needs to be translated whichever output we're generating, so Pandoc needs to know about it. We put it outside of `{=latex}`.
+
+## MathJAX "Math Input Error"
+
+Error: you're expecting a LaTeX element to be rendered by MathJAX in
+HTML output, but instead MathJAX displays a red-on-yellow "Math Input
+Error" message.
+
+To identify the source of the problem, open the HTML in a text editor.
+Find the bit of HTML corresponding to your latex element. It'll be in a
+`math inline` or `math display` span element:
+
+``` html
+<span class="math display">\[\begin{prooftree}
+\AxiomC{A}\RightLabel{Id}
+\UnaryInfC{$A$}\RightLabel{example, 
+Refl}
+\UnaryInfC{$A$}
+\end{prooftree}\]</span>
+```
+
+Create an empty math element next to it, e.g.:
+
+``` html
+<p>TEST CODE:</p>
+<span class="math display">\[
+\]</span>
+```
+
+Open the file in a browser. Add the contents of the original element
+line by line, refreshing the browser each time, until you find the 
+bit of code that produces the error. In the example above, for instance, the error was produced by the linebreak:
+
+``` latex
+\UnaryInfC{$A$}\RightLabel{example, 
+Refl}
+```
+
+\noindent and was fixed when we removed it:
+
+``` latex
+\UnaryInfC{$A$}\RightLabel{example, Refl}
+```

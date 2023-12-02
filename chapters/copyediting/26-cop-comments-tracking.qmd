@@ -1,0 +1,62 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 90
+---
+
+# Comments and tracking changes
+
+## Comments to fellow copyeditors
+
+If you don't know what to do with a bit of the article, you may want to enter an
+invisible comment in the markdown file. You can do so by enclosing your comment
+between `<!--`{.html} and `-->`{.html}:
+
+As everybody knows, that humans are animals is an a
+priori`<!-- JD should I italicize this?!? -->`{.html} truth that can be
+established by conceptual analysis.
+
+A comment can span several lines.
+
+## Revisions and comments for the author
+
+**ON HOLD**. Not implemented. We might use an alternative notation instead that
+is implemented.
+
+There is a standard for adding revisions to Markdown, CriticMarkup. It will also
+us to enter and make visible:
+
+-   Insertions
+
+-   Deletions
+
+-   Replacements
+
+-   Comments to the author
+
+You can start using it, but we need to do so configuration for it to display
+properly in the PDFs. See [[the CriticMarkUp syntax
+manua]{.ul}](http://criticmarkup.com/spec.php)l.
+
++---------+---------------------------------------+----------------------------+
+|         | I want                                | I enter                    |
++=========+:======================================+:===========================+
+| In      | What a beautiful sentence.            | What a {++beautiful++}     |
+| sertion |                                       | sentence.                  |
++---------+---------------------------------------+----------------------------+
+| D       | What a beautiful sentence. (with the  | What a {--beautiful--}     |
+| eletion | red word crossed out, sorry can't do  | sentence.                  |
+|         | that in Google docs!)                 |                            |
++---------+---------------------------------------+----------------------------+
+| Repl    | What a beautifulugly sentence.        | What a {\~\~beautiful \~\> |
+| acement |                                       | ugly\~\~} sentence.        |
++---------+---------------------------------------+----------------------------+
+| Comment | What a beautiful sentence.            | What a beautiful           |
+|         | $$comment to                          | sentence.{\>\> this claim  |
+|         |  the author: this claim isn't clear$$ | isn't clear \<\<}          |
++---------+---------------------------------------+----------------------------+
+| Hi      | What a beautiful sentence.$$comment   | What a {== beautiful       |
+| ghlight | to the other: change the adjective!$$ | ===}{\>\> change the       |
+| with    |                                       | adjective! \<\<} sentence. |
+| comment |                                       |                            |
++---------+---------------------------------------+----------------------------+

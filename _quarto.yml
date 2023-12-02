@@ -1,0 +1,88 @@
+project:
+  type: book
+  output-dir: _book
+
+profile:
+  group: [main, dialectica]
+
+book:
+  title: "Open Markdown Manual of Style"
+  author: "Julien Dutant and the Dialoa team"
+  cover-image: media/cover.png
+  favicon: media/dialoa.ico
+  cover-image-alt: "The Open Markdown Manual of Style by Dialoa"
+  chapters:
+    - index.qmd
+    - part: Authoring
+      chapters:
+      - chapters/authoring/00-intro.qmd
+      - chapters/authoring/10-instructions.qmd
+    - part: Copyediting
+      chapters:
+      - chapters/copyediting/12-cop-preliminaries.qmd
+      - chapters/copyediting/13-cop-preparing-a-manuscript.qmd
+      - chapters/copyediting/15-cop-markdown-intro.qmd
+      - chapters/copyediting/155-cop-checklist.qmd
+      - chapters/copyediting/16-cop-metadata.qmd
+      - chapters/copyediting/165-cop-grammar-usage.qmd
+      - chapters/copyediting/17-cop-inline-elements.qmd
+      - chapters/copyediting/171-cop-inline-special-chars.qmd
+      - chapters/copyediting/19-cop-block-elements.qmd
+      - chapters/copyediting/191-cop-block-quotations.qmd
+      - chapters/copyediting/192-cop-block-lists.qmd
+      - chapters/copyediting/193-cop-block-tables.qmd
+      - chapters/copyediting/194-cop-block-figures.qmd
+      - chapters/copyediting/195-cop-block-statements.qmd
+      - chapters/copyediting/196-cop-block-columns.qmd
+      - chapters/copyediting/199-cop-block-other.qmd
+      - chapters/copyediting/21-cop-block-crossreferencing.qmd
+      - chapters/copyediting/23-cop-citations.qmd
+      - chapters/copyediting/24-cop-bibliography.qmd
+      - chapters/copyediting/241-cop-math-latex.qmd
+      - chapters/copyediting/25-cop-imagify.qmd
+      # - chapters/copyediting/26-cop-comments-tracking.qmd
+      - chapters/copyediting/27-cop-troubleshooting.qmd
+      - chapters/copyediting/29-cop-markdown-cheatsheet.qmd
+    - part: Dialectica
+      chapters:
+      - chapters/dialectica/60-dialectica-house-outputs.qmd
+      - chapters/dialectica/61-dialectica-new-house-outputs.qmd
+      - chapters/dialectica/65-dialectica-troubleshooting-outputs.qmd
+      - chapters/dialectica/70-dialectica-template.qmd
+      - chapters/dialectica/80-dialectica-bibliography.qmd
+    - part: Design
+      chapters:
+      - chapters/design/52-pub-the-structure-of-volumes.qmd
+    - part: Publishing
+      chapters:
+      - chapters/publishing/42-ojs-advice.qmd
+      - chapters/publishing/51-pub-why-markdown.qmd
+  appendices:
+  - chapters/appendices/terminal-help.qmd
+  - chapters/appendices/resources.qmd
+  - chapters/appendices/glossary.qmd
+  - chapters/appendices/references.qmd
+
+filters:
+- first-line-indent
+
+bibliography: 
+- references.bib
+- dummies.bib
+
+format:
+  html:
+    theme: flatly
+    output-dir: _book
+    indent: false
+#  pdf:
+#    documentclass: scrreprt
+#    output-file: Open_Markdown_Manual_of_Style.pdf
+    
+
+editor:
+  markdown:
+    wrap: 72
+
+
+

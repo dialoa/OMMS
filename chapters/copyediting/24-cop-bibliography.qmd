@@ -1,0 +1,517 @@
+# Bibliography
+
+You should get or create a bibliography file contained the references cited
+in your manuscript. This could be a BibTeX file (`.bib`) or a CSL json file 
+(usually `.json`). You need to:
+
+1. Get or create a bibliography file
+2. Check whether the file includes any self-cited entries. Some bibliography 
+  entries may cite other entries, so the bibliography file will cite its own 
+  entries. We need to ensure that any such self-cited entry is actually present
+  in the file, and we need to ensure that it is printed out in the bibliography.
+3.
+
+*dialectica*. We use BibTeX files. The "bibliography file" below refers to a 
+`.bib` file in your article's folder. 
+
+## Important
+
+* Use **different names** for the BibTeX files of different articles in
+  the same issue. If one journal issue has several `.bib` files with
+  the same name, the second won't be found. (*dialectica template*)
+* Your BibTeX file may 'self-cite': entries that cite other entries
+  (in the `note` field, or even in the `title` field.)
+  You need to check that (a) all entries cited in that way are included
+  in the Bibfile. If they aren't you'll see "Citation not found" errors.
+  You also need to check that (b) all citations within the bibliography
+  are printed correctly. Look at the bibliography in PDF and html
+  output, make sure it doesn't contain garbage like **Smith_2008:c?** 
+  or wrong formatting like "(reprinted in (Smith 2008))".
+
+There's more detail on self-citing bibliographies below.
+
+## Get or create a BibTeX file
+
+**Temporary solution**: get your .bib from Philipp. 
+
+
+## Adding non-cited references in the bibliography
+
+In the metadata block, add a line:
+
+``` yaml
+nocite: |
+  @bibtexentry1, @bibtexentry2, @bibtexentry3
+```
+
+If you have lots of those, best use a tool to extract the keys
+automatically from a bibtex file.
+
+
+## Inserting Citations in the text in RStudio
+
+**Requires:** RStudio visual editor mode.
+
+In **visual** mode, Insert \> @ Citation. It opens a popup window; on
+its left menu, choose bibliography. Click the plus sign on the right of
+each citation, then press the insert button.
+
+**Missing references**: Go to @ Citations. On the left menu of the pop-up
+window, choose CrossRef. (See image below). Type the author and the name
+of the paper in the search bar; that should find the paper. Click on the
+plus sign on the right of the entry, then press insert button which will
+add the reference to the bibliography file.
+
+![](media/image2.png){width="6.5in" height="4.152777777777778in"}
+
+## Formatting citations in the text
+
+There are various formats of citations:
+
+-   In several recent papers, this has all been shown wrong (Castor
+    > 2018; Pollux 2020).
+
+-   As Castor (2020: 127) shows, this is all wrong.
+
+To get these various formats you need to modify the markdown code for
+citations. For instructions refer to the Markdown guide above
+(cheatsheet or section on citations).
+
+## BibTeX file guidelines
+
+This only applies to BibTeX (`.bib`) files. If you're using CSL Json files, 
+you are probably generating them from Zotero or some other bibliography
+manager instead. 
+
+### Edit BibTeX files
+
+Several methods:
+
+1. Edit the `.bib` file directly in a text editor (e.g. RStudio). Either:
+
+  i. fix manually what is wrong with the entry. 
+  ii. delete the entry, search and add it again with the same method as 
+    when you miss a reference (see below).
+
+2. Use a BibTeX editor (BibDesk, comes with TeXshop on Macos, or JabRef).
+
+3. Use a bibliography manager like Zotero that imports / exports BibTeX files.
+  **Beware**: Zotero and others convert the `.bib` file into their own 
+  formats on import. This means that you may lose of your bib file's 
+  features: with Zotero, `\cite` commands (that a BibTeX file may use to 
+  cite some entries in other entries) are lost.
+  
+### Check BibTeX file formatting
+
+You can use `biber` (LaTeX's bibliography generator) to check 
+a BibTeX file for errors. Run on the terminal:
+
+```
+biber --tool references.bib
+```
+
+This prints out a report on any problem in the file. It also
+creates a cleaned-up version of the file, as 
+ `references_bibtools.bib`.
+ 
+### BibTeX field names aren't case-sensitive
+
+BibTeX field names are not case-sensitive: they can be named "author",
+or "Author", or "AUTHOR".
+
+```bibtex
+@inbook{Jakobson:1980,
+  Author = {Jakobson, Roman},
+  Title = {Metalanguage as a Linguistic Problem}
+}
+```
+
+Is the same as:
+
+```bibtex
+@inbook{Jakobson:1980,
+  author = {Jakobson, Roman},
+  TITLE = {Metalanguage as a Linguistic Problem}
+}
+```
+
+### Title capitalization
+
+Traditionally, in English bibliographies titles in English are typeset in *title 
+case* ("An Article with Results") but titles in other languages are typeset in
+*sentence case* ("An article with results"). In German or French bibliographies,
+all titles (including those of works in English) are in sentence case.^[The 
+Chicago manual recommends title case for English titles; the APA manual 
+recommends sentence case for all titles.]
+
+The appearance is controlled by our bibliography template. For this to work
+entries in the the BibTeX file must:
+
+1. Have a `langid` field specifying the entry's language 
+  as an [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag): 
+  `en`, `en-US`, `de`, etc.^[The [polyglossia package 
+  documentation](https://www.ctan.org/pkg/polyglossia) has a useful
+  list of tags. If you have a full LaTeX installation you can also get it from 
+  the terminal by running the command `texdoc polyglossia`.] Though (at least 
+  some) full names like `english` or `french` will work too. If there is no  
+  `langid` field for a given BibTeX entry,  the entry is assumed to 
+  be in the language of the  document (as specified in the document's metadata, 
+   `lang` field).
+2. Have titles in *sentence case*, that is, where only names and words that need
+  to be capitalized no matter what are in upper case. For instance, "The 
+  philosophy of logical atomism" or "Der Wahrheitsbegriff in den 
+  formalisierten Sprachen". 
+
+If an entry uses title case ("Rezension der Schrift von..."), the 
+capitals will be assumed to be mandatory and will be printed even
+when it should be in sentence case. Thus if you know that your bibliography
+entries in English will always be printed in title case (i.e., your publication
+is in English and you're sure it won't adopt the APA sentence case convention),
+then it's harmless to use title case in the BibTeX file itself. But when in 
+doubt sentence case + `langid` field is the safe option. 
+
+For an illustration: 
+
+```bibtex
+@article{Tarski1936,
+	author = {Alfred Tarski},
+	title = {Der Wahrheitsbegriff in den formalisierten Sprachen},
+	journal = {Studia Philosophica},
+	volume = {1},
+	pages = {261--405},
+	year = {1936},
+	langid = {de},
+}
+@article{Russell1905,
+	author = {Bertrand Russell},
+	title = {On denoting},
+	journal = {Mind},
+	volume = {14},
+	number = {56},
+	pages = {479--493},
+	year = {1905},
+  langid = {en},
+}
+
+```
+
+For more detail:
+
+* the `langid` field is a [`biblatex` field 
+  name](https://www.ctan.org/pkg/biblatex). It is recognized by Pandoc's 
+  `citeproc` (Pandoc's internal citation processor) for use in a association 
+  with a CSL style file. 
+* There is a `language` field in BibTeX files too. But it is not meant to affect
+  an entry's format; rather, it is used for entries to explicitly
+  state its language](ttps://tex.stackexchange.com/questions/323441/how-does-langid-field-in-biblatex-differ-from-language-field)
+  affect the formal of the bibliography.
+
+### Original year of publication
+
+If the author isn't using the original edition of a book, e.g. citing
+from a 2010 edition of Locke's 1689 essay, add a field origdate in the
+bibtex entry. (will not show up in the PDF at the moment, but our final template
+will do it). Ex:
+
+```bibtex
+@inbook{Jakobson:1980,
+  Author = {Jakobson, Roman},
+  Booktitle = {The Framework of Language},
+  Location = {Ann Arbor},
+  Year = {1980}
+  Origdate = {1956},
+  Pages = {81\--92},
+  Publisher = {University of Michigan Press},
+  Shorttitle = {Metalanguage as a Linguistic Problem},
+  Title = {Metalanguage as a Linguistic Problem}
+}
+```
+
+See [biblatex documentation, §2.2.2 on data
+fields](http://texdoc.net/texmf-dist/doc/latex/biblatex/biblatex.pdf).
+
+### BibTeX conventions and resources
+
+There are two BibTeX standards that can be used:
+
+* BibTeX
+* BibLaTeX
+
+The two conventions overlap a lot (most of the field names are common).
+The BibLaTeX conventions are more recent and complete. The BibTeX ones are 
+widely used, and almost entirely compatible with BibLaTeX. 
+Each corresponds to a LaTeX bibliography processor (`bibtex` and `biber`, 
+respectively). Both are understood by Pandoc's bibliography processor, `citeproc`. 
+
+Where to find references on these BibTeX standards?
+
+1. BibTeX. The [BibTeX original documentation](https://www.ctan.org/pkg/bibtex) (1988), Paperpile's [BibTeX guide](https://www.bibtex.com/format/).
+2. BibLaTeX. The [BibLaTeX official documentation](https://www.ctan.org/pkg/biblatex) and the 
+[BibLaTeX cheatsheet](https://www.ctan.org/pkg/biblatex-cheatsheet).
+
+Note: if you have a full LaTeX installation on your computer you will have 
+access to some of these documents from your terminal using the `texdoc` 
+command. Try the commands:
+
+```bash
+texdoc biblatex
+
+texdoc biblatex-cheatsheet
+
+texdoc bibtex
+```
+
+**Dialectica guideline**. We use the `biblatex` conventions. 
+
+## BibTeX file special entry types
+
+### Unpublished manuscript
+
+Choose the type `unpublished`. Add a note field:
+
+```bibtex
+  note = {unpublished manuscript}
+```
+
+Add a URL if available.
+
+*Dialectica guideline*. We require a URL. If the author cannot provide a URL, we
+do not create a bibliography entry at all but only describe the source in a 
+footnote ("in an unpublished manuscript titled "XXX").
+
+## Make sure any self-cited entries are included and printed
+
+Your bibliography file may be 'self-citing', that is it may
+include some entries that cite other entries. For instance, a bibliography entry may have the title "Review of `\citet{Smith_h:2005}`", where the latter is LaTeX
+code to cite the entry with key `Smith_h:2005`. If your bibliography file might have such entries you need to do two things:
+
+1. Make sure that for all the self-cited keys, there is an entry in the file.
+2. Make sure that the self-cited keys are printed out in the final bibliography. 
+
+If somebody else is taking care of your bibliography file, you only have to 
+do the second. If in addition you're sure that your bibliography file does *not*
+include unnecessary entries, you have a simple way of dealing with (2) by 
+adding the `nocite: @*` line in your metadata. See below. 
+
+### Check that the BibTeX file includes all self-cited entries
+
+**Requires:** Dialectica's `selfcites.py` script. Using the terminal.
+
+*The problem*. If a bibliography file self-cites some keys, but doesn't include
+an entry for these keys, you will get "Missing reference" warnings and your 
+bibliography will be incomplete. You need to ensure that there's an entry for
+any self-cited key. 
+
+*Solution*. Run the selfcites.py script on your bibliography file. Suppose your article's bibliography file is named `myreferences.bib`. Open a terminal, navigate to the article folder and run:
+
+```bash
+python3 ../../../resources/scripts/selfcites.py myreferences.bib
+```
+
+More generally, you can run that script from anywhere on a bib file that is anywhere:
+
+```bash
+python3 path/to//selfcites.py path/to/myreferences.bib
+```
+
+The script will check the `.bib` file for self-citations and output a report in the terminal such as:
+
+```
+Dialectica open access initative self-citing bibliography file check, (c) Thomas Hodgson 2021
+I found these self cited keys:
+ quine:1951e, loux:1970, lewis_dk:2001c, vaninwagen:2001, quine:1953, lewis_dk:1983
+These self cited keys are missing from the file's entries:
+ quine:1951e
+loux:1970
+lewis_dk:2001c
+vaninwagen:2001
+quine:1953
+lewis_dk:1983
+For information, these are all the entries I found:
+ horgan_te-potrc:2008, brenner_and:2017a, zimmerman_dw:2008, kleinschmidt_s:2014, sider_t:2013, rettler:2016, vaninwagen:1998d, cameron_rp:2012, lewis_dk:1973, cowling_s:2013b, finocchiaro_p:2019:, burgess_jp-rosen:1997, mcsweeney:2019, willard_mb:2014, bennett_k:2009, nolan_dp:1997b, tallant:2013a, schaffer_j:2015a, prior_an-fine:1977, turner_j:2015, churchland_pm:1984, finocchiaro_p:2021:, melia:2008a, quine:1948, torza:2015, schaffer_j:2009d, lewis_dk-lewis:1970, bennett_k-zimmerman:2013, linnebo-nicolas:2008, lewis_dk:1986, parsons_j:2014, chalmers_dj-etal:2009, sober:2015, sider_t:2011, merricks:2001, keller_ja:2017, finocchiaro_p:2019b:, mckay_tj:2006, paul_la:2017a
+```
+
+If there are keys below "These self cited keys are missing from the file's entries:", then your .bib file cites these keys but they are missing. You need
+to add them. 
+
+The line below "I found these self cited keys:" can be used to ensure the
+self-cited entries are printed in the article bibliography. See [below](#add-self-citations-to-your-documents-metadata). 
+
+### Make sure all the self-cited entries are printed out
+
+*The problem*. If bibliography file self-cites some entries, but the manuscript
+itself doesn't cite them, these entries will not be printed in the bibliography.
+
+*The solution*. The self-cited entries must be added in the document's metadata, 
+in a `nocite` field. There are two ways to do so:
+
+* if you're sure that your .bib file *only* contains entries that need to be 
+printed out (no extra entries), then you can use the simple option 1.
+* otherwise, use option 2, which requires a script.
+
+Option 1. If you are sure that your .bib file *only* contains entries that need to be printed out in the bibliography
+
+**Requires:** the selfcites.py script. See [above](#check-that-the-BibTeX-file-contains-self-cited-entries).
+
+
+Open the `.bib` file in a text editor. Search for `\cite`. If you have no 
+no results, then your `.bib` file doesn't include self-citations and you 
+are good to go. If you do find results, you will have bibliography entries 
+in the file that look like this, for instance:
+
+```bibtex
+@book{geach_pt:1962,
+  address =       {Ithaca, New York},
+  author =        {Geach, Peter Thomas},
+  note =          {third edition: \citet{geach_pt:1980}},
+  publisher =     {Cornell University Press},
+  title =         {Reference and Generality, an examination of some
+                   medieval and modern theories},
+  year =          {1962},
+}
+```
+
+In the `note =` line here, you see the code  `\citet{geach_pt:1980}`. This is 
+a LaTeX command that cites *another bibliography entry in the same file*, namely
+the one with the key `geach_pt:1980`. Ultimately this will be printed out in 
+the bibliography as: 
+
+> Geach, Peter Thomas (1962) *Reference and Generality, an Examination of Some Medieval and Modern Theories*, Ithaca, New York: Cornell University Press. Thrid edition: Geach (1980).
+>
+> ...
+>
+> Geach, Peter Thomas (1980) *Reference and Generality*, ...
+
+The LaTeX `\cite` commands can start with `\cite`, `\citet`, `\citep`; you will
+find all of these by searching `\cite` in the file. Sometimes the command cites
+pages numbers and looks like this instead:
+
+```bibtex
+  note =          {reprinted in \citet[232--258]{mccall_s:1967}, with
+                   considerable change in notation},
+```
+
+In that case the cited entry's key is still the thing between curly brackets,
+here `mccall_s:1967`.
+
+Now you need to make sure that the self-cited entries appear in the bibliography.
+The problem is that if it is only cited in the bibligraphy and not the paper 
+itself, it will not automatically be included. To ensure that it is included, 
+you need to add the key in your document metadata, in a `nocite` field:
+
+```yaml
+title: A Neat Paper
+author: Smith, John
+bibliography: smith.bib
+nocite: |
+  geach_pt:1980, mccall_s:1967
+```
+
+The `nocite: |` should appear on one line, the entries on one or several lines
+below but each of those lines must start with at least two spaces, and the
+entries should be separated by commas. 
+
+You need not check whether the entries are actually cited in the paper or not:
+just add them to the `nocite` metadata, it will not hurt if they are also cited.
+
+Continue searching for `\cite` commands in your `.bib` file and make sure all
+the keys are entered in your document's `nocite` metadata section. 
+
+## Troubleshooting and examples
+
+### Error message: Unexpected end of file
+
+The following message indicates an error with the BibTeX file:
+
+```
+Error at "percent.bib" (line 9, column 1):
+unexpected end of input
+```
+
+### Percent signs in DOI field
+
+At the moment % signs in DOI fields generate an error. 
+
+If you copied/pasted DOIs in your BibTeX file, symbols in 
+them may end up 'percent-encoded', e.g. "%2F" instead of "/".
+For instance, the DOI "10.1007/15.12345" copied from
+the web may end up being pasted as "10.1007%2F15.12345".
+
+These DOIs crash Pandoc version 3.0.1 and lower, but the
+bug will be fixed in future releases.
+
+
+### Error message: `\citet` unknown command
+
+**Requires:** script or filter that manages recursive bibliography management .
+
+Pandoc encounters a LaTeX citation command (`\citet` or the like). Unless you
+or the author has written one in the text, it is in the .bib file.^[Explanation.
+By default Pandoc doesn't process the `\citet` command in a bib file (at least, not if 
+the field is "title", and perhaps not in general), leaves the `\citet` command.
+At the LaTeX stage it's not recognized by LaTeX (because we don't load natbib).]
+
+Solution 1. In Dialectica, LaTeX citation commands in the .bib file are processed. This is achieved by a script that runs pandoc on the document twice,
+first to generate a json that includes the biblio, second to generate the final 
+output (at which state the latex commands in the biblio are processed). The
+first run is `--to json` and the second with `-M suppress-bibliography`. 
+Suggested by John MacFarlane on pandoc-discuss. 
+
+Solution 1. Replace the offending `\citet` command(s) in your .bib file. To find it or them:
+
+* process the markdown with .tex output.
+* search \\citet in the tex output. you should see which bib entry it is in.
+* go to the .bib file and replace the `\citet{jones_a:2020}` in that entry with e.g. `Jones (2020)`, and in the md, enter the citation key as no-cite (see above)
+
+Solution 2. Implement a double-pass generation procedure. This is the publisher's
+job.
+
+::: private
+We have now figured out a method to process those command. However, we'll need
+to update the document-generation procedure to implement it. Either wait for it,
+or use solution 1.
+
+in a field of your .bib file is printed out. It needs to be replaced. To find it:
+
+* process the markdown with .tex output.
+* search \\citet in the tex output. you should see which bib entry it is in.
+* go to the .bib file and replace the `\citet{jones_a:2020}` in that entry with e.g. `Jones (2020)`, and in the md, enter the citation key as no-cite (see above)
+
+Explanation. Pandoc doesn't process it (at least, not if the field is "title", and perhaps not in general), leaves the `\citet` command. At the LaTeX stage it's not recognized by LaTeX (because we don't load natbib).
+
+:::
+
+### From Frege to gödel
+
+Mystery. The cross ref below is printed out as "From Frege to gödel: "
+by citeproc, no matter (a) whether we write `Gödel` or `G{\¨o}del`, (b) no
+matter the position, i.e. we get "From gödel to Frege". **The solution
+is** put G in curly brackets. But why???
+
+```bibtex
+\@incollection{frege:1967a,
+  Author = {Frege, Gottlob},
+  Crossref = {vanheijenoort:1967},
+  Note = {translated by Stephan Bauer-Mengelberg},
+  Num_Sort = {40337},
+  Pages = {1\--82},
+  Title = {Begriffsschrift: A Formula Language Modeled on that of
+  Arithmetic, for Pure Thought},
+  Year = {1967}
+}
+
+\@book{vanheijenoort:1967,
+  editor = {van Heijenoort, Jan},
+  year = {1967},
+  title = {From Frege to G{\"o}del: A Source Book in Mathematical Logic
+  1879-1931},
+  booktitle = {From Frege to {G}ödel: A Source Book in Mathematical Logic
+  1879-1931},
+  address = {Cambridge, Massachusetts},publisher = {Harvard University
+  Press}
+}
+```
+
+Beginning of an answer: case is protected if a *subpart* of the word is bracketed. `A dog called {Pizza}` will be overriding by the style (and thus printed "A pizza" if the style calls for it) but `A dog called {P}izza` is 
+protected.
+

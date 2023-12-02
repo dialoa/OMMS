@@ -1,0 +1,10 @@
+# Grammar and usage
+
+## Possessives
+
+__Possessives and plural__. Distinguish shared vs separate ownership:
+
+* Ali and Ben's book(s). The book(s) jointly authored by Ali and Ben.
+* Ali's and Ben's book(s). The book(s) authored by Ali and the book(s) authored
+by Ben.
+

@@ -1,0 +1,239 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 90
+---
+
+# Inline elements
+
+A traditional document consists of *lines of text* organized into *blocks*. A markdown
+document is likewise organized into *inline elements* that are put together into *blocks*.
+
+-   Inline elements
+    -   words and spaces,
+    -   a few words in italics,
+    -   a formula in the flow of the text, such as $x+y=c$.
+-   Block elements
+    -   paragraphs
+    -   section headings
+    -   images, figures, tables
+    -   display formulas
+    -   footnotes
+    -   ...
+
+This chapter and the following ones deal with inline elements.
+
+## Punctuation
+
+### Punctuation and brackets
+
+If only part of the sentence is in parentheses, put the final punctuation outside of the
+parenthesis:
+
+> I enjoy breakfast (sometimes).
+
+If the entire sentence is in parenthesis, put the punctuation inside the parenthesis.
+
+> I enjoyed breakfast. (I always do.)
+
+### Punctuation and quotation marks
+
+See @sec-quotations.
+
+## Emphasis and bold
+
+Emphasized text is marked with surrounding *asterisks* or *underscores*. Bold is marked
+with double asterisks or underscores, emphasized bold with three:
+
+``` markdown
+This *word* and _that word_ are emphasized. 
+
+This **word** and __that word__ are strongly emphasized.
+
+***This sentence is extra strongly emphasized.*** 
+```
+
+Emphasis is printed in *italics* when surrounded with normal text. *But when the
+surrounding text is itself in italics, this is the* opposite*.*
+
+::: house
+**Dialectica guidelines**
+
+Use simple emphasis only. Avoid strong emphasis (bold), which stands out too much on the
+page.
+
+Simple emphasis (italics, one asterisk or underscore) is used: - for emphasis, - for
+labels of principles in statements:
+
+*Principle of Compositionality*.
+
+-   for mentioned words (e.g. in philosophy of language papers):
+
+    The verb *know* has two meanings
+
+-   for simple symbols (when the paper doesn't use formulas otherwise):
+
+    *S* knows that *p*.
+
+Bold should be only used in limited cases:
+
+-   some acronyms for a principle (**PC**), a system of logic (*S4*).
+:::
+
+## Subscripts and superscripts
+
+Subscripts and superscripts in markdown text are coded as follows:
+
++---------------------------------------+------------------------------------------------+
+| I want                                | I type                                         |
++=======================================+================================================+
+| A sub~1~ script and a sup^1^ script   | `A sub~1~ script and a sup^1^ script.`         |
+| (when attached to plain text words).  |                                                |
++---------------------------------------+------------------------------------------------+
+| Water is H~2~O.                       | `Water is H~2~O.`                              |
++---------------------------------------+------------------------------------------------+
+| The n^o^ 1 activity                   | `The n^o^\ 1 activity`                         |
++---------------------------------------+------------------------------------------------+
+
+Most often, though, superscripts and subscripts are part of LaTeX formulas. The code is
+then entered as follows.
+
++---------------------------------------+------------------------------------------------+
+| I want                                | I type                                         |
++=======================================+================================================+
+| With $p_1$ and $p^2$ the              | ``` markdown                                   |
+| sub(/super)scripts are in formulas.   | With $p_1$ and $p^2$ the...                    |
+|                                       | ```                                            |
++---------------------------------------+------------------------------------------------+
+| With $p_{12}$ and $p^{**}$ the        | ``` markdown                                   |
+| sub(/super)scripts are several        | With $p_{12}$ and $p^{xy}$ the...              |
+| characters long.                      | ```                                            |
++---------------------------------------+------------------------------------------------+
+
+Note that in LaTeX, when your sub(/super)script is more than one character long, it needs
+to be enclosed in curly braces.
+
+Do not use LaTeX's `\sb` and `\sp` commands: MathJaX, our tool for displaying LaTeX
+formulas in HTML output, doesn't recognize them.
+
+## Hyphens and dashes {#sec-hyphens-dashes}
+
+The hyphen `-` is used between words:
+
+> An eye-popping headline.
+
+En-dashes `--` between numbers:
+
+> Pages 17--19.
+
+Em-dashes `---` for insertions:
+
+> He bailed out---and never came back. The mayor---a notorious narcissist---went to the
+> press.
+
+### Compound words: when to hyphenate
+
+The general rule is that compound *adjectives* are hyphenated but compount *nouns* aren-t:
+
+> An Egyptian-inspired drawing. A day-to-day schedule. A theory-laden observation.
+
+> A trailer park. A car shed. The equality view.
+
+### Insertion dashes
+
+In standard English typesetting, insert dashes should *not* be surrounded by spaces.
+
++--------------------------------------------+--------------------------------------------+
+| GOOD                                       | output                                     |
++============================================+============================================+
+| `The                                       | They---or their friends---weren't having   |
+| y---or their friends---weren't having it.` | it.                                        |
++--------------------------------------------+--------------------------------------------+
+
++--------------------------------------------+--------------------------------------------+
+| BAD                                        | output                                     |
++============================================+============================================+
+| `They -                                    | They --- or their friends --- weren't      |
+| -- or their friends ---weren't having it.` | having it.                                 |
++--------------------------------------------+--------------------------------------------+
+
+Note that end of lines in markdown are treated as spaces by Pandoc, so to avoid
+surrounding spaces the em dash should not be at the beginning or end of a line.
+
+For a non-breaking hyphen, use the HTML code `&#8209;`:
+
+-   `... $\supset$&#8209;analysis...` prints out as '$\supset$‑analysis' and the hyphen
+    cannot be at a linebreak.
+
+::: house
+**Dialectica guidelines**
+
+Em-dashes are not surrounded by spaces.
+:::
+
+## Acronyms
+
+Cf "Abbreviations" chapter in the Chicago manual.
+
+Acronyms are in caps, not bold. Exception: logic contexts, where axiom schemas, systems of
+logic, etc. may be labelled in bold.
+
+Acronyms of more than three letters are in small caps.
+
+## Foreign words
+
+Cf "Italics, Capitals, and Quotation Marks" of the Chicago manual. In summary:
+
+-   Not italics if they are "familiar", i.e. appear in the
+    [Webster's](https://www.merriam-webster.com/dictionary/dictionary) dictionary. Italics
+    otherwise.
+
+-   Exception: if you have two nearby each other and one is unfamiliar, make both italics
+    for consistency (e.g. *mise en scène* and *mise en bouteille*).
+
+Some common cases:
+
+-   Familiar. A priori, a posteriori, ceteris paribus, inter alia, ad hominem, modus
+    ponens
+-   Unfamiliar. *Salva veritate*, *ex falso quodlibet*, ...
+
+## Line break {#sec-linebreak}
+
+*Exceptionally* you may need a line break that does not start a new paragraph. This is
+encoded by finishing a line with a backlash. Thus the following:
+
+> This line ends here\
+> and a new one starts.
+
+is encoded as follows:
+
+``` markdown
+This line ends here \
+and a new one starts.
+```
+
+## Prevent line breaks
+
+Sometimes you need to prevent line breaks. If you use suppressed-author references, they
+are awkard at the beginning of lines as in:
+
+> ... Smith's great theory (1972). On the other ...
+
+The code for this would be:
+
+``` markdown
+... Smith's great theory [-@Smith1972]. On the other hand
+```
+
+To prevent this use *non-breakable spaces*, which can be introduced with a
+backclashed-escaped space `\` or with the HTML code `&nbsp;`, as follows:
+
+``` markdown
+... Smith's great theory\ [-@Smith1972]. On the other hand
+
+... Smith's great theory&nbsp;[-@Smith1972]. On the other hand
+```
+
+Don't use this to fine-tune how the long the lines are or the like; only when it makes
+sense in terms of the content: when it's a matter of sticking say a citation year to
+what's going with it, "i.e." to what follows, and the like.

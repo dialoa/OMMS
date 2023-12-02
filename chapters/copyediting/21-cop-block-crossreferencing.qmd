@@ -1,0 +1,402 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 90
+---
+
+# Cross-referencing
+
+When an article cross-references its own sections, figures, tables, images,
+numbered examples, equations and footnotes, we encode these in markdown. This
+ensures that they are linked (and, in some case, standardly labelled and
+properly numbered) in the outputs.
+
+Cross-references to sections, figure, tables, images are handled by the
+[`pandoc-crossref`](https://github.com/lierdakil/pandoc-crossref) extension of
+pandoc. We describe its basic usage described below ([full documentation
+here](http://lierdakil.github.io/pandoc-crossref/)).
+
+Cross-references to numbered examples is handled by `pandoc` itself, usage
+described below.
+
+At the moment we cannot handle neatly cross-references to footnotes. A
+workaround is given below.
+
+## Cross-referencing sections
+
+To cross-reference a section you first need to know its identifier. `pandoc` accepts
+manually specified identifiers but also automatically generates identifiers. A manually specified identifiers is given by adding `{#sec:mysecid}` after the heading. An automatically generated identifier is obtained by putting the section heading in
+lowercase, removing all formatting, links, footnotes, removing all characters
+other than letters, numbers, underscore, periods and hyphens, and replacing
+spaces by hyphens. Some examples:
+
++---------------------------------------------+------------------------------------+
+| Markdown heading                            | Resulting section identifier(s)    |
++=============================================+====================================+
+| `# The Last Stand`                          | `the-last-stand`                   |
++---------------------------------------------+------------------------------------+
+| `## Cause *célèbre*^[Sic.]`                 | `cause-célèbre`                    |
++---------------------------------------------+------------------------------------+
+| `## The no.1 'Foolish' Claim that $E=mc^2$` | `the-no.1-foolish-claim-that-emc2` |
+|                                             |                                    |
++---------------------------------------------+------------------------------------+
+| `# The First Word {#sec:first}`             | `first`                            |
++---------------------------------------------+------------------------------------+
+
+Special cases. If a heading starts with something else than a 
+letter, everything before that letter is removed (to ensure that all identifiers
+start with a letter). If a heading is empty, its identifier is `section`. If there are
+several headings of the same name (say, `section`), the second one is suffixed with
+`-1` (`section-1`) then `-2`, etc. 
+
++---------------------------------------------+------------------------------------+
+| Markdown headings                           | Resulting section identifier(s)    |
++=============================================+====================================+
+| `# 3 Little Pigs`                           | `little-pigs`                      |
++---------------------------------------------+------------------------------------+
+| ```                                         |                                    |
+| # Surprise Party                            | ```                                |
+|                                             | surprise-party                     |
+| ## Surprise Party                           |                                    |
+|                                             | surprise-party-1                   |
+|```                                          | ```                                |
++---------------------------------------------+------------------------------------+
+| ```                                         | ```                                |
+| #                                           | section                            |
+|                                             |                                    |
+| #                                           | section-1                          |
+|                                             |                                    |
+|```                                          | ```                                |
++---------------------------------------------+------------------------------------+
+
+*Warning*: of course, if you change a section heading title, the automatically
+generated identifier changes. So if your headings might change, either use
+manual identifiers or wait before entering cross-references.
+
+When editing in RStudio visual mode, you can use Insert \> Cross-reference to
+find heading identifiers. A menu with the list of headings is displayed; pick
+the one you want and the editor will insert the code `@ref(the-first-word)`.
+Remove `@ref(…)`, and enter `@sec:` right in front of the `the-first-word`. The
+code `@sec:the-first-word` should become blue as you type `@` and the following
+letters; if not it's not interpreted as a reference, try again or edit in code
+mode instead.
+
+Now to cross-reference sections with identifiers `the-first-word`,
+`the-second-word`, use the following code:
+
++------------------------+-----------------------------------------------------+
+| I want                 | I type                                              |
++========================+=====================================================+
+| In sec. 1, we          | `In @sec:the-first-word, we review`{.markdown}      |
+| review...              |                                                     |
+|                        | or                                                  |
+|                        |                                                     |
+|                        | `In [@sec:the-first-word], we review`{.markdown}    |
++------------------------+-----------------------------------------------------+
+| Sec. 1 discusses       | `@Sec:title-of-section discusses`{.markdown}        |
+|                        |                                                     |
+|                        | or                                                  |
+|                        |                                                     |
+|                        | `[@Sec:title-of-section] discusses`{.markdown}      |
++------------------------+-----------------------------------------------------+
+| In secs. 1, 2 we       | ```markdown                                         |
+|                        | In [@sec:the-first-word; @sec:the-second-word]      |
+|                        |  we review                                          |
+|                        | ```                                                 |
++------------------------+-----------------------------------------------------+
+| ... elsewhere (sec.    | `...elsewhere (@sec:the-first-word).`               |
+| 1).                    |                                                     |
+|                        | or                                                  |
+|                        |                                                     |
+|                        | `...elsewhere ([@sec:the-first-word]).`             |
++------------------------+-----------------------------------------------------+
+
+Note that `@Sec:…` instead of `@sec:…` capitalizes the label. Note that the
+quare-bracketed version doesn't add parentheses (unlike in citations): the
+square brackets are only necessary if you have several references or a manually
+specified prefix (below).
+
+The prefix ("sec." here) is specified by the template. It can be suppressed or
+manually specified:
+
+| I want                  | I type                                               |
+|-------------------------|------------------------------------------------------|
+| as said above (1).      | `as said above [-@sec:the-first-word]`               |
+| In unit 1, we...        | `In [unit @sec:the-first-word]`                      |
+| In § 1, we...           | `In [§ @sec:the-first-word]`                         |
+| In appendix 5, ...      | `In [appendix @sec:appendix-proof-of-theorems], ...` |
+| In appendices 5, 6, ... | `In [appendices @sec:app1; appendices @sec:app2]`    |
+
+As the last line illustrates, you need to repeat the custom prefix to each
+entries that it applies to, even though in the output they will be grouped.
+
+**Style recommendations**.
+
+*Call subsections "sections" when referencing to them*. If you're referencing a subsection, you should still call it "section" in the readable text: ```cf. section [@sec:asubsectionid]`. A subsection is a section, and the terminology of "subsection" is clunky and technical. 
+
+*Avoid specifying a manual prefix* just to follow the author's style. The
+default prefix is specified in the journal's style template and should be
+preferred wherever possible. A manual prefix is only recommended for appendices
+(or any other section that is not a regular section of the paper).
+
+*"In the last section", "In the next section", ...*. What if the author
+references sections verbally, e.g.: "In the last section, we will summarize...",
+or "The next section reviews ..."? Two options, decide what fits best:
+
+-   make non-verbose: `In @sec:the-last-one, we...`,
+    `@Sec:the-next-one reviews ...`
+-   add cross-references in brackets:
+    `In the last section ([@sec:the-last-one])`,
+    `In the next section ([@sec:the-next-one]), ...`.
+
+**The following does not work with PDF output, so we do not use it**. It is also
+possible to specify a custom label to replace the number. This can be combined
+with a custom identifier:
+
++-----------------------------+------------------------------------------------+
+| I want                      | I type                                         |
++=============================+================================================+
+| See appendix A...           | `See [appendix @sec:appendix-a-proofs]...`     |
+|                             |                                                |
+| **12. Appendix A: Proofs**  | `# Appendix A: Proofs {label="A"}`             |
++-----------------------------+------------------------------------------------+
+| See appendix A...           | `See [appendix @sec:app1]...`                  |
+|                             |                                                |
+| **12. Appendix A: Proofs**  | `# Appendix A: Proofs {label="A" #sec:app1}`   |
++-----------------------------+------------------------------------------------+
+
+## Crossreferencing and captioning tables, figures, images, equations
+
+**Requires**: the [`pandoc-crossref`
+filter](https://github.com/lierdakil/pandoc-crossref). 
+
+Tables, images can be cross-referenced and can be given a coption
+text. To cross-reference an image:
+
+```markdown
+![](imagefile.png) {#fig:my-image}
+
+As you can see in @Fig:my-image ...
+```
+
+To add a caption to the image: 
+
+```markdown
+![An image of a flying pig](imagefile.png) {#fig:my-image}
+
+As you can see in @Fig:my-image ...
+```
+
+Example with a table:
+
+``` {.markdown}
+As the reader can see in @tbl:diffstyles, there are many
+options:
+
++----------+-----------+
+| style    | features |
++==========+===========+
+| ...      | ...       |
++----------+-----------+
+
+: The different styles of text {#tbl:diffstyles}
+
+```
+
+The identifiers of images or figures must have the form `#fig:...`,
+those of tables `#tbl:...`, those of equations `#eq:...`. 
+
+When crossreferencing them we use citation syntax with the prefixed
+identifiers: `[@fig:my-image]`, `@tbl:my-table`, etc. This will 
+print "figure 1", "table 2", etc. To get "Figure 1", "Table 2" you capitalize the prefix: `@Fig:...`, `@Tbl:...`.
+
+Details are in the [Pandoc-cross-ref documentation
+here](http://lierdakil.github.io/pandoc-crossref/).
+
+## Cross-referencing footnotes
+
+Cross-reference to footnotes has to be done manually. If your 
+footnote numbers are not final yet, you will need to revist
+them before publishing. 
+
+We do not reference the page numbers where the footnote 
+appears. This is meaningless in HTML and ePub output. 
+
+The syntax is as follows:
+
+```markdown
+This is the main text.[^myfn]
+
+[^mfn]: [On this]{#my-best-footnote} difficult point I would like to add irrelevant remarks... .
+
+...
+As mentioned above in [footnote 7](#my-best-footnote), ...
+```
+
+* `[^myfn]` and `[myfn]:` create a footnote. We could have the 
+  alternative syntax, `^[... content ...]` placed directly in the
+  text: 
+  
+  ``` markdwon
+  This is the main text.^[[On this]{#my-best-footnote} difficult 
+  point... .]
+  ```
+  
+* `[On this]{#my-best-footnote}` creates a "Span" element with 
+  the identifier `my-best-footnote`. A Span is an invisible inline
+  element that can carry attributes such as an identifier. The 
+  identifier allows us to target it with a link.
+* `[footnote 1](#my-best-footnote)` adds to the text "footnote 7" 
+  a clickable link to the span we create above. You need to enter
+  the footnote number manually. 
+  
+**Common mistake**. Beware of not confusing the syntaxes for Span
+(targets) and Links:
+
+* A Span uses *curly brackets*: `[span]{#id}`
+* Links use *parentheses*: `[link](#id)` 
+
+Syntax and placement of the target.
+
+* The target Span can be empty: `[]{#my-footnote}`
+* It should be placed within the first line of the footnote, to
+  ensure referencing links take the reader to that line. 
+* But **do not* place an empty Span right at the beginning of the
+  foonote: in this position the Span leaves an unwanted blank space:
+
+  ```markdown
+  BAD
+  [^footnote]: []{#fn-point} On this difficult point 
+  
+  GOOD
+  [^footnote]: [On]{#fn-point} this difficult point 
+  
+  GOOD
+  [^footnote]: See @doe_j:2020.[]{#fn-doe}
+  ```
+  
+Non-final manuscripts. If footnote numbers are not final, 
+you will need to update crossreferences to footnotes. 
+A good practice is to use very visible text to ensure
+that you don't miss them in proofing:
+
+```markdown
+See above [footnote NUMBER](#fn-doe).
+```
+
+## Cross-referencing list items
+
+You have a numbered list and you want to cross-reference one of its items:
+
+> 1. first item
+> 2. []{#cross-referenced-item}section item
+> 3. third item.
+> 
+> My favour item is ([2](#cross-reference-item)), what's yours?
+
+The solution is as with footnotes: you have to put an invisible link target
+in the item and you have to create a link to it. The number is manually
+entered in the link, not automatic, so you have to make sure you know
+which number it is.
+
+```markdown
+1. first item
+2. []{#myidentifier} section item
+3. third item.
+ 
+My favour item is ([2](#myidentifier)), what's yours?
+```
+
+Note the difference between the target, where the identifier is in curly braces,
+and the link, where the identifier is in parentheses:
+
+```markdown
+target: []{#myidentifier}
+link: [2](#myidentifier)
+```
+
+## Internal links {#internal-links}
+
+If you want a part of the text to link to another, say have a statement labelled
+"C1" and later parts referring to it as "(C1)", use internal link syntax. The
+general syntax is:
+
+``` {.markdown}
+[text to be linked to]{#unique-identifier}
+
+...
+
+[text that will become a link](#unique-identifier)
+```
+
+**Common error**: leaving spaces between `text` and `{\#identifier}`:
+
++---------------------------------------+---------------------------------------+
+| BAD                                   | GOOD                                  |
++=======================================+=======================================+
+| `[text linked to] {#identifier}`      | `[text linked to]{#identifier}`       |
+|                                       |                                       |
+| `[linking text] (#identifier)`        | `[linking text](#identifier)`         |
++---------------------------------------+---------------------------------------+
+
+Example:
+
+``` {.markdown}
+[Claim 1]{#my-claim}. Death is nothing to us.
+
+(... article goes on ...)
+
+As [my earlier claim](#my-claim) established, ... .
+```
+
+This outputs, in both HTML and LaTeX :
+
+> [Claim 1]{#my-claim}. Death is nothing to us
+>
+> ...
+>
+> As [my earlier claim](#my-claim) established, ...
+
+Don't worry about whether the link is coloured and/or underlined: that is to be
+decided by the journal style.
+
+Note that `[text that will be linked]` to and `[text that will become a link]`
+are printed as is. If you wanted to change all labels to "Claim 2", for
+instance, you need to change both the text linked to and the text that becomes a
+link.
+
+Targets (also known as "anchors") and links to them typically need some
+formatting. For instance, we may want our claim label in bold and the link to it
+to be the label itself in parentheses:
+
+``` {.markdown}
+[**C1**]{#my-new-claim}. Death is nothing to us.
+
+...
+
+As ([C1](#my-new-claim)) established, ... .
+```
+
+This outputs:
+
+[**C1**]{#my-new-claim}. Death is nothing to us.
+
+...
+
+As ([C1](#my-new-claim)) established, ... .
+
+**a cleaner version for internal links** may be achieved by putting the syntax
+``` {.markdown}
+[**C1**]{#my-new-claim}. Death is nothing to us.
+
+...
+
+As [@my-new-claim] established, ... .
+```
+instead, which in turn outputs the same as above:
+[**C1**]{#my-new-claim}. Death is nothing to us.
+
+...
+
+As [@my-new-claim] established, ... .
+but with a much cleaner syntax behind.

@@ -1,0 +1,54 @@
+# (PART) Open Journal Systems {-} 
+
+# Publishing with Open Journal Systems
+
+Some advice when using [Open Journal Systems][OJS] to publish. For more general questions about OJS see its [support page][OJS-help].
+
+[OJS]: https://pkp.sfu.ca/software/ojs/
+[OJS-help]: https://pkp.sfu.ca/support/
+
+## Uploading reference lists
+
+**Dialectica specific**. When publishing an article on OJS we fill in the 
+"References" metadata field with a text version of the articles' references.
+Run the following in the issue folder: 
+
+    make refs
+
+This generates a `article_name.bib.txt` file for each article in an issue.
+
+Note: if you get an 'no target to make "refs"` error, you need to renew the 
+Makefile. Run `sh generatemakefile.sh` in the issue folder. If the script
+`generatemakefile.sh` is missing, copy it again from the template folder's
+`EXTRAS/copyeditors-scripts-issue`.
+
+Windows user: these need to be run in a Linux terminal (using Windows Subsystem
+for Linux.)
+
+Background: the text references are in American Psychological Association style.
+This ensures that multiple entries by the same author all start with the author's
+name (rather than a long dash as in the Chicago style).
+
+## Uploading HTML article with images or imagified LaTeX
+
+If your article has images or imagified LaTeX as separate files,
+simply upload them as dependent files. OJS takes care of modifying
+the HTML to ensure they appear on the page.
+
+Illustration. Suppose that your galley file is `author_2020.html` 
+with its images located in a `media/` and its imagified LaTeX in
+`imagify/`:
+
+```
+./
+- author_2020.html
+- media/
+    |- image1.svg
+- imagify/
+    |- 5e57052914c8be3062d7efe2237160c1e3c5bc11.svg
+    |- 834aba06fd119cd000555eac54ad1f6126400419.svg
+```
+
+On OJS, upload `author_2020.html` as article text and the `svg` files 
+as dependent files (images). No need to worry about the directory 
+structure.

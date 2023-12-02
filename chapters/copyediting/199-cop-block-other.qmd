@@ -1,0 +1,79 @@
+# Troublesome blocks
+
+## Raw code if all else fails
+
+### Adding Raw LaTeX commands within markdown
+
+LaTeX/PDF typesetting may require fine-grained adjustements that we can ignore
+in HTML output. It is often possible to provide it alongside markdown. Caution:
+use sparingly. Don't tinker with e.g. line or list spacing on a per-article 
+basis. 
+
+Example: you have a markdown table that you're happy with, but it's too wide
+to fit in a PDF page. You can make its text smaller in PDF output with:
+
+```markdown
+`{\small`{=latex}
+
++-----+-------+
+|know |valua- |
+|ledge|tion   |
++=====+=======+
+|...  |...    |
++-----+-------+
+
+`}`{=latex}
+```
+
+Using `` `...`{=latex} `` creates an (inline) element of raw code that is 
+passed as is to latex and erased in other formats. `{\small .... }` in LaTeX
+creates a group (`{...}`) within which the text is small. 
+
+### Providing a Raw LaTeX alternative
+
+*Requirement*. The `not-in-format` filter is required for some of the below. 
+
+When there is no markdown solution to typeset something there is fallback solution: include raw output code of other formats directly in your markdown document. We first figure out how the element should be coded in relevant output formats (LaTeX, html, xml); we call this *raw code*. Then we insert raw code without our markdown document. 
+
+In some cases you're happy with the output markdown generates in some, but not all, formats. For instance, the XML output is fine (XML has no typesetting), but you'd like to do some fine-grained typesetting in LaTeX that the normal LaTeX output doesn't handle. In that case you'll use markdown for some output formats, but provide raw code only for LaTeX. 
+
+To provide Raw code for all output formats, you insert it as follows:
+
+~~~ markdown
+``` {=latex}
+... LaTeX code here ...
+```
+``` {=html}
+... html/epub code here ...
+```
+``` {=xml}
+... xml code here ...
+```
+~~~
+
+The part marked with `{=latex}` will be included as is in the LaTeX output (for PDFs) and only in the LaTeX output.
+
+To provide raw code for some, but not all, formats, you should put the relevant bits of markdown within a `not-in-format` div, and the raw code after it. (This method requires the `not-in-format` Pandoc filter.) For instance:
+
+~~~
+::: {.not-in-format .latex}
+-------- -------
+simple    table
+-------- -------
+:::
+
+```{=latex}
+\begin{table}
+\begin{tabular}{ll}
+\hline
+simple & table
+\hline
+\end{tabular}
+\end{table}
+```
+~~~
+
+Here the simple markdown table enclosed within `:::{.not-in-format .latex}` ... `:::` will be used for all outputs formats *except* LaTeX and LaTeX-based outputs like PDF and beamer. The raw code below included within `` ```{=latex} `` ... `` ``` `` will be used for LaTeX and LaTeX-based outputs.
+
+You can leave out some markdown section from several formats too: `:::{.not-in-format .xml .latex}`. 
+

@@ -1,7 +1,12 @@
+# RStudio files
+
 /OMMS.Rproj
 /.Rhistory
 /.Rproject.user/
-/.luarc.json
-.Rproj.user
 
+# Quarto files
 /.quarto/
+/_book/
+/_site/
+
+/.luarc.json

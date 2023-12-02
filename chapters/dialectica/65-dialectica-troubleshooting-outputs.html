@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Markdown Manual of Style - 28&nbsp; Troubleshooting outputs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../chapters/dialectica/70-dialectica-template.html" rel="next">
+<link href="../../chapters/dialectica/61-dialectica-new-house-outputs.html" rel="prev">
+<link href="../../media/dialoa.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/dialectica/60-dialectica-house-outputs.html">Dialectica</a></li><li class="breadcrumb-item"><a href="../../chapters/dialectica/65-dialectica-troubleshooting-outputs.html"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Troubleshooting outputs</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Open Markdown Manual of Style</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Authoring</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/authoring/00-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/authoring/10-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Instructions for authors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Copyediting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/12-cop-preliminaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Preliminaries</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/13-cop-preparing-a-manuscript.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preparing a manuscript</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/15-cop-markdown-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">About Markdown copyediting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/155-cop-checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Copyeditor workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/16-cop-metadata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Metadata</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/165-cop-grammar-usage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Grammar and usage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/17-cop-inline-elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Inline elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/171-cop-inline-special-chars.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Special characters</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/19-cop-block-elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simple block elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/191-cop-block-quotations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Quotations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/192-cop-block-lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lists</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/193-cop-block-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Tables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/194-cop-block-figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Figures (images, diagrams, graphs)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/195-cop-block-statements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Statements and indented blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/196-cop-block-columns.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Multiple columns</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/199-cop-block-other.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Troublesome blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/21-cop-block-crossreferencing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Cross-referencing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/23-cop-citations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Citations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/24-cop-bibliography.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Bibliography</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/241-cop-math-latex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Math and LaTeX elements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/25-cop-imagify.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Imagify</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/27-cop-troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Trouble and troubleshooting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/copyediting/29-cop-markdown-cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Markdown Cheatsheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Dialectica</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/60-dialectica-house-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Dialectica house style outputs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/61-dialectica-new-house-outputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Dialectica new house style outputs DRAFT</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/65-dialectica-troubleshooting-outputs.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Troubleshooting outputs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/70-dialectica-template.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Dialectica template</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/dialectica/80-dialectica-bibliography.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Interface with <em>dialectica</em>’s main bibliography</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Design</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/design/52-pub-the-structure-of-volumes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">The structure of a book and a journal</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Publishing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/publishing/42-ojs-advice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(PART) Open Journal Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/publishing/51-pub-why-markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(PART) Publishing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/appendices/terminal-help.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Terminal help</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/appendices/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Further resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/appendices/glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/appendices/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#cannot-run-pandoc-crossref-because-it-is-not-from-a-trusted-developer" id="toc-cannot-run-pandoc-crossref-because-it-is-not-from-a-trusted-developer" class="nav-link active" data-scroll-target="#cannot-run-pandoc-crossref-because-it-is-not-from-a-trusted-developer"><span class="header-section-number">28.1</span> Cannot run pandoc-crossref because it is not from a trusted developer</a></li>
+  <li><a href="#html-empty-or-pdf-with-cover-only" id="toc-html-empty-or-pdf-with-cover-only" class="nav-link" data-scroll-target="#html-empty-or-pdf-with-cover-only"><span class="header-section-number">28.2</span> HTML empty or PDF with cover only</a></li>
+  <li><a href="#warning-pandoc-crossref-was-compiled-with-pandoc-x.x.x-but-is-being-run-through-y.y.y-etc." id="toc-warning-pandoc-crossref-was-compiled-with-pandoc-x.x.x-but-is-being-run-through-y.y.y-etc." class="nav-link" data-scroll-target="#warning-pandoc-crossref-was-compiled-with-pandoc-x.x.x-but-is-being-run-through-y.y.y-etc."><span class="header-section-number">28.3</span> WARNING: pandoc-crossref was compiled with pandoc X.X.X but is being run through Y.Y.Y etc.</a></li>
+  <li><a href="#error-message-about-stix-two" id="toc-error-message-about-stix-two" class="nav-link" data-scroll-target="#error-message-about-stix-two"><span class="header-section-number">28.4</span> Error message about Stix TWO</a></li>
+  <li><a href="#error-pdf-output-not-produced" id="toc-error-pdf-output-not-produced" class="nav-link" data-scroll-target="#error-pdf-output-not-produced"><span class="header-section-number">28.5</span> Error: PDF output not produced</a></li>
+  <li><a href="#sec-house-outputs-html-errors" id="toc-sec-house-outputs-html-errors" class="nav-link" data-scroll-target="#sec-house-outputs-html-errors"><span class="header-section-number">28.6</span> Errors in HTML generation</a></li>
+  <li><a href="#a-brief-guide-on-pandocs-pdf-output-logs" id="toc-a-brief-guide-on-pandocs-pdf-output-logs" class="nav-link" data-scroll-target="#a-brief-guide-on-pandocs-pdf-output-logs"><span class="header-section-number">28.7</span> A brief guide on Pandoc’s PDF output logs</a></li>
+  <li><a href="#pandoc-says-errorunknown-option-citeproc" id="toc-pandoc-says-errorunknown-option-citeproc" class="nav-link" data-scroll-target="#pandoc-says-errorunknown-option-citeproc"><span class="header-section-number">28.8</span> pandoc says “Error”unknown option “citeproc””</a></li>
+  <li><a href="#pandoc-says-pandoc-filename-openbinaryfile-file-not-found" id="toc-pandoc-says-pandoc-filename-openbinaryfile-file-not-found" class="nav-link" data-scroll-target="#pandoc-says-pandoc-filename-openbinaryfile-file-not-found"><span class="header-section-number">28.9</span> pandoc says <code>pandoc: FILENAME: OpenBinaryFile: file not found</code></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-troubleshooting-outputs" class="quarto-section-identifier"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Troubleshooting outputs</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="cannot-run-pandoc-crossref-because-it-is-not-from-a-trusted-developer" class="level2" data-number="28.1">
+<h2 data-number="28.1" class="anchored" data-anchor-id="cannot-run-pandoc-crossref-because-it-is-not-from-a-trusted-developer"><span class="header-section-number">28.1</span> Cannot run pandoc-crossref because it is not from a trusted developer</h2>
+<p>MacOS-specific error. Solution: close the alert—don’t chose “Move to Bin”! In Finder, go to the <code>template/X.X/filters</code> folder, where X.X is the latest version of the template. ⌘-click the file <code>pandoc-crossref</code> (not <code>pandoc-crossref.exe</code> nor <code>pandoc-crossref-nix</code>). Chose “Open”. You will get the same alert but this time with the option to Open: select it. Nothing will happen but after that the system will trust the file and you’ll be able to generate outputs.</p>
+</section>
+<section id="html-empty-or-pdf-with-cover-only" class="level2" data-number="28.2">
+<h2 data-number="28.2" class="anchored" data-anchor-id="html-empty-or-pdf-with-cover-only"><span class="header-section-number">28.2</span> HTML empty or PDF with cover only</h2>
+<p>The maker hasn’t find your article source. You probably forgot to update the master file’s <code>imports</code> list with your source file name.</p>
+</section>
+<section id="warning-pandoc-crossref-was-compiled-with-pandoc-x.x.x-but-is-being-run-through-y.y.y-etc." class="level2" data-number="28.3">
+<h2 data-number="28.3" class="anchored" data-anchor-id="warning-pandoc-crossref-was-compiled-with-pandoc-x.x.x-but-is-being-run-through-y.y.y-etc."><span class="header-section-number">28.3</span> WARNING: pandoc-crossref was compiled with pandoc X.X.X but is being run through Y.Y.Y etc.</h2>
+<p>Ignore this if the first two digits X.X and Y.Y are the same, e.g. “pandoc 3.1.2 but is being run through 3.1”. It’s small mismatch between the Pandoc version and the cross-references filter’s version, normally harmless. You may remind the workhouse administrator to update the cross-references filter, or check that your pandoc is up to date.</p>
+<p>If the Y.Y number is 2 or more lower than the X.X, e.g.&nbsp;“pandoc 3.4 but being run through 3.1” then you need to update your Pandoc.</p>
+</section>
+<section id="error-message-about-stix-two" class="level2" data-number="28.4">
+<h2 data-number="28.4" class="anchored" data-anchor-id="error-message-about-stix-two"><span class="header-section-number">28.4</span> Error message about Stix TWO</h2>
+<p>PDF-specific. Means that you haven’t installed the Stix Two font.</p>
+</section>
+<section id="error-pdf-output-not-produced" class="level2" data-number="28.5">
+<h2 data-number="28.5" class="anchored" data-anchor-id="error-pdf-output-not-produced"><span class="header-section-number">28.5</span> Error: PDF output not produced</h2>
+<p>Pandoc can’t generate a PDF. There are, unfortunately, many reasons why this can happen. Essential background first: PDF generation happens in two stages:</p>
+<ol type="1">
+<li>Pandoc converts Markdown to LaTeX.</li>
+<li>A LaTeX engine converts LaTeX to PDF.</li>
+</ol>
+<div class="no-first-line-indent-after"></div>
+<p>First we need to check that no crash occurs at stage 1.</p>
+<ul>
+<li><p>Check first that you can generate a HTML of the article. If not, you have first to fix the error in HTML generation. See <a href="#sec-house-outputs-html-errors"><span>Section&nbsp;28.6</span></a>.</p></li>
+<li><p>Then generate a LaTeX file for the article. <a href="61-dialectica-new-house-outputs.html#sec-house-outputs-rendering-commands"><span>Section&nbsp;28.3.3</span></a></p></li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>If Pandoc generates HTML and LaTeX with no crash, then the error happens at the LaTeX stage.</p>
+<p>Typical causes for a LaTeX-stage error are:</p>
+<ul>
+<li><p>Typos in a math formulas.</p></li>
+<li><p>An author’s LaTeX uses some packages or defined commands. These need to be provided to the article as <code>header-includes</code>. (Though sometimes you need to tell the author to simplify their LaTeX first!)</p></li>
+<li><p>Raw LaTeX code, either from the author or from you (e.g.&nbsp;added to handle fine-grained spacing) doesn’t work correctly</p></li>
+<li><p>An author’s LaTeX code doesn’t interact well with our template.</p></li>
+<li><p>there’s a bug in our filters or our template</p></li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>To make progress you should look for the LaTeX error message. It’s displayed in the output when Pandoc fails to produce a PDF. It is on a line that starts with <code>!</code>, such as:</p>
+<pre><code>! Undefined control sequence.
+l.512 \llbracket
+          
+[1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./smith_j.aux))
+(see the transcript file for additional information)
+... 
+(more text)
+...</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>Or:</p>
+<pre><code>! LaTeX Error: File `image.png' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H &lt;return&gt;  for immediate help.
+ ...                                              
+                                                  
+l.618 \includegraphics{image.png}
+                        
+[1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./test.aux))
+... 
+(more text)
+...</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>Note that you can get the log as a text file in two ways:</p>
+<ul>
+<li><p>Run the command to generate the pdf but add <code>2&gt; out.log</code> at the end, e.g.&nbsp;<code>make off1pdf 2&gt; out.log</code>. This will save the log as out.log.</p></li>
+<li><p>Run the LaTeX engine on the LaTeX file itself. Make sure you’ve generated a LaTeX file (<code>.tex)</code> and that you have a terminal localed in that folder. Run:</p>
+<p><code>lualatex --interaction=nonstopmode smith_j-2020.tex 2&gt; out.log</code></p>
+<p>adapting to your LaTeX file name. If you omit <code>--interaction=nonstopmode</code> the engine will instead stop at any error encountered and ask you what to do; you can enter “x” for exiting. (You can also enter “i” for ignoring the error, but typically that generates further errors down the line, and anyway all LaTeX errors have to be fixed before final output.)</p></li>
+<li><p>If you run the LaTeX engine you’ll get a few ‘artefact’ files: <code>&lt;article-name&gt;.log</code> , <code>.synctex</code>, <code>.aux</code>. You can later erase them; try the command <code>latexmk -C &lt;article-name&gt;</code> (assumes you have <code>latexmk</code> in your LaTeX installation), otherwise erase them but remember to keep your source file <code>.md</code> and any <code>.bib</code> files!</p></li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>The file <code>out.log</code> is a plain text file, you can open it for inspection in any simple editor and you can send it by email for help.</p>
+<p>Even if you don’t know LaTeX, you can glean some pointers form the LaTeX error message.</p>
+<ul>
+<li><p>The line number (e.g.&nbsp;<code>l. 618</code>) is the line number <em>in the LaTeX file</em>, not in your source markdown file. Generate the LaTeX output (if it’s not already done) and go to that line in it: you’ll probably be able to figure out which part of the article is generating the error. Note however that it’s not a sure shot: LaTeX error at a line are sometimes due to issues much earlier in the document.</p></li>
+<li><p>Error messages are often followed by a line split in two, as in:</p>
+<pre><code>! Undefined control sequence.
+l.618 $\binom{n}{k} = \fract
+                        {n!}{k!(n-k)!}$</code></pre>
+<p>This means LaTeX crashed just before the split. Here the split occurs between <code>\fract</code> and <code>{n!}</code>, so LaTeX crashed at <code>\fract</code>. Often that is where the error is: the correct command for fractions is <code>\frac</code> not <code>\fract</code>. Again, it’s not a sure shot: LaTeX error at a line are sometimes due to issues much earlier in the document.</p></li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>If that doesn’t help solving the issue, you can still try the time-consuming method below. Otherwise get help from somebody who’s more familiar with LaTeX or the journal’s template coder. Tell them what article generated the error, and copy-paste or attach the error log (or at least the part where the error message is).</p>
+<p>A last resort. More time-consuming but guaranteed result. Isolate the error. Make a copy of your file and trim it down until you can generate a PDF, as follows:</p>
+<ul>
+<li><p>Disconnect the bibliography file. In the metadata block, put a <code>#</code> in front of the bibliography line:</p>
+<pre><code># bibliography = smith-paper-references.bib</code></pre>
+<p>This deactivates the line. Try producing a PDF; if you don’t get the error, you know that the source is something in your bibliography file. Otherwise continue.</p></li>
+<li><p>Isolate the error by halves. Remove the second half of the document. Try producing a PDF. If you get an error, you know the problem is in the first half; divide it in two, repeat. When you get to the point where you don’t get an error (at a given point), start re-adding parts of the text one by one, until you identify what addition generates the error.</p></li>
+<li><p>In that process you may get “warnings” you didn’t get before, e.g. because you’ve cut out the footnotes associated with a paragraph. Don’t worry about them, they’ll disappear once the relevant bits are re-added.</p></li>
+</ul>
+</section>
+<section id="sec-house-outputs-html-errors" class="level2" data-number="28.6">
+<h2 data-number="28.6" class="anchored" data-anchor-id="sec-house-outputs-html-errors"><span class="header-section-number">28.6</span> Errors in HTML generation</h2>
+<p>Errors in HTML generation should arise from three possible sources only:</p>
+<ul>
+<li><p>wrong formatting of the metadata block in your article source file. You will get a <code>YAML Parse error</code> or the like, possibly with a number indicating the line where Pandoc <em>thinks</em> the error is.</p></li>
+<li><p>Error in the citation file. You will get a <code>Citeproc error</code> or the like, with possibly a number indicating the line in the <code>.bib</code> file where Pandoc <em>thinks</em> the error is.</p></li>
+<li><p>bug in <em>Dialectica</em>’s template. You get a <code>Error running Lua filter</code> or the like. The error message may give you some clue as to which filter is improved.</p>
+<ul>
+<li><p>Email the template programmer. Include in your email: which source file generates the error, a copy/paste of the error.</p></li>
+<li><p>You can experiment to find more about the error. If it comes from a particular filter and your article sets options for that filter, you may try changing those options.</p></li>
+</ul></li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>update the filename in <code>master.md</code> or <code>master-win.md</code> with your markdown source file’s name.</p>
+<ul>
+<li>If you get a pdf file with a cover but no title or article content,</li>
+<li>If it doesn’t create an html, your pandoc is not updated. Ask us for help if needed.</li>
+<li>If you get an error message about Stix TWO, you haven’t installed the font in your computer. See above.</li>
+<li>If you get an error message “Error: PDF output not produced”, Pandoc is probably able to generate html and LaTeX output (you can test with the options above), but the conversion from LaTeX to PDF (done by a LaTeX engine such as pdflatex, xelatex, lualatex) fails. In those cases it’s useful to use the <code>debug</code> option generated above. You will get a <code>.log</code> file that gives you more detail about the error. The file can be opened in RStudio and its structure is explained a bit in the<br>
+<a href="#troubleshooting-outputs">Troubleshooting</a> section below.</li>
+</ul>
+</section>
+<section id="a-brief-guide-on-pandocs-pdf-output-logs" class="level2" data-number="28.7">
+<h2 data-number="28.7" class="anchored" data-anchor-id="a-brief-guide-on-pandocs-pdf-output-logs"><span class="header-section-number">28.7</span> A brief guide on Pandoc’s PDF output logs</h2>
+<p>When asking pandoc to produce a PDF you can produce an output log (see the sections on generating outputs to see how to do this with RStudio or the terminal).</p>
+<p>The file begins with <code>[INFO]</code> messages about Pandoc’s source to LaTeX conversion. Typically this is just information about the `filters’ that Pandoc runs, e.g.:</p>
+<pre><code>[INFO] Running filter ../../../resources/filters/abstract-to-meta.lua
+[INFO] Completed filter ../../../resources/filters/abstract-to-meta.lua in 70 ms</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>Then, <code>[makePDF]</code> messages about the commands Pandoc executes to launch a LaTeX engine that converts the LaTeX to PDF. The “Command line” one tells you which LaTeX engine is used, here <code>lualatex</code>:</p>
+<pre><code>[makePDF] Command line:
+lualatex "-halt-on-error" "-interaction" "nonstopmode" "-output-directory" "&lt;TEMPDIR&gt;" "&lt;TEMPDIR&gt;/input.tex"</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>The “Source” message copies the <em>entire LaTeX file</em> that Pandoc sends to the LaTeX engine. It can be useful for a quick look, but it’s more convenient to generate that LaTeX file separately (see how above). When you have LaTeX error messages that give a line number, that is the line number in the LaTeX file (hence it’s easier to find those when you open the separate LaTeX file in a text editor with numbered lines.)</p>
+<pre><code>[makePDF] Source:
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+... % more LaTeX code</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>The LaTeX source is usually very long (200-500 lines + at least the number of lines in your markdown source). To find the next section, you can search for <code>[makePDF] Run</code> in the file.</p>
+<p>The “Run” messages (<code>[makePDF] Run #1</code>, <code>[makePDF] Run #2</code>…) give the LaTeX engine’s output messages. Generating PDFs from LaTeX typically requires several ‘runs’ of the LaTeX engine on the file: the first run generates various bits stored in an auxiliary file (e.g., which page a heading ends in, whether a citation is labelled Smith 2020 or Smith 2020a, …) and the second run uses them to finalize the PDF. Under each <code>[makePDF] Run #</code> you get the full <em>LaTeX Log</em> of the LaTeX engine. This is where you’ll find information, warnings and errors concerning PDF generation. For instance:</p>
+<pre><code>[makePDF] Run #1
+This is LuaHBTeX, Version 1.13.0 (TeX Live 2021) 
+ restricted system commands enabled.
+
+(/private/var/folders/j2/zp5ggjhx12xccgy5_wx32tfw0000gp/T/tex2pdf.-12ef5244637e
+dfd8/input.tex
+LaTeX2e &lt;2020-10-01&gt; patch level 4
+ L3 programming layer &lt;2021-02-18&gt;
+(/usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/scrbook.cls
+Document Class: scrbook 2021/03/17 v3.33 KOMA-Script document class (book)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/koma-script/scrkbase.sty
+...
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+LaTeX Font Warning: Font shape `U/stmry/m/n' in size &lt;5.5&gt; not available
+(Font)              size &lt;5&gt; substituted on input line 70.
+
+...
+...
+
+Underfull \hbox (badness 2469) in paragraph at lines 559--574
+[]\TU/STIXTwoText(0)/m/n/10 I will also adopt the or-tho-dox ap-proach to meta-
+ontology, \TU/STIXTwoText(0)/m/it/10 neo-
+
+Underfull \hbox (badness 1158) in paragraph at lines 559--574
+\TU/STIXTwoText(0)/m/it/10 Quineanism\TU/STIXTwoText(0)/m/n/10 . Ac-cord-ing to
+ neo-Quineanism, a the-ory’s on-to-log-i-cal
+[1]
+[2] [3] [4] [5] [6] [7]
+...
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+)
+(see the transcript file for additional information)
+ 780 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 18 glue, 4 kern, 1 glyph, 26 attribute, 72 glue_sp
+ec, 26 attribute_list, 1 write, 1 user_defined nodes
+   avail lists: 2:495,3:199,4:152,5:788,6:105,7:7249,8:76,9:429,10:25,11:651
+
+Output written on input.pdf (18 pages, 113569 bytes).
+Transcript written on input.log.</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>The above is a LaTeX log of a file that converts into PDF without error. The overal structure is:</p>
+<ul>
+<li>PDF engine: <code>This is LuaHBTeX, Version 1.13.0 (TeX Live 2021)</code></li>
+<li>Document class: <code>Document Class: scrbook...</code></li>
+<li>LaTeX packages used and their own messages: <code>(path/to/package.sty</code>. Here the package <code>Ustmaryrd</code> (a font collection) issues a warning that it’s using a 5pt characters in the absence of 5.5pt characters. <code>input line 70</code> refers to the line in the LaTeX file.</li>
+<li>pages generated: <code>[1] [2] [3] [4] ...</code> indicate that the corresponding page is “shipped out” (generated and saved into the PDF). This means we have no error or warning at pages 1 to 4, yay!</li>
+<li>Underfull and overfull <code>\hbox</code> warnings, e.g. <code>Underfull \hbox (badness 2469)</code>. These indicate that LaTeX has generated a less-than-ideal horizontal line: an horizontal line with a bit too much, or not enough, text. Typically nothing to worry about: the text is just slightly more or less spaced than usual. However, very bad cases of overfull can be a table or long equation or image or some unbreakable large item that sticks out of your text block. The easiest is to check for them visually in the PDF output, but if you are after perfection you can check all the ones mentioned in the log. To know which pages they’re on, look for <code>[n]</code> page shipout indicators before and after the overfull message.</li>
+<li>If compilation runs without error, the end messages. These includes the warning if a LaTeX rerun is needed (<code>LaTeX Warning: Label(s) may   have changed. Rerun to get cross-references right.</code>), which you don’t need to worry about because Pandoc takes care of this, and statistics about the output (<code>Output written on input.pdf (18 pages, 113569 bytes).</code>)</li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>If the PDF building from LaTeX has failed, you will see LaTeX error messages. For instance:</p>
+<pre><code>! Missing $ inserted.
+&lt;inserted text&gt; 
+                $
+l.6 
+    
+!  ==&gt; Fatal error occurred, no output PDF file produced!
+Transcript written on dummy.log.</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>The error message starts with <code>!</code>, followed by a (more or less useful) description of the message, and an excerpt of the LaTeX code before and after the error occurred, and the line the engine was processing when the error occurred. Here the error was a missing <code>$</code>: in LaTeX <code>$</code> is used to surround mathematical formulas, and each ‘opening’ dollar sign must be matched with a ‘closing’ one. The error was produced as the engine was processing line 6.</p>
+<p><em>Important</em>. The line <em>at which the error occurred</em> is not necessarily the line <em>where the mistake is</em>. For instance, with matching <code>$</code> the error is at the point where the engine realizes that the number of <code>$</code> isn’t matched. But typically the <em>mistake</em> was earlier on, where a <code>$</code> sign should have been.</p>
+<p>To diagnose and solve LaTeX error you need knwoledge and experience of LaTeX, which is beyond the scope of this guide. It often helps to make an internet search on the error message text.</p>
+</section>
+<section id="pandoc-says-errorunknown-option-citeproc" class="level2" data-number="28.8">
+<h2 data-number="28.8" class="anchored" data-anchor-id="pandoc-says-errorunknown-option-citeproc"><span class="header-section-number">28.8</span> pandoc says “Error”unknown option “citeproc””</h2>
+<p>Your need to update pandoc to a newer version. “Citeproc” (the pandoc extension that prints bibliographies, and replaces BibTeX/BibLaTeX) is only in versions &gt;2.11 (september 2020). How to update depends on how you’ve installed it: download from pandoc page, or do brew –upgrade (if you’re using homebrew for MacOS), etc.</p>
+</section>
+<section id="pandoc-says-pandoc-filename-openbinaryfile-file-not-found" class="level2" data-number="28.9">
+<h2 data-number="28.9" class="anchored" data-anchor-id="pandoc-says-pandoc-filename-openbinaryfile-file-not-found"><span class="header-section-number">28.9</span> pandoc says <code>pandoc: FILENAME: OpenBinaryFile: file not found</code></h2>
+<p><code>pandoc</code> doesn’t find one of the files needed.</p>
+<p>The instructions above work only if:</p>
+<ul>
+<li><p>your execute the pandoc command while located in the folder that contains your markdown file and its bibliography while. (Learn how to navigate folders in the command line, and go where your markdown file is.)</p></li>
+<li><p>that folder is located three folders down from the workhouse’s base folder (the folder where the <code>processing</code>, <code>resources</code> folders are located). So your markdown file can be in:</p></li>
+<li><p><code>processing/2020-01-special-issue/01-michels</code></p></li>
+<li><p><code>finished/2020-02-issue/01-elzein</code></p></li>
+<li><p>…</p></li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>The file <code>resources/defaults.yaml</code> contains our default settings for pandoc, and they <em>also</em> assume that your file is three folder down from the base. This is why we preface <code>resources/defaults</code> with <code>../../../</code> in our <code>pandoc</code> command (to indicate that the file is three folder up from where you are when you run <code>pandoc</code>).</p>
+<p>If you want to run <code>pandoc</code> with our settings on a file that’s located elsewhere, you can use the full command. You can figure it out from <code>resource/defaults.yaml</code>. At present this would be:</p>
+<pre><code>pandoc --standalone --pdf-engine=xelatex --citeproc --csl=PATH/TO/dialectica.csl  --template=PATH/TO/dltc-template.tex SOURCE.md -o OUTPUT.pdf</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>but the details might change as we update our defaults. You may add any additional option you wish. <code>PATH/TO/</code> should be replaced with the path from your folder to the templates. For instance, if the templates and style files are respectively in in:</p>
+<ul>
+<li><code>journal-new/design/templates</code></li>
+<li><code>journal-new/biblio/</code></li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>and your manuscript is in:</p>
+<ul>
+<li><code>journal-new/articles/issue-01/</code></li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>You could try:</p>
+<pre><code>pandoc --standalone --pdf-engine=xelatex --citeproc --csl=../../biblio/biblio-style,csl  --template=../../design/templates/dltc-template.tex SOURCE.md -o OUTPUT.pdf</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>That is, <code>../../</code> going two folders up (hence at <code>journal/new</code>) and from there down <code>biblio</code> in one case and <code>design/templates</code> in the other.</p>
+<p>You can also create your own defaults file <code>mydefaults.yaml</code> in a text editor, with contents like:</p>
+<pre><code>standalone: true
+pdf-engine: xelatex
+citeproc: true
+csl: ../../biblio/biblio-style,csl
+template: ./../design/templates/dltc-template.tex</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>Save it next to your manuscript and run <code>pandoc</code> with:</p>
+<pre><code>pandoc -d mydefaults SOURCE.md -o OUTPUT.pdf</code></pre>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../chapters/dialectica/61-dialectica-new-house-outputs.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Dialectica new house style outputs DRAFT</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../chapters/dialectica/70-dialectica-template.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Dialectica template</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

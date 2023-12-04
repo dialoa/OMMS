@@ -6,11 +6,11 @@ profile:
   group: [main, dialectica]
 
 book:
-  title: "Open Markdown Manual of Style"
+  title: "Open Manual of Markdown Style"
   author: "Julien Dutant and the Dialoa team"
   cover-image: media/cover.png
   favicon: media/dialoa.ico
-  cover-image-alt: "The Open Markdown Manual of Style by Dialoa"
+  cover-image-alt: "The Open Manual of Markdown Style by Dialoa"
   chapters:
     - index.qmd
     - part: Authoring

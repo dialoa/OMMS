@@ -1,7 +1,7 @@
-# The Open Markdown Manual of Style
+# The Open Manual of Markdown Style
 
 An open access manual of markdown style for academic publishing. Developed by the [Dialoa][] team and
-[philosophie.ch][]. View the [manual here](). 
+[philosophie.ch][]. View the [manual here][OMMS]. 
 
 Copyright (2020-2023) Philosophie.ch
 
@@ -9,6 +9,8 @@ Copyright (2020-2023) Philosophie.ch
 license](https://i.creativecommons.org/l/by/4.0/88x31.png)][CCby4]
 This work licensed under a [Creative Commons Attribution 4.0
 International license][CCby4]. 
+
+[OMMS]: https://dialoa.github.io/OMMS
 
 ## Status
 

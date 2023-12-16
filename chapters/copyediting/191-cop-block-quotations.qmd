@@ -147,67 +147,68 @@ The second line isn't even indented or starting with `>`.
 
 For readability avoid the lazy style.
 
-The quotation citation can be included at the end or in foonote:
+The quotation citation can be included at the end or in a footnote. If indicated at the end, it should come *after* the dot of the quotation's last sentence. 
 
-> I am happy. [@doe_j:2020]
+> GOOD I am happy. [@doe_j:2020]
 
-> I am sad.[^191-cop-block-quotations-1]
+> BAD I am happy [@doe_j:2020].
+
+> GOOD I am sad.[^191-cop-block-quotations-1]
 
 [^191-cop-block-quotations-1]: @doe_j:2020
 
 ``` markdown
-> I am happy. [@doe_j:2020]
+> GOOD I am happy. [@doe_j:2020]
 
-> I am sad.^[@doe_j:2020]
+> BAD I am happy [@doe_j:2020].
+
+> GOOD I am sad.[^doe-quotation]
+
+[^doe-quotation]: @doe_j:2020
 ```
 
-You should distinguish *several consecutive quotations* from *a single
-quotation with several paragraphs*. One way to do this is as follows:
+Distinguish clearly *one quotation with several paragraphs*
+from *several consecutive quotations*. If, for instance, your
+template sets out quotations in boxes, you want a single
+two-paragraphs quotation to come out in one box, not two. 
+*Continuing* paragraphs are marked by an indentation of 2 spaces or by prefixing
+intervening empty lines with `>`:
+
+> Suppose this is a quotation's first paragraph.
+
+  This second paragraph (indented) is part of the same quotation.
+
+> Suppose this is a new quotation's first paragraph.
+>
+> This second paragraph (marked with `>` prefixes) 
+> is part of the same quotation.
+
+``` markdown
+> Suppose this is a quotation's first paragraph.
+
+  This second paragraph (indented) is part of the same quotation.
+
+> Suppose this is a new quotation's first paragraph.
+>
+> This second paragraph (marked with `>` prefixes) 
+> is part of the same quotation.
+```
+
+Beware: if you use indentation, make it two spaces only. Four spaces indentation is used for code blocks (blocks of computer language). 
+
+*Several but consecutive* quotations are instead separated by an empty line:
 
 > This is a first quotation.
 
-> This is a second quotation.
->
-> This is not a third quotation, but a further paragraph 
-> of the second quotation.
->
-> ```bash
-> @echo "this code block is a further block in the second quotation"
-> ```
+> This is a second quotation that directly follows the first.
 
 ``` markdown
 > This is a first quotation.
 
-> This is a second quotation.
->
-> This is not a third quotation, but a further paragraph 
-> of the second quotation.
->
-> ```bash
-> @echo "this code block is a further block in the second quotation"
-> ```
+> This is a second quotation that directly follows the first.
 ```
 
-That is, we start all lines of the long quotation with `>`, *including
-the blank lines that separate its paragaphs or blocks*. By contrast, we
-leave an empty line between two distinct quotations.
-
-An alternative is instead to only have `>` at the beginning of a long
-quotation and indicate with subsequent paragraphs with an indent:
-
-> This is a first quotation.
-
-This is still part of the first quotation.
-
-> This is a second quotation.
-
-``` markdown
-> This is a first quotation.
-
-  This is still part of the first quotation.
-  
-> This is a second quotation.
-```
+Note that the second quotation starts with `>` and isn't indented.
 
 You can have quotations within quotations.
 
@@ -238,3 +239,9 @@ Result:
 
 > \[block quotation\]. [@doe_j:2020, 20]
 :::
+
+### Troubleshooting
+
+*Problem*. The quotation or parts of it comes out in computer-language font. 
+
+*Solution*. You've indented a block of your quotation by *four* spaces. Use two instead. 

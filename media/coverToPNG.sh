@@ -1,5 +1,7 @@
 #! usr/bin/bash
 latexmk -xelatex -xdv cover.tex
-qlmanage -t -f10 -o . cover.pdf
+# use macos Quick Look preview to convert
+qlmanage -t -f8 -o . cover.pdf
 mv cover.pdf.png cover.png
+# clean all incl. pdf
 latexmk -C cover.tex

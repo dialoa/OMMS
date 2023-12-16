@@ -1,8 +1,17 @@
+---
+editor: 
+  markdown: 
+    wrap: 72
+---
+
 # Preface {.unnumbered}
 
-This book is an open manual of style for scholarly publishing
-using markdown. Open because it focuses on open-source software tools and is targeted at open-access publishers. Of markdown style because it combines style and technical advice for producing professional-quality publications using markdown. 
-The manual itself is open-source, open-access and written in markdown. 
+This book is an open manual of style for scholarly publishing using
+markdown. Open because it focuses on open-source software tools and is
+targeted at open-access publishers. Of markdown style because it
+combines style and technical advice for producing professional-quality
+publications using markdown. The manual itself is open-source,
+open-access and written in markdown.
 
 #### Presentation {.unnumbered}
 

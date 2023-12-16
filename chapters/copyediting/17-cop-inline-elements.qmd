@@ -40,6 +40,36 @@ If the entire sentence is in parenthesis, put the punctuation inside the parenth
 
 See @sec-quotations.
 
+### Suspension points (three periods)
+
+Three periods used for ellipsis, aka suspension points, are entered
+as three consecutive dots:
+
+> He will come back... sooner or later.
+
+```markdown
+He will come back... sooner or later.
+```
+
+Do not space them (`. . .`). 
+
+Pandoc recognizes `...` as suspension points, and uses the appropriate code for them in various output formats (e.g. a special unicode character in html, the `\ldots{}` command in LaTeX). This ensures they are typeset appropriately, with less space between them than normal dots.
+
+If you need a plain sequence of three dots, with normal spacing rather than suspension dots spacing, backslash-escape the dots: `\.\.\.`:
+
+> Three plain dots: \.\.\. are not three suspension dots: ...
+
+```markdown
+Three plain dots: \.\.\. are not three suspension dots: ...
+```
+
+
+
+In proper typesetting, suspension points are less spaced than ordinary dots. Pandoc treats `...` as suspension points and converts them to an appr
+
+Pandoc recognizes the three consecutive 
+dots and typesets them appropriately. 
+
 ## Emphasis and bold
 
 Emphasized text is marked with surrounding *asterisks* or *underscores*. Bold is marked

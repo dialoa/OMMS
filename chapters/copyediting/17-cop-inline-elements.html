@@ -445,6 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#punctuation-and-brackets" id="toc-punctuation-and-brackets" class="nav-link" data-scroll-target="#punctuation-and-brackets"><span class="header-section-number">9.1.1</span> Punctuation and brackets</a></li>
   <li><a href="#punctuation-and-quotation-marks" id="toc-punctuation-and-quotation-marks" class="nav-link" data-scroll-target="#punctuation-and-quotation-marks"><span class="header-section-number">9.1.2</span> Punctuation and quotation marks</a></li>
+  <li><a href="#suspension-points-three-periods" id="toc-suspension-points-three-periods" class="nav-link" data-scroll-target="#suspension-points-three-periods"><span class="header-section-number">9.1.3</span> Suspension points (three periods)</a></li>
   </ul></li>
   <li><a href="#emphasis-and-bold" id="toc-emphasis-and-bold" class="nav-link" data-scroll-target="#emphasis-and-bold"><span class="header-section-number">9.2</span> Emphasis and bold</a></li>
   <li><a href="#subscripts-and-superscripts" id="toc-subscripts-and-superscripts" class="nav-link" data-scroll-target="#subscripts-and-superscripts"><span class="header-section-number">9.3</span> Subscripts and superscripts</a></li>
@@ -521,15 +522,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="9.1.2" class="anchored" data-anchor-id="punctuation-and-quotation-marks"><span class="header-section-number">9.1.2</span> Punctuation and quotation marks</h3>
 <p>See <a href="191-cop-block-quotations.html"><span>Chapter&nbsp;12</span></a>.</p>
 </section>
+<section id="suspension-points-three-periods" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="suspension-points-three-periods"><span class="header-section-number">9.1.3</span> Suspension points (three periods)</h3>
+<p>Three periods used for ellipsis, aka suspension points, are entered as three consecutive dots:</p>
+<blockquote class="blockquote">
+<div class="no-first-line-indent-after"></div>
+<p>He will come back… sooner or later.</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>He will come back... sooner or later.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Do not space them (<code>. . .</code>).</p>
+<p>Pandoc recognizes <code>...</code> as suspension points, and uses the appropriate code for them in various output formats (e.g.&nbsp;a special unicode character in html, the <code>\ldots{}</code> command in LaTeX). This ensures they are typeset appropriately, with less space between them than normal dots.</p>
+<p>If you need a plain sequence of three dots, with normal spacing rather than suspension dots spacing, backslash-escape the dots: <code>\.\.\.</code>:</p>
+<blockquote class="blockquote">
+<div class="no-first-line-indent-after"></div>
+<p>Three plain dots: ... are not three suspension dots: …</p>
+</blockquote>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="an">Three plain dots:</span><span class="co"> \.\.\. are not three suspension dots: ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>In proper typesetting, suspension points are less spaced than ordinary dots. Pandoc treats <code>...</code> as suspension points and converts them to an appr</p>
+<p>Pandoc recognizes the three consecutive dots and typesets them appropriately.</p>
+</section>
 </section>
 <section id="emphasis-and-bold" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="emphasis-and-bold"><span class="header-section-number">9.2</span> Emphasis and bold</h2>
 <p>Emphasized text is marked with surrounding <em>asterisks</em> or <em>underscores</em>. Bold is marked with double asterisks or underscores, emphasized bold with three:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>This *word* and _that word_ are emphasized. </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>This **word** and __that word__ are strongly emphasized.</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>***This sentence is extra strongly emphasized.*** </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>This *word* and _that word_ are emphasized. </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>This **word** and __that word__ are strongly emphasized.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>***This sentence is extra strongly emphasized.*** </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>Emphasis is printed in <em>italics</em> when surrounded with normal text. <em>But when the surrounding text is itself in italics, this is the</em> opposite<em>.</em></p>
 <div class="house">
@@ -594,11 +616,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>With <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p^2\)</span> the sub(/super)scripts are in formulas.</td>
-<td><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>With $p_1$ and $p^2$ the...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>With $p_1$ and $p^2$ the...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 </tr>
 <tr class="even">
 <td>With <span class="math inline">\(p_{12}\)</span> and <span class="math inline">\(p^{**}\)</span> the sub(/super)scripts are several characters long.</td>
-<td><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>With $p_{12}$ and $p^{xy}$ the...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>With $p_{12}$ and $p^{xy}$ the...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 </tr>
 </tbody>
 </table>
@@ -716,8 +738,8 @@ and a new one starts.</p>
 </blockquote>
 <div class="no-first-line-indent-after"></div>
 <p>is encoded as follows:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>This line ends here \</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>and a new one starts.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>This line ends here \</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>and a new one starts.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="prevent-line-breaks" class="level2" data-number="9.8">
 <h2 data-number="9.8" class="anchored" data-anchor-id="prevent-line-breaks"><span class="header-section-number">9.8</span> Prevent line breaks</h2>
@@ -728,12 +750,12 @@ and a new one starts.</p>
 </blockquote>
 <div class="no-first-line-indent-after"></div>
 <p>The code for this would be:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>... Smith's great theory <span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>... Smith's great theory <span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>To prevent this use <em>non-breakable spaces</em>, which can be introduced with a backclashed-escaped space <code>\</code> or with the HTML code <code>&amp;nbsp;</code>, as follows:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>... Smith's great theory\ <span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>... Smith's great theory<span class="dv">&amp;nbsp;</span><span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>... Smith's great theory\ <span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>... Smith's great theory<span class="dv">&amp;nbsp;</span><span class="co">[</span><span class="ot">-@Smith1972</span><span class="co">]</span>. On the other hand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>Don’t use this to fine-tune how the long the lines are or the like; only when it makes sense in terms of the content: when it’s a matter of sticking say a citation year to what’s going with it, “i.e.” to what follows, and the like.</p>
 

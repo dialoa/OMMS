@@ -464,7 +464,10 @@ div.csl-indent {
   <li><a href="#quoting-words" id="toc-quoting-words" class="nav-link" data-scroll-target="#quoting-words"><span class="header-section-number">12.2.1</span> Quoting words</a></li>
   <li><a href="#quotations-within-quotations" id="toc-quotations-within-quotations" class="nav-link" data-scroll-target="#quotations-within-quotations"><span class="header-section-number">12.2.2</span> Quotations within quotations</a></li>
   </ul></li>
-  <li><a href="#block-quotations" id="toc-block-quotations" class="nav-link" data-scroll-target="#block-quotations"><span class="header-section-number">12.3</span> Block quotations</a></li>
+  <li><a href="#block-quotations" id="toc-block-quotations" class="nav-link" data-scroll-target="#block-quotations"><span class="header-section-number">12.3</span> Block quotations</a>
+  <ul class="collapse">
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">12.3.1</span> Troubleshooting</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -644,59 +647,63 @@ div.csl-indent {
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">The second line isn't even indented or starting with </span><span class="in">`&gt;`</span><span class="at">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>For readability avoid the lazy style.</p>
-<p>The quotation citation can be included at the end or in foonote:</p>
+<p>The quotation citation can be included at the end or in a footnote. If indicated at the end, it should come <em>after</em> the dot of the quotation’s last sentence.</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
-<p>I am happy. <span class="citation" data-cites="doe_j:2020">(<a href="../appendices/references.html#ref-doe_j:2020" role="doc-biblioref">Doe 2020</a>)</span></p>
+<p>GOOD I am happy. <span class="citation" data-cites="doe_j:2020">(<a href="../appendices/references.html#ref-doe_j:2020" role="doc-biblioref">Doe 2020</a>)</span></p>
 </blockquote>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
-<p>I am sad.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>BAD I am happy <span class="citation" data-cites="doe_j:2020">(<a href="../appendices/references.html#ref-doe_j:2020" role="doc-biblioref">Doe 2020</a>)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; I am happy. </span><span class="co">[</span><span class="ot">@doe_j:2020</span><span class="co">]</span></span>
+<blockquote class="blockquote">
+<div class="no-first-line-indent-after"></div>
+<p>GOOD I am sad.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</blockquote>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; GOOD I am happy. </span><span class="co">[</span><span class="ot">@doe_j:2020</span><span class="co">]</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; I am sad.^</span><span class="co">[</span><span class="ot">@doe_j:2020</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; BAD I am happy </span><span class="co">[</span><span class="ot">@doe_j:2020</span><span class="co">]</span><span class="at">.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; GOOD I am sad.</span><span class="ot">[^doe-quotation]</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ot">[^doe-quotation]: </span>@doe_j:2020</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>You should distinguish <em>several consecutive quotations</em> from <em>a single quotation with several paragraphs</em>. One way to do this is as follows:</p>
+<p>Distinguish clearly <em>one quotation with several paragraphs</em> from <em>several consecutive quotations</em>. If, for instance, your template sets out quotations in boxes, you want a single two-paragraphs quotation to come out in one box, not two. <em>Continuing</em> paragraphs are marked by an indentation of 2 spaces or by prefixing intervening empty lines with <code>&gt;</code>:</p>
+<blockquote class="blockquote">
+<div class="no-first-line-indent-after"></div>
+<p>Suppose this is a quotation’s first paragraph.</p>
+</blockquote>
+<div class="no-first-line-indent-after"></div>
+<p>This second paragraph (indented) is part of the same quotation.</p>
+<blockquote class="blockquote">
+<div class="no-first-line-indent-after"></div>
+<p>Suppose this is a new quotation’s first paragraph.</p>
+<p>This second paragraph (marked with <code>&gt;</code> prefixes) is part of the same quotation.</p>
+</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Suppose this is a quotation's first paragraph.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  This second paragraph (indented) is part of the same quotation.</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Suppose this is a new quotation's first paragraph.</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; This second paragraph (marked with </span><span class="in">`&gt;`</span><span class="at"> prefixes) </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; is part of the same quotation.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Beware: if you use indentation, make it two spaces only. Four spaces indentation is used for code blocks (blocks of computer language).</p>
+<p><em>Several but consecutive</em> quotations are instead separated by an empty line:</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
 <p>This is a first quotation.</p>
 </blockquote>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
-<p>This is a second quotation.</p>
-<p>This is not a third quotation, but a further paragraph of the second quotation.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">@echo</span> <span class="st">"this code block is a further block in the second quotation"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is a second quotation that directly follows the first.</p>
 </blockquote>
 <div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; This is a first quotation.</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; This is a second quotation.</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; This is not a third quotation, but a further paragraph </span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; of the second quotation.</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; ```bash</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; @echo "this code block is a further block in the second quotation"</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; ```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; This is a second quotation that directly follows the first.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>That is, we start all lines of the long quotation with <code>&gt;</code>, <em>including the blank lines that separate its paragaphs or blocks</em>. By contrast, we leave an empty line between two distinct quotations.</p>
-<p>An alternative is instead to only have <code>&gt;</code> at the beginning of a long quotation and indicate with subsequent paragraphs with an indent:</p>
-<blockquote class="blockquote">
-<div class="no-first-line-indent-after"></div>
-<p>This is a first quotation.</p>
-</blockquote>
-<div class="no-first-line-indent-after"></div>
-<p>This is still part of the first quotation.</p>
-<blockquote class="blockquote">
-<div class="no-first-line-indent-after"></div>
-<p>This is a second quotation.</p>
-</blockquote>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; This is a first quotation.</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  This is still part of the first quotation.</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; This is a second quotation.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="no-first-line-indent-after"></div>
+<p>Note that the second quotation starts with <code>&gt;</code> and isn’t indented.</p>
 <p>You can have quotations within quotations.</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
@@ -706,10 +713,10 @@ div.csl-indent {
 <p>The life unexamined isn’t worth living.</p>
 </blockquote>
 </blockquote>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; As someone said once:</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; &gt; The life unexamined </span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; &gt; isn't worth living.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; As someone said once:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; &gt; The life unexamined </span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; &gt; isn't worth living.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="house">
 <p><strong>Dialectica guidelines</strong></p>
 <p>If the quote is longer than 4 lines, use block quotation.</p>
@@ -717,7 +724,7 @@ div.csl-indent {
 <li>no double marks</li>
 <li>period goes before reference</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span><span class="co">[</span><span class="ot">block quotation</span><span class="co">]</span><span class="at">. </span><span class="co">[</span><span class="ot">@doe_j:2020, 20</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span><span class="co">[</span><span class="ot">block quotation</span><span class="co">]</span><span class="at">. </span><span class="co">[</span><span class="ot">@doe_j:2020, 20</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>Result:</p>
 <blockquote class="blockquote">
@@ -725,6 +732,10 @@ div.csl-indent {
 <p>[block quotation]. <span class="citation" data-cites="doe_j:2020">(<a href="../appendices/references.html#ref-doe_j:2020" role="doc-biblioref">Doe 2020, 20</a>)</span></p>
 </blockquote>
 </div>
+<section id="troubleshooting" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">12.3.1</span> Troubleshooting</h3>
+<p><em>Problem</em>. The quotation or parts of it comes out in computer-language font.</p>
+<p><em>Solution</em>. You’ve indented a block of your quotation by <em>four</em> spaces. Use two instead.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -732,6 +743,7 @@ div.csl-indent {
 Doe, Jane. 2020. <span>“An Imaginary Article.”</span> <em>Review of Ideas</em> 10: 13–27. <a href="https://doi.org/10.0000/123456789">https://doi.org/10.0000/123456789</a>.
 </div>
 </div>
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>

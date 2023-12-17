@@ -6,213 +6,108 @@ editor:
 
 # Copyeditor workflow
 
-Below is a step-by-step workflow for copyeditors, followed by a final
-checklist and revision tracker that the Dialectica journal uses. 
+Your article folder should contain a copyediting checklist and a revision
+tracker. Use the checklist on your first round of copyediting the article. Use the revision tracker to keep track of unfinished tasks and communications with the author (changes that you need to notify the author of, questions you need to ask them, record of their answers). 
 
-The markdown source for the checklist and revision tracker is also included.
-You can use it to create a revision tracker document for each article you 
-edit. 
+For instance, use a subfolder `history` and put in it files `checklist.md` for the checklist and `r1.md`, `r2.md` for revision rounds. 
+
+Below are examples of checklist and revision document for you to copy/paste. 
 
 ## Copyediting workflow
 
-1.   (If needed) Prepare Word manuscript for conversion (formulas, styles
-  for headings, abstract, ...)
-2.  Convert document into markdown
-3.  Complete/Create metadata block
-4. Section headings (if needed)
-5. Format inline and block elements
-6. Cross-references
-7. Create a .bib file from the author's bibliography
-8. Replace the references in the article with the keys from your .bib file
-9. Create References section at the end of the document
-10. Proofread the outputs.
-11. Checklist!
+1. __Pre-conversion changes__ (optional). Fix the author's MS Word or LaTeX document for better conversion results. In MS Word: use headings styles, metadata sections, and optionally use equations for formulas and special symbols. In LaTeX: usually nothing is needed, but sometimes unnecessary LaTeX commands and packages need to be removed (e.g., framed boxes).
+2. __Convert to markdown__.
+3. __Metadata__. Fill in the metadata. 
+4. __Section headings__. Check that section headings are encoded, given them identifiers for crossreferences (optional).
+5. __Format elements__. Apply markdown formatting to blockquotes, lists, statements, formulas, etc.
+6. __Cross-references__. Encode cross-references within the document (to section headings, footnotes, statements etc.).
+7. __Citations__. Encode citations in Markdown. If using Zotero: create a (sub)collection for the paper, look up the citations online and add them to the collection using Zotero's browser plugin. Export the collection as a BibTeX file (`.bib`) in your article folder. Insert the citations in the document, ideally using a Zotero-markdown plugin for your editor (e.g. Citation Picker for Zotero in VS code).
+8. Add a `# References` heading at the end of the document.
+9. Render the output and proofread.
+10. Go through the checklist.
 
 ## The checklist
 
-1.  Metadata block: check that you have correctly added the information
-    that you want to include (e.g. title, author, affiliation).
-    Abstracts, acknowledgements and keywords should be here or as
-    sections at the beginning of the paper.
-2.  Sections: check that their headings are correctly formatted with
-    `#`, `##`, etc. 3.Emphasis: check that emphasised words and
-    sentences in the original text are emphasized in markdown (with
-    asterisks and underscores).
-3.  Bold. No bold unless absolutely needed.
-4.  Dashes: check that hyphens, en dashes and em dashes are correctly
-    and coherently used.
-5.  Quotations: use a consistent style (e.g. double quotation marks) and
-    check that they're formatted as blocks where needed. Distinguish two
-    subsequent block quotes from a single long one.
-6.  Math content: check that math content (incl. schematic letters) is
-    formatted as such, and non-math special characters formatted as
-    such.
-7.  Statements: check that claims, examples, theorems etc. are formatted
-    as statements. Arguments with labelled premises are custom-labelled
-    lists. Block equations are display maths.
-8.  First-line indentation: paragraphs that *continue* after a block
-    quote, table or list should not have an indentation. Add `\noident`
-    codes where needed.
-9.  Tables. Check that the tables created are faithful renderings of the
-    original tables by the author.
-10. Special symbols: check that the special symbols and punctuation used
-    by the author are in a format recognizable in markdown (using LaTeX
-    formulas wherever needed).
-11. LaTeX code. Check that they display correctly in HTML. If not, use
-    *Imagify* [@sec-imagify].
-12. Footnotes: check that they display correctly in outputs.
-13. Crossreferences: check that you have identified the crossreferences
-    in the text and added labels wherever needed (e.g. references to
-    sections, footnotes, claims, premises, arguments)
-14. Citations: check that you have identified all citations in the text
-    and replaced them with keys from your bibligraphy. Be consistent on
-    borderline cases: you may or may not use year-only when the
-    citation's author is already named in the sentence, but apply your
-    choice consistenly.
-15. Bibliography: you should have recreated the author's bibliography
-    (e.g. using Zotero), double-checked it for mistakes in the process,
-    and inserted DOIs wherever they exist. Mistakes: wrong year of
-    publication, missing editor initials, etc.
-
-### TO DO changes and questions
-
-*insert here list of changes still to be done and things you need  
- to check, e.g. missing citations.*
-
-### ASK questions for the author(s)
-
-*insert lists of questions to put to the author(s). You may organize them in
-categories:*
-
-#### general
-
-#### grammar and spelling
-
-#### formulas
-
-#### quotations and citations
-
-#### special elements: statements, tables etc.
-
-### DONE changes done
-
-*List here non-trivial changes done during this revision. This is
-useful to send to the author, and as a record for future rounds
-of revision.*
-
-### LEAVE things that don't need to be change
-
-*Changes considered that you ultimately decided against. 
-Useful for future rounds.This includes:*
-
-#### IGNORE
-
-*things you considered, but ultimately decided against. Spares
-you and future copyeditors considering them again.*
-
-#### REJECT
-
-*things asked by the author that you decided against. Useful to 
-record your reasons and remind them if they ask again.*
-
-### TO EDITORS
-
-*questions for the editor or for your copyediting expert, e.g. 
-markdown or technical issues with LaTeX or some other output format.*
-
-### The checklist markdown source
-
 ``` markdown
-1.  Metadata block: check that you have correctly added the information
-    that you want to include (e.g. title, author, affiliation).
-    Abstracts, acknowledgements and keywords should be here or as
-    sections at the beginning of the paper.
-2.  Sections: check that their headings are correctly formatted with
-    `#`, `##`, etc. 3.Emphasis: check that emphasised words and
-    sentences in the original text are emphasized in markdown (with
-    asterisks and underscores).
-3.  Bold. No bold unless absolutely needed.
-4.  Dashes: check that hyphens, en dashes and em dashes are correctly
-    and coherently used.
-5.  Quotations: use a consistent style (e.g. double quotation marks) and
-    check that they're formatted as blocks where needed. Distinguish two
-    subsequent block quotes from a single long one.
-6.  Math content: check that math content (incl. schematic letters) is
-    formatted as such, and non-math special characters formatted as
-    such.
-7.  Statements: check that claims, examples, theorems etc. are formatted
+## Importing and Preparing the Original Document, Setting up Workspace
+
+- [ ] Create working folder. If using Rstudio, create a project.
+- [ ] Copy original manuscript in the folder (`original` subfolder).
+- [ ] Prepare manuscript for conversion (headings styles, footnotes, formulas), so that pandoc recognizes most of the things. 
+- [ ] Convert to markdown with `pandoc -s <originalfile> -o <outputfile.md>`. 
+- [ ] Create revison tracker files: create `history` folder, create a file `r1.md` in it and copy this checklist into it.
+
+## Formatting
+
+- [ ] Complete metadata block: title, author, affiliation, abstract, thanks, bibliography, nocite (if needed).
+- [ ] Sections: are they formatted correctly at all levels?
+- [ ] Footnotes: are they formatted correctly?
+- [ ] Quotations: are they formatted correctly? (as blocks when needed, etc.)
+- [ ] Quotation marks: check that quotation marks are coherently used: single or double; punctuation inside/outside.
+- [ ] Quotes vs. italics: is their usage for emphasis/highlights as per Chicago Manual (scare-quotes vs. so-called vs. key terms, etc.)?
+- [ ] Dashes: is the usage as hyphens, en-, em-dashes correct?
+- [ ] Bold: avoid bold unless absolutely needed.
+- [ ] Statements: check that claims, examples, theorems etc. are formatted
     as statements. Arguments with labelled premises are custom-labelled
-    lists. Block equations are display maths.
-8.  First-line indentation: paragraphs that *continue* after a block
+    lists. Block equations are display maths. Use identifiers if statements or list items are crossreferenced.
+- [ ] Math content: check that math content (incl. schematic letters like $A$) is coded as inline or display formulas.
+- [ ] Special symbols: are they special symbols? Encode them as such (HTMLentities, copy/paste) rather than LaTeX unless absolutely necessary.
+
+## Proofreading
+
+- [ ] Fix minor typos and grammatical mistakes. No need to notify the author.
+- [ ] Ungrammatical, poor English, otherwise flawed sentences (e.g. we can't tell what a pronoun refers to): correct or ask the author to correct. If you correct, include in a list of changes notified to the author.
+- [x] No need to advise on the content (poor structure or presentation, redudant point, obscure ideas, etc.). This was the referee's job.
+- [ ] One final pass with spell & grammar checker
+
+## Crossreferences and Citations
+
+- [ ] Crossreferences: check that you have identified the crossreferences in the text and added labels wherever needed (references to sections, footnotes, claims, premises, arguments, etc.)
+- [ ] Create a `.bib` file from the author’s bibliography
+- [ ] Identify all the references in the text and replace them with keys from your .bib file. 
+- [ ] Use normal vs inline citations where appropriate? Use year-only sparingly. Use multiple inline citations (`@doe [@smith;@jones]`) and normal citations with long prefixes and suffixes (`[this is also discussed in @doe and other places]`) where appropriate. Treat borderline cases consistently across the paper (e.g., whether to use year-only or normal when the author is already named in the sentence).  
+- [ ] Is the author’s bibliography correct? (wrong title, wrong year of publication, etc.)
+- [ ] Add "References" heading at the end of the document.
+
+## Rendering in output formats
+
+- [ ] Special symbols: do they render correctly in all outputs?
+- [ ] First-line indentation: paragraphs that *continue* after a block
     quote, table or list should not have an indentation. Add `\noident`
     codes where needed.
-9.  Tables. Check that the tables created are faithful renderings of the
-    original tables by the author.
-10. Special symbols: check that the special symbols and punctuation used
-    by the author are in a format recognizable in markdown (using LaTeX
-    formulas wherever needed).
-11. LaTeX code. Check that they display correctly in HTML. If not, use
-    *Imagify* [@sec-imagify].
-12. Footnotes: check that they display correctly in outputs.
-13. Crossreferences: check that you have identified the crossreferences
-    in the text and added labels wherever needed (e.g. references to
-    sections, footnotes, claims, premises, arguments)
-14. Citations: check that you have identified all citations in the text
-    and replaced them with keys from your bibligraphy. Be consistent on
-    borderline cases: you may or may not use year-only when the
-    citation's author is already named in the sentence, but apply your
-    choice consistenly.
-15. Bibliography: you should have recreated the author's bibliography
-    (e.g. using Zotero), double-checked it for mistakes in the process,
-    and inserted DOIs wherever they exist. Mistakes: wrong year of
-    publication, missing editor initials, etc.
+- [ ] Math and LaTeX: check that it renders correctly in HTML output. Use *Imagify* if needed.
+- [ ] Tables: are the tables a faithful rendering of the original tables by the author?
+- [ ] Figures: do they render correctly in all outputs?
+- [ ] Bibliography: does it looks good? do the citation links work?
 
-### TO DO changes and questions
+## Send to the author
 
-*insert here list of changes still to be done and things you need  
- to check, e.g. missing citations.*
-
-### ASK questions for the author(s)
-
-*insert lists of questions to put to the author(s). You may organize them in
-categories:*
-
-#### general
-
-#### grammar and spelling
-
-#### formulas
-
-#### quotations and citations
-
-#### special elements: statements, tables etc.
-
-### DONE changes done
-
-*List here non-trivial changes done during this revision. This is
-useful to send to the author, and as a record for future rounds
-of revision.*
-
-### LEAVE things that don't need to be change
-
-*Changes considered that you ultimately decided against. 
-Useful for future rounds.This includes:*
-
-#### IGNORE
-
-*things you considered, but ultimately decided against. Spares
-you and future copyeditors considering them again.*
-
-#### REJECT
-
-*things asked by the author that you decided against. Useful to 
-record your reasons and remind them if they ask again.*
-
-### TO EDITORS
-
-*questions for the editor or for your copyediting expert, e.g. 
-markdown or technical issues with LaTeX or some other output format.*
-
+- [ ] Compile list of questions and notifications for the author.
+- [ ] Have a last look at the paper.
+- [ ] Send to the author for revisions and/or approval.
 ```
 
+## The Revision Tracker 
 
+Here's an example of revision-tracking file. We use a new one for each back-and-forth with the author.
+
+```markdown
+## TO DO 
+
+- things you still have to do
+- item 
+
+## TO ASK
+
+- things to ask about or notify the author
+
+## IGNORE
+
+- things you've considered but decided against
+- including author requests
+
+## GET HELP
+
+- things you need to ask editors 
+- or the template editor about
+```

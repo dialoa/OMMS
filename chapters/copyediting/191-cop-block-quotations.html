@@ -116,6 +116,8 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -461,7 +463,7 @@ div.csl-indent {
   <li><a href="#inline-vs-block-quotations" id="toc-inline-vs-block-quotations" class="nav-link active" data-scroll-target="#inline-vs-block-quotations"><span class="header-section-number">12.1</span> Inline vs block quotations</a></li>
   <li><a href="#inline-quotations" id="toc-inline-quotations" class="nav-link" data-scroll-target="#inline-quotations"><span class="header-section-number">12.2</span> Inline quotations</a>
   <ul class="collapse">
-  <li><a href="#quoting-words" id="toc-quoting-words" class="nav-link" data-scroll-target="#quoting-words"><span class="header-section-number">12.2.1</span> Quoting words</a></li>
+  <li><a href="#quoting-words-mention" id="toc-quoting-words-mention" class="nav-link" data-scroll-target="#quoting-words-mention"><span class="header-section-number">12.2.1</span> Quoting words (mention)</a></li>
   <li><a href="#quotations-within-quotations" id="toc-quotations-within-quotations" class="nav-link" data-scroll-target="#quotations-within-quotations"><span class="header-section-number">12.2.2</span> Quotations within quotations</a></li>
   </ul></li>
   <li><a href="#block-quotations" id="toc-block-quotations" class="nav-link" data-scroll-target="#block-quotations"><span class="header-section-number">12.3</span> Block quotations</a>
@@ -503,8 +505,7 @@ div.csl-indent {
 <section id="inline-quotations" class="level2" data-number="12.2">
 <h2 data-number="12.2" class="anchored" data-anchor-id="inline-quotations"><span class="header-section-number">12.2</span> Inline quotations</h2>
 <p>Inline quotations are encoded with quotation marks <code>'</code> or <code>"</code>. Don’t use special opening and closing quotation mark characters:</p>
-<div class="house">
-<p>For inline quotations use double quotation marks:</p>
+<p>For inline quotations use single or double quotation marks:</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -523,7 +524,6 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-</div>
 <p>As you can see, Pandoc automatically converts straight marks into opening or closing ones as needed.</p>
 <p>There are two traditions:</p>
 <ul>
@@ -545,14 +545,14 @@ div.csl-indent {
 </blockquote>
 <div class="house">
 <p><strong>Dialectica guidelines</strong></p>
-<p><em>Dialectica</em> adopts the US/Chicago convention, unless authors insist otherwise or the results are particularly problematic. If an author insists to use the traditional British convention, it should be consistent throughout their paper.</p>
+<p><em>Dialectica</em> prefers the US/Chicago convention for quoted material, that is double quote. Exception: you can use single quotes for special uses other than quoting material (see ‘mention’ below).</p>
 </div>
-<section id="quoting-words" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="quoting-words"><span class="header-section-number">12.2.1</span> Quoting words</h3>
+<section id="quoting-words-mention" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="quoting-words-mention"><span class="header-section-number">12.2.1</span> Quoting words (mention)</h3>
 <p>When a word or expression is used not with its usual meaning but to denote that word or expression itself, we use quotation marks or italics.</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
-<p>I can’t stand the word “scrumptious”.</p>
+<p>I can’t stand the word ‘scrumptious’.</p>
 </blockquote>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
@@ -561,7 +561,20 @@ div.csl-indent {
 <div class="no-first-line-indent-after"></div>
 <p>Don’t use italics if the word is scare-quoted, put a distance, quoted from some other person’s use, etc. Italics are only appropriate if we’re talking of the word or expression italicized.</p>
 <div class="house">
-<p><strong>Dialectica guidelines</strong>. If references to a word or words are common throughout the paper, as in e.g.&nbsp;linguistics papers, use italics. Otherwise both options are fine, but be consistent throughout a single paper.</p>
+<p><strong>Dialectica guidelines</strong>. If references to a word or words are common throughout the paper, as in e.g.&nbsp;linguistics papers, italics are recommended. It’s often best to distinguish mention from quoted material:</p>
+<ul>
+<li><p>use italics or single quotation marks for mentions. Example:</p>
+<blockquote class="blockquote">
+<p>The predicate ‘gave <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span>’ has three argument places.</p>
+</blockquote></li>
+<li><p>if using single quotation marks, do not bring punctuation marks inside.</p>
+<blockquote class="blockquote">
+<p>The verbs ‘know’, ‘believe’ are cognitive verbs. We need another notion than ‘justice’.</p>
+</blockquote></li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>Scare quotes are like quoted material, not mention.</p>
+<p>Make sure the paper is consistent in its choices.</p>
 </div>
 </section>
 <section id="quotations-within-quotations" class="level3" data-number="12.2.2">

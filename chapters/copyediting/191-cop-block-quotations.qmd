@@ -27,14 +27,12 @@ authors' own words rather than something to be examined or discussed.
 Inline quotations are encoded with quotation marks `'` or `"`. Don't use
 special opening and closing quotation mark characters:
 
-::: house
-For inline quotations use double quotation marks:
+For inline quotations use single or double quotation marks:
 
 | GOOD                              | output                          |
 |-----------------------------------|---------------------------------|
 | `This "best practice" is a hack.` | This "best practice" is a hack. |
 | `This 'best practice' is a hack.` | This 'best practice' is a hack. |
-:::
 
 As you can see, Pandoc automatically converts straight marks into
 opening or closing ones as needed.
@@ -65,19 +63,18 @@ She never said the word 'traitor'&zmj;.
 ::: house
 **Dialectica guidelines**
 
-*Dialectica* adopts the US/Chicago convention, unless authors insist
-otherwise or the results are particularly problematic. If an author
-insists to use the traditional British convention, it should be
-consistent throughout their paper.
+*Dialectica* prefers the US/Chicago convention for quoted material, 
+that is double quote. Exception: you can use single quotes for special 
+uses other than quoting material (see 'mention' below). 
 :::
 
-### Quoting words
+### Quoting words (mention)
 
 When a word or expression is used not with its usual meaning but to
 denote that word or expression itself, we use quotation marks or
 italics.
 
-> I can't stand the word "scrumptious".
+> I can't stand the word 'scrumptious'.
 
 > I can't stand the word *scrumptious*.
 
@@ -87,9 +84,21 @@ talking of the word or expression italicized.
 
 ::: house
 **Dialectica guidelines**. If references to a word or words are common
-throughout the paper, as in e.g. linguistics papers, use italics.
-Otherwise both options are fine, but be consistent throughout a single
-paper.
+throughout the paper, as in e.g. linguistics papers, italics are
+recommended. It's often best to distinguish mention from quoted material:
+
+- use italics or single quotation marks for mentions. Example:
+
+  > The predicate 'gave $x$ to $y$' has three argument places.
+
+- if using single quotation marks, do not bring punctuation marks inside. 
+
+  > The verbs 'know', 'believe' are cognitive verbs.
+  > We need another notion than 'justice'.
+
+Scare quotes are like quoted material, not mention.
+
+Make sure the paper is consistent in its choices.
 :::
 
 ### Quotations within quotations

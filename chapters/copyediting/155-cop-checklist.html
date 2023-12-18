@@ -440,15 +440,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#copyediting-workflow" id="toc-copyediting-workflow" class="nav-link active" data-scroll-target="#copyediting-workflow"><span class="header-section-number">6.1</span> Copyediting workflow</a></li>
-  <li><a href="#the-checklist" id="toc-the-checklist" class="nav-link" data-scroll-target="#the-checklist"><span class="header-section-number">6.2</span> The checklist</a>
-  <ul class="collapse">
-  <li><a href="#to-do-changes-and-questions" id="toc-to-do-changes-and-questions" class="nav-link" data-scroll-target="#to-do-changes-and-questions"><span class="header-section-number">6.2.1</span> TO DO changes and questions</a></li>
-  <li><a href="#ask-questions-for-the-authors" id="toc-ask-questions-for-the-authors" class="nav-link" data-scroll-target="#ask-questions-for-the-authors"><span class="header-section-number">6.2.2</span> ASK questions for the author(s)</a></li>
-  <li><a href="#done-changes-done" id="toc-done-changes-done" class="nav-link" data-scroll-target="#done-changes-done"><span class="header-section-number">6.2.3</span> DONE changes done</a></li>
-  <li><a href="#leave-things-that-dont-need-to-be-change" id="toc-leave-things-that-dont-need-to-be-change" class="nav-link" data-scroll-target="#leave-things-that-dont-need-to-be-change"><span class="header-section-number">6.2.4</span> LEAVE things that don’t need to be change</a></li>
-  <li><a href="#to-editors" id="toc-to-editors" class="nav-link" data-scroll-target="#to-editors"><span class="header-section-number">6.2.5</span> TO EDITORS</a></li>
-  <li><a href="#the-checklist-markdown-source" id="toc-the-checklist-markdown-source" class="nav-link" data-scroll-target="#the-checklist-markdown-source"><span class="header-section-number">6.2.6</span> The checklist markdown source</a></li>
-  </ul></li>
+  <li><a href="#the-checklist" id="toc-the-checklist" class="nav-link" data-scroll-target="#the-checklist"><span class="header-section-number">6.2</span> The checklist</a></li>
+  <li><a href="#the-revision-tracker" id="toc-the-revision-tracker" class="nav-link" data-scroll-target="#the-revision-tracker"><span class="header-section-number">6.3</span> The Revision Tracker</a></li>
   </ul>
 </nav>
     </div>
@@ -473,181 +466,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <div class="no-first-line-indent-after"></div>
-<p>Below is a step-by-step workflow for copyeditors, followed by a final checklist and revision tracker that the Dialectica journal uses.</p>
-<p>The markdown source for the checklist and revision tracker is also included. You can use it to create a revision tracker document for each article you edit.</p>
+<p>Your article folder should contain a copyediting checklist and a revision tracker. Use the checklist on your first round of copyediting the article. Use the revision tracker to keep track of unfinished tasks and communications with the author (changes that you need to notify the author of, questions you need to ask them, record of their answers).</p>
+<p>For instance, use a subfolder <code>history</code> and put in it files <code>checklist.md</code> for the checklist and <code>r1.md</code>, <code>r2.md</code> for revision rounds.</p>
+<p>Below are examples of checklist and revision document for you to copy/paste.</p>
 <section id="copyediting-workflow" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="copyediting-workflow"><span class="header-section-number">6.1</span> Copyediting workflow</h2>
 <ol type="1">
-<li>(If needed) Prepare Word manuscript for conversion (formulas, styles for headings, abstract, …)</li>
-<li>Convert document into markdown</li>
-<li>Complete/Create metadata block</li>
-<li>Section headings (if needed)</li>
-<li>Format inline and block elements</li>
-<li>Cross-references</li>
-<li>Create a .bib file from the author’s bibliography</li>
-<li>Replace the references in the article with the keys from your .bib file</li>
-<li>Create References section at the end of the document</li>
-<li>Proofread the outputs.</li>
-<li>Checklist!</li>
+<li><strong>Pre-conversion changes</strong> (optional). Fix the author’s MS Word or LaTeX document for better conversion results. In MS Word: use headings styles, metadata sections, and optionally use equations for formulas and special symbols. In LaTeX: usually nothing is needed, but sometimes unnecessary LaTeX commands and packages need to be removed (e.g., framed boxes).</li>
+<li><strong>Convert to markdown</strong>.</li>
+<li><strong>Metadata</strong>. Fill in the metadata.</li>
+<li><strong>Section headings</strong>. Check that section headings are encoded, given them identifiers for crossreferences (optional).</li>
+<li><strong>Format elements</strong>. Apply markdown formatting to blockquotes, lists, statements, formulas, etc.</li>
+<li><strong>Cross-references</strong>. Encode cross-references within the document (to section headings, footnotes, statements etc.).</li>
+<li><strong>Citations</strong>. Encode citations in Markdown. If using Zotero: create a (sub)collection for the paper, look up the citations online and add them to the collection using Zotero’s browser plugin. Export the collection as a BibTeX file (<code>.bib</code>) in your article folder. Insert the citations in the document, ideally using a Zotero-markdown plugin for your editor (e.g.&nbsp;Citation Picker for Zotero in VS code).</li>
+<li>Add a <code># References</code> heading at the end of the document.</li>
+<li>Render the output and proofread.</li>
+<li>Go through the checklist.</li>
 </ol>
 </section>
 <section id="the-checklist" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="the-checklist"><span class="header-section-number">6.2</span> The checklist</h2>
-<ol type="1">
-<li>Metadata block: check that you have correctly added the information that you want to include (e.g.&nbsp;title, author, affiliation). Abstracts, acknowledgements and keywords should be here or as sections at the beginning of the paper.</li>
-<li>Sections: check that their headings are correctly formatted with <code>#</code>, <code>##</code>, etc. 3.Emphasis: check that emphasised words and sentences in the original text are emphasized in markdown (with asterisks and underscores).</li>
-<li>Bold. No bold unless absolutely needed.</li>
-<li>Dashes: check that hyphens, en dashes and em dashes are correctly and coherently used.</li>
-<li>Quotations: use a consistent style (e.g.&nbsp;double quotation marks) and check that they’re formatted as blocks where needed. Distinguish two subsequent block quotes from a single long one.</li>
-<li>Math content: check that math content (incl.&nbsp;schematic letters) is formatted as such, and non-math special characters formatted as such.</li>
-<li>Statements: check that claims, examples, theorems etc. are formatted as statements. Arguments with labelled premises are custom-labelled lists. Block equations are display maths.</li>
-<li>First-line indentation: paragraphs that <em>continue</em> after a block quote, table or list should not have an indentation. Add <code>\noident</code> codes where needed.</li>
-<li>Tables. Check that the tables created are faithful renderings of the original tables by the author.</li>
-<li>Special symbols: check that the special symbols and punctuation used by the author are in a format recognizable in markdown (using LaTeX formulas wherever needed).</li>
-<li>LaTeX code. Check that they display correctly in HTML. If not, use <em>Imagify</em> <a href="25-cop-imagify.html"><span>Chapter&nbsp;23</span></a>.</li>
-<li>Footnotes: check that they display correctly in outputs.</li>
-<li>Crossreferences: check that you have identified the crossreferences in the text and added labels wherever needed (e.g.&nbsp;references to sections, footnotes, claims, premises, arguments)</li>
-<li>Citations: check that you have identified all citations in the text and replaced them with keys from your bibligraphy. Be consistent on borderline cases: you may or may not use year-only when the citation’s author is already named in the sentence, but apply your choice consistenly.</li>
-<li>Bibliography: you should have recreated the author’s bibliography (e.g.&nbsp;using Zotero), double-checked it for mistakes in the process, and inserted DOIs wherever they exist. Mistakes: wrong year of publication, missing editor initials, etc.</li>
-</ol>
-<section id="to-do-changes-and-questions" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="to-do-changes-and-questions"><span class="header-section-number">6.2.1</span> TO DO changes and questions</h3>
-<p><em>insert here list of changes still to be done and things you need<br>
-to check, e.g.&nbsp;missing citations.</em></p>
-</section>
-<section id="ask-questions-for-the-authors" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="ask-questions-for-the-authors"><span class="header-section-number">6.2.2</span> ASK questions for the author(s)</h3>
-<p><em>insert lists of questions to put to the author(s). You may organize them in categories:</em></p>
-<section id="general" class="level4" data-number="6.2.2.1">
-<h4 data-number="6.2.2.1" class="anchored" data-anchor-id="general"><span class="header-section-number">6.2.2.1</span> general</h4>
-</section>
-<section id="grammar-and-spelling" class="level4" data-number="6.2.2.2">
-<h4 data-number="6.2.2.2" class="anchored" data-anchor-id="grammar-and-spelling"><span class="header-section-number">6.2.2.2</span> grammar and spelling</h4>
-</section>
-<section id="formulas" class="level4" data-number="6.2.2.3">
-<h4 data-number="6.2.2.3" class="anchored" data-anchor-id="formulas"><span class="header-section-number">6.2.2.3</span> formulas</h4>
-</section>
-<section id="quotations-and-citations" class="level4" data-number="6.2.2.4">
-<h4 data-number="6.2.2.4" class="anchored" data-anchor-id="quotations-and-citations"><span class="header-section-number">6.2.2.4</span> quotations and citations</h4>
-</section>
-<section id="special-elements-statements-tables-etc." class="level4" data-number="6.2.2.5">
-<h4 data-number="6.2.2.5" class="anchored" data-anchor-id="special-elements-statements-tables-etc."><span class="header-section-number">6.2.2.5</span> special elements: statements, tables etc.</h4>
-</section>
-</section>
-<section id="done-changes-done" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="done-changes-done"><span class="header-section-number">6.2.3</span> DONE changes done</h3>
-<p><em>List here non-trivial changes done during this revision. This is useful to send to the author, and as a record for future rounds of revision.</em></p>
-</section>
-<section id="leave-things-that-dont-need-to-be-change" class="level3" data-number="6.2.4">
-<h3 data-number="6.2.4" class="anchored" data-anchor-id="leave-things-that-dont-need-to-be-change"><span class="header-section-number">6.2.4</span> LEAVE things that don’t need to be change</h3>
-<p><em>Changes considered that you ultimately decided against. Useful for future rounds.This includes:</em></p>
-<section id="ignore" class="level4" data-number="6.2.4.1">
-<h4 data-number="6.2.4.1" class="anchored" data-anchor-id="ignore"><span class="header-section-number">6.2.4.1</span> IGNORE</h4>
-<p><em>things you considered, but ultimately decided against. Spares you and future copyeditors considering them again.</em></p>
-</section>
-<section id="reject" class="level4" data-number="6.2.4.2">
-<h4 data-number="6.2.4.2" class="anchored" data-anchor-id="reject"><span class="header-section-number">6.2.4.2</span> REJECT</h4>
-<p><em>things asked by the author that you decided against. Useful to record your reasons and remind them if they ask again.</em></p>
-</section>
-</section>
-<section id="to-editors" class="level3" data-number="6.2.5">
-<h3 data-number="6.2.5" class="anchored" data-anchor-id="to-editors"><span class="header-section-number">6.2.5</span> TO EDITORS</h3>
-<p><em>questions for the editor or for your copyediting expert, e.g.&nbsp; markdown or technical issues with LaTeX or some other output format.</em></p>
-</section>
-<section id="the-checklist-markdown-source" class="level3" data-number="6.2.6">
-<h3 data-number="6.2.6" class="anchored" data-anchor-id="the-checklist-markdown-source"><span class="header-section-number">6.2.6</span> The checklist markdown source</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Metadata block: check that you have correctly added the information</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    that you want to include (e.g. title, author, affiliation).</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    Abstracts, acknowledgements and keywords should be here or as</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    sections at the beginning of the paper.</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Sections: check that their headings are correctly formatted with</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="in">`#`</span>, <span class="in">`##`</span>, etc. 3.Emphasis: check that emphasised words and</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    sentences in the original text are emphasized in markdown (with</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    asterisks and underscores).</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Bold. No bold unless absolutely needed.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Dashes: check that hyphens, en dashes and em dashes are correctly</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    and coherently used.</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Quotations: use a consistent style (e.g. double quotation marks) and</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    check that they're formatted as blocks where needed. Distinguish two</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    subsequent block quotes from a single long one.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>Math content: check that math content (incl. schematic letters) is</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    formatted as such, and non-math special characters formatted as</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    such.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span>Statements: check that claims, examples, theorems etc. are formatted</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    as statements. Arguments with labelled premises are custom-labelled</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    lists. Block equations are display maths.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">8.  </span>First-line indentation: paragraphs that *continue* after a block</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    quote, table or list should not have an indentation. Add <span class="in">`\noident`</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    codes where needed.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">9.  </span>Tables. Check that the tables created are faithful renderings of the</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    original tables by the author.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>Special symbols: check that the special symbols and punctuation used</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    by the author are in a format recognizable in markdown (using LaTeX</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    formulas wherever needed).</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>LaTeX code. Check that they display correctly in HTML. If not, use</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    *Imagify* <span class="co">[</span><span class="ot">@sec-imagify</span><span class="co">]</span>.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">12. </span>Footnotes: check that they display correctly in outputs.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">13. </span>Crossreferences: check that you have identified the crossreferences</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    in the text and added labels wherever needed (e.g. references to</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    sections, footnotes, claims, premises, arguments)</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">14. </span>Citations: check that you have identified all citations in the text</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    and replaced them with keys from your bibligraphy. Be consistent on</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    borderline cases: you may or may not use year-only when the</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    citation's author is already named in the sentence, but apply your</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    choice consistenly.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">15. </span>Bibliography: you should have recreated the author's bibliography</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    (e.g. using Zotero), double-checked it for mistakes in the process,</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    and inserted DOIs wherever they exist. Mistakes: wrong year of</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    publication, missing editor initials, etc.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">### TO DO changes and questions</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>*insert here list of changes still to be done and things you need  </span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a> to check, e.g. missing citations.*</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### ASK questions for the author(s)</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Importing and Preparing the Original Document, Setting up Workspace</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Create working folder. If using Rstudio, create a project.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Copy original manuscript in the folder (<span class="in">`original`</span> subfolder).</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Prepare manuscript for conversion (headings styles, footnotes, formulas), so that pandoc recognizes most of the things. </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Convert to markdown with <span class="in">`pandoc -s &lt;originalfile&gt; -o &lt;outputfile.md&gt;`</span>. </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Create revison tracker files: create <span class="in">`history`</span> folder, create a file <span class="in">`r1.md`</span> in it and copy this checklist into it.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Formatting</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Complete metadata block: title, author, affiliation, abstract, thanks, bibliography, nocite (if needed).</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Sections: are they formatted correctly at all levels?</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Footnotes: are they formatted correctly?</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Quotations: are they formatted correctly? (as blocks when needed, etc.)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Quotation marks: check that quotation marks are coherently used: single or double; punctuation inside/outside.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Quotes vs. italics: is their usage for emphasis/highlights as per Chicago Manual (scare-quotes vs. so-called vs. key terms, etc.)?</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Dashes: is the usage as hyphens, en-, em-dashes correct?</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Bold: avoid bold unless absolutely needed.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Statements: check that claims, examples, theorems etc. are formatted</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    as statements. Arguments with labelled premises are custom-labelled</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    lists. Block equations are display maths. Use identifiers if statements or list items are crossreferenced.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Math content: check that math content (incl. schematic letters like $A$) is coded as inline or display formulas.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Special symbols: are they special symbols? Encode them as such (HTMLentities, copy/paste) rather than LaTeX unless absolutely necessary.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Proofreading</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Fix minor typos and grammatical mistakes. No need to notify the author.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Ungrammatical, poor English, otherwise flawed sentences (e.g. we can't tell what a pronoun refers to): correct or ask the author to correct. If you correct, include in a list of changes notified to the author.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> No need to advise on the content (poor structure or presentation, redudant point, obscure ideas, etc.). This was the referee's job.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> One final pass with spell &amp; grammar checker</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Crossreferences and Citations</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Crossreferences: check that you have identified the crossreferences in the text and added labels wherever needed (references to sections, footnotes, claims, premises, arguments, etc.)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Create a <span class="in">`.bib`</span> file from the author’s bibliography</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Identify all the references in the text and replace them with keys from your .bib file. </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Use normal vs inline citations where appropriate? Use year-only sparingly. Use multiple inline citations (<span class="in">`@doe [@smith;@jones]`</span>) and normal citations with long prefixes and suffixes (<span class="in">`[this is also discussed in @doe and other places]`</span>) where appropriate. Treat borderline cases consistently across the paper (e.g., whether to use year-only or normal when the author is already named in the sentence).  </span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Is the author’s bibliography correct? (wrong title, wrong year of publication, etc.)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Add "References" heading at the end of the document.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rendering in output formats</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Special symbols: do they render correctly in all outputs?</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> First-line indentation: paragraphs that *continue* after a block</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    quote, table or list should not have an indentation. Add <span class="in">`\noident`</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    codes where needed.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Math and LaTeX: check that it renders correctly in HTML output. Use *Imagify* if needed.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Tables: are the tables a faithful rendering of the original tables by the author?</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Figures: do they render correctly in all outputs?</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Bibliography: does it looks good? do the citation links work?</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>*insert lists of questions to put to the author(s). You may organize them in</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>categories:*</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">#### general</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">#### grammar and spelling</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="fu">#### formulas</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">#### quotations and citations</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">#### special elements: statements, tables etc.</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="fu">### DONE changes done</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>*List here non-trivial changes done during this revision. This is</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>useful to send to the author, and as a record for future rounds</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>of revision.*</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">### LEAVE things that don't need to be change</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>*Changes considered that you ultimately decided against. </span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Useful for future rounds.This includes:*</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="fu">#### IGNORE</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>*things you considered, but ultimately decided against. Spares</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>you and future copyeditors considering them again.*</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="fu">#### REJECT</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>*things asked by the author that you decided against. Useful to </span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>record your reasons and remind them if they ask again.*</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### TO EDITORS</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>*questions for the editor or for your copyediting expert, e.g. </span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>markdown or technical issues with LaTeX or some other output format.*</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Send to the author</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Compile list of questions and notifications for the author.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Have a last look at the paper.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Send to the author for revisions and/or approval.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="the-revision-tracker" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="the-revision-tracker"><span class="header-section-number">6.3</span> The Revision Tracker</h2>
+<p>Here’s an example of revision-tracking file. We use a new one for each back-and-forth with the author.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## TO DO </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>things you still have to do</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>item </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## TO ASK</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>things to ask about or notify the author</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## IGNORE</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>things you've considered but decided against</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>including author requests</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## GET HELP</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>things you need to ask editors </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>or the template editor about</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 
 </main> <!-- /main -->

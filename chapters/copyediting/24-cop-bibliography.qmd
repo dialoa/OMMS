@@ -32,7 +32,28 @@ There's more detail on self-citing bibliographies below.
 
 ## Get or create a BibTeX file
 
-**Temporary solution**: get your .bib from Philipp. 
+### Using Zotero
+
+Create a new (sub)collection in your Zotero Library for the article. Add the article references to it.
+
+Zotero creates citation keys automatically. If you need to manually change them to whichever ones you're using in the manuscript, see below.
+
+Left-click the collection and chose "Export collection". 
+Export it as BibTeX (`.bib`) file to the article's folder.
+
+### Manually set citation keys in Zotero
+
+Select a bibliography item. Its metadata is displayed on
+the right tab. Find the 'Extra' field at the bottom. Edit
+it to add a new line to whatever it may already contain:
+
+```
+Citation Key: Doe1995-Article-Title
+```
+
+This changes the item's citation key. Don't forget the caps ("Citation Key" not "citation key" nor "citationkey"), and make sure this occupies a single line of the "Extra" field.
+
+
 
 
 ## Adding non-cited references in the bibliography

@@ -35,6 +35,7 @@ book:
       - chapters/copyediting/195-cop-block-statements.qmd
       - chapters/copyediting/196-cop-block-columns.qmd
       - chapters/copyediting/199-cop-block-other.qmd
+      - chapters/copyediting/20-cop-multiple-languages.qmd
       - chapters/copyediting/21-cop-block-crossreferencing.qmd
       - chapters/copyediting/23-cop-citations.qmd
       - chapters/copyediting/24-cop-bibliography.qmd
@@ -53,6 +54,7 @@ book:
     - part: Design
       chapters:
       - chapters/design/52-pub-the-structure-of-volumes.qmd
+      - chapters/design/55-pub-technical-howtos.qmd
     - part: Publishing
       chapters:
       - chapters/publishing/42-ojs-advice.qmd

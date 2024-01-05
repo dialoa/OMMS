@@ -1,0 +1,549 @@
+# Technical How-Tos
+
+## Missing Unicode characters
+
+Markdown manuscript are in unicode, which allow us to enter
+many languages directly and a range of special symbols.
+
+LaTeX issues a warning if a character is missing from your chosen
+font, for instance:
+
+```
+Missing character: There is no ὀ (U+1F40) (U+1F40) in font STIXTwoText:mode=node;script
+```
+
+In LaTeX/PDF output there are three solutions for this:
+
+1. generate missing characters by combining other characters of the same font (typically a diacritic plus a character)
+2. generate missing characters by using a math symbol command (typical for symbols)
+3. use a different font for specific Unicode ranges
+
+Methods 1-2 rely on the `newunicodechar` package. Method 3 on fontspec.
+
+It's good to have a character table for your font. See for instance [STIX font](https://github.com/stipub/stixfonts/) docs: the character table indicates which characters can be built from others.
+
+### Unicode from math
+
+You could use use LaTeX's (`inputenc`'s) `DeclareUnicodeChar` command,
+if you know the character's UTF-8 number:
+
+```latex
+\DeclareUnicodeCharacter{2234}{\ensuremath{\therefore}}
+\DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}
+```
+
+Or the `newunicodechar` package, which allows you to use the character itself:
+
+``` latex
+\usepackage{newunicodechar}
+\newunicodechar{∴}{\ensuremath{\therefore}}
+\newunicodechar{✓}{\ensuremath{\checkmark}}
+```
+
+Either option requires a `header-includes` or a modification of
+your LaTeX template.
+
+We use a metadata variable instead. This
+allows us to enter the desired character directly or as a HTML entity
+(which Pandoc converts to the desired char before passing it on to our
+LaTeX template):
+
+```yaml
+unicodefrommath:
+- char: '&there4;'
+  is: \therefore
+- char: ✓
+  is: \checkmark
+```
+
+This is supported as follows in our [Pandokoma](https://github.com/dialoa/pandokoma) template:
+
+```
+$if(unicodefrommath)$
+\usepackage{newunicodechar}
+$for(unicodefrommath)$
+  $if(it.char)$
+    $if(it.is)$\newunicodechar{$it.char$}{\ensuremath{$it.is$}}$endif$
+  $endif$
+$endfor$
+$endif$
+```
+
+### Provide Unicode characters
+
+For LaTeX/PDF, use `\DeclareUnicodeCharacter` or `newunicodechar`.
+
+We use pandokoma's yaml declaration. Here's our
+declaration for the Greek extended block:
+
+```yaml
+newunicodechar:
+- char: ἀ
+  command: α\symbol{"0313"}
+- char: ἁ
+  command: α\symbol{"0314}
+- char: ἂ
+  command: α\symbol{"0313}\symbol{"0300}
+- char: ἃ
+  command: α\symbol{"0314}\symbol{"0300}
+- char: ἄ
+  command: α\symbol{"0313}\symbol{"0301}
+- char: ἅ
+  command: α\symbol{"0314}\symbol{"0301}
+- char: ἆ
+  command: α\symbol{"0313}\symbol{"00342}
+- char: ἇ
+  command: α\symbol{"0314}\symbol{"00342}
+- char: Ἀ
+  command: Α\symbol{"0313}
+- char: Ἁ
+  command: Α\symbol{"0314}
+- char: Ἂ
+  command: Α\symbol{"0313}\symbol{"0300}
+- char: Ἃ
+  command: Α\symbol{"0314}\symbol{"0300}
+- char: Ἄ
+  command: Α\symbol{"0313}\symbol{"0301}
+- char: Ἅ
+  command: Α\symbol{"0314}\symbol{"0301}
+- char: Ἆ
+  command: Α\symbol{"0313}\symbol{"0342}
+- char: Ἇ
+  command: Α\symbol{"0314}\symbol{"0342}
+- char: ἐ
+  command: ε\symbol{"0313}
+- char: ἑ
+  command: ε\symbol{"0314}
+- char: ἒ
+  command: ε\symbol{"0313}\symbol{"0300}
+- char: ἓ
+  command: ε\symbol{"0314}\symbol{"0300}
+- char: ἔ
+  command: ε\symbol{"0313}\symbol{"0301}
+- char: ἕ
+  command: ε\symbol{"0314}\symbol{"0301}
+- char: Ἐ
+  command: Ε\symbol{"0313}
+- char: Ἑ
+  command: Ε\symbol{"0314}
+- char: Ἒ
+  command: Ε\symbol{"0313}\symbol{"0300}
+- char: Ἓ
+  command: Ε\symbol{"0314}\symbol{"0300}
+- char: Ἔ
+  command: Ε\symbol{"0313}\symbol{"0301}
+- char: Ἕ
+  command: Ε\symbol{"0314}\symbol{"0301}
+- char: Ἆ
+  command: Α\symbol{"0313}\symbol{"0342}
+- char: Ἇ
+  command: Α\symbol{"0314}\symbol{"0342}
+- char: ἠ
+  command: η\symbol{"0313}
+- char: ἡ
+  command: η\symbol{"0314}
+- char: ἢ
+  command: η\symbol{"0313}\symbol{"0300}
+- char: ἣ
+  command: η\symbol{"0314}\symbol{"0300}
+- char: ἤ
+  command: η\symbol{"0313}\symbol{"0301}
+- char: ἥ
+  command: η\symbol{"0314}\symbol{"0301}
+- char: ἦ
+  command: η\symbol{"0313}\symbol{"00342}
+- char: ἧ
+  command: η\symbol{"0314}\symbol{"00342}
+- char: Ἠ
+  command: Η\symbol{"0313}
+- char: Ἡ
+  command: Η\symbol{"0314}
+- char: Ἢ
+  command: Η\symbol{"0313}\symbol{"0300}
+- char: Ἣ
+  command: Η\symbol{"0314}\symbol{"0300}
+- char: Ἤ
+  command: Η\symbol{"0313}\symbol{"0301}
+- char: Ἥ
+  command: Η\symbol{"0314}\symbol{"0301}
+- char: Ἦ
+  command: Η\symbol{"0313}\symbol{"0342}
+- char: Ἧ
+  command: Η\symbol{"0314}\symbol{"0342}
+- char: ἰ
+  command: ι\symbol{"0313"}
+- char: ἱ
+  command: ι\symbol{"0314}
+- char: ἲ
+  command: ι\symbol{"0313}\symbol{"0300}
+- char: ἳ
+  command: ι\symbol{"0314}\symbol{"0300}
+- char: ἴ
+  command: ι\symbol{"0313}\symbol{"0301}
+- char: ἵ
+  command: ι\symbol{"0314}\symbol{"0301}
+- char: ἶ
+  command: ι\symbol{"0313}\symbol{"00342}
+- char: ἷ
+  command: ι\symbol{"0314}\symbol{"00342}
+- char: Ἰ
+  command: Ι\symbol{"0313}
+- char: Ἱ
+  command: Ι\symbol{"0314}
+- char: Ἲ
+  command: Ι\symbol{"0313}\symbol{"0300}
+- char: Ἳ
+  command: Ι\symbol{"0314}\symbol{"0300}
+- char: Ἴ
+  command: Ι\symbol{"0313}\symbol{"0301}
+- char: Ἵ
+  command: Ι\symbol{"0314}\symbol{"0301}
+- char: Ἶ
+  command: Ι\symbol{"0313}\symbol{"0342}
+- char: Ἷ
+  command: Ι\symbol{"0314}\symbol{"0342}
+- char: ὀ
+  command: ο\symbol{"0313}
+- char: ὁ
+  command: ο\symbol{"0314}
+- char: ὂ
+  command: ο\symbol{"0313}\symbol{"0300}
+- char: ὃ
+  command: ο\symbol{"0314}\symbol{"0300}
+- char: ὄ
+  command: ο\symbol{"0313}\symbol{"0301}
+- char: ὅ
+  command: ο\symbol{"0314}\symbol{"0301}
+- char: Ὀ
+  command: Ο\symbol{"0313}
+- char: Ὁ
+  command: Ο\symbol{"0314}
+- char: Ὂ
+  command: Ο\symbol{"0313}\symbol{"0300}
+- char: Ὃ
+  command: Ο\symbol{"0314}\symbol{"0300}
+- char: Ὄ
+  command: Ο\symbol{"0313}\symbol{"0301}
+- char: Ὅ
+  command: Ο\symbol{"0314}\symbol{"0301}
+- char: ὐ
+  command: υ\symbol{"0313"}
+- char: ὑ
+  command: υ\symbol{"0314}
+- char: ὒ
+  command: υ\symbol{"0313}\symbol{"0300}
+- char: ὓ
+  command: υ\symbol{"0314}\symbol{"0300}
+- char: ὔ
+  command: υ\symbol{"0313}\symbol{"0301}
+- char: ὕ
+  command: υ\symbol{"0314}\symbol{"0301}
+- char: ὖ
+  command: υ\symbol{"0313}\symbol{"00342}
+- char: ὗ
+  command: υ\symbol{"0314}\symbol{"00342}
+- char: Ὑ
+  command: Υ\symbol{"0314}
+- char: Ὓ
+  command: Υ\symbol{"0314}\symbol{"0300}
+- char: Ὕ
+  command: Υ\symbol{"0314}\symbol{"0301}
+- char: Ὗ
+  command: Υ\symbol{"0314}\symbol{"0342}
+- char: ὠ
+  command: ω\symbol{"0313"}
+- char: ὡ
+  command: ω\symbol{"0314}
+- char: ὢ
+  command: ω\symbol{"0313}\symbol{"0300}
+- char: ὣ
+  command: ω\symbol{"0314}\symbol{"0300}
+- char: ὤ
+  command: ω\symbol{"0313}\symbol{"0301}
+- char: ὥ
+  command: ω\symbol{"0314}\symbol{"0301}
+- char: ὦ
+  command: ω\symbol{"0313}\symbol{"00342}
+- char: ὧ
+  command: ω\symbol{"0314}\symbol{"00342}
+- char: Ὠ
+  command: Ω\symbol{"0313}
+- char: Ὡ
+  command: Ω\symbol{"0314}
+- char: Ὢ
+  command: Ω\symbol{"0313}\symbol{"0300}
+- char: Ὣ
+  command: Ω\symbol{"0314}\symbol{"0300}
+- char: Ὤ
+  command: Ω\symbol{"0313}\symbol{"0301}
+- char: Ὥ
+  command: Ω\symbol{"0314}\symbol{"0301}
+- char: Ὦ
+  command: Ω\symbol{"0313}\symbol{"0342}
+- char: Ὧ
+  command: Ω\symbol{"0314}\symbol{"0342}
+- char: ὰ
+  command: α\symbol{"0300}
+- char: ά
+  command: α\symbol{"0301}
+- char: ὲ
+  command: ε\symbol{"0300}
+- char: έ
+  command: ε\symbol{"0301}
+- char: ὴ
+  command: η\symbol{"0300}
+- char: ή
+  command: η\symbol{"0301}
+- char: ὶ
+  command: ι\symbol{"0300}
+- char: ί
+  command: ι\symbol{"0301}
+- char: ὸ
+  command: ο\symbol{"0300}
+- char: ό
+  command: ο\symbol{"0301}
+- char: ὺ
+  command: υ\symbol{"0300}
+- char: ύ
+  command: υ\symbol{"0301}
+- char: ὼ
+  command: ω\symbol{"0300}
+- char: ώ
+  command: ω\symbol{"0301}
+- char: ᾀ
+  command: α\symbol{"0313}\symbol{"0345}
+- char: ᾁ
+  command: α\symbol{"0314}\symbol{"0345}
+- char: ᾂ
+  command: α\symbol{"0313}\symbol{"0300}\symbol{"0345}
+- char: ᾃ
+  command: α\symbol{"0314}\symbol{"0300}\symbol{"0345}
+- char: ᾄ
+  command: α\symbol{"0313}\symbol{"0301}\symbol{"0345}
+- char: ᾅ
+  command: α\symbol{"0314}\symbol{"0301}\symbol{"0345}
+- char: ᾆ
+  command: α\symbol{"0313}\symbol{"0342}\symbol{"0345}
+- char: ᾇ
+  command: α\symbol{"0314}\symbol{"0342}\symbol{"0345}
+- char: ᾈ
+  command: Α\symbol{"0313}\symbol{"0345}
+- char: ᾉ
+  command: Α\symbol{"0314}\symbol{"0345}
+- char: ᾊ
+  command: Α\symbol{"0313}\symbol{"0300}\symbol{"0345}
+- char: ᾋ
+  command: Α\symbol{"0314}\symbol{"0300}\symbol{"0345}
+- char: ᾌ
+  command: Α\symbol{"0313}\symbol{"0301}\symbol{"0345}
+- char: ᾍ
+  command: Α\symbol{"0314}\symbol{"0301}\symbol{"0345}
+- char: ᾎ
+  command: Α\symbol{"0313}\symbol{"0342}\symbol{"0345}
+- char: ᾏ
+  command: Α\symbol{"0314}\symbol{"0342}\symbol{"0345}
+- char: ᾐ
+  command: η\symbol{"0313}\symbol{"0345}
+- char: ᾑ
+  command: η\symbol{"0314}\symbol{"0345}
+- char: ᾒ
+  command: η\symbol{"0313}\symbol{"0300}\symbol{"0345}
+- char: ᾓ
+  command: η\symbol{"0314}\symbol{"0300}\symbol{"0345}
+- char: ᾔ
+  command: η\symbol{"0313}\symbol{"0301}\symbol{"0345}
+- char: ᾕ
+  command: η\symbol{"0314}\symbol{"0301}\symbol{"0345}
+- char: ᾖ
+  command: η\symbol{"0313}\symbol{"0342}\symbol{"0345}
+- char: ᾗ
+  command: η\symbol{"0314}\symbol{"0342}\symbol{"0345}
+- char: ᾘ
+  command: Η\symbol{"0313}\symbol{"0345}
+- char: ᾙ
+  command: Η\symbol{"0314}\symbol{"0345}
+- char: ᾚ
+  command: Η\symbol{"0313}\symbol{"0300}\symbol{"0345}
+- char: ᾛ
+  command: Η\symbol{"0314}\symbol{"0300}\symbol{"0345}
+- char: ᾜ
+  command: Η\symbol{"0313}\symbol{"0301}\symbol{"0345}
+- char: ᾝ
+  command: Η\symbol{"0314}\symbol{"0301}\symbol{"0345}
+- char: ᾞ
+  command: Η\symbol{"0313}\symbol{"0342}\symbol{"0345}
+- char: ᾟ
+  command: Η\symbol{"0314}\symbol{"0342}\symbol{"0345}
+- char: ᾠ
+  command: ω\symbol{"0313}\symbol{"0345}
+- char: ᾡ
+  command: ω\symbol{"0314}\symbol{"0345}
+- char: ᾢ
+  command: ω\symbol{"0313}\symbol{"0300}\symbol{"0345}
+- char: ᾣ
+  command: ω\symbol{"0314}\symbol{"0300}\symbol{"0345}
+- char: ᾣ
+  command: ω\symbol{"0313}\symbol{"0301}\symbol{"0345}
+- char: ᾥ
+  command: ω\symbol{"0314}\symbol{"0301}\symbol{"0345}
+- char: ᾦ
+  command: ω\symbol{"0313}\symbol{"0342}\symbol{"0345}
+- char: ᾧ
+  command: ω\symbol{"0314}\symbol{"0342}\symbol{"0345}
+- char: ᾨ
+  command: Ω\symbol{"0313}\symbol{"0345}
+- char: ᾩ
+  command: Ω\symbol{"0314}\symbol{"0345}
+- char: ᾪ
+  command: Ω\symbol{"0313}\symbol{"0300}\symbol{"0345}
+- char: ᾫ
+  command: Ω\symbol{"0314}\symbol{"0300}\symbol{"0345}
+- char: ᾬ
+  command: Ω\symbol{"0313}\symbol{"0301}\symbol{"0345}
+- char: ᾭ
+  command: Ω\symbol{"0314}\symbol{"0301}\symbol{"0345}
+- char: ᾮ
+  command: Ω\symbol{"0313}\symbol{"0342}\symbol{"0345}
+- char: ᾯ
+  command: Ω\symbol{"0314}\symbol{"0342}\symbol{"0345}
+- char: ᾰ
+  commmand: α\symbol{"0306}
+- char: ᾱ
+  commmand: α\symbol{"0304}
+- char: ᾲ
+  command: α\symbol{"0300}\symbol{"0345}
+- char: ᾳ
+  command: α\symbol{"0345}
+- char: ᾴ
+  command: α\symbol{"0301}\symbol{"0345}
+- char: ᾶ
+  command: α\symbol{"0342}
+- char: ᾷ
+  command: α\symbol{"0342}\symbol{"0345}
+- char: Ᾰ
+  command: Α\symbol{"0306}
+- char: Ᾱ
+  command: Α\symbol{"0304}
+- char: Ὰ
+  command: Α\symbol{"0300}
+- char: Ά
+  command: Α\symbol{"0301}
+- char: ᾼ
+  command: Α\symbol{"0345}
+- char: ι
+  command: ι
+- char: ῂ
+  command: η\symbol{"0300}\symbol{"0345}
+- char: ῃ
+  command: η\symbol{"0345}
+- char: ῄ
+  command: η\symbol{"0301}\symbol{"0345}
+- char: ῆ
+  command: η\symbol{"0342}
+- char: ῇ
+  command: η\symbol{"0342}\symbol{"0345}
+- char: Ὲ
+  command: Ε\symbol{"0300}
+- char: Έ
+  command: Ε\symbol{"0301}
+- char: Ὴ
+  command: Η\symbol{"0300}
+- char: Ή
+  command: Η\symbol{"0301}
+- char: ῌ
+  command: Η\symbol{"0345}
+- char: ῐ
+  command: ι\symbol{"0306}
+- char: ῑ
+  command: ι\symbol{"0304}
+- char: ῒ
+  command: ι\symbol{"0308}\symbol{"0300}
+- char: ΐ
+  command: ι\symbol{"0308}\symbol{"0301}
+- char: ῖ
+  command: ι\symbol{"0342}
+- char: ῗ
+  command: ι\symbol{"0308}\symbol{"0342}
+- char: Ῐ
+  command: Ι\symbol{"0306}
+- char: Ῑ
+  command: Ι\symbol{"0304}
+- char: Ὶ
+  command: Ι\symbol{"0300}
+- char: Ί
+  command: Ι\symbol{"0301}
+- char: ῠ
+  command: υ\symbol{"0306}
+- char: ῡ
+  command: υ\symbol{"0304}
+- char: ῢ
+  command: υ\symbol{"0308}\symbol{"0300}
+- char: ΰ
+  command: υ\symbol{"0308}\symbol{"0301}
+- char: ῤ
+  command: ρ\symbol{"0313}
+- char: ῥ
+  command: ρ\symbol{"0314}
+- char: ῦ
+  command: υ\symbol{"0342}
+- char: ῧ
+  command: υsymbol{"0308}\symbol{"0342}
+- char: Ῠ
+  command: Υ\symbol{"0306}
+- char: Ῡ
+  command: Υ\symbol{"0304}
+- char: Ὺ
+  command: Υ\symbol{"0300}
+- char: Ύ
+  command: Υ\symbol{"0301}
+- char: Ῥ
+  command: Ρ\symbol{"0314}
+- char: ῲ
+  command: ω\symbol{"0300}\symbol{"0345}
+- char: ῳ
+  command: ω\symbol{"0345}
+- char: ῴ
+  command: ω\symbol{"0301}\symbol{"0345}
+- char: ῶ
+  command: ω\symbol{"0342}
+- char: ῷ
+  command: ω\symbol{"0342}\symbol{"0345}
+- char: Ὸ
+  command: Ο\symbol{"0300}
+- char: Ό
+  command: Ο\symbol{"0301}
+- char: Ὼ
+  command: Ω\symbol{"0300}
+- char: Ώ
+  command: Ω\symbol{"0301}
+- char: ῼ
+  command: Ω\symbol{"0345}
+```
+
+### Background on LaTeX / unicode
+
+To print Unicode chars by number use `\symbol{}` or `\char`. For omicron (Unicode decimal 959, hexadecimal OxO3BF):
+
+```latex
+\symbol{"03BF}
+\symbol{959}
+\char"03BF
+\char959
+```
+
+To combine a character with a diacritic use the character directly
+followed by the combining diacritic. For instance, you can create
+Greek small omicron with psili (Unicode U+1F40) by combining Greek small omicron (ο, U+03BF) with the combining Greek koronis (U+0343). Any of
+these work:
+
+``` latex
+ο\symbol{"0343}
+ο\char"0343
+\char"03BF\char"0343
+\symbol{"03BF}\char"0343
+\symbol{"03BF}\symbol{"0343}
+\char"03BF\symbol{"0343}
+```
+
+The combining Greek Koronis is usually the same as the combining
+comma above (U+0313), so you could use that instead.

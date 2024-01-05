@@ -53,9 +53,6 @@ Citation Key: Doe1995-Article-Title
 
 This changes the item's citation key. Don't forget the caps ("Citation Key" not "citation key" nor "citationkey"), and make sure this occupies a single line of the "Extra" field.
 
-
-
-
 ## Adding non-cited references in the bibliography
 
 In the metadata block, add a line:

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Manual of Markdown Style - 38&nbsp; The structure of a book and a journal</title>
+<title>Open Manual of Markdown Style - 33&nbsp; Title and subtitle</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +64,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../chapters/design/55-pub-technical-howtos.html" rel="next">
-<link href="../../chapters/dialectica/80-dialectica-bibliography.html" rel="prev">
+<link href="../../chapters/dialectica/71-dialectica-authors.html" rel="next">
+<link href="../../chapters/dialectica/65-dialectica-troubleshooting-outputs.html" rel="prev">
 <link href="../../media/dialoa.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -95,7 +110,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/design/52-pub-the-structure-of-volumes.html">Design</a></li><li class="breadcrumb-item"><a href="../../chapters/design/52-pub-the-structure-of-volumes.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The structure of a book and a journal</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/dialectica/60-dialectica-house-outputs.html">Dialectica</a></li><li class="breadcrumb-item"><a href="../../chapters/dialectica/70-dialectica-titles.html"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Title and subtitle</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -351,7 +366,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/dialectica/70-dialectica-titles.html" class="sidebar-item-text sidebar-link">
+  <a href="../../chapters/dialectica/70-dialectica-titles.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Title and subtitle</span></span></a>
   </div>
 </li>
@@ -392,7 +407,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/design/52-pub-the-structure-of-volumes.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../chapters/design/52-pub-the-structure-of-volumes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The structure of a book and a journal</span></span></a>
   </div>
 </li>
@@ -472,9 +487,11 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-structure-of-a-book" id="toc-the-structure-of-a-book" class="nav-link active" data-scroll-target="#the-structure-of-a-book"><span class="header-section-number">38.1</span> The structure of a book</a></li>
-  <li><a href="#the-structure-of-a-journal" id="toc-the-structure-of-a-journal" class="nav-link" data-scroll-target="#the-structure-of-a-journal"><span class="header-section-number">38.2</span> The structure of a journal</a></li>
-  <li><a href="#non-english-conventions" id="toc-non-english-conventions" class="nav-link" data-scroll-target="#non-english-conventions"><span class="header-section-number">38.3</span> Non-English conventions</a></li>
+  <li><a href="#short-title" id="toc-short-title" class="nav-link active" data-scroll-target="#short-title"><span class="header-section-number">33.1</span> Short title</a>
+  <ul class="collapse">
+  <li><a href="#linebreaks-in-a-title-and-subtitle" id="toc-linebreaks-in-a-title-and-subtitle" class="nav-link" data-scroll-target="#linebreaks-in-a-title-and-subtitle"><span class="header-section-number">33.1.1</span> Linebreaks in a title and subtitle</a></li>
+  </ul></li>
+  <li><a href="#subtitle-in-the-table-of-contents" id="toc-subtitle-in-the-table-of-contents" class="nav-link" data-scroll-target="#subtitle-in-the-table-of-contents"><span class="header-section-number">33.2</span> Subtitle in the table of contents</a></li>
   </ul>
 </nav>
     </div>
@@ -483,7 +500,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The structure of a book and a journal</span></h1>
+<h1 class="title"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Title and subtitle</span></h1>
 </div>
 
 
@@ -498,156 +515,92 @@ div.csl-indent {
 
 </header>
 
-<section id="the-structure-of-a-book" class="level2" data-number="38.1">
-<h2 data-number="38.1" class="anchored" data-anchor-id="the-structure-of-a-book"><span class="header-section-number">38.1</span> The structure of a book</h2>
-<p>The <em>cover</em> is typically designed separately. It has five components: front cover, inside front cover, inside back cover, back cover, and spine.</p>
+<div class="no-first-line-indent-after"></div>
+<p>The metadata fields <code>title</code> and, if the article has a subtitle, <code>subtitle</code> must be present. They may contain markdown formatting and special symbols, but no explicit linebreaks.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In addition, you may provide:</p>
 <ul>
-<li>Front cover. Author and title, optionally publisher.</li>
-<li>Spine. Author and title, optionally publisher, series, volume, year….</li>
-<li>Back cover. Title, blurb, credits for the cover image, barcode or QR code, publisher.</li>
-<li>Inside front and back cover. Could be empty.</li>
+<li><code>shorttitle</code>: shorter title to use in page headers and the table of contents.</li>
+<li><code>title-latex</code>, <code>subtitle-latex</code>: title to be used in PDF’s output on the article’s first page and (unless <code>(sub)title-cover</code> is specified) on the article’s offprint cover. Used to specify explicit line breaks.</li>
+<li><code>title-cover</code>, <code>subtitle-cover</code>: title to be used in PDF’s output on the offprint cover. Used to specify explicit linebreaks.</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>The book is divided in three parts: front, main and back matter.</p>
-<p>Following <span class="citation" data-cites="Wddingham-NewHartRules-2014">Wddingham (<a href="../appendices/references.html#ref-Wddingham-NewHartRules-2014" role="doc-biblioref">2014, 3</a>)</span> and <span class="citation" data-cites="UniversityOfChicagoPress-ChicagoManualStyle-2010">Chicago Press (<a href="../appendices/references.html#ref-UniversityOfChicagoPress-ChicagoManualStyle-2010" role="doc-biblioref">2010, sec. 1.4</a>)</span> the <em>frontmatter</em> contains:</p>
+<p>Here is an example using all the available fields. They are explained in detail in the sections below.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Plain title here</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> Plain subtitle here</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle-separator</span><span class="kw">:</span><span class="at"> </span><span class="st">':'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">shorttitle</span><span class="kw">:</span><span class="at"> Shorter title for page headers</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">title-latex</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  Title for the first page title \</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  (and cover unless otherwise specified) \</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  with possibly some linebreaks</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle-latex</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  Subtitle for the first page title \</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  (and cover unless otherwise specified) \</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  with possibly some linebreaks</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">title-cover</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  Title for the offprint cover \</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  with possibly some \</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  different linebreaks</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle-cover</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  Subtitle for the cover</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">title-cover-size</span><span class="kw">:</span><span class="at"> \huge</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle-cover-size</span><span class="kw">:</span><span class="at"> \Large</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="short-title" class="level2" data-number="33.1">
+<h2 data-number="33.1" class="anchored" data-anchor-id="short-title"><span class="header-section-number">33.1</span> Short title</h2>
+<p>If the title is too long to fit in the header, you can specify a short title in addition:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> An extremely long-winded and verbose title about a range of topics including but not restricted to the weather</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shorttitle</span><span class="kw">:</span><span class="at"> A long-winded title about the weather</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>This will be used in the table of contents too.</p>
+<section id="linebreaks-in-a-title-and-subtitle" class="level3" data-number="33.1.1">
+<h3 data-number="33.1.1" class="anchored" data-anchor-id="linebreaks-in-a-title-and-subtitle"><span class="header-section-number">33.1.1</span> Linebreaks in a title and subtitle</h3>
+<p><strong>Requires: dialectica templates</strong>.</p>
+<p>In LaTeX/PDF output it is sometimes useful to manually specify a line break within the title and/or subtitle. There are two fields to provide this, <code>title-latex</code> and <code>title-cover</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A Very Long Title that Can be Broken in Various Places</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title-latex</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  A Very Long Title that \</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  Can be Broken in Various Places</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">title-cover</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  A Very Long Title that Can be\</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  Broken in Various Places</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>In a metadata field, the <code>\</code> at then end of a line specifies a linebreak. <em>Warning</em>: it must be immediately followed by an end of line (no spaces!).</p>
 <ul>
-<li>half-title, recto</li>
-<li>verso of the half-title: empty, series title, frontispiece</li>
-<li>title page, recto</li>
-<li>verso of the title page: empty, copyright</li>
-<li>dedication</li>
+<li><code>title-latex</code> controls the title on the first page (“chapter” title). It also sets the offprint cover page unless <code>title-cover</code> is also supplied.</li>
+<li><code>title-cover</code> controls the title on the offprint’s cover page. If you want <code>title-latex</code> to modify the first page’s title only, simply insert <code>title-cover</code> with the same content as <code>title</code>.</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>Then (Hart):</p>
-<ul>
-<li>foreword</li>
-<li>preface</li>
-<li>acknowledgments</li>
-<li>table of contents</li>
-<li>lists:
-<ul>
-<li>illustrations,</li>
-<li>figures,</li>
-<li>maps,</li>
-<li>tables,</li>
-<li>table of cases and legislation (law books)</li>
-<li>abbreviations</li>
-<li>contributors</li>
-</ul></li>
-<li>note to the reader</li>
-<li>epigraph</li>
-</ul>
+<p>The <code>title</code> field must be provided, even if <code>title-cover</code> and/or <code>title-latex</code> are given.</p>
+<p>By default titles on the offprint’s cover are of LaTeX size <code>\Huge</code> if they are less than 31 characters long, otherwise the slightly smaller size <code>\huge</code>. You can specify a custom LaTeX size if needed (<code>\Huge</code>, <code>\huge</code>, <code>\LARGE</code>, <code>\Large</code>, <code>\large</code> etc.) with the <code>title-cover-size</code> field. This only affects LaTeX/PDF output.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title-cover-size</span><span class="kw">:</span><span class="at"> \huge</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>Or (Chicago):</p>
-<ul>
-<li>epigraph</li>
-<li>contents</li>
-<li>lists
-<ul>
-<li>illustrations</li>
-<li>tables</li>
-</ul></li>
-<li>foreword</li>
-<li>Preface</li>
-<li>Acknowledgements (if not in preface)</li>
-<li>Introduction (it not part of text)</li>
-<li>Abbreviations (if not in back matter)</li>
-<li>Chronology (if not in back matter)</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>Back matter</p>
-<p>Following <span class="citation" data-cites="Wddingham-NewHartRules-2014">Wddingham (<a href="../appendices/references.html#ref-Wddingham-NewHartRules-2014" role="doc-biblioref">2014, 17</a>)</span></p>
-<ul>
-<li>appendix</li>
-<li>glossary</li>
-<li>endnotes</li>
-<li>bibliography</li>
-<li>notes on contributors</li>
-<li>indexes</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>Following <span class="citation" data-cites="UniversityOfChicagoPress-ChicagoManualStyle-2010">Chicago Press (<a href="../appendices/references.html#ref-UniversityOfChicagoPress-ChicagoManualStyle-2010" role="doc-biblioref">2010, sec. 1.4</a>)</span>:</p>
-<ul>
-<li>acknowledgments (if not in front matter)</li>
-<li>appendices</li>
-<li>chronology (if not in front)</li>
-<li>abbreviations (if not in front)</li>
-<li>endnotes</li>
-<li>glossary</li>
-<li>bibliography</li>
-<li>note on contributors</li>
-<li>illustration credits</li>
-<li>indexes</li>
-</ul>
+<p>The same options are available for subtitles: use <code>subtitle-latex</code>, <code>subtitle-cover</code> and <code>subtitle-cover-size</code>. The default size for subtitles on offprint covers is <code>\LARGE</code>.</p>
 </section>
-<section id="the-structure-of-a-journal" class="level2" data-number="38.2">
-<h2 data-number="38.2" class="anchored" data-anchor-id="the-structure-of-a-journal"><span class="header-section-number">38.2</span> The structure of a journal</h2>
-<p>Typical order of pages.</p>
-<ul>
-<li>Front matter
-<ul>
-<li>editorial board</li>
-<li>title</li>
-<li>imprint</li>
-</ul></li>
-<li>Main matter
-<ul>
-<li>article</li>
-</ul></li>
-</ul>
 </section>
-<section id="non-english-conventions" class="level2" data-number="38.3">
-<h2 data-number="38.3" class="anchored" data-anchor-id="non-english-conventions"><span class="header-section-number">38.3</span> Non-English conventions</h2>
-<section id="français" class="level4" data-number="38.3.0.1">
-<h4 data-number="38.3.0.1" class="anchored" data-anchor-id="français"><span class="header-section-number">38.3.0.1</span> Français</h4>
-<p>Couverture: - première de couverture: - seconde de couverture: - troisième de couverture: - quatrième de couverture: - épine (dos): auteur, titre, maison d’édition (logo), …</p>
-<p>Suivant <span class="citation" data-cites="Collectif-LexiqueReglesTypographiques-2002">Collectif (<a href="../appendices/references.html#ref-Collectif-LexiqueReglesTypographiques-2002" role="doc-biblioref">2002</a>)</span>:</p>
-<p>Couvertures intérieures ou rabats de la jaquette: autres ouvrages de la même maison, présentation de l’auteur.</p>
-<p>Facultatif: un feuillet blanc en début et fin de volume.</p>
-<p>En tête de volume, pagination en chiffres romains:</p>
-<ul>
-<li>le faux titre, recto. Titre et sous-titre</li>
-<li>verso du faux titre: illustration de frontispice ou liste des oeuvres de l’auteur.</li>
-<li>titre: recto. Titre, sous-titre auteur, copyright; eventuellement ISBN ou ISSN, édition, tirage, sommaire.</li>
-<li>dédicace: recto, après le titre.</li>
-<li>avis ou avertissement: en verso de l’une des premières pages.</li>
-<li>chapitres en tête d’ouvrage, dans l’ordre:
-<ul>
-<li>avant-propos,</li>
-<li>préface,</li>
-<li>introduction (cas exceptionnel, voir ci-dessous),</li>
-<li>notice (par ex., notice sur les auteurs, ou sur l’utilisation de l’ouvrage, par exemple une liste d’abbréviations),</li>
-<li>(exceptionellement) bibliographie.</li>
-</ul></li>
-</ul>
+<section id="subtitle-in-the-table-of-contents" class="level2" data-number="33.2">
+<h2 data-number="33.2" class="anchored" data-anchor-id="subtitle-in-the-table-of-contents"><span class="header-section-number">33.2</span> Subtitle in the table of contents</h2>
+<p>The <code>subtitle</code> is used in three places. On the paper’s first page and on the offprint’s cover, it is printed below the title, in smaller font. It’s also used in the table of contents, where it’s printed after a column:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Frankstein</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> The Modern Prometheus</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>En corps de volume, les chapitres, pagination en chiffres arabes.</p>
-<ul>
-<li>l’introduction est normalement en corps de volume. Elle est placée en tête seulement si ne fait pas partie du corps: introduction du traducteur, de l’éditeur d’un texte historique, etc.</li>
-</ul>
+<p>Output in the table of contents:</p>
+<blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
-<p>En fin de volume, pagination en chiffre arabe continuant celle du corps:</p>
-<ul>
-<li>postface,</li>
-<li>bibliographie (exceptionellement placée en tête),</li>
-<li>index,</li>
-<li>table des matières,</li>
-<li>colophon: tirage, achevé d’imprimé, mention du dépôt légal, mention de l’imprimeur sur la dernière page.</li>
-</ul>
+<p>Frankenstein: The Modern Promoetheus</p>
+</blockquote>
+<div class="no-first-line-indent-after"></div>
+<p>You can override the colon by specifying a subtitle separator, e.g.&nbsp;a simple space:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> So What?</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> My Quest for the Meaning of Life</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitleseparator</span><span class="kw">:</span><span class="at"> </span><span class="st">' '</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-UniversityOfChicagoPress-ChicagoManualStyle-2010" class="csl-entry" role="listitem">
-Chicago Press, University of. 2010. <em>The <span>Chicago Manual</span> of <span>Style</span>: <span>The Essential Guide</span> for <span>Writers</span>, <span>Editors</span> and <span>Publishers</span></em>. 16th edition. <span>Chicago</span>: <span>University of Chicago Press</span>.
-</div>
-<div id="ref-Collectif-LexiqueReglesTypographiques-2002" class="csl-entry" role="listitem">
-Collectif. 2002. <em>Lexique des règles typographiques en usage à l’Imprimerie nationale</em>. <span>Paris</span>: <span>Imprimerie nationale</span>.
-</div>
-<div id="ref-Wddingham-NewHartRules-2014" class="csl-entry" role="listitem">
-Wddingham, Anne. 2014. <em>New <span>Hart</span>’s <span>Rules</span>: <span>The Oxford Style Guide</span></em>. 2nd edition. <span>New York, NY</span>: <span>OUP Oxford</span>.
-</div>
-</div>
 </section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>You may enter a long title or a title containing quotation marks as a text block, this does not constitute explicit line breaks. See <a href="../copyediting/16-cop-metadata.html#sec-metadata-text-block-values"><span>Section&nbsp;8.3</span></a> and <a href="../copyediting/16-cop-metadata.html#sec-linebreaks-genuine-visual-explicit"><span>Section&nbsp;8.5</span></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -886,13 +839,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/dialectica/80-dialectica-bibliography.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Bibliography</span></span>
+      <a href="../../chapters/dialectica/65-dialectica-troubleshooting-outputs.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Troubleshooting outputs</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/design/55-pub-technical-howtos.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Technical How-Tos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/dialectica/71-dialectica-authors.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Author information</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

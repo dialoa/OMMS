@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Manual of Markdown Style - 38&nbsp; The structure of a book and a journal</title>
+<title>Open Manual of Markdown Style - 11&nbsp; Abstract, keywords, acknowledgments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +64,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../chapters/design/55-pub-technical-howtos.html" rel="next">
-<link href="../../chapters/dialectica/80-dialectica-bibliography.html" rel="prev">
+<link href="../../chapters/copyediting/17-cop-inline-elements.html" rel="next">
+<link href="../../chapters/copyediting/162-cop-author-information.html" rel="prev">
 <link href="../../media/dialoa.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -95,7 +110,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/design/52-pub-the-structure-of-volumes.html">Design</a></li><li class="breadcrumb-item"><a href="../../chapters/design/52-pub-the-structure-of-volumes.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The structure of a book and a journal</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/copyediting/12-cop-preliminaries.html">Copyediting</a></li><li class="breadcrumb-item"><a href="../../chapters/copyediting/163-cop-abstract-keywords-acknowledgments.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Abstract, keywords, acknowledgments</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -208,7 +223,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/copyediting/163-cop-abstract-keywords-acknowledgments.html" class="sidebar-item-text sidebar-link">
+  <a href="../../chapters/copyediting/163-cop-abstract-keywords-acknowledgments.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Abstract, keywords, acknowledgments</span></span></a>
   </div>
 </li>
@@ -392,7 +407,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/design/52-pub-the-structure-of-volumes.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../chapters/design/52-pub-the-structure-of-volumes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The structure of a book and a journal</span></span></a>
   </div>
 </li>
@@ -472,9 +487,9 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-structure-of-a-book" id="toc-the-structure-of-a-book" class="nav-link active" data-scroll-target="#the-structure-of-a-book"><span class="header-section-number">38.1</span> The structure of a book</a></li>
-  <li><a href="#the-structure-of-a-journal" id="toc-the-structure-of-a-journal" class="nav-link" data-scroll-target="#the-structure-of-a-journal"><span class="header-section-number">38.2</span> The structure of a journal</a></li>
-  <li><a href="#non-english-conventions" id="toc-non-english-conventions" class="nav-link" data-scroll-target="#non-english-conventions"><span class="header-section-number">38.3</span> Non-English conventions</a></li>
+  <li><a href="#as-special-sections" id="toc-as-special-sections" class="nav-link active" data-scroll-target="#as-special-sections"><span class="header-section-number">11.1</span> As special sections</a></li>
+  <li><a href="#as-metadata" id="toc-as-metadata" class="nav-link" data-scroll-target="#as-metadata"><span class="header-section-number">11.2</span> As metadata</a></li>
+  <li><a href="#citations-and-formulas-in-abstract-and-acknowledgements" id="toc-citations-and-formulas-in-abstract-and-acknowledgements" class="nav-link" data-scroll-target="#citations-and-formulas-in-abstract-and-acknowledgements"><span class="header-section-number">11.3</span> Citations and formulas in abstract and acknowledgements</a></li>
   </ul>
 </nav>
     </div>
@@ -483,7 +498,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">The structure of a book and a journal</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Abstract, keywords, acknowledgments</span></h1>
 </div>
 
 
@@ -498,156 +513,79 @@ div.csl-indent {
 
 </header>
 
-<section id="the-structure-of-a-book" class="level2" data-number="38.1">
-<h2 data-number="38.1" class="anchored" data-anchor-id="the-structure-of-a-book"><span class="header-section-number">38.1</span> The structure of a book</h2>
-<p>The <em>cover</em> is typically designed separately. It has five components: front cover, inside front cover, inside back cover, back cover, and spine.</p>
+<div class="no-first-line-indent-after"></div>
+<p>Abstract, keywords and acknowledgments should be entered in either of two ways:</p>
 <ul>
-<li>Front cover. Author and title, optionally publisher.</li>
-<li>Spine. Author and title, optionally publisher, series, volume, year….</li>
-<li>Back cover. Title, blurb, credits for the cover image, barcode or QR code, publisher.</li>
-<li>Inside front and back cover. Could be empty.</li>
+<li>special sections at the beginning of the paper,</li>
+<li>metadata fields.</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>The book is divided in three parts: front, main and back matter.</p>
-<p>Following <span class="citation" data-cites="Wddingham-NewHartRules-2014">Wddingham (<a href="../appendices/references.html#ref-Wddingham-NewHartRules-2014" role="doc-biblioref">2014, 3</a>)</span> and <span class="citation" data-cites="UniversityOfChicagoPress-ChicagoManualStyle-2010">Chicago Press (<a href="../appendices/references.html#ref-UniversityOfChicagoPress-ChicagoManualStyle-2010" role="doc-biblioref">2010, sec. 1.4</a>)</span> the <em>frontmatter</em> contains:</p>
-<ul>
-<li>half-title, recto</li>
-<li>verso of the half-title: empty, series title, frontispiece</li>
-<li>title page, recto</li>
-<li>verso of the title page: empty, copyright</li>
-<li>dedication</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>Then (Hart):</p>
-<ul>
-<li>foreword</li>
-<li>preface</li>
-<li>acknowledgments</li>
-<li>table of contents</li>
-<li>lists:
-<ul>
-<li>illustrations,</li>
-<li>figures,</li>
-<li>maps,</li>
-<li>tables,</li>
-<li>table of cases and legislation (law books)</li>
-<li>abbreviations</li>
-<li>contributors</li>
-</ul></li>
-<li>note to the reader</li>
-<li>epigraph</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>Or (Chicago):</p>
-<ul>
-<li>epigraph</li>
-<li>contents</li>
-<li>lists
-<ul>
-<li>illustrations</li>
-<li>tables</li>
-</ul></li>
-<li>foreword</li>
-<li>Preface</li>
-<li>Acknowledgements (if not in preface)</li>
-<li>Introduction (it not part of text)</li>
-<li>Abbreviations (if not in back matter)</li>
-<li>Chronology (if not in back matter)</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>Back matter</p>
-<p>Following <span class="citation" data-cites="Wddingham-NewHartRules-2014">Wddingham (<a href="../appendices/references.html#ref-Wddingham-NewHartRules-2014" role="doc-biblioref">2014, 17</a>)</span></p>
-<ul>
-<li>appendix</li>
-<li>glossary</li>
-<li>endnotes</li>
-<li>bibliography</li>
-<li>notes on contributors</li>
-<li>indexes</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>Following <span class="citation" data-cites="UniversityOfChicagoPress-ChicagoManualStyle-2010">Chicago Press (<a href="../appendices/references.html#ref-UniversityOfChicagoPress-ChicagoManualStyle-2010" role="doc-biblioref">2010, sec. 1.4</a>)</span>:</p>
-<ul>
-<li>acknowledgments (if not in front matter)</li>
-<li>appendices</li>
-<li>chronology (if not in front)</li>
-<li>abbreviations (if not in front)</li>
-<li>endnotes</li>
-<li>glossary</li>
-<li>bibliography</li>
-<li>note on contributors</li>
-<li>illustration credits</li>
-<li>indexes</li>
-</ul>
+<p>This ensures they are handled by the journal template. Do not try to format them yourself (e.g.&nbsp;to place the acknowledgements in a footnote).</p>
+<p>Whichever way you choose is up to you, they are equivalent. The first requires the <em>sec-to-meta</em> extension.</p>
+<section id="as-special-sections" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="as-special-sections"><span class="header-section-number">11.1</span> As special sections</h2>
+<p><strong>Requires extension</strong>: Sections-to-Meta.</p>
+<p>You can enter abstract, acknowledgments and keywords as special sections with level 1 (<code>#</code>) headings <code>Abstract</code> (or <code>Summary</code>), <code>Acknowledgements</code> (or <code>Thanks</code> or <code>Acknowledgments</code>) and <code>Keywords</code>. The keywords section must be a bullet-point list. If the article’s body text does not itself start with a heading, separate these special sections from the body text with a horizontal rule (<code>* * *</code> or <code>---</code>). For example:</p>
+<pre><code>---
+title: "If You Squint You'll See an Effect"
+author: Patricia I. Smith
+---
+
+# Abstract
+
+In this paper, I explain that the *problem* is more difficult to
+solve than the equation $4x^2 = 8$ and more complicated than the
+formula $(P \land \lnot P) \rightarrow Q$. Thankfully, I have
+found the solution.
+
+# Thanks
+
+The author would like to thank Jane Doe and Erika Mustermann
+as well as audiences at the Universities of Shallow Objections.
+
+# Keywords
+-   problem
+-   solution
+-   symbols
+
+* * *
+
+Since the dawn of humanity, people have been wondering about
+my PhD research topic...</code></pre>
 </section>
-<section id="the-structure-of-a-journal" class="level2" data-number="38.2">
-<h2 data-number="38.2" class="anchored" data-anchor-id="the-structure-of-a-journal"><span class="header-section-number">38.2</span> The structure of a journal</h2>
-<p>Typical order of pages.</p>
-<ul>
-<li>Front matter
-<ul>
-<li>editorial board</li>
-<li>title</li>
-<li>imprint</li>
-</ul></li>
-<li>Main matter
-<ul>
-<li>article</li>
-</ul></li>
-</ul>
+<section id="as-metadata" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="as-metadata"><span class="header-section-number">11.2</span> As metadata</h2>
+<p>Alternatively, you can enter abstract, acknowledgments, and keywords as metadata fields <code>abstract</code>, <code>thanks</code> and <code>keywords</code>, respectively. The <code>keywords</code> fields must be a list. As the other two are typically multiple lines long, they are better entered as text blocks <span class="citation" data-cites="ssec-metadata-text-block-values">(see <a href="../appendices/references.html#ref-ssec-metadata-text-block-values" role="doc-biblioref"><strong>ssec-metadata-text-block-values?</strong></a>)</span>. Make sure you indent each line of text blocks properly, without getting confused by genuine vs merely apparent linebreaks <a href="16-cop-metadata.html#sec-linebreaks-genuine-visual-explicit">see&nbsp;<span>8.5</span></a>. To illustrate, the example could be entered instead as:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"If You Squint You'll See an Effect"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Patricia I. Smith</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  In this paper I explain that the *problem* is more difficult to</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  solve that the equation $4x^2 = 8$ and more complicated than the</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  formula $(P \land \lnot P) \rightarrow Q$. Thankfully, I have</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  found the solution.</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">thanks</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  The author would like to thank Jane Doe and Erika Mustermann</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  as well as audiences at the Universities of Shallow Objections.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">keywords</span><span class="kw">:</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at">   problem</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at">   solution</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at">   symbols</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="at">Since the dawn of humanity, people have been wondering about</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="at">my PhD research topic...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="house">
+<p><strong>Dialectica guidelines</strong>.</p>
+<p>Abstracts are strongly recommended. Most people who bump on the article will only read that. They must be at most 200 words or so, to fit in the first article page.</p>
+</div>
 </section>
-<section id="non-english-conventions" class="level2" data-number="38.3">
-<h2 data-number="38.3" class="anchored" data-anchor-id="non-english-conventions"><span class="header-section-number">38.3</span> Non-English conventions</h2>
-<section id="français" class="level4" data-number="38.3.0.1">
-<h4 data-number="38.3.0.1" class="anchored" data-anchor-id="français"><span class="header-section-number">38.3.0.1</span> Français</h4>
-<p>Couverture: - première de couverture: - seconde de couverture: - troisième de couverture: - quatrième de couverture: - épine (dos): auteur, titre, maison d’édition (logo), …</p>
-<p>Suivant <span class="citation" data-cites="Collectif-LexiqueReglesTypographiques-2002">Collectif (<a href="../appendices/references.html#ref-Collectif-LexiqueReglesTypographiques-2002" role="doc-biblioref">2002</a>)</span>:</p>
-<p>Couvertures intérieures ou rabats de la jaquette: autres ouvrages de la même maison, présentation de l’auteur.</p>
-<p>Facultatif: un feuillet blanc en début et fin de volume.</p>
-<p>En tête de volume, pagination en chiffres romains:</p>
-<ul>
-<li>le faux titre, recto. Titre et sous-titre</li>
-<li>verso du faux titre: illustration de frontispice ou liste des oeuvres de l’auteur.</li>
-<li>titre: recto. Titre, sous-titre auteur, copyright; eventuellement ISBN ou ISSN, édition, tirage, sommaire.</li>
-<li>dédicace: recto, après le titre.</li>
-<li>avis ou avertissement: en verso de l’une des premières pages.</li>
-<li>chapitres en tête d’ouvrage, dans l’ordre:
-<ul>
-<li>avant-propos,</li>
-<li>préface,</li>
-<li>introduction (cas exceptionnel, voir ci-dessous),</li>
-<li>notice (par ex., notice sur les auteurs, ou sur l’utilisation de l’ouvrage, par exemple une liste d’abbréviations),</li>
-<li>(exceptionellement) bibliographie.</li>
-</ul></li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>En corps de volume, les chapitres, pagination en chiffres arabes.</p>
-<ul>
-<li>l’introduction est normalement en corps de volume. Elle est placée en tête seulement si ne fait pas partie du corps: introduction du traducteur, de l’éditeur d’un texte historique, etc.</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>En fin de volume, pagination en chiffre arabe continuant celle du corps:</p>
-<ul>
-<li>postface,</li>
-<li>bibliographie (exceptionellement placée en tête),</li>
-<li>index,</li>
-<li>table des matières,</li>
-<li>colophon: tirage, achevé d’imprimé, mention du dépôt légal, mention de l’imprimeur sur la dernière page.</li>
-</ul>
+<section id="citations-and-formulas-in-abstract-and-acknowledgements" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="citations-and-formulas-in-abstract-and-acknowledgements"><span class="header-section-number">11.3</span> Citations and formulas in abstract and acknowledgements</h2>
+<p>(TO BE CONFIRMED). Abstract and acknowledgments cannot contain markdown citations like <code>@Smith</code>. Write them in plain text instead, <code>Smith (1980)</code>.</p>
+<p>(TO BE CONFIRMED). Formulas in the abstract should be kept simple, or better, entered directly in unicode. This is because they are exported to public databases that may not handle LaTeX.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-UniversityOfChicagoPress-ChicagoManualStyle-2010" class="csl-entry" role="listitem">
-Chicago Press, University of. 2010. <em>The <span>Chicago Manual</span> of <span>Style</span>: <span>The Essential Guide</span> for <span>Writers</span>, <span>Editors</span> and <span>Publishers</span></em>. 16th edition. <span>Chicago</span>: <span>University of Chicago Press</span>.
-</div>
-<div id="ref-Collectif-LexiqueReglesTypographiques-2002" class="csl-entry" role="listitem">
-Collectif. 2002. <em>Lexique des règles typographiques en usage à l’Imprimerie nationale</em>. <span>Paris</span>: <span>Imprimerie nationale</span>.
-</div>
-<div id="ref-Wddingham-NewHartRules-2014" class="csl-entry" role="listitem">
-Wddingham, Anne. 2014. <em>New <span>Hart</span>’s <span>Rules</span>: <span>The Oxford Style Guide</span></em>. 2nd edition. <span>New York, NY</span>: <span>OUP Oxford</span>.
-</div>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -886,13 +824,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/dialectica/80-dialectica-bibliography.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Bibliography</span></span>
+      <a href="../../chapters/copyediting/162-cop-author-information.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Author metadata</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/design/55-pub-technical-howtos.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Technical How-Tos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/copyediting/17-cop-inline-elements.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Inline elements</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

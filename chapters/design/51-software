@@ -1,0 +1,7 @@
+# Software
+
+DRAFT, NOT INCLUDED YET.
+
+## Convert SVG to PDF
+
+Quarto uses rsvg-convert, https://quarto.org/docs/prerelease/1.3/pdf.html.

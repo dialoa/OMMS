@@ -1,0 +1,110 @@
+# Author metadata
+
+**Requires extension: scholarly-metadata**.
+
+The `author` field is a list, each item corresponding to 
+one author. Each item has `name`, `email`, `institute` fields, and 
+one author (the corresponding author) has `correspondence: true`:
+
+``` yaml
+author: 
+- name: Vincent Conitzer
+  email: conitzer@cs.duke.edu
+  correspondence: true  
+  institute: Duke University
+- name: Nadine Elzein
+  email: nadine.elzein@warwick.ac.uk
+  institute: University of Warwick
+```
+
+Note that there is a dash (`-`) before the first line (`name` field) of each
+author, and that all the other lines for that author are indented to align 
+with that field [see @cop-metadata-lists-maps for background].
+
+## Corresponding author
+
+There must be one and only one author for which `correspondence: true` is 
+included. This will print out their email as the correspondence address
+for that article. 
+
+## Institutions
+
+Institutions can be entered on one line, separated by commas, or as a list. 
+The two following declaration are equivalent:
+
+```yaml
+  institute: Princeton, Yale
+```
+
+``` yaml
+  institute:
+  - Princeton
+  - Yale
+```
+
+For this reason, institutes *with a comma in their name* __must__ be entered
+as a list, even if there is only one:
+
++---------------------------------------+----------------------------------------+
+|   BAD                                 |   GOOD                                 |
++=======================================+========================================+
+| ```                                   | ``` yaml                               |
+|   institute: Bedford College, London  |   institute:                           |
+| ```                                   |   - Bedford College, London            |
+|                                       | ```                                    |
++---------------------------------------+----------------------------------------+
+
+The left would be interpreted as two institutes, "Bedford College" and "London".
+
+You can also specify a list of affiliations separately, and associate each 
+author to their institute(s), which is most useful when several authors share the same affiliation:
+
+```yaml
+institute:
+- kcl: "King's College London"
+- bedford: Bedford College, London
+author:
+- name: Susan Stebbing
+  institute: [kcl, beford]
+- name: "Jane Q. Doe"
+  institute: bedford
+```
+
+Here `kcl`, `bedford` are used as internal identifiers to associate authors
+with their affiliations---they won't be printed. Note that when an author
+has several, the institution identifiers should be listed in brackets, 
+separated by commas: `[kcl, bedford]`. When they have only one, the brackets 
+are optional: for Jane Q. Doe above we could have 
+written `institute: bedford` instead. 
+
+You can do without identifiers, by listing affiliations in some order and
+using numbers to refer to them. The metadata below is equivalent to the above: 
+
+```yaml
+institute:
+- "King's College London"
+- Bedford College, London
+author:
+- name: Susan Stebbing
+  institute: [1, 2]
+- name: Jane Doe
+  institute: [2]
+```
+
+See the [scholarly-metadata](https://github.com/pandoc/lua-filters/tree/master/scholarly-metadata) filter page for more options and information.
+
+## Multiple short institute names
+
+If an author's institute includes multiple short acronyms, e.g. "ENS, CNRS, EHESS" they may look awkward in the article signature, depending on how your journal template formats it. See your journal template's guidelines 
+on whether to handle these cases in a special manner. 
+
+## Author in page headers and table of contents
+
+You sometimes need to provide a shorter alternative
+for the author names, e.g. "Smith et al.", for page
+headers and the table of contents.
+
+Your journal template should provide extra fields for
+this. Dialectica uses `author-toc` and `author-header`,
+for instance. See your journal template's guidelines.
+

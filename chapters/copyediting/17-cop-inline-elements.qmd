@@ -242,10 +242,14 @@ This line ends here \
 and a new one starts.
 ```
 
+Beware: make sure that there's no space after the backslash. A backslash 
+followed by a space merely means a mandatory space, so you'll just get
+an extra space. To get a linebreak you need a backslash *immediately* 
+followed the end of a line.
+
 ## Prevent line breaks
 
-Sometimes you need to prevent line breaks. If you use suppressed-author references, they
-are awkard at the beginning of lines as in:
+Sometimes you need to prevent line breaks. If you use suppressed-author references, they are awkard at the beginning of lines as in:
 
 > ... Smith's great theory (1972). On the other ...
 

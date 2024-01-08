@@ -1,0 +1,44 @@
+# Review articles
+
+## Formatting a review article
+
+Review articles must have titles in the format "Review of Author (year)". 
+
+They begin with a section titled "Review of" containing the full 
+citation of the monograph reviewed, and followed by `---` (a horizontal 
+rule):
+
+``` markdown
+# Review of
+
+[Antonelli]{.smallcaps}, Mauro. 2018. *Vittorio Benussi in the History
+of Psychology: New Ideas of a Century Ago*,  Studies in the History of
+Philosophy of Mind 21, Cham: Springer.
+
+---
+```
+
+Author last names in the citation are in small caps: they must be surrounded by `[...]{.smallcaps}` as above.
+Book titles are emphasized, surrounded by `*...*` as above. The full citation must contain a publisher place, e.g. "Oxford: Oxford University Press".
+
+If you prefer you can instead enter the full citation in the document's metadata block:
+
+```
+review-of: |
+    [Antonelli]{.smallcaps}, Mauro. 2018. *Vittorio 
+    Benussi in the History of Psychology:
+    New Ideas of a Century Ago*,  Studies in the 
+    History of Philosophy of Mind 21, Cham: Springer.
+```
+
+If you do so you don't need a "Review of" section; the manuscript
+should start directly with the review's text.
+
+Reviews normally don't have section headings. 
+
+## Make sure the reviewed monograph appears in the reference
+
+The monograph reviewed should appear in the review's references. 
+If the review doesn't explicitly cite the monograph, you should
+add it as an uncited reference. 
+See @sec-adding-non-cited-references-in-the-bibliography. 

@@ -1,0 +1,31 @@
+# Author information
+
+## Et al. author for page headers and table of contents
+
+For articles with multiple authors, you may need a shorter 
+alternative for page headers and the table of contents. 
+This is done using the `author-header` and `author-toc` fields:
+
+```yaml
+author:
+- name: Doe, Alice
+- name: Doe, Brit
+- name: Doe, Celia
+- name: Doe, Denis
+- name: Doe, Ethne
+author-header: Doe et al.
+author-toc: Doe A., Doe B., Doe C., Doe D., and Doe E.
+```
+
+## Multiple short institute names in the signature block {#sec-dial-multiple-short-institutes}
+
+*Problem*. An author's affiliations consists of several short acronyms,
+e.g. "CRNS, ENS, EHESS". If you enter them as three distinct institutes,
+they each appear on a single line in the signature block at the
+end of the article. This looks awkward. Treat them as a single institute
+instead, using a list item (e.g. on a line starting with a `-`):
+
+``` yaml
+  institute:
+  - ENS, CRNS, EHESS
+```

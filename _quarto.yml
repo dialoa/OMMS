@@ -15,8 +15,9 @@ book:
     - index.qmd
     - part: Authoring
       chapters:
-      - chapters/authoring/00-intro.qmd
-      - chapters/authoring/10-instructions.qmd
+      - chapters/authoring/00-aut-intro.qmd
+      - chapters/authoring/10-aut-instructions.qmd
+      - chapters/authoring/11-aut-grammar-usage.qmd
     - part: Copyediting
       chapters:
       - chapters/copyediting/12-cop-preliminaries.qmd
@@ -24,7 +25,9 @@ book:
       - chapters/copyediting/15-cop-markdown-intro.qmd
       - chapters/copyediting/155-cop-checklist.qmd
       - chapters/copyediting/16-cop-metadata.qmd
-      - chapters/copyediting/165-cop-grammar-usage.qmd
+      - chapters/copyediting/161-cop-title-and-subtitle.qmd
+      - chapters/copyediting/162-cop-author-information.qmd
+      - chapters/copyediting/163-cop-abstract-keywords-acknowledgments.qmd
       - chapters/copyediting/17-cop-inline-elements.qmd
       - chapters/copyediting/171-cop-inline-special-chars.qmd
       - chapters/copyediting/19-cop-block-elements.qmd
@@ -49,7 +52,10 @@ book:
       - chapters/dialectica/60-dialectica-house-outputs.qmd
       - chapters/dialectica/61-dialectica-new-house-outputs.qmd
       - chapters/dialectica/65-dialectica-troubleshooting-outputs.qmd
-      - chapters/dialectica/70-dialectica-template.qmd
+      - chapters/dialectica/70-dialectica-titles.qmd
+      - chapters/dialectica/71-dialectica-authors.qmd
+      - chapters/dialectica/72-dialectica-abstract.qmd
+      - chapters/dialectica/74-dialectica-reviews.qmd
       - chapters/dialectica/80-dialectica-bibliography.qmd
     - part: Design
       chapters:

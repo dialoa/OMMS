@@ -1,0 +1,106 @@
+# Abstract, keywords, acknowledgments
+
+Abstract, keywords and acknowledgments should be entered
+in either of two ways:
+
+- special sections at the beginning of the paper,
+- metadata fields.
+
+This ensures they are handled by the journal template. Do not
+try to format them yourself (e.g. to place the acknowledgements
+in a footnote).
+
+Whichever way you choose is up to you, they are equivalent. 
+The first requires the *sec-to-meta* extension.
+
+## As special sections
+
+**Requires extension**: Sections-to-Meta.
+
+You can enter abstract, acknowledgments and
+keywords as special sections with level 1 (`#`) headings 
+`Abstract` (or `Summary`), `Acknowledgements` (or `Thanks` 
+or `Acknowledgments`) and `Keywords`. The keywords section 
+must be a bullet-point list. If the article's body
+text does not itself start with a heading, separate these
+special sections from the body text with a horizontal rule
+(`* * *` or `---`). For example:
+
+```
+---
+title: "If You Squint You'll See an Effect"
+author: Patricia I. Smith
+---
+
+# Abstract
+
+In this paper, I explain that the *problem* is more difficult to
+solve than the equation $4x^2 = 8$ and more complicated than the
+formula $(P \land \lnot P) \rightarrow Q$. Thankfully, I have
+found the solution.
+
+# Thanks
+
+The author would like to thank Jane Doe and Erika Mustermann
+as well as audiences at the Universities of Shallow Objections.
+
+# Keywords
+-   problem
+-   solution
+-   symbols
+
+* * *
+
+Since the dawn of humanity, people have been wondering about
+my PhD research topic...
+```
+
+## As metadata
+
+Alternatively, you can enter abstract, acknowledgments,
+and keywords as metadata fields `abstract`, `thanks` and
+`keywords`, respectively. The `keywords` fields must be a list.
+As the other two are typically multiple lines long, they are
+better entered as text blocks [see @ssec-metadata-text-block-values]. 
+Make sure you indent each line of text blocks properly, without getting
+confused by genuine vs merely apparent linebreaks 
+[see @sec-linebreaks-genuine-visual-explicit]. To illustrate, 
+the example could be entered instead as:
+
+``` yaml
+---
+title: "If You Squint You'll See an Effect"
+author: Patricia I. Smith
+abstract: |
+  In this paper I explain that the *problem* is more difficult to
+  solve that the equation $4x^2 = 8$ and more complicated than the
+  formula $(P \land \lnot P) \rightarrow Q$. Thankfully, I have
+  found the solution.
+thanks: |
+  The author would like to thank Jane Doe and Erika Mustermann
+  as well as audiences at the Universities of Shallow Objections.
+keywords:
+-   problem
+-   solution
+-   symbols
+---
+
+Since the dawn of humanity, people have been wondering about
+my PhD research topic...
+```
+
+::: house
+**Dialectica guidelines**.
+
+Abstracts are strongly recommended. Most people who bump on the article 
+will only read that. They must be at most 200 words or so, to fit in
+the first article page.
+
+:::
+
+## Citations and formulas in abstract and acknowledgements
+
+(TO BE CONFIRMED). Abstract and acknowledgments cannot contain markdown citations like `@Smith`. Write them in plain text instead, `Smith (1980)`. 
+
+(TO BE CONFIRMED). Formulas in the abstract should be kept simple, or better, entered directly in unicode. This is because they are exported
+to public databases that may not handle LaTeX.

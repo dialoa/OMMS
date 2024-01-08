@@ -1,0 +1,7 @@
+# Abstracts
+
+Abstracts are strongly recommended. Most people who bump on the article 
+will only read that. 
+
+Abstracts must be at most 200 words or so and fit in the first article's 
+page in PDF output. 

@@ -1,6 +1,13 @@
-# Interface with  *dialectica*'s main bibliography
+# Bibliography
 
-Interface with dialectica's main bibliography
+## Bibliography files
+
+We use BibTeX bibliography files (`.bib`).
+
+To be checked: it is ok to use the same bibliography file name for
+several articles in the same issue?
+
+## Interface with dialectica's main bibliography
 
 More information on the bibliography is in the bibliography-section of
 the overleaf-document.

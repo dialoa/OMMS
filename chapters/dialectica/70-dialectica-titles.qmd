@@ -1,0 +1,124 @@
+# Title and subtitle
+
+The metadata fields `title` and, if the article has a subtitle,
+`subtitle` must be present. They may contain markdown formatting 
+and special symbols, but no explicit linebreaks.^[You may enter
+a long title or a title containing quotation marks as a text block,
+this does not constitute explicit line breaks. See @sec-metadata-text-block-values and @sec-linebreaks-genuine-visual-explicit.]
+
+In addition, you may provide:
+
+- `shorttitle`: shorter title to use in page headers and the table of contents.
+- `title-latex`, `subtitle-latex`: title to be used in PDF's output
+   on the article's first page and (unless `(sub)title-cover` is
+   specified) on the article's offprint cover. Used to specify explicit
+   line breaks.
+- `title-cover`, `subtitle-cover`: title to be used in PDF's output on 
+  the offprint cover. Used to specify explicit linebreaks.
+
+Here is an example using all the available fields. They are explained in detail
+in the sections below.
+
+```yaml
+title: Plain title here
+subtitle: Plain subtitle here
+subtitle-separator: ':'
+shorttitle: Shorter title for page headers
+title-latex: |
+  Title for the first page title \
+  (and cover unless otherwise specified) \
+  with possibly some linebreaks
+subtitle-latex: |
+  Subtitle for the first page title \
+  (and cover unless otherwise specified) \
+  with possibly some linebreaks
+title-cover: |
+  Title for the offprint cover \
+  with possibly some \
+  different linebreaks
+subtitle-cover: |
+  Subtitle for the cover
+title-cover-size: \huge
+subtitle-cover-size: \Large
+```
+
+## Short title
+
+If the title is too long to fit in the header, you can specify a short title in
+addition:
+
+``` {.yaml}
+title: An extremely long-winded and verbose title about a range of topics including but not restricted to the weather
+shorttitle: A long-winded title about the weather
+```
+
+This will be used in the table of contents too. 
+
+### Linebreaks in a title and subtitle
+
+**Requires: dialectica templates**. 
+
+In LaTeX/PDF output it is sometimes useful to manually specify
+a line break within the title and/or subtitle. There are two fields 
+to provide this, `title-latex` and `title-cover`:
+
+```yaml
+title: A Very Long Title that Can be Broken in Various Places
+title-latex: |
+  A Very Long Title that \
+  Can be Broken in Various Places
+title-cover: |
+  A Very Long Title that Can be\
+  Broken in Various Places
+```
+In a metadata field, the `\` at then end of a line specifies a 
+linebreak. *Warning*: it must be immediately followed by an end of
+line (no spaces!).
+
+* `title-latex` controls the title on the first page ("chapter" title).
+  It also sets the offprint cover page unless `title-cover` is also
+  supplied.
+* `title-cover` controls the title on the offprint's cover page. If you
+  want `title-latex` to modify the first page's title only, simply 
+  insert `title-cover` with the same content as `title`. 
+
+The `title` field must be provided, even if `title-cover` and/or        `title-latex` are given.
+
+By default titles on the offprint's cover are of LaTeX size 
+`\Huge` if they are less than 31 characters long, otherwise the 
+slightly smaller size `\huge`. You can specify a custom LaTeX size
+if needed (`\Huge`, `\huge`, `\LARGE`, `\Large`, `\large` etc.) 
+with the `title-cover-size` field. This only affects LaTeX/PDF output.
+
+```yaml
+title-cover-size: \huge
+```
+
+The same options are available for subtitles: use `subtitle-latex`,
+`subtitle-cover` and `subtitle-cover-size`. The default size for
+subtitles on offprint covers is `\LARGE`. 
+
+## Subtitle in the table of contents
+
+The `subtitle` is used in three places. On the paper's first page
+and on the offprint's cover, it is printed below the title, in
+smaller font. It's also used in the table of contents, where
+it's printed after a column:
+
+``` yaml
+title: Frankstein
+subtitle: The Modern Prometheus
+```
+
+Output in the table of contents:
+
+> Frankenstein: The Modern Promoetheus
+
+You can override the colon by specifying a subtitle separator,
+e.g. a simple space:
+
+```yaml
+title: So What?
+subtitle: My Quest for the Meaning of Life
+subtitleseparator: ' '
+```

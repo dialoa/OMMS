@@ -1,6 +1,6 @@
 # Bibliography
 
-You should get or create a bibliography file contained the references cited
+You should get or create a bibliography file containing the references cited
 in your manuscript. This could be a BibTeX file (`.bib`) or a CSL json file 
 (usually `.json`). You need to:
 
@@ -9,24 +9,28 @@ in your manuscript. This could be a BibTeX file (`.bib`) or a CSL json file
   entries may cite other entries, so the bibliography file will cite its own 
   entries. We need to ensure that any such self-cited entry is actually present
   in the file, and we need to ensure that it is printed out in the bibliography.
-3.
 
 *dialectica*. We use BibTeX files. The "bibliography file" below refers to a 
 `.bib` file in your article's folder. 
 
-## Important
+In your article's metadata block, enter the name of your bibliography file:
 
-* Use **different names** for the BibTeX files of different articles in
-  the same issue. If one journal issue has several `.bib` files with
-  the same name, the second won't be found. (*dialectica template*)
-* Your BibTeX file may 'self-cite': entries that cite other entries
-  (in the `note` field, or even in the `title` field.)
-  You need to check that (a) all entries cited in that way are included
-  in the Bibfile. If they aren't you'll see "Citation not found" errors.
-  You also need to check that (b) all citations within the bibliography
-  are printed correctly. Look at the bibliography in PDF and html
-  output, make sure it doesn't contain garbage like **Smith_2008:c?** 
-  or wrong formatting like "(reprinted in (Smith 2008))".
+```markdown
+title: My paper
+author: Jane E. Doe
+bibliography: references.bib
+```
+
+Do not leave the bibliography field empty, or you will get a 
+Pandoc error `File  not found in resource path`.
+
+## Self-citing bibliography
+
+A BibTeX bibliography file may 'self-cite', that is, have entries that cite other entries. Citations of other entries may appear in the `note`, `crossref` or even `title` field, for instance. 
+
+If self-cited entries are missing from the BibTeX file, you will get 
+"Citation not found" error, or you will get garbage text 
+like **Smith_2008:c?** or wrong formatting like "(reprinted in (Smith 2008))" in the bibliography printed out in output formats.
 
 There's more detail on self-citing bibliographies below.
 
@@ -53,7 +57,7 @@ Citation Key: Doe1995-Article-Title
 
 This changes the item's citation key. Don't forget the caps ("Citation Key" not "citation key" nor "citationkey"), and make sure this occupies a single line of the "Extra" field.
 
-## Adding non-cited references in the bibliography
+## Adding non-cited references in the bibliography {#sec-adding-non-cited-references-in-the-bibliography}
 
 In the metadata block, add a line:
 
@@ -64,7 +68,6 @@ nocite: |
 
 If you have lots of those, best use a tool to extract the keys
 automatically from a bibtex file.
-
 
 ## Inserting Citations in the text in RStudio
 

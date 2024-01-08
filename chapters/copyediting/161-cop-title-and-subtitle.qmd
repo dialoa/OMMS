@@ -1,0 +1,47 @@
+# Title and subtitle
+
+Title and (optionally) subtitle of an article are 
+entered in the metadata `title` and `subtitle` field:
+
+``` yaml
+title: The Solution to the Problem that Plagued Everyone
+subtitle: A Brand New Discovery
+```
+
+Titles of the form "Time Travel: a Quantum Relativity Puzzle" should
+be split into title and subtitle. Exceptions are cases where splitting
+wouldn't make sense, e.g. "Pleasure: friend or foe?". 
+
+If a title or subtitle contains colons or quotation marks, it should
+be either wrapped within quotation marks or entered as a text block.
+See @sec-one-line-text-values.
+
+The `title` and `subtitle` fields should *not* contain explicit linebreaks.
+(See @sec-linebreaks-genuine-visual-explicit on what explicit linebreaks are.)
+Not only it's best to let the reader's device set the linebreaks in 'fluid'
+outputs (HTML, EPUB), but these fields are also used for the table of contents
+and to send information to bibliographic database. They should thus be free
+or unnecessary formatting.
+
+Sometimes, however, you need alternative forms of the title:
+
+- a short title to be used in page headers and/or the table of contents.
+- a title with explicit line breaks, when the title is long
+  and default line breaks don't look good in PDF output.
+
+For these, your journal's template should provide extra title fields.
+Dialectica, for instance, uses `shorttitle` if a shorter
+version is needed for page headers and the table of contents, `title-latex` 
+if we need specific linebreaks on the article's first page in PDF output, 
+and `title-cover` if we need different linebreaks on the offprint cover 
+than on the article's first page. 
+
+Your journal's template may also have extra fields to handle how
+titles and subtitles appear in the table of contents. For instance,
+Dialectica shows both title and subtitle in the table of contents,
+separated by a colon. As the colon isn't appropriate when the title
+ends with a question mark or other punctuation, the template
+provides a `subtitleseparator` field that can be used to replace
+the colon with a space. 
+
+For details see your journal template's guidelines. 

@@ -61,7 +61,7 @@ Alternatively, you can enter abstract, acknowledgments,
 and keywords as metadata fields `abstract`, `thanks` and
 `keywords`, respectively. The `keywords` fields must be a list.
 As the other two are typically multiple lines long, they are
-better entered as text blocks [see @ssec-metadata-text-block-values]. 
+better entered as text blocks [see @sec-metadata-text-block-values]. 
 Make sure you indent each line of text blocks properly, without getting
 confused by genuine vs merely apparent linebreaks 
 [see @sec-linebreaks-genuine-visual-explicit]. To illustrate, 

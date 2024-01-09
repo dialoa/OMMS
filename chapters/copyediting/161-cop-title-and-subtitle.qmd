@@ -1,7 +1,7 @@
 # Title and subtitle
 
-Title and (optionally) subtitle of an article are 
-entered in the metadata `title` and `subtitle` field:
+The title and, optionally, the subtitle of an article are 
+entered in the metadata `title` and `subtitle` fields:
 
 ``` yaml
 title: The Solution to the Problem that Plagued Everyone
@@ -20,8 +20,8 @@ The `title` and `subtitle` fields should *not* contain explicit linebreaks.
 (See @sec-linebreaks-genuine-visual-explicit on what explicit linebreaks are.)
 Not only it's best to let the reader's device set the linebreaks in 'fluid'
 outputs (HTML, EPUB), but these fields are also used for the table of contents
-and to send information to bibliographic database. They should thus be free
-or unnecessary formatting.
+and to send information to a bibliographic database. They should thus be free
+of unnecessary formatting.
 
 Sometimes, however, you need alternative forms of the title:
 

@@ -1,10 +1,11 @@
 # Author metadata
 
-**Requires extension: scholarly-metadata**.
+*Requires extension*: The `scholarly-metadata.lua` filter.
 
 The `author` field is a list, each item corresponding to 
 one author. Each item has `name`, `email`, `institute` fields, and 
-one author (the corresponding author) has `correspondence: true`:
+one author (the corresponding author) has a field `correspondence`
+set to `true`:
 
 ``` yaml
 author: 
@@ -19,7 +20,7 @@ author:
 
 Note that there is a dash (`-`) before the first line (`name` field) of each
 author, and that all the other lines for that author are indented to align 
-with that field [see @cop-metadata-lists-maps for background].
+with that field [see @sec-cop-metadata-lists-maps for background].
 
 ## Corresponding author
 
@@ -30,7 +31,7 @@ for that article.
 ## Institutions
 
 Institutions can be entered on one line, separated by commas, or as a list. 
-The two following declaration are equivalent:
+The two following declarations are equivalent:
 
 ```yaml
   institute: Princeton, Yale
@@ -70,7 +71,7 @@ author:
   institute: bedford
 ```
 
-Here `kcl`, `bedford` are used as internal identifiers to associate authors
+Here `kcl` and `bedford` are used as internal identifiers to associate authors
 with their affiliations---they won't be printed. Note that when an author
 has several, the institution identifiers should be listed in brackets, 
 separated by commas: `[kcl, bedford]`. When they have only one, the brackets 
@@ -96,7 +97,7 @@ See the [scholarly-metadata](https://github.com/pandoc/lua-filters/tree/master/s
 ## Multiple short institute names
 
 If an author's institute includes multiple short acronyms, e.g. "ENS, CNRS, EHESS" they may look awkward in the article signature, depending on how your journal template formats it. See your journal template's guidelines 
-on whether to handle these cases in a special manner. 
+on whether to handle these cases specially. 
 
 ## Author in page headers and table of contents
 
@@ -107,4 +108,3 @@ headers and the table of contents.
 Your journal template should provide extra fields for
 this. Dialectica uses `author-toc` and `author-header`,
 for instance. See your journal template's guidelines.
-

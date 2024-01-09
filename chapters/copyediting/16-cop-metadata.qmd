@@ -447,7 +447,7 @@ keywords:
 
 Each item in the list is on a separate line, starting with a dash (`-`). 
 The dashes are aligned with the field's name (`keyword` here). Quotation
-marks can be used, as with one-line text values [@ec-one-line-text-values].
+marks can be used, as with one-line text values [@sec-one-line-text-values].
 
 An alternative, shorter way to enter a list of one-line values is to 
 use square brackets and commas, as in:

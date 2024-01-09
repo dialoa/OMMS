@@ -6,17 +6,17 @@ editor_options:
 
 # Cross-referencing
 
-When an article cross-references its own sections, figures, tables, images,
+When an article cross-references its sections, figures, tables, images,
 numbered examples, equations and footnotes, we encode these in markdown. This
-ensures that they are linked (and, in some case, standardly labelled and
+ensures that they are linked (and, in some cases, standardly labeled and
 properly numbered) in the outputs.
 
-Cross-references to sections, figure, tables, images are handled by the
+Cross-references to sections, figures, tables, and images are handled by the
 [`pandoc-crossref`](https://github.com/lierdakil/pandoc-crossref) extension of
 pandoc. We describe its basic usage described below ([full documentation
 here](http://lierdakil.github.io/pandoc-crossref/)).
 
-Cross-references to numbered examples is handled by `pandoc` itself, usage
+Cross-references to numbered examples are handled by Pandoc itself, usage
 described below.
 
 At the moment we cannot handle neatly cross-references to footnotes. A
@@ -24,11 +24,11 @@ workaround is given below.
 
 ## Cross-referencing sections
 
-To cross-reference a section you first need to know its identifier. `pandoc` accepts
-manually specified identifiers but also automatically generates identifiers. A manually specified identifiers is given by adding `{#sec:mysecid}` after the heading. An automatically generated identifier is obtained by putting the section heading in
-lowercase, removing all formatting, links, footnotes, removing all characters
+To cross-reference a section you first need to know its identifier. Pandoc accepts
+manually specified identifiers but also automatically generates identifiers. A manually specified identifier is given by adding `{#sec:mysecid}` after the heading. An automatically generated identifier is obtained by putting the section heading in
+lowercase, removing all formatting, links, or footnotes, removing all characters
 other than letters, numbers, underscore, periods and hyphens, and replacing
-spaces by hyphens. Some examples:
+spaces with hyphens. Some examples:
 
 +---------------------------------------------+------------------------------------+
 | Markdown heading                            | Resulting section identifier(s)    |
@@ -127,7 +127,7 @@ manually specified:
 | In appendix 5, ...      | `In [appendix @sec:appendix-proof-of-theorems], ...` |
 | In appendices 5, 6, ... | `In [appendices @sec:app1; appendices @sec:app2]`    |
 
-As the last line illustrates, you need to repeat the custom prefix to each
+As the last line illustrates, you need to repeat the custom prefix for each
 entries that it applies to, even though in the output they will be grouped.
 
 **Style recommendations**.
@@ -170,7 +170,7 @@ with a custom identifier:
 **Requires**: the [`pandoc-crossref`
 filter](https://github.com/lierdakil/pandoc-crossref). 
 
-Tables, images can be cross-referenced and can be given a coption
+Tables and images can be cross-referenced and can be given a caption
 text. To cross-reference an image:
 
 ```markdown
@@ -206,14 +206,15 @@ options:
 The identifiers of images or figures must have the form `#fig:...`,
 those of tables `#tbl:...`, those of equations `#eq:...`. 
 
-When crossreferencing them we use citation syntax with the prefixed
+When cross-referencing them we use citation syntax with the prefixed
 identifiers: `[@fig:my-image]`, `@tbl:my-table`, etc. This will 
-print "figure 1", "table 2", etc. To get "Figure 1", "Table 2" you capitalize the prefix: `@Fig:...`, `@Tbl:...`.
+print "figure 1", "table 2", etc. To get "Figure 1" and "Table 2" 
+you capitalize the prefix: `@Fig:...`, `@Tbl:...`.
 
 Details are in the [Pandoc-cross-ref documentation
 here](http://lierdakil.github.io/pandoc-crossref/).
 
-## Cross-referencing footnotes
+## Cross-referencing footnotes {#sec-crossreferencing-footnotes}
 
 Cross-reference to footnotes has to be done manually. If your 
 footnote numbers are not final yet, you will need to revist
@@ -262,7 +263,7 @@ Syntax and placement of the target.
 * It should be placed within the first line of the footnote, to
   ensure referencing links take the reader to that line. 
 * But **do not* place an empty Span right at the beginning of the
-  foonote: in this position the Span leaves an unwanted blank space:
+  footnote: in this position, the Span leaves an unwanted blank space:
 
   ```markdown
   BAD
@@ -276,7 +277,7 @@ Syntax and placement of the target.
   ```
   
 Non-final manuscripts. If footnote numbers are not final, 
-you will need to update crossreferences to footnotes. 
+you will need to update cross-references to footnotes. 
 A good practice is to use very visible text to ensure
 that you don't miss them in proofing:
 
@@ -288,15 +289,15 @@ See above [footnote NUMBER](#fn-doe).
 
 You have a numbered list and you want to cross-reference one of its items:
 
-> 1. first item
-> 2. []{#cross-referenced-item}section item
-> 3. third item.
+> 1. First item
+> 2. []{#cross-referenced-item} Second item
+> 3. Third item.
 > 
-> My favour item is ([2](#cross-reference-item)), what's yours?
+> My favourite item is ([2](#cross-reference-item)), what's yours?
 
 The solution is as with footnotes: you have to put an invisible link target
 in the item and you have to create a link to it. The number is manually
-entered in the link, not automatic, so you have to make sure you know
+entered in the link, not automatically, so you have to make sure you know
 which number it is.
 
 ```markdown
@@ -317,7 +318,7 @@ link: [2](#myidentifier)
 
 ## Internal links {#internal-links}
 
-If you want a part of the text to link to another, say have a statement labelled
+If you want a part of the text to link to another, say have a statement labeled
 "C1" and later parts referring to it as "(C1)", use internal link syntax. The
 general syntax is:
 
@@ -346,7 +347,7 @@ Example:
 
 (... article goes on ...)
 
-As [my earlier claim](#my-claim) established, ... .
+As [my earlier claim](#my-claim) established, ...
 ```
 
 This outputs, in both HTML and LaTeX :
@@ -374,7 +375,7 @@ to be the label itself in parentheses:
 
 ...
 
-As ([C1](#my-new-claim)) established, ... .
+As ([C1](#my-new-claim)) established, ...
 ```
 
 This outputs:
@@ -383,20 +384,24 @@ This outputs:
 
 ...
 
-As ([C1](#my-new-claim)) established, ... .
+As ([C1](#my-new-claim)) established, ...
 
-**a cleaner version for internal links** may be achieved by putting the syntax
+**A cleaner version for internal links** may be achieved by putting the syntax
+
 ``` {.markdown}
 [**C1**]{#my-new-claim}. Death is nothing to us.
 
 ...
 
-As [@my-new-claim] established, ... .
+As [@my-new-claim] established, ...
 ```
+
 instead, which in turn outputs the same as above:
+
 [**C1**]{#my-new-claim}. Death is nothing to us.
 
 ...
 
-As [@my-new-claim] established, ... .
-but with a much cleaner syntax behind.
+As [@my-new-claim] established, ...
+
+but with a clearer syntax in markdown.

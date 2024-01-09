@@ -51,7 +51,7 @@ indented material (statement) may either be a  *continuation* of the previous
 paragraph or the *beginning* of a new one.  That is a matter of meaning (is the
 text finishing the previous idea, or beginning a new idea?) and may not 
 be clear-cut in all cases. If your journal uses first-line indentation to separate
-paragraphs, continuations should not be typset with an indented first line, but
+paragraphs, continuations should not be typesetted with an indented first line, but
 new paragraphs should. 
 
 The engine makes default assumptions: normally text below a list, quotation
@@ -64,9 +64,9 @@ There are two ways to solve this.
 ::: house
 
 *Dialectica guidelines*. Our template uses the first-line indentation style of
-separating paragraph, and we use the first solution below. Sometimes it is
+separating paragraphs, and we use the first solution below. Sometimes it is
 unclear whether a paragraph continues the previous one or is a new one: the
-best is to ask the author, but you can also use your best judgement.
+best is to ask the author, but you can also use your best judgment.
 
 :::
 
@@ -75,7 +75,7 @@ best is to ask the author, but you can also use your best judgement.
 *Requires*: the `first-indent-line` filter. 
 
 * Add `\indent` at the beginning of a paragraph to force a first-line indentation.
-* Add `\noindent` at the beginning of a paragraph to prevent first-line indentaiton.
+* Add `\noindent` at the beginning of a paragraph to prevent first-line indentation.
 
 Example. In the text below, the quotation ends the paragraph: 
 the text below the quotation isn't a *continuation*
@@ -104,7 +104,7 @@ Test group   Control group
 filter ensures they are formatted correctly in other output formats. 
 
 *Note*: you can follow this section's advice even if your journal doesn't 
-currently use first-line identation to separate paragraphs but vertical
+currently use first-line indentation to separate paragraphs but vertical
 spaces instead. With the `first-line-indent` filter the added code won't make
 a difference to the output, but it will allow you to switch to first-line
 indent later if needed. 
@@ -123,7 +123,7 @@ Without the filter, text after *any* block element is treated as a new
 paragraph. 
 
 * Add `\noident` at the beginning of paragraphs following quotations, 
-  statements, lists unless they are genuninely new paragraph.
+  statements, lists unless they are genuinely new paragraphs.
   
 You may add `\indent` on paragraphs that need to be indented, but that'll be
 the default.
@@ -155,9 +155,9 @@ as a line starting with `#`, `##`, `###` followed by the title.
 ::: private
 In *Dialectica* headings are numbered up to the subsection (`#`, `##`, `###`). Headings of level four (`####`) are used for un-numbered smaller units. 
 
-We have also two "inline" headings style, where the heading title is displayed at the beginning of the following paragraph rather than on its separate line. They are level 5 (`#####`) and level 6 (`#######`).
+We have also two "inline" headings styles, where the heading title is displayed at the beginning of the following paragraph rather than on its separate line. They are level 5 (`#####`) and level 6 (`#######`).
 
-We discourage authors from using headings below the subsection (`##`) in articles though, though we can use them if the they improve readibility.
+We discourage authors from using headings below the subsection (`##`) in articles though, though we can use them if they improve readability.
 
 
 :::
@@ -178,7 +178,7 @@ with no title.
 
 ::: private
 -   If an article starts with an introduction section, that section should not
-    have aheading. So do not start articles with:
+    have a heading. So do not start articles with:
 
 ``` {.markdown}
 # Introduction
@@ -187,104 +187,195 @@ with no title.
 
 ## Footnotes and endnotes
 
-Your template decides whether notes are printed out as footnotes or 
-endnotes. The encoding is the same whichever it uses. We'll call them
-"notes" here.
+You can encode *notes*. Markdown doesn't distinguish footnotes and endnotes:
+there's only one kind of note, and your journal template decides where 
+they're printed out.
 
-There are two ways to enter notes. The first is *inline, without identifier*. 
-This is suitable for brief notes:
+There are two ways to enter notes called *inline* and *by reference link*. 
+In the inline method, the note is weaved within the text itself, as follows:
+
+``` markdown
+This is the main text.^[In the footnote, I distract you with an irrelevant point.]
+  This continues the main text.
+```
+
+In the reference link method, we only put a reference to the note in the text,
+and the note text is given separately---typically below the paragraph in 
+question or at the end of the manuscript:
+
+``` markdown
+This is the main text.[^fn1] This continues the main text.
+
+[^fn1]: In the footnote, I distract you with an irrelevant point.
+```
+
+Both methods produce the very same output:
 
 > This is the main text.^[In footnote, I distract you with an irrelevant point.]
   This continues the main text.
-  
-  ```markdown
-  This is the main text.^[In footnote, I distract you with an irrelevant point.]
+
+The inline method is best suited for short notes. The reference-link 
+method is better suited for longer notes and is required when a 
+footnote spans multiple paragraphs.
+
+_Warning for international keyboard users_. If you're using the International US Keyboard (and perhaps other), entering `^[` will probably result in a *small* 
+circumflex accent instead of a big one: compare `ˆ` and `^`. To get the big
+one, press Shift+6 (the key for `^`) then the space key. 
+
+
+### Inline method
+
+In the inline method, you place `^[...]` where you want the note number to
+appear, and you place the text of the footnote between the brackets. 
+Note that the `^` character is *outside* the brackets.
+
+``` markdown
+This is the main text.^[In the footnote, I distract you with an irrelevant point.]
   This continues the main text.
-  ```
-  
-The second is a *reference link, with identifier*. This is suitable for longer
-notes, and required if a note has several paragraphs:
+```
 
-> This is the main text.[^myidentifier] This continues the main text.
-> This next paragraph that isn't part of the footnote.
+The note text may contain markdown codes, except blocks. 
+It'll be a single block (paragraph) in the output. 
 
-[^myidentifier]: This note takes more space.
+### Reference link method
 
-    It contains several paragaphs.
+In the reference link method, you place `[^id]` where you want
+the note number to appear. Note that the `^` character 
+is *inside* the bracket. `id` is an arbitrary *identifier*: 
+it can be a number like `2`, or something like `fn1`
+or `footnote_about_dogs`. It can't contain spaces, linebreaks,
+tabs or the characters `^`, `[`, `]`.
+
+The identifier must be unique to that footnote in your markdown
+file. It does *not* affect which number the footnote has in the output, 
+even if it's a number. Thus if you enter the article's first
+footnote as:
+
+``` markdown
+This is the main text.[^15] This continues the main text.
+````
+
+It will still be numbered 1.
+
+The footnote text is then placed elsewhere in the document,
+in a paragraph starting with `[^id]`. Where you place it doesn't
+affect the output: it'll be printed out as a footnote if 
+your journal footnotes, as an endnote if it uses endnotes.
+
+``` markdown
+This is the main text.[^fn1] This continues the main text.
+
+[ˆfn1]: In the footnote, I distract you with an irrelevant point.
+```
+
+The note can contain any markdown codes, including 
+blocks other than notes. 
+
+### Multi-paragraph notes
+
+Using the reference-link method, you can enter long notes consisting of
+multiple paragraphs. You simply need to indent the paragraphs:
+
+``` markdown
+This is the paragraph where the note appears.[^fn2] The paragraph
+continues for a bit and then ends.
+
+[^fn2]: This is the footnote text. I've placed it below the paragraph
+    where the footnote appears, though I could have placed it at
+    the very end of the document, or anywhere else for that matter.
+
+    This is still part of the footnote---it's a second paragraph of
+    the footnote. Note how it's indented two spaces like the first
+    paragraph. If it wasn't, it would be considered part of the
+    main text.
+
+This is the following paragraph of the main text. It's not indented,
+so it's not part of the footnote.
+```
+
+Result:
+
+> This is the paragraph where the note appears.[^fnexample2] The paragraph
+> continues for a bit and then ends.
+>
+> This is the following paragraph of the main text. It's not indented,
+> therefore it's not part of the footnote.
+
+[^fnexample2]: This is the footnote text. I've placed it below the paragraph
+    where the footnote appears, though I could have placed it at
+    the very end of the document, or anywhere else for that matter.
+
+    This is still part of the footnote---it's a second paragraph of
+    the footnote. Note how it's indented to align with the first
+    paragraph. If it wasn't, it would be considered part of the
+    main text.
+
+
+Four spaces indentation on each paragraph *should* 
+work.^[The markdown manuals for [Pandoc](https://pandoc.org/MANUAL.html#footnotes)
+and [Quarto](https://quarto.org/docs/authoring/footnotes-and-citations.html#footnotes) don't give a precise indentation size.] If 
+you encounter trouble, see "Troubleshooting" at the end of this section. 
+
+Notes can contain other kind of blocks other than notes themselves: 
+quotations, images, Divs (see below), etc.
+
+``` markdown
+This is the main text.[^3] This continues the main text.
+
+[^3]: This note takes more space.
+
+    It contains several paragraphs.
                  
     > It even includes a quotation.
                  
-    And ends here.
-  
+    And it ends here.
+```
 
-```\markdown
-This is the main text.[^myidentifier] This continues the main text.
+Result:
 
-[^myidentifier]: This note takes more space.
+> This is the main text.[^fnexample3] This continues the main text.
 
-    It contains several paragaphs.
+[^fnexample3]: This note takes more space.
+
+    It contains several paragraphs.
                  
     > It even includes a quotation.
                  
-    And ends here.
-    
-This next paragraph that isn't part of the footnote.
-```
+    And it ends here.
 
-Note that the `^` is outside of square brackets in the inline style, inside it
-in the reference style. In the reference style the footnote can be placed
-anywhere in the document. Common choices are at the end of the 
-current block or at the end of the current chapter, or at the end of the 
-document or chapter.
+__Troubleshooting__. Too much or not enough indentation on the 
+paragraphs may 'break' the note; in output, the broken text 
+appears where you've placed the footnote text---below the 
+original paragraph or at the end of the document.
+If it appears as *normal* text, check the paragraphs are 
+aligned first, and if they are, try *more* indentation.
+If it appears as *code* text (monospace font), you have
+too much indentation (more than 4 spaces), *reduce* it.
 
-In multi-paragraph footnotes, indent each block with two
-spaces to indicate that it's part of the footnote rather than resuming the main
-text, as in the example above. 
+### Fusing multiple markdown documents
 
-In the reference style you can use numbers as identifiers:
+Unless your journal template's guidelines specify otherwise,
+it's fine to use the same identifier, e.g. `1`, in *different*
+articles.
 
-> This is the main text.[^1]
-
-[^1]: this is the foonote.
-
-```markdown
-
-> This is the main text.[^1]
-
-[^1]: this is the foonote.
-```
-
-Number identifiers can be a problem if you're planning to fuse several 
-documents, e.g. chapters of a book or articles in a journal issue. For two
-`[^1]` footnotes in separate chapters will create an error. However, Quarto
-or the `collection` filter can handle these conflicts. With them number
-identifiers are fine. 
+### Cross-referencing footnotes
 
 Cross-reference to footnotes has to be done manually. Don't enter them before
-you know that the footnote numbers are final. See the cross-referencing chapter.
-
-::: house
-**Dialectica guidelines**.
-
-It's fine to use link references with simple numbers: `[^1]`, `[^2]`, as
-we use the `collection` filter. These are automatically generated by Pandoc
-when converting manuscripts and it's a waste of time to replace them. Our
-`collection` filter ensures that no identifier conflict arises between articles. 
-
-:::
+you know that the footnote numbers *in the output* are final. 
+See @sec-crossreferencing-footnotes. 
 
 ## Divs {#sec-divs}
 
 Divs are general-purpose blocks that we use to typeset advanced
-elements like statements, or to mark out sections of a document
-for a special treatement, e.g. 'imagifying' all the LaTeX formulas
+elements like statements or to mark out sections of a document
+for special treatment, e.g. 'imagifying' all the LaTeX formulas
 it contains. This section explains how to encode them.
 
 A Div is an arbitrary document *division*, usually invisible to the reader. 
 It contains one or more blocks---which can be paragraphs, quotations, etc. 
 or even other Divs. It also has *attributes*, and that is what makes it useful:
 for we use the attributes to tell our typesetting engine that the Div's content
-are to receive a special treatement. In the case of statements, we use a Div
+is to receive special treatment. In the case of statements, we use a Div
 with the special `statement` attribute to tell the engine that its contents
 are a statement---hence, that they must be indented. 
 
@@ -293,7 +384,7 @@ consisting of one or more colons:
 
 ```markdown
 
-This paragraph is in the main flow of text.
+This paragraph is in the document's main flow.
 
 :::
 
@@ -310,7 +401,7 @@ a Div within a Div by using a greater number of colons for the enclosed one:
 
 ```markdown
 
-This paragraph is in the main flow of text.
+This paragraph is in the document's main flow.
 
 :::
 
@@ -331,7 +422,7 @@ This paragraph is inside the first Div.
 It's good practice, though not technically necessary, to use the same number of
 colons for the opening fence and the closing fence of the same Div. 
 
-The Divs in the examples above are completely invisible in PDF or html outputs.
+The Divs in the examples above are completely invisible in PDF or HTML outputs.
 Divs become interesting when you give them *attributes*. Attributes are added
 to the *opening* fence of a Div, between curly braces:
 
@@ -348,7 +439,7 @@ Everything comes in due time.
 This illustrates the three kinds of attributes a Div may have:
 
 1. one or more *classes* indicated with a dot, e.g. `.statement`. 
-  A class indicate that the Div is of a certain kind. Several Div can be of
+  A class indicates that the Div is of a certain kind. Several Div can be of
   the same class (kind), and a single Div can have several kinds.
 2. an unique identifier aka *ID*: indicated with a hash, e.g. `#myprinciple`. 
   This uniquely identifies a Div, to cross-reference it for instance. A Div

@@ -489,7 +489,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#cross-referencing-sections" id="toc-cross-referencing-sections" class="nav-link active" data-scroll-target="#cross-referencing-sections"><span class="header-section-number">23.1</span> Cross-referencing sections</a></li>
   <li><a href="#crossreferencing-and-captioning-tables-figures-images-equations" id="toc-crossreferencing-and-captioning-tables-figures-images-equations" class="nav-link" data-scroll-target="#crossreferencing-and-captioning-tables-figures-images-equations"><span class="header-section-number">23.2</span> Crossreferencing and captioning tables, figures, images, equations</a></li>
-  <li><a href="#cross-referencing-footnotes" id="toc-cross-referencing-footnotes" class="nav-link" data-scroll-target="#cross-referencing-footnotes"><span class="header-section-number">23.3</span> Cross-referencing footnotes</a></li>
+  <li><a href="#sec-crossreferencing-footnotes" id="toc-sec-crossreferencing-footnotes" class="nav-link" data-scroll-target="#sec-crossreferencing-footnotes"><span class="header-section-number">23.3</span> Cross-referencing footnotes</a></li>
   <li><a href="#cross-referencing-list-items" id="toc-cross-referencing-list-items" class="nav-link" data-scroll-target="#cross-referencing-list-items"><span class="header-section-number">23.4</span> Cross-referencing list items</a></li>
   <li><a href="#internal-links" id="toc-internal-links" class="nav-link" data-scroll-target="#internal-links"><span class="header-section-number">23.5</span> Internal links</a></li>
   </ul>
@@ -516,13 +516,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <div class="no-first-line-indent-after"></div>
-<p>When an article cross-references its own sections, figures, tables, images, numbered examples, equations and footnotes, we encode these in markdown. This ensures that they are linked (and, in some case, standardly labelled and properly numbered) in the outputs.</p>
-<p>Cross-references to sections, figure, tables, images are handled by the <a href="https://github.com/lierdakil/pandoc-crossref"><code>pandoc-crossref</code></a> extension of pandoc. We describe its basic usage described below (<a href="http://lierdakil.github.io/pandoc-crossref/">full documentation here</a>).</p>
-<p>Cross-references to numbered examples is handled by <code>pandoc</code> itself, usage described below.</p>
+<p>When an article cross-references its sections, figures, tables, images, numbered examples, equations and footnotes, we encode these in markdown. This ensures that they are linked (and, in some cases, standardly labeled and properly numbered) in the outputs.</p>
+<p>Cross-references to sections, figures, tables, and images are handled by the <a href="https://github.com/lierdakil/pandoc-crossref"><code>pandoc-crossref</code></a> extension of pandoc. We describe its basic usage described below (<a href="http://lierdakil.github.io/pandoc-crossref/">full documentation here</a>).</p>
+<p>Cross-references to numbered examples are handled by Pandoc itself, usage described below.</p>
 <p>At the moment we cannot handle neatly cross-references to footnotes. A workaround is given below.</p>
 <section id="cross-referencing-sections" class="level2" data-number="23.1">
 <h2 data-number="23.1" class="anchored" data-anchor-id="cross-referencing-sections"><span class="header-section-number">23.1</span> Cross-referencing sections</h2>
-<p>To cross-reference a section you first need to know its identifier. <code>pandoc</code> accepts manually specified identifiers but also automatically generates identifiers. A manually specified identifiers is given by adding <code>{#sec:mysecid}</code> after the heading. An automatically generated identifier is obtained by putting the section heading in lowercase, removing all formatting, links, footnotes, removing all characters other than letters, numbers, underscore, periods and hyphens, and replacing spaces by hyphens. Some examples:</p>
+<p>To cross-reference a section you first need to know its identifier. Pandoc accepts manually specified identifiers but also automatically generates identifiers. A manually specified identifier is given by adding <code>{#sec:mysecid}</code> after the heading. An automatically generated identifier is obtained by putting the section heading in lowercase, removing all formatting, links, or footnotes, removing all characters other than letters, numbers, underscore, periods and hyphens, and replacing spaces with hyphens. Some examples:</p>
 <table class="table">
 <colgroup>
 <col style="width: 55%">
@@ -667,7 +667,7 @@ section-1
 </tr>
 </tbody>
 </table>
-<p>As the last line illustrates, you need to repeat the custom prefix to each entries that it applies to, even though in the output they will be grouped.</p>
+<p>As the last line illustrates, you need to repeat the custom prefix for each entries that it applies to, even though in the output they will be grouped.</p>
 <p><strong>Style recommendations</strong>.</p>
 <p><em>Call subsections “sections” when referencing to them</em>. If you’re referencing a subsection, you should still call it “section” in the readable text: ``<code>cf. section [@sec:asubsectionid]</code>. A subsection is a section, and the terminology of “subsection” is clunky and technical.</p>
 <p><em>Avoid specifying a manual prefix</em> just to follow the author’s style. The default prefix is specified in the journal’s style template and should be preferred wherever possible. A manual prefix is only recommended for appendices (or any other section that is not a regular section of the paper).</p>
@@ -708,7 +708,7 @@ section-1
 <section id="crossreferencing-and-captioning-tables-figures-images-equations" class="level2" data-number="23.2">
 <h2 data-number="23.2" class="anchored" data-anchor-id="crossreferencing-and-captioning-tables-figures-images-equations"><span class="header-section-number">23.2</span> Crossreferencing and captioning tables, figures, images, equations</h2>
 <p><strong>Requires</strong>: the <a href="https://github.com/lierdakil/pandoc-crossref"><code>pandoc-crossref</code> filter</a>.</p>
-<p>Tables, images can be cross-referenced and can be given a coption text. To cross-reference an image:</p>
+<p>Tables and images can be cross-referenced and can be given a caption text. To cross-reference an image:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](imagefile.png)</span> {#fig:my-image}</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>As you can see in @Fig:my-image ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -731,11 +731,11 @@ section-1
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>: The different styles of text {#tbl:diffstyles}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>The identifiers of images or figures must have the form <code>#fig:...</code>, those of tables <code>#tbl:...</code>, those of equations <code>#eq:...</code>.</p>
-<p>When crossreferencing them we use citation syntax with the prefixed identifiers: <code>[@fig:my-image]</code>, <code>@tbl:my-table</code>, etc. This will print “figure 1”, “table 2”, etc. To get “Figure 1”, “Table 2” you capitalize the prefix: <code>@Fig:...</code>, <code>@Tbl:...</code>.</p>
+<p>When cross-referencing them we use citation syntax with the prefixed identifiers: <code>[@fig:my-image]</code>, <code>@tbl:my-table</code>, etc. This will print “figure 1”, “table 2”, etc. To get “Figure 1” and “Table 2” you capitalize the prefix: <code>@Fig:...</code>, <code>@Tbl:...</code>.</p>
 <p>Details are in the <a href="http://lierdakil.github.io/pandoc-crossref/">Pandoc-cross-ref documentation here</a>.</p>
 </section>
-<section id="cross-referencing-footnotes" class="level2" data-number="23.3">
-<h2 data-number="23.3" class="anchored" data-anchor-id="cross-referencing-footnotes"><span class="header-section-number">23.3</span> Cross-referencing footnotes</h2>
+<section id="sec-crossreferencing-footnotes" class="level2" data-number="23.3">
+<h2 data-number="23.3" class="anchored" data-anchor-id="sec-crossreferencing-footnotes"><span class="header-section-number">23.3</span> Cross-referencing footnotes</h2>
 <p>Cross-reference to footnotes has to be done manually. If your footnote numbers are not final yet, you will need to revist them before publishing.</p>
 <p>We do not reference the page numbers where the footnote appears. This is meaningless in HTML and ePub output.</p>
 <p>The syntax is as follows:</p>
@@ -763,7 +763,7 @@ point... .]</code></pre></li>
 <ul>
 <li><p>The target Span can be empty: <code>[]{#my-footnote}</code></p></li>
 <li><p>It should be placed within the first line of the footnote, to ensure referencing links take the reader to that line.</p></li>
-<li><p>But **do not* place an empty Span right at the beginning of the foonote: in this position the Span leaves an unwanted blank space:</p>
+<li><p>But **do not* place an empty Span right at the beginning of the footnote: in this position, the Span leaves an unwanted blank space:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>BAD</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ot">[^footnote]: </span>[]{#fn-point} On this difficult point </span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -774,7 +774,7 @@ point... .]</code></pre></li>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="ot">[^footnote]: </span>See @doe_j:2020.[]{#fn-doe}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>Non-final manuscripts. If footnote numbers are not final, you will need to update crossreferences to footnotes. A good practice is to use very visible text to ensure that you don’t miss them in proofing:</p>
+<p>Non-final manuscripts. If footnote numbers are not final, you will need to update cross-references to footnotes. A good practice is to use very visible text to ensure that you don’t miss them in proofing:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>See above <span class="co">[</span><span class="ot">footnote NUMBER</span><span class="co">](#fn-doe)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="cross-referencing-list-items" class="level2" data-number="23.4">
@@ -782,15 +782,15 @@ point... .]</code></pre></li>
 <p>You have a numbered list and you want to cross-reference one of its items:</p>
 <blockquote class="blockquote">
 <ol type="1">
-<li>first item</li>
-<li><span id="cross-referenced-item"></span>section item</li>
-<li>third item.</li>
+<li>First item</li>
+<li><span id="cross-referenced-item"></span> Second item</li>
+<li>Third item.</li>
 </ol>
 <div class="no-first-line-indent-after"></div>
-<p>My favour item is (<a href="#cross-reference-item">2</a>), what’s yours?</p>
+<p>My favourite item is (<a href="#cross-reference-item">2</a>), what’s yours?</p>
 </blockquote>
 <div class="no-first-line-indent-after"></div>
-<p>The solution is as with footnotes: you have to put an invisible link target in the item and you have to create a link to it. The number is manually entered in the link, not automatic, so you have to make sure you know which number it is.</p>
+<p>The solution is as with footnotes: you have to put an invisible link target in the item and you have to create a link to it. The number is manually entered in the link, not automatically, so you have to make sure you know which number it is.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>first item</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>[]{#myidentifier} section item</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>third item.</span>
@@ -803,7 +803,7 @@ point... .]</code></pre></li>
 </section>
 <section id="internal-links" class="level2" data-number="23.5">
 <h2 data-number="23.5" class="anchored" data-anchor-id="internal-links"><span class="header-section-number">23.5</span> Internal links</h2>
-<p>If you want a part of the text to link to another, say have a statement labelled “C1” and later parts referring to it as “(C1)”, use internal link syntax. The general syntax is:</p>
+<p>If you want a part of the text to link to another, say have a statement labeled “C1” and later parts referring to it as “(C1)”, use internal link syntax. The general syntax is:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">text to be linked to</span><span class="co">]</span>{#unique-identifier}</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>...</span>
@@ -836,7 +836,7 @@ point... .]</code></pre></li>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>(... article goes on ...)</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>As <span class="co">[</span><span class="ot">my earlier claim</span><span class="co">](#my-claim)</span> established, ... .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>As <span class="co">[</span><span class="ot">my earlier claim</span><span class="co">](#my-claim)</span> established, ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>This outputs, in both HTML and LaTeX :</p>
 <blockquote class="blockquote">
@@ -853,22 +853,24 @@ point... .]</code></pre></li>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>As (<span class="co">[</span><span class="ot">C1</span><span class="co">](#my-new-claim)</span>) established, ... .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>As (<span class="co">[</span><span class="ot">C1</span><span class="co">](#my-new-claim)</span>) established, ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>This outputs:</p>
 <p><span id="my-new-claim"><strong>C1</strong></span>. Death is nothing to us.</p>
 <p>…</p>
-<p>As (<a href="#my-new-claim">C1</a>) established, … .</p>
-<p><strong>a cleaner version for internal links</strong> may be achieved by putting the syntax</p>
+<p>As (<a href="#my-new-claim">C1</a>) established, …</p>
+<p><strong>A cleaner version for internal links</strong> may be achieved by putting the syntax</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**C1**</span><span class="co">]</span>{#my-new-claim}. Death is nothing to us.</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>As <span class="co">[</span><span class="ot">@my-new-claim</span><span class="co">]</span> established, ... .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>As <span class="co">[</span><span class="ot">@my-new-claim</span><span class="co">]</span> established, ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>instead, which in turn outputs the same as above: <span id="my-new-claim"><strong>C1</strong></span>. Death is nothing to us.</p>
+<p>instead, which in turn outputs the same as above:</p>
+<p><span id="my-new-claim"><strong>C1</strong></span>. Death is nothing to us.</p>
 <p>…</p>
-<p>As <span class="citation" data-cites="my-new-claim">(<a href="../appendices/references.html#ref-my-new-claim" role="doc-biblioref"><strong>my-new-claim?</strong></a>)</span> established, … . but with a much cleaner syntax behind.</p>
+<p>As <span class="citation" data-cites="my-new-claim">(<a href="../appendices/references.html#ref-my-new-claim" role="doc-biblioref"><strong>my-new-claim?</strong></a>)</span> established, …</p>
+<p>but with a clearer syntax in markdown.</p>
 
 
 </section>

@@ -496,7 +496,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#without-the-filter" id="toc-without-the-filter" class="nav-link" data-scroll-target="#without-the-filter"><span class="header-section-number">14.2.2</span> Without the filter</a></li>
   </ul></li>
   <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings"><span class="header-section-number">14.3</span> Headings</a></li>
-  <li><a href="#footnotes-and-endnotes" id="toc-footnotes-and-endnotes" class="nav-link" data-scroll-target="#footnotes-and-endnotes"><span class="header-section-number">14.4</span> Footnotes and endnotes</a></li>
+  <li><a href="#footnotes-and-endnotes" id="toc-footnotes-and-endnotes" class="nav-link" data-scroll-target="#footnotes-and-endnotes"><span class="header-section-number">14.4</span> Footnotes and endnotes</a>
+  <ul class="collapse">
+  <li><a href="#inline-method" id="toc-inline-method" class="nav-link" data-scroll-target="#inline-method"><span class="header-section-number">14.4.1</span> Inline method</a></li>
+  <li><a href="#reference-link-method" id="toc-reference-link-method" class="nav-link" data-scroll-target="#reference-link-method"><span class="header-section-number">14.4.2</span> Reference link method</a></li>
+  <li><a href="#multi-paragraph-notes" id="toc-multi-paragraph-notes" class="nav-link" data-scroll-target="#multi-paragraph-notes"><span class="header-section-number">14.4.3</span> Multi-paragraph notes</a></li>
+  <li><a href="#fusing-multiple-markdown-documents" id="toc-fusing-multiple-markdown-documents" class="nav-link" data-scroll-target="#fusing-multiple-markdown-documents"><span class="header-section-number">14.4.4</span> Fusing multiple markdown documents</a></li>
+  <li><a href="#cross-referencing-footnotes" id="toc-cross-referencing-footnotes" class="nav-link" data-scroll-target="#cross-referencing-footnotes"><span class="header-section-number">14.4.5</span> Cross-referencing footnotes</a></li>
+  </ul></li>
   <li><a href="#sec-divs" id="toc-sec-divs" class="nav-link" data-scroll-target="#sec-divs"><span class="header-section-number">14.5</span> Divs</a></li>
   </ul>
 </nav>
@@ -551,18 +558,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In typography paragraphs are distinguished from each other in two ways: first-line indentation (common in books) or a vertical space (common on the web). Your journal template will automatically typeset those.</p>
 <p>If your journal template uses the first-line indent way of separating paragraphs, it will mostly handle typographic conventions correctly. For instance, it will be set not to indent the first line of paragraphs right below a heading (English convention) or to indent it (common in French). However, there are a few cases where you will need to manually specify that a first-line indent is or is not desired. See below.</p>
 <p>Sometimes (rarely) you need a line break that does not start a new paragraph. See <a href="17-cop-inline-elements.html#sec-linebreak"><span>Section&nbsp;12.7</span></a>.</p>
-<p><em>Problem</em>. Text that directly follows a list, quote, figure, table or other indented material (statement) may either be a <em>continuation</em> of the previous paragraph or the <em>beginning</em> of a new one. That is a matter of meaning (is the text finishing the previous idea, or beginning a new idea?) and may not be clear-cut in all cases. If your journal uses first-line indentation to separate paragraphs, continuations should not be typset with an indented first line, but new paragraphs should.</p>
+<p><em>Problem</em>. Text that directly follows a list, quote, figure, table or other indented material (statement) may either be a <em>continuation</em> of the previous paragraph or the <em>beginning</em> of a new one. That is a matter of meaning (is the text finishing the previous idea, or beginning a new idea?) and may not be clear-cut in all cases. If your journal uses first-line indentation to separate paragraphs, continuations should not be typesetted with an indented first line, but new paragraphs should.</p>
 <p>The engine makes default assumptions: normally text below a list, quotation or statement continues the paragraph above and text below a table is a new paragraph. When the default assumption is wrong, we need to manually specify that a paragraph’s indent is to be treated otherwise.</p>
 <p>There are two ways to solve this.</p>
 <div class="house">
-<p><em>Dialectica guidelines</em>. Our template uses the first-line indentation style of separating paragraph, and we use the first solution below. Sometimes it is unclear whether a paragraph continues the previous one or is a new one: the best is to ask the author, but you can also use your best judgement.</p>
+<p><em>Dialectica guidelines</em>. Our template uses the first-line indentation style of separating paragraphs, and we use the first solution below. Sometimes it is unclear whether a paragraph continues the previous one or is a new one: the best is to ask the author, but you can also use your best judgment.</p>
 </div>
 <section id="with-the-first-line-indent-filter" class="level3" data-number="14.2.1">
 <h3 data-number="14.2.1" class="anchored" data-anchor-id="with-the-first-line-indent-filter"><span class="header-section-number">14.2.1</span> With the first-line-indent filter</h3>
 <p><em>Requires</em>: the <code>first-indent-line</code> filter.</p>
 <ul>
 <li>Add <code>\indent</code> at the beginning of a paragraph to force a first-line indentation.</li>
-<li>Add <code>\noindent</code> at the beginning of a paragraph to prevent first-line indentaiton.</li>
+<li>Add <code>\noindent</code> at the beginning of a paragraph to prevent first-line indentation.</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
 <p>Example. In the text below, the quotation ends the paragraph: the text below the quotation isn’t a <em>continuation</em> of the previous paragraph but a new paragraph. This goes against the default assumption, so we need to add <code>\indent</code>. On the other hand, the paragraph under the table <em>is</em> a continuation of the previous one, which also goes against the default assumption. So we add a <code>\indent</code>.</p>
@@ -580,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>\noindent That we don't observe any difference between the two groups.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p><em>Note</em>: <code>\indent</code> and <code>\noindent</code> are LaTeX code, but the <code>first-line-indent</code> filter ensures they are formatted correctly in other output formats.</p>
-<p><em>Note</em>: you can follow this section’s advice even if your journal doesn’t currently use first-line identation to separate paragraphs but vertical spaces instead. With the <code>first-line-indent</code> filter the added code won’t make a difference to the output, but it will allow you to switch to first-line indent later if needed.</p>
+<p><em>Note</em>: you can follow this section’s advice even if your journal doesn’t currently use first-line indentation to separate paragraphs but vertical spaces instead. With the <code>first-line-indent</code> filter the added code won’t make a difference to the output, but it will allow you to switch to first-line indent later if needed.</p>
 <p>See the <a href="https://github.com/dialoa/first-line-indent/">first-line-indent filter’s page</a> for more options and information.</p>
 </section>
 <section id="without-the-filter" class="level3" data-number="14.2.2">
@@ -588,7 +595,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If your journal does not use the <code>first-line-indent</code> filter, you can only control first-line indentation for the LaTeX/PDF output, not HTML.</p>
 <p>Without the filter, text after <em>any</em> block element is treated as a new paragraph.</p>
 <ul>
-<li>Add <code>\noident</code> at the beginning of paragraphs following quotations, statements, lists unless they are genuninely new paragraph.</li>
+<li>Add <code>\noident</code> at the beginning of paragraphs following quotations, statements, lists unless they are genuinely new paragraphs.</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
 <p>You may add <code>\indent</code> on paragraphs that need to be indented, but that’ll be the default.</p>
@@ -629,8 +636,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <div class="private">
 <p>In <em>Dialectica</em> headings are numbered up to the subsection (<code>#</code>, <code>##</code>, <code>###</code>). Headings of level four (<code>####</code>) are used for un-numbered smaller units.</p>
-<p>We have also two “inline” headings style, where the heading title is displayed at the beginning of the following paragraph rather than on its separate line. They are level 5 (<code>#####</code>) and level 6 (<code>#######</code>).</p>
-<p>We discourage authors from using headings below the subsection (<code>##</code>) in articles though, though we can use them if the they improve readibility.</p>
+<p>We have also two “inline” headings styles, where the heading title is displayed at the beginning of the following paragraph rather than on its separate line. They are level 5 (<code>#####</code>) and level 6 (<code>#######</code>).</p>
+<p>We discourage authors from using headings below the subsection (<code>##</code>) in articles though, though we can use them if they improve readability.</p>
 </div>
 <p>Do not manually add numbers to section headings. They are automatically added by the house template.</p>
 <table class="table">
@@ -658,132 +665,181 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If the heading has no title, you should simply enter <code>#</code> (or the relevant level) with no title.</p>
 <div class="private">
 <ul>
-<li>If an article starts with an introduction section, that section should not have aheading. So do not start articles with:</li>
+<li>If an article starts with an introduction section, that section should not have a heading. So do not start articles with:</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="footnotes-and-endnotes" class="level2" data-number="14.4">
 <h2 data-number="14.4" class="anchored" data-anchor-id="footnotes-and-endnotes"><span class="header-section-number">14.4</span> Footnotes and endnotes</h2>
-<p>Your template decides whether notes are printed out as footnotes or endnotes. The encoding is the same whichever it uses. We’ll call them “notes” here.</p>
-<p>There are two ways to enter notes. The first is <em>inline, without identifier</em>. This is suitable for brief notes:</p>
+<p>You can encode <em>notes</em>. Markdown doesn’t distinguish footnotes and endnotes: there’s only one kind of note, and your journal template decides where they’re printed out.</p>
+<p>There are two ways to enter notes called <em>inline</em> and <em>by reference link</em>. In the inline method, the note is weaved within the text itself, as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>This is the main text.^<span class="co">[</span><span class="ot">In the footnote, I distract you with an irrelevant point.</span><span class="co">]</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  This continues the main text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>In the reference link method, we only put a reference to the note in the text, and the note text is given separately—typically below the paragraph in question or at the end of the manuscript:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>This is the main text.<span class="ot">[^fn1]</span> This continues the main text.</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ot">[^fn1]: </span>In the footnote, I distract you with an irrelevant point.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Both methods produce the very same output:</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
 <p>This is the main text.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> This continues the main text.</p>
 </blockquote>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>This is the main text.^<span class="co">[</span><span class="ot">In footnote, I distract you with an irrelevant point.</span><span class="co">]</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>This continues the main text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>The second is a <em>reference link, with identifier</em>. This is suitable for longer notes, and required if a note has several paragraphs:</p>
+<p>The inline method is best suited for short notes. The reference-link method is better suited for longer notes and is required when a footnote spans multiple paragraphs.</p>
+<p><em>Warning for international keyboard users</em>. If you’re using the International US Keyboard (and perhaps other), entering <code>^[</code> will probably result in a <em>small</em> circumflex accent instead of a big one: compare <code>ˆ</code> and <code>^</code>. To get the big one, press Shift+6 (the key for <code>^</code>) then the space key.</p>
+<section id="inline-method" class="level3" data-number="14.4.1">
+<h3 data-number="14.4.1" class="anchored" data-anchor-id="inline-method"><span class="header-section-number">14.4.1</span> Inline method</h3>
+<p>In the inline method, you place <code>^[...]</code> where you want the note number to appear, and you place the text of the footnote between the brackets. Note that the <code>^</code> character is <em>outside</em> the brackets.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>This is the main text.^<span class="co">[</span><span class="ot">In the footnote, I distract you with an irrelevant point.</span><span class="co">]</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  This continues the main text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>The note text may contain markdown codes, except blocks. It’ll be a single block (paragraph) in the output.</p>
+</section>
+<section id="reference-link-method" class="level3" data-number="14.4.2">
+<h3 data-number="14.4.2" class="anchored" data-anchor-id="reference-link-method"><span class="header-section-number">14.4.2</span> Reference link method</h3>
+<p>In the reference link method, you place <code>[^id]</code> where you want the note number to appear. Note that the <code>^</code> character is <em>inside</em> the bracket. <code>id</code> is an arbitrary <em>identifier</em>: it can be a number like <code>2</code>, or something like <code>fn1</code> or <code>footnote_about_dogs</code>. It can’t contain spaces, linebreaks, tabs or the characters <code>^</code>, <code>[</code>, <code>]</code>.</p>
+<p>The identifier must be unique to that footnote in your markdown file. It does <em>not</em> affect which number the footnote has in the output, even if it’s a number. Thus if you enter the article’s first footnote as:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>This is the main text.<span class="ot">[^15]</span> This continues the main text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>It will still be numbered 1.</p>
+<p>The footnote text is then placed elsewhere in the document, in a paragraph starting with <code>[^id]</code>. Where you place it doesn’t affect the output: it’ll be printed out as a footnote if your journal footnotes, as an endnote if it uses endnotes.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>This is the main text.<span class="ot">[^fn1]</span> This continues the main text.</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ot">[ˆfn1]: </span>In the footnote, I distract you with an irrelevant point.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>The note can contain any markdown codes, including blocks other than notes.</p>
+</section>
+<section id="multi-paragraph-notes" class="level3" data-number="14.4.3">
+<h3 data-number="14.4.3" class="anchored" data-anchor-id="multi-paragraph-notes"><span class="header-section-number">14.4.3</span> Multi-paragraph notes</h3>
+<p>Using the reference-link method, you can enter long notes consisting of multiple paragraphs. You simply need to indent the paragraphs:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>This is the paragraph where the note appears.<span class="ot">[^fn2]</span> The paragraph</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>continues for a bit and then ends.</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ot">[^fn2]: </span>This is the footnote text. I've placed it below the paragraph</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    where the footnote appears, though I could have placed it at</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    the very end of the document, or anywhere else for that matter.</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="in">    This is still part of the footnote---it's a second paragraph of</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="in">    the footnote. Note how it's indented two spaces like the first</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="in">    paragraph. If it wasn't, it would be considered part of the</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="in">    main text.</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>This is the following paragraph of the main text. It's not indented,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>so it's not part of the footnote.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Result:</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
-<p>This is the main text.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> This continues the main text. This next paragraph that isn’t part of the footnote.</p>
+<p>This is the paragraph where the note appears.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The paragraph continues for a bit and then ends.</p>
+<p>This is the following paragraph of the main text. It’s not indented, therefore it’s not part of the footnote.</p>
 </blockquote>
-<pre class="\markdown"><code>This is the main text.[^myidentifier] This continues the main text.
-
-[^myidentifier]: This note takes more space.
-
-    It contains several paragaphs.
-                 
-    &gt; It even includes a quotation.
-                 
-    And ends here.
-    
-This next paragraph that isn't part of the footnote.</code></pre>
 <div class="no-first-line-indent-after"></div>
-<p>Note that the <code>^</code> is outside of square brackets in the inline style, inside it in the reference style. In the reference style the footnote can be placed anywhere in the document. Common choices are at the end of the current block or at the end of the current chapter, or at the end of the document or chapter.</p>
-<p>In multi-paragraph footnotes, indent each block with two spaces to indicate that it’s part of the footnote rather than resuming the main text, as in the example above.</p>
-<p>In the reference style you can use numbers as identifiers:</p>
+<p>Four spaces indentation on each paragraph <em>should</em> work.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you encounter trouble, see “Troubleshooting” at the end of this section.</p>
+<p>Notes can contain other kind of blocks other than notes themselves: quotations, images, Divs (see below), etc.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>This is the main text.<span class="ot">[^3]</span> This continues the main text.</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ot">[^3]: </span>This note takes more space.</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">    It contains several paragraphs.</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">                 </span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">    &gt; It even includes a quotation.</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="in">                 </span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">    And it ends here.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Result:</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
-<p>This is the main text.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>This is the main text.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> This continues the main text.</p>
 </blockquote>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; This is the main text.</span><span class="ot">[^1]</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>this is the foonote.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>Number identifiers can be a problem if you’re planning to fuse several documents, e.g.&nbsp;chapters of a book or articles in a journal issue. For two <code>[^1]</code> footnotes in separate chapters will create an error. However, Quarto or the <code>collection</code> filter can handle these conflicts. With them number identifiers are fine.</p>
-<p>Cross-reference to footnotes has to be done manually. Don’t enter them before you know that the footnote numbers are final. See the cross-referencing chapter.</p>
-<div class="house">
-<p><strong>Dialectica guidelines</strong>.</p>
-<p>It’s fine to use link references with simple numbers: <code>[^1]</code>, <code>[^2]</code>, as we use the <code>collection</code> filter. These are automatically generated by Pandoc when converting manuscripts and it’s a waste of time to replace them. Our <code>collection</code> filter ensures that no identifier conflict arises between articles.</p>
-</div>
+<p><strong>Troubleshooting</strong>. Too much or not enough indentation on the paragraphs may ‘break’ the note; in output, the broken text appears where you’ve placed the footnote text—below the original paragraph or at the end of the document. If it appears as <em>normal</em> text, check the paragraphs are aligned first, and if they are, try <em>more</em> indentation. If it appears as <em>code</em> text (monospace font), you have too much indentation (more than 4 spaces), <em>reduce</em> it.</p>
+</section>
+<section id="fusing-multiple-markdown-documents" class="level3" data-number="14.4.4">
+<h3 data-number="14.4.4" class="anchored" data-anchor-id="fusing-multiple-markdown-documents"><span class="header-section-number">14.4.4</span> Fusing multiple markdown documents</h3>
+<p>Unless your journal template’s guidelines specify otherwise, it’s fine to use the same identifier, e.g.&nbsp;<code>1</code>, in <em>different</em> articles.</p>
+</section>
+<section id="cross-referencing-footnotes" class="level3" data-number="14.4.5">
+<h3 data-number="14.4.5" class="anchored" data-anchor-id="cross-referencing-footnotes"><span class="header-section-number">14.4.5</span> Cross-referencing footnotes</h3>
+<p>Cross-reference to footnotes has to be done manually. Don’t enter them before you know that the footnote numbers <em>in the output</em> are final. See <a href="21-cop-block-crossreferencing.html#sec-crossreferencing-footnotes"><span>Section&nbsp;23.3</span></a>.</p>
+</section>
 </section>
 <section id="sec-divs" class="level2" data-number="14.5">
 <h2 data-number="14.5" class="anchored" data-anchor-id="sec-divs"><span class="header-section-number">14.5</span> Divs</h2>
-<p>Divs are general-purpose blocks that we use to typeset advanced elements like statements, or to mark out sections of a document for a special treatement, e.g.&nbsp;‘imagifying’ all the LaTeX formulas it contains. This section explains how to encode them.</p>
-<p>A Div is an arbitrary document <em>division</em>, usually invisible to the reader. It contains one or more blocks—which can be paragraphs, quotations, etc. or even other Divs. It also has <em>attributes</em>, and that is what makes it useful: for we use the attributes to tell our typesetting engine that the Div’s content are to receive a special treatement. In the case of statements, we use a Div with the special <code>statement</code> attribute to tell the engine that its contents are a statement—hence, that they must be indented.</p>
+<p>Divs are general-purpose blocks that we use to typeset advanced elements like statements or to mark out sections of a document for special treatment, e.g.&nbsp;‘imagifying’ all the LaTeX formulas it contains. This section explains how to encode them.</p>
+<p>A Div is an arbitrary document <em>division</em>, usually invisible to the reader. It contains one or more blocks—which can be paragraphs, quotations, etc. or even other Divs. It also has <em>attributes</em>, and that is what makes it useful: for we use the attributes to tell our typesetting engine that the Div’s content is to receive special treatment. In the case of statements, we use a Div with the special <code>statement</code> attribute to tell the engine that its contents are a statement—hence, that they must be indented.</p>
 <p>In markdown, Divs are created using a pair of “fences”, which are single lines consisting of one or more colons:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>This paragraph is in the main flow of text.</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>This paragraph is inside a Div.</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>This paragraph is also inside the same Div</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>This paragraph is in the document's main flow.</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>This paragraph is inside a Div.</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>This paragraph is also inside the same Div</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>The first <code>:::</code> fence opens the Div, the second one closes it. We can include a Div within a Div by using a greater number of colons for the enclosed one:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>This paragraph is in the main flow of text.</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>This paragraph is inside a Div.</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>:::::</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>This paragraph is inside a new Div that's inside the first Div.</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>:::::</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>This paragraph is inside the first Div.</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>This paragraph is in the document's main flow.</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>This paragraph is inside a Div.</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>:::::</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>This paragraph is inside a new Div that's inside the first Div.</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>:::::</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>This paragraph is inside the first Div.</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>It’s good practice, though not technically necessary, to use the same number of colons for the opening fence and the closing fence of the same Div.</p>
-<p>The Divs in the examples above are completely invisible in PDF or html outputs. Divs become interesting when you give them <em>attributes</em>. Attributes are added to the <em>opening</em> fence of a Div, between curly braces:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>::: { .statement #myprinciple color=red }</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Everything comes in due time.</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The Divs in the examples above are completely invisible in PDF or HTML outputs. Divs become interesting when you give them <em>attributes</em>. Attributes are added to the <em>opening</em> fence of a Div, between curly braces:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>::: { .statement #myprinciple color=red }</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>Everything comes in due time.</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>This illustrates the three kinds of attributes a Div may have:</p>
 <ol type="1">
-<li>one or more <em>classes</em> indicated with a dot, e.g.&nbsp;<code>.statement</code>. A class indicate that the Div is of a certain kind. Several Div can be of the same class (kind), and a single Div can have several kinds.</li>
+<li>one or more <em>classes</em> indicated with a dot, e.g.&nbsp;<code>.statement</code>. A class indicates that the Div is of a certain kind. Several Div can be of the same class (kind), and a single Div can have several kinds.</li>
 <li>an unique identifier aka <em>ID</em>: indicated with a hash, e.g.&nbsp;<code>#myprinciple</code>. This uniquely identifies a Div, to cross-reference it for instance. A Div can only have one ID, and a Div’s ID should not be assigned to any other Div nor even to any other element (such as a heading, figure, etc.).</li>
 <li><em>Key-value pairs</em>, indicated by the equal sign, e.g.&nbsp;<code>color=red</code>. These are used to state that a certain aspect of the Div (e.g., the text color) has a certain value. If the value contains space or special symbols it’s enclosed in quotation marks.</li>
 </ol>
 <div class="no-first-line-indent-after"></div>
 <p>For statements only classes and IDs are relevant.</p>
 <p>When a Div’s attributes consist of <em>a single class, and nothing else</em>, it can be encoded without curly braces and dots. Thus the following:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>::: { .statement }</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>Everything comes in due time.</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>::: { .statement }</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>Everything comes in due time.</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>can be abbreviated:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>::: statement</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>Everything comes in due time.</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>::: statement</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>Everything comes in due time.</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>Some prefer more visible fences. You can use full lines of colons. If there are attributes, you may add colons after the attributes too. For instance, the earlier attributes example can just as well be encoded as:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>::: { .statement #myprinciple color=red } :::::::::::::::::::::::::</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>Everything comes in due time.</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>::: { .statement #myprinciple color=red } :::::::::::::::::::::::::</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>Everything comes in due time.</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>This is wholly up to you: using full-width fences or shorter ones makes no difference to the result.</p>
 
@@ -793,13 +849,15 @@ This next paragraph that isn't part of the footnote.</code></pre>
 <hr>
 <ol>
 <li id="fn1"><p>In footnote, I distract you with an irrelevant point.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This note takes more space.</p>
-<p>It contains several paragaphs.</p>
+<li id="fn2"><p>This is the footnote text. I’ve placed it below the paragraph where the footnote appears, though I could have placed it at the very end of the document, or anywhere else for that matter.</p>
+<p>This is still part of the footnote—it’s a second paragraph of the footnote. Note how it’s indented to align with the first paragraph. If it wasn’t, it would be considered part of the main text.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The markdown manuals for <a href="https://pandoc.org/MANUAL.html#footnotes">Pandoc</a> and <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html#footnotes">Quarto</a> don’t give a precise indentation size.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This note takes more space.</p>
+<p>It contains several paragraphs.</p>
 <blockquote class="blockquote">
 <p>It even includes a quotation.</p>
 </blockquote>
-<p>And ends here.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>this is the foonote.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>And it ends here.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

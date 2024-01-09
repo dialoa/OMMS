@@ -506,13 +506,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <div class="no-first-line-indent-after"></div>
-<p>Title and (optionally) subtitle of an article are entered in the metadata <code>title</code> and <code>subtitle</code> field:</p>
+<p>The title and, optionally, the subtitle of an article are entered in the metadata <code>title</code> and <code>subtitle</code> fields:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> The Solution to the Problem that Plagued Everyone</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> A Brand New Discovery</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>Titles of the form “Time Travel: a Quantum Relativity Puzzle” should be split into title and subtitle. Exceptions are cases where splitting wouldn’t make sense, e.g.&nbsp;“Pleasure: friend or foe?”.</p>
 <p>If a title or subtitle contains colons or quotation marks, it should be either wrapped within quotation marks or entered as a text block. See <a href="16-cop-metadata.html#sec-one-line-text-values"><span>Section&nbsp;8.2.1</span></a>.</p>
-<p>The <code>title</code> and <code>subtitle</code> fields should <em>not</em> contain explicit linebreaks. (See <a href="16-cop-metadata.html#sec-linebreaks-genuine-visual-explicit"><span>Section&nbsp;8.5</span></a> on what explicit linebreaks are.) Not only it’s best to let the reader’s device set the linebreaks in ‘fluid’ outputs (HTML, EPUB), but these fields are also used for the table of contents and to send information to bibliographic database. They should thus be free or unnecessary formatting.</p>
+<p>The <code>title</code> and <code>subtitle</code> fields should <em>not</em> contain explicit linebreaks. (See <a href="16-cop-metadata.html#sec-linebreaks-genuine-visual-explicit"><span>Section&nbsp;8.5</span></a> on what explicit linebreaks are.) Not only it’s best to let the reader’s device set the linebreaks in ‘fluid’ outputs (HTML, EPUB), but these fields are also used for the table of contents and to send information to a bibliographic database. They should thus be free of unnecessary formatting.</p>
 <p>Sometimes, however, you need alternative forms of the title:</p>
 <ul>
 <li>a short title to be used in page headers and/or the table of contents.</li>

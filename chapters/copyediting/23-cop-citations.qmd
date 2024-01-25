@@ -136,6 +136,19 @@ Common errors:
 More details explained in [pandoc's markdown reference, citations
 section](https://pandoc.org/MANUAL.html#citations).
 
+### Inline: why do I get "Doe (2012; Doe 2016)"?
+
+Inline citations of multiple authors look like this: "See Doe (2012; Smith 2013)". The code is `see @Doe2012 [@Smith2016]` as explained above.
+
+Inline citations of multiple references by the *same* author, on the other hand, should look like this: "See Doe (2012; 2016)", as explained above. The code is `see @Doe2012 [@Doe2016]`.
+
+If you get "see Doe (2012; Doe 2016)":
+
+- if Doe is *author* of one reference but *editor* of the other, this is normal. Leave it like that.
+- if Doe is the author of both (or the editor of both), this is an error in your bibliography file: Doe's name isn't recognized as the same, probably because it's entered differently on both references. Typically, this is because the first name is different ("Doe, J" vs "Doe, Jane") or because of a extra initial ("Doe, Jane" vs "Doe, Jane E.").
+
+
+
 ### Ibid., Op. Cit., sec. or § and the like
 
 **All the finer-grained formating is handled by the bibliography template**.

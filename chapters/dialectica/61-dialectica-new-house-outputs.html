@@ -496,7 +496,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#setting-up-your-system" id="toc-setting-up-your-system" class="nav-link active" data-scroll-target="#setting-up-your-system"><span class="header-section-number">31.1</span> Setting up your system</a>
   <ul class="collapse">
   <li><a href="#installing-git-docker-vscode" id="toc-installing-git-docker-vscode" class="nav-link" data-scroll-target="#installing-git-docker-vscode"><span class="header-section-number">31.1.1</span> Installing git, docker, VSCode</a></li>
-  <li><a href="#setup-pulling-the-docker-image-cloning-the-git-repository" id="toc-setup-pulling-the-docker-image-cloning-the-git-repository" class="nav-link" data-scroll-target="#setup-pulling-the-docker-image-cloning-the-git-repository"><span class="header-section-number">31.1.2</span> Setup: pulling the docker image, cloning the git repository</a></li>
+  <li><a href="#setup-pulling-the-docker-image-and-starting-a-container" id="toc-setup-pulling-the-docker-image-and-starting-a-container" class="nav-link" data-scroll-target="#setup-pulling-the-docker-image-and-starting-a-container"><span class="header-section-number">31.1.2</span> Setup: pulling the docker image and starting a container</a></li>
   <li><a href="#setup-vscode" id="toc-setup-vscode" class="nav-link" data-scroll-target="#setup-vscode"><span class="header-section-number">31.1.3</span> Setup: VSCode</a></li>
   <li><a href="#new-way-of-generating-outputs-dltc-make" id="toc-new-way-of-generating-outputs-dltc-make" class="nav-link" data-scroll-target="#new-way-of-generating-outputs-dltc-make"><span class="header-section-number">31.1.4</span> New way of generating outputs: dltc-make</a></li>
   <li><a href="#advanced-using-the-container-directly-from-a-terminal" id="toc-advanced-using-the-container-directly-from-a-terminal" class="nav-link" data-scroll-target="#advanced-using-the-container-directly-from-a-terminal"><span class="header-section-number">31.1.5</span> Advanced: using the container directly from a terminal</a></li>
@@ -504,28 +504,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#generating-outputs" id="toc-generating-outputs" class="nav-link" data-scroll-target="#generating-outputs"><span class="header-section-number">32</span> Generating outputs</a>
   <ul class="collapse">
-  <li><a href="#setting-up-your-system-1" id="toc-setting-up-your-system-1" class="nav-link" data-scroll-target="#setting-up-your-system-1"><span class="header-section-number">32.1</span> Setting up your system</a>
+  <li><a href="#prepare-an-article-or-issue-folder" id="toc-prepare-an-article-or-issue-folder" class="nav-link" data-scroll-target="#prepare-an-article-or-issue-folder"><span class="header-section-number">32.1</span> Prepare an article or issue folder</a>
   <ul class="collapse">
-  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link" data-scroll-target="#pre-requisites"><span class="header-section-number">32.1.1</span> Pre-requisites</a></li>
-  <li><a href="#macos-only" id="toc-macos-only" class="nav-link" data-scroll-target="#macos-only"><span class="header-section-number">32.1.2</span> MacOS only</a></li>
-  <li><a href="#optional-install-tools-with-a-package-manager" id="toc-optional-install-tools-with-a-package-manager" class="nav-link" data-scroll-target="#optional-install-tools-with-a-package-manager"><span class="header-section-number">32.1.3</span> Optional: install tools with a package manager</a></li>
-  <li><a href="#common-to-all-platforms" id="toc-common-to-all-platforms" class="nav-link" data-scroll-target="#common-to-all-platforms"><span class="header-section-number">32.1.4</span> Common to all platforms</a></li>
+  <li><a href="#create-a-master-file" id="toc-create-a-master-file" class="nav-link" data-scroll-target="#create-a-master-file"><span class="header-section-number">32.1.1</span> Create a master file</a></li>
   </ul></li>
-  <li><a href="#prepare-an-article-or-issue-folder" id="toc-prepare-an-article-or-issue-folder" class="nav-link" data-scroll-target="#prepare-an-article-or-issue-folder"><span class="header-section-number">32.2</span> Prepare an article or issue folder</a>
+  <li><a href="#generate-outputs" id="toc-generate-outputs" class="nav-link" data-scroll-target="#generate-outputs"><span class="header-section-number">32.2</span> Generate outputs</a>
   <ul class="collapse">
-  <li><a href="#ensure-your-folder-contains-the-maker-script" id="toc-ensure-your-folder-contains-the-maker-script" class="nav-link" data-scroll-target="#ensure-your-folder-contains-the-maker-script"><span class="header-section-number">32.2.1</span> Ensure your folder contains the maker script</a></li>
-  <li><a href="#create-a-master-file" id="toc-create-a-master-file" class="nav-link" data-scroll-target="#create-a-master-file"><span class="header-section-number">32.2.2</span> Create a master file</a></li>
+  <li><a href="#run-a-command-in-the-terminal" id="toc-run-a-command-in-the-terminal" class="nav-link" data-scroll-target="#run-a-command-in-the-terminal"><span class="header-section-number">32.2.1</span> Run a command in the terminal</a></li>
+  <li><a href="#sec-house-outputs-rendering-commands" id="toc-sec-house-outputs-rendering-commands" class="nav-link" data-scroll-target="#sec-house-outputs-rendering-commands"><span class="header-section-number">32.2.2</span> Short rendering commands</a></li>
+  <li><a href="#rendering-options" id="toc-rendering-options" class="nav-link" data-scroll-target="#rendering-options"><span class="header-section-number">32.2.3</span> Rendering options</a></li>
+  <li><a href="#long-rendering-commands" id="toc-long-rendering-commands" class="nav-link" data-scroll-target="#long-rendering-commands"><span class="header-section-number">32.2.4</span> Long rendering commands</a></li>
   </ul></li>
-  <li><a href="#generate-outputs" id="toc-generate-outputs" class="nav-link" data-scroll-target="#generate-outputs"><span class="header-section-number">32.3</span> Generate outputs</a>
-  <ul class="collapse">
-  <li><a href="#with-rstudio-on-windows" id="toc-with-rstudio-on-windows" class="nav-link" data-scroll-target="#with-rstudio-on-windows"><span class="header-section-number">32.3.1</span> With RStudio on Windows</a></li>
-  <li><a href="#run-a-command-in-the-terminal" id="toc-run-a-command-in-the-terminal" class="nav-link" data-scroll-target="#run-a-command-in-the-terminal"><span class="header-section-number">32.3.2</span> Run a command in the terminal</a></li>
-  <li><a href="#sec-house-outputs-rendering-commands" id="toc-sec-house-outputs-rendering-commands" class="nav-link" data-scroll-target="#sec-house-outputs-rendering-commands"><span class="header-section-number">32.3.3</span> Short rendering commands</a></li>
-  <li><a href="#rendering-options" id="toc-rendering-options" class="nav-link" data-scroll-target="#rendering-options"><span class="header-section-number">32.3.4</span> Rendering options</a></li>
-  <li><a href="#long-rendering-commands" id="toc-long-rendering-commands" class="nav-link" data-scroll-target="#long-rendering-commands"><span class="header-section-number">32.3.5</span> Long rendering commands</a></li>
-  </ul></li>
-  <li><a href="#advice-on-html-vs-pdf" id="toc-advice-on-html-vs-pdf" class="nav-link" data-scroll-target="#advice-on-html-vs-pdf"><span class="header-section-number">32.4</span> Advice on HTML vs PDF</a></li>
-  <li><a href="#sec-dltc-env-setup" id="toc-sec-dltc-env-setup" class="nav-link" data-scroll-target="#sec-dltc-env-setup"><span class="header-section-number">32.5</span> </a></li>
+  <li><a href="#advice-on-html-vs-pdf" id="toc-advice-on-html-vs-pdf" class="nav-link" data-scroll-target="#advice-on-html-vs-pdf"><span class="header-section-number">32.3</span> Advice on HTML vs PDF</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -553,18 +543,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="no-first-line-indent-after"></div>
-<p>The association is setting up a standardized compilation environment for Dialectica. This environment essentially encapsulate all of the tools needed for the copyediting work, including pandoc, LaTeX, Lua, and Quarto.</p>
+<p>The association is setting up a standardized compilation environment for Dialectica. This environment essentially encapsulate all of the tools needed for the copyediting work, such as pandoc, LaTeX, and Quarto.</p>
 <section id="setting-up-your-system" class="level2" data-number="31.1">
 <h2 data-number="31.1" class="anchored" data-anchor-id="setting-up-your-system"><span class="header-section-number">31.1</span> Setting up your system</h2>
 <p>Dialectica copyediting requires:</p>
 <ul>
-<li>Git, to clone <a href="https://github.com/Philosophie-ch/dltc-compilation-env">the repository of the compilation environment</a></li>
 <li>Docker, to run a container containing the actual environment</li>
-<li>VSCode, to connect to and use the container</li>
+<li>Git, to clone <a href="https://github.com/Philosophie-ch/dltc-env">the repository of the script to download and start the compilation environment</a></li>
+<li>Recommended: VSCode, to comfortably connect and use the environment to edit articles</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>Briefly put, to set up, you need to install git and docker, and then be able to connect to a running container using the VSCode extension “Dev Containers”. How to do this up will depend on your specific Operaitng System. If you know how to do this on your own, just skip the steps below and go chapter 3. Note that VSCode replaces RStudio as a more modern general text editor, better suited to interact with modern software tools (such as docker) and languages other than R (such as Markdown, LaTeX, and HTML).</p>
-<p>For any problem not covered here, please contact Luis Bordo at <code>luis.bordo@philosophie.ch</code>.</p>
+<p>Briefly put, to set up, you need to install git and docker, and then be able to connect to a running container. In this guide, we’ll use VSCode as it makes it very easy to work inside docker containers, but you’re free to work in a different editor and use the container directly from your terminal if you wish.</p>
+<p>How to setup will depend on your specific Operating System. If you know how to install and configure git, docker and VSCode on your own, just skip this section and go chapter 3. Note that in this guide, VSCode replaces RStudio as an alternative better suited to interact with modern software tools (such as docker) and languages other than R (such as Markdown, LaTeX, and HTML).</p>
+<p>For guidance or any problem not covered here, please contact Luis Bordo at <code>luis.bordo@philosophie.ch</code>.</p>
 <section id="installing-git-docker-vscode" class="level3" data-number="31.1.1">
 <h3 data-number="31.1.1" class="anchored" data-anchor-id="installing-git-docker-vscode"><span class="header-section-number">31.1.1</span> Installing git, docker, VSCode</h3>
 <p>The following instructions need to be executed only once per machine. Here we will install and set up Docker, Git, and VSCode in your machine.</p>
@@ -572,26 +563,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 data-number="31.1.1.1" class="anchored" data-anchor-id="windows"><span class="header-section-number">31.1.1.1</span> Windows</h4>
 <ol type="1">
 <li><p>Download and install <a href="https://git-scm.com/downloads">git</a></p></li>
-<li><p>Check that git is working in PowerShell. If you get no errors with the command below, then git is working correctly:</p></li>
+<li><p>Check that git is working in PowerShell. If you get no errors with the command below, then git is working correctly:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Download, install, and open <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>. When installing Docker, choose the option to use WSL 2.</p></li>
+<li><p>Open PowerShell (you have it installed by default) and check that you have <code>wsl</code> version 2 or above with</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>Download, install, and open <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>
-<ol type="1">
-<li>When installing Docker, choose the option to use WSL 2</li>
-</ol></li>
-<li>Open PowerShell (you have it installed by default) and check that you have <code>wsl</code> version 2 or above with</li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>If you don’t, do <code>wsl --install</code>, wait, and do again <code>wsl --version</code></li>
 <li>If you still don’t have wsl version 2 or above, go to the Troubleshooting section below</li>
 </ul>
 <ol start="5" type="1">
-<li><p>Check that Docker is configured to run with WSL 2: open Docker Desktop, go to Settings, and mark the checkbox for using WSL 2 if it’s not marked already</p></li>
-<li><p>Now, in PowerShell, check that docker is working with:</p></li>
+<li><p>Check that Docker is configured to run with WSL 2: open Docker Desktop, go to Settings, and mark the checkbox for using WSL 2 if it’s not marked already.</p>
+<p>Additionally, in the settings, increase the CPU and memory limits of the containers to be at a minimum of 3/4 of your machine’s resources. For example, if you have an 8 core CPU and 16 GB of RAM, you could set the limits to 7 cores and 14 GB of RAM.</p></li>
+<li><p>Now, in PowerShell, check that docker is working with:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>docker run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>docker run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>If you don’t get any errors, then docker is working in your machine</p>
 <ol start="7" type="1">
@@ -607,35 +594,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>For this, usually it’s a single command to execute in a terminal; just follow the instructions in the page</li>
 </ul>
 <ol start="2" type="1">
-<li>Install <code>git</code> using brew. In a terminal, do:</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>Check that git is working, in a terminal. If you get no errors with the command below, then git is working correctly:</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
-<li>Download and install <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>, make sure to pick your correct processor (Mac Intel Chip or Mac Apple Chip)</li>
-</ol>
-<ul>
-<li>To check which processor you have, <strong>TODO</strong></li>
-</ul>
-<ol start="5" type="1">
-<li>Install <code>colima</code> using brew. This will allow us to use the docker engine on its own without relying on Docker Desktop. In a terminal:</li>
-</ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install colima</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"export DOCKER_HOST=unix:///</span><span class="va">$HOME</span><span class="st">/.colima/docker.sock"</span> <span class="op">&gt;&gt;</span> <span class="va">$HOME</span>/.zsh_profile</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">colima</span> start</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="6" type="1">
-<li>Install <code>docker-compose</code> using brew. In a terminal:</li>
-</ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install docker-compose</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="7" type="1">
-<li>Check that docker is working, in a terminal. If you get no errors with the command below, then docker is working correctly:</li>
-</ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="8" type="1">
-<li>Install <a href="https://code.visualstudio.com/Download">VSCode</a></li>
+<li><p>Install <code>git</code> using brew. In a terminal, do:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Check that git is working, in a terminal. If you get no errors with the command below, then git is working correctly:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Download, install, and configure <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>. Make sure to pick your correct processor (Mac Intel Chip or Mac Apple Chip). To check which processor you have:</p>
+<p>First, click on the Apple icon in the top left corner of your screen. Second, select “About This Mac” from the dropdown menu. Third, in the window that opens, look for the “Processor” field</p>
+<p>To configure Docker, open “Settings”. In the “General” tab, make sure that the following options are enabled: “VirtioFS”, “Use Virtualization framework”, and “Use Rosetta for x86/amd64 emulation on Apple Silicon”.</p>
+<p>Additionally, in the settings, increase the CPU and memory limits of the containers to be at a minimum of 3/4 of your machine’s resources. For example, if you have an 8 core CPU and 16 GB of RAM, you could set the limits to 7 cores and 14 GB of RAM.</p></li>
+<li><p>Check that docker is working, in a terminal. In general, whenever you want to use Docker, you have to start the Docker application and see that the “whale” icon shows in your system tray. If you get no errors with the command below, then docker is working correctly:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Download and install <a href="https://code.visualstudio.com/Download">VSCode</a></p></li>
 </ol>
 </section>
 <section id="linux" class="level4" data-number="31.1.1.3">
@@ -645,83 +614,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <ul>
 <li>You most likely have it by default already. You can test this by doing <code>git --version</code> in a terminal</li>
-<li>If you don’t have it, install it using your distribution’s package manager. For example, in Debian and Ubuntu (and Ubuntu-based distributions), do <code>sudo apt install git</code> in a terminal</li>
+<li>If you don’t have it, install it using your distribution’s package manager. For example, in Debian and Ubuntu (and their derivatives), do <code>sudo apt install git</code> in a terminal</li>
 </ul>
 <ol start="2" type="1">
-<li>Follow <a href="https://docs.docker.com/engine/install/#server">the official Docker instructions</a> to install Docker Engine in your Linux distribution</li>
+<li>Follow [the official installation instructions for Docker] (https://docs.docker.com/engine/install/#server) to install <strong>Docker Engine</strong> in your Linux distribution</li>
 </ol>
 <ul>
-<li>Follow <a href="https://docs.docker.com/engine/install/linux-postinstall/">the post-installation steps</a> to use docker in your terminal without needing to write <code>sudo</code> everytime</li>
+<li>Follow <a href="https://docs.docker.com/engine/install/%20linux-postinstall/">the post-installation steps</a> to use docker in your terminal without needing to write <code>sudo</code> everytime</li>
 <li>If you opt out from following these post-installation steps, you will need to adapt the docker comands in this document (i.e., append <code>sudo</code> to all of them, everytime)</li>
 </ul>
 <ol start="3" type="1">
-<li>Check that docker is working, in a terminal. If you get no errors with the command below, then docker is working correctly:</li>
-</ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
-<li>Install <a href="https://code.visualstudio.com/Download">VSCode</a></li>
+<li><p>Check that docker is working, in a terminal. If you get no errors with the command below, then docker is working correctly:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Install <a href="https://code.visualstudio.com/Download">VSCode</a></p></li>
 </ol>
 </section>
 </section>
-<section id="setup-pulling-the-docker-image-cloning-the-git-repository" class="level3" data-number="31.1.2">
-<h3 data-number="31.1.2" class="anchored" data-anchor-id="setup-pulling-the-docker-image-cloning-the-git-repository"><span class="header-section-number">31.1.2</span> Setup: pulling the docker image, cloning the git repository</h3>
-<p><strong>NOTE</strong>: for the moment, the compilation environment will <strong>not</strong> work on Mac if you have an Apple Silicon chip. This will be fixed soon enough. For the moment, you can follow this guide to set up what you need (git, docker, VSCode, and the VSCode extensions).</p>
-<p>Once you have installed up all of the necessary dependencies (git, docker, VSCode) and they work in your machine, we proceed as follows. The terminal commands below should work in any shell in any operating system (PowerShell in Windows, zsh in Mac, bash in Linux).</p>
+<section id="setup-pulling-the-docker-image-and-starting-a-container" class="level3" data-number="31.1.2">
+<h3 data-number="31.1.2" class="anchored" data-anchor-id="setup-pulling-the-docker-image-and-starting-a-container"><span class="header-section-number">31.1.2</span> Setup: pulling the docker image and starting a container</h3>
+<p>Once you have installed up all of the necessary dependencies (git, docker, VSCode) and they work in your machine, we proceed by using a script made to automatically download the latest version of the docker image containing the compilation environment, and start it. The terminal commands below should work in any shell in any operating system (PowerShell in Windows, zsh in Mac, bash in Linux).</p>
+<p>Note that these instructions are the same as the ones in <a href="https://github.com/Philosophie-ch/dltc-env">the repository’s README</a>. Make sure that you have at least 10 GB of free space in your machine:</p>
 <ol type="1">
-<li>Using a terminal, first login to the dockerhub account of the association. For this, you will need the <code>access token</code> which you can find in the Institutional Setup in our Google Drive:</li>
+<li><p>Using a terminal, first clone the git repository where the start script is:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to your preferred location. For example:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mkdir ~/gitrepos</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cd ~/gitrepos</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Philosophie-ch/dltc-env.git</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Now copy the <code>.env.template</code> file into <code>.env</code> and edit its<br>
+contents:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> .env.template .env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now open .env with your preferred text editor. You need to set the values of the following fields:</p>
+<p>2.1 <code>ARCH</code>: the architecture of your machine. If you are on a Mac with an Apple Silicon chip, set this to “arm64”. Otherwise, leave it as is (“amd64”, which is for Macs with Intel chips, Windows, and Linux)</p>
+<p>2.2 <code>DLTC_WORKHOUSE_DIRECTORY</code>: the full path, on your local machine, to the ‘dltc-workhouse’ folder inside Dropbox</p>
+<p>2.3 <code>DOCKERHUB_TOKEN</code>: the <strong>login token</strong> (not the “password”) for the dockerhub account. You can find it in the “Institutional set-up” page in our Google Drive</p>
+<p><strong>NOTE</strong>: you can navigate with your usual file explorer to the “dltc-env” folder, which will be located where you cloned it in step 1. The <code>.env</code> file is a hidden file, so you would need to enable viewing hidden files to see it.</p></li>
+<li><p>Now you can execute the start script:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On Linux and Mac</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./dltc-env-start.sh</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># On Windows</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span><span class="dt">\d</span>ltc-env-start.ps1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first time you do this it will take a while as it needs to download the image, which contains a full LaTeX installation. This will not happen often, but you will also need to execute this script any time there is an update to the compilation environment.</p>
+<p><strong>OPTIONAL</strong>. Whenever you finish working on your copyediting tasks, you can stop the container containing the compilation environment. To do this, execute this on a terminal:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> stop dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And to use the container again:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> start dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> login <span class="at">-u</span> philosophiech</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Paste the access token as the password</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p><strong>NOTE</strong>: terminals often hide the characters when you type in passwords. Just copy and paste the access token when asked for the password and it will work.</p>
-<ul>
-<li>For Mac users: if this command fails, try the following quick fix and then try again:</li>
-</ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> ~/.docker/config.json ~/.docker/config.json_bkp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>(cont.) Don’t do this if you were using Docker before outside of the association. There’s a cleaner (but a bit longer) fix, at the section “solution 3” of <a href="https://sparkbyexamples.com/docker/docker-error-storing-credentials-err-exec-docker-credential-desktop-executable-file-not-found-in-path-out/">this article</a></li>
-</ul>
-<ol start="2" type="1">
-<li>Now you need to pull the latest image that contains the Dialectica compilation environment:</li>
-</ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> pull philosophiech/dltc-env:latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="no-first-line-indent-after"></div>
-<p><strong>NOTE</strong>: this may take a while, as the image is quite heavy (~15GB).</p>
-<ol start="3" type="1">
-<li>While you wait for the pull to finish, using a terminal, go to somewhere in your file system and use <code>git</code> to clone the Dialectica compilation environment repository. It is recommended to create a ‘gitrepos’ folder in your home folder, so you don’t need to remember where you put the git repository everytime. The instructions that follow later will assume that you did so. In a terminal, do:</li>
-</ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, navigate to your home folder</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Second, create a folder in which you'll put git repositories</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> gitrepos</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> gitrepos</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Third, clone the git repository containing the source code of the compilation environment</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Philosophie-ch/dltc-compilation-env.git</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># This will creat a folder called 'dltc-compilation-env'. This folder is the *root* of the repository</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> dltc-compilation-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
-<li>At the root of the repository, follow the instructions of the README.md file there to set up an <code>.env</code> file in your local machine. You can either open this README file from your file explorer, or from the terminal directly doing <code>cat README.md</code>. You will need to create a .env file by copying <code>.env.template</code>, and then modifying it with your preferred text editor:</li>
-</ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> .env.template .env</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> README.md</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Do the necessary modifications explained in README.md and save the .env file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="5" type="1">
-<li>Once you have set up your <code>.env</code> file, you’re ready to use the docker compose file (also at the root of the repository) to start a container.</li>
-</ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On Windows and Linux</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># On Mac</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">docker-compose</span> up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="no-first-line-indent-after"></div>
-<p>We do this because we cannot directly use docker images on their own, first we need to start a container from them. After this step, you’re ready to start using the new container you created from the image you pulled from dockerhub.</p>
-<p>There are many ways to use a running container, but for our puroses, the easiest is to use VSCode.</p>
+<p>After this step, you’ready to start using the new container created from the docker image that the start script pulled from dockerhub. There are many ways to use a running container, but for our purposes, the easiest is to use VSCode.</p>
 </section>
 <section id="setup-vscode" class="level3" data-number="31.1.3">
 <h3 data-number="31.1.3" class="anchored" data-anchor-id="setup-vscode"><span class="header-section-number">31.1.3</span> Setup: VSCode</h3>
-<p>While not strictly mandatory, it is highly recommended to replace RStudio with VSCode for the copyediting work. VSCode is a modern, general text editor suited for all tasks programming and writing. It has support for state-of-the-art software tools such as Docker, and through its vast market of extensions, provides better support for Markdown, LaTeX, and HTML than RStudio (which is designed to work with the R programming language).</p>
-<p>For this subsection, it is recommended that you create a <a href="https://github.com/">GitHub</a> account, and then connect to it in VSCode. So, after creating your account, open VSCode.</p>
+<p>While not strictly mandatory, it is highly recommended to use VSCode for the copyediting work. VSCode is a modern, general text editor suited for all tasks programming and writing. It has support for state-of-the-art software tools such as Docker, and through its vast market of extensions, provides great support for Markdown, LaTeX, HTML, and Quarto. It is language agnostic and lightweight, not needing any specific programming language dependencies.</p>
+<p>For this subsection, it is recommended that you create a <a href="https://github.com/">GitHub</a> account, and then connect to it in VSCode. So, after creating your account, open VSCode:</p>
 <ol type="1">
-<li>Now connect VSCode to your GitHub account. To do this, look on the vertical toolbar to the left and down for ‘Accounts’, and connect to your GitHub account. Then, clicking again on ‘Accounts’, enable both ‘Settings Sync’ and ‘Turn on Cloud Changes’. This will synchronize your VSCode settings in any device you connect it to your account.</li>
+<li>Connect VSCode to your GitHub account. To do this, look on the vertical toolbar to the left and down for ‘Accounts’, and connect to your GitHub account. Then, clicking again on ‘Accounts’, enable both ‘Settings Sync’ and ‘Turn on Cloud Changes’. This will synchronize your VSCode settings in any device you connect it to your account.</li>
 </ol>
 <ul>
 <li>Recommended: click on the cogwheel icon at the bottom of the vertical toolbar on the left, and go to “Settings”. Look on the search bar for “telemetry”, and set the “Telemetry Level” to “off”. We don’t need Microsoft spying (more than it already does) on us.</li>
@@ -752,13 +700,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>GitHub Copilot Chat (by GitHub)</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>To use the last tool, you need a GitHub pro account. If you have a university student account and email, <a href="https://education.github.com/pack">you can be granted a pro account for free</a>. Copilot is an AI assistant that can help you code in general, including help you with Markdown and LaTeX, both directly in VSCode when you edit files and in a chat button provided by the Chat extension (that will appear in the left toolbar).</p>
+<p>To use the last two tool, you need a GitHub pro account. If you have a university student account and email, <a href="https://education.github.com/pack">you can be granted a pro account for free</a>. Copilot is an AI assistant that can help you code in general, including help you with Markdown and LaTeX, both directly in VSCode when you edit files and in a chat button provided by the Chat extension (that will appear in the left toolbar).</p>
 <p>Now, whenever you start VSCode, make sure that you’re connected to your GitHub account (in “Accounts”), and that you’re using the profile you created (in “Settings &gt;&gt; Profiles”). Also make sure that the extensions are installed <em>inside</em> the container (in “Extensions”).</p>
 <ol start="4" type="1">
 <li><p>Once everything is installed, back at the “Extensions” button of the left toolbar, clear any search in the searchbar. Now, you will see that some extensions ask to be installed in the container. To do this en masse, look for the separator that says “CONTAINER PHILOSOPHIECH/DLTC-ENV…” and click on the cloud icon with a downward pointing arrow. This will install all of your extensions in the container.</p></li>
 <li><p>Now go back to the left toolbar and look for “Remote Explorer” (looks like a computer screen). At the top, there will be a drop-down menu in which you can select “Dev Containers”.</p></li>
-<li><p>You will now see the name “compilation-env dltc-env”. If you hover with the mouse, you’ll see an arrow whose name is “Attach in Current Window”. Click it, and VSCode will start running inside the container (you can check that by looking at the bottom left of the VSCode window).</p></li>
-<li><p>Now you can work as usual, but inside this container you have all of the necessary tools available, including a full LaTeX environment with all possible dependencies, pandoc, and quarto.</p></li>
+<li><p>You will now see the name “dltc-env dltc-env”. If you hover with the mouse, you’ll see an arrow whose name is “Attach in Current Window”. Click it, and VSCode will start running inside the container (you can check that by looking at the bottom left of the VSCode window).</p></li>
+<li><p>Now you can work as usual, but inside this container you have all of the necessary tools available, including a full LaTeX environment, pandoc, and quarto.</p></li>
 </ol>
 <div class="no-first-line-indent-after"></div>
 <p>In general, be careful with what you do even inside the container. While the container is relatively isolated from your machine, <strong>it is connected to the dltc-workhouse Dropbox folder</strong>, so any changes or deletions you make will affect everyone, as usual when working using Dropbox.</p>
@@ -767,10 +715,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="new-way-of-generating-outputs-dltc-make" class="level3" data-number="31.1.4">
 <h3 data-number="31.1.4" class="anchored" data-anchor-id="new-way-of-generating-outputs-dltc-make"><span class="header-section-number">31.1.4</span> New way of generating outputs: dltc-make</h3>
 <p>Whenever you’re using the container for the Dialectica compilation environment, from a terminal (inside the container) you have at your disposition the command:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>This command essentially replaces the old <code>make.sh</code> and <code>make.bat</code> scripts, and it’s used in exactly the same way. The advantage is that you don’t need to copy the <code>make</code> files, just call the command. For example, you just navigate to the folder where your article for copyediting is, and then…</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> offpdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command essentially replaces the old <code>make.sh</code> and <code>make.bat</code> scripts, and it’s used in exactly the same way. The advantage is that we don’t need to copy the <code>make</code> files in every folder. For example, now we can just navigate to the folder where your article for copyediting is, and then…</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> offpdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>…will produce a PDF as usual.</p>
 </section>
@@ -778,9 +726,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="31.1.5" class="anchored" data-anchor-id="advanced-using-the-container-directly-from-a-terminal"><span class="header-section-number">31.1.5</span> Advanced: using the container directly from a terminal</h3>
 <p>Additionally, if you know what you’re doing, you can start a shell within the container without using VSCode. With this, you can use the terminal directly to compile articles. Altough rather clumsy as an approach, this would allow you to, for example, keep using RStudio to work on copyediting tasks and then compiling the articles separatedly in a terminal using the container.</p>
 <p>From anywhere in your system, do:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-ti</span> <span class="at">--volume</span><span class="op">=</span><span class="st">"YOUR/PATH/TO/Dropbox/philosophie-ch/dltc-workhouse:/home/copyeditor/dltc-workhouse"</span> philosophiech/dltc-env:latest bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-ti</span> <span class="at">--volume</span><span class="op">=</span><span class="st">"YOUR/PATH/TO/Dropbox/philosophie-ch/dltc-workhouse:/home/copyeditor/dltc-workhouse"</span> philosophiech/dltc-env:latest bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>If this worked properly, you should see your prompt change to <code>copyeditor@dltc-env</code>. Here, you can now navigate to <code>~/dltc-workhouse</code>, where you will find the usual Dropbox files for copyediting. If there’s enough demand, we can install additional tools in the container. Please contact Luis Bordo at <code>luis.bordo@philosophie.ch</code> for any such request.</p>
+<p>If this worked properly, you should see your prompt change to <code>copyeditor@dltc-env</code>. Here, you can now navigate to <code>~/dltc-workhouse</code>, where you will find the usual Dropbox files for copyediting.</p>
+<p>Note that you can execute the command above in an integrated terminal in any other editor (such as RStudio). This will give you a shell inside the container with access to all the tools you need for the copyediting work.</p>
 </section>
 <section id="troubleshooting" class="level3" data-number="31.1.6">
 <h3 data-number="31.1.6" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">31.1.6</span> Troubleshooting</h3>
@@ -790,14 +739,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Problem: In VSCode, connected to the container, you don’t see any file in ‘dltc-workhouse’ when you open it</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>Solution: this is most likely due to not properly setting your <code>.env</code> file. Go to the folder in which you cloned the GitHub repository for the compilation environment, copy the <code>.env.template</code> file to a new file called <code>.env</code>. Now open this file, and change the value of “DLTC_WORKHOUSE” to the full path of where the dltc-workhouse folder (inside Dropbox) is.</p>
+<p>Solution: this is most likely due to not properly setting your <code>.env</code> file. Go to the folder in which you cloned the GitHub repository for the compilation environment, copy the <code>.env.template</code> file to a new file called <code>.env</code>. Now open this file, and change the value of “DLTC_WORKHOUSE_DIRECTORY” to the full path of where the dltc-workhouse folder (inside Dropbox) is.</p>
 <p>Note that, for Windows, you need to change “\” for “/” in the path name. That is, if your folder is in “C:\Users\…”, you must change it to “C:/Users/…”.</p>
 </section>
 <section id="installing-wsl-version-2-on-windows" class="level4" data-number="31.1.6.2">
 <h4 data-number="31.1.6.2" class="anchored" data-anchor-id="installing-wsl-version-2-on-windows"><span class="header-section-number">31.1.6.2</span> Installing WSL version 2 on Windows</h4>
 <p><strong>Note</strong>: if you don’t feel comfortable modifying the options of your machine’s BIOS or UEFI, get in contact with Luis Bordo at <code>luis.bordo@philosophie.ch</code> to guide you through personally. Otherwise, follow the instructions below.</p>
 <ol type="1">
-<li>Enable ‘virtualization’. To do this, we need to go to the computer’s BIOS or UEFI. If you know how to do this, do it as you know and ignore the instructions below. Otherwise, follow these steps. <strong>WARNING</strong>: this will restart your computer:
+<li><p>Enable ‘virtualization’. To do this, we need to go to the computer’s BIOS or UEFI. If you know how to do this, do it as you know and ignore the instructions below. Otherwise, follow these steps. <strong>WARNING</strong>: this will restart your computer:</p>
 <ol type="1">
 <li>Go to Settings</li>
 <li>Go to Update and Security (or a setting with a similar name)</li>
@@ -813,11 +762,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Save and exit the BIOS or UEFI. <strong>IMPORTANT</strong>: you need to SAVE before exiting, otherwise you will need to redo the steps above</li>
 <li>To check that virtualization is enabled, go to the Task Manager, to the Tab <strong>TODO</strong></li>
 </ol></li>
-<li>Enable ‘wsl version 2’. Open PowerShell as Administrator, and then:</li>
+<li><p>Enable ‘wsl version 2’. Open PowerShell as Administrator, and then:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>VirtualMachinePlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>set-default-version <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>VirtualMachinePlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>set-default-version <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>If something goes wrong, follow the instructions given in PowerShell</li>
 <li>To check if all of this worked, do <code>wsl --version</code> in Powershell</li>
@@ -828,178 +777,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="generating-outputs" class="level1" data-number="32">
 <h1 data-number="32"><span class="header-section-number">32</span> Generating outputs</h1>
 <p>By “Terminal” we mean a command line interface. See Appendix -<a href="../appendices/terminal-help.html" class="quarto-xref"><span>Appendix A</span></a> on how to use it.</p>
-<p>All file paths are given relative to the base (“root”) of Dialectica’s workhouse folder. For instance:</p>
+<p>All file paths are given relative to the base (“root”) of Dialectica’s workhouse folder (“dltc-workhouse”). For instance:</p>
 <pre><code>template/1.1/scripts/make.sh</code></pre>
 <div class="no-first-line-indent-after"></div>
 <p>is the <code>make.sh</code> file contained in the <code>scripts</code> folder contained in the <code>1.1</code> folder contained in the <code>template</code> folder within the dialectica workhouse folder.</p>
 <p>Note for Windows users: paths are noted in the Linux / MacOS style with a forward slash <code>/</code> separator. In Windows this would be a backslash <code>\</code> instead:</p>
 <pre><code>template\1.1\scripts\make.sh</code></pre>
-<section id="setting-up-your-system-1" class="level2" data-number="32.1">
-<h2 data-number="32.1" class="anchored" data-anchor-id="setting-up-your-system-1"><span class="header-section-number">32.1</span> Setting up your system</h2>
-<section id="pre-requisites" class="level3" data-number="32.1.1">
-<h3 data-number="32.1.1" class="anchored" data-anchor-id="pre-requisites"><span class="header-section-number">32.1.1</span> Pre-requisites</h3>
-<p>You will need the following (2 to 8 Gb disk space):</p>
+<section id="prepare-an-article-or-issue-folder" class="level2" data-number="32.1">
+<h2 data-number="32.1" class="anchored" data-anchor-id="prepare-an-article-or-issue-folder"><span class="header-section-number">32.1</span> Prepare an article or issue folder</h2>
+<p>You’ll need to add the following file to your article working folder to be able to generate outputs.</p>
 <ul>
-<li><p><strong>Pandoc</strong> version 3+. <em>~240Mb</em></p></li>
-<li><p>A <strong>LaTeX distribution</strong>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <em>~200Mb (custom) to ~5Gb (full)</em></p></li>
-<li><p><strong>Fonts</strong>: STIX Two, Libertinus (incl.&nbsp;Libertinus Display) and VenusSBExtended available in <code>dialectica-workhouse/resources/fonts</code>. <em>&lt;1Mb</em></p></li>
-<li><p>On <strong>MacOS</strong>, Apple’s <strong>Command line tools for Xcode</strong>. <em>~2.5Gb</em></p></li>
-<li><p>(Optional but recommended) <strong>RStudio</strong>, a markdown editor with a visual mode, a built-in terminal, and the ability to run scripts that generate HTML / PDF versions of your manuscript. <em>~1Gb</em></p></li>
-<li><p>(Optional but recommended) on <strong>Windows, latexmk</strong>, a command-line program we use to generate PDFs. It is part of LaTeX but not always installed by default. <em>~100Mb, if you need to install Perl</em></p></li>
+<li>A <em>master file</em>, which contains issue-level metadata needed to generate your article outputs.</li>
 </ul>
-<section id="how-to-check-whats-installed" class="level4" data-number="32.1.1.1">
-<h4 data-number="32.1.1.1" class="anchored" data-anchor-id="how-to-check-whats-installed"><span class="header-section-number">32.1.1.1</span> How to check what’s installed</h4>
-<p>To check whether Pandoc, LaTeX and latexmk are installed, you can run the following on a terminal (see Appendix -<a href="../appendices/terminal-help.html" class="quarto-xref"><span>Appendix A</span></a> on how to do this). For Pandoc:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="no-first-line-indent-after"></div>
-<p>For LaTeX:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdflatex</span> <span class="at">-version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="no-first-line-indent-after"></div>
-<p>For latexmk:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">latexmk</span> <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="no-first-line-indent-after"></div>
-<p>If you get error messages, they are not installed. If you get version numbers, they are installed. This works on all systems.</p>
-</section>
-</section>
-<section id="macos-only" class="level3" data-number="32.1.2">
-<h3 data-number="32.1.2" class="anchored" data-anchor-id="macos-only"><span class="header-section-number">32.1.2</span> MacOS only</h3>
-<p><strong>To install Apple’s Command Line Tools</strong>. This is necessary even if you’re not going to use the command line your self: it installs the software needed to run the “scripts” (short instruction files) that render our outputs. Open the Terminal (in Applications &gt; Utilities), type the following and hit Enter:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="no-first-line-indent-after"></div>
-<p>If you get the error message “command line tools already installed”, it’s already installed, you can close the terminal. Otherwise it will download and install for some time. When it’s finished, close the terminal.</p>
-</section>
-<section id="optional-install-tools-with-a-package-manager" class="level3" data-number="32.1.3">
-<h3 data-number="32.1.3" class="anchored" data-anchor-id="optional-install-tools-with-a-package-manager"><span class="header-section-number">32.1.3</span> Optional: install tools with a package manager</h3>
-<p>Package managers are tools to install and update software. Typically terminal tools <a href="../appendices/terminal-help.html" class="quarto-xref">see&nbsp;<span>A</span></a> but Linux has graphical ones too.</p>
-<ul>
-<li>At installation time, they spare you looking up the software’s website, downloading, running the installer. Instead you just run a simple command like <code>choco install pandoc</code> on the terminal and the manager installs Pandoc for you.</li>
-<li>Later, they allow you to update <em>all</em> the software you’ve installed with them at once. No need to go back to the websites, download again etc. You run a command like <code>choco upgrade all</code>.</li>
-<li>Less relevant for us: it handles ‘dependencies’, ie if the software you’re installing needs another, it’ll install the latter too.</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>For instance on MacOS you’d install LaTeX, Pandoc and RStudio by typing just one command on the terminal: <code>brew install mactex pandoc rstudio</code>.</p>
-<ul>
-<li><p>On Linux, there’s a package manager pre-installed and you’ll probably know what it is. In “Debian” distributions, Ubuntu included, it’s <a href="https://en.wikipedia.org/wiki/APT_(software)">APT</a> (<code>apt-get install pandoc</code>). There are graphical user interfaces for it: Software center in Ubuntu, Synaptic in Linux Mint, and others.</p></li>
-<li><p>On MacOS, install <a href="https://brew.sh">Homebrew</a>. Note: sometimes you’ll see <code>--cask</code> in the command (compare <code>brew install pandoc</code> vs <code>brew install –cask rstudio</code>). The rule of thumb is that graphical programs are <code>--cask</code>, command line programs aren’t. But don’t worry, if you omit <code>--cask</code> the installation typically works anyway. You can formally check whether it’s needed by searching the software on <a href="https://formulae.brew.sh">homebrew</a>’s depository.</p></li>
-<li><p>On Windows, install <a href="https://chocolatey.org">Chocolatey</a>. Important: don’t forget that it can’t be run in the basic CMD terminal but only in the “Windows Powershell” with administrator privileges. Search it in the start menu, right-click and chose “Run as administrator”.</p></li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>If unsure what the package name of some software is you can search it online (e.g.&nbsp;“Ubuntu package texlive”). It’ll probably land you on the right page of their online package lists: <a href="https://www.debian.org/distrib/packages#view">debian</a>, <a href="https://packages.ubuntu.com">ubuntu</a>, <a href="https://formulae.brew.sh">homebrew</a>, <a href="https://community.chocolatey.org/packages">chocolatey</a>.</p>
-</section>
-<section id="common-to-all-platforms" class="level3" data-number="32.1.4">
-<h3 data-number="32.1.4" class="anchored" data-anchor-id="common-to-all-platforms"><span class="header-section-number">32.1.4</span> Common to all platforms</h3>
-<section id="pandoc" class="level4" data-number="32.1.4.1">
-<h4 data-number="32.1.4.1" class="anchored" data-anchor-id="pandoc"><span class="header-section-number">32.1.4.1</span> Pandoc</h4>
-<p>Download and install from <a href="https://pandoc.org/installing.html">Pandoc’s website</a>.</p>
-<p>Command line users: run <code>brew install pandoc</code> (MacOS, Homebrew), <code>choco install pandoc</code> (Win, Chocolatey) or <code>apt-get install pandoc</code> (APT, Linux) in a terminal.</p>
-</section>
-<section id="latex" class="level4" data-number="32.1.4.2">
-<h4 data-number="32.1.4.2" class="anchored" data-anchor-id="latex"><span class="header-section-number">32.1.4.2</span> LaTeX</h4>
-<p>Use either <a href="https://miktex.org/download">MikTeX</a> or <a href="https://tug.org/texlive/">TexLive</a> (whose Mac version is called <a href="https://www.tug.org/mactex/">MacTeX</a>).</p>
-<ul>
-<li>For MikTeX: download the installer, launch it. Select “install only for this user”, and for installing packages on the fly, select “Ask me first”.</li>
-<li>For TexLive, non-Mac: download <a href="https://tug.org/texlive/acquire-netinstall.html">the network installer</a>, launch it. When/if offered the choice, choose to install “all” or “everything”. This can take ~30 minutes depending on download speed.</li>
-<li>For TexLive, Mac users: download <a href="https://www.tug.org/mactex/">the installer</a>.</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>MikTeX’s advantage is that it downloads any needed packages on the fly, so it’s quicker to install and will get whatever you need. <strong>So be aware that if you use MikTeX, you first PDFs generation will open a window asking you to confirm the download of packages and take a long time as MikTeX download missing pages</strong>. Don’t worry, subsequent PDF generations are much faster.</p>
-<p>TexLive’s full install is large (5Gb) and takes ~30 mins but you’re done once and for all—well, for one year, as it is updated yearly.</p>
-<p>Command-line users:</p>
-<ul>
-<li>Homebrew: <code>brew install --cask mactex</code>. Cannot install MikTeX (as of Jan 2023). MikTeX doesn’t need brew anyway, it self-updates.</li>
-<li>Chocolatey: <code>choco install miktex</code> or <code>choco install texlive --params "'/scheme:full'"</code>.</li>
-<li>Linux: depends on package managers, e.g. <code>sudo apt-get install miktex</code> or <code>sudo apt-get install texlive-full</code>. However, you might need to add ‘Software sources’ to do this: see e.g.&nbsp;the MikTeX webpage.</li>
-</ul>
-</section>
-<section id="fonts" class="level4" data-number="32.1.4.3">
-<h4 data-number="32.1.4.3" class="anchored" data-anchor-id="fonts"><span class="header-section-number">32.1.4.3</span> Fonts</h4>
-<p>Dialectica’s fonts are located in <code>dialectica-workhouse\resources\fonts</code>. Open a file browser and navigate to the folder of a desired font (for Stix Two, <code>STIX Two fonts\OTF</code>). Select all the files and, depending on system:</p>
-<p><strong>To install fonts</strong>, open the Finder and navigate to the folder where the fonts are located (<code>dialectica-workhouse/resources/fonts</code>). Open the folder of the desired font (for Stix Two, <code>STIX Two fonts/OTF</code>). Double-click each file there (regular, italic, bold, …), and in the windows that appear, select “Install font”. You can check that the fonts are installed by opening the Font Book (in the Applications folder, or Cmd + Space and search for Font Book) and selecting the User tab.</p>
-<ul>
-<li>(Windows) right-click and select “Install fonts”,</li>
-<li>(Mac) Enter or right-click &gt; Open. Select “Install font” in the windows that open. You can check that they are installed by opening the Font Book app.</li>
-<li>(Linux) depends on distribution. On Ubuntu, for instance, double-click on the font files opens a font viewer with the option to install. If that doesn’t work on your distribution, try an online search.</li>
-</ul>
-</section>
-<section id="rstudio-optional" class="level4" data-number="32.1.4.4">
-<h4 data-number="32.1.4.4" class="anchored" data-anchor-id="rstudio-optional"><span class="header-section-number">32.1.4.4</span> RStudio (optional)</h4>
-<p>See <a href="https://posit.co/downloads/">RStudio’s download page</a> for installation instructions. Command line users also install it with package managers (e.g.&nbsp;<code>brew install rstudio</code>). RStudio needs R (a statistics programming language), so you might need to install it too (e.g.&nbsp;<code>brew install r rstudio</code>).</p>
-<p>When installed, note that RStudio includes:</p>
-<ul>
-<li>a <em>file browser</em> on the left</li>
-<li>a <em>terminal</em> at the bottom, under the ‘Terminal’ tab. (The ‘Console’ is something else).</li>
-<li>when editing markdown files, the <code>Source</code> and <code>Visual</code> tabs at the top left of the editor. These allows you to edit files in visual mode rather than markdown. Limitation: the visual mode can’t be used if the manuscript contains “numbered examples lists”.</li>
-<li>when editing markdown files, an ‘Outline’ panel on the right side of the editor. Useful to navigate a manuscript.</li>
-</ul>
-<div class="no-first-line-indent-after"></div>
-<p>RStudio might be intimidating at first: it’s not a word processor but a “development environment” for the statistics programming language R. It’s not just used to write programs, however, but also write documents that embed compuations: a webpage with a graph that is daily updated, or a scientific article that includes algorithms and data to reproduce its results. So don’t worry: you will mostly be using its markdown editor here, which is powerful but simple. Some of the development features are handy too, like the file browser and the ability to run scripts to generate our outputs.</p>
-</section>
-</section>
-</section>
-<section id="prepare-an-article-or-issue-folder" class="level2" data-number="32.2">
-<h2 data-number="32.2" class="anchored" data-anchor-id="prepare-an-article-or-issue-folder"><span class="header-section-number">32.2</span> Prepare an article or issue folder</h2>
-<p>You’ll need to add a few files to your article working folder to be able to generate outputs.</p>
-<ul>
-<li><p>A ‘maker script’, i.e.&nbsp;a mini program that tells the computer how to generate your outputs.<br>
-This is the file titled <code>make.sh</code>.</p></li>
-<li><p>A <em>master file</em>, which contains issue-level metadata needed to generate your article outputs.</p></li>
-</ul>
-<section id="ensure-your-folder-contains-the-maker-script" class="level3" data-number="32.2.1">
-<h3 data-number="32.2.1" class="anchored" data-anchor-id="ensure-your-folder-contains-the-maker-script"><span class="header-section-number">32.2.1</span> Ensure your folder contains the maker script</h3>
-<p>Check whether your working article folder contains a file title <code>make.sh</code>. If it does, you’re good.</p>
-<p>If it doesn’t, you should make a copy of it in your work article folder. You can find it in <code>template/X.X/copyeditors-scripts</code>, where <code>X.X</code> stands for the most recent template version. (That is the highest you find, e.g.&nbsp;1.2.) But this file is the same for each article and issue that uses the <em>same</em> version of the <em>Dialectica</em> template, so you can also copy it from other <em>article</em> folder in the same year.</p>
-<p>Beware of copying <code>make.sh</code> from an <em>article</em> folder, not the <em>issue</em> folder that contains it. (Article-folders <code>make.sh</code> tell the computer: go three folder up and find the template engine; issue-folders <code>make.sh</code> tell it: go <em>two</em> folders up and find the template engine; that’s why issue maker files don’t work in article folders and conversely.)</p>
-</section>
-<section id="create-a-master-file" class="level3" data-number="32.2.2">
-<h3 data-number="32.2.2" class="anchored" data-anchor-id="create-a-master-file"><span class="header-section-number">32.2.2</span> Create a master file</h3>
+<section id="create-a-master-file" class="level3" data-number="32.1.1">
+<h3 data-number="32.1.1" class="anchored" data-anchor-id="create-a-master-file"><span class="header-section-number">32.1.1</span> Create a master file</h3>
 <p>Copy a <code>master.md</code> file into your article folder. You can take one from another article in the same issue, or the template one at <code>template/X.X/copyeditors-scripts</code>. Beware: you can take the master file in the <em>issue</em> folder, but if you do so you’ll need to modify paths in the <code>imports</code> field (see below).</p>
 <p>Open the file in text editor. It should already contain an <code>imports</code> metadata field that consists of a list of one or more files (each item on a single line starting with a dash), for instance:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 01-author.md</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 02-author.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 01-author.md</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 02-author.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>You should amend it to contain just one item referring to your file. If your markdown file is <code>smith_j-2023.md</code> you should make it:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> smith_j-2023.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> smith_j-2023.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p><em>Note on issue master files</em>. Issues have master files too, where located in issue folders. Their <code>imports</code> field normally contain a list of all article files for that issue, <em>including which subfolder they’re in</em>, for instance:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 01-jones/jones_s-2023.md</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 02-smith/smith_j-2023.md</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 01-jones/jones_s-2023.md</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 02-smith/smith_j-2023.md</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>Therefore, if you copy an issue master file within an article folder, or the other way round, you should make sure you add (issue master file) or remove (article master file) the subfolders names as required.</p>
 </section>
 </section>
-<section id="generate-outputs" class="level2" data-number="32.3">
-<h2 data-number="32.3" class="anchored" data-anchor-id="generate-outputs"><span class="header-section-number">32.3</span> Generate outputs</h2>
-<section id="with-rstudio-on-windows" class="level3" data-number="32.3.1">
-<h3 data-number="32.3.1" class="anchored" data-anchor-id="with-rstudio-on-windows"><span class="header-section-number">32.3.1</span> With RStudio on Windows</h3>
-<p>On Windows, you might be able to generate outputs from RStudio directly without running a command. If that fails, skip to the next sections and run a command instead.</p>
-<p><strong>Setup.</strong> In RStudio, open your article’s project and go to the menu Build &gt; Configure Build Tools. Enter the following choices:</p>
+<section id="generate-outputs" class="level2" data-number="32.2">
+<h2 data-number="32.2" class="anchored" data-anchor-id="generate-outputs"><span class="header-section-number">32.2</span> Generate outputs</h2>
+<section id="run-a-command-in-the-terminal" class="level3" data-number="32.2.1">
+<h3 data-number="32.2.1" class="anchored" data-anchor-id="run-a-command-in-the-terminal"><span class="header-section-number">32.2.1</span> Run a command in the terminal</h3>
+<p>You can generate outputs by running the <code>dltc-make</code> command in a terminal inside the container containing the compilation environment.</p>
 <ul>
-<li>Project build tools: “Makefile”</li>
-<li>Makefile directory: leave as default (Project Root).</li>
-<li>Additional argument: empty to generate html, or any of the rendering commands detailed below <a href="#sec-house-outputs-rendering-commands" class="quarto-xref"><span>Section 32.3.3</span></a>.</li>
+<li><p>In VSCode (or RStudio), if you’ve created a project for your article, it’s best to use the integrated terminal (in the “Terminal” menu in VSCode, “Tools” in RStudio). Make sure that you are “located in” the project’s folder by executing <code>pwd</code>. If the path doesn’t correspond to your project’s, then navigate with <code>cd</code> to where your project is.</p></li>
+<li><p>If you’re using a separate terminal application, you’ll need to navigate with <code>cd</code> to the folder where your article is.</p></li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p><strong>Generate</strong>. Once that is done, go to Build &gt; Build all (or use Shift-Ctrl + B) to generate the desired output.</p>
-<p>Go back to Build &gt; Configure Build Tools if you want to change the format you’re generating, e.g.&nbsp;enter <code>offpdf —proof</code> in Additional argument to generate a proof PDF.</p>
+<p>See <a href="../appendices/terminal-help.html" class="quarto-xref"><span>Appendix A</span></a> for help.</p>
 </section>
-<section id="run-a-command-in-the-terminal" class="level3" data-number="32.3.2">
-<h3 data-number="32.3.2" class="anchored" data-anchor-id="run-a-command-in-the-terminal"><span class="header-section-number">32.3.2</span> Run a command in the terminal</h3>
-<p>In all systems, you can generate outputs by running the <code>sh make.sh</code> command in a terminal.</p>
-<ul>
-<li><p>In RStudio, if you’ve created a project for your article, it’s best to use the Terminal within RStudio itself. See Tools &gt; Terminal. This terminal will be “located in” the project’s folder, so you can just take <code>sh make.sh</code> to generate a html output.</p></li>
-<li><p>If you’re using a separate terminal application, you’ll need to “navigate” to the folder where your article is. See <a href="../appendices/terminal-help.html" class="quarto-xref"><span>Appendix A</span></a> for help.</p></li>
-</ul>
-</section>
-<section id="sec-house-outputs-rendering-commands" class="level3" data-number="32.3.3">
-<h3 data-number="32.3.3" class="anchored" data-anchor-id="sec-house-outputs-rendering-commands"><span class="header-section-number">32.3.3</span> Short rendering commands</h3>
-<p>Rendering commands can be executed in a <em>article</em>’s folder or in an <em>issue</em> folder. All these commmands must be added to <code>sh make.sh</code>, e.g.:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> make.sh offprints</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="sec-house-outputs-rendering-commands" class="level3" data-number="32.2.2">
+<h3 data-number="32.2.2" class="anchored" data-anchor-id="sec-house-outputs-rendering-commands"><span class="header-section-number">32.2.2</span> Short rendering commands</h3>
+<p>Rendering commands can be executed in a <em>article</em>’s folder or in an <em>issue</em> folder. All these commmands must be added to <code>dltc-make</code>, e.g.:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> offprints</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>or used in the “additional argument” of RStudio’s configure build tools in Windows, as explained above.</p>
 <p>Single-article outputs will be named after the source file, e.g. <code>smith_j-2020.pdf</code>. Issue outputs will be named after the issue DOI, e.g.&nbsp;<code>dial.v74.i1.pdf</code> or <code>dial.v75.i2-book.pdf</code>.</p>
 <table class="table">
 <caption>Article folder rendering commands</caption>
@@ -1098,16 +925,16 @@ This is the file titled <code>make.sh</code>.</p></li>
 </tbody>
 </table>
 </section>
-<section id="rendering-options" class="level3" data-number="32.3.4">
-<h3 data-number="32.3.4" class="anchored" data-anchor-id="rendering-options"><span class="header-section-number">32.3.4</span> Rendering options</h3>
+<section id="rendering-options" class="level3" data-number="32.2.3">
+<h3 data-number="32.2.3" class="anchored" data-anchor-id="rendering-options"><span class="header-section-number">32.2.3</span> Rendering options</h3>
 <dl>
 <dt>Proof mode</dt>
 <dd>
 <p>Add <code>--proof</code> or <code>-p</code> at the end of your command (separated by a space):</p>
 </dd>
 <dd>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> make.sh off2 <span class="at">--proof</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> make.sh off3pdf <span class="at">-p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off2 <span class="at">--proof</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off3pdf <span class="at">-p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </dd>
 <dd>
 <p>This only affects PDF output.</p>
@@ -1115,18 +942,18 @@ This is the file titled <code>make.sh</code>.</p></li>
 <dt>Verbose or quiet</dt>
 <dd>
 <p>Add <code>--verbose</code> or <code>-v</code> to get a detailed log of the rendering process. Useful for debug. You can save the output in a log file like so:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> make.sh off2pdf <span class="at">-v</span> <span class="dv">2</span><span class="op">&gt;</span> out.log </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>2&gt;</code> tells the computer to “redirect” the error/information output to a file named <code>out.log</code>. This works in Windows and Linux / MacOS terminals.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off2pdf <span class="at">-v</span> <span class="dv">2</span><span class="op">&gt;</span> out.log </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>2&gt;</code> tells the computer to “redirect” the error/information output to a file named <code>out.log</code>.</p>
 <p>You can make the output quieter with <code>--quiet</code> or <code>-q</code>. Though certain programs executed during the rendering process may still display error or output messages. If you don’t want to see anything just “redirect” the output to a file with <code>sh make.sh … 2&gt; out.log</code>.</p>
 </dd>
 </dl>
 <div class="no-first-line-indent-after"></div>
 <p>Single letter options can be combined: <code>-pv</code> is short for <code>--proof —verbose</code>.</p>
 </section>
-<section id="long-rendering-commands" class="level3" data-number="32.3.5">
-<h3 data-number="32.3.5" class="anchored" data-anchor-id="long-rendering-commands"><span class="header-section-number">32.3.5</span> Long rendering commands</h3>
+<section id="long-rendering-commands" class="level3" data-number="32.2.4">
+<h3 data-number="32.2.4" class="anchored" data-anchor-id="long-rendering-commands"><span class="header-section-number">32.2.4</span> Long rendering commands</h3>
 <p>Rendering commands can also be given in key-value form:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> make.sh mode=offprint chapter=3 format=pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> mode=offprint chapter=3 format=pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p><code>mode</code> includes “offprint” aka “off”, “vol” aka “issue”, “bare” , “refs”</p></li>
 <li><p><code>format</code> includes <code>pdf</code>, <code>html</code>, <code>tex</code> aka <code>latex</code> (also <code>epub</code>, <code>jats</code> but we don’t generate these yet)</p></li>
@@ -1134,27 +961,18 @@ This is the file titled <code>make.sh</code>.</p></li>
 </ul>
 <div class="no-first-line-indent-after"></div>
 <p>The advantage is that you can specify multiple modes and formats separated by commas:</p>
-<pre><code>sh make.sh mode=off,refs chapter=3,4,5</code></pre>
+<pre><code>dltc-make mode=off,refs chapter=3,4,5</code></pre>
 <div class="no-first-line-indent-after"></div>
 <p>Rendering options like <code>--proof</code> can be combined with long rendering commands.</p>
 </section>
 </section>
-<section id="advice-on-html-vs-pdf" class="level2" data-number="32.4">
-<h2 data-number="32.4" class="anchored" data-anchor-id="advice-on-html-vs-pdf"><span class="header-section-number">32.4</span> Advice on HTML vs PDF</h2>
+<section id="advice-on-html-vs-pdf" class="level2" data-number="32.3">
+<h2 data-number="32.3" class="anchored" data-anchor-id="advice-on-html-vs-pdf"><span class="header-section-number">32.3</span> Advice on HTML vs PDF</h2>
 <p>HTML is best when you start working on an article because it’s much faster and less error-prone than PDF. HTML only fails to produce an output if your document’s metadata is ill-formed or if there’s a bug in the “filters” we use to format outputs.</p>
 <p>PDF is best for the latter typesetting stages when you need to check that the fine-grained outputs look right, that advanced LaTeX formulas or images work correctly, that there is no awkward page break and so on.</p>
-</section>
-<section id="sec-dltc-env-setup" class="level2" data-number="32.5">
-<h2 data-number="32.5" class="anchored" data-anchor-id="sec-dltc-env-setup"><span class="header-section-number">32.5</span> </h2>
 
 
 </section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>LaTeX is called a ‘distribution’ or ‘installation’ because it’s not a single program but a large collection of programs and ‘packages’ that work together to generate PDFs.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->

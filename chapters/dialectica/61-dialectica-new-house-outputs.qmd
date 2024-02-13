@@ -51,6 +51,9 @@ Here we will install and set up Docker, Git, and VSCode in your machine.
     Desktop](https://www.docker.com/products/docker-desktop/). When
     installing Docker, choose the option to use WSL 2.
 
+    When you install Docker, you can use the recommended settings and 
+    select "Continue without signing in".
+
 4.  Open PowerShell (you have it installed by default) and check that
     you have `wsl` version 2 or above with
 
@@ -108,9 +111,10 @@ If you don't get any errors, then docker is working in your machine
     top left corner of your screen and select "About This Mac" from the 
     dropdown menu. Look for the "Processor" field in the window that opens.]
 
-    To configure Docker, open "Settings". 
+    When you install Docker, you can use the recommended settings and 
+    select "Continue without signing in".
 
-5.  Configure Docker. Run the Docker application and open "Settings".
+5.  Configure Docker. Launch the Docker application and open "Settings".
     
     i. In the "General" tab, check that the following options 
     are enabled: "VirtioFS", "Use Virtualization framework",

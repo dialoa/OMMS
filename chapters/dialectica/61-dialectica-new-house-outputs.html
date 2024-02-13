@@ -565,7 +565,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Download and install <a href="https://git-scm.com/downloads">git</a></p></li>
 <li><p>Check that git is working in PowerShell. If you get no errors with the command below, then git is working correctly:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Download, install, and open <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>. When installing Docker, choose the option to use WSL 2.</p></li>
+<li><p>Download, install, and open <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>. When installing Docker, choose the option to use WSL 2.</p>
+<p>When you install Docker, you can use the recommended settings and select “Continue without signing in”.</p></li>
 <li><p>Open PowerShell (you have it installed by default) and check that you have <code>wsl</code> version 2 or above with</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
@@ -599,8 +600,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Check that git is working, in a terminal. If you get no errors with the command below, then git is working correctly:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Download and install <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>. Make sure to pick your correct processor (Mac Intel Chip or Mac Apple Chip). <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>To configure Docker, open “Settings”.</p></li>
-<li><p>Configure Docker. Run the Docker application and open “Settings”.</p>
+<p>When you install Docker, you can use the recommended settings and select “Continue without signing in”.</p></li>
+<li><p>Configure Docker. Launch the Docker application and open “Settings”.</p>
 <ol type="i">
 <li><p>In the “General” tab, check that the following options are enabled: “VirtioFS”, “Use Virtualization framework”, and “Use Rosetta for x86/amd64 emulation on Apple Silicon”. (These settings may not appear on Intel Chip macs; if they don’t ignore this step.)</p></li>
 <li><p>Increase the CPU and memory limits of the containers to be at a minimum of 3/4 of your machine’s resources. For example, if you have an 8 core CPU and 16 GB of RAM, you could set the limits to 7 cores and 14 GB of RAM.</p></li>

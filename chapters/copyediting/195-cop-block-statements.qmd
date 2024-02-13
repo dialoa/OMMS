@@ -40,12 +40,10 @@ The sum of angles of a triangle equals two right angles.
 ...subsequent flow of text...
 ```
 
-As explained in @sec-divs, there are a couple of equivalent
-variations for this code.
-
-First, *provided that the Div has no other attribute than 
-a single class*, you can omit dot and curly braces:
-
+As detailed in @sec-divs, there are a couple of equivalent
+variations for this code. Provided that the Div
+has no other attribute that the `statement` class, curly braces
+can be omitted:
 
 ```markdown
 ::: statement 
@@ -55,12 +53,12 @@ The sum of angles of a triangle equals two right angles.
 :::
 ```
 
-Second, you can make the opening and closing 'fences' as
-wide as you want, if you find that this makes your source
-code more readible. This doesn't affect the output:
+The opening and closing 'fences' can also be made as
+wide as you want if that improves readability. 
+That doesn't affect the output:
 
 ```markdown
-::: { .statement } ::::::::::::::::::::::::::::::::::::::::::
+::: {.statement} ::::::::::::::::::::::::::::::::::::::::::::
 
 The sum of angles of a triangle equals two right angles.
 

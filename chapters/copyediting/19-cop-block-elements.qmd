@@ -424,11 +424,11 @@ colons for the opening fence and the closing fence of the same Div.
 
 The Divs in the examples above are completely invisible in PDF or HTML outputs.
 Divs become interesting when you give them *attributes*. Attributes are added
-to the *opening* fence of a Div, between curly braces:
+to the *opening* fence of a Div, between curly braces, separated by spaces:
 
 ``` markdown
 
-::: { .statement #myprinciple color=red }
+::: {.statement #myprinciple color=red}
 
 Everything comes in due time.
 
@@ -457,7 +457,7 @@ can be encoded without curly braces and dots. Thus the following:
 
 ``` markdown
 
-::: { .statement }
+::: {.statement}
 
 Everything comes in due time.
 
@@ -490,6 +490,6 @@ Everything comes in due time.
 
 ```
 
-This is wholly up to you: using full-width fences or shorter ones
+That is wholly up to you: using full-width fences or shorter ones
 makes no difference to the result. 
 

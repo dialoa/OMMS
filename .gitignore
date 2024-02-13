@@ -4,7 +4,7 @@
 /.Rproj.user/
 
 # VS Code files
-/.vs-code/
+/.vscode/
 
 # Quarto files
 /.quarto/

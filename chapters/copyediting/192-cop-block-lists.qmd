@@ -8,7 +8,7 @@ editor_options:
 
 Lists are a special kind of block elements. We have three types of lists:
 
-1. Simple lists: bullet point lists and numbered lists.
+1. Simple lists: bullet lists and ordered lists.
 2. Numbered examples lists: these are lists whose items are scattered throughout the papers, but numbered continuously.
 3. custom labelled lists: like simple lists but with arbitrary
   (or no) labels instead of bullets or numbers. 
@@ -22,103 +22,41 @@ crossreference specific items within a list.
 
 ## Simple lists
 
-Simple unnumbered lists
+Simple lists are either bullet lists or ordered lists. Here are examples of each:
 
 ``` {.markdown}
 * an item
   * a sub-item
   * another sub-item
 * an item
-```
 
-Result:
-
--   an item
-
-    -   a sub-item
-    -   another sub-item
-
--   an item
-
-You can use `-` as well as `*`, and you can mix markers.
-
-Numbered lists:
-
-``` {.markdown}
 1. item
 2. item
   a. sub item
   b. sub item
-3. another item
+1. another item
 ```
 
-Result
+Result:
 
-1.  item
-2.  item
+* an item
+  * a sub-item
+  * another sub-item
+* an item
 
-```{=html}
-<!-- -->
-```
-a.  sub item
-b.  sub item
+1. item
+2. item
+  a. sub item
+  b. sub item
+1. another item
 
-```{=html}
-<!-- -->
-```
-3.  another item
+See [Pandoc's manual](https://pandoc.org/MANUAL.html#lists) for details on
+ how to encode lists of each type. Note that:
 
-Note that markdown ignores the particular number and number format you enter.
+* With bullet lists, you have no control on the type of bullet used---this is decided by your template.
+* With ordered lists, you normally have control over numbering type (1, I, A, i, a) and starting number (3, III, C, iii, c), though your template may override this. You don't  control punctuation, i.e whether the number is followed by a point, single parenthesis or double parenthesis---that is up to your template.
 
-``` {.markdown}
-a. apples
-b. peaches
-
-2. pears
-4. bananas
-7. cherries
-```
-
-Result
-
-a.  apples
-b.  peaches
-
-```{=html}
-<!-- -->
-```
-2.  pears
-3.  bananas
-4.  cherries
-
-You can put blocks (paragraphs, quotations, etc.) as list items. To do so, align
-the following blocks with a couple of spaces:
-
-``` {.markdown}
-1. This list item has not just one paragraph.
-
-  It has two paragraphs.
-  
-2. > This section list item
-  > contains a quotation.
-  
-  > And the quotation is two 
-  > paragraphs.
-```
-
-Result
-
-1.  This list item has not just one paragraph.
-
-It has two paragraphs.
-
-2.  
-
-    > This section list item contains a quotation.
-
-> And the quotation is two paragraphs.
-
-## What to do if a list has non-standard labels?
+### What to do if a list has non-standard labels?
 
 Problem: a text has a list with regularly numbered items (1, 2, 3, or a, b, c,
 ...) but uses \* or \' labels in some cases.

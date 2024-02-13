@@ -3,6 +3,9 @@
 /.Rhistory
 /.Rproj.user/
 
+# VS Code files
+/.vs-code/
+
 # Quarto files
 /.quarto/
 /_book/

@@ -394,7 +394,7 @@ e.g. `dial.v74.i1.pdf` or `dial.v75.i2-book.pdf`.
 +----------------+-------------------------------------------+
 | Command        | Output                                    |
 +================+===========================================+
-| (empty)        | first article in HTML                     |
+| (empty)        | first article in PDF                      |
 +----------------+-------------------------------------------+
 | `all`          | issue pdf, all articles PDF + HTML        |
 +----------------+-------------------------------------------+
@@ -408,9 +408,11 @@ e.g. `dial.v74.i1.pdf` or `dial.v75.i2-book.pdf`.
 |                |                                           |
 | `volpdf`       |                                           |
 +----------------+-------------------------------------------+
-| `off2`         | HTML of the second article (i.e. second   |
+| `off2`         | PDF of the second article (i.e. second    |
 |                | item in the masterfile's `imports` list). |
-| `off2html`     |                                           |
++----------------+-------------------------------------------+
+| `off2html`     | HTML of the second article (i.e. second   |
+|                | item in the masterfile's `imports` list). |
 +----------------+-------------------------------------------+
 | `off2pdf`      | PDF of the second article (i.e. second    |
 |                | item in the masterfile's `imports` list). |

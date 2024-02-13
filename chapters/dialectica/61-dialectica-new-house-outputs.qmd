@@ -1,33 +1,35 @@
-# Dialectica new house style outputs DRAFT {#sec-dialectica-new-house-outputs}
+# Dialectica new house style outputs {#sec-dialectica-new-house-outputs}
 
 The association is setting up a standardized compilation environment for
 Dialectica. This environment essentially encapsulate all of the tools
-needed for the copyediting work, such as pandoc, LaTeX, and
-Quarto.
+needed for the copyediting work, such as pandoc, LaTeX, and Quarto.
 
 ## Setting up your system
 
 Dialectica copyediting requires:
 
 -   Docker, to run a container containing the actual environment
--   Git, to clone [the repository of the script to download and start the compilation environment](https://github.com/Philosophie-ch/dltc-env)
--   Recommended: VSCode, to comfortably connect and use the environment 
+-   Git, to clone [the repository of the script to download and start
+    the compilation
+    environment](https://github.com/Philosophie-ch/dltc-env)
+-   Recommended: VSCode, to comfortably connect and use the environment
     to edit articles
 
 Briefly put, to set up, you need to install git and docker, and then be
-able to connect to a running container. In this guide, we'll use VSCode
-as it makes it very easy to work inside docker containers, but you're free
-to work in a different editor and use the container directly from your 
-terminal if you wish.
+able to connect to a running container. <!-- what is a running container? --> In this guide, we'll use VSCode <!-- what is VSCode -->
+as it makes it very easy to work inside docker containers <!-- again -->, but you're
+free to work in a different editor and use the container directly from
+your terminal if you wish.
 
-How to setup will depend on your specific Operating System. If you know how
-to install and configure git, docker and VSCode on your own, just skip this 
-section and go chapter 3. Note that in this guide, VSCode replaces RStudio
-as an alternative better suited to interact with modern software tools (such
-as docker) and languages other than R (such as Markdown, LaTeX, and HTML).
+How to setup will depend on your specific Operating System. If you know
+how to install and configure git, docker and VSCode on your own, just
+skip this section and go chapter 3. Note that in this guide, VSCode
+replaces RStudio as an alternative better suited to interact with modern
+software tools (such as docker) and languages other than R (such as
+Markdown, LaTeX, and HTML).
 
-For guidance or any problem not covered here, please contact Luis Bordo at
-`luis.bordo@philosophie.ch`.
+For guidance or any problem not covered here, please contact Luis Bordo
+at `luis.bordo@philosophie.ch`.
 
 ### Installing git, docker, VSCode
 
@@ -46,8 +48,8 @@ Here we will install and set up Docker, Git, and VSCode in your machine.
     ```
 
 3.  Download, install, and open [Docker
-    Desktop](https://www.docker.com/products/docker-desktop/).
-    When installing Docker, choose the option to use WSL 2.
+    Desktop](https://www.docker.com/products/docker-desktop/). When
+    installing Docker, choose the option to use WSL 2.
 
 4.  Open PowerShell (you have it installed by default) and check that
     you have `wsl` version 2 or above with
@@ -61,18 +63,17 @@ Here we will install and set up Docker, Git, and VSCode in your machine.
     Troubleshooting section below
 
 5.  Check that Docker is configured to run with WSL 2: open Docker
-    Desktop, go to Settings, and mark the checkbox for using WSL 2 
-    if it's not marked already.
-    
-    Additionally, in the settings, increase the CPU and memory 
-    limits of the containers to be at a minimum of 3/4 of your 
-    machine's resources. For example, if you have an 8 core CPU and 
-    16 GB of RAM, you could set the limits to 7 cores and 14 GB of 
-    RAM.
+    Desktop, go to Settings, and mark the checkbox for using WSL 2 if
+    it's not marked already.
+
+    Additionally, in the settings, increase the CPU and memory limits of
+    the containers to be at a minimum of 3/4 of your machine's
+    resources. For example, if you have an 8 core CPU and 16 GB of RAM,
+    you could set the limits to 7 cores and 14 GB of RAM.
 
 6.  Now, in PowerShell, check that docker is working with:
 
-    ```powershell
+    ``` powershell
     docker run hello-world
     ```
 
@@ -84,8 +85,8 @@ If you don't get any errors, then docker is working in your machine
 
 1.  Install [brew](https://brew.sh/)
 
--   For this, usually it's a single command to execute in a 
-    terminal; just follow the instructions in the page
+-   For this, usually it's a single command to execute in a terminal;
+    just follow the instructions in the page
 
 2.  Install `git` using brew. In a terminal, do:
 
@@ -93,46 +94,47 @@ If you don't get any errors, then docker is working in your machine
     brew install git
     ```
 
-3.  Check that git is working, in a terminal. If you get no errors 
-    with the command below, then git is working correctly:
+3.  Check that git is working, in a terminal. If you get no errors with
+    the command below, then git is working correctly:
 
     ``` zsh
     git --version
     ```
 
-5.  Download, install, and configure [Docker
-    Desktop](https://www.docker.com/products/docker-desktop/).
-    Make sure to pick your correct processor (Mac Intel Chip or Mac 
-    Apple Chip).
-    To check which processor you have:
+4.  Download and install [Docker
+    Desktop](https://www.docker.com/products/docker-desktop/). Make sure
+    to pick your correct processor (Mac Intel Chip or Mac Apple Chip).
+    ^[To check which processor you have, click on the Apple icon in the 
+    top left corner of your screen and select "About This Mac" from the 
+    dropdown menu. Look for the "Processor" field in the window that opens.]
 
-    First, click on the Apple icon in the top left corner of your 
-    screen. Second, select "About This Mac" from the dropdown menu.
-    Third, in the window that opens, look for the "Processor" field
+    To configure Docker, open "Settings". 
 
-    To configure Docker, open "Settings". In the "General" tab, 
-    make sure that the following options are enabled: "VirtioFS", 
-    "Use Virtualization framework", and "Use Rosetta for x86/amd64 
-    emulation on Apple Silicon".
+5.  Configure Docker. Run the Docker application and open "Settings".
+    
+    i. In the "General" tab, check that the following options 
+    are enabled: "VirtioFS", "Use Virtualization framework",
+    and "Use Rosetta for x86/amd64 emulation on Apple Silicon".
+    (These settings may not appear on Intel Chip macs; 
+    if they don't ignore this step.)
+    
+    ii. Increase the CPU and memory limits of
+    the containers to be at a minimum of 3/4 of your machine's
+    resources. For example, if you have an 8 core CPU and 16 GB of RAM,
+    you could set the limits to 7 cores and 14 GB of RAM.
 
-    Additionally, in the settings, increase the CPU and memory 
-    limits of the containers to be at a minimum of 3/4 of your 
-    machine's resources. For example, if you have an 8 core CPU and 
-    16 GB of RAM, you could set the limits to 7 cores and 14 GB of 
-    RAM.
-
-
-5.  Check that docker is working, in a terminal. In general, 
-    whenever you want to use Docker, you have to start the Docker 
-    application and see that the "whale" icon shows in your system 
-    tray. If you get no errors with the command below, then docker 
-    is working correctly:
+6.  Check that docker is working. In a terminal, run:
 
     ``` zsh
     docker run hello-world
     ```
 
-6.  Download and install [VSCode](https://code.visualstudio.com/Download)
+    If you get no errors, Docker is working correctly. If you do, try 
+    running Docker (in Applications). Docker's whale icon should appear 
+    in your system icon bar (i.e. alongside icons for Wifi, Bluetooth etc.).
+
+7. Download and install
+    [VSCode](https://code.visualstudio.com/Download)
 
 #### Linux
 
@@ -140,25 +142,23 @@ If you don't get any errors, then docker is working in your machine
 
 -   You most likely have it by default already. You can test this by
     doing `git --version` in a terminal
--   If you don't have it, install it using your distribution's 
-    package manager. For example, in Debian and Ubuntu (and their 
-    derivatives), do `sudo apt install git` in a terminal
+-   If you don't have it, install it using your distribution's package
+    manager. For example, in Debian and Ubuntu (and their derivatives),
+    do `sudo apt install git` in a terminal
 
-2.  Follow [the official installation instructions for Docker]
-    (https://docs.docker.com/engine/install/#server) to
-    install **Docker Engine** in your Linux distribution
+2.  Follow \[the official installation instructions for Docker\]
+    (https://docs.docker.com/engine/install/#server) to install **Docker
+    Engine** in your Linux distribution
 
 -   Follow [the post-installation
-    steps](https://docs.docker.com/engine/install/
-    linux-postinstall/) to
-    use docker in your terminal without needing to write `sudo`
+    steps](https://docs.docker.com/engine/install/%20linux-postinstall/)
+    to use docker in your terminal without needing to write `sudo`
     everytime
 -   If you opt out from following these post-installation steps, you
-    will need to adapt the docker comands in this document (i.e., 
-    append `sudo` to all of them, everytime)
+    will need to adapt the docker comands in this document (i.e., append
+    `sudo` to all of them, everytime)
 
-3.  Check that docker is working, in a terminal. If you get no 
-    errors
+3.  Check that docker is working, in a terminal. If you get no errors
     with the command below, then docker is working correctly:
 
     ``` bash
@@ -170,22 +170,20 @@ If you don't get any errors, then docker is working in your machine
 ### Setup: pulling the docker image and starting a container
 
 Once you have installed up all of the necessary dependencies (git,
-docker, VSCode) and they work in your machine, we proceed by
-using a script made to automatically download the latest version 
-of the docker image containing the compilation environment, and 
-start it. The terminal commands below should work in any shell in 
-any operating system (PowerShell in Windows, zsh in Mac, bash in 
-Linux).
+docker, VSCode) and they work in your machine, we proceed by using a
+script made to automatically download the latest version of the docker
+image containing the compilation environment, and start it. The terminal
+commands below should work in any shell in any operating system
+(PowerShell in Windows, zsh in Mac, bash in Linux).
 
-Note that these instructions are the same as the ones in [the 
-repository's README](https://github.com/Philosophie-ch/dltc-env).
-Make sure that you have at least 10 GB of free space in your 
-machine:
+Note that these instructions are the same as the ones in [the
+repository's README](https://github.com/Philosophie-ch/dltc-env). Make
+sure that you have at least 10 GB of free space in your machine:
 
-1.  Using a terminal, first clone the git repository where the 
-    start script is:
+1.  Using a terminal, first clone the git repository where the start
+    script is:
 
-    ```sh
+    ``` sh
     # cd to your preferred location. For example:
     # mkdir ~/gitrepos
     # cd ~/gitrepos
@@ -193,36 +191,36 @@ machine:
     cd dltc-env
     ```
 
-2.  Now copy the `.env.template` file into `.env` and edit its      
+2.  Now copy the `.env.template` file into `.env` and edit its\
     contents:
 
-    ```sh
+    ``` sh
     cp .env.template .env
     ```
 
-    Now open .env with your preferred text editor. You need to set 
-    the values of the following fields:
+    Now open .env with your preferred text editor. You need to set the
+    values of the following fields:
 
-    2.1 `ARCH`: the architecture of your machine. If you are on a 
-    Mac with an Apple Silicon chip, set this to "arm64". Otherwise, 
-    leave it as is ("amd64", which is for Macs with Intel chips, 
-    Windows, and Linux)
+    2.1 `ARCH`: the architecture of your machine. If you are on a Mac
+    with an Apple Silicon chip, set this to "arm64". Otherwise, leave it
+    as is ("amd64", which is for Macs with Intel chips, Windows, and
+    Linux)
 
-    2.2 `DLTC_WORKHOUSE_DIRECTORY`: the full path, on your local 
+    2.2 `DLTC_WORKHOUSE_DIRECTORY`: the full path, on your local
     machine, to the 'dltc-workhouse' folder inside Dropbox
 
-    2.3 `DOCKERHUB_TOKEN`: the **login token** (not the "password") 
-    for the dockerhub account. You can find it in the 
-    "Institutional set-up" page in our Google Drive
+    2.3 `DOCKERHUB_TOKEN`: the **login token** (not the "password") for
+    the dockerhub account. You can find it in the "Institutional set-up"
+    page in our Google Drive
 
-    **NOTE**: you can navigate with your usual file explorer to the 
-    "dltc-env" folder, which will be located where you cloned it in 
-    step 1. The `.env` file is a hidden file, so you would need to 
+    **NOTE**: you can navigate with your usual file explorer to the
+    "dltc-env" folder, which will be located where you cloned it in
+    step 1. The `.env` file is a hidden file, so you would need to
     enable viewing hidden files to see it.
 
-3. Now you can execute the start script:
+3.  Now you can execute the start script:
 
-    ```sh
+    ``` sh
     # On Linux and Mac
     ./dltc-env-start.sh
 
@@ -230,60 +228,57 @@ machine:
     .\dltc-env-start.ps1
     ```
 
-    The first time you do this it will take a while as it needs to 
-    download the image, which contains a full LaTeX installation.
-    This will not happen often, but you will also need to execute 
-    this script any time there is an update to the compilation 
-    environment.
+    The first time you do this it will take a while as it needs to
+    download the image, which contains a full LaTeX installation. This
+    will not happen often, but you will also need to execute this script
+    any time there is an update to the compilation environment.
 
-    **OPTIONAL**. Whenever you finish working on your copyediting 
-    tasks, you can stop the container containing the compilation 
-    environment. To do this, execute this on a terminal:
+    **OPTIONAL**. Whenever you finish working on your copyediting tasks,
+    you can stop the container containing the compilation environment.
+    To do this, execute this on a terminal:
 
-    ```sh
+    ``` sh
     docker stop dltc-env
     ```
 
     And to use the container again:
 
-    ```sh
+    ``` sh
     docker start dltc-env
     ```
 
-After this step, you'ready to start using the new container created 
-from the docker image that the start script pulled from dockerhub.
-There are many ways to use a running container, but for our 
-purposes, the easiest is to use VSCode.
+After this step, you'ready to start using the new container created from
+the docker image that the start script pulled from dockerhub. There are
+many ways to use a running container, but for our purposes, the easiest
+is to use VSCode.
 
 ### Setup: VSCode
 
-While not strictly mandatory, it is highly recommended to use 
-VSCode for the copyediting work. VSCode is a modern, general text 
-editor suited for all tasks programming and writing. It has support 
-for state-of-the-art software tools such as Docker, and through its 
-vast market of extensions, provides great support for Markdown, 
-LaTeX, HTML, and Quarto. It is language agnostic and lightweight, 
-not needing any specific programming language dependencies.
+While not strictly mandatory, it is highly recommended to use VSCode for
+the copyediting work. VSCode is a modern, general text editor suited for
+all tasks programming and writing. It has support for state-of-the-art
+software tools such as Docker, and through its vast market of
+extensions, provides great support for Markdown, LaTeX, HTML, and
+Quarto. It is language agnostic and lightweight, not needing any
+specific programming language dependencies.
 
 For this subsection, it is recommended that you create a
-[GitHub](https://github.com/) account, and then connect to it in 
-VSCode. So, after creating your account, open VSCode:
+[GitHub](https://github.com/) account, and then connect to it in VSCode.
+So, after creating your account, open VSCode:
 
 1.  Connect VSCode to your GitHub account. To do this, look on the
-    vertical toolbar to the left and down for 'Accounts', and 
-    connect to your GitHub account. Then, clicking again on 
-    'Accounts', enable both 'Settings Sync' and 'Turn on Cloud 
-    Changes'. This will synchronize your VSCode settings in any 
-    device you connect it to your account.
+    vertical toolbar to the left and down for 'Accounts', and connect to
+    your GitHub account. Then, clicking again on 'Accounts', enable both
+    'Settings Sync' and 'Turn on Cloud Changes'. This will synchronize
+    your VSCode settings in any device you connect it to your account.
 
 -   Recommended: click on the cogwheel icon at the bottom of the
     vertical toolbar on the left, and go to "Settings". Look on the
-    search bar for "telemetry", and set the "Telemetry Level" to 
-    "off". We don't need Microsoft spying (more than it already 
-    does) on us.
+    search bar for "telemetry", and set the "Telemetry Level" to "off".
+    We don't need Microsoft spying (more than it already does) on us.
 
-2.  Then, it is recommended that you create a 'profile' to manage 
-    the extensions you need for copyediting.
+2.  Then, it is recommended that you create a 'profile' to manage the
+    extensions you need for copyediting.
 
 -   In the vertical toolbar to the left, below 'accounts', click on
     Settings \>\> Profiles \>\> Create profile...
@@ -332,11 +327,10 @@ extensions are installed *inside* the container (in "Extensions").
     (looks like a computer screen). At the top, there will be a
     drop-down menu in which you can select "Dev Containers".
 
-6.  You will now see the name "dltc-env dltc-env". If you hover
-    with the mouse, you'll see an arrow whose name is "Attach in Current
-    Window". Click it, and VSCode will start running inside the
-    container (you can check that by looking at the bottom left of the
-    VSCode window).
+6.  You will now see the name "dltc-env dltc-env". If you hover with the
+    mouse, you'll see an arrow whose name is "Attach in Current Window".
+    Click it, and VSCode will start running inside the container (you
+    can check that by looking at the bottom left of the VSCode window).
 
 7.  Now you can work as usual, but inside this container you have all of
     the necessary tools available, including a full LaTeX environment,
@@ -363,10 +357,10 @@ dltc-make
 ```
 
 This command essentially replaces the old `make.sh` and `make.bat`
-scripts, and it's used in exactly the same way. The advantage is that
-we don't need to copy the `make` files in every folder. For example,
-now we can just navigate to the folder where your article for 
-copyediting is, and then...
+scripts, and it's used in exactly the same way. The advantage is that we
+don't need to copy the `make` files in every folder. For example, now we
+can just navigate to the folder where your article for copyediting is,
+and then...
 
 ``` sh
 dltc-make offpdf
@@ -391,7 +385,7 @@ docker exec -ti --volume="YOUR/PATH/TO/Dropbox/philosophie-ch/dltc-workhouse:/ho
 
 If this worked properly, you should see your prompt change to
 `copyeditor@dltc-env`. Here, you can now navigate to `~/dltc-workhouse`,
-where you will find the usual Dropbox files for copyediting. 
+where you will find the usual Dropbox files for copyediting.
 
 Note that you can execute the command above in an integrated terminal in
 any other editor (such as RStudio). This will give you a shell inside
@@ -409,12 +403,25 @@ Solution: this is most likely due to not properly setting your `.env`
 file. Go to the folder in which you cloned the GitHub repository for the
 compilation environment, copy the `.env.template` file to a new file
 called `.env`. Now open this file, and change the value of
-"DLTC_WORKHOUSE_DIRECTORY" to the full path of where the 
-dltc-workhouse folder (inside Dropbox) is.
+"DLTC_WORKHOUSE_DIRECTORY" to the full path of where the dltc-workhouse
+folder (inside Dropbox) is.
 
 Note that, for Windows, you need to change "\\" for "/" in the path
 name. That is, if your folder is in "C:\\Users\\...", you must change it
 to "C:/Users/...".
+
+-   Problem: while working in the container, you see an error with code
+    "-9", or anything related to being "out of memory"
+
+Solution: you're running a heavy task inside the container, and it's
+eating up a lot of resources in your machine, so docker is killing the
+task. This could happen, for example, when compiling PDFs with the big
+bibliography file. Go to your Docker settings and allow your containers
+a higher limit on the CPU (or "cores") and on "memory" (RAM). At least
+3/4 of the highest limit should be enough in most cases, but if it's not
+enough you can go up to 100%. Just note that if you do this (allowing
+100% use of resources), the task is very intense and you're on an old
+computer, your machine could crash.
 
 #### Installing WSL version 2 on Windows
 
@@ -427,6 +434,7 @@ follow the instructions below.
     BIOS or UEFI. If you know how to do this, do it as you know and
     ignore the instructions below. Otherwise, follow these steps.
     **WARNING**: this will restart your computer:
+
     1.  Go to Settings
     2.  Go to Update and Security (or a setting with a similar name)
     3.  Go to "Recovery"
@@ -444,6 +452,7 @@ follow the instructions below.
         before exiting, otherwise you will need to redo the steps above
     7.  To check that virtualization is enabled, go to the Task Manager,
         to the Tab **TODO**
+
 2.  Enable 'wsl version 2'. Open PowerShell as Administrator, and then:
 
     ``` powershell
@@ -481,8 +490,8 @@ template\1.1\scripts\make.sh
 
 ## Prepare an article or issue folder
 
-You'll need to add the following file to your article working folder
-to be able to generate outputs.
+You'll need to add the following file to your article working folder to
+be able to generate outputs.
 
 -   A *master file*, which contains issue-level metadata needed to
     generate your article outputs.
@@ -536,16 +545,16 @@ remove (article master file) the subfolders names as required.
 You can generate outputs by running the `dltc-make` command in a
 terminal inside the container containing the compilation environment.
 
--   In VSCode (or RStudio), if you've created a project for your 
-    article, it's best to use the integrated terminal (in the 
-    "Terminal" menu in VSCode, "Tools" in RStudio).
-    Make sure that you are "located in" the project's folder by 
-    executing `pwd`. If the path doesn't correspond to your project's,
-    then navigate with `cd` to where your project is.
+-   In VSCode (or RStudio), if you've created a project for your
+    article, it's best to use the integrated terminal (in the "Terminal"
+    menu in VSCode, "Tools" in RStudio). Make sure that you are "located
+    in" the project's folder by executing `pwd`. If the path doesn't
+    correspond to your project's, then navigate with `cd` to where your
+    project is.
 
 -   If you're using a separate terminal application, you'll need to
     navigate with `cd` to the folder where your article is.
-    
+
 See @sec-terminal-help for help.
 
 ### Short rendering commands {#sec-house-outputs-rendering-commands}
@@ -561,68 +570,68 @@ Single-article outputs will be named after the source file, e.g.
 `smith_j-2020.pdf`. Issue outputs will be named after the issue DOI,
 e.g. `dial.v74.i1.pdf` or `dial.v75.i2-book.pdf`.
 
-+----------------+--------------------------------------------+
-| Command        | Output                                     |
-+================+============================================+
-| (empty)        | article in HTML                            |
-+----------------+--------------------------------------------+
-| `offpdf`       | article in PDF                             |
-|                |                                            |
-| `off1pdf`      |                                            |
-+----------------+--------------------------------------------+
-| `offtex`       | article in LaTeX. Useful to debug when the |
-|                | PDF generation crashes: try                |
-| `off1tex`      | `lualatex smith_j-2020.tex` to see error   |
-|                | messages.                                  |
-+----------------+--------------------------------------------+
-| `refs`         | generate a list of references cited in the |
-|                | article. Saved as                          |
-|                | `<article_name>.bib.txt`. Only works when  |
-|                | the references have been turned into       |
-|                | citations and a bibtex file is provided.   |
-+----------------+--------------------------------------------+
++----------------+-------------------------------------------+
+| Command        | Output                                    |
++================+===========================================+
+| (empty)        | article in HTML                           |
++----------------+-------------------------------------------+
+| `offpdf`       | article in PDF                            |
+|                |                                           |
+| `off1pdf`      |                                           |
++----------------+-------------------------------------------+
+| `offtex`       | article in LaTeX. Useful to debug when    |
+|                | the PDF generation crashes: try           |
+| `off1tex`      | `lualatex smith_j-2020.tex` to see error  |
+|                | messages.                                 |
++----------------+-------------------------------------------+
+| `refs`         | generate a list of references cited in    |
+|                | the article. Saved as                     |
+|                | `<article_name>.bib.txt`. Only works when |
+|                | the references have been turned into      |
+|                | citations and a bibtex file is provided.  |
++----------------+-------------------------------------------+
 
 : Article folder rendering commands
 
-+----------------+--------------------------------------------+
-| Command        | Output                                     |
-+================+============================================+
-| (empty)        | first article in HTML                      |
-+----------------+--------------------------------------------+
-| `all`          | issue pdf, all articles PDF + HTML         |
-+----------------+--------------------------------------------+
-| `allhtml`      | all offprints (=articles) in HTML          |
-+----------------+--------------------------------------------+
-| `offprints`    | all offprints HTML and PDF                 |
-|                |                                            |
-| `off`          |                                            |
-+----------------+--------------------------------------------+
-| `vol`          | issue PDF                                  |
-|                |                                            |
-| `volpdf`       |                                            |
-+----------------+--------------------------------------------+
-| `off2`         | HTML of the second article (i.e. second    |
-|                | item in the masterfile's `imports` list).  |
-| `off2html`     |                                            |
-+----------------+--------------------------------------------+
-| `off2pdf`      | PDF of the second article (i.e. second     |
-|                | item in the masterfile's `imports` list).  |
-+----------------+--------------------------------------------+
-| `off7tex`      | LaTeX of seventh article                   |
-+----------------+--------------------------------------------+
-| `voltex`       | LaTeX of the issue                         |
-+----------------+--------------------------------------------+
-| `refs`         | generate list of references cited for each |
-|                | article. Saved as                          |
-|                | `<article_name>.bib.txt`. Only works when  |
-|                | for articles where references have been    |
-|                | turned into citations and given in bibtex  |
-|                | files.                                     |
-+----------------+--------------------------------------------+
-| `bare`         | Issue covers only, PDF (`bare`) or LaTeX   |
-|                | (`baretex`). articles (also `baretex`).    |
-| `baretex`      | Useful for cover design.                   |
-+----------------+--------------------------------------------+
++----------------+-------------------------------------------+
+| Command        | Output                                    |
++================+===========================================+
+| (empty)        | first article in HTML                     |
++----------------+-------------------------------------------+
+| `all`          | issue pdf, all articles PDF + HTML        |
++----------------+-------------------------------------------+
+| `allhtml`      | all offprints (=articles) in HTML         |
++----------------+-------------------------------------------+
+| `offprints`    | all offprints HTML and PDF                |
+|                |                                           |
+| `off`          |                                           |
++----------------+-------------------------------------------+
+| `vol`          | issue PDF                                 |
+|                |                                           |
+| `volpdf`       |                                           |
++----------------+-------------------------------------------+
+| `off2`         | HTML of the second article (i.e. second   |
+|                | item in the masterfile's `imports` list). |
+| `off2html`     |                                           |
++----------------+-------------------------------------------+
+| `off2pdf`      | PDF of the second article (i.e. second    |
+|                | item in the masterfile's `imports` list). |
++----------------+-------------------------------------------+
+| `off7tex`      | LaTeX of seventh article                  |
++----------------+-------------------------------------------+
+| `voltex`       | LaTeX of the issue                        |
++----------------+-------------------------------------------+
+| `refs`         | generate list of references cited for     |
+|                | each article. Saved as                    |
+|                | `<article_name>.bib.txt`. Only works when |
+|                | for articles where references have been   |
+|                | turned into citations and given in bibtex |
+|                | files.                                    |
++----------------+-------------------------------------------+
+| `bare`         | Issue covers only, PDF (`bare`) or LaTeX  |
+|                | (`baretex`). articles (also `baretex`).   |
+| `baretex`      | Useful for cover design.                  |
++----------------+-------------------------------------------+
 
 : Issue folder rendering commands
 
@@ -651,7 +660,7 @@ Verbose or quiet
     ```
 
     The `2>` tells the computer to "redirect" the error/information
-    output to a file named `out.log`. 
+    output to a file named `out.log`.
 
     You can make the output quieter with `--quiet` or `-q`. Though
     certain programs executed during the rendering process may still

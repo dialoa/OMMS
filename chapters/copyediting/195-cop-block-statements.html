@@ -570,7 +570,7 @@ window.Quarto = {
 </ul>
 <div class="no-first-line-indent-after"></div>
 <p>This section deals with statements, more precisely statements other than proofs and theorems. For the latter see <a href="241-cop-math-latex.html" class="quarto-xref"><span>Chapter 26</span></a>.</p>
-<p><em>Arguments</em> that are set out of the main text can be typeset as statements. But when they have labelled premises, especially when we need to crossrefer to specific premises or the conclusion, we typeset them as custom-labelled lists. See <a href="192-cop-block-lists.html#sec-arguments" class="quarto-xref"><span>Section 16.5</span></a>.</p>
+<p><em>Arguments</em> that are set out of the main text can be typeset as statements. But when they have labelled premises, especially when we need to crossrefer to specific premises or the conclusion, we typeset them as custom-labelled lists. See <a href="192-cop-block-lists.html#sec-arguments" class="quarto-xref"><span>Section 16.4</span></a>.</p>
 <p>The simplest statements are just a block of idented text. Optionally, some statements have a label (aka title). They may also have some extra encoded fields like acronym, info, ID for crossreferencing—these are explained below.</p>
 <p>Statements are encoded as Divs. See <a href="19-cop-block-elements.html#sec-divs" class="quarto-xref"><span>Section 14.5</span></a> if you don’t yet know what Divs are.</p>
 <section id="statements-basics" class="level2" data-number="19.1">
@@ -586,16 +586,15 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>...subsequent flow of text...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>As explained in <a href="19-cop-block-elements.html#sec-divs" class="quarto-xref"><span>Section 14.5</span></a>, there are a couple of equivalent variations for this code.</p>
-<p>First, <em>provided that the Div has no other attribute than a single class</em>, you can omit dot and curly braces:</p>
+<p>As detailed in <a href="19-cop-block-elements.html#sec-divs" class="quarto-xref"><span>Section 14.5</span></a>, there are a couple of equivalent variations for this code. Provided that the Div has no other attribute that the <code>statement</code> class, curly braces can be omitted:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: statement </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>The sum of angles of a triangle equals two right angles.</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>Second, you can make the opening and closing ‘fences’ as wide as you want, if you find that this makes your source code more readible. This doesn’t affect the output:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: { .statement } ::::::::::::::::::::::::::::::::::::::::::</span>
+<p>The opening and closing ‘fences’ can also be made as wide as you want if that improves readability. That doesn’t affect the output:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.statement} ::::::::::::::::::::::::::::::::::::::::::::</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>The sum of angles of a triangle equals two right angles.</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -611,7 +610,7 @@ window.Quarto = {
 <section id="no-statements-in-footnotes" class="level2" data-number="19.2">
 <h2 data-number="19.2" class="anchored" data-anchor-id="no-statements-in-footnotes"><span class="header-section-number">19.2</span> No statements in footnotes</h2>
 <p>Statements don’t work in footnotes—that’s a limitation of the LaTeX package we use for them, <code>amsthm</code>.</p>
-<p>To get an indented block in footnote use a custom-labelled list with an empty label. See <a href="192-cop-block-lists.html#sec-custom-labelled-lists" class="quarto-xref"><span>Section 16.4</span></a>.</p>
+<p>To get an indented block in footnote use a custom-labelled list with an empty label. See <a href="192-cop-block-lists.html#sec-custom-labelled-lists" class="quarto-xref"><span>Section 16.3</span></a>.</p>
 </section>
 <section id="statement-titles" class="level2" data-number="19.3">
 <h2 data-number="19.3" class="anchored" data-anchor-id="statement-titles"><span class="header-section-number">19.3</span> Statement titles</h2>

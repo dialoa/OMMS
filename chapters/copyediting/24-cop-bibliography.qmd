@@ -24,6 +24,16 @@ bibliography: references.bib
 Do not leave the bibliography field empty, or you will get a 
 Pandoc error `File  not found in resource path`.
 
+## Multiple bibliography files
+
+You can have multiple bibliography files:
+
+```
+bibliography:
+- references1.bib
+- references2.bib
+```
+
 ## Self-citing bibliography
 
 A BibTeX bibliography file may 'self-cite', that is, have entries that cite other entries. Citations of other entries may appear in the `note`, `crossref` or even `title` field, for instance. 

@@ -497,10 +497,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#installing-git-docker-vscode" id="toc-installing-git-docker-vscode" class="nav-link" data-scroll-target="#installing-git-docker-vscode"><span class="header-section-number">31.1.1</span> Installing git, docker, VSCode</a></li>
   <li><a href="#setup-pulling-the-docker-image-and-starting-a-container" id="toc-setup-pulling-the-docker-image-and-starting-a-container" class="nav-link" data-scroll-target="#setup-pulling-the-docker-image-and-starting-a-container"><span class="header-section-number">31.1.2</span> Setup: pulling the docker image and starting a container</a></li>
-  <li><a href="#setup-vscode" id="toc-setup-vscode" class="nav-link" data-scroll-target="#setup-vscode"><span class="header-section-number">31.1.3</span> Setup: VSCode</a></li>
-  <li><a href="#new-way-of-generating-outputs-dltc-make" id="toc-new-way-of-generating-outputs-dltc-make" class="nav-link" data-scroll-target="#new-way-of-generating-outputs-dltc-make"><span class="header-section-number">31.1.4</span> New way of generating outputs: dltc-make</a></li>
-  <li><a href="#advanced-using-the-container-directly-from-a-terminal" id="toc-advanced-using-the-container-directly-from-a-terminal" class="nav-link" data-scroll-target="#advanced-using-the-container-directly-from-a-terminal"><span class="header-section-number">31.1.5</span> Advanced: using the container directly from a terminal</a></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">31.1.6</span> Troubleshooting</a></li>
+  <li><a href="#starting-and-stopping-the-compilation-environment-container" id="toc-starting-and-stopping-the-compilation-environment-container" class="nav-link" data-scroll-target="#starting-and-stopping-the-compilation-environment-container"><span class="header-section-number">31.1.3</span> Starting and stopping the compilation environment container</a></li>
+  <li><a href="#setup-vscode" id="toc-setup-vscode" class="nav-link" data-scroll-target="#setup-vscode"><span class="header-section-number">31.1.4</span> Setup: VSCode</a></li>
+  <li><a href="#new-way-of-generating-outputs-dltc-make" id="toc-new-way-of-generating-outputs-dltc-make" class="nav-link" data-scroll-target="#new-way-of-generating-outputs-dltc-make"><span class="header-section-number">31.1.5</span> New way of generating outputs: dltc-make</a></li>
+  <li><a href="#advanced-using-the-container-directly-from-a-terminal" id="toc-advanced-using-the-container-directly-from-a-terminal" class="nav-link" data-scroll-target="#advanced-using-the-container-directly-from-a-terminal"><span class="header-section-number">31.1.6</span> Advanced: using the container directly from a terminal</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">31.1.7</span> Troubleshooting</a></li>
   </ul></li>
   <li><a href="#generating-outputs" id="toc-generating-outputs" class="nav-link" data-scroll-target="#generating-outputs"><span class="header-section-number">32</span> Generating outputs</a>
   <ul class="collapse">
@@ -625,8 +626,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Follow [the official installation instructions for Docker] (https://docs.docker.com/engine/install/#server) to install <strong>Docker Engine</strong> in your Linux distribution</li>
 </ol>
 <ul>
-<li>Follow <a href="https://docs.docker.com/engine/install/%20linux-postinstall/">the post-installation steps</a> to use docker in your terminal without needing to write <code>sudo</code> everytime</li>
-<li>If you opt out from following these post-installation steps, you will need to adapt the docker comands in this document (i.e., append <code>sudo</code> to all of them, everytime)</li>
+<li><p>Follow <a href="https://docs.docker.com/engine/install/%20linux-postinstall/">the post-installation steps</a> to use docker in your terminal without needing to write <code>sudo</code> everytime</p></li>
+<li><p>If you opt out from following these post-installation steps, you will need to adapt the docker comands in this document (i.e., append <code>sudo</code> to all of them, everytime)</p>
+<p>You can use Docker without siging in.</p></li>
 </ul>
 <ol start="3" type="1">
 <li><p>Check that docker is working, in a terminal. If you get no errors with the command below, then docker is working correctly:</p>
@@ -637,56 +639,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="setup-pulling-the-docker-image-and-starting-a-container" class="level3" data-number="31.1.2">
 <h3 data-number="31.1.2" class="anchored" data-anchor-id="setup-pulling-the-docker-image-and-starting-a-container"><span class="header-section-number">31.1.2</span> Setup: pulling the docker image and starting a container</h3>
-<p>Once you have installed up all of the necessary dependencies (git, docker, VSCode) and they work in your machine, we proceed by using a script made to automatically download the latest version of the docker image containing the compilation environment, and start it. The terminal commands below should work in any shell in any operating system (PowerShell in Windows, zsh in Mac, bash in Linux).</p>
+<p>Once you have the necessary dependencies (git, docker, VSCode) are up and running on your machine, we proceed by using a script made to automatically download the latest version of the docker image containing the compilation environment, and start it. <!-- What does that mean? --> The terminal commands below should work in any shell in any operating system (PowerShell in Windows, zsh in Mac, bash in Linux).</p>
 <p>Note that these instructions are the same as the ones in <a href="https://github.com/Philosophie-ch/dltc-env">the repository’s README</a>. Make sure that you have at least 10 GB of free space in your machine:</p>
 <ol type="1">
-<li><p>Using a terminal, first clone the git repository where the start script is:</p>
+<li><p>Using a terminal, first clone the git repository where the start script is: <!-- the repository that contains the start script? --> <!-- which should be your preferred location?? People who don't have GitHub repos cloned don't understand --></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to your preferred location. For example:</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mkdir ~/gitrepos</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cd ~/gitrepos</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Philosophie-ch/dltc-env.git</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Now copy the <code>.env.template</code> file into <code>.env</code> and edit its<br>
-contents:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> .env.template .env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now open .env with your preferred text editor. You need to set the values of the following fields:</p>
+<li><p>Now copy the <code>.env.template</code> file into <code>.env</code> and edit its contents:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> .env.template .env</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will open the file <code>.env</code> in VSCode. In VSCode you may see a message “Git repositories were found… do you want to open them?”, you can close it or ignore it.</p>
+<p><strong>NOTE</strong>: you can navigate with your usual file explorer to the “dltc-env” folder, which will be located where you cloned it in step 1. The <code>.env</code> file is a hidden file, so you would need to enable viewing hidden files to see it.</p>
+<p>The contents of <code>.env</code> look like this:</p>
+<p>You need to set the values of the following fields <!-- newbie isn't sure what that means: "is is some setting, do I change it by changing that" -->:</p>
 <p>2.1 <code>ARCH</code>: the architecture of your machine. If you are on a Mac with an Apple Silicon chip, set this to “arm64”. Otherwise, leave it as is (“amd64”, which is for Macs with Intel chips, Windows, and Linux)</p>
-<p>2.2 <code>DLTC_WORKHOUSE_DIRECTORY</code>: the full path, on your local machine, to the ‘dltc-workhouse’ folder inside Dropbox</p>
-<p>2.3 <code>DOCKERHUB_TOKEN</code>: the <strong>login token</strong> (not the “password”) for the dockerhub account. You can find it in the “Institutional set-up” page in our Google Drive</p>
-<p><strong>NOTE</strong>: you can navigate with your usual file explorer to the “dltc-env” folder, which will be located where you cloned it in step 1. The <code>.env</code> file is a hidden file, so you would need to enable viewing hidden files to see it.</p></li>
+<p>2.2 <code>DLTC_WORKHOUSE_DIRECTORY</code>: the full path, on your local machine, to the ‘dltc-workhouse’ folder inside Dropbox. One way to get it is to open an article folder in VSCode (perhaps in a new window), open a terminal within VSCode and run the command <code>pwd</code> (‘present working directory’).</p>
+<p>2.3 <code>DOCKERHUB_TOKEN</code>: the <strong>login token</strong> (not the “password”) for the dockerhub account. You can find it in the “Institutional set-up” page in our Google Drive</p></li>
 <li><p>Now you can execute the start script:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On Linux and Mac</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./dltc-env-start.sh</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># On Windows</span></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span><span class="dt">\d</span>ltc-env-start.ps1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The first time you do this it will take a while as it needs to download the image, which contains a full LaTeX installation. This will not happen often, but you will also need to execute this script any time there is an update to the compilation environment.</p>
-<p><strong>OPTIONAL</strong>. Whenever you finish working on your copyediting tasks, you can stop the container containing the compilation environment. To do this, execute this on a terminal:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> stop dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>And to use the container again:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> start dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<p>The first time you do this it will take a while as it needs to download the image, which contains a full LaTeX installation. This will not happen often, but you will also need to execute this script any time there is an update to the compilation environment <!-- explain "compilation environment" earlier on -->.</p></li>
 </ol>
-<div class="no-first-line-indent-after"></div>
-<p>After this step, you’ready to start using the new container created from the docker image that the start script pulled from dockerhub. There are many ways to use a running container, but for our purposes, the easiest is to use VSCode.</p>
 </section>
-<section id="setup-vscode" class="level3" data-number="31.1.3">
-<h3 data-number="31.1.3" class="anchored" data-anchor-id="setup-vscode"><span class="header-section-number">31.1.3</span> Setup: VSCode</h3>
+<section id="starting-and-stopping-the-compilation-environment-container" class="level3" data-number="31.1.3">
+<h3 data-number="31.1.3" class="anchored" data-anchor-id="starting-and-stopping-the-compilation-environment-container"><span class="header-section-number">31.1.3</span> Starting and stopping the compilation environment container</h3>
+<p>The compilation environment that produces output runs in a ‘Docker container’ that can be started or stopped. It’ll stop if you close Docker or restart your computer. Optionally, you can stop the container when you finish working on your copyediting tasks and restart it when you start again. (If you don’t stop it, it won’t slow down your computer in any noticeable way but it’ll use a bit of memory but shouldn’t slow down your computer in a noticeable way.)</p>
+<p>Starting and stopping containers can be done from the terminal or from the Docker app. From the terminal, use:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> stop dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>to stop it, and</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> start dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>to start it again.</p>
+<p>From the Docker app, go to Containers tab: a box icon on the top left. (Don’t forget to close the Settings if you haven’t.) In the list of containers you should see one called <code>dltc-env</code>. It’s greyed out if stopped, green if started. In the Actions column, there’s a play/stop icon you can use to start or stop it.</p>
+</section>
+<section id="setup-vscode" class="level3" data-number="31.1.4">
+<h3 data-number="31.1.4" class="anchored" data-anchor-id="setup-vscode"><span class="header-section-number">31.1.4</span> Setup: VSCode</h3>
 <p>While not strictly mandatory, it is highly recommended to use VSCode for the copyediting work. VSCode is a modern, general text editor suited for all tasks programming and writing. It has support for state-of-the-art software tools such as Docker, and through its vast market of extensions, provides great support for Markdown, LaTeX, HTML, and Quarto. It is language agnostic and lightweight, not needing any specific programming language dependencies.</p>
-<p>For this subsection, it is recommended that you create a <a href="https://github.com/">GitHub</a> account, and then connect to it in VSCode. So, after creating your account, open VSCode:</p>
+<p>For this subsection, it is recommended that you create a <a href="https://github.com/">GitHub</a> account, and then connect to it in VSCode.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <ol type="1">
-<li>Connect VSCode to your GitHub account. To do this, look on the vertical toolbar to the left and down for ‘Accounts’, and connect to your GitHub account. Then, clicking again on ‘Accounts’, enable both ‘Settings Sync’ and ‘Turn on Cloud Changes’. This will synchronize your VSCode settings in any device you connect it to your account.</li>
+<li>Create an account on <a href="https://github.com/">GitHub</a>.</li>
+<li>Open VSCode. On the left toolbar, click on Extensions, and search and install the “GitHub Pull Requests and Issues” extension.</li>
+<li>On the left toolbar, look down for ‘Accounts’, and connect to your GitHub account. (If you’re on a public Wifi this may not work; use a private one or your mobile hotspot.)</li>
+<li>Then, clicking again on ‘Accounts’, enable both ‘Settings Sync’ and ‘Turn on Cloud Changes’. This will synchronize your VSCode settings in any device you connect it to your account.</li>
 </ol>
 <ul>
-<li>Recommended: click on the cogwheel icon at the bottom of the vertical toolbar on the left, and go to “Settings”. Look on the search bar for “telemetry”, and set the “Telemetry Level” to “off”. We don’t need Microsoft spying (more than it already does) on us.</li>
+<li>Recommended: click on the cogwheel icon at the bottom of the vertical toolbar on the left, and go to “Settings”. On the page that appears, use the search bar at the top to search for “telemetry”, and set the “Telemetry Level” to “off”. We don’t need Microsoft spying (more than it already does) on us.</li>
 </ul>
-<ol start="2" type="1">
+<ol type="1">
 <li>Then, it is recommended that you create a ‘profile’ to manage the extensions you need for copyediting.</li>
 </ol>
 <ul>
-<li>In the vertical toolbar to the left, below ‘accounts’, click on Settings &gt;&gt; Profiles &gt;&gt; Create profile…</li>
+<li>In the vertical toolbar to the left, click on the cogwheel (Settings) and choose Profiles &gt; Create profile…</li>
 <li>Give a name to your profile e.g., “dltc-copyediting” and use the default options</li>
 </ul>
-<ol start="3" type="1">
+<ol start="7" type="1">
 <li>Now we will install some extensions needed for the copyediting workflow. In the toolbar to the left, look for the “Extensions” button. There, using the search bar, look for and install the following:</li>
 </ol>
 <ul>
@@ -701,13 +714,17 @@ contents:</p>
 <p>Other recommended extensions are:</p>
 <ul>
 <li>Error Lens (by Alexander)</li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p>If you have a GitHub pro account, we also recommend:</p>
+<ul>
 <li>GitHub Copilot (by GitHub)</li>
 <li>GitHub Copilot Chat (by GitHub)</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>To use the last two tool, you need a GitHub pro account. If you have a university student account and email, <a href="https://education.github.com/pack">you can be granted a pro account for free</a>. Copilot is an AI assistant that can help you code in general, including help you with Markdown and LaTeX, both directly in VSCode when you edit files and in a chat button provided by the Chat extension (that will appear in the left toolbar).</p>
+<p>If you have a university student account and email, <a href="https://education.github.com/pack">you can be granted a GitHub pro account for free</a>. Copilot is an AI assistant that can help you code in general, including help you with Markdown and LaTeX, both directly in VSCode when you edit files and in a chat button provided by the Chat extension (that will appear in the left toolbar).</p>
 <p>Now, whenever you start VSCode, make sure that you’re connected to your GitHub account (in “Accounts”), and that you’re using the profile you created (in “Settings &gt;&gt; Profiles”). Also make sure that the extensions are installed <em>inside</em> the container (in “Extensions”).</p>
-<ol start="4" type="1">
+<ol type="1">
 <li><p>Once everything is installed, back at the “Extensions” button of the left toolbar, clear any search in the searchbar. Now, you will see that some extensions ask to be installed in the container. To do this en masse, look for the separator that says “CONTAINER PHILOSOPHIECH/DLTC-ENV…” and click on the cloud icon with a downward pointing arrow. This will install all of your extensions in the container.</p></li>
 <li><p>Now go back to the left toolbar and look for “Remote Explorer” (looks like a computer screen). At the top, there will be a drop-down menu in which you can select “Dev Containers”.</p></li>
 <li><p>You will now see the name “dltc-env dltc-env”. If you hover with the mouse, you’ll see an arrow whose name is “Attach in Current Window”. Click it, and VSCode will start running inside the container (you can check that by looking at the bottom left of the VSCode window).</p></li>
@@ -717,8 +734,8 @@ contents:</p>
 <p>In general, be careful with what you do even inside the container. While the container is relatively isolated from your machine, <strong>it is connected to the dltc-workhouse Dropbox folder</strong>, so any changes or deletions you make will affect everyone, as usual when working using Dropbox.</p>
 <p>We can install new tools or modify existing ones in the environment depending on the needs of the copyediting team. Please contact Luis Bordo at <code>luis.bordo@philosophie.ch</code> for any such request.</p>
 </section>
-<section id="new-way-of-generating-outputs-dltc-make" class="level3" data-number="31.1.4">
-<h3 data-number="31.1.4" class="anchored" data-anchor-id="new-way-of-generating-outputs-dltc-make"><span class="header-section-number">31.1.4</span> New way of generating outputs: dltc-make</h3>
+<section id="new-way-of-generating-outputs-dltc-make" class="level3" data-number="31.1.5">
+<h3 data-number="31.1.5" class="anchored" data-anchor-id="new-way-of-generating-outputs-dltc-make"><span class="header-section-number">31.1.5</span> New way of generating outputs: dltc-make</h3>
 <p>Whenever you’re using the container for the Dialectica compilation environment, from a terminal (inside the container) you have at your disposition the command:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
@@ -727,8 +744,8 @@ contents:</p>
 <div class="no-first-line-indent-after"></div>
 <p>…will produce a PDF as usual.</p>
 </section>
-<section id="advanced-using-the-container-directly-from-a-terminal" class="level3" data-number="31.1.5">
-<h3 data-number="31.1.5" class="anchored" data-anchor-id="advanced-using-the-container-directly-from-a-terminal"><span class="header-section-number">31.1.5</span> Advanced: using the container directly from a terminal</h3>
+<section id="advanced-using-the-container-directly-from-a-terminal" class="level3" data-number="31.1.6">
+<h3 data-number="31.1.6" class="anchored" data-anchor-id="advanced-using-the-container-directly-from-a-terminal"><span class="header-section-number">31.1.6</span> Advanced: using the container directly from a terminal</h3>
 <p>Additionally, if you know what you’re doing, you can start a shell within the container without using VSCode. With this, you can use the terminal directly to compile articles. Altough rather clumsy as an approach, this would allow you to, for example, keep using RStudio to work on copyediting tasks and then compiling the articles separatedly in a terminal using the container.</p>
 <p>From anywhere in your system, do:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-ti</span> <span class="at">--volume</span><span class="op">=</span><span class="st">"YOUR/PATH/TO/Dropbox/philosophie-ch/dltc-workhouse:/home/copyeditor/dltc-workhouse"</span> philosophiech/dltc-env:latest bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -736,10 +753,10 @@ contents:</p>
 <p>If this worked properly, you should see your prompt change to <code>copyeditor@dltc-env</code>. Here, you can now navigate to <code>~/dltc-workhouse</code>, where you will find the usual Dropbox files for copyediting.</p>
 <p>Note that you can execute the command above in an integrated terminal in any other editor (such as RStudio). This will give you a shell inside the container with access to all the tools you need for the copyediting work.</p>
 </section>
-<section id="troubleshooting" class="level3" data-number="31.1.6">
-<h3 data-number="31.1.6" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">31.1.6</span> Troubleshooting</h3>
-<section id="common-issues" class="level4" data-number="31.1.6.1">
-<h4 data-number="31.1.6.1" class="anchored" data-anchor-id="common-issues"><span class="header-section-number">31.1.6.1</span> Common issues</h4>
+<section id="troubleshooting" class="level3" data-number="31.1.7">
+<h3 data-number="31.1.7" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">31.1.7</span> Troubleshooting</h3>
+<section id="common-issues" class="level4" data-number="31.1.7.1">
+<h4 data-number="31.1.7.1" class="anchored" data-anchor-id="common-issues"><span class="header-section-number">31.1.7.1</span> Common issues</h4>
 <ul>
 <li>Problem: In VSCode, connected to the container, you don’t see any file in ‘dltc-workhouse’ when you open it</li>
 </ul>
@@ -752,8 +769,8 @@ contents:</p>
 <div class="no-first-line-indent-after"></div>
 <p>Solution: you’re running a heavy task inside the container, and it’s eating up a lot of resources in your machine, so docker is killing the task. This could happen, for example, when compiling PDFs with the big bibliography file. Go to your Docker settings and allow your containers a higher limit on the CPU (or “cores”) and on “memory” (RAM). At least 3/4 of the highest limit should be enough in most cases, but if it’s not enough you can go up to 100%. Just note that if you do this (allowing 100% use of resources), the task is very intense and you’re on an old computer, your machine could crash.</p>
 </section>
-<section id="installing-wsl-version-2-on-windows" class="level4" data-number="31.1.6.2">
-<h4 data-number="31.1.6.2" class="anchored" data-anchor-id="installing-wsl-version-2-on-windows"><span class="header-section-number">31.1.6.2</span> Installing WSL version 2 on Windows</h4>
+<section id="installing-wsl-version-2-on-windows" class="level4" data-number="31.1.7.2">
+<h4 data-number="31.1.7.2" class="anchored" data-anchor-id="installing-wsl-version-2-on-windows"><span class="header-section-number">31.1.7.2</span> Installing WSL version 2 on Windows</h4>
 <p><strong>Note</strong>: if you don’t feel comfortable modifying the options of your machine’s BIOS or UEFI, get in contact with Luis Bordo at <code>luis.bordo@philosophie.ch</code> to guide you through personally. Otherwise, follow the instructions below.</p>
 <ol type="1">
 <li><p>Enable ‘virtualization’. To do this, we need to go to the computer’s BIOS or UEFI. If you know how to do this, do it as you know and ignore the instructions below. Otherwise, follow these steps. <strong>WARNING</strong>: this will restart your computer:</p>
@@ -988,6 +1005,7 @@ contents:</p>
 <hr>
 <ol>
 <li id="fn1"><p>To check which processor you have, click on the Apple icon in the top left corner of your screen and select “About This Mac” from the dropdown menu. Look for the “Processor” field in the window that opens.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>If you encounter some issue with these instructions, check out the [official VSCode documentation instead][https://code.visualstudio.com/docs/sourcecontrol/github].<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

@@ -162,6 +162,8 @@ If you don't get any errors, then docker is working in your machine
     will need to adapt the docker comands in this document (i.e., append
     `sudo` to all of them, everytime)
 
+    You can use Docker without siging in.
+
 3.  Check that docker is working, in a terminal. If you get no errors
     with the command below, then docker is working correctly:
 
@@ -173,11 +175,11 @@ If you don't get any errors, then docker is working in your machine
 
 ### Setup: pulling the docker image and starting a container
 
-Once you have installed up all of the necessary dependencies (git,
-docker, VSCode) and they work in your machine, we proceed by using a
+Once you have the necessary dependencies (git,
+docker, VSCode) are up and running on your machine, we proceed by using a
 script made to automatically download the latest version of the docker
-image containing the compilation environment, and start it. The terminal
-commands below should work in any shell in any operating system
+image containing the compilation environment, and start it. <!-- What does that mean? -->
+ The terminal commands below should work in any shell in any operating system
 (PowerShell in Windows, zsh in Mac, bash in Linux).
 
 Note that these instructions are the same as the ones in [the
@@ -185,7 +187,8 @@ repository's README](https://github.com/Philosophie-ch/dltc-env). Make
 sure that you have at least 10 GB of free space in your machine:
 
 1.  Using a terminal, first clone the git repository where the start
-    script is:
+    script is: <!-- the repository that contains the start script? -->
+    <!-- which should be your preferred location?? People who don't have GitHub repos cloned don't understand -->
 
     ``` sh
     # cd to your preferred location. For example:
@@ -195,15 +198,25 @@ sure that you have at least 10 GB of free space in your machine:
     cd dltc-env
     ```
 
-2.  Now copy the `.env.template` file into `.env` and edit its\
-    contents:
+2.  Now copy the `.env.template` file into `.env` and edit its contents:
 
     ``` sh
     cp .env.template .env
+    code .env
     ```
 
-    Now open .env with your preferred text editor. You need to set the
-    values of the following fields:
+    This will open the file `.env` in VSCode. In VSCode you may see a message 
+    "Git repositories were found... do you want to open them?", you can close it or ignore it.
+
+    **NOTE**: you can navigate with your usual file explorer to the
+    "dltc-env" folder, which will be located where you cloned it in
+    step 1. The `.env` file is a hidden file, so you would need to
+    enable viewing hidden files to see it.
+
+    The contents of `.env` look like this:
+
+
+    You need to set the values of the following fields <!-- newbie isn't sure what that means: "is is some setting, do I change it by changing that" -->:
 
     2.1 `ARCH`: the architecture of your machine. If you are on a Mac
     with an Apple Silicon chip, set this to "arm64". Otherwise, leave it
@@ -211,16 +224,13 @@ sure that you have at least 10 GB of free space in your machine:
     Linux)
 
     2.2 `DLTC_WORKHOUSE_DIRECTORY`: the full path, on your local
-    machine, to the 'dltc-workhouse' folder inside Dropbox
+    machine, to the 'dltc-workhouse' folder inside Dropbox. One way to get it
+    is to open an article folder in VSCode (perhaps in a new window), open a 
+    terminal within VSCode and run the command `pwd` ('present working directory'). 
 
     2.3 `DOCKERHUB_TOKEN`: the **login token** (not the "password") for
     the dockerhub account. You can find it in the "Institutional set-up"
     page in our Google Drive
-
-    **NOTE**: you can navigate with your usual file explorer to the
-    "dltc-env" folder, which will be located where you cloned it in
-    step 1. The `.env` file is a hidden file, so you would need to
-    enable viewing hidden files to see it.
 
 3.  Now you can execute the start script:
 
@@ -235,26 +245,39 @@ sure that you have at least 10 GB of free space in your machine:
     The first time you do this it will take a while as it needs to
     download the image, which contains a full LaTeX installation. This
     will not happen often, but you will also need to execute this script
-    any time there is an update to the compilation environment.
+    any time there is an update to the compilation environment <!-- explain "compilation environment" earlier on -->.
 
-    **OPTIONAL**. Whenever you finish working on your copyediting tasks,
-    you can stop the container containing the compilation environment.
-    To do this, execute this on a terminal:
+### Starting and stopping the compilation environment container
 
-    ``` sh
-    docker stop dltc-env
-    ```
+The compilation environment that produces output runs in a 'Docker container'
+that can be started or stopped. It'll stop if you close Docker or restart
+your computer. Optionally, you can stop the container when you finish
+working on your copyediting tasks and restart it when you start again. 
+(If you don't stop it, it won't slow down your computer in any noticeable
+way but it'll use a bit of memory but shouldn't slow down
+your computer in a noticeable way.)
 
-    And to use the container again:
+Starting and stopping containers can be done from the terminal or from 
+the Docker app. From the terminal, use:
 
-    ``` sh
-    docker start dltc-env
-    ```
+``` sh
+docker stop dltc-env
+```
 
-After this step, you'ready to start using the new container created from
-the docker image that the start script pulled from dockerhub. There are
-many ways to use a running container, but for our purposes, the easiest
-is to use VSCode.
+to stop it, and 
+
+``` sh
+docker start dltc-env
+```
+
+to start it again. 
+
+From the Docker app, go to Containers tab: a box
+icon on the top left. (Don't forget to close the Settings if you
+haven't.) In the list of containers you should see one called `dltc-env`.
+It's greyed out if stopped, green if started. In the Actions column,
+there's a play/stop icon you can use to start or stop it. 
+
 
 ### Setup: VSCode
 
@@ -267,29 +290,35 @@ Quarto. It is language agnostic and lightweight, not needing any
 specific programming language dependencies.
 
 For this subsection, it is recommended that you create a
-[GitHub](https://github.com/) account, and then connect to it in VSCode.
-So, after creating your account, open VSCode:
+[GitHub](https://github.com/) account, and then connect to it in 
+VSCode.^[If you encounter some issue with these instructions, check out
+the [official VSCode documentation instead][https://code.visualstudio.com/docs/sourcecontrol/github].] 
 
-1.  Connect VSCode to your GitHub account. To do this, look on the
-    vertical toolbar to the left and down for 'Accounts', and connect to
-    your GitHub account. Then, clicking again on 'Accounts', enable both
+1.  Create an account on [GitHub](https://github.com/).
+2.  Open VSCode. On the left toolbar, click on Extensions, and search and install the
+    "GitHub Pull Requests and Issues" extension.
+4.  On the left toolbar, look down for 'Accounts', and connect to
+    your GitHub account. (If you're on a public Wifi this may not work; use 
+    a private one or your mobile hotspot.)
+5. Then, clicking again on 'Accounts', enable both
     'Settings Sync' and 'Turn on Cloud Changes'. This will synchronize
     your VSCode settings in any device you connect it to your account.
 
 -   Recommended: click on the cogwheel icon at the bottom of the
-    vertical toolbar on the left, and go to "Settings". Look on the
-    search bar for "telemetry", and set the "Telemetry Level" to "off".
+    vertical toolbar on the left, and go to "Settings". On the page 
+    that appears, use the search bar at the top to search for "telemetry", 
+    and set the "Telemetry Level" to "off".
     We don't need Microsoft spying (more than it already does) on us.
 
-2.  Then, it is recommended that you create a 'profile' to manage the
+1.  Then, it is recommended that you create a 'profile' to manage the
     extensions you need for copyediting.
 
--   In the vertical toolbar to the left, below 'accounts', click on
-    Settings \>\> Profiles \>\> Create profile...
+-   In the vertical toolbar to the left, click on the cogwheel (Settings)
+    and choose Profiles > Create profile...
 -   Give a name to your profile e.g., "dltc-copyediting" and use the
     default options
 
-3.  Now we will install some extensions needed for the copyediting
+7.  Now we will install some extensions needed for the copyediting
     workflow. In the toolbar to the left, look for the "Extensions"
     button. There, using the search bar, look for and install the
     following:
@@ -303,23 +332,26 @@ So, after creating your account, open VSCode:
 
 Other recommended extensions are:
 
--   Error Lens (by Alexander)
+-   Error Lens (by Alexander)   
+
+If you have a GitHub pro account, we also recommend:
+
 -   GitHub Copilot (by GitHub)
 -   GitHub Copilot Chat (by GitHub)
 
-To use the last two tool, you need a GitHub pro account. If you have a
-university student account and email, [you can be granted a pro account
-for free](https://education.github.com/pack). Copilot is an AI assistant
-that can help you code in general, including help you with Markdown and
-LaTeX, both directly in VSCode when you edit files and in a chat button
-provided by the Chat extension (that will appear in the left toolbar).
+If you have a university student account and email, [you can be granted a 
+GitHub pro account for free](https://education.github.com/pack). 
+Copilot is an AI assistant that can help you code in general, 
+including help you with Markdown and LaTeX, both directly in VSCode 
+when you edit files and in a chat button provided 
+by the Chat extension (that will appear in the left toolbar).
 
 Now, whenever you start VSCode, make sure that you're connected to your
 GitHub account (in "Accounts"), and that you're using the profile you
 created (in "Settings \>\> Profiles"). Also make sure that the
 extensions are installed *inside* the container (in "Extensions").
 
-4.  Once everything is installed, back at the "Extensions" button of the
+1.  Once everything is installed, back at the "Extensions" button of the
     left toolbar, clear any search in the searchbar. Now, you will see
     that some extensions ask to be installed in the container. To do
     this en masse, look for the separator that says "CONTAINER
@@ -327,16 +359,16 @@ extensions are installed *inside* the container (in "Extensions").
     downward pointing arrow. This will install all of your extensions in
     the container.
 
-5.  Now go back to the left toolbar and look for "Remote Explorer"
+2.  Now go back to the left toolbar and look for "Remote Explorer"
     (looks like a computer screen). At the top, there will be a
     drop-down menu in which you can select "Dev Containers".
 
-6.  You will now see the name "dltc-env dltc-env". If you hover with the
+3.  You will now see the name "dltc-env dltc-env". If you hover with the
     mouse, you'll see an arrow whose name is "Attach in Current Window".
     Click it, and VSCode will start running inside the container (you
     can check that by looking at the bottom left of the VSCode window).
 
-7.  Now you can work as usual, but inside this container you have all of
+4.  Now you can work as usual, but inside this container you have all of
     the necessary tools available, including a full LaTeX environment,
     pandoc, and quarto.
 

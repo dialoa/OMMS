@@ -49,7 +49,7 @@ book:
       - chapters/copyediting/29-cop-markdown-cheatsheet.qmd
     - part: Dialectica
       chapters:
-      - chapters/dialectica/60-dialectica-house-outputs.qmd
+      # - chapters/dialectica/60-dialectica-house-outputs.qmd
       - chapters/dialectica/61-dialectica-new-house-outputs.qmd
       - chapters/dialectica/65-dialectica-troubleshooting-outputs.qmd
       - chapters/dialectica/70-dialectica-titles.qmd

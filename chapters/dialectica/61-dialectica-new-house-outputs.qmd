@@ -1,8 +1,21 @@
 # Dialectica new house style outputs {#sec-dialectica-new-house-outputs}
 
-The association is setting up a standardized compilation environment for
-Dialectica. This environment essentially encapsulate all of the tools
-needed for the copyediting work, such as pandoc, LaTeX, and Quarto.
+Dialectica outputs are *compiled*: from a markdown manuscript, image files, bibliography files and Dialectica's template (itself a collection of files), it creates PDFs and HTML outputs. The *compilation environment* is the collection of software tools to do this: Pandoc, LaTeX, Quarto, and a few others. Instead of asking everybody to install these tools on their various Linux/Windows/Mac machines, and asking everybody to update them to the same version, we are using a "containerized" environment that is the same for all, no matter which machine you have. 
+
+Let's briefly explain how this works, including key terms. In the old days, computers came with an 'installation disk/DVD/USB key' that had your computer system (Windows, Mac, Linux) and perhaps some basic software (a text editor). Using the disk/DVD/USB key, you set up the system on the machine, and then used the computer. And in the old days, you'd give each copyeditor a computer of the same model, with the same installation disk/DVD/USB key. We're doing to do exactly that, except that our company computer is virtual and will be simulated by your own computer. The Docker application is the software that enables to do that.
+
+The Docker application works with images and containers. We'll have:
+
+- an *image* of Dialectica's compilation environment. This is like the old disk/DVD/USB, but in one file that'll be downloaded from the internet. It contains all the software needed to create Dialectica outputs (Pandoc, LaTeX, etc.). It's called an "image" in the sense that when we clone a hard drive's contents we call the result an "image" of the hard drive. For Dialectica, the image will be named `philosophie-ch/dltc-env` and include a Linux system with the tools.
+- a *container* in which the image is installed. The container is like a small company computer, except that instead of being a real machine, the Docker app simulates it on your own computer. That is, the Docker app takes reserves some of your system's resources (the processor, some memory, some temporary disk space), and simulates a mini computer with them, called a "container". For Dialectica, your container will be named `dltc-env` and be a virtual Linux machine with Pandoc, LaTeX and other tools installed.
+
+Once your container (virtual company computer) is created, it can be *started* or *stopped*. This is just like turning the company computer on and off. 
+
+The container (virtual company computer) is isolated from your actual system and filesystem, so it doesn't change anything in your system, it doesn't crash your system if it crashes, and you won't see its internal files on your file browser. 
+
+There is one exception though: the container will have access to the *dialectica workshouse folder* on your own filesystem. That allows it to read manuscript markdown files, bibliography files, etc. in order to generate outputs, and then to write the generated outputs (PDF or HTML files) in your filesystem so you can view them. 
+
+Moreover, in the advanced text editor we'll use (Visual Studio Code aka VSCode), you'll be able to run a Terminal on the container (virtual company machine) itself. This allows you to tell the container to generate outputs. 
 
 ## Setting up your system
 
@@ -188,15 +201,17 @@ sure that you have at least 10 GB of free space in your machine:
 
 1.  Using a terminal, first clone the git repository where the start
     script is: <!-- the repository that contains the start script? -->
-    <!-- which should be your preferred location?? People who don't have GitHub repos cloned don't understand -->
+    <!-- which should be your preferred location?? People who don't have GitHub repos cloned don't understand. Also, is this a temporary repo, or will it need to be there all the time? -->
 
     ``` sh
     # cd to your preferred location. For example:
     # mkdir ~/gitrepos
     # cd ~/gitrepos
-    git clone https://github.com/Philosophie-ch/dltc-env.git
+    git clone https://github.com/Philosophie-ch/dltc-env
     cd dltc-env
     ```
+
+    <!--Note: users may need to update this repo? Since we first tried with Sanna there has been updates. Perhaps this also needs instructions on how to update a git repo  -->
 
 2.  Now copy the `.env.template` file into `.env` and edit its contents:
 
@@ -206,46 +221,157 @@ sure that you have at least 10 GB of free space in your machine:
     ```
 
     This will open the file `.env` in VSCode. In VSCode you may see a message 
-    "Git repositories were found... do you want to open them?", you can close it or ignore it.
+    "Git repositories were found... do you want to open them?", you can close it or ignore it. 
 
     **NOTE**: you can navigate with your usual file explorer to the
     "dltc-env" folder, which will be located where you cloned it in
-    step 1. The `.env` file is a hidden file, so you would need to
-    enable viewing hidden files to see it.
+    step 1 (namely, within your Github folder). If you use the file explorer, you will however not immediately see the `.env`. To see it in the file explorer, you need to enable viewing hidden files. The way to do this depends on which system you are using. On the other hand, if you are viewing the contents of `dltc-env` in the VSCode text editor (for isntance, if you typed the `code .env` command above), the file explorer within VSCode will show you the `.env` files. If you are viewing the files that way, you do not need to enable viewing hidden files. 
 
     The contents of `.env` look like this:
 
+    ```
+    ARCH="amd64"  # put "arm64" if on an Apple Silicon Mac (M1, M2, etc.; non-Intel)
+    DLTC_WORKHOUSE_DIRECTORY="/YOUR/PATH/TO/Dropbox/philosophie-ch/dltc-workhouse"
+    DOCKERHUB_TOKEN="token_in_the_institutional_setup_page"
+    ```
 
-    You need to set the values of the following fields <!-- newbie isn't sure what that means: "is is some setting, do I change it by changing that" -->:
+    This is a key-value file. `ARCH`, `DLTC_WORKHOUSE_DIRECTORY`, `DOCKERHUB_TOKEN` are keys, and the strings within quotes, `amd64`, `/YOUR/PATH...`, "token_in_the..." are their values. You need to put the values appropriate to your local system. You should set the values as follows, and save the file:
 
-    2.1 `ARCH`: the architecture of your machine. If you are on a Mac
-    with an Apple Silicon chip, set this to "arm64". Otherwise, leave it
-    as is ("amd64", which is for Macs with Intel chips, Windows, and
-    Linux)
+    2.1 `ARCH`: the "architecture" of your machine. If you are on a Windows machine, a Linux machine, or a Mac with Intel chips (not Apple Silicon), leave this to `amd64`. If you have a Mac with Apple Silicon chip, set it to `arm64`.
 
     2.2 `DLTC_WORKHOUSE_DIRECTORY`: the full path, on your local
-    machine, to the 'dltc-workhouse' folder inside Dropbox. One way to get it
-    is to open an article folder in VSCode (perhaps in a new window), open a 
-    terminal within VSCode and run the command `pwd` ('present working directory'). 
+    machine, to the `dltc-workhouse` folder inside Dropbox. Here's one way to get it. Open a Terminal. Navigate (using `cd`commands ) to that folder, and run the command `pwd` ('present working directory'). It will display the full path to that folder, e.g. `/Users/janedoe/Dropbox/Philosophie-ch/dltc-workhouse/` on a Mac. 
 
     2.3 `DOCKERHUB_TOKEN`: the **login token** (not the "password") for
     the dockerhub account. You can find it in the "Institutional set-up"
-    page in our Google Drive
+    page in our Google Drive, "Passwords" section.
 
-3.  Now you can execute the start script:
+    Do not forget to save `.env` when you have done this.
+
+3.  Now you can execute the start script. From the folder `dltc-env`, in 
+    Linux and Mac run: 
 
     ``` sh
-    # On Linux and Mac
     ./dltc-env-start.sh
+    ```
 
-    # On Windows
+    (Equivalently: `sh dltc-env-start.sh`. When a file is a script, for safety reasons it cannot be launched just by typing the file name, you have to either launch the shell script executor `sh` followed by the name of the script, or, you have to precede the script by its path. Since here, the script `dltc-env-start.sh` is in your current folder, the path to it is: `./`. The dot is the current folder, and the slash  separates the folder name, `.`, from the script file name, `dltc-env-start.sh`. This is why the full path is `./dltc-env-start.sh`.)
+
+    On Windows, run:
+
+    ``` powershell
     .\dltc-env-start.ps1
     ```
 
-    The first time you do this it will take a while as it needs to
-    download the image, which contains a full LaTeX installation. This
-    will not happen often, but you will also need to execute this script
-    any time there is an update to the compilation environment <!-- explain "compilation environment" earlier on -->.
+    (The idea is as before, `.` is the current folder and `\` the (Windows-style) separator. There is probably an equivalent such as `ps dltc-env-start.ps1` but I don't know it.)
+
+The last command downloads an "image" of Dialectica's "compilation environment" (a mini Linux system containing Pandoc, LaTeX and other utilities), and it runs this image in a mini-machine simulated by your computer called a Docker "container". The first time you execute this command it will take a while as it needs to download the image, which is about 5-10Gb. But this will only happen the first time it's used, and where there are updates of the images online.
+
+If the compilation environment starts correctly, you will see a message like the following:
+
+```
+Logged in to Docker Hub as philosophiech
+
+latest-arm64: Pulling from philosophiech/dltc-env
+ce9ebea987c2: Pull complete 
+42ca1070b43f: Pull complete 
+3d93737c6ee5: Pull complete 
+...
+61e48dddaaa9: Pull complete 
+Digest: sha256:bc24161a6b997899ce3881246ee17a4aeae03e6885ab77e1b18cdb2092dc2248
+Status: Downloaded newer image for philosophiech/dltc-env:latest-arm64
+docker.io/philosophiech/dltc-env:latest-arm64
+
+Successfully pulled latest dltc-env image for arm64; now logged out of Docker Hub
+
+Starting dltc-env container, please wait...
+[+] Running 1/2
+⠴ Network dltc-env_default  Created                                     0.5s 
+✔ Container dltc-env        Started                                     0.5s 
+
+...success!
+```
+
+Careful that the last line `success` may display even if there was an error! If you encounter one of the errors below, try to fix it and run the script again. 
+
+Errors you may encounter when running the `dltc-env-start` script:
+
+1. The error message: "`dltc-env-start`: No such file or directory". Your terminal is not located in the `dltc-env` folder, itself in your GitHub repositories folder. Use `cd` commands to change its location to the `dltc-env` folder.
+
+1. The error message: "`DLTC_WORKHOUSE_DIRECTORY` does not exist." 
+
+    If you get this error there must be something wrong with the path you put as the value of `DLTC_WORKHOUSE_DIRECTORY` in the `.env` file. If you're not sure what's wrong, try the steps of finding out the full path of Dialectica's workhouse folder before, and check you have saved `.env`.
+
+2. The following error:
+
+    ```
+    ! dltc-env The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested 0.0s 
+    ```
+
+    This is because the value for `ARCH` in the `.env` file is wrong, so the script has downloaded an `image` that cannot be ran on your machine. Double-check it. Once you have fixed it, you should (1) delete the container and its image and then (2) re-run the script. To delete the container and its image: open the Docker app, go the Containers tab (box-like icon on the left tab), look if the list contains an item named `dltc-env`, and click the Trash icon next to it; then go to the Images tab (empty cube icon on the left tab), look whether it contains an item named `philosphie-ch/dtlc-env` and click the Trash icon next to it. If these items don't show up, you have nothing to delete. Once you've deleted any container/image remaining, you can start the script again.
+
+3. An error like the following:
+
+    ```
+    Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+    Successfully pulled latest dltc-env image for arm64; now logged out of Docker Hub
+
+    Starting dltc-env container, please wait...
+    Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+    Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+    ...success!
+    ```
+
+    (Note that the "success" messages are incorrect here.) This "Cannot connect to the Docker daemon error" is because Docker (the application that runs the compilation environment 'image' in a 'container') is not started. Launch the Docker application and try running the `dltc-env-start` script again.
+
+3. An error message like the following:
+
+    ```
+    MacBook-Air:dltc-env sannahirvonen$ ./dltc-env-start.sh
+    Logged in to Docker Hub as philosophiech
+
+    latest-amd64: Pulling from philosophiech/dltc-env
+    29202e855b20: Pull complete 
+    04c6e9d3a90b: Pull complete 
+    ...
+    write /var/lib/docker/tmp/GetImageBlob1011053309: input/output error
+
+    Successfully pulled latest dltc-env image for amd64; now logged out of Docker Hub
+
+    Starting dltc-env container, please wait...
+    [+] Running 1/1
+    ✘ Container dltc-env  Error while Removing                               10.3s 
+    Error response from daemon: container 4ccdac99d0fb7b215bebca79fc1b752d14a1e78575efa547b9fd46a1a4dac282: driver "overlay2" failed to remove root filesystem: unlinkat /var/lib/docker/overlay2/4d90b7b3fe97f8cb8470efce26625765b4dcc6699b73ee56d041859dc9071f9b: read-only file system
+    [+] Running 1/1
+    ✘ dltc-env Error                                                          0.1s 
+    Error response from daemon: error creating temporary lease: write /var/lib/desktop-containerd/daemon/io.containerd.metadata.v1.bolt/meta.db: input/output error: unknown
+
+    ...success!
+    ```
+
+    We don't know why this happens. But if it does, try deleting the container and image and restarting the script. To do this, open Docker app. Go the Containers tab (box-like icon on the left tab), look if the list contains an item named `dltc-env`, and click the Trash icon next to it; then go to the Images tab (empty cube icon on the left tab), look whether it contains an item named `philosphie-ch/dtlc-env` and click the Trash icon next to it. If these items don't show up, you have nothing to delete. Once you've deleted any container/image remaining, you can start the script again.
+
+4. An error message like the following:
+   
+   ```
+   Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "/host_mnt/Users/janedoe/.gitconfig" to rootfs at "/home/copyeditor/.gitconfig": mount /host_mnt/Users/janedoe/.gitconfig:/home/copyeditor/.gitconfig (via /proc/self/fd/7), flags: 0x5000: not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+   ```
+
+   This is because Git is badly configured. More precisely, you have a `.gitconfig` *folder* at the base of your user directory, while `.gitconfig` should be a *file*. (It won't show up in the browser because '.xxx' items are hidden, but you can see it with the option 'show hidden files' or by running the `ls` command in a terminal located at the root of your user directory). We have encoutered this error and we don't know why it happens.
+
+   We solved it by removing the folder and creating an empty `.gitconfig` file. On Linux/MacOS, remove the folder with:
+
+   ``` sh
+   rm -r ~/.gitconfig
+   ```
+
+   And create an empty `.gitconfig` file with:
+
+   ``` sh
+   touch ~/.gitconfig
+   ```
 
 ### Starting and stopping the compilation environment container
 
@@ -276,41 +402,27 @@ From the Docker app, go to Containers tab: a box
 icon on the top left. (Don't forget to close the Settings if you
 haven't.) In the list of containers you should see one called `dltc-env`.
 It's greyed out if stopped, green if started. In the Actions column,
-there's a play/stop icon you can use to start or stop it. 
-
+there's a play or stop icon you can use to start or stop it. 
 
 ### Setup: VSCode
 
-While not strictly mandatory, it is highly recommended to use VSCode for
-the copyediting work. VSCode is a modern, general text editor suited for
-all tasks programming and writing. It has support for state-of-the-art
-software tools such as Docker, and through its vast market of
-extensions, provides great support for Markdown, LaTeX, HTML, and
-Quarto. It is language agnostic and lightweight, not needing any
-specific programming language dependencies.
+While not strictly mandatory, it is highly recommended to use Visual Studio 
+Code (VSCode) for the copyediting work. VSCode is a modern, general text 
+editor suited for all tasks programming and writing. It has support for 
+state-of-the-art software tools such as Docker, and through its vast 
+market of extensions, provides great support for Markdown, LaTeX, HTML, and
+Quarto. It is lightweight, not tied to any specific programming or writing language, and doesn't need specific programming languages installed.
 
 For this subsection, it is recommended that you create a
 [GitHub](https://github.com/) account, and then connect to it in 
 VSCode.^[If you encounter some issue with these instructions, check out
 the [official VSCode documentation instead][https://code.visualstudio.com/docs/sourcecontrol/github].] 
 
-1.  Create an account on [GitHub](https://github.com/).
-2.  Open VSCode. On the left toolbar, click on Extensions, and search and install the
-    "GitHub Pull Requests and Issues" extension.
-4.  On the left toolbar, look down for 'Accounts', and connect to
-    your GitHub account. (If you're on a public Wifi this may not work; use 
-    a private one or your mobile hotspot.)
-5. Then, clicking again on 'Accounts', enable both
-    'Settings Sync' and 'Turn on Cloud Changes'. This will synchronize
-    your VSCode settings in any device you connect it to your account.
+*  Create an account on [GitHub](https://github.com/).
 
--   Recommended: click on the cogwheel icon at the bottom of the
-    vertical toolbar on the left, and go to "Settings". On the page 
-    that appears, use the search bar at the top to search for "telemetry", 
-    and set the "Telemetry Level" to "off".
-    We don't need Microsoft spying (more than it already does) on us.
+Now set up VSCode. VSCode has a "profile" functionality: you can create distinct profiles, where each profile has its own set of tools ("extensions"). Initially, there's only the "default" profile. We recommend you create a specific "dialectica copyeditor" profile.
 
-1.  Then, it is recommended that you create a 'profile' to manage the
+* Create a 'profile' to manage the
     extensions you need for copyediting.
 
 -   In the vertical toolbar to the left, click on the cogwheel (Settings)
@@ -318,13 +430,20 @@ the [official VSCode documentation instead][https://code.visualstudio.com/docs/s
 -   Give a name to your profile e.g., "dltc-copyediting" and use the
     default options
 
-7.  Now we will install some extensions needed for the copyediting
-    workflow. In the toolbar to the left, look for the "Extensions"
-    button. There, using the search bar, look for and install the
-    following:
+You can switch profiles by going to the Settings cogwheel > Profiles. 
 
--   Remote Explorer (by Microsoft)
--   Dev Containers (by Microsoft)
+Next, we install useful Extensions in this profile. 
+
+1. Install the "Dev Containers" extension (by Microsoft). On the left toolbar, click on "Extensions" (the cube pile), and search for "Dev Containers". It should show up with an "Install" button. Install it.
+2. Install the "Remote Explorer" extension (by Microsoft). On the left toolbar, click on "Extensions" (the cube pile), search for "Remote Explorer" and install it. (If you don't see an install button, that means it's already been automatically installed at the previous step; you can move on to the next step.)
+3. Connect VSCode to the Dialectica container. This requires that the container is started (see above). On the left bar, you should see a Remote Explorer tab (a screen with the `><` logo). Click on it, it display a navigation column on the left. You should find a "Dev Containers" section there, and within it, the `dtlc-env` container name. (If you don't already see the name, click on "Dev Containers" to expand it. If after that you still don't see it, make sure the container is started.) Hover on the `dltc-env` and click on the right arrow just next to it ("Attach in Current Window"). You get a warning that attaching to a container may execute arbitrary code: accept ("Got it"). 
+
+This has 'connected' the present VSCode window to the container (i.e., the virtual company computer that runs Dialectica's compilation environment to generate output).
+
+Finally, install some extensions that are useful for copyediting in markdown and LaTeX and Quarto, and to preview outputs. 
+
+1. On the left toolbar, click "Extensions". Search and install all of the following: 
+
 -   LaTeX Workshop (by James Yu)
 -   Markdown All in One (by Yu Zhang)
 -   Quarto (by Quarto)
@@ -332,7 +451,107 @@ the [official VSCode documentation instead][https://code.visualstudio.com/docs/s
 
 Other recommended extensions are:
 
--   Error Lens (by Alexander)   
+-   Error Lens (by Alexander)
+-   
+
+### Checking that your setup is right
+
+Whenever you start VSCode:
+
+1. Make sure that you're using the profile you created. If you did create a specific profile for dialectica copyediting, you should see an acronym for it (e.g. "DL") on the Settings cogwheel at the bottom left. If you didn't and are using the default profile, you're fine.
+2. Make sure that the Extensions installed above are installed "inside" the container. This explained below.
+3. If you have connected VSCode to GitHub, check that you're connected to your GitHub account (in "Accounts"), and that you're using the profile you
+created (in "Settings \>\> Profiles"). 
+
+To ensure that VSCode Extensions are installed "inside" the container:
+
+1.  Click the "Extensions" button of the left toolbar. Clear any 
+   search in the search bar. Now, you will see a "Local - Installed" 
+   section that lists the extensions we've installed. (Note that this 
+   section is collapsible: if there's a `>` next to "Local Installed", click 
+   on it to expand.) You might see that some extensions bear a blue label "Install in container". If they do, click on the label to install these extensions "within" the container. If none shows that label, you're fine. Beware that you might need to scroll down to review all extensions in the "Local - Installed" section. 
+
+2. Check that your current window is "attached" to Dialectica's container. 
+    The bottom of VSCode's window is a status bar. To its left there is a 
+    `><` icon that tells what the window is connected to. If it shows 
+    `>< Container philosophiech/dltc-env...`, your window is attached to 
+    Dialectica's container (the virutal company computer that will produce 
+    outputs). If it's just a green `><` symbol, it's not attached. You need to attach it as follows:
+    
+    - Click the "Remote Explorer" (screen with the `><` logo) on the left toolbar. It opens a navigation column. At the top you should see a "Dev Containers" section. (It's collapsible: if you see the `>` symbol left of "Dev Containers", click it to expand.) You should see the container named `dtlc-env` with a green badge. If there's no green badge on it, the Dialectica container isn't connected. Click the right arrow right next to `dltc-env` (it says "Attach in current window" if you hover the mouse pointer over it for a few seconds). 
+    - If all goes well, after the window reopens you should see `>< Container philosophiech/dltc-env...` in the bottom status bar, on the left.
+
+### Working 'inside' a container
+
+Once you attached a VSCode window in a container, you're *working inside that container*. What does that mean? In VSCode you can run commands on a terminal. Normally, terminal commands are run on your own system. But when a VSCode window is attached to a container, its terminal runs command *on that container*---that is, on the virtual company computer we've just created. 
+
+If you don't already see the Terminal at the bottom of your VSCode window, go to the menu Terminal > New Terminal. It'l create one at the bottom. You'll see a line:
+
+```
+copyeditor@dltc-env:~$
+```
+
+This is a "prompt": it waits for your to run a command. It consists of three 
+parts: username, here `copyeditor` (that's *your* identifier within the 
+container), current location, here `~` (this is a shorthand for the user's 
+home folder), and the `$` sign (meaning 'waiting for your command!'). What 
+is the current location? A terminal is always 'located' in some folder. Here 
+the folder is `~`, which is the home folder *in the container*. Run the 
+command `ls` (*list* directory contents). That is, type `ls` and Enter. You 
+should see:
+
+```
+copyeditor@dltc-env:~$ ls
+dltc-workhouse
+copyeditor@dltc-env:~$ 
+```
+
+The home folder contains one directory called `dltc-workhouse`. Locate yourself within it with the `cd` (change directory) command. Run:
+
+```
+cd dltc-workhouse
+```
+
+Tip: you don't need to type all the line. If you start typing `cd dl` and
+hit the Tab key, the terminal will try to autocomplete file or folder names. 
+Here it'll guess that you want `cd dltc-workhouse`, since `cd dl` is the only
+existing folder starting with `dl`. If there are multiple file or folder 
+names that could complete what you typed, one Tab won't do anything but two Tabs will display all the possible completions. You can then type a few characters more until only one is possible and hit Tab. Using autocomplete is a good way to avoid typos in file and folder names. Note that autocomplete only works for file and folder names, not for commands. 
+
+Result:
+
+```
+copyeditor@dltc-env:~$ cd dltc-workhouse/
+copyeditor@dltc-env:~/dltc-workhouse$ 
+```
+
+You see the current location has changed from `~` (user's home folder) to `~/dltc-workhouse` (`dltc-workhouse` within the user's home folder). 
+
+Here's where the magic happens: the `dltc-workhouse` folder is *also* the one within your own filesystem! It is now shared between your own system and the container. So the container can read article manuscripts, bibliography files, and others from it, and it can write PDFs and HTML outputs within it.
+
+You can then further navigate to a specific article folder. Use `ls` to list folders and files, use `cd <FOLDER_NAME>` to change folder. Use `cd ..` to go back one folder, `cd ../../` to go back two folders, `cd ../../ARTICLE` to go back two folders and then, from there, down the ARTICLE folder, and so on.
+
+Be careful when you run commands in `dltc-workhouse` and its subfolders. While the container in general is isolated from your system (hence whatever you change or install in it doesn't affect your sytem), the exception is the `dltc-workhouse`, which is the one containing the article files on your system. You do not want to damage or delete them. Beware in particular of `rm` (remove) commands, which deletes files and folders without seeking confirmation. 
+
+Note: the terminal within the folder is a Linux terminal. It runs the Linux/MacOS commands (`cd`, `ls`, `cp`, `rm`) not the Windows ones (`cd` but otherwise `dir`, `copy`, `del`). 
+
+We can install new tools or modify existing ones in the environment
+depending on the needs of the copyediting team. Please contact Luis
+Bordo at `luis.bordo@philosophie.ch` for any such request.
+
+### Optional extra setup: connect VSCode to GitHub
+
+Optionally, connect VSCode to GitHub. <!-- what for? Is it only in order to edit the guide? -->
+
+1.  Install "GitHub Pull Requests and Issues" extension. On the left toolbar, click on Extensions, and search and install the "GitHub Pull Requests and Issues" extension.
+2.  Connect to your GitHub account. On the left toolbar, look down for 'Accounts', and connect to your GitHub account. (If you're on a public Wifi this may not work; use a private one or your mobile hotspot.)
+3. Then, clicking again on 'Accounts', enable both
+    'Settings Sync' and 'Turn on Cloud Changes'. This will synchronize
+    your VSCode settings in any device you connect it to your account.
+
+   -   *Recommended*. Tell VSCode not to report your activity to Microsoft (they spy us enough already). Click on the cogwheel icon at the bottom of the vertical toolbar on the left, and go to "Settings". On the page 
+    that appears, use the search bar at the top to search for "telemetry", 
+     and set the "Telemetry Level" to "off".
 
 If you have a GitHub pro account, we also recommend:
 
@@ -345,42 +564,6 @@ Copilot is an AI assistant that can help you code in general,
 including help you with Markdown and LaTeX, both directly in VSCode 
 when you edit files and in a chat button provided 
 by the Chat extension (that will appear in the left toolbar).
-
-Now, whenever you start VSCode, make sure that you're connected to your
-GitHub account (in "Accounts"), and that you're using the profile you
-created (in "Settings \>\> Profiles"). Also make sure that the
-extensions are installed *inside* the container (in "Extensions").
-
-1.  Once everything is installed, back at the "Extensions" button of the
-    left toolbar, clear any search in the searchbar. Now, you will see
-    that some extensions ask to be installed in the container. To do
-    this en masse, look for the separator that says "CONTAINER
-    PHILOSOPHIECH/DLTC-ENV..." and click on the cloud icon with a
-    downward pointing arrow. This will install all of your extensions in
-    the container.
-
-2.  Now go back to the left toolbar and look for "Remote Explorer"
-    (looks like a computer screen). At the top, there will be a
-    drop-down menu in which you can select "Dev Containers".
-
-3.  You will now see the name "dltc-env dltc-env". If you hover with the
-    mouse, you'll see an arrow whose name is "Attach in Current Window".
-    Click it, and VSCode will start running inside the container (you
-    can check that by looking at the bottom left of the VSCode window).
-
-4.  Now you can work as usual, but inside this container you have all of
-    the necessary tools available, including a full LaTeX environment,
-    pandoc, and quarto.
-
-In general, be careful with what you do even inside the container. While
-the container is relatively isolated from your machine, **it is
-connected to the dltc-workhouse Dropbox folder**, so any changes or
-deletions you make will affect everyone, as usual when working using
-Dropbox.
-
-We can install new tools or modify existing ones in the environment
-depending on the needs of the copyediting team. Please contact Luis
-Bordo at `luis.bordo@philosophie.ch` for any such request.
 
 ### New way of generating outputs: dltc-make
 

@@ -454,6 +454,32 @@ Other recommended extensions are:
 -   Error Lens (by Alexander)
 -   
 
+### Optional extra setup: connect VSCode to GitHub
+
+Optionally, connect VSCode to GitHub. <!-- what for? Is it only in order to edit the guide? -->
+
+1.  Install "GitHub Pull Requests and Issues" extension. On the left toolbar, click on Extensions, and search and install the "GitHub Pull Requests and Issues" extension.
+2.  Connect to your GitHub account. On the left toolbar, look down for 'Accounts', and connect to your GitHub account. (If you're on a public Wifi this may not work; use a private one or your mobile hotspot.)
+3. Then, clicking again on 'Accounts', enable both
+    'Settings Sync' and 'Turn on Cloud Changes'. This will synchronize
+    your VSCode settings in any device you connect it to your account.
+
+   -   *Recommended*. Tell VSCode not to report your activity to Microsoft (they spy us enough already). Click on the cogwheel icon at the bottom of the vertical toolbar on the left, and go to "Settings". On the page 
+    that appears, use the search bar at the top to search for "telemetry", 
+     and set the "Telemetry Level" to "off".
+
+If you have a GitHub pro account, we also recommend:
+
+-   GitHub Copilot (by GitHub)
+-   GitHub Copilot Chat (by GitHub)
+
+If you have a university student account and email, [you can be granted a 
+GitHub pro account for free](https://education.github.com/pack). 
+Copilot is an AI assistant that can help you code in general, 
+including help you with Markdown and LaTeX, both directly in VSCode 
+when you edit files and in a chat button provided 
+by the Chat extension (that will appear in the left toolbar).
+
 ### Checking that your setup is right
 
 Whenever you start VSCode:
@@ -481,111 +507,67 @@ To ensure that VSCode Extensions are installed "inside" the container:
     - Click the "Remote Explorer" (screen with the `><` logo) on the left toolbar. It opens a navigation column. At the top you should see a "Dev Containers" section. (It's collapsible: if you see the `>` symbol left of "Dev Containers", click it to expand.) You should see the container named `dtlc-env` with a green badge. If there's no green badge on it, the Dialectica container isn't connected. Click the right arrow right next to `dltc-env` (it says "Attach in current window" if you hover the mouse pointer over it for a few seconds). 
     - If all goes well, after the window reopens you should see `>< Container philosophiech/dltc-env...` in the bottom status bar, on the left.
 
-### Working 'inside' a container
+### Working 'inside' a container {#sec-working-inside-a-container}
 
-Once you attached a VSCode window in a container, you're *working inside that container*. What does that mean? In VSCode you can run commands on a terminal. Normally, terminal commands are run on your own system. But when a VSCode window is attached to a container, its terminal runs command *on that container*---that is, on the virtual company computer we've just created. 
+Once you attached a VSCode window in a container, you're *working inside 
+that container*. What does that mean? In VSCode you can run commands on a 
+terminal. Normally, terminal commands are run on your own system. But when a 
+VSCode window is attached to a container, its terminal runs commands 
+*on that container*---that is, on the virtual company computer we've just 
+created. 
 
-If you don't already see the Terminal at the bottom of your VSCode window, go to the menu Terminal > New Terminal. It'l create one at the bottom. You'll see a line:
+Things you do inside the container stay in the container, so even if you
+broke it nothing bad would happen. The one exception is the `dltc-workhouse`
+folder. Within the container, there's a user home folder than contains a 
+folder called `dltc-workhouse` folder. That folder is the dialectica folder
+of your system. It's *shared* between your own system and the container. You do not want to damage or delete them. Beware in particular of `rm` (remove) commands, which deletes files and folders without seeking confirmation. 
+
+Now, let's view the `dltc-workhouse` folder in VSCode. On the leftbar select the Explorer icon (a documents icon). You will see an "Open folder" button. It opens a search bar at the top, which should already list some options (namely, folders in the container), including `dltc-workhouse`. Click on that; the window will reopen and now the Explorer on the left should show you the files within the `dltc-workhouse` folder. 
+
+Then, let's try the terminal within VSCode. If you don't already see the 
+Terminal at the bottom of your VSCode window, 
+go to the menu Terminal > New Terminal. It'll create one at the bottom. 
+You'll see a line:
 
 ```
-copyeditor@dltc-env:~$
+copyeditor@dltc-env:~/dltc-workhouse$
 ```
 
 This is a "prompt": it waits for your to run a command. It consists of three 
 parts: username, here `copyeditor` (that's *your* identifier within the 
-container), current location, here `~` (this is a shorthand for the user's 
-home folder), and the `$` sign (meaning 'waiting for your command!'). What 
-is the current location? A terminal is always 'located' in some folder. Here 
-the folder is `~`, which is the home folder *in the container*. Run the 
-command `ls` (*list* directory contents). That is, type `ls` and Enter. You 
-should see:
+container), current location, here `~/dltc-workhouse` and the `$` sign (meaning 'waiting for your command!'). What 
+is the current location? A terminal is always 'located' in some folder, this is the place 'where' command are run. Here your location is within the container. The `~` is an abbreviation for the user's home folder; here it is the home folder of the user `copyeditor` *within the container*. 
 
-```
-copyeditor@dltc-env:~$ ls
-dltc-workhouse
-copyeditor@dltc-env:~$ 
+Note: your container is a virtual Linux machine. So, it's terminal uses Linux / MacOS terminal commands (`cd`, `ls`, `cp`, `rm`), not the Windows ones (`cd` but otherwise `dir`, `copy`, `del`). 
+
+See @sec-terminal-help on how to use a terminal, in particular how to navigate to relocate it in a different folder. Note that you can always run:
+
+``` sh
+pwd
 ```
 
-The home folder contains one directory called `dltc-workhouse`. Locate yourself within it with the `cd` (change directory) command. Run:
+To display the full path of your "present working directory", that is, the folder the terminal is located at. 
+
+Let's now try generating an output. Relocate the terminal within an article folder. Choose an article in progress, not a finished one! The article folder should contain a proper `master.md` file (if you can't find an article in progress with one, see details below on how to create one). Run:
 
 ```
-cd dltc-workhouse
+dltc-make off1html
 ```
 
-Tip: you don't need to type all the line. If you start typing `cd dl` and
-hit the Tab key, the terminal will try to autocomplete file or folder names. 
-Here it'll guess that you want `cd dltc-workhouse`, since `cd dl` is the only
-existing folder starting with `dl`. If there are multiple file or folder 
-names that could complete what you typed, one Tab won't do anything but two Tabs will display all the possible completions. You can then type a few characters more until only one is possible and hit Tab. Using autocomplete is a good way to avoid typos in file and folder names. Note that autocomplete only works for file and folder names, not for commands. 
+This should generate a HTML output of the article in the same folder. (If in doubt, delete the current HTML output and run the command again.)
 
-Result:
+Tip. There are several ways you can relocate a VSCode terminal to a specific folder. You can use the `cd` commands. But you can also use the two following options. Note that these clear up the window, closing any files you might have open, so only use them if you want a clean window:
 
-```
-copyeditor@dltc-env:~$ cd dltc-workhouse/
-copyeditor@dltc-env:~/dltc-workhouse$ 
-```
+1. Use the Explorer (click the Explorer icon on the leftbar), browse the folders, right-click a folder an select "Open in Integrated Terminal". Note however that this creates a clean window, so it closes any files you have already open in VSCode.
+2. Open the folder in question as root folder. Above we've opened the `dltc-workshouse` folder, so VSCode's Explorer on the left shows you all the folders it contains. You could decide to open some specific issue or article folder as your base folder instead. In the menu select File > Open Folder.... This opens a search bar when you can search and select a folder to open. When the window refreshes with that folder as base folder, your terminal is then located in that folder.
 
-You see the current location has changed from `~` (user's home folder) to `~/dltc-workhouse` (`dltc-workhouse` within the user's home folder). 
-
-Here's where the magic happens: the `dltc-workhouse` folder is *also* the one within your own filesystem! It is now shared between your own system and the container. So the container can read article manuscripts, bibliography files, and others from it, and it can write PDFs and HTML outputs within it.
-
-You can then further navigate to a specific article folder. Use `ls` to list folders and files, use `cd <FOLDER_NAME>` to change folder. Use `cd ..` to go back one folder, `cd ../../` to go back two folders, `cd ../../ARTICLE` to go back two folders and then, from there, down the ARTICLE folder, and so on.
+### A warning
 
 Be careful when you run commands in `dltc-workhouse` and its subfolders. While the container in general is isolated from your system (hence whatever you change or install in it doesn't affect your sytem), the exception is the `dltc-workhouse`, which is the one containing the article files on your system. You do not want to damage or delete them. Beware in particular of `rm` (remove) commands, which deletes files and folders without seeking confirmation. 
-
-Note: the terminal within the folder is a Linux terminal. It runs the Linux/MacOS commands (`cd`, `ls`, `cp`, `rm`) not the Windows ones (`cd` but otherwise `dir`, `copy`, `del`). 
 
 We can install new tools or modify existing ones in the environment
 depending on the needs of the copyediting team. Please contact Luis
 Bordo at `luis.bordo@philosophie.ch` for any such request.
-
-### Optional extra setup: connect VSCode to GitHub
-
-Optionally, connect VSCode to GitHub. <!-- what for? Is it only in order to edit the guide? -->
-
-1.  Install "GitHub Pull Requests and Issues" extension. On the left toolbar, click on Extensions, and search and install the "GitHub Pull Requests and Issues" extension.
-2.  Connect to your GitHub account. On the left toolbar, look down for 'Accounts', and connect to your GitHub account. (If you're on a public Wifi this may not work; use a private one or your mobile hotspot.)
-3. Then, clicking again on 'Accounts', enable both
-    'Settings Sync' and 'Turn on Cloud Changes'. This will synchronize
-    your VSCode settings in any device you connect it to your account.
-
-   -   *Recommended*. Tell VSCode not to report your activity to Microsoft (they spy us enough already). Click on the cogwheel icon at the bottom of the vertical toolbar on the left, and go to "Settings". On the page 
-    that appears, use the search bar at the top to search for "telemetry", 
-     and set the "Telemetry Level" to "off".
-
-If you have a GitHub pro account, we also recommend:
-
--   GitHub Copilot (by GitHub)
--   GitHub Copilot Chat (by GitHub)
-
-If you have a university student account and email, [you can be granted a 
-GitHub pro account for free](https://education.github.com/pack). 
-Copilot is an AI assistant that can help you code in general, 
-including help you with Markdown and LaTeX, both directly in VSCode 
-when you edit files and in a chat button provided 
-by the Chat extension (that will appear in the left toolbar).
-
-### New way of generating outputs: dltc-make
-
-Whenever you're using the container for the Dialectica compilation
-environment, from a terminal (inside the container) you have at your
-disposition the command:
-
-``` sh
-dltc-make
-```
-
-This command essentially replaces the old `make.sh` and `make.bat`
-scripts, and it's used in exactly the same way. The advantage is that we
-don't need to copy the `make` files in every folder. For example, now we
-can just navigate to the folder where your article for copyediting is,
-and then...
-
-``` sh
-dltc-make offpdf
-```
-
-...will produce a PDF as usual.
 
 ### Advanced: using the container directly from a terminal
 
@@ -611,7 +593,7 @@ any other editor (such as RStudio). This will give you a shell inside
 the container with access to all the tools you need for the copyediting
 work.
 
-### Troubleshooting
+### Troubleshooting Installation
 
 #### Common issues
 
@@ -686,26 +668,23 @@ follow the instructions below.
 # Generating outputs
 
 By "Terminal" we mean a command line interface. See Appendix
--@sec-terminal-help on how to use it.
+-@sec-terminal-help on how to use it. 
 
-All file paths are given relative to the base ("root") of Dialectica's
-workhouse folder ("dltc-workhouse"). For instance:
+The commands below to generate outputs must be run *within the Dialectica 
+container*. The simplest way to do it is to connect VSCode to a container 
+and use the terminal provided by VSCode. See @sec-working-inside-a-container.
 
-```         
-template/1.1/scripts/make.sh
-```
+Unless otherwise indicated, file paths below are given relative to 
+the base ("root") of Dialectica's workhouse folder (`dltc-workhouse`).
 
-\noindent is the `make.sh` file contained in the `scripts` folder
-contained in the `1.1` folder contained in the `template` folder within
-the dialectica workhouse folder.
-
-Note for Windows users: paths are noted in the Linux / MacOS style with
-a forward slash `/` separator. In Windows this would be a backslash `\`
-instead:
+Since you're working inside a container, and the container is a virtual Linux machine, you use Linux (/MacOS) terminal commands. This means in particular that paths are written with forward slashes:
 
 ```         
-template\1.1\scripts\make.sh
+2021/2021-03-issue/02-doe
 ```
+
+Not with backslash as in Windows (`2021\2021-03-issue\02-doe`), even 
+if your computer has a Windows system.
 
 ## Prepare an article or issue folder
 
@@ -888,8 +867,6 @@ Verbose or quiet
 
 Single letter options can be combined: `-pv` is short for
 `--proof —verbose`.
-
-THIS IS A CHANGE I'VE MADE
 
 ### Long rendering commands
 

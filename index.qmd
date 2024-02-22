@@ -51,7 +51,7 @@ You're welcome to edit the guide. To do so:
 
 -   Install [Quarto](https://quarto.org). Some package managers have it
     (`brew install quarto` on MacOs, `choco install quarto` on Windows,
-    but not on Linux.) See [@sec-dialectica-house-outputs] on package
+    but not on Linux.) See [@sec-dialectica-new-house-outputs] on package
     managers.
 -   Open the `guide` folder in RStudio (or Visual Code, if you use
     Quarto with that).

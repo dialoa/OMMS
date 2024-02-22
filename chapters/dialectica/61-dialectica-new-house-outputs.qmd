@@ -706,6 +706,8 @@ Verbose or quiet
 Single letter options can be combined: `-pv` is short for
 `--proof —verbose`.
 
+THIS IS A CHANGE I'VE MADE
+
 ### Long rendering commands
 
 Rendering commands can also be given in key-value form:

@@ -23,7 +23,7 @@ production chain.
 All the software needed is free: Pandoc, LaTeX and optionally RStudio. 
 
 See the Dialectica chapter on generating outputs to set yourself up 
-[@sec-dialectica-house-outputs]. 
+[@sec-dialectica-new-house-outputs]. 
 
 ## Working folder
 

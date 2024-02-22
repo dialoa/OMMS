@@ -12,3 +12,6 @@
 /_site/
 
 /.luarc.json
+
+# MacOS
+.DS_Store

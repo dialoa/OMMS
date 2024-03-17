@@ -107,8 +107,20 @@ labels of principles in statements:
 
 Bold should be only used in limited cases:
 
--   some acronyms for a principle (**PC**), a system of logic (*S4*).
+-   some acronyms for a principle (**PC**), a system of logic (*S4*). Though we prefer small caps for e.g. name of principles (cf. statements).
 :::
+
+## Small caps
+
+Small caps are coded by creating a Span with the `.smallcaps` class:
+
+``` markdown
+The [Circularity]{.smallcaps} claim...
+```
+
+Result:
+
+The [Circularity]{.smallcaps} claim...
 
 ## Subscripts and superscripts
 

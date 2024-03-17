@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -586,7 +586,7 @@ window.Quarto = {
 <p><strong>New paragraphs</strong> are encoded by leaving an empty line. That is, an empty line separates two paragraphs.</p>
 <p>In typography paragraphs are distinguished from each other in two ways: first-line indentation (common in books) or a vertical space (common on the web). Your journal template will automatically typeset those.</p>
 <p>If your journal template uses the first-line indent way of separating paragraphs, it will mostly handle typographic conventions correctly. For instance, it will be set not to indent the first line of paragraphs right below a heading (English convention) or to indent it (common in French). However, there are a few cases where you will need to manually specify that a first-line indent is or is not desired. See below.</p>
-<p>Sometimes (rarely) you need a line break that does not start a new paragraph. See <a href="17-cop-inline-elements.html#sec-linebreak" class="quarto-xref"><span>Section 12.7</span></a>.</p>
+<p>Sometimes (rarely) you need a line break that does not start a new paragraph. See <a href="17-cop-inline-elements.html#sec-linebreak" class="quarto-xref"><span>Section 12.8</span></a>.</p>
 <p><em>Problem</em>. Text that directly follows a list, quote, figure, table or other indented material (statement) may either be a <em>continuation</em> of the previous paragraph or the <em>beginning</em> of a new one. That is a matter of meaning (is the text finishing the previous idea, or beginning a new idea?) and may not be clear-cut in all cases. If your journal uses first-line indentation to separate paragraphs, continuations should not be typesetted with an indented first line, but new paragraphs should.</p>
 <p>The engine makes default assumptions: normally text below a list, quotation or statement continues the paragraph above and text below a table is a new paragraph. When the default assumption is wrong, we need to manually specify that a paragraph’s indent is to be treated otherwise.</p>
 <p>There are two ways to solve this.</p>
@@ -970,6 +970,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1004,7 +1022,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

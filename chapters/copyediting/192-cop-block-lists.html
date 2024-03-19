@@ -571,11 +571,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>another item</li>
 </ol>
 <div class="no-first-line-indent-after"></div>
-<p>See <a href="https://pandoc.org/MANUAL.html#lists">Pandoc’s manual</a> for details on how to encode lists of each type. Note that:</p>
+<p>Separating items by a blank line makes no difference: they will be gathered in a single list.</p>
+<section id="multiple-paragraphs-or-blocks-in-a-list-item" class="level4" data-number="16.1.0.1">
+<h4 data-number="16.1.0.1" class="anchored" data-anchor-id="multiple-paragraphs-or-blocks-in-a-list-item"><span class="header-section-number">16.1.0.1</span> Multiple paragraphs or blocks in a list item</h4>
+<p>List items can consist of several blocks. The blocks should be indented to be aligned with the first non-space character of the list item:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>This list item contains three blocks.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  The second block is a paragraph---a two-space indentation aligns it wth "This" above.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  &gt; The third block is a blockquote.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>This is the second list item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Result:</p>
+<ul>
+<li><p>This list item contains three blocks.</p>
+<p>The second block is a paragraph—a two-space indentation aligns it wth “This” above.</p>
+<blockquote class="blockquote">
+<p>The third block is a blockquote.</p>
+</blockquote></li>
+<li><p>This is the second list item</p></li>
+</ul>
+</section>
+<section id="choosing-bullets-and-types" class="level4" data-number="16.1.0.2">
+<h4 data-number="16.1.0.2" class="anchored" data-anchor-id="choosing-bullets-and-types"><span class="header-section-number">16.1.0.2</span> Choosing bullets and types</h4>
 <ul>
 <li>With bullet lists, you have no control on the type of bullet used—this is decided by your template.</li>
 <li>With ordered lists, you normally have control over numbering type (1, I, A, i, a) and starting number (3, III, C, iii, c), though your template may override this. You don’t control punctuation, i.e whether the number is followed by a point, single parenthesis or double parenthesis—that is up to your template.</li>
 </ul>
+<div class="no-first-line-indent-after"></div>
+<p>If you need finer control of bullets or numbers, consider custom-labelled lists.</p>
+</section>
+<section id="first-line-indentation-after-lists" class="level4" data-number="16.1.0.3">
+<h4 data-number="16.1.0.3" class="anchored" data-anchor-id="first-line-indentation-after-lists"><span class="header-section-number">16.1.0.3</span> First-line indentation after lists</h4>
+<p><em>Requires</em>: first-line indent filter.</p>
+<p>If you use first-line indents rather than vertical space to separate paragraph, you may want to control whether the paragraph below a list is indented or not. There is no mechanical rule for this: it depends on whether the material following the list should be considered as one paragraph with the material before and the list, or whether we should instead consider that the list ends a paragraph.</p>
+<p>In most cases, the list does not end a paragraph and the material below forms a unity with the material before. The paragraph below should then not be indented. That is the default setting of the first-line indent filter, so you do not need to do anything.</p>
+<p>If the list does end a paragraph, you can ensure the next paragraph starts with an indentation by adding <code>\indent</code> at its beginning.</p>
+</section>
 <section id="what-to-do-if-a-list-has-non-standard-labels" class="level3" data-number="16.1.1">
 <h3 data-number="16.1.1" class="anchored" data-anchor-id="what-to-do-if-a-list-has-non-standard-labels"><span class="header-section-number">16.1.1</span> What to do if a list has non-standard labels?</h3>
 <p>Problem: a text has a list with regularly numbered items (1, 2, 3, or a, b, c, …) but uses * or ' labels in some cases.</p>
@@ -608,15 +641,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <div class="no-first-line-indent-after"></div>
 <p>You enter those as follows using <code class="sourceCode markdown">(@)</code> or <code class="sourceCode markdown">(@identifier)</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Sentence @liar below illustrates the Liar paradox: </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>(@liar) Sentence (@liar) is false.</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Not all self-referential sentences are paradoxical, however:</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>(@) This sentence contains several words.</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>(@three) Sentence @three contains several words.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Sentence @liar below illustrates the Liar paradox: </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>(@liar) Sentence (@liar) is false.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Not all self-referential sentences are paradoxical, however:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>(@) This sentence contains several words.</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>(@three) Sentence @three contains several words.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p><code class="sourceCode markdown">(@)</code> is enough to create a numbered example item. You add an identifier as in <code class="sourceCode markdown">(@item3)</code> if you need to refer to it later. To refer to it, simply use <code>@identifier</code>, as above, which you can wrap between parentheses if desired.</p>
 <p><em>Warning</em>. References to numbered examples do not generate hyperlinks and cannot be placed within links.</p>
@@ -638,9 +671,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="16.3" class="anchored" data-anchor-id="sec-custom-labelled-lists"><span class="header-section-number">16.3</span> Custom labelled lists</h2>
 <p><strong>Requires: the labelled-lists filter</strong>.</p>
 <p>A simple illustration of the custom label syntax:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Premise 1</span><span class="co">]</span>{} This is the first claim.</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Premise 2</span><span class="co">]</span>{} This is the second claim.</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Conclusion</span><span class="co">]</span>{} This is the conclusion.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Premise 1</span><span class="co">]</span>{} This is the first claim.</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Premise 2</span><span class="co">]</span>{} This is the second claim.</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Conclusion</span><span class="co">]</span>{} This is the conclusion.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>This generates the following list (process this file with the filter to see the result):</p>
 <ul>
@@ -695,9 +728,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="cross-referencing-custom-label-items" class="level3" data-number="16.3.2">
 <h3 data-number="16.3.2" class="anchored" data-anchor-id="cross-referencing-custom-label-items"><span class="header-section-number">16.3.2</span> Cross-referencing custom-label items</h3>
 <p>Custom labels can be given internal identifiers. The syntax is <code>[label]{#identifier}</code>. In the list below, <code>A1ref</code>, <code>A2ref</code> and <code>Cref</code> identify the item:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">**A1**</span><span class="co">]</span>{#A1ref} This is the first claim.</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">A2</span><span class="co">]</span>{#A2ref} This is the second claim.</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">*C*</span><span class="co">]</span>{#Cref} This is the conclusion.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">**A1**</span><span class="co">]</span>{#A1ref} This is the first claim.</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">A2</span><span class="co">]</span>{#A2ref} This is the second claim.</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">*C*</span><span class="co">]</span>{#Cref} This is the conclusion.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>Note that <code>#</code> is not part of the identifier. Identifiers should start with a letter and contain only letters, digits, colons <code>:</code>, dots <code>.</code>, dashes <code>-</code> and underscores <code>_</code>.</p>
 <p>Labels with identifiers can be crossreferenced using Pandoc’s citations or internal links.</p>
@@ -723,8 +756,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="cross-referencing-with-internal-links" class="level3" data-number="16.3.4">
 <h3 data-number="16.3.4" class="anchored" data-anchor-id="cross-referencing-with-internal-links"><span class="header-section-number">16.3.4</span> Cross-referencing with internal links</h3>
 <p>In Pandoc markdown internal links are created with the syntax <code>[link  text](#target_identifier)</code>. (Note the rounded brackets instead of curly ones for Span element identifiers.) You can use internal links to cross-refer to custom label items that have a identifier. If your link has no text, the label with its formatting will be printed out; otherwise whichever text you give for the link. For instance, given the custom labelled list above, the following:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>The claim [](#A1ref) together with <span class="co">[</span><span class="ot">the next claim</span><span class="co">](#A2ref)</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>entail ([](#Cref)).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>The claim [](#A1ref) together with <span class="co">[</span><span class="ot">the next claim</span><span class="co">](#A2ref)</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>entail ([](#Cref)).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>will output:</p>
 <blockquote class="blockquote">
@@ -739,48 +772,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Requires: <code>labelled-lists.lua</code>, <code>statement.lua</code>.</p>
 <p>In some cases we wanted to put a custom labelled list within a numbered example list. This is particularly difficult when we don’t want any content in the numbered example item other than the embedded list itself.</p>
 <p>Solution: place the embedded list within a statement. Note that the embedded content <em>must</em> be indented <em>exactly</em> twice (4 spaces). This works:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(@example-Batu) </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">    ::: statement</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="in">    * []{delimiter=none} Every head of a horse is a head </span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in">     of an animal.</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="in">    * [&amp;there4;]{} Batu is a head of an animal.</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="in">    ::::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="no-first-line-indent-after"></div>
-<p>You should reduce the right margin for the LaTeX output. (LaTeX experts: the statement is placed in a minipage whose with is that of the text minus the default list label width; this is typically too large for an embedded list.)</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(@Allskunksaremammals) </span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(@example-Batu) </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">    ::: statement</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">    * []{} All skunks are mammals. `\addtolength{\rightskip}{1em} % fix needed`{=latex}</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">    * [&amp;there4;]{} All who fear all who respect all skunks fear all who respect all mammals.</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="in">    :::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">    * []{delimiter=none} Every head of a horse is a head </span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">     of an animal.</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">    * [&amp;there4;]{} Batu is a head of an animal.</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">    ::::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>You should reduce the right margin for the LaTeX output. (LaTeX experts: the statement is placed in a minipage whose with is that of the text minus the default list label width; this is typically too large for an embedded list.)</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(@Allskunksaremammals) </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="in">    ::: statement</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="in">    * []{} All skunks are mammals. `\addtolength{\rightskip}{1em} % fix needed`{=latex}</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="in">    * [&amp;there4;]{} All who fear all who respect all skunks fear all who respect all mammals.</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="in">    :::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="sec-arguments" class="level2" data-number="16.4">
 <h2 data-number="16.4" class="anchored" data-anchor-id="sec-arguments"><span class="header-section-number">16.4</span> Arguments</h2>
 <p><em>Requires</em>: the <code>labelled-lists.lua</code> filter.</p>
 <p>We format arguments as <a href="#custom-labels-lists">custom labelled lists</a>. To indicate the the conclusion, the last label is <code>&amp;there4;</code>, i.e.&nbsp;the symbol ∴.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span>{} No man is wise.</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span>{} Socrates is a man.</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">C</span><span class="co">]</span>{} Socrates is not wise.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span>{} No man is wise.</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span>{} Socrates is a man.</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">C</span><span class="co">]</span>{} Socrates is not wise.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p>Here <code>1</code>, <code>2</code>, <code>C</code> are custom labels. We can also write an argument without labels, but we should then add the option <code>deliminter=none</code> to the first item in order to avoid empty parentheses:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>[]{delimiter=none} No man is wise.</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>[]{} Socrates is a man.</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">there4;</span><span class="co">]</span>{} Socrates is not wise.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>[]{delimiter=none} No man is wise.</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>[]{} Socrates is a man.</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">there4;</span><span class="co">]</span>{} Socrates is not wise.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p><code>&amp;there4</code> is the standard ‘therefore’ sign (three dots).</p>
 <p>The <code>delimiter=none</code> option can be set in the document metadata. It will then apply to all custom labelled lists in the document unless specified otherwise in the lists themselves. See <a href="#custom-labels-lists">custom labelled lists</a>.</p>
 <p>As explained in <a href="#custom-labels-lists">custom labelled lists</a>, crossreference links to premises can be done by giving them identifiers and using the citation syntax:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span>{#prem1} No man is wise.</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span>{#prem2} Socrates is a man.</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">C</span><span class="co">]</span>{#conc} Socrates is not wise.</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>Premises @prem1 and @prem2 entail @conc.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span>{#prem1} No man is wise.</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span>{#prem2} Socrates is a man.</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">C</span><span class="co">]</span>{#conc} Socrates is not wise.</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>Premises @prem1 and @prem2 entail @conc.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
 <p><em>Requires</em>: the <code>statement.lua</code> filter.</p>
 <p>Arguments can be placed within statements, especially if they have a name.</p>

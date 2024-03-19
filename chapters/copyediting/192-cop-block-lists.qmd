@@ -50,11 +50,48 @@ Result:
   b. sub item
 1. another item
 
-See [Pandoc's manual](https://pandoc.org/MANUAL.html#lists) for details on
- how to encode lists of each type. Note that:
+Separating items by a blank line makes no difference: they will be gathered in a single list.
+
+#### Multiple paragraphs or blocks in a list item
+
+List items can consist of several blocks. The blocks should be indented to be aligned with the first non-space character of the list item:
+
+~~~ markdown
+* This list item contains three blocks.
+
+  The second block is a paragraph---a two-space indentation aligns it wth "This" above.
+
+  > The third block is a blockquote.
+
+* This is the second list item
+~~~
+
+Result:
+
+* This list item contains three blocks.
+
+  The second block is a paragraph---a two-space indentation aligns it wth "This" above.
+
+  > The third block is a blockquote.
+
+* This is the second list item
+
+#### Choosing bullets and types
 
 * With bullet lists, you have no control on the type of bullet used---this is decided by your template.
 * With ordered lists, you normally have control over numbering type (1, I, A, i, a) and starting number (3, III, C, iii, c), though your template may override this. You don't  control punctuation, i.e whether the number is followed by a point, single parenthesis or double parenthesis---that is up to your template.
+
+If you need finer control of bullets or numbers, consider custom-labelled lists.
+
+#### First-line indentation after lists
+
+*Requires*: first-line indent filter.
+
+If you use first-line indents rather than vertical space to separate paragraph, you may want to control whether the paragraph below a list is indented or not. There is no mechanical rule for this: it depends on whether the material following the list should be considered as one paragraph with the material before and the list, or whether we should instead consider that the list ends a paragraph. 
+
+In most cases, the list does not end a paragraph and the material below forms a unity with the material before. The paragraph below should then not be indented. That is the default setting of the first-line indent filter, so you do not need to do anything.
+
+If the list does end a paragraph, you can ensure the next paragraph starts with an indentation by adding `\indent` at its beginning. 
 
 ### What to do if a list has non-standard labels?
 

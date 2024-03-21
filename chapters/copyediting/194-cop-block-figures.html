@@ -487,14 +487,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#inserting-figures-as-files" id="toc-inserting-figures-as-files" class="nav-link active" data-scroll-target="#inserting-figures-as-files"><span class="header-section-number">18.1</span> Inserting figures as files</a></li>
-  <li><a href="#prefer-vector-formats-for-figures" id="toc-prefer-vector-formats-for-figures" class="nav-link" data-scroll-target="#prefer-vector-formats-for-figures"><span class="header-section-number">18.2</span> Prefer vector formats for figures</a></li>
-  <li><a href="#background-on-vector-vs-bitmap-formats" id="toc-background-on-vector-vs-bitmap-formats" class="nav-link" data-scroll-target="#background-on-vector-vs-bitmap-formats"><span class="header-section-number">18.3</span> Background on vector vs bitmap formats</a></li>
-  <li><a href="#how-to-create-a-vector-image" id="toc-how-to-create-a-vector-image" class="nav-link" data-scroll-target="#how-to-create-a-vector-image"><span class="header-section-number">18.4</span> How to create a vector image?</a></li>
-  <li><a href="#how-to-modify-a-bitmap-image" id="toc-how-to-modify-a-bitmap-image" class="nav-link" data-scroll-target="#how-to-modify-a-bitmap-image"><span class="header-section-number">18.5</span> How to modify a bitmap image</a></li>
-  <li><a href="#figures-with-letters-or-text" id="toc-figures-with-letters-or-text" class="nav-link" data-scroll-target="#figures-with-letters-or-text"><span class="header-section-number">18.6</span> Figures with letters or text</a></li>
-  <li><a href="#resizing-svg-files" id="toc-resizing-svg-files" class="nav-link" data-scroll-target="#resizing-svg-files"><span class="header-section-number">18.7</span> Resizing SVG files</a></li>
-  <li><a href="#including-svg-image-files-in-markdown" id="toc-including-svg-image-files-in-markdown" class="nav-link" data-scroll-target="#including-svg-image-files-in-markdown"><span class="header-section-number">18.8</span> Including SVG image files in markdown</a></li>
+  <li><a href="#tikz-figures" id="toc-tikz-figures" class="nav-link active" data-scroll-target="#tikz-figures"><span class="header-section-number">18.1</span> TikZ figures</a>
+  <ul class="collapse">
+  <li><a href="#inline-tikz-figures" id="toc-inline-tikz-figures" class="nav-link" data-scroll-target="#inline-tikz-figures"><span class="header-section-number">18.1.1</span> Inline TikZ figures</a></li>
+  <li><a href="#floated-tikz-figures" id="toc-floated-tikz-figures" class="nav-link" data-scroll-target="#floated-tikz-figures"><span class="header-section-number">18.1.2</span> Floated TikZ figures</a></li>
+  </ul></li>
+  <li><a href="#figures-from-files" id="toc-figures-from-files" class="nav-link" data-scroll-target="#figures-from-files"><span class="header-section-number">18.2</span> Figures from files</a>
+  <ul class="collapse">
+  <li><a href="#markdown-image-command" id="toc-markdown-image-command" class="nav-link" data-scroll-target="#markdown-image-command"><span class="header-section-number">18.2.1</span> Markdown image command</a></li>
+  <li><a href="#inline-figure-from-a-file" id="toc-inline-figure-from-a-file" class="nav-link" data-scroll-target="#inline-figure-from-a-file"><span class="header-section-number">18.2.2</span> Inline figure from a file</a></li>
+  <li><a href="#sec-floated-figures" id="toc-sec-floated-figures" class="nav-link" data-scroll-target="#sec-floated-figures"><span class="header-section-number">18.2.3</span> Floated figure from a file</a></li>
+  </ul></li>
+  <li><a href="#sec-vector-bitmap" id="toc-sec-vector-bitmap" class="nav-link" data-scroll-target="#sec-vector-bitmap"><span class="header-section-number">18.3</span> Background on vector vs bitmap formats</a></li>
+  <li><a href="#how-to-create-or-convert-images" id="toc-how-to-create-or-convert-images" class="nav-link" data-scroll-target="#how-to-create-or-convert-images"><span class="header-section-number">18.4</span> How to create or convert images</a>
+  <ul class="collapse">
+  <li><a href="#prefer-vector-formats-for-figures" id="toc-prefer-vector-formats-for-figures" class="nav-link" data-scroll-target="#prefer-vector-formats-for-figures"><span class="header-section-number">18.4.1</span> Prefer vector formats for figures</a></li>
+  <li><a href="#how-to-create-a-vector-image" id="toc-how-to-create-a-vector-image" class="nav-link" data-scroll-target="#how-to-create-a-vector-image"><span class="header-section-number">18.4.2</span> How to create a vector image?</a></li>
+  <li><a href="#how-to-modify-a-bitmap-image" id="toc-how-to-modify-a-bitmap-image" class="nav-link" data-scroll-target="#how-to-modify-a-bitmap-image"><span class="header-section-number">18.4.3</span> How to modify a bitmap image</a></li>
+  <li><a href="#figures-with-letters-or-text" id="toc-figures-with-letters-or-text" class="nav-link" data-scroll-target="#figures-with-letters-or-text"><span class="header-section-number">18.4.4</span> Figures with letters or text</a></li>
+  <li><a href="#removing-large-margins-in-svg-files" id="toc-removing-large-margins-in-svg-files" class="nav-link" data-scroll-target="#removing-large-margins-in-svg-files"><span class="header-section-number">18.4.5</span> Removing large margins in SVG files</a></li>
+  </ul></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">18.5</span> Troubleshooting</a>
+  <ul class="collapse">
+  <li><a href="#warning-could-not-convert-image" id="toc-warning-could-not-convert-image" class="nav-link" data-scroll-target="#warning-could-not-convert-image"><span class="header-section-number">18.5.1</span> [WARNING] Could not convert image…</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -523,40 +539,132 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-first-line-indent-after"></div>
 <p>Figures are images, diagrams, graphs and the like. They can be <em>inline</em> or <em>floated</em> or <em>annexed</em>.</p>
 <ul>
-<li><em>inline</em>: the figure needs to be <em>at a precise point</em> in the text. E.g. “As can be seen in the image below:”, followed by the image, followed by “a triangle can be split into two right triangles”.</li>
-<li><em>floated</em>: the figure needs to be <em>around</em> a certain point in the text. It can be moved above, below, to the next or previous page, for better appearance. On a webpage, it can shown on the side of the text. Floated images</li>
+<li><em>inline</em>: the figure is <em>in the flow of text</em> as a block between two paragraphs or as an inline element within a paragraph. It does <em>not</em> have a title or caption and cannot be cross-referenced.</li>
+<li><em>floated</em>: the figure has a title or caption and can be cross-referenced. It appears <em>around</em> a certain point in the text, but its position is not guaranteed to be exactly where you expect it. This improves typesetting in PDF output, as the PDF engine has more freedom to reflow paragraphs.</li>
 <li><em>annexed</em>: the figure is placed at the end of the article. On a webpage, it can be shown on the side of the text.</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>Figures can be provided in two ways:</p>
+<p>Authors tend to overuse inline figures. They are appropriate for small figures that do not deserve a title. Bigger figures should be inserted as floats.</p>
+<p>When using floated figures, rephrase the text if needed to cross-reference them instead of assuming they appear where you insert them. That is, replace sentences like “For illustration, see the following:” with “For illustration, see Figure <code>@fig:figure1</code>”.</p>
+<p>There are two ways to provide figures: as separate files or within the markdown manuscript itself.</p>
 <ul>
-<li>Separate files.</li>
-<li>Code in markdown or Rmarkdown that generates the figure (particularly good for graphs).</li>
+<li><em>Inline</em> and <em>annexed</em> figures can be provided as separate files or as code in markdown.</li>
+<li><em>Floating</em> figures must be provided as separate files.</li>
 </ul>
 <div class="no-first-line-indent-after"></div>
-<p>At the moment the Dialectica house template only handles figures as files, so we’ll ignore the code option.</p>
-<section id="inserting-figures-as-files" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="inserting-figures-as-files"><span class="header-section-number">18.1</span> Inserting figures as files</h2>
-<p>Basic syntax:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="al">![caption](file.svg 'title of the image')</span>{... attributes ..}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="no-first-line-indent-after"></div>
-<p>Where:</p>
+<p>For figures provided as files, the preferred formats are:</p>
 <ul>
-<li><code>file.svg</code> is the source file</li>
-<li><code>caption</code> is the text that will appear as the image’s caption <em>if</em> the image is treated as a floated.</li>
+<li>TikZ/LaTeX format for vector images encoded in LaTeX (requires <em>Imagify</em> filter)</li>
+<li>SVG format for vector images,</li>
+<li>PNG or JPEG format for bitmap (aka raster) images.</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="an">As can be seen in the image below:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>![]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>", followed by the image, followed</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  by "a triangle can be split into two right triangles</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Depending on your template, PDF image files may not work well with output formats other than PDF.</p>
+<p>The difference between vector and bitmap images is explained in section <a href="#sec-vector-bitmap" class="quarto-xref"><span>Section 18.3</span></a>. In short, vector formats are preferred for diagrams, plots, and the like. Bitmap images for photos, fine-grained instrument outputs (e.g.&nbsp;brain scan), artistic drawings, and the like.</p>
+<p><strong>Prefer vector formats</strong> for diagrams, schemas, etc. They scale better and are more precise. Vector images can be made with graphics editors (e.g.&nbsp;Inkscape) or generated from code, e.g.&nbsp;TikZ in LaTeX.</p>
+<p><strong>Prefer TikZ/LaTeX</strong> if the author can provide the code. Using TikZ/LaTeX generates vector images using the journal templates’ own fonts. (<em>Requires</em>: imagify filter)</p>
+<section id="tikz-figures" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="tikz-figures"><span class="header-section-number">18.1</span> TikZ figures</h2>
+<p><em>Requires</em>: Imagify filter.</p>
+<section id="inline-tikz-figures" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="inline-tikz-figures"><span class="header-section-number">18.1.1</span> Inline TikZ figures</h3>
+<p>Simply insert TikZ code in the manuscript, within a <code>imagify</code> Div:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">``` imagify</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">\usetikzlibrary{arrows}</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{tikzpicture}[...options...]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">  ... code ...</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">\end{tikzpicture}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="prefer-vector-formats-for-figures" class="level2" data-number="18.2">
-<h2 data-number="18.2" class="anchored" data-anchor-id="prefer-vector-formats-for-figures"><span class="header-section-number">18.2</span> Prefer vector formats for figures</h2>
-<p>Diagrams, figures and the like should be provided in <em>vector graphics</em> formats (SVG files or code or TikZ code in LaTeX). Only photos, hand-drawn illustrations and the like should be provided as <em>bitmap</em> (a.k.a. <em>raster</em>) files. If you’re not familiar with the difference, see the explanation below.</p>
-<p>If an author provides a diagram in bitmap form we ask that they recreated it in a vector format. <a href="https://inkscape.org/">Inkscape</a> is an open-source, free software to generate vector images that is fairly easy to use and powerful. Authors who write in LaTeX may try to create in using the TikZ package instead.</p>
+<section id="floated-tikz-figures" class="level3" data-number="18.1.2">
+<h3 data-number="18.1.2" class="anchored" data-anchor-id="floated-tikz-figures"><span class="header-section-number">18.1.2</span> Floated TikZ figures</h3>
+<p>Save the TikZ code as a separate file with <code>.tex</code> or <code>.tikz</code> extension: (which one makes no difference):</p>
+<p><strong>figure1.tikz</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\usetikzlibrary</span>{arrows}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[...options...]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  ... code ...</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>In the manuscript, insert an image link.</p>
+<pre><code>See @fig:myfigure for an example.
+
+![Caption of the figure.](figure1.tikz){#fig:myfigure}
+
+Manuscript text resumes here.</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>See <a href="#sec-floated-figures" class="quarto-xref"><span>Section 18.2.3</span></a> below for details. It must be on a line of its own, surrounded by blank lines, and with a caption text:</p>
 </section>
-<section id="background-on-vector-vs-bitmap-formats" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="background-on-vector-vs-bitmap-formats"><span class="header-section-number">18.3</span> Background on vector vs bitmap formats</h2>
+</section>
+<section id="figures-from-files" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="figures-from-files"><span class="header-section-number">18.2</span> Figures from files</h2>
+<p>To insert a figure from a file you use the markdown image command. Whether it generates an inline figure or a floated figure depends on how you use it, so we explain that command first.</p>
+<section id="markdown-image-command" class="level3" data-number="18.2.1">
+<h3 data-number="18.2.1" class="anchored" data-anchor-id="markdown-image-command"><span class="header-section-number">18.2.1</span> Markdown image command</h3>
+<p>The image command is like the link command but preceded with <code>!</code>:</p>
+<pre><code>![alt text](file.jpg "title of the image")</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>As with links the source can be provided separately instead:</p>
+<pre><code>![alt text]
+
+[alt text]: file.jpg "title of the image"</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>If the alt text is long, you can supply a shorter handle to provide the source separately:</p>
+<pre><code>![alt text that is very long because it is the caption of the image.][img1]
+
+[img1]: file.jpg "title of the image"</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>In this command:</p>
+<ul>
+<li><code>file.jpg</code> is the name of the file. It should be present in the folder. If it is in another folder give a path: <code>path/to/file.jpg</code>.</li>
+<li><code>alt text</code> is the <em>alt text</em>. Originally, it is text that is meant <em>replace</em> the image for visually impaired readers and when the image file is missing, on webpages. But it becomes the image’s <em>caption</em> if it is treated as a floated figure.</li>
+<li><code>title</code>, called the <em>title</em>, is optional text that is typically displayed when hovering above the image on webpages. It is not displayed at all in PDF output.</li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p><strong>Inline or Floated</strong>. An image command is:</p>
+<ul>
+<li>A <em>floated figure</em> if it is on a single line, separated by blank lines, and with a non-empty alt text,</li>
+<li>An inline figure otherwise.</li>
+</ul>
+<div class="no-first-line-indent-after"></div>
+<p><strong>Attributes</strong>. You can add attributes to an image command. This is used to specify is width, height and a id for cross-references:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="al">![alt text](file.jpg)</span>{width=50% #fig:fig1}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">other alt text</span><span class="co">]</span>{#fig:fig2}</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ot">[other alt text]: </span>file2.jpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="inline-figure-from-a-file" class="level3" data-number="18.2.2">
+<h3 data-number="18.2.2" class="anchored" data-anchor-id="inline-figure-from-a-file"><span class="header-section-number">18.2.2</span> Inline figure from a file</h3>
+<p>If you do not separate the image common from the surrounding text by blank lines, the image will be mixed with the text itself:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="an">The image below:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="al">![](file.jpg "a nice cat picture")</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>will be printed in the middle of a line of text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>In most cases, you want to separate it. You should then make sure you leave the alt text empty, otherwise the image will be treated as a floated figure:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="an">The image below:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="al">![](file.jpg "a nice cat picture")</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>is separated from the text above and below.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Note that you cannot cross-reference inline figures.</p>
+</section>
+<section id="sec-floated-figures" class="level3" data-number="18.2.3">
+<h3 data-number="18.2.3" class="anchored" data-anchor-id="sec-floated-figures"><span class="header-section-number">18.2.3</span> Floated figure from a file</h3>
+<p>Insert an image command on a line of its own, surrounded by blank lines:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Caption of the figure.](file.svg 'optional hovering text')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>You can add attribute to specify a width or height and a id for cross-reference:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Previous text... See @fig:figure1.</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="al">![Caption of the figure.](file.svg)</span>{#fig:figure1 width=50%}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="sec-vector-bitmap" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="sec-vector-bitmap"><span class="header-section-number">18.3</span> Background on vector vs bitmap formats</h2>
 <p>(Skip this section if you are familiar with the distinction).</p>
 <p>What’s the difference between vector and bitmap image files? <a href="https://en.wikipedia.org/wiki/Raster_graphics">Bitmap (a.k.a. raster) images</a> are encoded as a grid of pixels. <a href="https://en.wikipedia.org/wiki/Vector_graphics">Vector images</a> are encoded as mathematical descriptions of lines and curves. For instance, a vector image may be (the computer-language equivalent of) “draw a circle of radius 10mm around the coordi nate (0,0).” The bitmap equivalent would be a big grid with cells coloured to form a circle. Because of this, vector images <em>scale perfectly</em> and <em>magnify perfectly</em>. Bitmap images can get noisy and pixelated when scaled or magnified. See below if you can tell which is which:</p>
 <p><img src="vectorVSbitmap-vector.svg" class="img-fluid" style="width:40.0%" alt="Vector image"> <img src="vectorVSbitmap-bitmap.png" class="img-fluid" style="width:40.0%" alt="Raster image"></p>
@@ -571,8 +679,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-first-line-indent-after"></div>
 <p>How to convert a bitmap image to a vector image? It can’t really be done. The problem is that the computer has to guess from the pixel grid of a bitmap image what’s supposed to be a line, a curve, etc. and that requires some intelligence (think of it like this: we’re going from a limited resolution to infinite precision). This is called <em>vectorizing</em> the bitmap image. Software like Inkscape can try and vectorize images for you, but you have to fiddle with the settings for each specific image, and the results are rarely satisfactory. In most cases, your or the author will have a much easier time <em>recreating</em> the image in vector mode. If you want to try to vectorize anyway, search “vectorize an image in Inkscape” or “convert an image to SVG” online to find some tutorials.</p>
 </section>
-<section id="how-to-create-a-vector-image" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="how-to-create-a-vector-image"><span class="header-section-number">18.4</span> How to create a vector image?</h2>
+<section id="how-to-create-or-convert-images" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="how-to-create-or-convert-images"><span class="header-section-number">18.4</span> How to create or convert images</h2>
+<section id="prefer-vector-formats-for-figures" class="level3" data-number="18.4.1">
+<h3 data-number="18.4.1" class="anchored" data-anchor-id="prefer-vector-formats-for-figures"><span class="header-section-number">18.4.1</span> Prefer vector formats for figures</h3>
+<p>Diagrams, figures and the like should be provided in <em>vector graphics</em> formats (SVG files or code or TikZ code in LaTeX). Only photos, hand-drawn illustrations and the like should be provided as <em>bitmap</em> (a.k.a. <em>raster</em>) files. If you’re not familiar with the difference, see the explanation below.</p>
+<p>If an author provides a diagram in bitmap form we ask that they recreated it in a vector format. <a href="https://inkscape.org/">Inkscape</a> is an open-source, free software to generate vector images that is fairly easy to use and powerful. Authors who write in LaTeX may try to create in using the TikZ package instead.</p>
+</section>
+<section id="how-to-create-a-vector-image" class="level3" data-number="18.4.2">
+<h3 data-number="18.4.2" class="anchored" data-anchor-id="how-to-create-a-vector-image"><span class="header-section-number">18.4.2</span> How to create a vector image?</h3>
 <p>How to create a vector image? Draw it in an editor, or code it in TikZ.</p>
 <ul>
 <li>Drawing in a vector graphics editor. Wikipedia has a [list of visual graphics editor]. Fully-featured editors will cover all needs but may require more work. <a href="https://inkscape.org">Inkscape</a> is the best open-source one; Adobe Illustrator a good propertary one. However for simple diagrams you may be able to get by with a quick-and-dirty online editor. There are quite a few of those; try <code>online svg editor</code> in a search engine (check whether you need to pay to save your file). At the moment<br>
@@ -582,12 +697,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>TikZ diagrams. <a href="https://en.wikipedia.org/wiki/PGF/TikZ">TikZ</a> is a language to describe vector images that can be embedded in LaTeX. It’s powerful but has a very steep learning curve. If authors can provide them, TikZ diagrams are the best - because any text in those diagrams will be printed out in the journal’s own fonts. TikZ code can be included directly in the markdown. Our template will include them directly in the LaTeX/PDF output and convert them to SVG files for other output formats.</p>
 <p>How to create a TikZ diagram? Typically the author needs to go through the (large) TikZ documentation and work from existing examples. But there is also an <a href="https://tikzit.github.io/">online visual editor (TikZit)</a> that can help.</p>
 </section>
-<section id="how-to-modify-a-bitmap-image" class="level2" data-number="18.5">
-<h2 data-number="18.5" class="anchored" data-anchor-id="how-to-modify-a-bitmap-image"><span class="header-section-number">18.5</span> How to modify a bitmap image</h2>
+<section id="how-to-modify-a-bitmap-image" class="level3" data-number="18.4.3">
+<h3 data-number="18.4.3" class="anchored" data-anchor-id="how-to-modify-a-bitmap-image"><span class="header-section-number">18.4.3</span> How to modify a bitmap image</h3>
 <p>Wikipedia has a <a href="https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors">list of bitmap image editors</a>. <a href="https://www.gimp.org/">GIMP</a> is the best open-source editor. Adobe Photoshop and Photoshop Elements is a good commercial one, photography-oriented.</p>
 </section>
-<section id="figures-with-letters-or-text" class="level2" data-number="18.6">
-<h2 data-number="18.6" class="anchored" data-anchor-id="figures-with-letters-or-text"><span class="header-section-number">18.6</span> Figures with letters or text</h2>
+<section id="figures-with-letters-or-text" class="level3" data-number="18.4.4">
+<h3 data-number="18.4.4" class="anchored" data-anchor-id="figures-with-letters-or-text"><span class="header-section-number">18.4.4</span> Figures with letters or text</h3>
 <p>Figures often include letters or text. They look best if their fonts are consistent throughout your journal. It is desirable, but not mandatory, your house template fonts. If these can be freely distributed you could ask authors to install them and use them, but that’s a tall order. It’ll typically fall on you to apply house fonts if possible.</p>
 <ul>
 <li>Figures in TikZ code: automatic. TikZ specifies the text, not the fonts, so your house template will render the figures with your house fonts.</li>
@@ -595,8 +710,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Figures in bitmap format: can’t realistically be done. Editing in a bitmap editor is possible but probably more time-costly than it’s worth. If you’re settling for a bitmap you’re already tolerating low quality anyway.</li>
 </ul>
 </section>
-<section id="resizing-svg-files" class="level2" data-number="18.7">
-<h2 data-number="18.7" class="anchored" data-anchor-id="resizing-svg-files"><span class="header-section-number">18.7</span> Resizing SVG files</h2>
+<section id="removing-large-margins-in-svg-files" class="level3" data-number="18.4.5">
+<h3 data-number="18.4.5" class="anchored" data-anchor-id="removing-large-margins-in-svg-files"><span class="header-section-number">18.4.5</span> Removing large margins in SVG files</h3>
 <p>If the author provides you with a SVG file that has too much whitespace around, resize it using Inkscape.</p>
 <ul>
 <li>open the file in Inkscape</li>
@@ -607,8 +722,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Close the “Document properties” box and save the document.</li>
 </ul>
 </section>
-<section id="including-svg-image-files-in-markdown" class="level2" data-number="18.8">
-<h2 data-number="18.8" class="anchored" data-anchor-id="including-svg-image-files-in-markdown"><span class="header-section-number">18.8</span> Including SVG image files in markdown</h2>
+</section>
+<section id="troubleshooting" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">18.5</span> Troubleshooting</h2>
+<section id="warning-could-not-convert-image" class="level3" data-number="18.5.1">
+<h3 data-number="18.5.1" class="anchored" data-anchor-id="warning-could-not-convert-image"><span class="header-section-number">18.5.1</span> [WARNING] Could not convert image…</h3>
 <p>If you insert an SVG image file in markdown and generate a PDF output, Pandoc needs to convert it to a format that LaTeX understands. It does so using an external programme, <code>rsvg-convert</code>. If <code>rsvg-convert</code> is not present, you will get a warning: <code>[WARNING] Could not convert image...: check that rsvg-convert is in path</code>.</p>
 <p><em>Solutions</em></p>
 <ol type="1">
@@ -619,6 +737,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note: on Windows Pandoc 2.14.0.3 (June 2021 version) cannot handle SVG conversion, even if <code>rsvg-convert</code> is installed. If that’s your setup use the first solution.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

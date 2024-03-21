@@ -3,65 +3,203 @@
 Figures are images, diagrams, graphs and the like. They can be *inline* or
 *floated* or *annexed*.
 
-* *inline*: the figure needs to be *at a precise point* in the text.
-  E.g. "As can be seen in the image below:", followed by the image, followed
-  by "a triangle can be split into two right triangles".
-* *floated*: the figure needs to be *around* a certain point in the text. 
-  It can be moved above, below, to the next or previous page, for better
-  appearance. On a webpage, it can shown on the side of the text. Floated
-  images 
+* *inline*: the figure is *in the flow of text* as a block between two 
+  paragraphs or as an inline element within a paragraph. It does *not* have
+  a title or caption and cannot be cross-referenced. 
+* *floated*: the figure has a title or caption and can be cross-referenced.
+  It appears *around* a certain point in the text, but its position is not
+  guaranteed to be exactly where you expect it. This improves typesetting
+  in PDF output, as the PDF engine has more freedom to reflow paragraphs.
 * *annexed*: the figure is placed at the end of the article. On a webpage,
   it can be shown on the side of the text.
 
-Figures can be provided in two ways:
+Authors tend to overuse inline figures. They are appropriate for small
+figures that do not deserve a title. Bigger figures should be inserted as
+floats. 
 
-* Separate files. 
-* Code in markdown or Rmarkdown that generates the figure (particularly 
-  good for graphs).
-  
-At the moment the Dialectica house template only handles figures as files,
-so we'll ignore the code option. 
+When using floated figures, rephrase the text if needed to cross-reference them 
+instead of assuming they appear where you insert them. That is, replace
+sentences like "For illustration, see the following:" with "For illustration, see
+Figure `@fig:figure1`".
 
-## Inserting figures as files
+There are two ways to provide figures: as separate files or within the 
+markdown manuscript itself. 
 
-Basic syntax:
+* *Inline* and *annexed* figures can be provided as separate files 
+  or as code in markdown.
+* *Floating* figures must be provided as separate files.
 
-```markdown
-![caption](file.svg 'title of the image'){... attributes ..}
+For figures provided as files, the preferred formats are:
+
+* TikZ/LaTeX format for vector images encoded in LaTeX (requires *Imagify* filter)
+* SVG format for vector images,
+* PNG or JPEG format for bitmap (aka raster) images.
+
+Depending on your template, PDF image files may not work well with
+output formats other than PDF. 
+
+The difference between vector and bitmap images is explained in section @sec-vector-bitmap. 
+In short,
+vector formats are preferred for diagrams, plots, and the like. Bitmap images
+for photos, fine-grained instrument outputs (e.g. brain scan), 
+artistic drawings, and the like. 
+
+__Prefer vector formats__ for diagrams, schemas, etc. They scale better and
+are more precise. Vector images can be made with graphics editors (e.g. Inkscape) or 
+generated from code, e.g. TikZ in LaTeX.
+
+__Prefer TikZ/LaTeX__ if the author can provide the code. Using TikZ/LaTeX generates vector 
+images using the journal templates' own fonts. (*Requires*: imagify filter)
+
+
+## TikZ figures
+
+*Requires*: Imagify filter.
+
+### Inline TikZ figures
+
+Simply insert TikZ code in the manuscript, within a `imagify` Div:
+
+~~~ markdown
+
+``` imagify
+
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[...options...]
+  ... code ...
+\end{tikzpicture}
+
+```
+~~~
+
+### Floated TikZ figures
+
+Save the TikZ code as a separate file with `.tex` or `.tikz` extension: 
+(which one makes no difference):
+
+__figure1.tikz__
+
+``` latex
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[...options...]
+  ... code ...
+\end{tikzpicture}
 ```
 
-Where:
-
-* `file.svg` is the source file
-* `caption` is the text that will appear as the image's caption *if* the
-  image is treated as a floated. 
-
-
-
-```markdown
-As can be seen in the image below:
-![]
-", followed by the image, followed
-  by "a triangle can be split into two right triangles
+In the manuscript, insert an image link. 
 
 ```
-    
+See @fig:myfigure for an example.
 
-## Prefer vector formats for figures
+![Caption of the figure.](figure1.tikz){#fig:myfigure}
 
-Diagrams, figures and the like should be provided in *vector graphics* 
-formats (SVG files or code or TikZ code in 
-LaTeX). Only photos, hand-drawn illustrations and the like should be provided
-as *bitmap* (a.k.a. *raster*) files. If you're not familiar with the difference,
-see the explanation below. 
+Manuscript text resumes here.
+```
 
-If an author provides a diagram in bitmap form we ask that they recreated it in
-a vector format. [Inkscape](https://inkscape.org/) is an
-open-source, free software to generate vector images that is fairly easy to use
-and powerful. Authors who write in LaTeX may try to create in using the TikZ 
-package instead.
+See @sec-floated-figures below for details.  It must be on a line of its own, 
+surrounded by blank lines, and with a caption text:
 
-## Background on vector vs bitmap formats
+## Figures from files
+
+To insert a figure from a file you use the markdown image command. Whether it 
+generates an inline figure or a floated figure depends on how you use it, so
+we explain that command first.
+
+### Markdown image command
+
+The image command is like the link command but preceded with `!`:
+
+```
+![alt text](file.jpg "title of the image")
+```
+
+As with links the source can be provided separately instead:
+
+```
+![alt text]
+
+[alt text]: file.jpg "title of the image"
+```
+
+If the alt text is long, you can supply a shorter handle to 
+provide the source separately:
+
+```
+![alt text that is very long because it is the caption of the image.][img1]
+
+[img1]: file.jpg "title of the image"
+```
+
+In this command:
+
+* `file.jpg` is the name of the file. It should be present in the folder. 
+  If it is in another folder give a path: `path/to/file.jpg`. 
+* `alt text` is the *alt text*. Originally, it is text that is meant *replace*
+  the image for visually impaired readers and when the image file is missing, 
+  on webpages. But it becomes the image's *caption* if it is treated as a floated figure.
+* `title`, called the *title*, is optional text that is typically displayed
+  when hovering above the image on webpages. It is not displayed at all
+  in PDF output.
+
+__Inline or Floated__. An image command is:
+
+* A *floated figure* if it is on a single line, separated by blank lines, and with
+  a non-empty alt text,
+* An inline figure otherwise. 
+
+__Attributes__. You can add attributes to an image command. This is used to specify
+is width, height and a id for cross-references:
+
+``` markdown
+![alt text](file.jpg){width=50% #fig:fig1}
+
+![other alt text]{#fig:fig2}
+
+[other alt text]: file2.jpg
+```
+
+### Inline figure from a file
+
+If you do not separate the image common from the surrounding text by blank
+lines, the image will be mixed with the text itself:
+
+``` markdown
+The image below:
+![](file.jpg "a nice cat picture")
+will be printed in the middle of a line of text.
+```
+
+In most cases, you want to separate it. You should then make sure you
+leave the alt text empty, otherwise the image will be treated as a
+floated figure:
+
+``` markdown
+The image below:
+
+![](file.jpg "a nice cat picture")
+
+is separated from the text above and below.
+```
+
+Note that you cannot cross-reference inline figures.
+
+### Floated figure from a file {#sec-floated-figures}
+
+Insert an image command on a line of its own, surrounded by blank lines:
+
+```markdown
+![Caption of the figure.](file.svg 'optional hovering text')
+```
+
+You can add attribute to specify a width or height and a id for cross-reference:
+
+```markdown
+Previous text... See @fig:figure1.
+
+![Caption of the figure.](file.svg){#fig:figure1 width=50%}
+```
+
+## Background on vector vs bitmap formats {#sec-vector-bitmap}
 
 (Skip this section if you are familiar with the distinction). 
 
@@ -116,7 +254,24 @@ In most cases, your or the author will have a much easier time *recreating*
 the image in vector mode. If you want to try to vectorize anyway, search "vectorize
 an image in Inkscape" or  "convert an image to SVG" online to find some tutorials. 
 
-## How to create a vector image?
+## How to create or convert images
+
+### Prefer vector formats for figures
+
+Diagrams, figures and the like should be provided in *vector graphics* 
+formats (SVG files or code or TikZ code in 
+LaTeX). Only photos, hand-drawn illustrations and the like should be provided
+as *bitmap* (a.k.a. *raster*) files. If you're not familiar with the difference,
+see the explanation below. 
+
+If an author provides a diagram in bitmap form we ask that they recreated it in
+a vector format. [Inkscape](https://inkscape.org/) is an
+open-source, free software to generate vector images that is fairly easy to use
+and powerful. Authors who write in LaTeX may try to create in using the TikZ 
+package instead.
+
+
+### How to create a vector image?
 
 How to create a vector image? Draw it in an editor, or code it in TikZ. 
 
@@ -132,7 +287,6 @@ How to create a vector image? Draw it in an editor, or code it in TikZ.
   registration, ads).
 
 
-
 TikZ diagrams. [TikZ](https://en.wikipedia.org/wiki/PGF/TikZ) is 
 a language to describe vector images that can be embedded in LaTeX. It's 
 powerful but has a very steep learning curve. 
@@ -146,14 +300,14 @@ How to create a TikZ diagram? Typically the author needs to go through the
 (large) TikZ documentation and work from existing examples. But there is also
 an [online visual editor (TikZit)](https://tikzit.github.io/) that can help.  
 
-## How to modify a bitmap image
+### How to modify a bitmap image
 
 Wikipedia has a [list of bitmap image
 editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors). 
 [GIMP](https://www.gimp.org/) is the best open-source editor. Adobe Photoshop
 and Photoshop Elements is a good commercial one, photography-oriented.  
 
-## Figures with letters or text
+### Figures with letters or text
 
 Figures often include letters or text. They look best if their fonts are 
 consistent throughout your journal. It is desirable, but not mandatory, your
@@ -176,7 +330,7 @@ It'll typically fall on you to apply house fonts if possible.
   If you're settling for a bitmap you're already tolerating low quality
   anyway. 
 
-## Resizing SVG files
+### Removing large margins in SVG files
 
 If the author provides you with a SVG file that has too much whitespace around, resize it using Inkscape. 
 
@@ -187,7 +341,9 @@ If the author provides you with a SVG file that has too much whitespace around, 
 * Click "Resize page to drawing or selection". You should see that the page limits are just around the drawing. 
 * Close the "Document properties" box and save the document.
 
-## Including SVG image files in markdown
+## Troubleshooting
+
+### [WARNING] Could not convert image...
 
 If you insert an SVG image file in markdown and generate a PDF output, Pandoc needs to convert it to a format that LaTeX understands. It does so using an external programme, `rsvg-convert`. If `rsvg-convert` is not present, you will get a warning: `[WARNING] Could not convert image...: check that rsvg-convert is in path`.
 
@@ -197,3 +353,4 @@ If you insert an SVG image file in markdown and generate a PDF output, Pandoc ne
 2. Install `rsvg-convert`. As far as we can tell the least difficult way to do this is to use package managers. On Linux look for rsvg-convert in your package manager. On MacOS you should install `homebrew` first, if you haven't already, and run the command `brew install rsvg-convert`. On Win you should install the `chocolatey` package manager, open an administrator Powershell (Windows menu > Windows Powersheel > right click on Powershell and select "Run as Administrator", give the permission) and run the command `choco install rsvg-convert`. 
 
 Note: on Windows Pandoc 2.14.0.3 (June 2021 version) cannot handle SVG conversion, even if `rsvg-convert` is installed. If that's your setup use the first solution.
+

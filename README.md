@@ -1,7 +1,7 @@
 # The Open Manual of Markdown Style
 
 An open access manual of markdown style for academic publishing. Developed by the [Dialoa][] team and
-[philosophie.ch][]. View the [manual here][OMMS]. 
+[philosophie.ch][PhilocH]. View the [manual here][OMMS]. 
 
 Copyright (2020-2023) Philosophie.ch
 

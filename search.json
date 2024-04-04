@@ -1928,7 +1928,7 @@
     "href": "chapters/dialectica/75-dialectica-article-structure.html",
     "title": "36  Article structure",
     "section": "",
-    "text": "36.1 Appendices\nIn Dialectica articles, appendices are normal sections. Just prefix the heading with “Appendix:”.",
+    "text": "36.1 Appendices\nIn Dialectica articles, appendices are normal sections. Just prefix the heading with “Appendix:”.\nIf an article has several appendices, put them as subsections of an “Appendices” section:",
     "crumbs": [
       "Dialectica",
       "<span class='chapter-number'>36</span>  <span class='chapter-title'>Article structure</span>"
@@ -1939,7 +1939,7 @@
     "href": "chapters/dialectica/75-dialectica-article-structure.html#appendices",
     "title": "36  Article structure",
     "section": "",
-    "text": "# Appendix: Uniqueness Theorem {#sec:app-uniqueness-theorem}",
+    "text": "# Appendix: Uniqueness Theorem {#sec:app-uniqueness-theorem}\n\n\n\n# Appendices {#sec:appendices}\n\n## Uniqueness Theorem {#sec:app-uniqueness-theorem}",
     "crumbs": [
       "Dialectica",
       "<span class='chapter-number'>36</span>  <span class='chapter-title'>Article structure</span>"

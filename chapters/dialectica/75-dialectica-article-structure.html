@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Manual of Markdown Style - 13&nbsp; Special characters</title>
+<title>Open Manual of Markdown Style - 36&nbsp; Article structure</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../chapters/copyediting/19-cop-block-elements.html" rel="next">
-<link href="../../chapters/copyediting/17-cop-inline-elements.html" rel="prev">
+<link href="../../chapters/dialectica/80-dialectica-bibliography.html" rel="next">
+<link href="../../chapters/dialectica/74-dialectica-reviews.html" rel="prev">
 <link href="../../media/dialoa.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -70,35 +104,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -111,7 +116,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/copyediting/12-cop-preliminaries.html">Copyediting</a></li><li class="breadcrumb-item"><a href="../../chapters/copyediting/171-cop-inline-special-chars.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Special characters</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/dialectica/61-dialectica-new-house-outputs.html">Dialectica</a></li><li class="breadcrumb-item"><a href="../../chapters/dialectica/75-dialectica-article-structure.html"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Article structure</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -236,7 +241,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/copyediting/171-cop-inline-special-chars.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../chapters/copyediting/171-cop-inline-special-chars.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Special characters</span></span></a>
   </div>
 </li>
@@ -385,7 +390,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/dialectica/75-dialectica-article-structure.html" class="sidebar-item-text sidebar-link">
+  <a href="../../chapters/dialectica/75-dialectica-article-structure.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Article structure</span></span></a>
   </div>
 </li>
@@ -488,18 +493,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#schematic-letters" id="toc-schematic-letters" class="nav-link active" data-scroll-target="#schematic-letters"><span class="header-section-number">13.1</span> Schematic letters</a></li>
-  <li><a href="#hyphens-and-dashes" id="toc-hyphens-and-dashes" class="nav-link" data-scroll-target="#hyphens-and-dashes"><span class="header-section-number">13.2</span> Hyphens and dashes</a></li>
-  <li><a href="#split-fractions" id="toc-split-fractions" class="nav-link" data-scroll-target="#split-fractions"><span class="header-section-number">13.3</span> Split fractions</a></li>
+  <li><a href="#appendices" id="toc-appendices" class="nav-link active" data-scroll-target="#appendices"><span class="header-section-number">36.1</span> Appendices</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/copyediting/12-cop-preliminaries.html">Copyediting</a></li><li class="breadcrumb-item"><a href="../../chapters/copyediting/171-cop-inline-special-chars.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Special characters</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/dialectica/61-dialectica-new-house-outputs.html">Dialectica</a></li><li class="breadcrumb-item"><a href="../../chapters/dialectica/75-dialectica-article-structure.html"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Article structure</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="cop-inlines-elements-symbols" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Special characters</span></span></h1>
+<h1 class="title"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Article structure</span></h1>
 </div>
 
 
@@ -516,44 +519,11 @@ window.Quarto = {
 </header>
 
 
-<div class="no-first-line-indent-after"></div>
-<p>This chapter deals with special characters and symbols.</p>
-<p>A guiding principle: try to use LaTeX formulas for maths, but only for maths.</p>
-<p>For non-math symbols, “HTML entities” are useful: these are codes of the form <code>&amp;..;</code> for special characters, e.g.&nbsp;<code>&amp;nbsp;</code> for a non-breakable space or <code>&amp;rarr;</code> and <code>&amp;larr;</code> for right and left arrows. Various websites allow you to search for HTML entities; try <a href="https://unicode-table.com/en/html-entities/">this one</a> for instance.</p>
-<p>Using HTML entities requires a font with fairly good unicode support. If your font miss a particular HTML entity, you will get a warning. If that’s the case you can try using a LaTeX formula instead (e.g.&nbsp;<code>$\rightarrow$</code>). But for non-math content HTML entities are preferable. because they make your content more machine-readable.</p>
-<ul>
-<li>Latin characters with diacritics (å, é, è, ü, ø, etc.) should be entered as such, not in LaTeX codes.</li>
-<li>Greek text (not: Greek letters in maths) should be entered as such, provided your font covers Greek as well as Latin.</li>
-<li>§ should be simply entered <code>§</code>, because it’s a fairly basic character available on your keyboard and most fonts. Not its LaTeX equivalent, <code>$\S$</code>.</li>
-<li>→ and ←, when used outside of a logical formula (say “the appearance→reality principle”) should be inserted as HTML entities: <code>&amp;rarr;</code> and <code>&amp;larr;</code>. If they are absent from your font, you can use their LaTeX math version as a fallback: <code>$\rightarrow$</code> and <code>$leftarrow$</code>.</li>
-<li>Prime, double prime in labels. E.g. you want a list with items labelled A′, A″, A‴, A⁗. Use <code>&amp;prime;</code> (one prime), <code>&amp;Prime;</code> (two), <code>&amp;tprime;</code> (three), <code>&amp;qprime;</code> (four). You should not go beyond that, but if really needed, use math as fallback: <code>A$'''''$</code>, (A<span class="math inline">\('''''\)</span>), <code>A$''''''$</code>.</li>
-<li>Number subscripts and superscripts. For mathematical names, e.g.&nbsp; variables, use math mode: <code>$c_1, c_2, \ldots, c_n$</code> (<span class="math inline">\(c_1, c_2, \ldots, c_n\)</span>) and <code>$c^1, c^2, \ldots, c^n$</code> (<span class="math inline">\(c^1, c^2, \ldots, c^n\)</span>). Note that in LaTeX sub/superscripted bits of more than one character should be in curly braces, e.g.&nbsp;<code>c^{10}</code> (<span class="math inline">\(c^{10}\)</span>). For names that aren’t mathematical, e.g.&nbsp;custom labels A<sup>1</sup>, A<sup>2</sup>, …, use Pandoc’s subscripts and superscripts: <code>A^1^</code>, <code>A^12^</code>, <code>B~2~</code>, … (A<sup>1</sup>, A<sup>12</sup>, B<sub>2</sub>).</li>
-<li>Asterisks. For labels A*, A** etc. use <code>*</code> as is: <code>A*</code>, <code>A**</code>. Not the LaTeX <code>$A^{*}$</code> (<span class="math inline">\(A^{*}\)</span>).</li>
-<li>Therefore (∴): <code>&amp;there4;</code>, not the LaTeX formula <code>$\therefore$</code>.</li>
-</ul>
-<section id="schematic-letters" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="schematic-letters"><span class="header-section-number">13.1</span> Schematic letters</h2>
-<p>Schematic letters in the text, as in:</p>
-<blockquote class="blockquote">
-<div class="no-first-line-indent-after"></div>
-<p><span class="math inline">\(S\)</span> knows that <span class="math inline">\(p\)</span></p>
-</blockquote>
-<div class="no-first-line-indent-after"></div>
-<p>should normally be typset as math formulas. See <a href="241-cop-math-latex.html" class="quarto-xref"><span>Chapter 26</span></a>.</p>
-<p>If there are very few schematic letters in an article, it’s acceptable to typeset them as caps and/or emphasis:</p>
-<blockquote class="blockquote">
-<div class="no-first-line-indent-after"></div>
-<p>S knows that <em>p</em>.</p>
-</blockquote>
-</section>
-<section id="hyphens-and-dashes" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="hyphens-and-dashes"><span class="header-section-number">13.2</span> Hyphens and dashes</h2>
-<p>See <a href="17-cop-inline-elements.html#sec-hyphens-dashes" class="quarto-xref"><span>Section 12.5</span></a>.</p>
-</section>
-<section id="split-fractions" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="split-fractions"><span class="header-section-number">13.3</span> Split fractions</h2>
-<p>Inline fractions look better when split as in ½ than straight as in <span class="math inline">\(\frac{1}{2}\)</span>. For ½, ¼ and ¾ you can use the HTML entites <code>&amp;frac12;</code>, <code>&amp;frac14;</code> and <code>&amp;frac34;</code> respectively.</p>
-<p>For more see <a href="241-cop-math-latex.html#sec-cop-math-latex-split-fractions" class="quarto-xref"><span>Section 26.4</span></a>.</p>
+<section id="appendices" class="level2" data-number="36.1">
+<h2 data-number="36.1" class="anchored" data-anchor-id="appendices"><span class="header-section-number">36.1</span> Appendices</h2>
+<p>In <em>Dialectica</em> articles, appendices are normal sections. Just prefix the heading with “Appendix:”.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># Appendix: Uniqueness Theorem {#sec:app-uniqueness-theorem}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -970,13 +940,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/copyediting/17-cop-inline-elements.html" class="pagination-link" aria-label="Inline elements">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Inline elements</span></span>
+      <a href="../../chapters/dialectica/74-dialectica-reviews.html" class="pagination-link" aria-label="Review articles">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Review articles</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/copyediting/19-cop-block-elements.html" class="pagination-link" aria-label="Simple block elements">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Simple block elements</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/dialectica/80-dialectica-bibliography.html" class="pagination-link" aria-label="Bibliography">
+        <span class="nav-page-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Bibliography</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

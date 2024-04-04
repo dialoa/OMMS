@@ -9,3 +9,13 @@ In *Dialectica* articles, appendices are normal sections. Just prefix the headin
 # Appendix: Uniqueness Theorem {#sec:app-uniqueness-theorem}
 
 ```
+
+If an article has several appendices, put them as subsections of an "Appendices" section:
+
+``` markdown
+
+# Appendices {#sec:appendices}
+
+## Uniqueness Theorem {#sec:app-uniqueness-theorem}
+
+```

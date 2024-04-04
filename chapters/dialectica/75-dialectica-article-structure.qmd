@@ -1,0 +1,11 @@
+# Article structure
+
+## Appendices
+
+In *Dialectica* articles, appendices are normal sections. Just prefix the heading with "Appendix:".
+
+``` markdown
+
+# Appendix: Uniqueness Theorem {#sec:app-uniqueness-theorem}
+
+```

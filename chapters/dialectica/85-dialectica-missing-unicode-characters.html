@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Manual of Markdown Style - 21&nbsp; Troublesome blocks</title>
+<title>Open Manual of Markdown Style - 38&nbsp; Missing Unicode characters</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../chapters/copyediting/20-cop-multiple-languages.html" rel="next">
-<link href="../../chapters/copyediting/196-cop-block-columns.html" rel="prev">
+<link href="../../chapters/design/52-pub-the-structure-of-volumes.html" rel="next">
+<link href="../../chapters/dialectica/80-dialectica-bibliography.html" rel="prev">
 <link href="../../media/dialoa.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/copyediting/12-cop-preliminaries.html">Copyediting</a></li><li class="breadcrumb-item"><a href="../../chapters/copyediting/199-cop-block-other.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Troublesome blocks</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/dialectica/61-dialectica-new-house-outputs.html">Dialectica</a></li><li class="breadcrumb-item"><a href="../../chapters/dialectica/85-dialectica-missing-unicode-characters.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Missing Unicode characters</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -289,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/copyediting/199-cop-block-other.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../chapters/copyediting/199-cop-block-other.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Troublesome blocks</span></span></a>
   </div>
 </li>
@@ -402,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../chapters/dialectica/85-dialectica-missing-unicode-characters.html" class="sidebar-item-text sidebar-link">
+  <a href="../../chapters/dialectica/85-dialectica-missing-unicode-characters.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Missing Unicode characters</span></span></a>
   </div>
 </li>
@@ -499,20 +499,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#raw-code-if-all-else-fails" id="toc-raw-code-if-all-else-fails" class="nav-link active" data-scroll-target="#raw-code-if-all-else-fails"><span class="header-section-number">21.1</span> Raw code if all else fails</a>
-  <ul class="collapse">
-  <li><a href="#adding-raw-latex-commands-within-markdown" id="toc-adding-raw-latex-commands-within-markdown" class="nav-link" data-scroll-target="#adding-raw-latex-commands-within-markdown"><span class="header-section-number">21.1.1</span> Adding Raw LaTeX commands within markdown</a></li>
-  <li><a href="#providing-a-raw-latex-alternative" id="toc-providing-a-raw-latex-alternative" class="nav-link" data-scroll-target="#providing-a-raw-latex-alternative"><span class="header-section-number">21.1.2</span> Providing a Raw LaTeX alternative</a></li>
-  </ul></li>
+  <li><a href="#adding-a-character-obtained-by-combination" id="toc-adding-a-character-obtained-by-combination" class="nav-link active" data-scroll-target="#adding-a-character-obtained-by-combination"><span class="header-section-number">38.1</span> Adding a character obtained by combination</a></li>
+  <li><a href="#adding-a-character-from-a-math-font" id="toc-adding-a-character-from-a-math-font" class="nav-link" data-scroll-target="#adding-a-character-from-a-math-font"><span class="header-section-number">38.2</span> Adding a character from a math font</a></li>
+  <li><a href="#declaring-an-alternative-font-for-a-certain-unicode-range" id="toc-declaring-an-alternative-font-for-a-certain-unicode-range" class="nav-link" data-scroll-target="#declaring-an-alternative-font-for-a-certain-unicode-range"><span class="header-section-number">38.3</span> Declaring an alternative font for a certain Unicode range</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/copyediting/12-cop-preliminaries.html">Copyediting</a></li><li class="breadcrumb-item"><a href="../../chapters/copyediting/199-cop-block-other.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Troublesome blocks</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/dialectica/61-dialectica-new-house-outputs.html">Dialectica</a></li><li class="breadcrumb-item"><a href="../../chapters/dialectica/85-dialectica-missing-unicode-characters.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Missing Unicode characters</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Troublesome blocks</span></h1>
+<h1 class="title"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Missing Unicode characters</span></h1>
 </div>
 
 
@@ -529,73 +527,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="raw-code-if-all-else-fails" class="level2" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="raw-code-if-all-else-fails"><span class="header-section-number">21.1</span> Raw code if all else fails</h2>
-<section id="adding-raw-latex-commands-within-markdown" class="level3" data-number="21.1.1">
-<h3 data-number="21.1.1" class="anchored" data-anchor-id="adding-raw-latex-commands-within-markdown"><span class="header-section-number">21.1.1</span> Adding Raw LaTeX commands within markdown</h3>
-<p>LaTeX/PDF typesetting may require fine-grained adjustements that we can ignore in HTML output. It is often possible to provide it alongside markdown. Caution: use sparingly. Don’t tinker with e.g.&nbsp;line or list spacing on a per-article basis.</p>
-<p>Example: you have a markdown table that you’re happy with, but it’s too wide to fit in a PDF page. You can make its text smaller in PDF output with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">`{\small`</span>{=latex}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>+-----+-------+</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>|know |valua- |</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>|ledge|tion   |</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>+=====+=======+</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>|...  |...    |</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>+-----+-------+</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">`}`</span>{=latex}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>Using <code>`...`{=latex}</code> creates an (inline) element of raw code that is passed as is to latex and erased in other formats. <code>{\small .... }</code> in LaTeX creates a group (<code>{...}</code>) within which the text is small.</p>
+<p>Some characters might be missing in the template’s fonts. In HTML output the browser may find a fallback solution. In PDF output you get a LaTeX warning message such as:</p>
+<pre><code>[WARNING] Missing character: There is no ȧ (U+0227) (U+0227) in font STIXTwoText:mode=node;script=</code></pre>
+<div class="no-first-line-indent-after"></div>
+<p>There are three ways to solve this.</p>
+<ol type="1">
+<li>The character is obtained by combining a letter and one or more diacritics (accents and the like). Then it can be declared in the template settings.</li>
+<li>The character cannot be recreated by combination but is available in the math font. Then it can be declared in the template settings.</li>
+<li>The character cannot be recreated by combination and is not available in the math font either. Then the template should be modified to use a different font for a Unicode range including this character.</li>
+</ol>
+<div class="no-first-line-indent-after"></div>
+<p>Methods 1 and 2 are easy and should be tried first.</p>
+<section id="adding-a-character-obtained-by-combination" class="level2" data-number="38.1">
+<h2 data-number="38.1" class="anchored" data-anchor-id="adding-a-character-obtained-by-combination"><span class="header-section-number">38.1</span> Adding a character obtained by combination</h2>
+<p><em>Requires:</em> Pandokoma template.</p>
+<p>Consider the character ‘à’, for instance. A LaTeX warning message would give its Unicode number in hexadecimal format: <code>00E0</code>. (Hexadecimal means that <code>A</code>,<code>B</code>, … <code>F</code> are used in addition to digits <code>0</code>…<code>9</code>. Unicode numbers are typically written <code>U+xxx</code>, i.e.&nbsp;<code>U+00E0</code>.) Search for “Unicode 00E0” online, and go to one of the websites that have a detailed page on each Unicode character. Look for a “decomposition mapping” such as:</p>
+<blockquote class="blockquote">
+<div class="no-first-line-indent-after"></div>
+<p>Decomposition mapping: &nbsp;&nbsp;&nbsp;a (U+0061) &nbsp;&nbsp;&nbsp;` (U+0300)</p>
+</blockquote>
+<div class="no-first-line-indent-after"></div>
+<p>This shows that the Unicode character can be created by combining the <code>a</code> character with the character number 0300. 0300 is a special <em>modifier</em> or <em>combining</em> character, who combines with the preceding character. It should not be confused with the self-standing character ` (code 0060) that does <em>not</em> combine with the previous character.</p>
+<p>In the template folder, open <code>settings/common-latex.yaml</code>. Search for the <code>newunicodechar</code> section:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unicode chars</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">newunicodechar</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">char</span><span class="kw">:</span><span class="at"> ǐ</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">command</span><span class="kw">:</span><span class="at"> i\symbol{"030C}</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">char</span><span class="kw">:</span><span class="at"> ȧ</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">command</span><span class="kw">:</span><span class="at"> a\symbol{"0307}</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>Add an entry for your character. The <code>char</code> value should be the missing character itself (copy/paste it). The <code>command</code> value is the combination used to recreate it:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">newUnicodechar</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">char</span><span class="kw">:</span><span class="at"> à</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">command</span><span class="kw">:</span><span class="at"> a\symbol{"0300}</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">char</span><span class="kw">:</span><span class="at"> ǐ</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">command</span><span class="kw">:</span><span class="at"> i\symbol{"030C}</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>The combination should be entered in the same order as you found on the reference webpage: here we have <code>a</code> first then ```. (In Unicode combinations, the added diacritics come after the letter.)</p>
+<p>The combining characters can be entered either directly (here, the <code>a</code>) or with <code class="sourceCode latex"><span class="fu">\symbol</span>{"...}</code> command, where ‘…’ is the hexadecimal Unicode number (here, the modifier ` is entered with <code class="sourceCode latex"><span class="fu">\symbol</span>{"0300}</code>.) So the above is equivalent to:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">char</span><span class="kw">:</span><span class="at"> à</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">command</span><span class="kw">:</span><span class="at"> \symbol{"0061}\symbol{"0300}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="no-first-line-indent-after"></div>
+<p>because the Unicode number of <code>a</code> is 0061. You would normally enter modifier Unicode characters by number because they do not display well in text editors.</p>
 </section>
-<section id="providing-a-raw-latex-alternative" class="level3" data-number="21.1.2">
-<h3 data-number="21.1.2" class="anchored" data-anchor-id="providing-a-raw-latex-alternative"><span class="header-section-number">21.1.2</span> Providing a Raw LaTeX alternative</h3>
-<p><em>Requirement</em>. The <code>not-in-format</code> filter is required for some of the below.</p>
-<p>When there is no markdown solution to typeset something there is fallback solution: include raw output code of other formats directly in your markdown document. We first figure out how the element should be coded in relevant output formats (LaTeX, html, xml); we call this <em>raw code</em>. Then we insert raw code without our markdown document.</p>
-<p>In some cases you’re happy with the output markdown generates in some, but not all, formats. For instance, the XML output is fine (XML has no typesetting), but you’d like to do some fine-grained typesetting in LaTeX that the normal LaTeX output doesn’t handle. In that case you’ll use markdown for some output formats, but provide raw code only for LaTeX.</p>
-<p>To provide Raw code for all output formats, you insert it as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">``` {=latex}</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">... LaTeX code here ...</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="in">``` {=html}</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="in">... html/epub code here ...</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">``` {=xml}</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="in">... xml code here ...</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="adding-a-character-from-a-math-font" class="level2" data-number="38.2">
+<h2 data-number="38.2" class="anchored" data-anchor-id="adding-a-character-from-a-math-font"><span class="header-section-number">38.2</span> Adding a character from a math font</h2>
+<p><em>Requires:</em> Pandokoma template.</p>
+<p>For some characters, they are not available in the text font but they are available as math symbols. You can look them up in the <a href="https://ctan.org/pkg/comprehensive">Comprehensive LaTeX Symbol List</a> (if you have a LaTeX installation, entering the command <code>texdoc symbols</code> in a terminal should display it; otherwise use the link).</p>
+<p>Adding them to the template is similar to the combination method above. In the template, open <code>settings/common-latex.yaml</code>. Look for the <code>unicodefrommath</code> section. Here’s an example:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unicode symbols from math</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unicodefrommath</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">char</span><span class="kw">:</span><span class="at"> </span><span class="st">'&amp;there4;'</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">is</span><span class="kw">:</span><span class="at"> \therefore</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="no-first-line-indent-after"></div>
-<p>The part marked with <code>{=latex}</code> will be included as is in the LaTeX output (for PDFs) and only in the LaTeX output.</p>
-<p>To provide raw code for some, but not all, formats, you should put the relevant bits of markdown within a <code>not-in-format</code> div, and the raw code after it. (This method requires the <code>not-in-format</code> Pandoc filter.) For instance:</p>
-<pre><code>::: {.not-in-format .latex}
--------- -------
-simple    table
--------- -------
-:::
-
-
-
-```{=latex}
-\begin{table}
-\begin{tabular}{ll}
-\hline
-simple &amp; table
-\hline
-\end{tabular}
-\end{table}
-```
-
-</code></pre>
-<div class="no-first-line-indent-after"></div>
-<p>Here the simple markdown table enclosed within <code>:::{.not-in-format .latex}</code> … <code>:::</code> will be used for all outputs formats <em>except</em> LaTeX and LaTeX-based outputs like PDF and beamer. The raw code below included within <code>```{=latex}</code> … <code>```</code> will be used for LaTeX and LaTeX-based outputs.</p>
-<p>You can leave out some markdown section from several formats too: <code>:::{.not-in-format .xml .latex}</code>.</p>
-
-
+<p>In the <code>char</code> field, I’ve entered the character. Instead of copying/ pasting it, I’ve used its HTML entity name, between quotation marks. (See section <a href="../copyediting/171-cop-inline-special-chars.html" class="quarto-xref"><span>Chapter 13</span></a> on HTML entities. The quotation marks ensure that HTML entities are treated as such.) In the <code>is</code> field, I enter the LaTeX command that prints the desired characters.</p>
+<p>The <code>is</code> field should be a LaTeX command that works in math mode. If it’s a text mode command, use <code class="sourceCode latex"><span class="fu">\text</span>{...}</code>.</p>
+<p>In HTML output, the LaTeX command is passed to MathJAX. Check your HTML output to see whether MathJAX displays it. If not, you’ll see red text with a yellow background where the character should be. Your only option then, the last resort, is to declare an alternative font for that character.</p>
 </section>
+<section id="declaring-an-alternative-font-for-a-certain-unicode-range" class="level2" data-number="38.3">
+<h2 data-number="38.3" class="anchored" data-anchor-id="declaring-an-alternative-font-for-a-certain-unicode-range"><span class="header-section-number">38.3</span> Declaring an alternative font for a certain Unicode range</h2>
+<p>This method requires changing both the LaTeX and HTML (CSS) templates and adding the relevant fonts to the template folder and website. You need to ask the template managed to do this.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1010,13 +1006,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/copyediting/196-cop-block-columns.html" class="pagination-link" aria-label="Multiple columns">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Multiple columns</span></span>
+      <a href="../../chapters/dialectica/80-dialectica-bibliography.html" class="pagination-link" aria-label="Bibliography">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Bibliography</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/copyediting/20-cop-multiple-languages.html" class="pagination-link" aria-label="Multiple languages">
-        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Multiple languages</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../chapters/design/52-pub-the-structure-of-volumes.html" class="pagination-link" aria-label="The structure of a book and a journal">
+        <span class="nav-page-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">The structure of a book and a journal</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

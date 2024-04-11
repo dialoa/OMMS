@@ -1,4 +1,4 @@
-# Special characters {#cop-inlines-elements-symbols}
+# Special characters {#sec-cop-inlines-elements-symbols}
 
 This chapter deals with special characters and symbols. 
 

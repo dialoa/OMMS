@@ -1,0 +1,130 @@
+# Missing Unicode characters
+
+Some characters might be missing in the template's fonts. 
+In HTML output the browser may find a fallback solution. In
+PDF output you get a LaTeX warning message such as:
+
+```
+[WARNING] Missing character: There is no ȧ (U+0227) (U+0227) in font STIXTwoText:mode=node;script=
+```
+
+There are three ways to solve this.
+
+1. The character is obtained by combining a letter and one or 
+   more diacritics (accents and the like). Then it can be declared
+   in the template settings.
+2. The character cannot be recreated by combination but is 
+   available in the math font. Then it can be declared in the 
+   template settings. 
+3. The character cannot be recreated by combination and is 
+   not available in the math font either. Then the
+   template should be modified to use a different font for
+   a Unicode range including this character.
+
+Methods 1 and 2 are easy and should be tried first.  
+
+## Adding a character obtained by combination
+
+*Requires:* Pandokoma template.
+
+Consider the character 'à', for instance. A LaTeX warning message
+would give its Unicode number in hexadecimal format: `00E0`. 
+(Hexadecimal means that `A`,`B`, ... `F` are used in addition to
+ digits `0`...`9`. Unicode numbers are typically written 
+ `U+xxx`, i.e. `U+00E0`.)
+Search for "Unicode 00E0" online, and go to one of the websites 
+that have a detailed page on each Unicode character. Look for a "decomposition mapping" such as:
+
+> Decomposition mapping: \ \ \ a (U+0061) \ \ \ ` (U+0300)
+
+This shows that the Unicode character can be created by combining
+the `a` character with the character number 0300. 0300 is a special
+*modifier* or *combining* character, who combines with the preceding 
+character. It should not be confused with the self-standing character
+\` (code 0060) that does *not* combine with the previous character.
+
+In the template folder, open `settings/common-latex.yaml`. Search for the `newunicodechar` section:
+
+``` yaml
+# Unicode chars
+newunicodechar:
+- char: ǐ
+  command: i\symbol{"030C}
+- char: ȧ
+  command: a\symbol{"0307}
+- ...
+```
+
+Add an entry for your character. The `char` value should be
+the missing character itself (copy/paste it). The `command` value is
+the combination used to recreate it:
+
+``` yaml
+newUnicodechar:
+- char: à
+  command: a\symbol{"0300}
+- char: ǐ
+  command: i\symbol{"030C}
+- ...
+```
+
+The combination should be entered in the same order as you found 
+on the reference webpage: here we have `a` first then `\``. 
+(In Unicode combinations, the added diacritics come after the letter.) 
+
+The combining characters can be entered either directly 
+(here, the `a`) or with `\symbol{"...}`{.latex} command, where '...' is
+the hexadecimal Unicode number (here, the modifier \` 
+is entered with `\symbol{"0300}`{.latex}.) So the above is equivalent to:
+
+``` yaml
+- char: à
+  command: \symbol{"0061}\symbol{"0300}
+```
+
+\noindent because the Unicode number of `a` is 0061. You would
+normally enter modifier Unicode characters by number because
+they do not display well in text editors.
+
+## Adding a character from a math font
+
+*Requires:* Pandokoma template.
+
+For some characters, they are not available in the text font but
+they are available as math symbols. You can look them up in the
+[Comprehensive LaTeX Symbol List](https://ctan.org/pkg/comprehensive)
+(if you have a LaTeX installation, entering the command `texdoc symbols` in a terminal should display it; otherwise use the link).
+
+Adding them to the template is similar to the combination method above.
+In the template, open `settings/common-latex.yaml`. Look for the `unicodefrommath` section. Here's an example:
+
+``` yaml
+# Unicode symbols from math
+unicodefrommath:
+- char: '&there4;'
+  is: \therefore
+```
+
+In the `char` field, I've entered the character. Instead of copying/
+pasting it, I've used its HTML entity name, between quotation marks. 
+(See section
+@sec-cop-inlines-elements-symbols on HTML entities. The quotation
+marks ensure that HTML entities are treated as such.)
+In the `is` field, I enter the LaTeX command that prints the desired
+characters.
+
+The `is` field should be a LaTeX command that works in math mode. If
+it's a text mode command, use `\text{...}`{.latex}. 
+
+In HTML output, the LaTeX command is passed to MathJAX. Check your
+HTML output to see whether MathJAX displays it. If not, you'll see
+red text with a yellow background where the character should be. 
+Your only option then, the last resort, is to declare an 
+alternative font for that character.
+
+## Declaring an alternative font for a certain Unicode range
+
+This method requires changing both the LaTeX and HTML (CSS) templates
+and adding the relevant fonts to the template folder and website. 
+You need to ask the template managed to do this.
+

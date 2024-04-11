@@ -58,6 +58,7 @@ book:
       - chapters/dialectica/74-dialectica-reviews.qmd
       - chapters/dialectica/75-dialectica-article-structure.qmd
       - chapters/dialectica/80-dialectica-bibliography.qmd
+      - chapters/dialectica/85-dialectica-missing-unicode-characters.qmd
     - part: Design
       chapters:
       - chapters/design/52-pub-the-structure-of-volumes.qmd

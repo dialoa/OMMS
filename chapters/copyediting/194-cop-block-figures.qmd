@@ -270,6 +270,7 @@ open-source, free software to generate vector images that is fairly easy to use
 and powerful. Authors who write in LaTeX may try to create in using the TikZ 
 package instead.
 
+__Note on PowerPoint__. Some authors provide figures in MS Power Point. To convert to SVG, you will typically need to open it in MS Power Point (rather than Libreoffice) and convert to SVG there.
 
 ### How to create a vector image?
 

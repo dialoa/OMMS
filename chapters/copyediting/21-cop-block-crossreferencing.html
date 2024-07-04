@@ -758,13 +758,13 @@ section-1
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ot">[^mfn]: </span><span class="co">[</span><span class="ot">On this</span><span class="co">]</span>{#my-best-footnote} difficult point I would like to add irrelevant remarks... .</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>As mentioned above in <span class="co">[</span><span class="ot">footnote 7</span><span class="co">](#my-best-footnote)</span>, ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>As mentioned above in footnote <span class="co">[</span><span class="ot">7</span><span class="co">](#my-best-footnote)</span>, ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p><code>[^myfn]</code> and <code>[myfn]:</code> create a footnote. We could have the alternative syntax, <code>^[... content ...]</code> placed directly in the text:</p>
 <pre class="markdwon"><code>This is the main text.^[[On this]{#my-best-footnote} difficult 
 point... .]</code></pre></li>
 <li><p><code>[On this]{#my-best-footnote}</code> creates a “Span” element with the identifier <code>my-best-footnote</code>. A Span is an invisible inline element that can carry attributes such as an identifier. The identifier allows us to target it with a link.</p></li>
-<li><p><code>[footnote 1](#my-best-footnote)</code> adds to the text “footnote 7” a clickable link to the span we create above. You need to enter the footnote number manually.</p></li>
+<li><p><code>footnote [1](#my-best-footnote)</code> adds to the number “7” a clickable link to the span we create above. You need to enter the footnote number manually.</p></li>
 </ul>
 <div class="no-first-line-indent-after"></div>
 <p><strong>Common mistake</strong>. Beware of not confusing the syntaxes for Span (targets) and Links:</p>
@@ -789,7 +789,7 @@ point... .]</code></pre></li>
 </ul>
 <div class="no-first-line-indent-after"></div>
 <p>Non-final manuscripts. If footnote numbers are not final, you will need to update cross-references to footnotes. A good practice is to use very visible text to ensure that you don’t miss them in proofing:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>See above <span class="co">[</span><span class="ot">footnote NUMBER</span><span class="co">](#fn-doe)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>See above footnote <span class="co">[</span><span class="ot">NUMBER</span><span class="co">](#fn-doe)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="cross-referencing-list-items" class="level2" data-number="23.4">
 <h2 data-number="23.4" class="anchored" data-anchor-id="cross-referencing-list-items"><span class="header-section-number">23.4</span> Cross-referencing list items</h2>

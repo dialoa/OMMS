@@ -231,7 +231,7 @@ This is the main text.[^myfn]
 [^mfn]: [On this]{#my-best-footnote} difficult point I would like to add irrelevant remarks... .
 
 ...
-As mentioned above in [footnote 7](#my-best-footnote), ...
+As mentioned above in footnote [7](#my-best-footnote), ...
 ```
 
 * `[^myfn]` and `[myfn]:` create a footnote. We could have the 
@@ -247,7 +247,7 @@ As mentioned above in [footnote 7](#my-best-footnote), ...
   the identifier `my-best-footnote`. A Span is an invisible inline
   element that can carry attributes such as an identifier. The 
   identifier allows us to target it with a link.
-* `[footnote 1](#my-best-footnote)` adds to the text "footnote 7" 
+* `footnote [1](#my-best-footnote)` adds to the number "7" 
   a clickable link to the span we create above. You need to enter
   the footnote number manually. 
   
@@ -282,7 +282,7 @@ A good practice is to use very visible text to ensure
 that you don't miss them in proofing:
 
 ```markdown
-See above [footnote NUMBER](#fn-doe).
+See above footnote [NUMBER](#fn-doe).
 ```
 
 ## Cross-referencing list items

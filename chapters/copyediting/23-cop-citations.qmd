@@ -170,6 +170,21 @@ We encode:
 interesting a few pages later [@Lewis1986, 29].
 ```
 
+#### Citing notes, footnotes, and endnotes
+
+We don't distinguish between foot- and endnotes and only use note.
+
++---------------------------------------+---------------------------------------+
+| I want                                | I type                                |
++=======================================+=======================================+
+| **Normal**                            |                                       |
++---------------------------------------+---------------------------------------+
+| (Smith, 2012, n. 11)                  | `[@Smith2012, n.11]` or               |
+|                                       | `[@Smith2012, note 11]`               |
++---------------------------------------+---------------------------------------+
+
+For how to cross-reference footnotes from the same article see @sec-crossreferencing-footnotes.
+
 ### Putting a citation link on a page number, or a word
 
 Citations must all be in one of the three forms above (Normal, Inline 

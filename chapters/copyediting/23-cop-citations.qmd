@@ -344,3 +344,23 @@ This requires an adding to the entry in the bibliography. The entry is a book se
 }
 ```
 
+### Example: Citation in parenthesis with interfering syntax
+
+__Original__
+
+> Others have granted him as much (see, e.g., Jones (2017); I speak simply in terms of states of affairs, as for present purposes nothing hinges on this).
+
+If we typeset it as usual, with square brackets, it will look like this:
+
+```markdown
+Others have granted him as much [see, e.g., @jones_j:2017; I speak simply in terms of states of affairs, as for present purposes nothing hinges on this].
+```
+
+> Others have granted him as much [see, e.g., @jones_j:2017; I speak simply in terms of states of affairs, as for present purposes nothing hinges on this].
+
+__Proposed__
+
+The semi-colon (`;`) separates *different references*. Since there isn't a second reference, the whole reference isn't recognised as a reference in parenthesis. To avoid this, we can replace the semi-colon for an em-dash, if the context allows for that. Otherwise, we need to reformulate the text.
+
+
+> Others have granted him as much [see, e.g., @jones_j:2017---I speak simply in terms of states of affairs, as for present purposes nothing hinges on this].

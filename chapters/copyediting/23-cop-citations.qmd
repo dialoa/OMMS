@@ -194,6 +194,8 @@ In some cases, cites are not rendered correctly in the output if they appear rig
 +---------------------------------------+---------------------------------------+
 | (Smith, 2012, 11)                     | `\noindent&zwnj;[@Smith2012, 11]`     |
 +---------------------------------------+---------------------------------------+
+| \indent (Smith, 2012, 11)             | `\indent&zwnj;[@Smith2012, 11]`       |
++---------------------------------------+---------------------------------------+
 
 ### Putting a citation link on a page number, or a word
 

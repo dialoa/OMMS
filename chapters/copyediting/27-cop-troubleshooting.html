@@ -770,23 +770,23 @@ l.3984       {See the manual for further details.}</code></pre>
 i-basic.lua:155: attempt to compare nil with number</code></pre>
 <div class="no-first-line-indent-after"></div>
 <p>This bug can be produced by a statement with a custom label containing an <strong>uppercase letter followed by a dash</strong>, such as:</p>
-<pre><code>::: statement
+<pre><code>:::{.statement #statement-id}
 __L-a__. This statement might generate an error!
 :::</code></pre>
 <div class="no-first-line-indent-after"></div>
 <p><strong>Fix 1</strong>. Use the HTML entity for non-breaking hyphen (<code>&amp;#8209;</code>)</p>
-<pre><code>::: statement
+<pre><code>:::{.statement #statement-id}
 __L&amp;#8209;a__. This will not generate an error.
 :::</code></pre>
 <div class="no-first-line-indent-after"></div>
-<p>Caution: depending on the length of the hyphenated term and the surrounding text—especially if you refer to the statement intext with the identifier—this might mess up the horizontal spacing of lines since the term will not be split up at the hyphen. To avoid this, you can refer to the statement with an internal link, i.e., <code>[L-a](#statement-id)</code>.</p>
+<p>Caution: depending on the length of the hyphenated term and the surrounding text—especially if you refer to the statement intext with the identifier (i.e., <code>@statement-id</code>)—this might mess up the horizontal spacing of lines since the term will not be split up at the hyphen. To avoid this, you can refer to the statement with an internal link, i.e., <code>[L-a](#statement-id)</code>.</p>
 <p><strong>Fix 2 (If Fix 1 Fails)</strong>. Surround the dash with spaces</p>
-<pre><code>::: statement
+<pre><code>:::{.statement #statement-id}
 __L - a__. This will not generate an error.
 :::</code></pre>
 <div class="no-first-line-indent-after"></div>
 <p>A longer dash probably looks better:</p>
-<pre><code>::: statement
+<pre><code>:::{.statement #statement-id}
 __L -- a__. This will not generate an error.
 :::</code></pre>
 </section>

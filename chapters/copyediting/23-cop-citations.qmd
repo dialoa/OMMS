@@ -170,20 +170,30 @@ We encode:
 interesting a few pages later [@Lewis1986, 29].
 ```
 
-#### Citing notes, footnotes, and endnotes
+### Citing Notes, Footnotes, and Endnotes
 
 We don't distinguish between foot- and endnotes and only use note.
 
 +---------------------------------------+---------------------------------------+
 | I want                                | I type                                |
 +=======================================+=======================================+
-| **Normal**                            |                                       |
-+---------------------------------------+---------------------------------------+
 | (Smith, 2012, n. 11)                  | `[@Smith2012, n.11]` or               |
 |                                       | `[@Smith2012, note 11]`               |
 +---------------------------------------+---------------------------------------+
 
 For how to cross-reference footnotes from the same article see @sec-crossreferencing-footnotes.
+
+### Conflicts of Cites with Other Commands
+
+In some cases, cites are not rendered correctly in the output if they appear right next to another command (e.g., `\noindent`, `\indent`, or `[^1]`). In order to solve this proplem, we can use the HTML-command `&zwnj;` ('zero-width-non-joiner').
+
++---------------------------------------+---------------------------------------+
+| I want                                | I type                                |
++=======================================+=======================================+
+| (Smith, 2012, 11)^1^                  | `[@Smith2012, 11]&zwnj;[^1]`          |
++---------------------------------------+---------------------------------------+
+| (Smith, 2012, 11)                     | `\noindent&zwnj;[@Smith2012, 11]`     |
++---------------------------------------+---------------------------------------+
 
 ### Putting a citation link on a page number, or a word
 

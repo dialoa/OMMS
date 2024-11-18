@@ -257,7 +257,7 @@ __L-a__. This statement might generate an error!
 __L&#8209;a__. This will not generate an error.
 :::
 ```
-Caution: depending on the length of the hyphenated term and the surrounding text---especially if you refer to the statement intext with the identifier (i.e., `@statement-id`)---this might mess up the horizontal spacing of lines since the term will not be split up at the hyphen. To avoid this, you can refer to the statement with an internal link, i.e., `[L-a](#statement-id)`.
+Caution: depending on the length of the hyphenated term and the surrounding text---especially if you refer to the statement intext with the identifier (i.e., `@statement-id`)---this might mess up the horizontal spacing of lines since the term will not be split up at the hyphen. To avoid this, you can refer to the statement with an internal link, i.e., `[[L-a]{.smallcaps}](#statement-id)`.
 
 **Fix 2 (If Fix 1 Fails)**. Surround the dash with spaces
 

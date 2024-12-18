@@ -651,3 +651,24 @@ Refl}
 ``` latex
 \UnaryInfC{$A$}\RightLabel{example, Refl}
 ```
+
+## LaTeX output issues
+
+### Underbraces or Overbraces not working (`mathtools`)
+
+*Problem*: Underbraces or overbraces are not typeset correctly; 
+instead we see a 'Z' and black boxes.
+
+*Diagnosis*. The LaTeX package `mathtools` is loaded by the template
+or the article's header-include *after* the package `unicode-math`.
+See [this stackexchange post](https://tex.stackexchange.com/questions/521394/underbrace-using-stix2-math-font).
+
+*Solution*. The journal template should load `mathtools` before
+`unicode-math`, or the article should not use `mathtools`. Note: 
+`mathtools` is an extension of `amsmath`, it can be loaded instead
+of `amsmath`.
+
+*Dialectica solution*. Our template loads `mathtools`. Do not 
+include `\usepackage{mathtools}` in header-includes. 
+
+

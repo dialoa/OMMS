@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,10 +92,10 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-348f9480ca2773527746b0ae0a361280.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -666,7 +666,7 @@ div.csl-indent {
 <p>Smith keeps repeating himself (2012, 2013, 2014, 2015).</p>
 <p>Smith said this in a few places (2012, 20; 2013, 30)</p>
 <p>Smith said (in his 2012 a.o.) that</p>
-<p>note: -<span class="citation" data-cites="Smith2012">(<a href="../appendices/references.html#ref-Smith2012" role="doc-biblioref"><strong>Smith2012?</strong></a>)</span> doesn’t work, brackets are needed.</p></td>
+<p>note: <span class="citation" data-cites="Smith2012">(<a href="../appendices/references.html#ref-Smith2012" role="doc-biblioref"><strong>Smith2012?</strong></a>)</span> doesn’t work, brackets are needed.</p></td>
 <td><p>Smith makes an outrageous claim <code>[-@Smith2015, 277]</code>.</p>
 <p>Smith keeps repeating himself <code>[-@Smith2012; @Smith2013;</code> <code>@Smith2014; @Smith2015]</code></p>
 <p>Smith said this in a few places <code>[-@Smith2012, 20; @Smith2013,</code> <code>30]</code>.</p>
@@ -1081,8 +1081,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1193,7 +1191,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

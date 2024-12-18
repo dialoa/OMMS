@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-348f9480ca2773527746b0ae0a361280.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -551,6 +551,10 @@ window.Quarto = {
   <li><a href="#block-bussproofs" id="toc-block-bussproofs" class="nav-link" data-scroll-target="#block-bussproofs"><span class="header-section-number">26.7.2</span> Block bussproofs</a></li>
   </ul></li>
   <li><a href="#latex-new-and-redefined-commands" id="toc-latex-new-and-redefined-commands" class="nav-link" data-scroll-target="#latex-new-and-redefined-commands"><span class="header-section-number">26.8</span> Latex new and redefined commands</a></li>
+  <li><a href="#latex-output-issues" id="toc-latex-output-issues" class="nav-link" data-scroll-target="#latex-output-issues"><span class="header-section-number">26.9</span> LaTeX output issues</a>
+  <ul class="collapse">
+  <li><a href="#underbraces-or-overbraces-not-working-mathtools" id="toc-underbraces-or-overbraces-not-working-mathtools" class="nav-link" data-scroll-target="#underbraces-or-overbraces-not-working-mathtools"><span class="header-section-number">26.9.1</span> Underbraces or Overbraces not working (<code>mathtools</code>)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1054,8 +1058,18 @@ Refl}
 <div class="no-first-line-indent-after"></div>
 <p>and was fixed when we removed it:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\UnaryInfC</span>{<span class="ss">$A$</span>}<span class="fu">\RightLabel</span>{example, Refl}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="latex-output-issues" class="level2" data-number="26.9">
+<h2 data-number="26.9" class="anchored" data-anchor-id="latex-output-issues"><span class="header-section-number">26.9</span> LaTeX output issues</h2>
+<section id="underbraces-or-overbraces-not-working-mathtools" class="level3" data-number="26.9.1">
+<h3 data-number="26.9.1" class="anchored" data-anchor-id="underbraces-or-overbraces-not-working-mathtools"><span class="header-section-number">26.9.1</span> Underbraces or Overbraces not working (<code>mathtools</code>)</h3>
+<p><em>Problem</em>: Underbraces or overbraces are not typeset correctly; instead we see a ‘Z’ and black boxes.</p>
+<p><em>Diagnosis</em>. The LaTeX package <code>mathtools</code> is loaded by the template or the article’s header-include <em>after</em> the package <code>unicode-math</code>. See <a href="https://tex.stackexchange.com/questions/521394/underbrace-using-stix2-math-font">this stackexchange post</a>.</p>
+<p><em>Solution</em>. The journal template should load <code>mathtools</code> before <code>unicode-math</code>, or the article should not use <code>mathtools</code>. Note: <code>mathtools</code> is an extension of <code>amsmath</code>, it can be loaded instead of <code>amsmath</code>.</p>
+<p><em>Dialectica solution</em>. Our template loads <code>mathtools</code>. Do not include <code>\usepackage{mathtools}</code> in header-includes.</p>
 
 
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
@@ -1150,8 +1164,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1262,7 +1274,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

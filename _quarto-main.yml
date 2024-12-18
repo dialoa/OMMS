@@ -1,0 +1,4 @@
+format:
+  html:
+    theme: flatly
+    indent: false

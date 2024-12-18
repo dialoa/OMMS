@@ -80,24 +80,6 @@ bibliography:
 - references.bib
 - dummies.bib
 
-format:
-  html:
-    theme: flatly
-    indent: false
-  pdf:
-    latex-auto-install: false
-    latex-clean: false
-    pdf-engine: latexmk
-    pdf-engine-opt: -xelatex
-    documentclass: scrreprt
-    include-in-header: latex/unicode.tex
-    mainfont: Libertinus Sans
-    sansfont: Libertinus Sans
-    monofont: Inconsolata
-    mathfont: Libertinus Math
-    babelfonts:
-      greek: Libertinus Sans
-
 editor:
   markdown:
     wrap: 72

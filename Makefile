@@ -4,13 +4,13 @@ help:
 
 .PHONY: all
 all:
-	quarto render
+	quarto render --profile pdf
 
 # --no-clean avoids deleting the PDF
 .PHONY: html
 html:
-	quarto render -t html --no-clean
+	quarto render --no-clean
 
 .PHONY: pdf
 pdf:
-	quarto render -t pdf --no-clean
+	quarto render --profile pdf -t pdf --no-clean

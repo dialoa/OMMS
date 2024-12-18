@@ -575,7 +575,7 @@ A document can include `\newcommand` (`\renewcommand`,
 to define abbreviations. For instance some authors introduce
 a command to produce tuples:
 
-```latex
+``` latex
 \newcommand{\tuple}{\langle #1 \rangle}
 ...
 
@@ -589,23 +589,23 @@ We can use these commands, but *not put them in `{=latex}` wrappers*.
 
 BAD: 
 
-```yaml
+`````yaml
 header-includes: |
   ```{=latex}
   \usepackage{fancypkg}
   \newcommand{\tuple}{\langle #1 \rangle}
   ```
-```
+`````
 
 GOOD:
 
-```yaml
+`````yaml
 header-includes: |
   ```{=latex}
   \usepackage{fancypkg}
   ```
   \newcommand{\tuple}{\langle #1 \rangle}
-```
+`````
 
 * Put in `{=latex}` things that only work in LaTeX. Special packages that can only be imagified in HTML output go there. For example `stmaryrd` is a package often used to get double brackets; it doesn't work in MathJaX and we need to imagify those elements instead. So it goes in `{=latex}`. 
 * Put outside of `{latex}` things that Pandoc needs to know about even when generating HTML output. Here the new command needs to be translated whichever output we're generating, so Pandoc needs to know about it. We put it outside of `{=latex}`.

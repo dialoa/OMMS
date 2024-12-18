@@ -123,11 +123,13 @@ In case the usual markdown code for a table doesn’t work, we can insert a set 
 
 Generate a separate markdown file (in the following called “separate .md”, whereas the initial markdown file of the article is called “articles .md”). Here we want to put only the latex code that will be inserted into the articles .md.
 
-1.	For the first step (get the latex code for the desired table), there are two options:
-  i.	Build the latex code from scratch or via the [table generator for latex](https://www.tablesgenerator.com/latex_tables), put the code to the separate .md.
-  ii.	Build the markdown code from scratch or via the [table generator for markdown](https://www.tablesgenerator.com/markdown_tables), put it to the separate .md, let it produce a latex output, copy/paste the latex code to the separate .md (it probably begins with something like “\begin{longtable}” or “\begin{table}” and ends with something like “\end{longtable}” or “\end{table}”).
+1.  For the first step (get the latex code for the desired table), there are two options:
+   
+  i.  Build the latex code from scratch or via the [table generator for latex](https://www.tablesgenerator.com/latex_tables), put the code to the separate .md.
 
-2.	Once you have the latex code in the separate .md, you can embed 
+  ii. Build the markdown code from scratch or via the [table generator for markdown](https://www.tablesgenerator.com/markdown_tables), put it to the separate .md, let it produce a latex output, copy/paste the latex code to the separate .md (it probably begins with something like `\begin{longtable}` or `\begin{table}` and ends with something like `\end{longtable}` or `\end{table}`).
+
+1.  Once you have the latex code in the separate .md, you can embed 
   it in the following code:
 
   `````markdown
@@ -172,20 +174,11 @@ Generate a separate markdown file (in the following called “separate .md”, w
 
 3. From here, you might have or want to change several things:
 
-  a. “longtable” -> “tabular” (so that it doesn’t rely on longtable
-    package, which doesn’t work within multicolumn environments).
-  b.	“\toprule”, “\midrule” and “\bottomrule” -> “\hline” for simple     horizontal lines
-  c.	If a vertical line is desired at some point in the table
-    change latex code `\begin{tabular}[]{@{}lcccc@{}}` to
-    `\begin{tabular}[]{@{}c|cccc@{}}`. See that the number of letters
-    determines the number of columns in the table. The letter “l” in 
-    the former code is to change into a “c” in the latter. To have a 
-    vertical line after the first column from the left, insert the 
-    sign (not letter!) “|” after the first c from the left.
+  a. “longtable” -> “tabular” (so that it doesn’t rely on longtable package, which doesn’t work within multicolumn environments).
+  b.	`\toprule`, `\midrule` and `\bottomrule` -> `\hline` for simple horizontal lines
+  c.	If a vertical line is desired at some point in the table change latex code `\begin{tabular}[]{@{}lcccc@{}}` to  `\begin{tabular}[]{@{}c|cccc@{}}`. See that the number of letters determines the number of columns in the table. The letter “l” in the former code is to change into a “c” in the latter. To have a vertical line after the first column from the left, insert the sign (not letter!) “|” after the first c from the left.
 
-4.	Once that frame is set, we can insert the code from the separate
-  .md into the articles .md and see how it produces the tables from 
-  here.
+4.	Once that frame is set, we can insert the code from the separate .md into the articles .md and see how it produces the tables from here.
 
 You may need to do the same to insert HTML code. In that case you
 should still leave the original markdown for other formats (JATS-XML), using `not-in-format` again:

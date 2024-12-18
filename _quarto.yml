@@ -83,12 +83,20 @@ bibliography:
 format:
   html:
     theme: flatly
-    output-dir: _book
     indent: false
-#  pdf:
-#    documentclass: scrreprt
-#    output-file: Open_Markdown_Manual_of_Style.pdf
-    
+  pdf:
+    latex-auto-install: false
+    latex-clean: false
+    pdf-engine: latexmk
+    pdf-engine-opt: -xelatex
+    documentclass: scrreprt
+    include-in-header: latex/unicode.tex
+    mainfont: Libertinus Sans
+    sansfont: Libertinus Sans
+    monofont: Inconsolata
+    mathfont: Libertinus Math
+    babelfonts:
+      greek: Libertinus Sans
 
 editor:
   markdown:

@@ -93,7 +93,7 @@ of the paper in the search bar; that should find the paper. Click on the
 plus sign on the right of the entry, then press insert button which will
 add the reference to the bibliography file.
 
-![](media/image2.png){width="6.5in" height="4.152777777777778in"}
+![](RStudio-insert-missing-ref.png){width="6.5in" height="4.152777777777778in"}
 
 ## Formatting citations in the text
 

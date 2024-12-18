@@ -73,8 +73,8 @@ $endif$
 
 For LaTeX/PDF, use `\DeclareUnicodeCharacter` or `newunicodechar`.
 
-We use pandokoma's yaml declaration. Here's our
-declaration for the Greek extended block:
+We use pandokoma's yaml declaration. Here is our
+declaration for the Greek extended block. 
 
 ```yaml
 newunicodechar:

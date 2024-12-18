@@ -1,12 +1,14 @@
 # About Markdown copyediting
 
-NOTE TO SELF: this chapter should be reorganized. and probably divided.
+<!--
+this chapter should be reorganized. and probably divided.
 It has three components: - the aims of markup editing, what markdown is,
 and the like. Not hands-on, best moved to the publishing part. - basics
 of markdown syntax, 'advance warnings', using RStudio. This is hands-on,
 should be here. *There should also a roadmap to the copyediting chapters
 ahead*. - detailed prescriptions about what to encode or not. Not sure
 where to fit that.
+-->
 
 ## Aims
 

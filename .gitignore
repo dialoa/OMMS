@@ -8,10 +8,10 @@
 
 # Quarto files
 /.quarto/
+/.luarc.json
 /_book/
 /_site/
-
-/.luarc.json
+/index_files/
 
 # MacOS
 .DS_Store

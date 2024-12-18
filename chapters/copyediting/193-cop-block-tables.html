@@ -606,11 +606,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>For the first step (get the latex code for the desired table), there are two options:</li>
 </ol>
 <ol type="i">
-<li>Build the latex code from scratch or via the <a href="https://www.tablesgenerator.com/latex_tables">table generator for latex</a>, put the code to the separate .md.</li>
-<li>Build the markdown code from scratch or via the <a href="https://www.tablesgenerator.com/markdown_tables">table generator for markdown</a>, put it to the separate .md, let it produce a latex output, copy/paste the latex code to the separate .md (it probably begins with something like “
-” or “\end{table}”).</li>
+<li><p>Build the latex code from scratch or via the <a href="https://www.tablesgenerator.com/latex_tables">table generator for latex</a>, put the code to the separate .md.</p></li>
+<li><p>Build the markdown code from scratch or via the <a href="https://www.tablesgenerator.com/markdown_tables">table generator for markdown</a>, put it to the separate .md, let it produce a latex output, copy/paste the latex code to the separate .md (it probably begins with something like <code>\begin{longtable}</code> or <code>\begin{table}</code> and ends with something like <code>\end{longtable}</code> or <code>\end{table}</code>).</p></li>
 </ol>
-<ol start="2" type="1">
+<ol type="1">
 <li>Once you have the latex code in the separate .md, you can embed it in the following code:</li>
 </ol>
 <div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -659,7 +658,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <ol type="a">
 <li>“longtable” -&gt; “tabular” (so that it doesn’t rely on longtable package, which doesn’t work within multicolumn environments).</li>
-<li>“”, “” and “” -&gt; “” for simple horizontal lines</li>
+<li><code>\toprule</code>, <code>\midrule</code> and <code>\bottomrule</code> -&gt; <code>\hline</code> for simple horizontal lines</li>
 <li>If a vertical line is desired at some point in the table change latex code <code>\begin{tabular}[]{@{}lcccc@{}}</code> to <code>\begin{tabular}[]{@{}c|cccc@{}}</code>. See that the number of letters determines the number of columns in the table. The letter “l” in the former code is to change into a “c” in the latter. To have a vertical line after the first column from the left, insert the sign (not letter!) “|” after the first c from the left.</li>
 </ol>
 <ol start="4" type="1">

@@ -33,24 +33,24 @@ Create a working folder for your journal. This may be shared between copyeditors
 tree/copyediting
 └── 2023-v51
     ├── 01-i01
-    |   ├── 01-ehrenfest-afanassjewa
-    |   |   └── history
-    |   └── 02-estrin
+    │   ├── 01-ehrenfest-afanassjewa
+    │   │   └── history
+    │   └── 02-estrin
     └── 03-i02
         ├── 01-ehrenfest-afanassjewa
-        |   └── history
+        │   └── history
         └── 02-estrin
             └── history
 tree/published
 └── 2023-v50
     ├── 01-i01
-    |   ├── 01-ayrton
-    |   |   └── history
-    |   └── 02-berdichevsky
-    |       └── history
+    │   ├── 01-ayrton
+    │   │   └── history
+    │   └── 02-berdichevsky
+    │       └── history
     └── 03-i02
         ├── 01-borg
-        |   └── history
+        │   └── history
         └── 02-daubechies
             └── history
 tree/guide
@@ -58,10 +58,10 @@ tree/resources
 └── fonts
 tree/template
 ├── 1.0
-|   ├── defaults
-|   ├── filters
-|   ├── metadata
-|   └── scripts
+│   ├── defaults
+│   ├── filters
+│   ├── metadata
+│   └── scripts
 └── 1.1
     ├── defaults
     ├── filters

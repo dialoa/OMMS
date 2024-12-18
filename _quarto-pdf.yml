@@ -9,9 +9,9 @@ format:
     pdf-engine-opt: -xelatex
     documentclass: scrreprt
     include-in-header: latex/unicode.tex
-    mainfont: Libertinus Sans
-    sansfont: Libertinus Sans
+    mainfont: Open Sans
+    sansfont: Open Sans
     monofont: Inconsolata
-    mathfont: Libertinus Math
+    mathfont: Noto Sans Math
     babelfonts:
-      greek: Libertinus Sans
+      greek: Open Sans

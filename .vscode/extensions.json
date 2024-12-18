@@ -1,9 +1,7 @@
 {
     "recommendations": [
         "yzhang.markdown-all-in-one",
-        "james-yu.latex-workshop",
         "quarto.quarto",
         "george-alisson.html-preview-vscode",
-        "ms-vsliveshare.vsliveshare"
     ]
 }

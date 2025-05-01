@@ -1,7 +1,14 @@
 # Abstracts
 
-Abstracts are strongly recommended. Most people who bump on the article 
-will only read that. 
+Abstracts are strongly recommended. Most people who bump on the article will only read that. 
+
+Abstracts are text-only, no markdown code, because they are passed on to Crossref and metadata harvesters. However, we can allow emphasis and equations.
+
+## Length
 
 Abstracts must be at most 200 words or so and fit in the first article's 
 page in PDF output. 
+
+## Citations
+
+Citations in abstract should be plain text, not markdown: Doe (2005), not [@Doe2005]. 

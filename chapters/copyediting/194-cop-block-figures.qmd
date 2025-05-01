@@ -96,8 +96,10 @@ See @fig:myfigure for an example.
 Manuscript text resumes here.
 ```
 
-See @sec-floated-figures below for details.  It must be on a line of its own, 
-surrounded by blank lines, and with a caption text:
+In addition to the id, you can use attribute to change the size
+of your TikZ figure. See @sec-floated-figures below for details.
+
+
 
 ## Figures from files
 
@@ -147,17 +149,6 @@ __Inline or Floated__. An image command is:
   a non-empty alt text,
 * An inline figure otherwise. 
 
-__Attributes__. You can add attributes to an image command. This is used to specify
-is width, height and a id for cross-references:
-
-``` markdown
-![alt text](file.jpg){width=50% #fig:fig1}
-
-![other alt text]{#fig:fig2}
-
-[other alt text]: file2.jpg
-```
-
 ### Inline figure from a file
 
 If you do not separate the image common from the surrounding text by blank
@@ -198,6 +189,41 @@ Previous text... See @fig:figure1.
 
 ![Caption of the figure.](file.svg){#fig:figure1 width=50%}
 ```
+
+### Figure size
+
+Width and heigh attributes can be specified:
+
+```
+Inline figure: ![](figure1.jpg){width=25%}.
+
+![Caption of a floating figure.](figure1.tikz){#fig:myfigure width=33%}
+
+Manuscript text resumes here.
+```
+
+Since we are targeting outputs of different sizes and units 
+(PDFs in pt, HTML in pixel) it is safer to use a relative unit 
+like percentage. Note that the percentage isn't a scaling factor 
+but width relative to the width of the line. 
+
+For more on how Pandoc treat attributes see the [images section of 
+Pandoc's manual](https://pandoc.org/MANUAL.html#images).
+
+## Crossreference to a figure
+
+Floating figures can be given an id for crossreference. You 
+can specify it as an 
+
+
+``` markdown
+![alt text](file.jpg){width=50% #fig:fig1}
+
+![other alt text]{#fig:fig2}
+
+[other alt text]: file2.jpg
+```
+
 
 ## Background on vector vs bitmap formats {#sec-vector-bitmap}
 

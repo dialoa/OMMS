@@ -56,7 +56,8 @@ book:
       - chapters/dialectica/71-dialectica-authors.qmd
       - chapters/dialectica/72-dialectica-abstract.qmd
       - chapters/dialectica/74-dialectica-reviews.qmd
-      - chapters/dialectica/75-dialectica-article-structure.qmd
+      - chapters/dialectica/75-dialectica-cover-note.qmd
+      - chapters/dialectica/76-dialectica-article-structure.qmd
       - chapters/dialectica/80-dialectica-bibliography.qmd
       - chapters/dialectica/85-dialectica-missing-unicode-characters.qmd
     - part: Design

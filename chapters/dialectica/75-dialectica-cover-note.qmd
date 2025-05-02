@@ -1,0 +1,20 @@
+# Cover note
+
+You may add a brief cover note to an article, e.g. to state that 
+an article is posthumous or give an acceptance date. 
+It is displayed:
+
+- in PDF offprints: on the cover, below citation data.
+- in HTML offprints: below the citation data and abstract.
+
+Enter it in the article metadata under 'cover-note' or 'covernote':
+
+``` yaml
+title: My article
+subtitle: or how I wrote something
+cover-note: |
+    Article accepted for publication despite the reviewer's
+    significant doubts.
+```
+
+Markdown formatting is allowed.

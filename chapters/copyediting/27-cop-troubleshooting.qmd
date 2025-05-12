@@ -328,9 +328,19 @@ of the document:
   ... table rows \\
  \hline
 \end{longtable}
+}
 ```
 :::::
 ~~~
+
+## HTML output: text not wrapped in a `<p>` tag
+
+Problem: a paragraph isn't wrapped between `<p>` and `</p>` tags
+in HTML output.
+
+Diagnosis: does the paragraph contain `\begin{prooftree}` (a 
+LaTeX environment from the bussproofs package)? If so, make sure
+that is surrounded by blank lines. See @sec-cop-math-latex.
 
 ## A list of things that cause trouble
 

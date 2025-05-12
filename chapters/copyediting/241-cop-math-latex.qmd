@@ -438,16 +438,20 @@ $\AxiomC{\(P \land Q\)}
 ### Block bussproofs
 
 **Requires: Pandoc 2.19.3+**. Enter the prooftree environment
-directly in markdown, without enclosing `$$...$$`:
+directly in markdown, surrounded by empty lines, without enclosing `$$...$$`:
 
 ```latex
+... as can be seen in the following deduction:
+
 \begin{prooftree}
 \AxiomC{\(P \land Q\)}
 \UnaryInfC{\(Q\)}
 \end{prooftree}
+
+\noident which proves $Q$ from premise $P\land Q$.
 ```
 
-It should display correctly in HTML output. 
+It should display correctly in HTML output. The `\noindent` command at the beggining of the next paragraph ensures that no first line indentation is added.
 
 Exceptions: some commands like `\doubleline` aren't handled by MathJaX. They
 are displayed in red in the HTML output. You can either leave it as is

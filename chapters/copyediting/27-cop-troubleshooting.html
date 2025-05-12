@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-49299fefe11377925576cba6af9bf1bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -546,11 +546,12 @@ window.Quarto = {
   <li><a href="#yaml-parse-exception" id="toc-yaml-parse-exception" class="nav-link" data-scroll-target="#yaml-parse-exception"><span class="header-section-number">28.8</span> YAML Parse exception</a></li>
   <li><a href="#attempt-to-compare-nil-with-number" id="toc-attempt-to-compare-nil-with-number" class="nav-link" data-scroll-target="#attempt-to-compare-nil-with-number"><span class="header-section-number">28.9</span> attempt to compare nil with number</a></li>
   <li><a href="#hard-coded-latex-table-undefined-control-sequence" id="toc-hard-coded-latex-table-undefined-control-sequence" class="nav-link" data-scroll-target="#hard-coded-latex-table-undefined-control-sequence"><span class="header-section-number">28.10</span> Hard-coded LaTeX table: Undefined control sequence</a></li>
-  <li><a href="#a-list-of-things-that-cause-trouble" id="toc-a-list-of-things-that-cause-trouble" class="nav-link" data-scroll-target="#a-list-of-things-that-cause-trouble"><span class="header-section-number">28.11</span> A list of things that cause trouble</a>
+  <li><a href="#html-output-text-not-wrapped-in-a-p-tag" id="toc-html-output-text-not-wrapped-in-a-p-tag" class="nav-link" data-scroll-target="#html-output-text-not-wrapped-in-a-p-tag"><span class="header-section-number">28.11</span> HTML output: text not wrapped in a <code>&lt;p&gt;</code> tag</a></li>
+  <li><a href="#a-list-of-things-that-cause-trouble" id="toc-a-list-of-things-that-cause-trouble" class="nav-link" data-scroll-target="#a-list-of-things-that-cause-trouble"><span class="header-section-number">28.12</span> A list of things that cause trouble</a>
   <ul class="collapse">
-  <li><a href="#visual-editor-rstudio" id="toc-visual-editor-rstudio" class="nav-link" data-scroll-target="#visual-editor-rstudio"><span class="header-section-number">28.11.1</span> Visual editor RStudio</a></li>
-  <li><a href="#pandoc" id="toc-pandoc" class="nav-link" data-scroll-target="#pandoc"><span class="header-section-number">28.11.2</span> Pandoc</a></li>
-  <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex"><span class="header-section-number">28.11.3</span> LaTeX</a></li>
+  <li><a href="#visual-editor-rstudio" id="toc-visual-editor-rstudio" class="nav-link" data-scroll-target="#visual-editor-rstudio"><span class="header-section-number">28.12.1</span> Visual editor RStudio</a></li>
+  <li><a href="#pandoc" id="toc-pandoc" class="nav-link" data-scroll-target="#pandoc"><span class="header-section-number">28.12.2</span> Pandoc</a></li>
+  <li><a href="#latex" id="toc-latex" class="nav-link" data-scroll-target="#latex"><span class="header-section-number">28.12.3</span> LaTeX</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -836,14 +837,20 @@ __L -- a__. This will not generate an error.
 <span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="in">  ... table rows \\</span></span>
 <span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="in"> \hline</span></span>
 <span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="in">\end{longtable}</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>:::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>:::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="a-list-of-things-that-cause-trouble" class="level2" data-number="28.11">
-<h2 data-number="28.11" class="anchored" data-anchor-id="a-list-of-things-that-cause-trouble"><span class="header-section-number">28.11</span> A list of things that cause trouble</h2>
+<section id="html-output-text-not-wrapped-in-a-p-tag" class="level2" data-number="28.11">
+<h2 data-number="28.11" class="anchored" data-anchor-id="html-output-text-not-wrapped-in-a-p-tag"><span class="header-section-number">28.11</span> HTML output: text not wrapped in a <code>&lt;p&gt;</code> tag</h2>
+<p>Problem: a paragraph isn’t wrapped between <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> tags in HTML output.</p>
+<p>Diagnosis: does the paragraph contain <code>\begin{prooftree}</code> (a LaTeX environment from the bussproofs package)? If so, make sure that is surrounded by blank lines. See <a href="241-cop-math-latex.html" class="quarto-xref"><span>Chapter 26</span></a>.</p>
+</section>
+<section id="a-list-of-things-that-cause-trouble" class="level2" data-number="28.12">
+<h2 data-number="28.12" class="anchored" data-anchor-id="a-list-of-things-that-cause-trouble"><span class="header-section-number">28.12</span> A list of things that cause trouble</h2>
 <p>Some hurdles that beginning copyeditors typically face.</p>
-<section id="visual-editor-rstudio" class="level3" data-number="28.11.1">
-<h3 data-number="28.11.1" class="anchored" data-anchor-id="visual-editor-rstudio"><span class="header-section-number">28.11.1</span> Visual editor RStudio</h3>
+<section id="visual-editor-rstudio" class="level3" data-number="28.12.1">
+<h3 data-number="28.12.1" class="anchored" data-anchor-id="visual-editor-rstudio"><span class="header-section-number">28.12.1</span> Visual editor RStudio</h3>
 <ul>
 <li><p>Does not preserve numbered examples code (all processed).</p></li>
 <li><p>Tables: Doesn’t preserve code (not pipe format -&gt; loss of cell &gt; alignment)</p></li>
@@ -853,8 +860,8 @@ __L -- a__. This will not generate an error.
 </ul></li>
 </ul>
 </section>
-<section id="pandoc" class="level3" data-number="28.11.2">
-<h3 data-number="28.11.2" class="anchored" data-anchor-id="pandoc"><span class="header-section-number">28.11.2</span> Pandoc</h3>
+<section id="pandoc" class="level3" data-number="28.12.2">
+<h3 data-number="28.12.2" class="anchored" data-anchor-id="pandoc"><span class="header-section-number">28.12.2</span> Pandoc</h3>
 <ul>
 <li><p>LaTeX encoding of tables is heavy (every cell is a minipage! &gt; Specifies detailed widths)</p></li>
 <li><p>Tables: no colspan nor rowspan yet</p></li>
@@ -862,8 +869,8 @@ __L -- a__. This will not generate an error.
 <li><p>HTML default encoding of formulas uses unicode + italics + “math &gt; inline” custom style class. Use --mathjax flag; adds a link to &gt; mathjax.js in the head so this should be present on the website &gt; (or unnecessary if the galley has its own head). See <a href="https://pandoc.org/MANUAL.html#math-rendering-in-html"><u>pandoc &gt; manual on maths in &gt; html</u></a> &gt; .</p></li>
 </ul>
 </section>
-<section id="latex" class="level3" data-number="28.11.3">
-<h3 data-number="28.11.3" class="anchored" data-anchor-id="latex"><span class="header-section-number">28.11.3</span> LaTeX</h3>
+<section id="latex" class="level3" data-number="28.12.3">
+<h3 data-number="28.12.3" class="anchored" data-anchor-id="latex"><span class="header-section-number">28.12.3</span> LaTeX</h3>
 <ul>
 <li>Standard logic symbols: \neg, \lnot, \land, \lor, \sim all well &gt; supported in MathML? (Not a big worry!)</li>
 </ul>

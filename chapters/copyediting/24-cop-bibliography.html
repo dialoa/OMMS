@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,14 +70,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../media/dialoa.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-49299fefe11377925576cba6af9bf1bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-4ff66e45b39d49436fe97d3fe27b9920.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -131,7 +132,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Open Manual of Markdown Style</a> 
     </div>
@@ -576,9 +579,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-first-line-indent-after"></div>
 <p><em>dialectica</em>. We use BibTeX files. The “bibliography file” below refers to a <code>.bib</code> file in your article’s folder.</p>
 <p>In your article’s metadata block, enter the name of your bibliography file:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> My paper</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> My paper</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Jane E. Doe</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>Do not leave the bibliography field empty, or you will get a Pandoc error <code>File  not found in resource path</code>.</p>
 <section id="multiple-bibliography-files" class="level2" data-number="25.1">
@@ -613,8 +616,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-adding-non-cited-references-in-the-bibliography" class="level2" data-number="25.4">
 <h2 data-number="25.4" class="anchored" data-anchor-id="sec-adding-non-cited-references-in-the-bibliography"><span class="header-section-number">25.4</span> Adding non-cited references in the bibliography</h2>
 <p>In the metadata block, add a line:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  @bibtexentry1, @bibtexentry2, @bibtexentry3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  @bibtexentry1, @bibtexentry2, @bibtexentry3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>If you have lots of those, best use a tool to extract the keys automatically from a bibtex file.</p>
 </section>
@@ -663,16 +666,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="bibtex-field-names-arent-case-sensitive" class="level3" data-number="25.7.3">
 <h3 data-number="25.7.3" class="anchored" data-anchor-id="bibtex-field-names-arent-case-sensitive"><span class="header-section-number">25.7.3</span> BibTeX field names aren’t case-sensitive</h3>
 <p>BibTeX field names are not case-sensitive: they can be named “author”, or “Author”, or “AUTHOR”.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Author</span> = {Jakobson, Roman},</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Title</span> = {Metalanguage as a Linguistic Problem}</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>Is the same as:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span> = {Jakobson, Roman},</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">TITLE</span> = {Metalanguage as a Linguistic Problem}</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="title-capitalization" class="level3" data-number="25.7.4">
 <h3 data-number="25.7.4" class="anchored" data-anchor-id="title-capitalization"><span class="header-section-number">25.7.4</span> Title capitalization</h3>
@@ -686,7 +689,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="no-first-line-indent-after"></div>
 <p>If an entry uses title case (“Rezension der Schrift von…”), the capitals will be assumed to be mandatory and will be printed even when it should be in sentence case. Thus if you know that your bibliography entries in English will always be printed in title case (i.e., your publication is in English and you’re sure it won’t adopt the APA sentence case convention), then it’s harmless to use title case in the BibTeX file itself. But when in doubt sentence case + <code>langid</code> field is the safe option.</p>
 <p>For an illustration:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">Tarski1936</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">Tarski1936</span>,</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">author</span> = {Alfred Tarski},</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span> = {Der Wahrheitsbegriff in den formalisierten Sprachen},</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">journal</span> = {Studia Philosophica},</span>
@@ -704,7 +707,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">pages</span> = {479--493},</span>
 <span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">year</span> = {1905},</span>
 <span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="dt">langid</span> = {en},</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>For more detail:</p>
 <ul>
@@ -715,7 +718,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="original-year-of-publication" class="level3" data-number="25.7.5">
 <h3 data-number="25.7.5" class="anchored" data-anchor-id="original-year-of-publication"><span class="header-section-number">25.7.5</span> Original year of publication</h3>
 <p>If the author isn’t using the original edition of a book, e.g.&nbsp;citing from a 2010 edition of Locke’s 1689 essay, add a field origdate in the bibtex entry. (will not show up in the PDF at the moment, but our final template will do it). Ex:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">Jakobson:1980</span>,</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Author</span> = {Jakobson, Roman},</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Booktitle</span> = {The Framework of Language},</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Location</span> = {Ann Arbor},</span>
@@ -725,7 +728,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Publisher</span> = {University of Michigan Press},</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Shorttitle</span> = {Metalanguage as a Linguistic Problem},</span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Title</span> = {Metalanguage as a Linguistic Problem}</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>See <a href="http://texdoc.net/texmf-dist/doc/latex/biblatex/biblatex.pdf">biblatex documentation, §2.2.2 on data fields</a>.</p>
 </section>
@@ -745,11 +748,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="no-first-line-indent-after"></div>
 <p>Note: if you have a full LaTeX installation on your computer you will have access to some of these documents from your terminal using the <code>texdoc</code> command. Try the commands:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">texdoc</span> biblatex</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">texdoc</span> biblatex</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">texdoc</span> biblatex-cheatsheet</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">texdoc</span> bibtex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">texdoc</span> bibtex</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p><strong>Dialectica guideline</strong>. We use the <code>biblatex</code> conventions.</p>
 </section>
@@ -759,7 +762,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="unpublished-manuscript" class="level3" data-number="25.8.1">
 <h3 data-number="25.8.1" class="anchored" data-anchor-id="unpublished-manuscript"><span class="header-section-number">25.8.1</span> Unpublished manuscript</h3>
 <p>Choose the type <code>unpublished</code>. Add a note field:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">  note = {unpublished manuscript}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">  note = {unpublished manuscript}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>Add a URL if available.</p>
 <p><em>Dialectica guideline</em>. We require a URL. If the author cannot provide a URL, we do not create a bibliography entry at all but only describe the source in a footnote (“in an unpublished manuscript titled”XXX”).</p>
@@ -779,10 +782,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Requires:</strong> Dialectica’s <code>selfcites.py</code> script. Using the terminal.</p>
 <p><em>The problem</em>. If a bibliography file self-cites some keys, but doesn’t include an entry for these keys, you will get “Missing reference” warnings and your bibliography will be incomplete. You need to ensure that there’s an entry for any self-cited key.</p>
 <p><em>Solution</em>. Run the selfcites.py script on your bibliography file. Suppose your article’s bibliography file is named <code>myreferences.bib</code>. Open a terminal, navigate to the article folder and run:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> ../../../resources/scripts/selfcites.py myreferences.bib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> ../../../resources/scripts/selfcites.py myreferences.bib</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>More generally, you can run that script from anywhere on a bib file that is anywhere:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> path/to//selfcites.py path/to/myreferences.bib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> path/to//selfcites.py path/to/myreferences.bib</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>The script will check the <code>.bib</code> file for self-citations and output a report in the terminal such as:</p>
 <pre><code>Dialectica open access initative self-citing bibliography file check, (c) Thomas Hodgson 2021
@@ -813,7 +816,7 @@ For information, these are all the entries I found:
 <p>Option 1. If you are sure that your .bib file <em>only</em> contains entries that need to be printed out in the bibliography</p>
 <p><strong>Requires:</strong> the selfcites.py script. See <a href="#check-that-the-BibTeX-file-contains-self-cited-entries">above</a>.</p>
 <p>Open the <code>.bib</code> file in a text editor. Search for <code>\cite</code>. If you have no no results, then your <code>.bib</code> file doesn’t include self-citations and you are good to go. If you do find results, you will have bibliography entries in the file that look like this, for instance:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">geach_pt:1962</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">geach_pt:1962</span>,</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">address</span> =       {Ithaca, New York},</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span> =        {Geach, Peter Thomas},</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">note</span> =          {third edition: <span class="ch">\citet</span>{geach_pt:1980}},</span>
@@ -821,7 +824,7 @@ For information, these are all the entries I found:
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span> =         {Reference and Generality, an examination of some</span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                   medieval and modern theories},</span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span> =          {1962},</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>In the <code>note =</code> line here, you see the code <code>\citet{geach_pt:1980}</code>. This is a LaTeX command that cites <em>another bibliography entry in the same file</em>, namely the one with the key <code>geach_pt:1980</code>. Ultimately this will be printed out in the bibliography as:</p>
 <blockquote class="blockquote">
@@ -832,16 +835,16 @@ For information, these are all the entries I found:
 </blockquote>
 <div class="no-first-line-indent-after"></div>
 <p>The LaTeX <code>\cite</code> commands can start with <code>\cite</code>, <code>\citet</code>, <code>\citep</code>; you will find all of these by searching <code>\cite</code> in the file. Sometimes the command cites pages numbers and looks like this instead:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">  note =          {reprinted in \citet[232--258]{mccall_s:1967}, with</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">                   considerable change in notation},</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">  note =          {reprinted in \citet[232--258]{mccall_s:1967}, with</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">                   considerable change in notation},</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>In that case the cited entry’s key is still the thing between curly brackets, here <code>mccall_s:1967</code>.</p>
 <p>Now you need to make sure that the self-cited entries appear in the bibliography. The problem is that if it is only cited in the bibligraphy and not the paper itself, it will not automatically be included. To ensure that it is included, you need to add the key in your document metadata, in a <code>nocite</code> field:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A Neat Paper</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A Neat Paper</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Smith, John</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> smith.bib</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  geach_pt:1980, mccall_s:1967</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  geach_pt:1980, mccall_s:1967</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>The <code>nocite: |</code> should appear on one line, the entries on one or several lines below but each of those lines must start with at least two spaces, and the entries should be separated by commas.</p>
 <p>You need not check whether the entries are actually cited in the paper or not: just add them to the <code>nocite</code> metadata, it will not hurt if they are also cited.</p>
@@ -890,7 +893,7 @@ unexpected end of input</code></pre>
 <section id="from-frege-to-gödel" class="level3" data-number="25.10.4">
 <h3 data-number="25.10.4" class="anchored" data-anchor-id="from-frege-to-gödel"><span class="header-section-number">25.10.4</span> From Frege to gödel</h3>
 <p>Mystery. The cross ref below is printed out as “From Frege to gödel:” by citeproc, no matter (a) whether we write <code>Gödel</code> or <code>G{\¨o}del</code>, (b) no matter the position, i.e.&nbsp;we get “From gödel to Frege”. <strong>The solution is</strong> put G in curly brackets. But why???</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">\@incollection{frege:1967a,</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">\@incollection{frege:1967a,</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">  Author = {Frege, Gottlob},</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">  Crossref = {vanheijenoort:1967},</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Note = {translated by Stephan Bauer-Mengelberg},</span></span>
@@ -910,7 +913,7 @@ unexpected end of input</code></pre>
 <span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co">  1879-1931},</span></span>
 <span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co">  address = {Cambridge, Massachusetts},publisher = {Harvard University</span></span>
 <span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co">  Press}</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>Beginning of an answer: case is protected if a <em>subpart</em> of the word is bracketed. <code>A dog called {Pizza}</code> will be overriding by the style (and thus printed “A pizza” if the style calls for it) but <code>A dog called {P}izza</code> is protected.</p>
 
@@ -978,13 +981,14 @@ unexpected end of input</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,14 +90,15 @@ div.csl-indent {
 <link href="../../media/dialoa.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-49299fefe11377925576cba6af9bf1bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-4ff66e45b39d49436fe97d3fe27b9920.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -151,7 +152,9 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Open Manual of Markdown Style</a> 
     </div>
@@ -530,7 +533,7 @@ div.csl-indent {
   <li><a href="#encoding-citations" id="toc-encoding-citations" class="nav-link active" data-scroll-target="#encoding-citations"><span class="header-section-number">24.1</span> Encoding citations</a>
   <ul class="collapse">
   <li><a href="#inline-why-do-i-get-doe-2012-doe-2016" id="toc-inline-why-do-i-get-doe-2012-doe-2016" class="nav-link" data-scroll-target="#inline-why-do-i-get-doe-2012-doe-2016"><span class="header-section-number">24.1.1</span> Inline: why do I get “Doe (2012; Doe 2016)”?</a></li>
-  <li><a href="#ibid.-op.-cit.-sec.-or-and-the-like" id="toc-ibid.-op.-cit.-sec.-or-and-the-like" class="nav-link" data-scroll-target="#ibid.-op.-cit.-sec.-or-and-the-like"><span class="header-section-number">24.1.2</span> Ibid., Op. Cit., sec.&nbsp;or § and the like</a></li>
+  <li><a href="#locators-ibid.-op.-cit.-sec.-or-and-the-like" id="toc-locators-ibid.-op.-cit.-sec.-or-and-the-like" class="nav-link" data-scroll-target="#locators-ibid.-op.-cit.-sec.-or-and-the-like"><span class="header-section-number">24.1.2</span> Locators: ibid., Op. Cit., sec.&nbsp;or § and the like</a></li>
   <li><a href="#citing-notes-footnotes-and-endnotes" id="toc-citing-notes-footnotes-and-endnotes" class="nav-link" data-scroll-target="#citing-notes-footnotes-and-endnotes"><span class="header-section-number">24.1.3</span> Citing Notes, Footnotes, and Endnotes</a></li>
   <li><a href="#conflicts-of-cites-with-other-commands" id="toc-conflicts-of-cites-with-other-commands" class="nav-link" data-scroll-target="#conflicts-of-cites-with-other-commands"><span class="header-section-number">24.1.4</span> Conflicts of Cites with Other Commands</a></li>
   <li><a href="#putting-a-citation-link-on-a-page-number-or-a-word" id="toc-putting-a-citation-link-on-a-page-number-or-a-word" class="nav-link" data-scroll-target="#putting-a-citation-link-on-a-page-number-or-a-word"><span class="header-section-number">24.1.5</span> Putting a citation link on a page number, or a word</a></li>
@@ -746,9 +749,9 @@ div.csl-indent {
 <li>if Doe is the author of both (or the editor of both), this is an error in your bibliography file: Doe’s name isn’t recognized as the same, probably because it’s entered differently on both references. Typically, this is because the first name is different (“Doe, J” vs “Doe, Jane”) or because of a extra initial (“Doe, Jane” vs “Doe, Jane E.”).</li>
 </ul>
 </section>
-<section id="ibid.-op.-cit.-sec.-or-and-the-like" class="level3" data-number="24.1.2">
-<h3 data-number="24.1.2" class="anchored" data-anchor-id="ibid.-op.-cit.-sec.-or-and-the-like"><span class="header-section-number">24.1.2</span> Ibid., Op. Cit., sec.&nbsp;or § and the like</h3>
-<p><strong>All the finer-grained formating is handled by the bibliography template</strong>. Whether repeated citations are printed out as “ibid”, “op. cit”, whether page ranges are referred to as “pp.&nbsp;12-15” or “p.&nbsp;12-15” or “12-15”, whether sections are called “sec.” or “§”, etc., all of this is decided and automatically handled by the bibliography template.</p>
+<section id="locators-ibid.-op.-cit.-sec.-or-and-the-like" class="level3" data-number="24.1.2">
+<h3 data-number="24.1.2" class="anchored" data-anchor-id="locators-ibid.-op.-cit.-sec.-or-and-the-like"><span class="header-section-number">24.1.2</span> Locators: ibid., Op. Cit., sec.&nbsp;or § and the like</h3>
+<p><strong>The template decides what the locators are</strong>. Whether repeated citations are printed out as “ibid”, “op. cit”, whether page ranges are referred to as “pp.&nbsp;12-15” or “p.&nbsp;12-15” or “12-15”, whether sections are called “sec.” or “§”, etc., all of this is decided and automatically handled by the bibliography template.</p>
 <p>If an author uses <em>ibid.</em> or <em>op. cit.</em>, just replace it with the original citation. For instance, if the author’s manuscript has:</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
@@ -756,8 +759,12 @@ div.csl-indent {
 </blockquote>
 <div class="no-first-line-indent-after"></div>
 <p>We encode:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>@Lewis1986 <span class="co">[</span><span class="ot">19</span><span class="co">]</span> says something important. He adds something less</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>interesting a few pages later <span class="co">[</span><span class="ot">@Lewis1986, 29</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>@Lewis1986 <span class="co">[</span><span class="ot">19</span><span class="co">]</span> says something important. He adds something less</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>interesting a few pages later <span class="co">[</span><span class="ot">@Lewis1986, 29</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="no-first-line-indent-after"></div>
+<p><strong>Exceptions: how to override defaults</strong>. Exceptionally you may need to override the default locators. For instance, the section locator ‘sec.’ might look odd when citing historical works traditionally referred to using ‘§’. In those <em>exceptional</em> cases, ensure that your locators are printed as is by preceeding them with an invisible ‘zero-width non-joiner’ charater (`‌’):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>See @frege:1967a <span class="co">[</span><span class="ot">&amp;zwnj;§11</span><span class="co">]</span>. Many agree <span class="co">[</span><span class="ot">@smith, &amp;zwnj;pp. 56-58</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="citing-notes-footnotes-and-endnotes" class="level3" data-number="24.1.3">
 <h3 data-number="24.1.3" class="anchored" data-anchor-id="citing-notes-footnotes-and-endnotes"><span class="header-section-number">24.1.3</span> Citing Notes, Footnotes, and Endnotes</h3>
@@ -815,7 +822,7 @@ div.csl-indent {
 <section id="putting-a-citation-link-on-a-page-number-or-a-word" class="level3" data-number="24.1.5">
 <h3 data-number="24.1.5" class="anchored" data-anchor-id="putting-a-citation-link-on-a-page-number-or-a-word"><span class="header-section-number">24.1.5</span> Putting a citation link on a page number, or a word</h3>
 <p>Citations must all be in one of the three forms above (Normal, Inline or Year-only). We cannot, and should not, put them on arbitrary words or page numbers. For instance, in the following:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>@Lewis1986 <span class="co">[</span><span class="ot">19</span><span class="co">]</span> says something important, but see also page 29.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>@Lewis1986 <span class="co">[</span><span class="ot">19</span><span class="co">]</span> says something important, but see also page 29.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>We could either turn “page 29” in an inline or year-only citation, or leave it without link—provided there’s already a link to the work nearby, as is the case above.</p>
 </section>
@@ -835,7 +842,7 @@ div.csl-indent {
 <div class="no-first-line-indent-after"></div>
 <p>It should be noted here that, on the face of it, Doe <span class="citation" data-cites="doe_j:2020 doe_j:2019">(<a href="../appendices/references.html#ref-doe_j:2020" role="doc-biblioref">2020</a>, <a href="../appendices/references.html#ref-doe_j:2019" role="doc-biblioref">2019</a>)</span> does introduce his theory to justify placing greater weight on oneself than on others in making decisions.</p>
 </blockquote>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>on the face of it, Doe <span class="co">[</span><span class="ot">-@doe_j:2020; -@doe_j:2019</span><span class="co">]</span> does introduce...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>on the face of it, Doe <span class="co">[</span><span class="ot">-@doe_j:2020; -@doe_j:2019</span><span class="co">]</span> does introduce...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p><strong>Preferred</strong></p>
 <p>Use the inline citation format.</p>
@@ -843,7 +850,7 @@ div.csl-indent {
 <div class="no-first-line-indent-after"></div>
 <p>It should be noted here that, on the face of it, <span class="citation" data-cites="doe_j:2020 doe_j:2019">Jane Doe (<a href="../appendices/references.html#ref-doe_j:2020" role="doc-biblioref">2020</a>, <a href="../appendices/references.html#ref-doe_j:2019" role="doc-biblioref">2019</a>)</span> does introduce his theory to justify placing greater weight on oneself than on others in making decisions.</p>
 </blockquote>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>on the face of it, @doe_j:2020 <span class="co">[</span><span class="ot">@doe_j:2019</span><span class="co">]</span> does introduce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>on the face of it, @doe_j:2020 <span class="co">[</span><span class="ot">@doe_j:2019</span><span class="co">]</span> does introduce</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="example-locating-the-possessive-s" class="level3" data-number="24.2.2">
 <h3 data-number="24.2.2" class="anchored" data-anchor-id="example-locating-the-possessive-s"><span class="header-section-number">24.2.2</span> Example: locating the possessive “’s”</h3>
@@ -858,8 +865,8 @@ div.csl-indent {
 <div class="no-first-line-indent-after"></div>
 <p>One example is Doe <span class="citation" data-cites="doe_j:2020">(<a href="../appendices/references.html#ref-doe_j:2020" role="doc-biblioref">2020</a>)</span>’s notion of the “personal horizon,” especially considering his discussion of “the truth in solipsism” and his insistence that “my” horizon is really “the” (preeminent) horizon.</p>
 </blockquote>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>One example is Doe</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">-@doe_j:2020</span><span class="co">]</span>'s notion...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>One example is Doe</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">-@doe_j:2020</span><span class="co">]</span>'s notion...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p><strong>Preferred</strong></p>
 <p>Inline citations are simpler and give a better output link (clickable name as well as year):</p>
@@ -867,19 +874,19 @@ div.csl-indent {
 <div class="no-first-line-indent-after"></div>
 <p>One example is <span class="citation" data-cites="doe_j:2020">Jane Doe (<a href="../appendices/references.html#ref-doe_j:2020" role="doc-biblioref">2020</a>)</span>’s notion…</p>
 </blockquote>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>One example is @doe_j:2020's notion...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>One example is @doe_j:2020's notion...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>But in the original, “Doe (2020)’s …” is bad typesetting. Better move the citation to the end of the sentence or attach the possessive to the author’s name:</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
 <p>One example is Doe’s notion of the “personal horizon,” especially considering his discussion of “the truth in solipsism” and his insistence that “my” horizon is really “the” (preeminent) horizon [doe_j:2020].</p>
 </blockquote>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>“the” (preeminent) horizon <span class="co">[</span><span class="ot">doe_j:2020</span><span class="co">]</span>. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>“the” (preeminent) horizon <span class="co">[</span><span class="ot">doe_j:2020</span><span class="co">]</span>. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
 <p>One example is Doe’s [-doe_j:2020] notion…</p>
 </blockquote>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>One example is Doe's <span class="co">[</span><span class="ot">-doe_j:2020</span><span class="co">]</span> notion...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>One example is Doe's <span class="co">[</span><span class="ot">-doe_j:2020</span><span class="co">]</span> notion...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>Both are fine, my favoured option is the first.</p>
 </section>
@@ -910,17 +917,17 @@ div.csl-indent {
 <div class="no-first-line-indent-after"></div>
 <p>Others have granted him as much (e.g., <span class="citation" data-cites="jones_j:2017">Jones (<a href="../appendices/references.html#ref-jones_j:2017" role="doc-biblioref">2019</a>)</span>, and Jane Doe in the introduction to <span class="citation" data-cites="smith_j:2018">Smith (<a href="../appendices/references.html#ref-smith_j:2018" role="doc-biblioref">2018</a>)</span>).</p>
 </blockquote>
-<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>as much (e.g., @jones_j:2017, and Jane Doe in the introduction to @smith_j:2018).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>as much (e.g., @jones_j:2017, and Jane Doe in the introduction to @smith_j:2018).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>Second attempt, make it a single parenthesis citation with two references, on the model <span class="citation" data-cites="jones_j:2017 smith_j:2018">(<a href="../appendices/references.html#ref-jones_j:2017" role="doc-biblioref">Jones 2019</a>; <a href="../appendices/references.html#ref-smith_j:2018" role="doc-biblioref">Smith 2018</a>)</span> (<code>[@jones_j:2017; @smith_j:2018]</code>). But pandoc doesn’t see it as a citation and the phrase disappears:</p>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
 <p>Others have granted him as much <span class="citation" data-cites="jones_j:2017">Smith (<a href="../appendices/references.html#ref-smith_j:2018" role="doc-biblioref">2018</a>)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>as much <span class="co">[</span><span class="ot">e.g., @jones_j:2017, and Jane Doe in the introduction to @smith_j:2018</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>as much <span class="co">[</span><span class="ot">e.g., @jones_j:2017, and Jane Doe in the introduction to @smith_j:2018</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>What is going on? The syntax of inline citation separates <em>prefixes and suffixes</em> with commas (<code>,</code>) or spaces and <em>different references</em> with semi-colons (<code>;</code>). So the general rule is: <em>if you have two keys you should have a semi-colon</em>. In the code above what pandoc sees is:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">prefix, @citekey, verylongsuffix</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">prefix, @citekey, verylongsuffix</span><span class="co">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>where <code>verylongsuffix</code> is the code <code>and Jane Doe in the introduction to @smith_j:2018</code>. But a suffix cannot include citations. It can only be simple text (<code>and passim</code> or <code>a famous passage</code>) or locator type + location (<code>chap. 2</code>, <code>pages 12-13</code>) or location (<code>12-13</code>).</p>
 <p>To avoid that, we must make “and Jane Doe in the introduction to” the <em>prefix</em> of the second citation, <code>@smight_j:2018</code>:</p>
@@ -928,10 +935,10 @@ div.csl-indent {
 <div class="no-first-line-indent-after"></div>
 <p>Others have granted him as much <span class="citation" data-cites="jones_j:2017 smith_j:2018">(e.g., <a href="../appendices/references.html#ref-jones_j:2017" role="doc-biblioref">Jones 2019</a>; and Jane Doe in the introduction to <a href="../appendices/references.html#ref-smith_j:2018" role="doc-biblioref">Smith 2018</a>)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>as much <span class="co">[</span><span class="ot">e.g., @jones_j:2017; and Jane Doe in the introduction to @smith_j:2018</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>as much <span class="co">[</span><span class="ot">e.g., @jones_j:2017; and Jane Doe in the introduction to @smith_j:2018</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>This is seen by pandoc as:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">prefix, @jones_j:2017; anotherprefix @smith_j:2018</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">prefix, @jones_j:2017; anotherprefix @smith_j:2018</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>Remark that we get <code>;</code> rather than <code>,</code> in between the citations. Compare:</p>
 <blockquote class="blockquote">
@@ -950,18 +957,18 @@ div.csl-indent {
 <div class="no-first-line-indent-after"></div>
 <p>Others have granted him as much <span class="citation" data-cites="jones_j:2017 doe_j:2018">(e.g., <a href="../appendices/references.html#ref-jones_j:2017" role="doc-biblioref">Jones 2019</a>; <a href="../appendices/references.html#ref-doe_j:2018" role="doc-biblioref">John Doe 2018</a>)</span>.</p>
 </blockquote>
-<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>as much <span class="co">[</span><span class="ot">e.g., @jones_j:2017; @doe_j:2018</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>as much <span class="co">[</span><span class="ot">e.g., @jones_j:2017; @doe_j:2018</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>This requires an adding to the entry in the bibliography. The entry is a book section authored by Doe is a book <em>authored</em> (not <em>edited</em>) by Smith. Entering it in Zotero and exporting as Bibtex gives us the code:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">doe_j:2018</span>,</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">author</span> = {Doe, John},</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span> = {Introduction},</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">booktitle</span> = {An imaginary book},</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">bookauthor</span> = {Smith, John},</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">publisher</span> = {Ideas Press},</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">address</span> = {Mainville},</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">year</span> = {2018}</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="va">@inbook</span>{<span class="ot">doe_j:2018</span>,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">author</span> = {Doe, John},</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span> = {Introduction},</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">booktitle</span> = {An imaginary book},</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">bookauthor</span> = {Smith, John},</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">publisher</span> = {Ideas Press},</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">address</span> = {Mainville},</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">year</span> = {2018}</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="example-citation-in-parenthesis-with-interfering-syntax" class="level3" data-number="24.2.4">
 <h3 data-number="24.2.4" class="anchored" data-anchor-id="example-citation-in-parenthesis-with-interfering-syntax"><span class="header-section-number">24.2.4</span> Example: Citation in parenthesis with interfering syntax</h3>
@@ -972,7 +979,7 @@ div.csl-indent {
 </blockquote>
 <div class="no-first-line-indent-after"></div>
 <p>If we typeset it as usual, with square brackets, it will look like this:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Others have granted him as much <span class="co">[</span><span class="ot">see, e.g., @jones_j:2017; I speak simply in terms of states of affairs, as for present purposes nothing hinges on this</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Others have granted him as much <span class="co">[</span><span class="ot">see, e.g., @jones_j:2017; I speak simply in terms of states of affairs, as for present purposes nothing hinges on this</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <blockquote class="blockquote">
 <div class="no-first-line-indent-after"></div>
 <p>Others have granted him as much [see, e.g., <span class="citation" data-cites="jones_j:2017">Jones (<a href="../appendices/references.html#ref-jones_j:2017" role="doc-biblioref">2019</a>)</span>; I speak simply in terms of states of affairs, as for present purposes nothing hinges on this].</p>
@@ -1058,13 +1065,14 @@ Smith, John. 2018. <em>An Imaginary Book</em>. Mainville: Ideas Press.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

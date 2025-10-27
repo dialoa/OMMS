@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,14 +70,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../media/dialoa.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-49299fefe11377925576cba6af9bf1bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-4ff66e45b39d49436fe97d3fe27b9920.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -131,7 +132,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Open Manual of Markdown Style</a> 
     </div>
@@ -593,11 +596,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><p>Download and install <a href="https://git-scm.com/downloads">git</a></p></li>
 <li><p>Check that git is working in PowerShell. If you get no errors with the command below, then git is working correctly:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Download, install, and open <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>. When installing Docker, choose the option to use WSL 2.</p>
 <p>When you install Docker, you can use the recommended settings and select “Continue without signing in”.</p></li>
 <li><p>Open PowerShell (you have it installed by default) and check that you have <code>wsl</code> version 2 or above with</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
 <ul>
 <li>If you don’t, do <code>wsl --install</code>, wait, and do again <code>wsl --version</code></li>
@@ -607,7 +610,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Check that Docker is configured to run with WSL 2: open Docker Desktop, go to Settings, and mark the checkbox for using WSL 2 if it’s not marked already.</p>
 <p>Additionally, in the settings, increase the CPU and memory limits of the containers to be at a minimum of 3/4 of your machine’s resources. For example, if you have an 8 core CPU and 16 GB of RAM, you could set the limits to 7 cores and 14 GB of RAM.</p></li>
 <li><p>Now, in PowerShell, check that docker is working with:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>docker run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>docker run hello-world</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
 <div class="no-first-line-indent-after"></div>
 <p>If you don’t get any errors, then docker is working in your machine</p>
@@ -625,9 +628,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <ol start="2" type="1">
 <li><p>Install <code>git</code> using brew. In a terminal, do:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Check that git is working, in a terminal. If you get no errors with the command below, then git is working correctly:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Download and install <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>. Make sure to pick your correct processor (Mac Intel Chip or Mac Apple Chip). <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>When you install Docker, you can use the recommended settings and select “Continue without signing in”.</p></li>
 <li><p>Configure Docker. Launch the Docker application and open “Settings”.</p>
@@ -636,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Increase the CPU and memory limits of the containers to be at a minimum of 3/4 of your machine’s resources. For example, if you have an 8 core CPU and 16 GB of RAM, you could set the limits to 7 cores and 14 GB of RAM.</p></li>
 </ol></li>
 <li><p>Check that docker is working. In a terminal, run:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If you get no errors, Docker is working correctly. If you do, try running Docker (in Applications). Docker’s whale icon should appear in your system icon bar (i.e.&nbsp;alongside icons for Wifi, Bluetooth etc.).</p></li>
 <li><p>Download and install <a href="https://code.visualstudio.com/Download">VSCode</a></p></li>
 </ol>
@@ -660,7 +663,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <ol start="3" type="1">
 <li><p>Check that docker is working, in a terminal. If you get no errors with the command below, then docker is working correctly:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Install <a href="https://code.visualstudio.com/Download">VSCode</a></p></li>
 </ol>
 </section>
@@ -671,15 +674,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note that these instructions are the same as the ones in <a href="https://github.com/Philosophie-ch/dltc-env">the repository’s README</a>. Make sure that you have at least 10 GB of free space in your machine:</p>
 <ol type="1">
 <li><p>Using a terminal, first clone the git repository where the start script is: <!-- the repository that contains the start script? --> <!-- which should be your preferred location?? People who don't have GitHub repos cloned don't understand. Also, is this a temporary repo, or will it need to be there all the time? --></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to your preferred location. For example:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to your preferred location. For example:</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mkdir ~/gitrepos</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># cd ~/gitrepos</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Philosophie-ch/dltc-env</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> dltc-env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!--Note: users may need to update this repo? Since we first tried with Sanna there has been updates. Perhaps this also needs instructions on how to update a git repo  --></li>
 <li><p>Now copy the <code>.env.template</code> file into <code>.env</code> and edit its contents:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> .env.template .env</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> .env.template .env</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This will open the file <code>.env</code> in VSCode. In VSCode you may see a message “Git repositories were found… do you want to open them?”, you can close it or ignore it.</p>
 <p><strong>NOTE</strong>: you can navigate with your usual file explorer to the “dltc-env” folder, which will be located where you cloned it in step 1 (namely, within your Github folder). If you use the file explorer, you will however not immediately see the <code>.env</code>. To see it in the file explorer, you need to enable viewing hidden files. The way to do this depends on which system you are using. On the other hand, if you are viewing the contents of <code>dltc-env</code> in the VSCode text editor (for isntance, if you typed the <code>code .env</code> command above), the file explorer within VSCode will show you the <code>.env</code> files. If you are viewing the files that way, you do not need to enable viewing hidden files.</p>
 <p>The contents of <code>.env</code> look like this:</p>
@@ -692,10 +695,10 @@ DOCKERHUB_TOKEN="token_in_the_institutional_setup_page"</code></pre>
 <p>2.3 <code>DOCKERHUB_TOKEN</code>: the <strong>login token</strong> (not the “password”) for the dockerhub account. You can find it in the “Institutional set-up” page in our Google Drive, “Passwords” section.</p>
 <p>Do not forget to save <code>.env</code> when you have done this.</p></li>
 <li><p>Now you can execute the start script. From the folder <code>dltc-env</code>, in Linux and Mac run:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dltc-env-start.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dltc-env-start.sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>(Equivalently: <code>sh dltc-env-start.sh</code>. When a file is a script, for safety reasons it cannot be launched just by typing the file name, you have to either launch the shell script executor <code>sh</code> followed by the name of the script, or, you have to precede the script by its path. Since here, the script <code>dltc-env-start.sh</code> is in your current folder, the path to it is: <code>./</code>. The dot is the current folder, and the slash separates the folder name, <code>.</code>, from the script file name, <code>dltc-env-start.sh</code>. This is why the full path is <code>./dltc-env-start.sh</code>.)</p>
 <p>On Windows, run:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>\dltc-env-start<span class="op">.</span><span class="fu">ps1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>\dltc-env-start<span class="op">.</span><span class="fu">ps1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>(The idea is as before, <code>.</code> is the current folder and <code>\</code> the (Windows-style) separator. There is probably an equivalent such as <code>ps dltc-env-start.ps1</code> but I don’t know it.)</p></li>
 </ol>
 <div class="no-first-line-indent-after"></div>
@@ -768,19 +771,19 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <pre><code>Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "/host_mnt/Users/janedoe/.gitconfig" to rootfs at "/home/copyeditor/.gitconfig": mount /host_mnt/Users/janedoe/.gitconfig:/home/copyeditor/.gitconfig (via /proc/self/fd/7), flags: 0x5000: not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type</code></pre>
 <p>This is because Git is badly configured. More precisely, you have a <code>.gitconfig</code> <em>folder</em> at the base of your user directory, while <code>.gitconfig</code> should be a <em>file</em>. (It won’t show up in the browser because ‘.xxx’ items are hidden, but you can see it with the option ‘show hidden files’ or by running the <code>ls</code> command in a terminal located at the root of your user directory). We have encoutered this error and we don’t know why it happens.</p>
 <p>We solved it by removing the folder and creating an empty <code>.gitconfig</code> file. On Linux/MacOS, remove the folder with:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> ~/.gitconfig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> ~/.gitconfig</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>And create an empty <code>.gitconfig</code> file with:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> ~/.gitconfig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> ~/.gitconfig</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
 </section>
 <section id="starting-and-stopping-the-compilation-environment-container" class="level3" data-number="30.1.3">
 <h3 data-number="30.1.3" class="anchored" data-anchor-id="starting-and-stopping-the-compilation-environment-container"><span class="header-section-number">30.1.3</span> Starting and stopping the compilation environment container</h3>
 <p>The compilation environment that produces output runs in a ‘Docker container’ that can be started or stopped. It’ll stop if you close Docker or restart your computer. Optionally, you can stop the container when you finish working on your copyediting tasks and restart it when you start again. (If you don’t stop it, it won’t slow down your computer in any noticeable way but it’ll use a bit of memory but shouldn’t slow down your computer in a noticeable way.)</p>
 <p>Starting and stopping containers can be done from the terminal or from the Docker app. From the terminal, use:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> stop dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> stop dltc-env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>to stop it, and</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> start dltc-env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> start dltc-env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>to start it again.</p>
 <p>From the Docker app, go to Containers tab: a box icon on the top left. (Don’t forget to close the Settings if you haven’t.) In the list of containers you should see one called <code>dltc-env</code>. It’s greyed out if stopped, green if started. In the Actions column, there’s a play or stop icon you can use to start or stop it.</p>
@@ -876,7 +879,7 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <p>This is a “prompt”: it waits for your to run a command. It consists of three parts: username, here <code>copyeditor</code> (that’s <em>your</em> identifier within the container), current location, here <code>~/dltc-workhouse</code> and the <code>$</code> sign (meaning ‘waiting for your command!’). What is the current location? A terminal is always ‘located’ in some folder, this is the place ‘where’ command are run. Here your location is within the container. The <code>~</code> is an abbreviation for the user’s home folder; here it is the home folder of the user <code>copyeditor</code> <em>within the container</em>.</p>
 <p>Note: your container is a virtual Linux machine. So, it’s terminal uses Linux / MacOS terminal commands (<code>cd</code>, <code>ls</code>, <code>cp</code>, <code>rm</code>), not the Windows ones (<code>cd</code> but otherwise <code>dir</code>, <code>copy</code>, <code>del</code>).</p>
 <p>See <a href="../appendices/terminal-help.html" class="quarto-xref"><span>Appendix A</span></a> on how to use a terminal, in particular how to navigate to relocate it in a different folder. Note that you can always run:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>To display the full path of your “present working directory”, that is, the folder the terminal is located at.</p>
 <p>Let’s now try generating an output. Relocate the terminal within an article folder. Choose an article in progress, not a finished one! The article folder should contain a proper <code>master.md</code> file (if you can’t find an article in progress with one, see details below on how to create one). Run:</p>
@@ -898,7 +901,7 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <h3 data-number="30.1.9" class="anchored" data-anchor-id="advanced-using-the-container-directly-from-a-terminal"><span class="header-section-number">30.1.9</span> Advanced: using the container directly from a terminal</h3>
 <p>Additionally, if you know what you’re doing, you can start a shell within the container without using VSCode. With this, you can use the terminal directly to compile articles. Altough rather clumsy as an approach, this would allow you to, for example, keep using RStudio to work on copyediting tasks and then compiling the articles separatedly in a terminal using the container.</p>
 <p>From anywhere in your system, do:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-ti</span> <span class="at">--volume</span><span class="op">=</span><span class="st">"YOUR/PATH/TO/Dropbox/philosophie-ch/dltc-workhouse:/home/copyeditor/dltc-workhouse"</span> philosophiech/dltc-env:latest bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-ti</span> <span class="at">--volume</span><span class="op">=</span><span class="st">"YOUR/PATH/TO/Dropbox/philosophie-ch/dltc-workhouse:/home/copyeditor/dltc-workhouse"</span> philosophiech/dltc-env:latest bash</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>If this worked properly, you should see your prompt change to <code>copyeditor@dltc-env</code>. Here, you can now navigate to <code>~/dltc-workhouse</code>, where you will find the usual Dropbox files for copyediting.</p>
 <p>Note that you can execute the command above in an integrated terminal in any other editor (such as RStudio). This will give you a shell inside the container with access to all the tools you need for the copyediting work.</p>
@@ -940,9 +943,9 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <li>To check that virtualization is enabled, go to the Task Manager, to the Tab <strong>TODO</strong></li>
 </ol></li>
 <li><p>Enable ‘wsl version 2’. Open PowerShell as Administrator, and then:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>VirtualMachinePlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>VirtualMachinePlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>set-default-version <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>wsl <span class="op">--</span>set-default-version <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ol>
 <ul>
 <li>If something goes wrong, follow the instructions given in PowerShell</li>
@@ -970,19 +973,19 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <h3 data-number="31.1.1" class="anchored" data-anchor-id="create-a-master-file"><span class="header-section-number">31.1.1</span> Create a master file</h3>
 <p>Copy a <code>master.md</code> file into your article folder. You can take one from another article in the same issue, or the template one at <code>template/X.X/copyeditors-scripts</code>. Beware: you can take the master file in the <em>issue</em> folder, but if you do so you’ll need to modify paths in the <code>imports</code> field (see below).</p>
 <p>Open the file in text editor. It should already contain an <code>imports</code> metadata field that consists of a list of one or more files (each item on a single line starting with a dash), for instance:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 01-author.md</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 02-author.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 02-author.md</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>You should amend it to contain just one item referring to your file. If your markdown file is <code>smith_j-2023.md</code> you should make it:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> smith_j-2023.md</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> smith_j-2023.md</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p><em>Note on issue master files</em>. Issues have master files too, where located in issue folders. Their <code>imports</code> field normally contain a list of all article files for that issue, <em>including which subfolder they’re in</em>, for instance:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imports</span><span class="kw">:</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 01-jones/jones_s-2023.md</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> 02-smith/smith_j-2023.md</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>Therefore, if you copy an issue master file within an article folder, or the other way round, you should make sure you add (issue master file) or remove (article master file) the subfolders names as required.</p>
 </section>
@@ -1002,7 +1005,7 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <section id="sec-house-outputs-rendering-commands" class="level3" data-number="31.2.2">
 <h3 data-number="31.2.2" class="anchored" data-anchor-id="sec-house-outputs-rendering-commands"><span class="header-section-number">31.2.2</span> Short rendering commands</h3>
 <p>Rendering commands can be executed in a <em>article</em>’s folder or in an <em>issue</em> folder. All these commmands must be added to <code>dltc-make</code>, e.g.:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> offprints</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> offprints</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>Single-article outputs will be named after the source file, e.g. <code>smith_j-2020.pdf</code>. Issue outputs will be named after the issue DOI, e.g.&nbsp;<code>dial.v74.i1.pdf</code> or <code>dial.v75.i2-book.pdf</code>.</p>
 <table class="caption-top table">
@@ -1110,8 +1113,8 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <p>Add <code>--proof</code> or <code>-p</code> at the end of your command (separated by a space):</p>
 </dd>
 <dd>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off2 <span class="at">--proof</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off3pdf <span class="at">-p</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off2 <span class="at">--proof</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off3pdf <span class="at">-p</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </dd>
 <dd>
 <p>This only affects PDF output.</p>
@@ -1119,7 +1122,7 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <dt>Verbose or quiet</dt>
 <dd>
 <p>Add <code>--verbose</code> or <code>-v</code> to get a detailed log of the rendering process. Useful for debug. You can save the output in a log file like so:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off2pdf <span class="at">-v</span> <span class="dv">2</span><span class="op">&gt;</span> out.log </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off2pdf <span class="at">-v</span> <span class="dv">2</span><span class="op">&gt;</span> out.log </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>2&gt;</code> tells the computer to “redirect” the error/information output to a file named <code>out.log</code>.</p>
 <p>You can make the output quieter with <code>--quiet</code> or <code>-q</code>. Though certain programs executed during the rendering process may still display error or output messages. If you don’t want to see anything just “redirect” the output to a file with <code>sh make.sh … 2&gt; out.log</code>.</p>
 </dd>
@@ -1130,7 +1133,7 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <section id="long-rendering-commands" class="level3" data-number="31.2.4">
 <h3 data-number="31.2.4" class="anchored" data-anchor-id="long-rendering-commands"><span class="header-section-number">31.2.4</span> Long rendering commands</h3>
 <p>Rendering commands can also be given in key-value form:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> mode=offprint chapter=3 format=pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> mode=offprint chapter=3 format=pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><p><code>mode</code> includes “offprint” aka “off”, “vol” aka “issue”, “bare” , “refs”</p></li>
 <li><p><code>format</code> includes <code>pdf</code>, <code>html</code>, <code>tex</code> aka <code>latex</code> (also <code>epub</code>, <code>jats</code> but we don’t generate these yet)</p></li>
@@ -1211,13 +1214,14 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

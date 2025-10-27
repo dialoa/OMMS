@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.30">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,14 +70,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../media/dialoa.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-49299fefe11377925576cba6af9bf1bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-4ff66e45b39d49436fe97d3fe27b9920.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -131,7 +132,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Open Manual of Markdown Style</a> 
     </div>
@@ -561,16 +564,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="no-first-line-indent-after"></div>
 <p>When you open the terminal a line shows up waiting for your input, e.g.:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user@my-laptop</span> ~ %</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">user@my-laptop</span> ~ %</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>or</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:Users\MyName</span><span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:Users\MyName</span><span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>This is called the <em>command prompt</em> because it prompts you to enter a command.</p>
 <section id="running-a-command" class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="running-a-command"><span class="header-section-number">A.1</span> Running a command</h2>
 <p>“Entering” or “running” or “executing” a “command” on the terminal means typing some text and press the “Enter” key. For instance, type the following and press “Enter”:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>If you get an error message, this means that pandoc is not installed —not somewhere your system finds it, at any rate. If you get instead something like:</p>
 <pre><code>pandoc 3.1.2
@@ -590,11 +593,11 @@ warranty, not even for merchantability or fitness for a particular purpose.</cod
 <section id="sec-terminal-help-navigation" class="level2" data-number="A.3">
 <h2 data-number="A.3" class="anchored" data-anchor-id="sec-terminal-help-navigation"><span class="header-section-number">A.3</span> Navigation</h2>
 <p>Your terminal is always “at” or “in” some folder or other. We call it the “current folder” of the “present working directory”. On Windows’ CMD the folder you’re “in” is displayed at the beginning of the line:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:Users\MyName</span><span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">C:Users\MyName</span><span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>On Linux and MacOS you might only see the name of the folder you are in (<code>myfolder</code>), not the full path; and it might just be <code>~</code>, which is a shorthand for your main user folder. You can run the <code>pwd</code> (“present working directory”) command to display its full name.</p>
 <p>Where you are located matters to the execution of most commands. Suppose you run the command:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> article.md <span class="at">-o</span> article.pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> article.md <span class="at">-o</span> article.pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>This asks pandoc to convert the file <code>article.md</code> into <code>article.pdf</code> <em>in the current folder</em>. If you don’t run that command while being located in the folder where the file <code>article.md</code> is, you will get an error message telling you that there is no file of that name.</p>
 <p>So basic terminal usage requires you to know which folder you are currently in, and how to change folder, and to refer to files in different folders. The commands you need are:</p>
@@ -629,10 +632,10 @@ warranty, not even for merchantability or fitness for a particular purpose.</cod
 <section id="file-and-folder-names-with-spaces-need-quotation-marks" class="level3" data-number="A.4.2">
 <h3 data-number="A.4.2" class="anchored" data-anchor-id="file-and-folder-names-with-spaces-need-quotation-marks"><span class="header-section-number">A.4.2</span> File and folder names with spaces need quotation marks</h3>
 <p>When you type file and folder names that contain spaces, you should enclose them in quotation marks (either single <code>'</code> or double <code>"</code>):</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> <span class="st">"my article 2022.md"</span> <span class="at">-o</span> <span class="st">"output april 24th.pdf"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> <span class="st">"my article 2022.md"</span> <span class="at">-o</span> <span class="st">"output april 24th.pdf"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>On Linux and MacOS if you use auto-completion on Linux or MacOS, you’ll notice that the system places <code>\</code> before the spaces. This is called “escaping” the spaces and works too, but only in those systems:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> my<span class="dt">\ </span>article<span class="dt">\ </span>2022.md <span class="at">-o</span> output<span class="dt">\ </span>april<span class="dt">\ </span>24th.pdf </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> my<span class="dt">\ </span>article<span class="dt">\ </span>2022.md <span class="at">-o</span> output<span class="dt">\ </span>april<span class="dt">\ </span>24th.pdf </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>On Windows, <code>\</code> is used to separate folders, so you can’t use it. You have to use quotes.</p>
 <p>You’re better off without spaces in your file and folder names, to be honest. Linux typically uses “kebab case”, skewering words with dashes: <code>my-article-april-24th.pdf</code>. “Snake case” with slithering underscores is good too: <code>my_article_april_24th.pdf</code>.</p>
@@ -652,7 +655,7 @@ warranty, not even for merchantability or fitness for a particular purpose.</cod
 </ul>
 <div class="no-first-line-indent-after"></div>
 <p>For instance, if you typed a long command like this and got an error. You realize you need to replace “procesing” with “processing”:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> procesing/new/articles/2020/issue-02/02-article.md <span class="at">--defaults</span> mydefaultsfile.md <span class="at">-t</span> outputs/recent/articles/2020/issue-02/02.article.pdf </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> procesing/new/articles/2020/issue-02/02-article.md <span class="at">--defaults</span> mydefaultsfile.md <span class="at">-t</span> outputs/recent/articles/2020/issue-02/02.article.pdf </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
 <p>(See, you should have used auto-completion to avoid the typo!) So you hit the Up arrow, the command shows again. If you hit the Left arrow, you’ll need to press the key <strong>137 times</strong> to get to the typo. You can keep it pressed instead, but that’s still very slow. If you use Alt/Option/Ctrl + Left arrow, you’re there in <strong>5 times</strong>. Get used to it!</p>
 </section>
@@ -716,13 +719,14 @@ warranty, not even for merchantability or fitness for a particular purpose.</cod
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

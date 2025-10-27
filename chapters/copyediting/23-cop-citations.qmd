@@ -149,9 +149,9 @@ If you get "see Doe (2012; Doe 2016)":
 
 
 
-### Ibid., Op. Cit., sec. or § and the like
+### Locators: ibid., Op. Cit., sec. or § and the like
 
-**All the finer-grained formating is handled by the bibliography template**.
+**The template decides what the locators are**.
 Whether repeated citations are printed out as "ibid", "op. cit", whether page
 ranges are referred to as "pp. 12-15" or "p. 12-15" or "12-15", whether sections
 are called "sec." or "§", etc., all of this is decided and automatically handled
@@ -168,6 +168,18 @@ We encode:
 ``` {.markdown}
 @Lewis1986 [19] says something important. He adds something less
 interesting a few pages later [@Lewis1986, 29].
+```
+
+**Exceptions: how to override defaults**. Exceptionally you may need to override
+the default locators. For instance, the section locator 'sec.' might look odd 
+when citing historical works traditionally referred to using '§'. In those 
+*exceptional* cases, ensure that your locators are printed as is by preceeding 
+them with an invisible 'zero-width non-joiner' charater (`&zwnj;'): 
+
+``` markdown
+
+See @frege:1967a [&zwnj;§11]. Many agree [@smith, &zwnj;pp. 56-58].
+
 ```
 
 ### Citing Notes, Footnotes, and Endnotes

@@ -366,42 +366,21 @@ are printed as is. If you wanted to change all labels to "Claim 2", for
 instance, you need to change both the text linked to and the text that becomes a
 link.
 
-Targets (also known as "anchors") and links to them typically need some
-formatting. For instance, we may want our claim label in bold and the link to it
-to be the label itself in parentheses:
+::: house
+**Dialectica guidelines**.
 
-``` {.markdown}
-[**C1**]{#my-new-claim}. Death is nothing to us.
+Do not cross-refer to specific pages. Avoid:
 
-...
-
-As ([C1](#my-new-claim)) established, ...
+``` markdown
+... as we explained on [page 5](#explanation).
 ```
 
-This outputs:
+Page numbers don't make sense in HTML output. Manual references to 
+them need to be updated if your PDF's page numbers change, which is 
+time-consuming and error-prone. 
 
-[**C1**]{#my-new-claim}. Death is nothing to us.
+Either ask the author to name the target (e.g. paragraph section, 
+statement, ...) or use a reference in terms of section (`in the 
+middle of section 2').
 
-...
-
-As ([C1](#my-new-claim)) established, ...
-
-**A cleaner version for internal links** may be achieved by putting the syntax
-
-``` {.markdown}
-[**C1**]{#my-new-claim}. Death is nothing to us.
-
-...
-
-As [@my-new-claim] established, ...
-```
-
-instead, which in turn outputs the same as above:
-
-[**C1**]{#my-new-claim}. Death is nothing to us.
-
-...
-
-As [@my-new-claim] established, ...
-
-but with a clearer syntax in markdown.
+:::

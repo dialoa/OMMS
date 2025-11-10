@@ -873,29 +873,14 @@ point... .]</code></pre></li>
 <div class="no-first-line-indent-after"></div>
 <p>Don’t worry about whether the link is coloured and/or underlined: that is to be decided by the journal style.</p>
 <p>Note that <code>[text that will be linked]</code> to and <code>[text that will become a link]</code> are printed as is. If you wanted to change all labels to “Claim 2”, for instance, you need to change both the text linked to and the text that becomes a link.</p>
-<p>Targets (also known as “anchors”) and links to them typically need some formatting. For instance, we may want our claim label in bold and the link to it to be the label itself in parentheses:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**C1**</span><span class="co">]</span>{#my-new-claim}. Death is nothing to us.</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>As (<span class="co">[</span><span class="ot">C1</span><span class="co">](#my-new-claim)</span>) established, ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="house">
+<p><strong>Dialectica guidelines</strong>.</p>
+<p>Do not cross-refer to specific pages. Avoid:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>... as we explained on <span class="co">[</span><span class="ot">page 5</span><span class="co">](#explanation)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="no-first-line-indent-after"></div>
-<p>This outputs:</p>
-<p><span id="my-new-claim"><strong>C1</strong></span>. Death is nothing to us.</p>
-<p>…</p>
-<p>As (<a href="#my-new-claim">C1</a>) established, …</p>
-<p><strong>A cleaner version for internal links</strong> may be achieved by putting the syntax</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**C1**</span><span class="co">]</span>{#my-new-claim}. Death is nothing to us.</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>As <span class="co">[</span><span class="ot">@my-new-claim</span><span class="co">]</span> established, ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="no-first-line-indent-after"></div>
-<p>instead, which in turn outputs the same as above:</p>
-<p><span id="my-new-claim"><strong>C1</strong></span>. Death is nothing to us.</p>
-<p>…</p>
-<p>As <span class="citation" data-cites="my-new-claim">(<a href="../appendices/references.html#ref-my-new-claim" role="doc-biblioref"><strong>my-new-claim?</strong></a>)</span> established, …</p>
-<p>but with a clearer syntax in markdown.</p>
+<p>Page numbers don’t make sense in HTML output. Manual references to them need to be updated if your PDF’s page numbers change, which is time-consuming and error-prone.</p>
+<p>Either ask the author to name the target (e.g.&nbsp;paragraph section, statement, …) or use a reference in terms of section (`in the middle of section 2’).</p>
+</div>
 
 
 </section>

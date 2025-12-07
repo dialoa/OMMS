@@ -164,7 +164,25 @@ You should put that text within the formula LaTeX code, using `\textrm{...}` for
 This makes more sense (the first is one formula, the second is 
 two mixed with the text) and the spacing will be better.
   
+### Display formulas and punctuation
 
+Should we use period and commas after display equations, 
+as if there were normal parts of a sentence? 
+
+::: markdown
+
+... as in the famous equation:
+$$
+E = mc^2
+$$.
+
+:::
+
+Both conventions exist. 
+
+**Dialectica guidelines**. Our preference is to treat them as part
+of a sentence. That seems to be the dominant convention in maths.
+But we don't actively modify manuscripts to impose it. 
 
 ## Schematic letters in the text
 

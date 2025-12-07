@@ -1,5 +1,10 @@
 # Citations
 
+This chapter details how to enter citations in Pandoc markdown.
+If you're using a visual editor for Quarto or Pandoc (RStudio
+or Visual Code extension) you can also enter citations and
+select their style using the editor.
+
 ## Encoding citations
 
 There are three styles of citations:

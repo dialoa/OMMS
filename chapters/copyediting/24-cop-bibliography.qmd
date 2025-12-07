@@ -36,13 +36,73 @@ bibliography:
 
 ## Self-citing bibliography
 
+**Requires**. Dialoa's recursive-citeproc filter.
+
 A BibTeX bibliography file may 'self-cite', that is, have entries that cite other entries. Citations of other entries may appear in the `note`, `crossref` or even `title` field, for instance. 
 
 If self-cited entries are missing from the BibTeX file, you will get 
 "Citation not found" error, or you will get garbage text 
 like **Smith_2008:c?** or wrong formatting like "(reprinted in (Smith 2008))" in the bibliography printed out in output formats.
 
-There's more detail on self-citing bibliographies below.
+If you need self-citing bibliographies, use the 
+recursive-citeproc filter. Refer to its manual for details.
+
+## Adding non-cited references in the bibliography {#sec-adding-non-cited-references-in-the-bibliography}
+
+In the metadata block, add a line:
+
+``` yaml
+nocite: |
+  @bibtexentry1, @bibtexentry2, @bibtexentry3
+```
+
+If you have lots of those, best use a tool to extract the keys
+automatically from a bibtex file.
+
+## Bibliography placement and preamble
+
+See Pandoc user guide on how to place the bibliography in 
+different parts of the body. 
+
+### Dialectica only
+
+(Dialectica places bibliographies with a custom filter, `bib-place`.
+It's superseded by the instructions in Pandoc's user guide. The
+instructions in this section are only for Dialectica copyeditors.)
+
+The article should end with a bibliography
+header:
+
+``` markdown
+
+# References
+
+```
+
+If you want to add a preamble to the bibliography, place the
+header and preamble in a Div with class "refs-preamble":
+
+``` markdown
+
+::: {.refs-preamble}
+
+# References
+
+The following abbreviations are used:
+
+* QDA: *Quaestiones disputatae de anima* [@aquinas:1953].
+
+* SLM: *Sententia libri Metaphysicae* [@aquinas:1950].
+
+* ST: Aquinas, *Summa Theologica* [@aquinas:1888].
+
+All Latin editions obtained from those hosted at
+    [Corpus Thomisticum](https://www.corpusthomisticum.org/), courtesy of
+    the University of Navarre. [https://www.corpusthomisticum.org/](https://www.corpusthomisticum.org/)
+
+:::
+
+```
 
 ## Get or create a BibTeX file
 
@@ -67,48 +127,7 @@ Citation Key: Doe1995-Article-Title
 
 This changes the item's citation key. Don't forget the caps ("Citation Key" not "citation key" nor "citationkey"), and make sure this occupies a single line of the "Extra" field.
 
-## Adding non-cited references in the bibliography {#sec-adding-non-cited-references-in-the-bibliography}
-
-In the metadata block, add a line:
-
-``` yaml
-nocite: |
-  @bibtexentry1, @bibtexentry2, @bibtexentry3
-```
-
-If you have lots of those, best use a tool to extract the keys
-automatically from a bibtex file.
-
-## Inserting Citations in the text in RStudio
-
-**Requires:** RStudio visual editor mode.
-
-In **visual** mode, Insert \> @ Citation. It opens a popup window; on
-its left menu, choose bibliography. Click the plus sign on the right of
-each citation, then press the insert button.
-
-**Missing references**: Go to @ Citations. On the left menu of the pop-up
-window, choose CrossRef. (See image below). Type the author and the name
-of the paper in the search bar; that should find the paper. Click on the
-plus sign on the right of the entry, then press insert button which will
-add the reference to the bibliography file.
-
-![](RStudio-insert-missing-ref.png){width="6.5in" height="4.152777777777778in"}
-
-## Formatting citations in the text
-
-There are various formats of citations:
-
--   In several recent papers, this has all been shown wrong (Castor
-    > 2018; Pollux 2020).
-
--   As Castor (2020: 127) shows, this is all wrong.
-
-To get these various formats you need to modify the markdown code for
-citations. For instructions refer to the Markdown guide above
-(cheatsheet or section on citations).
-
-## BibTeX file guidelines
+## BibTeX file guidance
 
 This only applies to BibTeX (`.bib`) files. If you're using CSL Json files, 
 you are probably generating them from Zotero or some other bibliography
@@ -118,7 +137,7 @@ manager instead.
 
 Several methods:
 
-1. Edit the `.bib` file directly in a text editor (e.g. RStudio). Either:
+1. Edit the `.bib` file directly in a text editor. Either:
 
   i. fix manually what is wrong with the entry. 
   ii. delete the entry, search and add it again with the same method as 
@@ -294,9 +313,9 @@ texdoc bibtex
 
 **Dialectica guideline**. We use the `biblatex` conventions. 
 
-## BibTeX file special entry types
+### BibTeX file special entry types
 
-### Unpublished manuscript
+#### Unpublished manuscript
 
 Choose the type `unpublished`. Add a note field:
 
@@ -309,144 +328,6 @@ Add a URL if available.
 *Dialectica guideline*. We require a URL. If the author cannot provide a URL, we
 do not create a bibliography entry at all but only describe the source in a 
 footnote ("in an unpublished manuscript titled "XXX").
-
-## Make sure any self-cited entries are included and printed
-
-Your bibliography file may be 'self-citing', that is it may
-include some entries that cite other entries. For instance, a bibliography entry may have the title "Review of `\citet{Smith_h:2005}`", where the latter is LaTeX
-code to cite the entry with key `Smith_h:2005`. If your bibliography file might have such entries you need to do two things:
-
-1. Make sure that for all the self-cited keys, there is an entry in the file.
-2. Make sure that the self-cited keys are printed out in the final bibliography. 
-
-If somebody else is taking care of your bibliography file, you only have to 
-do the second. If in addition you're sure that your bibliography file does *not*
-include unnecessary entries, you have a simple way of dealing with (2) by 
-adding the `nocite: @*` line in your metadata. See below. 
-
-### Check that the BibTeX file includes all self-cited entries
-
-**Requires:** Dialectica's `selfcites.py` script. Using the terminal.
-
-*The problem*. If a bibliography file self-cites some keys, but doesn't include
-an entry for these keys, you will get "Missing reference" warnings and your 
-bibliography will be incomplete. You need to ensure that there's an entry for
-any self-cited key. 
-
-*Solution*. Run the selfcites.py script on your bibliography file. Suppose your article's bibliography file is named `myreferences.bib`. Open a terminal, navigate to the article folder and run:
-
-```bash
-python3 ../../../resources/scripts/selfcites.py myreferences.bib
-```
-
-More generally, you can run that script from anywhere on a bib file that is anywhere:
-
-```bash
-python3 path/to//selfcites.py path/to/myreferences.bib
-```
-
-The script will check the `.bib` file for self-citations and output a report in the terminal such as:
-
-```
-Dialectica open access initative self-citing bibliography file check, (c) Thomas Hodgson 2021
-I found these self cited keys:
- quine:1951e, loux:1970, lewis_dk:2001c, vaninwagen:2001, quine:1953, lewis_dk:1983
-These self cited keys are missing from the file's entries:
- quine:1951e
-loux:1970
-lewis_dk:2001c
-vaninwagen:2001
-quine:1953
-lewis_dk:1983
-For information, these are all the entries I found:
- horgan_te-potrc:2008, brenner_and:2017a, zimmerman_dw:2008, kleinschmidt_s:2014, sider_t:2013, rettler:2016, vaninwagen:1998d, cameron_rp:2012, lewis_dk:1973, cowling_s:2013b, finocchiaro_p:2019:, burgess_jp-rosen:1997, mcsweeney:2019, willard_mb:2014, bennett_k:2009, nolan_dp:1997b, tallant:2013a, schaffer_j:2015a, prior_an-fine:1977, turner_j:2015, churchland_pm:1984, finocchiaro_p:2021:, melia:2008a, quine:1948, torza:2015, schaffer_j:2009d, lewis_dk-lewis:1970, bennett_k-zimmerman:2013, linnebo-nicolas:2008, lewis_dk:1986, parsons_j:2014, chalmers_dj-etal:2009, sober:2015, sider_t:2011, merricks:2001, keller_ja:2017, finocchiaro_p:2019b:, mckay_tj:2006, paul_la:2017a
-```
-
-If there are keys below "These self cited keys are missing from the file's entries:", then your .bib file cites these keys but they are missing. You need
-to add them. 
-
-The line below "I found these self cited keys:" can be used to ensure the
-self-cited entries are printed in the article bibliography. See [below](#add-self-citations-to-your-documents-metadata). 
-
-### Make sure all the self-cited entries are printed out
-
-*The problem*. If bibliography file self-cites some entries, but the manuscript
-itself doesn't cite them, these entries will not be printed in the bibliography.
-
-*The solution*. The self-cited entries must be added in the document's metadata, 
-in a `nocite` field. There are two ways to do so:
-
-* if you're sure that your .bib file *only* contains entries that need to be 
-printed out (no extra entries), then you can use the simple option 1.
-* otherwise, use option 2, which requires a script.
-
-Option 1. If you are sure that your .bib file *only* contains entries that need to be printed out in the bibliography
-
-**Requires:** the selfcites.py script. See [above](#check-that-the-BibTeX-file-contains-self-cited-entries).
-
-
-Open the `.bib` file in a text editor. Search for `\cite`. If you have no 
-no results, then your `.bib` file doesn't include self-citations and you 
-are good to go. If you do find results, you will have bibliography entries 
-in the file that look like this, for instance:
-
-```bibtex
-@book{geach_pt:1962,
-  address =       {Ithaca, New York},
-  author =        {Geach, Peter Thomas},
-  note =          {third edition: \citet{geach_pt:1980}},
-  publisher =     {Cornell University Press},
-  title =         {Reference and Generality, an examination of some
-                   medieval and modern theories},
-  year =          {1962},
-}
-```
-
-In the `note =` line here, you see the code  `\citet{geach_pt:1980}`. This is 
-a LaTeX command that cites *another bibliography entry in the same file*, namely
-the one with the key `geach_pt:1980`. Ultimately this will be printed out in 
-the bibliography as: 
-
-> Geach, Peter Thomas (1962) *Reference and Generality, an Examination of Some Medieval and Modern Theories*, Ithaca, New York: Cornell University Press. Thrid edition: Geach (1980).
->
-> ...
->
-> Geach, Peter Thomas (1980) *Reference and Generality*, ...
-
-The LaTeX `\cite` commands can start with `\cite`, `\citet`, `\citep`; you will
-find all of these by searching `\cite` in the file. Sometimes the command cites
-pages numbers and looks like this instead:
-
-```bibtex
-  note =          {reprinted in \citet[232--258]{mccall_s:1967}, with
-                   considerable change in notation},
-```
-
-In that case the cited entry's key is still the thing between curly brackets,
-here `mccall_s:1967`.
-
-Now you need to make sure that the self-cited entries appear in the bibliography.
-The problem is that if it is only cited in the bibligraphy and not the paper 
-itself, it will not automatically be included. To ensure that it is included, 
-you need to add the key in your document metadata, in a `nocite` field:
-
-```yaml
-title: A Neat Paper
-author: Smith, John
-bibliography: smith.bib
-nocite: |
-  geach_pt:1980, mccall_s:1967
-```
-
-The `nocite: |` should appear on one line, the entries on one or several lines
-below but each of those lines must start with at least two spaces, and the
-entries should be separated by commas. 
-
-You need not check whether the entries are actually cited in the paper or not:
-just add them to the `nocite` metadata, it will not hurt if they are also cited.
-
-Continue searching for `\cite` commands in your `.bib` file and make sure all
-the keys are entered in your document's `nocite` metadata section. 
 
 ## Troubleshooting and examples
 

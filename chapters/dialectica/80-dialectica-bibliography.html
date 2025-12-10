@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -474,7 +509,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#bibliography-files" id="toc-bibliography-files" class="nav-link active" data-scroll-target="#bibliography-files"><span class="header-section-number">38.1</span> Bibliography files</a></li>
-  <li><a href="#interface-with-dialecticas-main-bibliography" id="toc-interface-with-dialecticas-main-bibliography" class="nav-link" data-scroll-target="#interface-with-dialecticas-main-bibliography"><span class="header-section-number">38.2</span> Interface with dialectica’s main bibliography</a></li>
+  <li><a href="#bibliography-preamble" id="toc-bibliography-preamble" class="nav-link" data-scroll-target="#bibliography-preamble"><span class="header-section-number">38.2</span> Bibliography preamble</a></li>
+  <li><a href="#interface-with-dialecticas-main-bibliography" id="toc-interface-with-dialecticas-main-bibliography" class="nav-link" data-scroll-target="#interface-with-dialecticas-main-bibliography"><span class="header-section-number">38.3</span> Interface with dialectica’s main bibliography</a></li>
   </ul>
 </nav>
     </div>
@@ -505,8 +541,27 @@ ul.task-list li input[type="checkbox"] {
 <p>We use BibTeX bibliography files (<code>.bib</code>).</p>
 <p>To be checked: it is ok to use the same bibliography file name for several articles in the same issue?</p>
 </section>
-<section id="interface-with-dialecticas-main-bibliography" class="level2" data-number="38.2">
-<h2 data-number="38.2" class="anchored" data-anchor-id="interface-with-dialecticas-main-bibliography"><span class="header-section-number">38.2</span> Interface with dialectica’s main bibliography</h2>
+<section id="bibliography-preamble" class="level2" data-number="38.2">
+<h2 data-number="38.2" class="anchored" data-anchor-id="bibliography-preamble"><span class="header-section-number">38.2</span> Bibliography preamble</h2>
+<p>Some articles use abbreviations to cite historical works. Add those in a separate section, within a Div of class <code>refs-preamble</code>, at the end of the paper, like so:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu"># Abbreviations {.unnumbered}</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>The following abbreviations are used:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*QDA*: *Quaestiones disputatae de anima* <span class="co">[</span><span class="ot">@aquinas:1953</span><span class="co">]</span>.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*SLM*: *Sententia libri Metaphysicae* <span class="co">[</span><span class="ot">@aquinas:1950</span><span class="co">]</span>.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*ST*: Aquinas, *Summa Theologica* <span class="co">[</span><span class="ot">@aquinas:1888</span><span class="co">]</span>.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>All Latin editions obtained from those hosted at</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">Corpus Thomisticum</span><span class="co">](https://www.corpusthomisticum.org/)</span>, courtesy of</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    the University of Navarre. <span class="co">[</span><span class="ot">https://www.corpusthomisticum.org/</span><span class="co">](https://www.corpusthomisticum.org/)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="interface-with-dialecticas-main-bibliography" class="level2" data-number="38.3">
+<h2 data-number="38.3" class="anchored" data-anchor-id="interface-with-dialecticas-main-bibliography"><span class="header-section-number">38.3</span> Interface with dialectica’s main bibliography</h2>
 <p>More information on the bibliography is in the bibliography-section of the overleaf-document.</p>
 <p>JD some experiments:</p>
 <ul>

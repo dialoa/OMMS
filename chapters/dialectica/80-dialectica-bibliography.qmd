@@ -7,6 +7,31 @@ We use BibTeX bibliography files (`.bib`).
 To be checked: it is ok to use the same bibliography file name for
 several articles in the same issue?
 
+## Bibliography preamble
+
+Some articles use abbreviations to cite historical works. Add 
+those in a separate section, within a Div of class `refs-preamble`, 
+at the end of the paper, like so: 
+
+``` markdown
+
+
+# Abbreviations {.unnumbered}
+
+The following abbreviations are used:
+
+* *QDA*: *Quaestiones disputatae de anima* [@aquinas:1953].
+* *SLM*: *Sententia libri Metaphysicae* [@aquinas:1950].
+* *ST*: Aquinas, *Summa Theologica* [@aquinas:1888].
+
+# References {.unnumbered}
+
+All Latin editions obtained from those hosted at
+    [Corpus Thomisticum](https://www.corpusthomisticum.org/), courtesy of
+    the University of Navarre. [https://www.corpusthomisticum.org/](https://www.corpusthomisticum.org/)
+
+```
+
 ## Interface with dialectica's main bibliography
 
 More information on the bibliography is in the bibliography-section of

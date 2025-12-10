@@ -86,7 +86,7 @@ header and preamble in a Div with class "refs-preamble":
 
 ::: {.refs-preamble}
 
-# References
+# References {.unnumbered}
 
 The following abbreviations are used:
 
@@ -103,6 +103,11 @@ All Latin editions obtained from those hosted at
 :::
 
 ```
+
+__Dialectica guidelines__. If using a preamble, put abbreviations
+in a separate section titled 'Abbreviations', and mark both
+the 'References' and 'Abbreviations' heading as unnumbered. 
+See [Dialectica's bibliography guidelines](#dialectica-biblio-preamble).
 
 ## Get or create a BibTeX file
 

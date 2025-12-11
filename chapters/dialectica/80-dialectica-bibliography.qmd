@@ -7,7 +7,7 @@ We use BibTeX bibliography files (`.bib`).
 To be checked: it is ok to use the same bibliography file name for
 several articles in the same issue?
 
-## Bibliography preamble
+## Bibliography preamble {#dialectica-biblio-preamble}
 
 Some articles use abbreviations to cite historical works. Add 
 those in a separate section, within a Div of class `refs-preamble`, 

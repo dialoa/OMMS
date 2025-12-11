@@ -1990,8 +1990,8 @@
     ]
   },
   {
-    "objectID": "chapters/dialectica/80-dialectica-bibliography.html#bibliography-preamble",
-    "href": "chapters/dialectica/80-dialectica-bibliography.html#bibliography-preamble",
+    "objectID": "chapters/dialectica/80-dialectica-bibliography.html#dialectica-biblio-preamble",
+    "href": "chapters/dialectica/80-dialectica-bibliography.html#dialectica-biblio-preamble",
     "title": "38  Bibliography",
     "section": "38.2 Bibliography preamble",
     "text": "38.2 Bibliography preamble\nSome articles use abbreviations to cite historical works. Add those in a separate section, within a Div of class refs-preamble, at the end of the paper, like so:\n\n\n# Abbreviations {.unnumbered}\n\nThe following abbreviations are used:\n\n* *QDA*: *Quaestiones disputatae de anima* [@aquinas:1953].\n* *SLM*: *Sententia libri Metaphysicae* [@aquinas:1950].\n* *ST*: Aquinas, *Summa Theologica* [@aquinas:1888].\n\n# References {.unnumbered}\n\nAll Latin editions obtained from those hosted at\n    [Corpus Thomisticum](https://www.corpusthomisticum.org/), courtesy of\n    the University of Navarre. [https://www.corpusthomisticum.org/](https://www.corpusthomisticum.org/)",

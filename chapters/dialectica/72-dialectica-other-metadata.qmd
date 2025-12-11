@@ -1,0 +1,28 @@
+# Other metadata
+
+The following fields can be used in the metadata of article 
+files and/or issue master files:
+
+``` yaml
+doi: 10.14806/dial.v75.i2.01
+first-page: 27
+last-page: 52
+date: March 2023
+copyright-date: 12 march 2024
+special-issue: true
+online-first: false
+```
+
+* `first-page`: article or issue metadata. Specify the first 
+    page of an issue or article.
+* `last-page`: article metadata. Specify the last page of the article.
+* `date`: issue master. Date of the issue.
+* `copyright-date`: article or issue metadata. Specify 
+    the copyright year, that is, the year when the article or paper 
+    is published, if different from from `date`.
+* `special-issue`: issue metadata. typeset the issue as a special issue.
+* `online-first`: article metadata. typeset the article as online first.
+
+More details in comments to the `dialectica-meta-format.lua` 
+filter.
+

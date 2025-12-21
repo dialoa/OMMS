@@ -1814,322 +1814,333 @@
     ]
   },
   {
-    "objectID": "chapters/dialectica/70-dialectica-titles.html",
-    "href": "chapters/dialectica/70-dialectica-titles.html",
-    "title": "32  Title and subtitle",
+    "objectID": "chapters/dialectica/69-dialectica-principles.html",
+    "href": "chapters/dialectica/69-dialectica-principles.html",
+    "title": "32  Guiding principles for copyediting",
     "section": "",
-    "text": "32.1 Short title\nThe metadata fields title and, if the article has a subtitle, subtitle must be present. They may contain markdown formatting and special symbols, but no explicit linebreaks.1\nIn addition, you may provide:\nHere is an example using all the available fields. They are explained in detail in the sections below.\nIf the title is too long to fit in the header, you can specify a short title in addition:\nThis will be used in the table of contents too.",
+    "text": "How much of the author’s original stylistic choices should a copyeditor keep? Here are some guiding principles.\nSemantics first!. In general, only keep meaningful features. We typeset content first, not look. We preserve emphasis, but we don’t preserve an author’s choice of a particular emphasis style (italics vs small caps vs bold). We preserve numbered list, but we don’t preserve an author’s choice of specific numbering style (arab numbers, roman numbers, letters). If authors object, they need to explain why their idiosyncratic notation choices are needed (maybe in the paper itself, at least to us).\nEfficiency. The semantics first principle is tempered by efficiency considerations. Changing an author’s square brackets to round ones is easy. Changing their choice of LaTeX commands can be error-prone. Redoing their figures to use the journal’s font can be time-consuming. If an author’s cohice is too costly for us to change and doesn’t heart readability and comprehension, we let it pass.\nEgos. The principle is also tempered by social considerations. If adopting our style proves particulary difficult with an author, causing back-and-forth that may delay publication, we can cave in. Their paper, their problem, after all.\nBibliography. Dialectica’s policy with respect to the bibliography has been to enforce our preferences irrespective of efficiency or author’s egos. For instance, we require that they cite from originals rather than reprints (leading to back and forth as they source and check the original), that they cite the latest edition of a book, or that they provide more specific page ranges.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Title and subtitle</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Guiding principles for copyediting</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/dialectica/70-dialectica-titles.html",
+    "href": "chapters/dialectica/70-dialectica-titles.html",
+    "title": "33  Title and subtitle",
+    "section": "",
+    "text": "33.1 Short title\nThe metadata fields title and, if the article has a subtitle, subtitle must be present. They may contain markdown formatting and special symbols, but no explicit linebreaks.1\nIn addition, you may provide:\nHere is an example using all the available fields. They are explained in detail in the sections below.\nIf the title is too long to fit in the header, you can specify a short title in addition:\nThis will be used in the table of contents too.",
+    "crumbs": [
+      "Dialectica",
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Title and subtitle</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/70-dialectica-titles.html#short-title",
     "href": "chapters/dialectica/70-dialectica-titles.html#short-title",
-    "title": "32  Title and subtitle",
+    "title": "33  Title and subtitle",
     "section": "",
-    "text": "title: An extremely long-winded and verbose title about a range of topics including but not restricted to the weather\nshorttitle: A long-winded title about the weather\n\n\n\n32.1.1 Linebreaks in a title and subtitle\nRequires: dialectica templates.\nIn LaTeX/PDF output it is sometimes useful to manually specify a line break within the title and/or subtitle. There are two fields to provide this, title-latex and title-cover:\ntitle: A Very Long Title that Can be Broken in Various Places\ntitle-latex: |\n  A Very Long Title that \\\n  Can be Broken in Various Places\ntitle-cover: |\n  A Very Long Title that Can be\\\n  Broken in Various Places\n\nIn a metadata field, the \\ at then end of a line specifies a linebreak. Warning: it must be immediately followed by an end of line (no spaces!).\n\ntitle-latex controls the title on the first page (“chapter” title). It also sets the offprint cover page unless title-cover is also supplied.\ntitle-cover controls the title on the offprint’s cover page. If you want title-latex to modify the first page’s title only, simply insert title-cover with the same content as title.\n\n\nThe title field must be provided, even if title-cover and/or title-latex are given.\nBy default titles on the offprint’s cover are of LaTeX size \\Huge if they are less than 31 characters long, otherwise the slightly smaller size \\huge. You can specify a custom LaTeX size if needed (\\Huge, \\huge, \\LARGE, \\Large, \\large etc.) with the title-cover-size field. This only affects LaTeX/PDF output.\ntitle-cover-size: \\huge\n\nThe same options are available for subtitles: use subtitle-latex, subtitle-cover and subtitle-cover-size. The default size for subtitles on offprint covers is \\LARGE.",
+    "text": "title: An extremely long-winded and verbose title about a range of topics including but not restricted to the weather\nshorttitle: A long-winded title about the weather\n\n\n\n33.1.1 Linebreaks in a title and subtitle\nRequires: dialectica templates.\nIn LaTeX/PDF output it is sometimes useful to manually specify a line break within the title and/or subtitle. There are two fields to provide this, title-latex and title-cover:\ntitle: A Very Long Title that Can be Broken in Various Places\ntitle-latex: |\n  A Very Long Title that \\\n  Can be Broken in Various Places\ntitle-cover: |\n  A Very Long Title that Can be\\\n  Broken in Various Places\n\nIn a metadata field, the \\ at then end of a line specifies a linebreak. Warning: it must be immediately followed by an end of line (no spaces!).\n\ntitle-latex controls the title on the first page (“chapter” title). It also sets the offprint cover page unless title-cover is also supplied.\ntitle-cover controls the title on the offprint’s cover page. If you want title-latex to modify the first page’s title only, simply insert title-cover with the same content as title.\n\n\nThe title field must be provided, even if title-cover and/or title-latex are given.\nBy default titles on the offprint’s cover are of LaTeX size \\Huge if they are less than 31 characters long, otherwise the slightly smaller size \\huge. You can specify a custom LaTeX size if needed (\\Huge, \\huge, \\LARGE, \\Large, \\large etc.) with the title-cover-size field. This only affects LaTeX/PDF output.\ntitle-cover-size: \\huge\n\nThe same options are available for subtitles: use subtitle-latex, subtitle-cover and subtitle-cover-size. The default size for subtitles on offprint covers is \\LARGE.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Title and subtitle</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Title and subtitle</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/70-dialectica-titles.html#subtitle-in-the-table-of-contents",
     "href": "chapters/dialectica/70-dialectica-titles.html#subtitle-in-the-table-of-contents",
-    "title": "32  Title and subtitle",
-    "section": "32.2 Subtitle in the table of contents",
-    "text": "32.2 Subtitle in the table of contents\nThe subtitle is used in three places. On the paper’s first page and on the offprint’s cover, it is printed below the title, in smaller font. It’s also used in the table of contents, where it’s printed after a column:\ntitle: Frankstein\nsubtitle: The Modern Prometheus\n\nOutput in the table of contents:\n\n\nFrankenstein: The Modern Promoetheus\n\n\nYou can override the colon by specifying a subtitle separator, e.g. a simple space:\ntitle: So What?\nsubtitle: My Quest for the Meaning of Life\nsubtitleseparator: ' '",
+    "title": "33  Title and subtitle",
+    "section": "33.2 Subtitle in the table of contents",
+    "text": "33.2 Subtitle in the table of contents\nThe subtitle is used in three places. On the paper’s first page and on the offprint’s cover, it is printed below the title, in smaller font. It’s also used in the table of contents, where it’s printed after a column:\ntitle: Frankstein\nsubtitle: The Modern Prometheus\n\nOutput in the table of contents:\n\n\nFrankenstein: The Modern Promoetheus\n\n\nYou can override the colon by specifying a subtitle separator, e.g. a simple space:\ntitle: So What?\nsubtitle: My Quest for the Meaning of Life\nsubtitleseparator: ' '",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Title and subtitle</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Title and subtitle</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/70-dialectica-titles.html#footnotes",
     "href": "chapters/dialectica/70-dialectica-titles.html#footnotes",
-    "title": "32  Title and subtitle",
+    "title": "33  Title and subtitle",
     "section": "",
     "text": "You may enter a long title or a title containing quotation marks as a text block, this does not constitute explicit line breaks. See Section 8.3 and Section 8.5.↩︎",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Title and subtitle</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Title and subtitle</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/71-dialectica-authors.html",
     "href": "chapters/dialectica/71-dialectica-authors.html",
-    "title": "33  Author information",
+    "title": "34  Author information",
     "section": "",
-    "text": "33.1 Et al. author for page headers and table of contents\nFor articles with multiple authors, you may need a shorter alternative for page headers and the table of contents. This is done using the author-header and author-toc fields:",
+    "text": "34.1 Et al. author for page headers and table of contents\nFor articles with multiple authors, you may need a shorter alternative for page headers and the table of contents. This is done using the author-header and author-toc fields:",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Author information</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Author information</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/71-dialectica-authors.html#et-al.-author-for-page-headers-and-table-of-contents",
     "href": "chapters/dialectica/71-dialectica-authors.html#et-al.-author-for-page-headers-and-table-of-contents",
-    "title": "33  Author information",
+    "title": "34  Author information",
     "section": "",
     "text": "author:\n- name: Doe, Alice\n- name: Doe, Brit\n- name: Doe, Celia\n- name: Doe, Denis\n- name: Doe, Ethne\nauthor-header: Doe et al.\nauthor-toc: Doe A., Doe B., Doe C., Doe D., and Doe E.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Author information</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Author information</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/71-dialectica-authors.html#sec-dial-multiple-short-institutes",
     "href": "chapters/dialectica/71-dialectica-authors.html#sec-dial-multiple-short-institutes",
-    "title": "33  Author information",
-    "section": "33.2 Multiple short institute names in the signature block",
-    "text": "33.2 Multiple short institute names in the signature block\nProblem. An author’s affiliations consists of several short acronyms, e.g. “CRNS, ENS, EHESS”. If you enter them as three distinct institutes, they each appear on a single line in the signature block at the end of the article. This looks awkward. Treat them as a single institute instead, using a list item (e.g. on a line starting with a -):\n  institute:\n  - ENS, CRNS, EHESS",
+    "title": "34  Author information",
+    "section": "34.2 Multiple short institute names in the signature block",
+    "text": "34.2 Multiple short institute names in the signature block\nProblem. An author’s affiliations consists of several short acronyms, e.g. “CRNS, ENS, EHESS”. If you enter them as three distinct institutes, they each appear on a single line in the signature block at the end of the article. This looks awkward. Treat them as a single institute instead, using a list item (e.g. on a line starting with a -):\n  institute:\n  - ENS, CRNS, EHESS",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>Author information</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Author information</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/72-dialectica-other-metadata.html",
     "href": "chapters/dialectica/72-dialectica-other-metadata.html",
-    "title": "34  Other metadata",
+    "title": "35  Other metadata",
     "section": "",
     "text": "The following fields can be used in the metadata of article files and/or issue master files:\ndoi: 10.14806/dial.v75.i2.01\nfirst-page: 27\nlast-page: 52\ndate: March 2023\ncopyright-date: 12 march 2024\nspecial-issue: true\nonline-first: false\n\nfirst-page: article or issue metadata. Specify the first page of an issue or article.\nlast-page: article metadata. Specify the last page of the article.\ndate: issue master. Date of the issue.\ncopyright-date: article or issue metadata. Specify the copyright year, that is, the year when the article or paper is published, if different from from date.\nspecial-issue: issue metadata. typeset the issue as a special issue.\nonline-first: article metadata. typeset the article as online first.\n\n\nMore details in comments to the dialectica-meta-format.lua filter.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>Other metadata</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Other metadata</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/73-dialectica-abstract.html",
     "href": "chapters/dialectica/73-dialectica-abstract.html",
-    "title": "35  Abstracts",
+    "title": "36  Abstracts",
     "section": "",
-    "text": "35.1 Length\nAbstracts are strongly recommended. Most people who bump on the article will only read that.\nAbstracts are text-only, no markdown code, because they are passed on to Crossref and metadata harvesters. However, we can allow emphasis and equations.\nAbstracts must be at most 200 words or so and fit in the first article’s page in PDF output.",
+    "text": "36.1 Length\nAbstracts are strongly recommended. Most people who bump on the article will only read that.\nAbstracts are text-only, no markdown code, because they are passed on to Crossref and metadata harvesters. However, we can allow emphasis and equations.\nAbstracts must be at most 200 words or so and fit in the first article’s page in PDF output.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Abstracts</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Abstracts</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/73-dialectica-abstract.html#citations",
     "href": "chapters/dialectica/73-dialectica-abstract.html#citations",
-    "title": "35  Abstracts",
-    "section": "35.2 Citations",
-    "text": "35.2 Citations\nCitations in abstract should be plain text, not markdown: Doe (2005), not (Doe2005?).",
+    "title": "36  Abstracts",
+    "section": "36.2 Citations",
+    "text": "36.2 Citations\nCitations in abstract should be plain text, not markdown: Doe (2005), not (Doe2005?).",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>Abstracts</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Abstracts</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/74-dialectica-reviews.html",
     "href": "chapters/dialectica/74-dialectica-reviews.html",
-    "title": "36  Review articles",
+    "title": "37  Review articles",
     "section": "",
-    "text": "36.1 Formatting a review article\nReview articles must have titles in the format “Review of Author (year)”.\nThey begin with a section titled “Review of” containing the full citation of the monograph reviewed, and followed by --- (a horizontal rule):\nAuthor last names in the citation are in small caps: they must be surrounded by [...]{.smallcaps} as above. Book titles are emphasized, surrounded by *...* as above. The full citation must contain a publisher place, e.g. “Oxford: Oxford University Press”.\nIf you prefer you can instead enter the full citation in the document’s metadata block:\nIf you do so you don’t need a “Review of” section; the manuscript should start directly with the review’s text.\nReviews normally don’t have section headings.",
+    "text": "37.1 Formatting a review article\nReview articles must have titles in the format “Review of Author (year)”.\nThey begin with a section titled “Review of” containing the full citation of the monograph reviewed, and followed by --- (a horizontal rule):\nAuthor last names in the citation are in small caps: they must be surrounded by [...]{.smallcaps} as above. Book titles are emphasized, surrounded by *...* as above. The full citation must contain a publisher place, e.g. “Oxford: Oxford University Press”.\nIf you prefer you can instead enter the full citation in the document’s metadata block:\nIf you do so you don’t need a “Review of” section; the manuscript should start directly with the review’s text.\nReviews normally don’t have section headings.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Review articles</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Review articles</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/74-dialectica-reviews.html#formatting-a-review-article",
     "href": "chapters/dialectica/74-dialectica-reviews.html#formatting-a-review-article",
-    "title": "36  Review articles",
+    "title": "37  Review articles",
     "section": "",
     "text": "# Review of\n\n[Antonelli]{.smallcaps}, Mauro. 2018. *Vittorio Benussi in the History\nof Psychology: New Ideas of a Century Ago*,  Studies in the History of\nPhilosophy of Mind 21, Cham: Springer.\n\n---\n\n\n\nreview-of: |\n    [Antonelli]{.smallcaps}, Mauro. 2018. *Vittorio \n    Benussi in the History of Psychology:\n    New Ideas of a Century Ago*,  Studies in the \n    History of Philosophy of Mind 21, Cham: Springer.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Review articles</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Review articles</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/74-dialectica-reviews.html#make-sure-the-reviewed-monograph-appears-in-the-reference",
     "href": "chapters/dialectica/74-dialectica-reviews.html#make-sure-the-reviewed-monograph-appears-in-the-reference",
-    "title": "36  Review articles",
-    "section": "36.2 Make sure the reviewed monograph appears in the reference",
-    "text": "36.2 Make sure the reviewed monograph appears in the reference\nThe monograph reviewed should appear in the review’s references. If the review doesn’t explicitly cite the monograph, you should add it as an uncited reference. See Section 25.3.",
+    "title": "37  Review articles",
+    "section": "37.2 Make sure the reviewed monograph appears in the reference",
+    "text": "37.2 Make sure the reviewed monograph appears in the reference\nThe monograph reviewed should appear in the review’s references. If the review doesn’t explicitly cite the monograph, you should add it as an uncited reference. See Section 25.3.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>36</span>  <span class='chapter-title'>Review articles</span>"
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Review articles</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/75-dialectica-cover-note.html",
     "href": "chapters/dialectica/75-dialectica-cover-note.html",
-    "title": "37  Cover note",
+    "title": "38  Cover note",
     "section": "",
     "text": "You may add a brief cover note to an article, e.g. to state that an article is posthumous or give an acceptance date. It is displayed:\n\nin PDF offprints: on the cover, below citation data.\nin HTML offprints: below the citation data and abstract.\n\n\nEnter it in the article metadata under ‘cover-note’ or ‘covernote’:\ntitle: My article\nsubtitle: or how I wrote something\ncover-note: |\n    Article accepted for publication despite the reviewer's\n    significant doubts.\n\nMarkdown formatting is allowed.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Cover note</span>"
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Cover note</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/76-dialectica-article-structure.html",
     "href": "chapters/dialectica/76-dialectica-article-structure.html",
-    "title": "38  Article structure",
+    "title": "39  Article structure",
     "section": "",
-    "text": "38.1 Appendices\nIn Dialectica articles, appendices are normal sections. Just prefix the heading with “Appendix:”.\nIf an article has several appendices, put them as subsections of an “Appendices” section:",
+    "text": "39.1 Appendices\nIn Dialectica articles, appendices are normal sections. Just prefix the heading with “Appendix:”.\nIf an article has several appendices, put them as subsections of an “Appendices” section:",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Article structure</span>"
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Article structure</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/76-dialectica-article-structure.html#appendices",
     "href": "chapters/dialectica/76-dialectica-article-structure.html#appendices",
-    "title": "38  Article structure",
+    "title": "39  Article structure",
     "section": "",
     "text": "# Appendix: Uniqueness Theorem {#sec:app-uniqueness-theorem}\n\n\n\n# Appendices {#sec:appendices}\n\n## Uniqueness Theorem {#sec:app-uniqueness-theorem}",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Article structure</span>"
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Article structure</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/80-dialectica-bibliography.html",
     "href": "chapters/dialectica/80-dialectica-bibliography.html",
-    "title": "39  Bibliography",
+    "title": "40  Bibliography",
     "section": "",
-    "text": "39.1 Bibliography files\nWe use BibTeX bibliography files (.bib).\nTo be checked: it is ok to use the same bibliography file name for several articles in the same issue?",
+    "text": "40.1 Bibliography files\nWe use BibTeX bibliography files (.bib).\nTo be checked: it is ok to use the same bibliography file name for several articles in the same issue?",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Bibliography</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Bibliography</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/80-dialectica-bibliography.html#dialectica-biblio-preamble",
     "href": "chapters/dialectica/80-dialectica-bibliography.html#dialectica-biblio-preamble",
-    "title": "39  Bibliography",
-    "section": "39.2 Bibliography preamble",
-    "text": "39.2 Bibliography preamble\nSome articles use abbreviations to cite historical works. Add those in a separate section, within a Div of class refs-preamble, at the end of the paper, like so:\n\n\n# Abbreviations {.unnumbered}\n\nThe following abbreviations are used:\n\n* *QDA*: *Quaestiones disputatae de anima* [@aquinas:1953].\n* *SLM*: *Sententia libri Metaphysicae* [@aquinas:1950].\n* *ST*: Aquinas, *Summa Theologica* [@aquinas:1888].\n\n# References {.unnumbered}\n\nAll Latin editions obtained from those hosted at\n    [Corpus Thomisticum](https://www.corpusthomisticum.org/), courtesy of\n    the University of Navarre. [https://www.corpusthomisticum.org/](https://www.corpusthomisticum.org/)",
+    "title": "40  Bibliography",
+    "section": "40.2 Bibliography preamble",
+    "text": "40.2 Bibliography preamble\nSome articles use abbreviations to cite historical works. Add those in a separate section, within a Div of class refs-preamble, at the end of the paper, like so:\n\n\n# Abbreviations {.unnumbered}\n\nThe following abbreviations are used:\n\n* *QDA*: *Quaestiones disputatae de anima* [@aquinas:1953].\n* *SLM*: *Sententia libri Metaphysicae* [@aquinas:1950].\n* *ST*: Aquinas, *Summa Theologica* [@aquinas:1888].\n\n# References {.unnumbered}\n\nAll Latin editions obtained from those hosted at\n    [Corpus Thomisticum](https://www.corpusthomisticum.org/), courtesy of\n    the University of Navarre. [https://www.corpusthomisticum.org/](https://www.corpusthomisticum.org/)",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Bibliography</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Bibliography</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/80-dialectica-bibliography.html#interface-with-dialecticas-main-bibliography",
     "href": "chapters/dialectica/80-dialectica-bibliography.html#interface-with-dialecticas-main-bibliography",
-    "title": "39  Bibliography",
-    "section": "39.3 Interface with dialectica’s main bibliography",
-    "text": "39.3 Interface with dialectica’s main bibliography\nMore information on the bibliography is in the bibliography-section of the overleaf-document.\nJD some experiments:\n\nTried simply adding the main bib file (biblio-check.bib) as the &gt; bibliography file of an article in RStudio. Problems:\n\nIt takes circa 15-30sec to ’Read the bibliography” when opening &gt; the article, and 10-20sec again when opening the &gt; insert-citation window.\nBut the bibliographies entries don’t show up in the &gt; ‘Bibliography’ tab.\nIt looks as if either RStudio can’t read it (bug / unusual code &gt; somewhere?), or just gives up above a certain number of &gt; entries\n\n\n\nJD thought: We need either:\n\nsome way of either generating a sub-selection of the main &gt; bibliography for the article. Automated? Something like Sandro’s / &gt; crossref bibtex convertor, but for this bibliography? (Suggestion: &gt; linking via DOIs?)\nSome way of having the main biblio as one of the source in RStudio &gt; citation-insertion popup, the way Zotero appears. However: risk &gt; that it is slow because of the size.\nSome way of searching the main biblio as one of the sources in &gt; RStudio, the way CrossRef appears in the citation-insertion popup.",
+    "title": "40  Bibliography",
+    "section": "40.3 Interface with dialectica’s main bibliography",
+    "text": "40.3 Interface with dialectica’s main bibliography\nMore information on the bibliography is in the bibliography-section of the overleaf-document.\nJD some experiments:\n\nTried simply adding the main bib file (biblio-check.bib) as the &gt; bibliography file of an article in RStudio. Problems:\n\nIt takes circa 15-30sec to ’Read the bibliography” when opening &gt; the article, and 10-20sec again when opening the &gt; insert-citation window.\nBut the bibliographies entries don’t show up in the &gt; ‘Bibliography’ tab.\nIt looks as if either RStudio can’t read it (bug / unusual code &gt; somewhere?), or just gives up above a certain number of &gt; entries\n\n\n\nJD thought: We need either:\n\nsome way of either generating a sub-selection of the main &gt; bibliography for the article. Automated? Something like Sandro’s / &gt; crossref bibtex convertor, but for this bibliography? (Suggestion: &gt; linking via DOIs?)\nSome way of having the main biblio as one of the source in RStudio &gt; citation-insertion popup, the way Zotero appears. However: risk &gt; that it is slow because of the size.\nSome way of searching the main biblio as one of the sources in &gt; RStudio, the way CrossRef appears in the citation-insertion popup.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>39</span>  <span class='chapter-title'>Bibliography</span>"
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Bibliography</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/85-dialectica-missing-unicode-characters.html",
     "href": "chapters/dialectica/85-dialectica-missing-unicode-characters.html",
-    "title": "40  Missing Unicode characters",
+    "title": "41  Missing Unicode characters",
     "section": "",
-    "text": "40.1 Adding a character obtained by combination\nSome characters might be missing in the template’s fonts. In HTML output the browser may find a fallback solution. In PDF output you get a LaTeX warning message such as:\nThere are three ways to solve this.\nMethods 1 and 2 are easy and should be tried first.\nRequires: Pandokoma template.\nConsider the character ‘à’, for instance. A LaTeX warning message would give its Unicode number in hexadecimal format: 00E0. (Hexadecimal means that A,B, … F are used in addition to digits 0…9. Unicode numbers are typically written U+xxx, i.e. U+00E0.) Search for “Unicode 00E0” online, and go to one of the websites that have a detailed page on each Unicode character. Look for a “decomposition mapping” such as:\nThis shows that the Unicode character can be created by combining the a character with the character number 0300. 0300 is a special modifier or combining character, who combines with the preceding character. It should not be confused with the self-standing character ` (code 0060) that does not combine with the previous character.\nIn the template folder, open settings/common-latex.yaml. Search for the newunicodechar section:\nAdd an entry for your character. The char value should be the missing character itself (copy/paste it). The command value is the combination used to recreate it:\nThe combination should be entered in the same order as you found on the reference webpage: here we have a first then ```. (In Unicode combinations, the added diacritics come after the letter.)\nThe combining characters can be entered either directly (here, the a) or with \\symbol{\"...} command, where ‘…’ is the hexadecimal Unicode number (here, the modifier ` is entered with \\symbol{\"0300}.) So the above is equivalent to:\nbecause the Unicode number of a is 0061. You would normally enter modifier Unicode characters by number because they do not display well in text editors.",
+    "text": "41.1 Adding a character obtained by combination\nSome characters might be missing in the template’s fonts. In HTML output the browser may find a fallback solution. In PDF output you get a LaTeX warning message such as:\nThere are three ways to solve this.\nMethods 1 and 2 are easy and should be tried first.\nRequires: Pandokoma template.\nConsider the character ‘à’, for instance. A LaTeX warning message would give its Unicode number in hexadecimal format: 00E0. (Hexadecimal means that A,B, … F are used in addition to digits 0…9. Unicode numbers are typically written U+xxx, i.e. U+00E0.) Search for “Unicode 00E0” online, and go to one of the websites that have a detailed page on each Unicode character. Look for a “decomposition mapping” such as:\nThis shows that the Unicode character can be created by combining the a character with the character number 0300. 0300 is a special modifier or combining character, who combines with the preceding character. It should not be confused with the self-standing character ` (code 0060) that does not combine with the previous character.\nIn the template folder, open settings/common-latex.yaml. Search for the newunicodechar section:\nAdd an entry for your character. The char value should be the missing character itself (copy/paste it). The command value is the combination used to recreate it:\nThe combination should be entered in the same order as you found on the reference webpage: here we have a first then ```. (In Unicode combinations, the added diacritics come after the letter.)\nThe combining characters can be entered either directly (here, the a) or with \\symbol{\"...} command, where ‘…’ is the hexadecimal Unicode number (here, the modifier ` is entered with \\symbol{\"0300}.) So the above is equivalent to:\nbecause the Unicode number of a is 0061. You would normally enter modifier Unicode characters by number because they do not display well in text editors.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Missing Unicode characters</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Missing Unicode characters</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/85-dialectica-missing-unicode-characters.html#adding-a-character-obtained-by-combination",
     "href": "chapters/dialectica/85-dialectica-missing-unicode-characters.html#adding-a-character-obtained-by-combination",
-    "title": "40  Missing Unicode characters",
+    "title": "41  Missing Unicode characters",
     "section": "",
     "text": "Decomposition mapping:    a (U+0061)    ` (U+0300)\n\n\n\n\n# Unicode chars\nnewunicodechar:\n- char: ǐ\n  command: i\\symbol{\"030C}\n- char: ȧ\n  command: a\\symbol{\"0307}\n- ...\n\n\nnewUnicodechar:\n- char: à\n  command: a\\symbol{\"0300}\n- char: ǐ\n  command: i\\symbol{\"030C}\n- ...\n\n\n\n- char: à\n  command: \\symbol{\"0061}\\symbol{\"0300}",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Missing Unicode characters</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Missing Unicode characters</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/85-dialectica-missing-unicode-characters.html#adding-a-character-from-a-math-font",
     "href": "chapters/dialectica/85-dialectica-missing-unicode-characters.html#adding-a-character-from-a-math-font",
-    "title": "40  Missing Unicode characters",
-    "section": "40.2 Adding a character from a math font",
-    "text": "40.2 Adding a character from a math font\nRequires: Pandokoma template.\nFor some characters, they are not available in the text font but they are available as math symbols. You can look them up in the Comprehensive LaTeX Symbol List (if you have a LaTeX installation, entering the command texdoc symbols in a terminal should display it; otherwise use the link).\nAdding them to the template is similar to the combination method above. In the template, open settings/common-latex.yaml. Look for the unicodefrommath section. Here’s an example:\n# Unicode symbols from math\nunicodefrommath:\n- char: '&there4;'\n  is: \\therefore\n\nIn the char field, I’ve entered the character. Instead of copying/ pasting it, I’ve used its HTML entity name, between quotation marks. (See section Chapter 13 on HTML entities. The quotation marks ensure that HTML entities are treated as such.) In the is field, I enter the LaTeX command that prints the desired characters.\nThe is field should be a LaTeX command that works in math mode. If it’s a text mode command, use \\text{...}.\nIn HTML output, the LaTeX command is passed to MathJAX. Check your HTML output to see whether MathJAX displays it. If not, you’ll see red text with a yellow background where the character should be. Your only option then, the last resort, is to declare an alternative font for that character.",
+    "title": "41  Missing Unicode characters",
+    "section": "41.2 Adding a character from a math font",
+    "text": "41.2 Adding a character from a math font\nRequires: Pandokoma template.\nFor some characters, they are not available in the text font but they are available as math symbols. You can look them up in the Comprehensive LaTeX Symbol List (if you have a LaTeX installation, entering the command texdoc symbols in a terminal should display it; otherwise use the link).\nAdding them to the template is similar to the combination method above. In the template, open settings/common-latex.yaml. Look for the unicodefrommath section. Here’s an example:\n# Unicode symbols from math\nunicodefrommath:\n- char: '&there4;'\n  is: \\therefore\n\nIn the char field, I’ve entered the character. Instead of copying/ pasting it, I’ve used its HTML entity name, between quotation marks. (See section Chapter 13 on HTML entities. The quotation marks ensure that HTML entities are treated as such.) In the is field, I enter the LaTeX command that prints the desired characters.\nThe is field should be a LaTeX command that works in math mode. If it’s a text mode command, use \\text{...}.\nIn HTML output, the LaTeX command is passed to MathJAX. Check your HTML output to see whether MathJAX displays it. If not, you’ll see red text with a yellow background where the character should be. Your only option then, the last resort, is to declare an alternative font for that character.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Missing Unicode characters</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Missing Unicode characters</span>"
     ]
   },
   {
     "objectID": "chapters/dialectica/85-dialectica-missing-unicode-characters.html#declaring-an-alternative-font-for-a-certain-unicode-range",
     "href": "chapters/dialectica/85-dialectica-missing-unicode-characters.html#declaring-an-alternative-font-for-a-certain-unicode-range",
-    "title": "40  Missing Unicode characters",
-    "section": "40.3 Declaring an alternative font for a certain Unicode range",
-    "text": "40.3 Declaring an alternative font for a certain Unicode range\nThis method requires changing both the LaTeX and HTML (CSS) templates and adding the relevant fonts to the template folder and website. You need to ask the template managed to do this.",
+    "title": "41  Missing Unicode characters",
+    "section": "41.3 Declaring an alternative font for a certain Unicode range",
+    "text": "41.3 Declaring an alternative font for a certain Unicode range\nThis method requires changing both the LaTeX and HTML (CSS) templates and adding the relevant fonts to the template folder and website. You need to ask the template managed to do this.",
     "crumbs": [
       "Dialectica",
-      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Missing Unicode characters</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Missing Unicode characters</span>"
     ]
   },
   {
     "objectID": "chapters/design/52-pub-the-structure-of-volumes.html",
     "href": "chapters/design/52-pub-the-structure-of-volumes.html",
-    "title": "41  The structure of a book and a journal",
+    "title": "42  The structure of a book and a journal",
     "section": "",
-    "text": "41.1 The structure of a book\nThe cover is typically designed separately. It has five components: front cover, inside front cover, inside back cover, back cover, and spine.\nThe book is divided in three parts: front, main and back matter.\nFollowing Wddingham (2014, 3) and Chicago Press (2010, sec. 1.4) the frontmatter contains:\nThen (Hart):\nOr (Chicago):\nBack matter\nFollowing Wddingham (2014, 17)\nFollowing Chicago Press (2010, sec. 1.4):",
+    "text": "42.1 The structure of a book\nThe cover is typically designed separately. It has five components: front cover, inside front cover, inside back cover, back cover, and spine.\nThe book is divided in three parts: front, main and back matter.\nFollowing Wddingham (2014, 3) and Chicago Press (2010, sec. 1.4) the frontmatter contains:\nThen (Hart):\nOr (Chicago):\nBack matter\nFollowing Wddingham (2014, 17)\nFollowing Chicago Press (2010, sec. 1.4):",
     "crumbs": [
       "Design",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>The structure of a book and a journal</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>The structure of a book and a journal</span>"
     ]
   },
   {
     "objectID": "chapters/design/52-pub-the-structure-of-volumes.html#the-structure-of-a-book",
     "href": "chapters/design/52-pub-the-structure-of-volumes.html#the-structure-of-a-book",
-    "title": "41  The structure of a book and a journal",
+    "title": "42  The structure of a book and a journal",
     "section": "",
     "text": "Front cover. Author and title, optionally publisher.\nSpine. Author and title, optionally publisher, series, volume, year….\nBack cover. Title, blurb, credits for the cover image, barcode or QR code, publisher.\nInside front and back cover. Could be empty.\n\n\n\n\n\nhalf-title, recto\nverso of the half-title: empty, series title, frontispiece\ntitle page, recto\nverso of the title page: empty, copyright\ndedication\n\n\n\n\nforeword\npreface\nacknowledgments\ntable of contents\nlists:\n\nillustrations,\nfigures,\nmaps,\ntables,\ntable of cases and legislation (law books)\nabbreviations\ncontributors\n\nnote to the reader\nepigraph\n\n\n\n\nepigraph\ncontents\nlists\n\nillustrations\ntables\n\nforeword\nPreface\nAcknowledgements (if not in preface)\nIntroduction (it not part of text)\nAbbreviations (if not in back matter)\nChronology (if not in back matter)\n\n\n\n\n\nappendix\nglossary\nendnotes\nbibliography\nnotes on contributors\nindexes\n\n\n\n\nacknowledgments (if not in front matter)\nappendices\nchronology (if not in front)\nabbreviations (if not in front)\nendnotes\nglossary\nbibliography\nnote on contributors\nillustration credits\nindexes",
     "crumbs": [
       "Design",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>The structure of a book and a journal</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>The structure of a book and a journal</span>"
     ]
   },
   {
     "objectID": "chapters/design/52-pub-the-structure-of-volumes.html#the-structure-of-a-journal",
     "href": "chapters/design/52-pub-the-structure-of-volumes.html#the-structure-of-a-journal",
-    "title": "41  The structure of a book and a journal",
-    "section": "41.2 The structure of a journal",
-    "text": "41.2 The structure of a journal\nTypical order of pages.\n\nFront matter\n\neditorial board\ntitle\nimprint\n\nMain matter\n\narticle",
+    "title": "42  The structure of a book and a journal",
+    "section": "42.2 The structure of a journal",
+    "text": "42.2 The structure of a journal\nTypical order of pages.\n\nFront matter\n\neditorial board\ntitle\nimprint\n\nMain matter\n\narticle",
     "crumbs": [
       "Design",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>The structure of a book and a journal</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>The structure of a book and a journal</span>"
     ]
   },
   {
     "objectID": "chapters/design/52-pub-the-structure-of-volumes.html#non-english-conventions",
     "href": "chapters/design/52-pub-the-structure-of-volumes.html#non-english-conventions",
-    "title": "41  The structure of a book and a journal",
-    "section": "41.3 Non-English conventions",
-    "text": "41.3 Non-English conventions\n\n41.3.0.1 Français\nCouverture: - première de couverture: - seconde de couverture: - troisième de couverture: - quatrième de couverture: - épine (dos): auteur, titre, maison d’édition (logo), …\nSuivant Collectif (2002):\nCouvertures intérieures ou rabats de la jaquette: autres ouvrages de la même maison, présentation de l’auteur.\nFacultatif: un feuillet blanc en début et fin de volume.\nEn tête de volume, pagination en chiffres romains:\n\nle faux titre, recto. Titre et sous-titre\nverso du faux titre: illustration de frontispice ou liste des oeuvres de l’auteur.\ntitre: recto. Titre, sous-titre auteur, copyright; eventuellement ISBN ou ISSN, édition, tirage, sommaire.\ndédicace: recto, après le titre.\navis ou avertissement: en verso de l’une des premières pages.\nchapitres en tête d’ouvrage, dans l’ordre:\n\navant-propos,\npréface,\nintroduction (cas exceptionnel, voir ci-dessous),\nnotice (par ex., notice sur les auteurs, ou sur l’utilisation de l’ouvrage, par exemple une liste d’abbréviations),\n(exceptionellement) bibliographie.\n\n\n\nEn corps de volume, les chapitres, pagination en chiffres arabes.\n\nl’introduction est normalement en corps de volume. Elle est placée en tête seulement si ne fait pas partie du corps: introduction du traducteur, de l’éditeur d’un texte historique, etc.\n\n\nEn fin de volume, pagination en chiffre arabe continuant celle du corps:\n\npostface,\nbibliographie (exceptionellement placée en tête),\nindex,\ntable des matières,\ncolophon: tirage, achevé d’imprimé, mention du dépôt légal, mention de l’imprimeur sur la dernière page.\n\n\n\n\n\nChicago Press, University of. 2010. The Chicago Manual of Style: The Essential Guide for Writers, Editors and Publishers. 16th edition. Chicago: University of Chicago Press.\n\n\nCollectif. 2002. Lexique des règles typographiques en usage à l’Imprimerie nationale. Paris: Imprimerie nationale.\n\n\nWddingham, Anne. 2014. New Hart’s Rules: The Oxford Style Guide. 2nd edition. New York, NY: OUP Oxford.",
+    "title": "42  The structure of a book and a journal",
+    "section": "42.3 Non-English conventions",
+    "text": "42.3 Non-English conventions\n\n42.3.0.1 Français\nCouverture: - première de couverture: - seconde de couverture: - troisième de couverture: - quatrième de couverture: - épine (dos): auteur, titre, maison d’édition (logo), …\nSuivant Collectif (2002):\nCouvertures intérieures ou rabats de la jaquette: autres ouvrages de la même maison, présentation de l’auteur.\nFacultatif: un feuillet blanc en début et fin de volume.\nEn tête de volume, pagination en chiffres romains:\n\nle faux titre, recto. Titre et sous-titre\nverso du faux titre: illustration de frontispice ou liste des oeuvres de l’auteur.\ntitre: recto. Titre, sous-titre auteur, copyright; eventuellement ISBN ou ISSN, édition, tirage, sommaire.\ndédicace: recto, après le titre.\navis ou avertissement: en verso de l’une des premières pages.\nchapitres en tête d’ouvrage, dans l’ordre:\n\navant-propos,\npréface,\nintroduction (cas exceptionnel, voir ci-dessous),\nnotice (par ex., notice sur les auteurs, ou sur l’utilisation de l’ouvrage, par exemple une liste d’abbréviations),\n(exceptionellement) bibliographie.\n\n\n\nEn corps de volume, les chapitres, pagination en chiffres arabes.\n\nl’introduction est normalement en corps de volume. Elle est placée en tête seulement si ne fait pas partie du corps: introduction du traducteur, de l’éditeur d’un texte historique, etc.\n\n\nEn fin de volume, pagination en chiffre arabe continuant celle du corps:\n\npostface,\nbibliographie (exceptionellement placée en tête),\nindex,\ntable des matières,\ncolophon: tirage, achevé d’imprimé, mention du dépôt légal, mention de l’imprimeur sur la dernière page.\n\n\n\n\n\nChicago Press, University of. 2010. The Chicago Manual of Style: The Essential Guide for Writers, Editors and Publishers. 16th edition. Chicago: University of Chicago Press.\n\n\nCollectif. 2002. Lexique des règles typographiques en usage à l’Imprimerie nationale. Paris: Imprimerie nationale.\n\n\nWddingham, Anne. 2014. New Hart’s Rules: The Oxford Style Guide. 2nd edition. New York, NY: OUP Oxford.",
     "crumbs": [
       "Design",
-      "<span class='chapter-number'>41</span>  <span class='chapter-title'>The structure of a book and a journal</span>"
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>The structure of a book and a journal</span>"
     ]
   },
   {
     "objectID": "chapters/design/55-pub-technical-howtos.html",
     "href": "chapters/design/55-pub-technical-howtos.html",
-    "title": "42  Technical How-Tos",
+    "title": "43  Technical How-Tos",
     "section": "",
-    "text": "42.1 Missing Unicode characters\nMarkdown manuscript are in unicode, which allow us to enter many languages directly and a range of special symbols.\nLaTeX issues a warning if a character is missing from your chosen font, for instance:\nIn LaTeX/PDF output there are three solutions for this:\nMethods 1-2 rely on the newunicodechar package. Method 3 on fontspec.\nIt’s good to have a character table for your font. See for instance STIX font docs: the character table indicates which characters can be built from others.",
+    "text": "43.1 Missing Unicode characters\nMarkdown manuscript are in unicode, which allow us to enter many languages directly and a range of special symbols.\nLaTeX issues a warning if a character is missing from your chosen font, for instance:\nIn LaTeX/PDF output there are three solutions for this:\nMethods 1-2 rely on the newunicodechar package. Method 3 on fontspec.\nIt’s good to have a character table for your font. See for instance STIX font docs: the character table indicates which characters can be built from others.",
     "crumbs": [
       "Design",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Technical How-Tos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Technical How-Tos</span>"
     ]
   },
   {
     "objectID": "chapters/design/55-pub-technical-howtos.html#missing-unicode-characters",
     "href": "chapters/design/55-pub-technical-howtos.html#missing-unicode-characters",
-    "title": "42  Technical How-Tos",
+    "title": "43  Technical How-Tos",
     "section": "",
-    "text": "Missing character: There is no ὀ (U+1F40) (U+1F40) in font STIXTwoText:mode=node;script\n\n\n\ngenerate missing characters by combining other characters of the same font (typically a diacritic plus a character)\ngenerate missing characters by using a math symbol command (typical for symbols)\nuse a different font for specific Unicode ranges\n\n\n\n\n\n42.1.1 Unicode from math\nYou could use use LaTeX’s (inputenc’s) DeclareUnicodeChar command, if you know the character’s UTF-8 number:\n\\DeclareUnicodeCharacter{2234}{\\ensuremath{\\therefore}}\n\\DeclareUnicodeCharacter{2713}{\\ensuremath{\\checkmark}}\n\nOr the newunicodechar package, which allows you to use the character itself:\n\\usepackage{newunicodechar}\n\\newunicodechar{∴}{\\ensuremath{\\therefore}}\n\\newunicodechar{✓}{\\ensuremath{\\checkmark}}\n\nEither option requires a header-includes or a modification of your LaTeX template.\nWe use a metadata variable instead. This allows us to enter the desired character directly or as a HTML entity (which Pandoc converts to the desired char before passing it on to our LaTeX template):\nunicodefrommath:\n- char: '&there4;'\n  is: \\therefore\n- char: ✓\n  is: \\checkmark\n\nThis is supported as follows in our Pandokoma template:\n$if(unicodefrommath)$\n\\usepackage{newunicodechar}\n$for(unicodefrommath)$\n  $if(it.char)$\n    $if(it.is)$\\newunicodechar{$it.char$}{\\ensuremath{$it.is$}}$endif$\n  $endif$\n$endfor$\n$endif$\n\n\n42.1.2 Provide Unicode characters\nFor LaTeX/PDF, use \\DeclareUnicodeCharacter or newunicodechar.\nWe use pandokoma’s yaml declaration. Here is our declaration for the Greek extended block.\nnewunicodechar:\n- char: ἀ\n  command: α\\symbol{\"0313\"}\n- char: ἁ\n  command: α\\symbol{\"0314}\n- char: ἂ\n  command: α\\symbol{\"0313}\\symbol{\"0300}\n- char: ἃ\n  command: α\\symbol{\"0314}\\symbol{\"0300}\n- char: ἄ\n  command: α\\symbol{\"0313}\\symbol{\"0301}\n- char: ἅ\n  command: α\\symbol{\"0314}\\symbol{\"0301}\n- char: ἆ\n  command: α\\symbol{\"0313}\\symbol{\"00342}\n- char: ἇ\n  command: α\\symbol{\"0314}\\symbol{\"00342}\n- char: Ἀ\n  command: Α\\symbol{\"0313}\n- char: Ἁ\n  command: Α\\symbol{\"0314}\n- char: Ἂ\n  command: Α\\symbol{\"0313}\\symbol{\"0300}\n- char: Ἃ\n  command: Α\\symbol{\"0314}\\symbol{\"0300}\n- char: Ἄ\n  command: Α\\symbol{\"0313}\\symbol{\"0301}\n- char: Ἅ\n  command: Α\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἆ\n  command: Α\\symbol{\"0313}\\symbol{\"0342}\n- char: Ἇ\n  command: Α\\symbol{\"0314}\\symbol{\"0342}\n- char: ἐ\n  command: ε\\symbol{\"0313}\n- char: ἑ\n  command: ε\\symbol{\"0314}\n- char: ἒ\n  command: ε\\symbol{\"0313}\\symbol{\"0300}\n- char: ἓ\n  command: ε\\symbol{\"0314}\\symbol{\"0300}\n- char: ἔ\n  command: ε\\symbol{\"0313}\\symbol{\"0301}\n- char: ἕ\n  command: ε\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἐ\n  command: Ε\\symbol{\"0313}\n- char: Ἑ\n  command: Ε\\symbol{\"0314}\n- char: Ἒ\n  command: Ε\\symbol{\"0313}\\symbol{\"0300}\n- char: Ἓ\n  command: Ε\\symbol{\"0314}\\symbol{\"0300}\n- char: Ἔ\n  command: Ε\\symbol{\"0313}\\symbol{\"0301}\n- char: Ἕ\n  command: Ε\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἆ\n  command: Α\\symbol{\"0313}\\symbol{\"0342}\n- char: Ἇ\n  command: Α\\symbol{\"0314}\\symbol{\"0342}\n- char: ἠ\n  command: η\\symbol{\"0313}\n- char: ἡ\n  command: η\\symbol{\"0314}\n- char: ἢ\n  command: η\\symbol{\"0313}\\symbol{\"0300}\n- char: ἣ\n  command: η\\symbol{\"0314}\\symbol{\"0300}\n- char: ἤ\n  command: η\\symbol{\"0313}\\symbol{\"0301}\n- char: ἥ\n  command: η\\symbol{\"0314}\\symbol{\"0301}\n- char: ἦ\n  command: η\\symbol{\"0313}\\symbol{\"00342}\n- char: ἧ\n  command: η\\symbol{\"0314}\\symbol{\"00342}\n- char: Ἠ\n  command: Η\\symbol{\"0313}\n- char: Ἡ\n  command: Η\\symbol{\"0314}\n- char: Ἢ\n  command: Η\\symbol{\"0313}\\symbol{\"0300}\n- char: Ἣ\n  command: Η\\symbol{\"0314}\\symbol{\"0300}\n- char: Ἤ\n  command: Η\\symbol{\"0313}\\symbol{\"0301}\n- char: Ἥ\n  command: Η\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἦ\n  command: Η\\symbol{\"0313}\\symbol{\"0342}\n- char: Ἧ\n  command: Η\\symbol{\"0314}\\symbol{\"0342}\n- char: ἰ\n  command: ι\\symbol{\"0313\"}\n- char: ἱ\n  command: ι\\symbol{\"0314}\n- char: ἲ\n  command: ι\\symbol{\"0313}\\symbol{\"0300}\n- char: ἳ\n  command: ι\\symbol{\"0314}\\symbol{\"0300}\n- char: ἴ\n  command: ι\\symbol{\"0313}\\symbol{\"0301}\n- char: ἵ\n  command: ι\\symbol{\"0314}\\symbol{\"0301}\n- char: ἶ\n  command: ι\\symbol{\"0313}\\symbol{\"00342}\n- char: ἷ\n  command: ι\\symbol{\"0314}\\symbol{\"00342}\n- char: Ἰ\n  command: Ι\\symbol{\"0313}\n- char: Ἱ\n  command: Ι\\symbol{\"0314}\n- char: Ἲ\n  command: Ι\\symbol{\"0313}\\symbol{\"0300}\n- char: Ἳ\n  command: Ι\\symbol{\"0314}\\symbol{\"0300}\n- char: Ἴ\n  command: Ι\\symbol{\"0313}\\symbol{\"0301}\n- char: Ἵ\n  command: Ι\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἶ\n  command: Ι\\symbol{\"0313}\\symbol{\"0342}\n- char: Ἷ\n  command: Ι\\symbol{\"0314}\\symbol{\"0342}\n- char: ὀ\n  command: ο\\symbol{\"0313}\n- char: ὁ\n  command: ο\\symbol{\"0314}\n- char: ὂ\n  command: ο\\symbol{\"0313}\\symbol{\"0300}\n- char: ὃ\n  command: ο\\symbol{\"0314}\\symbol{\"0300}\n- char: ὄ\n  command: ο\\symbol{\"0313}\\symbol{\"0301}\n- char: ὅ\n  command: ο\\symbol{\"0314}\\symbol{\"0301}\n- char: Ὀ\n  command: Ο\\symbol{\"0313}\n- char: Ὁ\n  command: Ο\\symbol{\"0314}\n- char: Ὂ\n  command: Ο\\symbol{\"0313}\\symbol{\"0300}\n- char: Ὃ\n  command: Ο\\symbol{\"0314}\\symbol{\"0300}\n- char: Ὄ\n  command: Ο\\symbol{\"0313}\\symbol{\"0301}\n- char: Ὅ\n  command: Ο\\symbol{\"0314}\\symbol{\"0301}\n- char: ὐ\n  command: υ\\symbol{\"0313\"}\n- char: ὑ\n  command: υ\\symbol{\"0314}\n- char: ὒ\n  command: υ\\symbol{\"0313}\\symbol{\"0300}\n- char: ὓ\n  command: υ\\symbol{\"0314}\\symbol{\"0300}\n- char: ὔ\n  command: υ\\symbol{\"0313}\\symbol{\"0301}\n- char: ὕ\n  command: υ\\symbol{\"0314}\\symbol{\"0301}\n- char: ὖ\n  command: υ\\symbol{\"0313}\\symbol{\"00342}\n- char: ὗ\n  command: υ\\symbol{\"0314}\\symbol{\"00342}\n- char: Ὑ\n  command: Υ\\symbol{\"0314}\n- char: Ὓ\n  command: Υ\\symbol{\"0314}\\symbol{\"0300}\n- char: Ὕ\n  command: Υ\\symbol{\"0314}\\symbol{\"0301}\n- char: Ὗ\n  command: Υ\\symbol{\"0314}\\symbol{\"0342}\n- char: ὠ\n  command: ω\\symbol{\"0313\"}\n- char: ὡ\n  command: ω\\symbol{\"0314}\n- char: ὢ\n  command: ω\\symbol{\"0313}\\symbol{\"0300}\n- char: ὣ\n  command: ω\\symbol{\"0314}\\symbol{\"0300}\n- char: ὤ\n  command: ω\\symbol{\"0313}\\symbol{\"0301}\n- char: ὥ\n  command: ω\\symbol{\"0314}\\symbol{\"0301}\n- char: ὦ\n  command: ω\\symbol{\"0313}\\symbol{\"00342}\n- char: ὧ\n  command: ω\\symbol{\"0314}\\symbol{\"00342}\n- char: Ὠ\n  command: Ω\\symbol{\"0313}\n- char: Ὡ\n  command: Ω\\symbol{\"0314}\n- char: Ὢ\n  command: Ω\\symbol{\"0313}\\symbol{\"0300}\n- char: Ὣ\n  command: Ω\\symbol{\"0314}\\symbol{\"0300}\n- char: Ὤ\n  command: Ω\\symbol{\"0313}\\symbol{\"0301}\n- char: Ὥ\n  command: Ω\\symbol{\"0314}\\symbol{\"0301}\n- char: Ὦ\n  command: Ω\\symbol{\"0313}\\symbol{\"0342}\n- char: Ὧ\n  command: Ω\\symbol{\"0314}\\symbol{\"0342}\n- char: ὰ\n  command: α\\symbol{\"0300}\n- char: ά\n  command: α\\symbol{\"0301}\n- char: ὲ\n  command: ε\\symbol{\"0300}\n- char: έ\n  command: ε\\symbol{\"0301}\n- char: ὴ\n  command: η\\symbol{\"0300}\n- char: ή\n  command: η\\symbol{\"0301}\n- char: ὶ\n  command: ι\\symbol{\"0300}\n- char: ί\n  command: ι\\symbol{\"0301}\n- char: ὸ\n  command: ο\\symbol{\"0300}\n- char: ό\n  command: ο\\symbol{\"0301}\n- char: ὺ\n  command: υ\\symbol{\"0300}\n- char: ύ\n  command: υ\\symbol{\"0301}\n- char: ὼ\n  command: ω\\symbol{\"0300}\n- char: ώ\n  command: ω\\symbol{\"0301}\n- char: ᾀ\n  command: α\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾁ\n  command: α\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾂ\n  command: α\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾃ\n  command: α\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾄ\n  command: α\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾅ\n  command: α\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾆ\n  command: α\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾇ\n  command: α\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾈ\n  command: Α\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾉ\n  command: Α\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾊ\n  command: Α\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾋ\n  command: Α\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾌ\n  command: Α\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾍ\n  command: Α\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾎ\n  command: Α\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾏ\n  command: Α\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾐ\n  command: η\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾑ\n  command: η\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾒ\n  command: η\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾓ\n  command: η\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾔ\n  command: η\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾕ\n  command: η\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾖ\n  command: η\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾗ\n  command: η\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾘ\n  command: Η\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾙ\n  command: Η\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾚ\n  command: Η\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾛ\n  command: Η\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾜ\n  command: Η\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾝ\n  command: Η\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾞ\n  command: Η\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾟ\n  command: Η\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾠ\n  command: ω\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾡ\n  command: ω\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾢ\n  command: ω\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾣ\n  command: ω\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾣ\n  command: ω\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾥ\n  command: ω\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾦ\n  command: ω\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾧ\n  command: ω\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾨ\n  command: Ω\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾩ\n  command: Ω\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾪ\n  command: Ω\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾫ\n  command: Ω\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾬ\n  command: Ω\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾭ\n  command: Ω\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾮ\n  command: Ω\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾯ\n  command: Ω\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾰ\n  commmand: α\\symbol{\"0306}\n- char: ᾱ\n  commmand: α\\symbol{\"0304}\n- char: ᾲ\n  command: α\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾳ\n  command: α\\symbol{\"0345}\n- char: ᾴ\n  command: α\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾶ\n  command: α\\symbol{\"0342}\n- char: ᾷ\n  command: α\\symbol{\"0342}\\symbol{\"0345}\n- char: Ᾰ\n  command: Α\\symbol{\"0306}\n- char: Ᾱ\n  command: Α\\symbol{\"0304}\n- char: Ὰ\n  command: Α\\symbol{\"0300}\n- char: Ά\n  command: Α\\symbol{\"0301}\n- char: ᾼ\n  command: Α\\symbol{\"0345}\n- char: ι\n  command: ι\n- char: ῂ\n  command: η\\symbol{\"0300}\\symbol{\"0345}\n- char: ῃ\n  command: η\\symbol{\"0345}\n- char: ῄ\n  command: η\\symbol{\"0301}\\symbol{\"0345}\n- char: ῆ\n  command: η\\symbol{\"0342}\n- char: ῇ\n  command: η\\symbol{\"0342}\\symbol{\"0345}\n- char: Ὲ\n  command: Ε\\symbol{\"0300}\n- char: Έ\n  command: Ε\\symbol{\"0301}\n- char: Ὴ\n  command: Η\\symbol{\"0300}\n- char: Ή\n  command: Η\\symbol{\"0301}\n- char: ῌ\n  command: Η\\symbol{\"0345}\n- char: ῐ\n  command: ι\\symbol{\"0306}\n- char: ῑ\n  command: ι\\symbol{\"0304}\n- char: ῒ\n  command: ι\\symbol{\"0308}\\symbol{\"0300}\n- char: ΐ\n  command: ι\\symbol{\"0308}\\symbol{\"0301}\n- char: ῖ\n  command: ι\\symbol{\"0342}\n- char: ῗ\n  command: ι\\symbol{\"0308}\\symbol{\"0342}\n- char: Ῐ\n  command: Ι\\symbol{\"0306}\n- char: Ῑ\n  command: Ι\\symbol{\"0304}\n- char: Ὶ\n  command: Ι\\symbol{\"0300}\n- char: Ί\n  command: Ι\\symbol{\"0301}\n- char: ῠ\n  command: υ\\symbol{\"0306}\n- char: ῡ\n  command: υ\\symbol{\"0304}\n- char: ῢ\n  command: υ\\symbol{\"0308}\\symbol{\"0300}\n- char: ΰ\n  command: υ\\symbol{\"0308}\\symbol{\"0301}\n- char: ῤ\n  command: ρ\\symbol{\"0313}\n- char: ῥ\n  command: ρ\\symbol{\"0314}\n- char: ῦ\n  command: υ\\symbol{\"0342}\n- char: ῧ\n  command: υsymbol{\"0308}\\symbol{\"0342}\n- char: Ῠ\n  command: Υ\\symbol{\"0306}\n- char: Ῡ\n  command: Υ\\symbol{\"0304}\n- char: Ὺ\n  command: Υ\\symbol{\"0300}\n- char: Ύ\n  command: Υ\\symbol{\"0301}\n- char: Ῥ\n  command: Ρ\\symbol{\"0314}\n- char: ῲ\n  command: ω\\symbol{\"0300}\\symbol{\"0345}\n- char: ῳ\n  command: ω\\symbol{\"0345}\n- char: ῴ\n  command: ω\\symbol{\"0301}\\symbol{\"0345}\n- char: ῶ\n  command: ω\\symbol{\"0342}\n- char: ῷ\n  command: ω\\symbol{\"0342}\\symbol{\"0345}\n- char: Ὸ\n  command: Ο\\symbol{\"0300}\n- char: Ό\n  command: Ο\\symbol{\"0301}\n- char: Ὼ\n  command: Ω\\symbol{\"0300}\n- char: Ώ\n  command: Ω\\symbol{\"0301}\n- char: ῼ\n  command: Ω\\symbol{\"0345}\n\n\n42.1.3 Background on LaTeX / unicode\nTo print Unicode chars by number use \\symbol{} or \\char. For omicron (Unicode decimal 959, hexadecimal OxO3BF):\n\\symbol{\"03BF}\n\\symbol{959}\n\\char\"03BF\n\\char959\n\nTo combine a character with a diacritic use the character directly followed by the combining diacritic. For instance, you can create Greek small omicron with psili (Unicode U+1F40) by combining Greek small omicron (ο, U+03BF) with the combining Greek koronis (U+0343). Any of these work:\nο\\symbol{\"0343}\nο\\char\"0343\n\\char\"03BF\\char\"0343\n\\symbol{\"03BF}\\char\"0343\n\\symbol{\"03BF}\\symbol{\"0343}\n\\char\"03BF\\symbol{\"0343}\n\nThe combining Greek Koronis is usually the same as the combining comma above (U+0313), so you could use that instead.",
+    "text": "Missing character: There is no ὀ (U+1F40) (U+1F40) in font STIXTwoText:mode=node;script\n\n\n\ngenerate missing characters by combining other characters of the same font (typically a diacritic plus a character)\ngenerate missing characters by using a math symbol command (typical for symbols)\nuse a different font for specific Unicode ranges\n\n\n\n\n\n43.1.1 Unicode from math\nYou could use use LaTeX’s (inputenc’s) DeclareUnicodeChar command, if you know the character’s UTF-8 number:\n\\DeclareUnicodeCharacter{2234}{\\ensuremath{\\therefore}}\n\\DeclareUnicodeCharacter{2713}{\\ensuremath{\\checkmark}}\n\nOr the newunicodechar package, which allows you to use the character itself:\n\\usepackage{newunicodechar}\n\\newunicodechar{∴}{\\ensuremath{\\therefore}}\n\\newunicodechar{✓}{\\ensuremath{\\checkmark}}\n\nEither option requires a header-includes or a modification of your LaTeX template.\nWe use a metadata variable instead. This allows us to enter the desired character directly or as a HTML entity (which Pandoc converts to the desired char before passing it on to our LaTeX template):\nunicodefrommath:\n- char: '&there4;'\n  is: \\therefore\n- char: ✓\n  is: \\checkmark\n\nThis is supported as follows in our Pandokoma template:\n$if(unicodefrommath)$\n\\usepackage{newunicodechar}\n$for(unicodefrommath)$\n  $if(it.char)$\n    $if(it.is)$\\newunicodechar{$it.char$}{\\ensuremath{$it.is$}}$endif$\n  $endif$\n$endfor$\n$endif$\n\n\n43.1.2 Provide Unicode characters\nFor LaTeX/PDF, use \\DeclareUnicodeCharacter or newunicodechar.\nWe use pandokoma’s yaml declaration. Here is our declaration for the Greek extended block.\nnewunicodechar:\n- char: ἀ\n  command: α\\symbol{\"0313\"}\n- char: ἁ\n  command: α\\symbol{\"0314}\n- char: ἂ\n  command: α\\symbol{\"0313}\\symbol{\"0300}\n- char: ἃ\n  command: α\\symbol{\"0314}\\symbol{\"0300}\n- char: ἄ\n  command: α\\symbol{\"0313}\\symbol{\"0301}\n- char: ἅ\n  command: α\\symbol{\"0314}\\symbol{\"0301}\n- char: ἆ\n  command: α\\symbol{\"0313}\\symbol{\"00342}\n- char: ἇ\n  command: α\\symbol{\"0314}\\symbol{\"00342}\n- char: Ἀ\n  command: Α\\symbol{\"0313}\n- char: Ἁ\n  command: Α\\symbol{\"0314}\n- char: Ἂ\n  command: Α\\symbol{\"0313}\\symbol{\"0300}\n- char: Ἃ\n  command: Α\\symbol{\"0314}\\symbol{\"0300}\n- char: Ἄ\n  command: Α\\symbol{\"0313}\\symbol{\"0301}\n- char: Ἅ\n  command: Α\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἆ\n  command: Α\\symbol{\"0313}\\symbol{\"0342}\n- char: Ἇ\n  command: Α\\symbol{\"0314}\\symbol{\"0342}\n- char: ἐ\n  command: ε\\symbol{\"0313}\n- char: ἑ\n  command: ε\\symbol{\"0314}\n- char: ἒ\n  command: ε\\symbol{\"0313}\\symbol{\"0300}\n- char: ἓ\n  command: ε\\symbol{\"0314}\\symbol{\"0300}\n- char: ἔ\n  command: ε\\symbol{\"0313}\\symbol{\"0301}\n- char: ἕ\n  command: ε\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἐ\n  command: Ε\\symbol{\"0313}\n- char: Ἑ\n  command: Ε\\symbol{\"0314}\n- char: Ἒ\n  command: Ε\\symbol{\"0313}\\symbol{\"0300}\n- char: Ἓ\n  command: Ε\\symbol{\"0314}\\symbol{\"0300}\n- char: Ἔ\n  command: Ε\\symbol{\"0313}\\symbol{\"0301}\n- char: Ἕ\n  command: Ε\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἆ\n  command: Α\\symbol{\"0313}\\symbol{\"0342}\n- char: Ἇ\n  command: Α\\symbol{\"0314}\\symbol{\"0342}\n- char: ἠ\n  command: η\\symbol{\"0313}\n- char: ἡ\n  command: η\\symbol{\"0314}\n- char: ἢ\n  command: η\\symbol{\"0313}\\symbol{\"0300}\n- char: ἣ\n  command: η\\symbol{\"0314}\\symbol{\"0300}\n- char: ἤ\n  command: η\\symbol{\"0313}\\symbol{\"0301}\n- char: ἥ\n  command: η\\symbol{\"0314}\\symbol{\"0301}\n- char: ἦ\n  command: η\\symbol{\"0313}\\symbol{\"00342}\n- char: ἧ\n  command: η\\symbol{\"0314}\\symbol{\"00342}\n- char: Ἠ\n  command: Η\\symbol{\"0313}\n- char: Ἡ\n  command: Η\\symbol{\"0314}\n- char: Ἢ\n  command: Η\\symbol{\"0313}\\symbol{\"0300}\n- char: Ἣ\n  command: Η\\symbol{\"0314}\\symbol{\"0300}\n- char: Ἤ\n  command: Η\\symbol{\"0313}\\symbol{\"0301}\n- char: Ἥ\n  command: Η\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἦ\n  command: Η\\symbol{\"0313}\\symbol{\"0342}\n- char: Ἧ\n  command: Η\\symbol{\"0314}\\symbol{\"0342}\n- char: ἰ\n  command: ι\\symbol{\"0313\"}\n- char: ἱ\n  command: ι\\symbol{\"0314}\n- char: ἲ\n  command: ι\\symbol{\"0313}\\symbol{\"0300}\n- char: ἳ\n  command: ι\\symbol{\"0314}\\symbol{\"0300}\n- char: ἴ\n  command: ι\\symbol{\"0313}\\symbol{\"0301}\n- char: ἵ\n  command: ι\\symbol{\"0314}\\symbol{\"0301}\n- char: ἶ\n  command: ι\\symbol{\"0313}\\symbol{\"00342}\n- char: ἷ\n  command: ι\\symbol{\"0314}\\symbol{\"00342}\n- char: Ἰ\n  command: Ι\\symbol{\"0313}\n- char: Ἱ\n  command: Ι\\symbol{\"0314}\n- char: Ἲ\n  command: Ι\\symbol{\"0313}\\symbol{\"0300}\n- char: Ἳ\n  command: Ι\\symbol{\"0314}\\symbol{\"0300}\n- char: Ἴ\n  command: Ι\\symbol{\"0313}\\symbol{\"0301}\n- char: Ἵ\n  command: Ι\\symbol{\"0314}\\symbol{\"0301}\n- char: Ἶ\n  command: Ι\\symbol{\"0313}\\symbol{\"0342}\n- char: Ἷ\n  command: Ι\\symbol{\"0314}\\symbol{\"0342}\n- char: ὀ\n  command: ο\\symbol{\"0313}\n- char: ὁ\n  command: ο\\symbol{\"0314}\n- char: ὂ\n  command: ο\\symbol{\"0313}\\symbol{\"0300}\n- char: ὃ\n  command: ο\\symbol{\"0314}\\symbol{\"0300}\n- char: ὄ\n  command: ο\\symbol{\"0313}\\symbol{\"0301}\n- char: ὅ\n  command: ο\\symbol{\"0314}\\symbol{\"0301}\n- char: Ὀ\n  command: Ο\\symbol{\"0313}\n- char: Ὁ\n  command: Ο\\symbol{\"0314}\n- char: Ὂ\n  command: Ο\\symbol{\"0313}\\symbol{\"0300}\n- char: Ὃ\n  command: Ο\\symbol{\"0314}\\symbol{\"0300}\n- char: Ὄ\n  command: Ο\\symbol{\"0313}\\symbol{\"0301}\n- char: Ὅ\n  command: Ο\\symbol{\"0314}\\symbol{\"0301}\n- char: ὐ\n  command: υ\\symbol{\"0313\"}\n- char: ὑ\n  command: υ\\symbol{\"0314}\n- char: ὒ\n  command: υ\\symbol{\"0313}\\symbol{\"0300}\n- char: ὓ\n  command: υ\\symbol{\"0314}\\symbol{\"0300}\n- char: ὔ\n  command: υ\\symbol{\"0313}\\symbol{\"0301}\n- char: ὕ\n  command: υ\\symbol{\"0314}\\symbol{\"0301}\n- char: ὖ\n  command: υ\\symbol{\"0313}\\symbol{\"00342}\n- char: ὗ\n  command: υ\\symbol{\"0314}\\symbol{\"00342}\n- char: Ὑ\n  command: Υ\\symbol{\"0314}\n- char: Ὓ\n  command: Υ\\symbol{\"0314}\\symbol{\"0300}\n- char: Ὕ\n  command: Υ\\symbol{\"0314}\\symbol{\"0301}\n- char: Ὗ\n  command: Υ\\symbol{\"0314}\\symbol{\"0342}\n- char: ὠ\n  command: ω\\symbol{\"0313\"}\n- char: ὡ\n  command: ω\\symbol{\"0314}\n- char: ὢ\n  command: ω\\symbol{\"0313}\\symbol{\"0300}\n- char: ὣ\n  command: ω\\symbol{\"0314}\\symbol{\"0300}\n- char: ὤ\n  command: ω\\symbol{\"0313}\\symbol{\"0301}\n- char: ὥ\n  command: ω\\symbol{\"0314}\\symbol{\"0301}\n- char: ὦ\n  command: ω\\symbol{\"0313}\\symbol{\"00342}\n- char: ὧ\n  command: ω\\symbol{\"0314}\\symbol{\"00342}\n- char: Ὠ\n  command: Ω\\symbol{\"0313}\n- char: Ὡ\n  command: Ω\\symbol{\"0314}\n- char: Ὢ\n  command: Ω\\symbol{\"0313}\\symbol{\"0300}\n- char: Ὣ\n  command: Ω\\symbol{\"0314}\\symbol{\"0300}\n- char: Ὤ\n  command: Ω\\symbol{\"0313}\\symbol{\"0301}\n- char: Ὥ\n  command: Ω\\symbol{\"0314}\\symbol{\"0301}\n- char: Ὦ\n  command: Ω\\symbol{\"0313}\\symbol{\"0342}\n- char: Ὧ\n  command: Ω\\symbol{\"0314}\\symbol{\"0342}\n- char: ὰ\n  command: α\\symbol{\"0300}\n- char: ά\n  command: α\\symbol{\"0301}\n- char: ὲ\n  command: ε\\symbol{\"0300}\n- char: έ\n  command: ε\\symbol{\"0301}\n- char: ὴ\n  command: η\\symbol{\"0300}\n- char: ή\n  command: η\\symbol{\"0301}\n- char: ὶ\n  command: ι\\symbol{\"0300}\n- char: ί\n  command: ι\\symbol{\"0301}\n- char: ὸ\n  command: ο\\symbol{\"0300}\n- char: ό\n  command: ο\\symbol{\"0301}\n- char: ὺ\n  command: υ\\symbol{\"0300}\n- char: ύ\n  command: υ\\symbol{\"0301}\n- char: ὼ\n  command: ω\\symbol{\"0300}\n- char: ώ\n  command: ω\\symbol{\"0301}\n- char: ᾀ\n  command: α\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾁ\n  command: α\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾂ\n  command: α\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾃ\n  command: α\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾄ\n  command: α\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾅ\n  command: α\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾆ\n  command: α\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾇ\n  command: α\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾈ\n  command: Α\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾉ\n  command: Α\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾊ\n  command: Α\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾋ\n  command: Α\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾌ\n  command: Α\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾍ\n  command: Α\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾎ\n  command: Α\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾏ\n  command: Α\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾐ\n  command: η\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾑ\n  command: η\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾒ\n  command: η\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾓ\n  command: η\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾔ\n  command: η\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾕ\n  command: η\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾖ\n  command: η\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾗ\n  command: η\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾘ\n  command: Η\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾙ\n  command: Η\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾚ\n  command: Η\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾛ\n  command: Η\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾜ\n  command: Η\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾝ\n  command: Η\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾞ\n  command: Η\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾟ\n  command: Η\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾠ\n  command: ω\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾡ\n  command: ω\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾢ\n  command: ω\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾣ\n  command: ω\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾣ\n  command: ω\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾥ\n  command: ω\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾦ\n  command: ω\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾧ\n  command: ω\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾨ\n  command: Ω\\symbol{\"0313}\\symbol{\"0345}\n- char: ᾩ\n  command: Ω\\symbol{\"0314}\\symbol{\"0345}\n- char: ᾪ\n  command: Ω\\symbol{\"0313}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾫ\n  command: Ω\\symbol{\"0314}\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾬ\n  command: Ω\\symbol{\"0313}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾭ\n  command: Ω\\symbol{\"0314}\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾮ\n  command: Ω\\symbol{\"0313}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾯ\n  command: Ω\\symbol{\"0314}\\symbol{\"0342}\\symbol{\"0345}\n- char: ᾰ\n  commmand: α\\symbol{\"0306}\n- char: ᾱ\n  commmand: α\\symbol{\"0304}\n- char: ᾲ\n  command: α\\symbol{\"0300}\\symbol{\"0345}\n- char: ᾳ\n  command: α\\symbol{\"0345}\n- char: ᾴ\n  command: α\\symbol{\"0301}\\symbol{\"0345}\n- char: ᾶ\n  command: α\\symbol{\"0342}\n- char: ᾷ\n  command: α\\symbol{\"0342}\\symbol{\"0345}\n- char: Ᾰ\n  command: Α\\symbol{\"0306}\n- char: Ᾱ\n  command: Α\\symbol{\"0304}\n- char: Ὰ\n  command: Α\\symbol{\"0300}\n- char: Ά\n  command: Α\\symbol{\"0301}\n- char: ᾼ\n  command: Α\\symbol{\"0345}\n- char: ι\n  command: ι\n- char: ῂ\n  command: η\\symbol{\"0300}\\symbol{\"0345}\n- char: ῃ\n  command: η\\symbol{\"0345}\n- char: ῄ\n  command: η\\symbol{\"0301}\\symbol{\"0345}\n- char: ῆ\n  command: η\\symbol{\"0342}\n- char: ῇ\n  command: η\\symbol{\"0342}\\symbol{\"0345}\n- char: Ὲ\n  command: Ε\\symbol{\"0300}\n- char: Έ\n  command: Ε\\symbol{\"0301}\n- char: Ὴ\n  command: Η\\symbol{\"0300}\n- char: Ή\n  command: Η\\symbol{\"0301}\n- char: ῌ\n  command: Η\\symbol{\"0345}\n- char: ῐ\n  command: ι\\symbol{\"0306}\n- char: ῑ\n  command: ι\\symbol{\"0304}\n- char: ῒ\n  command: ι\\symbol{\"0308}\\symbol{\"0300}\n- char: ΐ\n  command: ι\\symbol{\"0308}\\symbol{\"0301}\n- char: ῖ\n  command: ι\\symbol{\"0342}\n- char: ῗ\n  command: ι\\symbol{\"0308}\\symbol{\"0342}\n- char: Ῐ\n  command: Ι\\symbol{\"0306}\n- char: Ῑ\n  command: Ι\\symbol{\"0304}\n- char: Ὶ\n  command: Ι\\symbol{\"0300}\n- char: Ί\n  command: Ι\\symbol{\"0301}\n- char: ῠ\n  command: υ\\symbol{\"0306}\n- char: ῡ\n  command: υ\\symbol{\"0304}\n- char: ῢ\n  command: υ\\symbol{\"0308}\\symbol{\"0300}\n- char: ΰ\n  command: υ\\symbol{\"0308}\\symbol{\"0301}\n- char: ῤ\n  command: ρ\\symbol{\"0313}\n- char: ῥ\n  command: ρ\\symbol{\"0314}\n- char: ῦ\n  command: υ\\symbol{\"0342}\n- char: ῧ\n  command: υsymbol{\"0308}\\symbol{\"0342}\n- char: Ῠ\n  command: Υ\\symbol{\"0306}\n- char: Ῡ\n  command: Υ\\symbol{\"0304}\n- char: Ὺ\n  command: Υ\\symbol{\"0300}\n- char: Ύ\n  command: Υ\\symbol{\"0301}\n- char: Ῥ\n  command: Ρ\\symbol{\"0314}\n- char: ῲ\n  command: ω\\symbol{\"0300}\\symbol{\"0345}\n- char: ῳ\n  command: ω\\symbol{\"0345}\n- char: ῴ\n  command: ω\\symbol{\"0301}\\symbol{\"0345}\n- char: ῶ\n  command: ω\\symbol{\"0342}\n- char: ῷ\n  command: ω\\symbol{\"0342}\\symbol{\"0345}\n- char: Ὸ\n  command: Ο\\symbol{\"0300}\n- char: Ό\n  command: Ο\\symbol{\"0301}\n- char: Ὼ\n  command: Ω\\symbol{\"0300}\n- char: Ώ\n  command: Ω\\symbol{\"0301}\n- char: ῼ\n  command: Ω\\symbol{\"0345}\n\n\n43.1.3 Background on LaTeX / unicode\nTo print Unicode chars by number use \\symbol{} or \\char. For omicron (Unicode decimal 959, hexadecimal OxO3BF):\n\\symbol{\"03BF}\n\\symbol{959}\n\\char\"03BF\n\\char959\n\nTo combine a character with a diacritic use the character directly followed by the combining diacritic. For instance, you can create Greek small omicron with psili (Unicode U+1F40) by combining Greek small omicron (ο, U+03BF) with the combining Greek koronis (U+0343). Any of these work:\nο\\symbol{\"0343}\nο\\char\"0343\n\\char\"03BF\\char\"0343\n\\symbol{\"03BF}\\char\"0343\n\\symbol{\"03BF}\\symbol{\"0343}\n\\char\"03BF\\symbol{\"0343}\n\nThe combining Greek Koronis is usually the same as the combining comma above (U+0313), so you could use that instead.",
     "crumbs": [
       "Design",
-      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Technical How-Tos</span>"
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Technical How-Tos</span>"
     ]
   },
   {

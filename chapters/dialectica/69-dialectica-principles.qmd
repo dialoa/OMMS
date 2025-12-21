@@ -1,0 +1,31 @@
+# Guiding principles for copyediting
+
+How much of the author's original stylistic choices should a 
+copyeditor keep? Here are some guiding principles.
+
+__Semantics first!__. In general, only keep meaningful features. We typeset content first, not look.
+We preserve emphasis, but we don't preserve an author's choice of a particular
+emphasis style (italics vs small caps vs bold). We preserve numbered list, but
+we don't preserve an author's choice of specific numbering style 
+(arab numbers, roman numbers, letters). If authors object, they need to explain 
+why their idiosyncratic notation choices are needed (maybe in the paper itself, 
+at least to us).
+
+__Efficiency__. The semantics first principle is tempered by efficiency considerations. Changing an 
+author's square brackets to round ones is easy. Changing their choice of 
+LaTeX commands can be error-prone. Redoing their 
+figures to use the journal's font can be time-consuming. If an author's 
+cohice is too costly for us to change and doesn't heart readability 
+and comprehension, we let it pass. 
+
+__Egos__. The principle is also tempered by social considerations. 
+If adopting our style proves particulary difficult with an 
+author, causing back-and-forth that may delay publication, we
+can cave in. Their paper, their problem, after all.
+
+__Bibliography__. Dialectica's policy with respect to the bibliography
+has been to enforce our preferences irrespective of efficiency or author's egos. 
+For instance, we require that they cite from originals rather than reprints
+(leading to back and forth as they source and check the original),
+that they cite the latest edition of a book, or that they provide more 
+specific page ranges. 

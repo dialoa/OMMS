@@ -835,7 +835,9 @@ e.g. `dial.v74.i1.pdf` or `dial.v75.i2-book.pdf`.
 
 ### Rendering options
 
-Proof mode
+Proof mode (PDF only)
+
+
 
 :   Add `--proof` or `-p` at the end of your command (separated by a
     space):
@@ -845,7 +847,8 @@ Proof mode
     dltc-make off3pdf -p
     ```
 
-:   This only affects PDF output.
+:   When outputting PDF, adds line numbers and a "PROOF" water part.
+    Genreated file has extension "...proof.pdf"
 
 Verbose or quiet
 

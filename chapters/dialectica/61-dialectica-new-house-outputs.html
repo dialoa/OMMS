@@ -1117,22 +1117,15 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 </section>
 <section id="rendering-options" class="level3" data-number="31.2.3">
 <h3 data-number="31.2.3" class="anchored" data-anchor-id="rendering-options"><span class="header-section-number">31.2.3</span> Rendering options</h3>
+<p>Proof mode (PDF only)</p>
+<p>: Add <code>--proof</code> or <code>-p</code> at the end of your command (separated by a space):</p>
+<p>: <code>bash     dltc-make off2 --proof     dltc-make off3pdf -p</code></p>
+<p>: When outputting PDF, adds line numbers and a “PROOF” water part. Genreated file has extension “…proof.pdf”</p>
 <dl>
-<dt>Proof mode</dt>
-<dd>
-<p>Add <code>--proof</code> or <code>-p</code> at the end of your command (separated by a space):</p>
-</dd>
-<dd>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off2 <span class="at">--proof</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off3pdf <span class="at">-p</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</dd>
-<dd>
-<p>This only affects PDF output.</p>
-</dd>
 <dt>Verbose or quiet</dt>
 <dd>
 <p>Add <code>--verbose</code> or <code>-v</code> to get a detailed log of the rendering process. Useful for debug. You can save the output in a log file like so:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off2pdf <span class="at">-v</span> <span class="dv">2</span><span class="op">&gt;</span> out.log </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> off2pdf <span class="at">-v</span> <span class="dv">2</span><span class="op">&gt;</span> out.log </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>2&gt;</code> tells the computer to “redirect” the error/information output to a file named <code>out.log</code>.</p>
 <p>You can make the output quieter with <code>--quiet</code> or <code>-q</code>. Though certain programs executed during the rendering process may still display error or output messages. If you don’t want to see anything just “redirect” the output to a file with <code>sh make.sh … 2&gt; out.log</code>.</p>
 </dd>
@@ -1143,7 +1136,7 @@ Error response from daemon: error creating temporary lease: write /var/lib/deskt
 <section id="long-rendering-commands" class="level3" data-number="31.2.4">
 <h3 data-number="31.2.4" class="anchored" data-anchor-id="long-rendering-commands"><span class="header-section-number">31.2.4</span> Long rendering commands</h3>
 <p>Rendering commands can also be given in key-value form:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> mode=offprint chapter=3 format=pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dltc-make</span> mode=offprint chapter=3 format=pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><p><code>mode</code> includes “offprint” aka “off”, “vol” aka “issue”, “bare” , “refs”</p></li>
 <li><p><code>format</code> includes <code>pdf</code>, <code>html</code>, <code>tex</code> aka <code>latex</code> (also <code>epub</code>, <code>jats</code> but we don’t generate these yet)</p></li>

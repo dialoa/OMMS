@@ -352,6 +352,28 @@ aligned first, and if they are, try *more* indentation.
 If it appears as *code* text (monospace font), you have
 too much indentation (more than 4 spaces), *reduce* it.
 
+### Note numbers: placement, multiple
+
+Note numbers appear at the end of a sentence or a clause---not after
+specific words. In English typesetting, note numbers are placed
+*after* any punctuation other than dashes.
+
+> mentioned before.^1^ GOOD
+
+> mentioned before^1^. BAD
+
+> mentioned before^1^---though only once. GOOD
+
+If placing multiple note numbers consecutively, separate them with
+a superscripted comma. For the comma to be interpreted 
+correctly you may need an invisible 'zero-width non-joiner space':
+
+``` markdown
+mentioned before[^fn1]^,^&zwnj;[^fn2].
+```
+
+> mentioned before^1,2^.
+
 ### Fusing multiple markdown documents
 
 Unless your journal template's guidelines specify otherwise,

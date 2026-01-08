@@ -36,9 +36,4 @@ should start directly with the review's text.
 
 Reviews normally don't have section headings. 
 
-## Make sure the reviewed monograph appears in the reference
-
-The monograph reviewed should appear in the review's references. 
-If the review doesn't explicitly cite the monograph, you should
-add it as an uncited reference. 
-See @sec-adding-non-cited-references-in-the-bibliography. 
+The monograph reviewed should not be included in the review's references. 
